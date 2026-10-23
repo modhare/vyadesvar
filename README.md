@@ -11,10 +11,29 @@ installed a liṅga here, how that liṅga was hidden in the Kali age and found
 again, how a king built its temple, and how a brahmin founded the village
 of Guhagar around it. It ends with hymns to the god.
 
-## Browse the library
+## Read it online
 
-This is a **static, offline-first** library — no server, no build step, no
-internet needed. Open `index.html` in any browser and start reading.
+**The best way to read this kāvya is the website: <https://modhare.github.io/vyadesvar/index.html>**
+
+The site lets you read the whole poem verse by verse and sarga by sarga:
+start at the library home, pick a sarga, open any verse, and move on with
+the Previous / Next links at the foot of every page. Breadcrumbs at the top
+take you back to the sarga or the home page, and the **EN / EN + मराठी /
+मराठी** toggle (top right) switches the language and is remembered between
+pages. It works on phones too.
+
+| Library home | A sarga's verse list |
+|---|---|
+| ![Library home with the introduction, dating and sources](docs/images/home.png) | ![Sarga 11 overview with every verse listed](docs/images/sarga-index.png) |
+
+| A verse page (English + मराठी) | The same verse in मराठी only |
+|---|---|
+| ![Verse 5.3 with Devanagari, IAST, sandhi-vigraha, anvaya and translations](docs/images/verse-page.png) | ![Verse 5.3 with the language toggle set to Marathi](docs/images/verse-marathi.png) |
+
+## Browse it offline
+
+The library is **static** — no server and no build step. Clone the
+repository (or download the ZIP) and open `index.html` in any browser.
 
 ```
 index.html                  ← library home
@@ -30,8 +49,6 @@ Every verse page carries: the Devanāgarī text with IAST, sandhi-vigraha
 English and Marathi translations, the spiritual meaning (EN + Marathi),
 traditional and editorial commentaries, metre, and textual notes where the
 manuscript, the print, and the metre disagree.
-
-A language toggle (EN / EN + मराठी / मराठी) is on every page.
 
 ## Contents
 
@@ -78,6 +95,28 @@ Google Maps).
   metre in the original.
 - **Spelling**: the colophons read व्याडेश्वर; the title page and many
   verses read वाडेश्वर (metre permitting). Both forms are kept as printed.
+
+## Testing
+
+Every change should keep the site rendering, linking and navigating
+correctly. The checks use only the Python standard library:
+
+```
+make test        # default: rendering, relative/external links, breadcrumbs,
+                 # prev/next chain, embedded images, spelling/markdown guards
+make test-e2e    # optional: Playwright browser smoke tests (see below)
+make test-all    # both
+```
+
+`make test` runs automatically on every push and pull request
+(`.github/workflows/tests.yml`). Set `CHECK_EXTERNAL=1` to also verify that
+the external (Google Maps) links respond.
+
+The browser tests (`tests/e2e/`) are separate and optional: they open real
+pages in Chromium to check the language toggle, navigation and images.
+Install once with `pip install -r requirements-e2e.txt && playwright install
+chromium`, then run `make test-e2e`. In CI they run on demand from the
+*Actions → Browser smoke tests* workflow.
 
 ## Our intent
 
