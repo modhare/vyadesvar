@@ -69,11 +69,6 @@ class BrowserSmoke(unittest.TestCase):
                 self.assertTrue(self.visible("h1"))
                 self.assertEqual(self.problems, [])
 
-    # Known issue: on a 375px phone, long unbroken Sanskrit titles overflow the
-    # page on index.html (19px) and sarga-11/index.html (40px). Remove the
-    # decorator once fixed (e.g. overflow-wrap on headings) - the test will then
-    # report an "unexpected success" to remind you.
-    @unittest.expectedFailure
     def test_no_horizontal_scroll_on_phone(self):
         self.page.set_viewport_size({"width": 375, "height": 800})
         for rel in ("index.html", "sarga-11/index.html", "sarga-05/verse-3.html"):

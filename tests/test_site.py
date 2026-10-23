@@ -76,6 +76,11 @@ class PageRendering(unittest.TestCase):
                 self.assertNotIn("link", p.counts, "unexpected <link> (stylesheet/font)")
                 self.assertGreater(len(p.style_text), 500)
 
+    def test_long_words_wrap_on_narrow_screens(self):
+        for rel in PAGES:
+            with self.subTest(page=rel):
+                self.assertIn(".wrap{overflow-wrap:anywhere}", page(rel).style_text)
+
     def test_verse_pages_have_one_h1_and_a_verse_block(self):
         for rel in VERSE_PAGES:
             with self.subTest(page=rel):
