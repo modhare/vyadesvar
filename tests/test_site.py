@@ -241,7 +241,21 @@ class Images(unittest.TestCase):
                     self.assertTrue(raw.startswith(self.MAGIC[m.group(1)]), "data does not match mime type")
                     self.assertGreater(len(raw), 1000, "image looks truncated")
                     self.assertTrue((img.get("alt") or "").strip(), "image needs alt text")
-        self.assertEqual(total, 22)
+        self.assertGreaterEqual(total, 22)
+
+    def test_place_cards_link_to_maps_and_gallery(self):
+        """Verses in sargas 11-12 that name a shrine carry a 'Place' card."""
+        cards = [r for r in VERSE_PAGES if 'class="place-card' in (ROOT / r).read_text(encoding="utf-8")]
+        self.assertGreaterEqual(len(cards), 14)
+        for rel in cards:
+            with self.subTest(page=rel):
+                self.assertIn(sarga_num(rel), (11, 12))
+                p = page(rel)
+                text = (ROOT / rel).read_text(encoding="utf-8")
+                self.assertRegex(text, r'href="https://www\.google\.com/maps/search/\?api=1&amp;query=-?\d+\.\d+,-?\d+\.\d+"')
+                self.assertIn("../intro-verses/index.html", p.hrefs())
+                self.assertGreaterEqual(len(p.images), 1)
+                self.assertIn(".place-card{", p.style_text)
 
     def test_page_size_reasonable(self):
         for rel in PAGES:
