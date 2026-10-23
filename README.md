@@ -11,10 +11,29 @@ installed a liṅga here, how that liṅga was hidden in the Kali age and found
 again, how a king built its temple, and how a brahmin founded the village
 of Guhagar around it. It ends with hymns to the god.
 
-## Browse the library
+## Read it online
 
-This is a **static, offline-first** library — no server, no build step, no
-internet needed. Open `index.html` in any browser and start reading.
+**The best way to read this kāvya is the website: <https://modhare.github.io/vyadesvar/index.html>**
+
+The site lets you read the whole poem verse by verse and sarga by sarga:
+start at the library home, pick a sarga, open any verse, and move on with
+the Previous / Next links at the foot of every page. Breadcrumbs at the top
+take you back to the sarga or the home page, and the **EN / EN + मराठी /
+मराठी** toggle (top right) switches the language and is remembered between
+pages. It works on phones too.
+
+| Library home | A sarga's verse list |
+|---|---|
+| ![Library home with the introduction, dating and sources](docs/images/home.png) | ![Sarga 11 overview with every verse listed](docs/images/sarga-index.png) |
+
+| A verse page (English + मराठी) | The same verse in मराठी only |
+|---|---|
+| ![Verse 5.3 with Devanagari, IAST, sandhi-vigraha, anvaya and translations](docs/images/verse-page.png) | ![Verse 5.3 with the language toggle set to Marathi](docs/images/verse-marathi.png) |
+
+## Browse it offline
+
+The library is **static** — no server and no build step. Clone the
+repository (or download the ZIP) and open `index.html` in any browser.
 
 ```
 index.html                  ← library home
@@ -30,8 +49,6 @@ Every verse page carries: the Devanāgarī text with IAST, sandhi-vigraha
 English and Marathi translations, the spiritual meaning (EN + Marathi),
 traditional and editorial commentaries, metre, and textual notes where the
 manuscript, the print, and the metre disagree.
-
-A language toggle (EN / EN + मराठी / मराठी) is on every page.
 
 ## Contents
 
