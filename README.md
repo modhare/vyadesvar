@@ -6,7 +6,7 @@ also known as the *Vyāḍeśvara Mahatmya*.
 
 The kāvya, in fourteen sargas, tells the sacred history of Guhagar on the
 Konkan coast and its presiding deity, Vyāḍeśvara (in the verses usually
-वाडेश्वर): how Paraśurāma won this land from the sea, how the sage Vyāḍi
+वाडेश्वर): how Paraśurāma won this land from the sea, how the sage Vyāḍa
 installed a liṅga here, how that liṅga was hidden in the Kali age and found
 again, how a king built its temple, and how a brahmin founded the village
 of Guhagar around it. It ends with hymns to the god.
@@ -87,4 +87,4 @@ place it in the hands of every devotee of Vyāḍeśvara, every researcher,
 and every lover of Sanskrit. What is gathered here is offered at the feet
 of the Lord.
 
-।। श्रीवाडेश्वरार्पणमस्तु ।।
+॥ श्रीव्याडेश्वरार्पणमस्तु ॥
