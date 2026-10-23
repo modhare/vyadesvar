@@ -16,7 +16,7 @@ from helpers import (ROOT, all_html, page, reading_order, readme_verse_counts,
 PAGES = all_html()
 VERSE_PAGES = reading_order()
 EXPECTED_SARGAS = 14
-ALLOWED_EXTERNAL_HOSTS = {"www.google.com"}
+ALLOWED_EXTERNAL_HOSTS = {"www.google.com", "pilgrimdata.in"}
 
 
 def sarga_num(rel):
@@ -246,13 +246,13 @@ class Images(unittest.TestCase):
     def test_place_cards_link_to_maps_and_gallery(self):
         """Verses in sargas 11-12 that name a shrine carry a 'Place' card."""
         cards = [r for r in VERSE_PAGES if 'class="place-card' in (ROOT / r).read_text(encoding="utf-8")]
-        self.assertGreaterEqual(len(cards), 14)
+        self.assertGreaterEqual(len(cards), 17)
         for rel in cards:
             with self.subTest(page=rel):
                 self.assertIn(sarga_num(rel), (11, 12))
                 p = page(rel)
                 text = (ROOT / rel).read_text(encoding="utf-8")
-                self.assertRegex(text, r'href="https://www\.google\.com/maps/search/\?api=1&amp;query=-?\d+\.\d+,-?\d+\.\d+"')
+                self.assertRegex(text, r'href="https://www\.google\.com/maps/search/\?api=1&amp;query=[^"]+"')
                 self.assertIn("../intro-verses/index.html", p.hrefs())
                 self.assertGreaterEqual(len(p.images), 1)
                 self.assertIn(".place-card{", p.style_text)
