@@ -246,10 +246,10 @@ class Images(unittest.TestCase):
     def test_place_cards_link_to_maps_and_gallery(self):
         """Verses in sargas 11-12 that name a shrine carry a 'Place' card."""
         cards = [r for r in VERSE_PAGES if 'class="place-card' in (ROOT / r).read_text(encoding="utf-8")]
-        self.assertGreaterEqual(len(cards), 17)
+        self.assertGreaterEqual(len(cards), 18)
         for rel in cards:
             with self.subTest(page=rel):
-                self.assertIn(sarga_num(rel), (11, 12))
+                self.assertIn(sarga_num(rel), (11, 12, 13))
                 p = page(rel)
                 text = (ROOT / rel).read_text(encoding="utf-8")
                 self.assertRegex(text, r'href="https://www\.google\.com/maps/search/\?api=1&amp;query=[^"]+"')
