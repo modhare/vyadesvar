@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 37 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 37</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 37</span><span class="bl-mr lang-mr">श्लोक 37</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्युक्तवन्तं श्रीकण्ठं कण्ठीरवरिपुत्वचा ।<br>परीतं परितः क्रान्त्वा नत्वोवाचार्चितो मुनिः ।।३७।।</div>
+  <div class="verse-iast">ityuktavantaṃ śrīkaṇṭhaṃ kaṇṭhīravariputvacā । parītaṃ paritaḥ krāntvā natvovācārcito muniḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । उक्तवन्तम् । श्रीकण्ठम् । कण्ठीरव-रिपु-त्वचा । परीतम् । परितः । क्रान्त्वा । नत्वा । उवाच । अर्चितः । मुनिः ।</div><div class="vig-iast">iti । uktavantam । śrīkaṇṭham । kaṇṭhīrava-ripu-tvacā । parītam । paritaḥ । krāntvā । natvā । uvāca । arcitaḥ । muniḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">इति + उक्तवन्तम् = इत्युक्तवन्तम् (यण्) · परीतम् + परितः = परीतं परितः · नत्वा + उवाच = नत्वोवाच (गुण) · उवाच + अर्चितः = उवाचार्चितः · अर्चितः + मुनिः = अर्चितो मुनिः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति उक्तवन्तं कण्ठीरवरिपुत्वचा परीतं श्रीकण्ठं परितः क्रान्त्वा नत्वा अर्चितः मुनिः उवाच ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>To Śrīkaṇṭha, who had spoken thus — his body wrapped in the hide of the elephant, the lion&#x27;s foe — the muni paid his circumambulation and his bow; and honoured (by Śiva), he spoke.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विष्णूला उद्देशून असे बोलत असलेल्या त्या गजाजिनवेष्टित शंकराला प्रदक्षिणा घालून व वंदन करून तो सत्कृत झालेला मुनी परशुराम म्हणाला,</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीकण्ठम्</span>
+    <span class="word-iast">śrīkaṇṭham</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि समास (श्री-कण्ठ); पुंल्लिङ्ग द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: श्रीकण्ठम् (द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">Śiva, the fair-(blue-)throated one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवाला</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः श्रीकण्ठम् नमति ।</div>
+    <div class="usage-iast">bhaktaḥ śrīkaṇṭham namati ।</div>
+    <div class="usage-meaning lang-en">The devotee bows to Śrīkaṇṭha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त श्रीकण्ठाला नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कण्ठीरवरिपुत्वचा</span>
+    <span class="word-iast">kaṇṭhīravariputvacā</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुष समास (कण्ठीरव-रिपु-त्वच्); त्वच् स्त्रीलिङ्ग तृतीया एकवचन</span></div>
+  <div class="word-form">In this verse: कण्ठीरवरिपुत्वचा (तृतीया एकवचन)</div>
+  <p class="word-meaning lang-en">with the hide of the elephant, the lion&#x27;s foe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सिंहाचा (कण्ठीरव) शत्रू जो हत्ती, त्याच्या चर्माने (गजाजिनाने)</p>
+  <div class="word-usage">
+    <div class="deva">देवः कण्ठीरवरिपुत्वचा परीतः आसीत् ।</div>
+    <div class="usage-iast">devaḥ kaṇṭhīravariputvacā parītaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">The god was draped in the hide of the elephant, the lion&#x27;s foe.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव सिंहाचा शत्रू असलेल्या हत्तीच्या चर्माने वेष्टित होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परीतम्</span>
+    <span class="word-iast">parītam</span>
+  </div>
+  <div><span class="word-grammar">परि + √इण् (अदादिगण) + क्त (कर्मणि); नपुंसकलिङ्ग द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: परीतम् (द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">enveloped, wrapped, clothed in</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेष्टित</p>
+  <div class="word-usage">
+    <div class="deva">वस्त्रेण परीतं शरीरं शोभते ।</div>
+    <div class="usage-iast">vastreṇa parītaṃ śarīraṃ śobhate ।</div>
+    <div class="usage-meaning lang-en">The body wrapped in cloth shines.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वस्त्राने वेष्टित शरीर शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परितः क्रान्त्वा</span>
+    <span class="word-iast">paritaḥ krāntvā</span>
+  </div>
+  <div><span class="word-grammar">परितः अव्यय + √क्रम् (भ्वादिगण) + क्त्वा (पूर्वकाले)</span></div>
+  <div class="word-form">In this verse: परितः क्रान्त्वा</div>
+  <p class="word-meaning lang-en">having circumambulated</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रदक्षिणा करून</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः देवं परितः क्रान्त्वा नमति ।</div>
+    <div class="usage-iast">bhaktaḥ devaṃ paritaḥ krāntvā namati ।</div>
+    <div class="usage-meaning lang-en">The devotee bows after circumambulating the deity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त देवाला प्रदक्षिणा करून नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अर्चितः</span>
+    <span class="word-iast">arcitaḥ</span>
+  </div>
+  <div><span class="word-grammar">√अर्च् (भ्वादिगण) + क्त (कर्मणि); प्रथमा एकवचन पुंल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: अर्चितः (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">honoured, worshipped</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(शिवाने) सन्मानित</p>
+  <div class="word-usage">
+    <div class="deva">अतिथिः गृहे अर्चितः भवति ।</div>
+    <div class="usage-iast">atithiḥ gṛhe arcitaḥ bhavati ।</div>
+    <div class="usage-meaning lang-en">The guest is honoured in the house.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिथी घरात सन्मानित होतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Before a single word of reply, Paraśurāma acts out his devotion: circumambulation of the elephant-hide-clad Śiva and prostration. The kāvya&#x27;s etiquette is exact — pradakṣiṇā first, then speech. For the pilgrim it models the proper approach to the deity at Guhagar: the body bows before the tongue speaks.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उत्तराचा एकही शब्द बोलण्याआधी परशुराम आपली भक्ती कृतीतून दाखवतो : गजाजिनधारी शिवाला प्रदक्षिणा आणि वंदन. काव्याचा शिष्टाचार अचूक आहे — आधी प्रदक्षिणा, मग भाषण. यात्रेकरूसाठी हा गुहागरच्या देवतेकडे जाण्याचा योग्य मार्ग दाखवतो : जिभेने बोलण्याआधी शरीर वंदन करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Śiva draped in the elephant&#x27;s hide recalls the Gajāsura legend: the elephant-demon who, slain by the Lord, was worn as a trophy — a standing emblem in iconography of the god&#x27;s triumph over brute pride. The poet reaches for it through the elegant periphrasis &#x27;the lion&#x27;s foe&#x27;, letting the reader supply &#x27;elephant&#x27;. Pradakṣiṇā before speech is the classical etiquette of approaching a deity or a guru: the body performs reverence before the mouth presumes to address.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हत्तीच्या चर्माने वेष्टित शिव गजासुराच्या कथेची आठवण करून देतो : हत्ती-राक्षसाचा वध करून भगवान त्याचे चर्म भूषण म्हणून धारण करतो — मूर्तिशास्त्रात पाशवी गर्वावरील देवाच्या विजयाचे स्थिर प्रतीक. कवी त्याकडे &#x27;सिंहाचा शत्रू&#x27; या सुंदर पर्यायी शब्दप्रयोगाने निर्देश करतो — &#x27;हत्ती&#x27; हे वाचकाने स्वतः पुरवायचे. भाषणाआधी प्रदक्षिणा हा देवता किंवा गुरूकडे जाण्याचा शास्त्रीय शिष्टाचार आहे : तोंडाने संबोधण्याचे धाडस करण्याआधी शरीर आदर व्यक्त करते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Śrīkaṇṭha — &#x27;the fair-throated one&#x27; — is Śiva, whose throat holds the kālakūṭa poison; the verse opens Paraśurāma&#x27;s reply (verses 38–40). कण्ठीरवरिपु is the elephant, the lion&#x27;s foe, and its त्वचा the gajājina. Note the sandhi नत्वा + उवाच = नत्वोवाच (guṇa) and उवाच + अर्चितः = उवाचार्चितः.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुभ्. श्रीकण्ठ — &#x27;सुंदर कंठ असलेला&#x27; — म्हणजे शिव, ज्याच्या कंठात कालकूट विष आहे; या श्लोकाने परशुरामाचे उत्तर (श्लोक ३८–४०) सुरू होते. कण्ठीरवरिपु म्हणजे हत्ती — सिंहाचा शत्रू — आणि त्याची त्वचा म्हणजे गजाजिन. नत्वा + उवाच = नत्वोवाच (गुण) आणि उवाच + अर्चितः = उवाचार्चितः या संधी लक्षात घ्या.</p></div></div>
+
+<div class="pagenav"><a href="verse-36.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 36</div></a><a class="next" href="verse-38.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 38</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

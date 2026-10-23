@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">क्षत्रमुत्सादितं सर्वं सप्तकृत्वस्त्रिरेकतः ।<br>पात्रसाच्च कृता भूमिस्त्वया किल कुलेन्दुना ।।३२।।</div>
+  <div class="verse-iast">kṣatramutsāditaṃ sarvaṃ saptakṛtvastrirekataḥ । pātrasācca kṛtā bhūmistvayā kila kulendunā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">क्षत्रम् । उत्सादितम् । सर्वम् । सप्तकृत्वः । त्रिः । एकतः । पात्रसात् । च । कृता । भूमिः । त्वया । किल । कुल-इन्दुना ।</div><div class="vig-iast">kṣatram । utsāditam । sarvam । saptakṛtvaḥ । triḥ । ekataḥ । pātrasāt । ca । kṛtā । bhūmiḥ । tvayā । kila । kula-indunā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्षत्रम् + उत्सादितम् = क्षत्रमुत्सादितम् · सप्तकृत्वः + त्रिः = सप्तकृत्वस्त्रिः · त्रिः + एकतः = त्रिरेकतः · पात्रसात् + च = पात्रसाच्च (त् + च् → च्च्) · भूमिः + त्वया = भूमिस्त्वया · कुल + इन्दुना = कुलेन्दुना (गुण)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">कुलेन्दुना त्वया एकतः सप्तकृत्वः त्रिः सर्वं क्षत्रम् उत्सादितं, भूमिः च पात्रसात् कृता किल ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Single-handed You destroyed the entire kṣatra twenty-one times — seven times three — and the earth was made over by You, O moon of the clan, to worthy hands, as is famed.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तू एकट्याने एकवीस वेळा सर्व क्षत्रियांचा निःपात केलास आणि कुलभूषण अशा तुझ्याकडून ही भूमी योग्य व्यक्तींना दिली गेली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सप्तकृत्वः त्रिः</span>
+    <span class="word-iast">saptakṛtvaḥ triḥ</span>
+  </div>
+  <div><span class="word-grammar">indecl.: सप्तकृत्वस् (सप्त + कृत्वस् suffix, seven times) + त्रिः (thrice); 3 × 7 = twenty-one times</span></div>
+  <div class="word-form">In this verse: सप्तकृत्वस्त्रिरेकतः (सप्तकृत्वः + त्रिः + एकतः)</div>
+  <p class="word-meaning lang-en">twenty-one times (seven times three)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सात गुणिले तीन, एकवीस वेळा</p>
+  <div class="word-usage">
+    <div class="deva">रामः सप्तकृत्वः त्रिः क्षत्रियान् अजयत्</div>
+    <div class="usage-iast">rāmaḥ saptakṛtvaḥ triḥ kṣatriyān ajayat</div>
+    <div class="usage-meaning lang-en">Rāma conquered the kṣatriyas seven times three (twenty-one times).</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाने एकवीस वेळा क्षत्रियांचा पराभव केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकतः</span>
+    <span class="word-iast">ekataḥ</span>
+  </div>
+  <div><span class="word-grammar">indecl. (एक + तसिल् suffix), alone, single-handed</span></div>
+  <div class="word-form">In this verse: एकतः</div>
+  <p class="word-meaning lang-en">alone, single-handed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकट्याने</p>
+  <div class="word-usage">
+    <div class="deva">सः एकतः एव शत्रून् अजयत्</div>
+    <div class="usage-iast">saḥ ekataḥ eva śatrūn ajayat</div>
+    <div class="usage-meaning lang-en">He conquered his foes single-handed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने एकट्याने शत्रू जिंकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उत्सादितम्</span>
+    <span class="word-iast">utsāditam</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. n. (agreeing with क्षत्रम्) past passive participle of the causative of उद् + √सद् — उत्सादयति, to uproot, exterminate</span></div>
+  <div class="word-form">In this verse: क्षत्रमुत्सादितं (क्षत्रम् + उत्सादितम्)</div>
+  <p class="word-meaning lang-en">uprooted, exterminated</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उच्छेदले</p>
+  <div class="word-usage">
+    <div class="deva">तेन सर्वं क्षत्रम् उत्सादितम्</div>
+    <div class="usage-iast">tena sarvaṃ kṣatram utsāditam</div>
+    <div class="usage-meaning lang-en">By him the entire kṣatra was uprooted.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने सर्व क्षत्रियकुळाचा उच्छेद केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पात्रसात् कृता</span>
+    <span class="word-iast">pātrasāt kṛtā</span>
+  </div>
+  <div><span class="word-grammar">पात्रसात्: पात्र + साति (the सात् suffix: made over to, become); कृता: nom. sg. f. past passive participle of √कृ (agreeing with भूमिः)</span></div>
+  <div class="word-form">In this verse: पात्रसाच्च कृता (पात्रसात् + च + कृता)</div>
+  <p class="word-meaning lang-en">made over to worthy recipients</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सत्पात्राच्या (कश्यपादि ब्राह्मणांच्या) स्वाधीन केली (‘-सात्’ प्रत्यय)</p>
+  <div class="word-usage">
+    <div class="deva">भूमिः पात्रसात् कृता</div>
+    <div class="usage-iast">bhūmiḥ pātrasāt kṛtā</div>
+    <div class="usage-meaning lang-en">The earth was made over to worthy recipients.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भूमी सत्पात्रांच्या स्वाधीन केली गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किल</span>
+    <span class="word-iast">kila</span>
+  </div>
+  <div><span class="word-grammar">indecl. particle, indeed, as is well known (itihāsa-style marker of tradition)</span></div>
+  <div class="word-form">In this verse: किल</div>
+  <p class="word-meaning lang-en">as is famed, as tradition holds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्धच</p>
+  <div class="word-usage">
+    <div class="deva">सः किल महावीरः आसीत्</div>
+    <div class="usage-iast">saḥ kila mahāvīraḥ āsīt</div>
+    <div class="usage-meaning lang-en">He was, as is well known, a great hero.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो प्रसिद्ध असा महावीर होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कुलेन्दुना</span>
+    <span class="word-iast">kulendunā</span>
+  </div>
+  <div><span class="word-grammar">instr. sg. m. of the tatpuruṣa कुल-इन्दु (moon of the clan), used with vocative force — O moon of the Bhṛgu clan</span></div>
+  <div class="word-form">In this verse: कुलेन्दुना</div>
+  <p class="word-meaning lang-en">O moon of the clan</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुळातील चंद्र अशा</p>
+  <div class="word-usage">
+    <div class="deva">कुलेन्दुना तेन कीर्तिः वर्धिता</div>
+    <div class="usage-iast">kulendunā tena kīrtiḥ vardhitā</div>
+    <div class="usage-meaning lang-en">By him, the moon of his clan, fame was increased.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुलभूषण अशा त्याने कीर्ती वाढवली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Single-handed, twenty-one times over, the Lord uproots entrenched adharma — persistence, not mere power, is the moral: evil must be met again and again until the ground is clear. And having won the earth, he does not keep it but gives it to the worthy — victory is complete only in renunciation. The moon of the clan teaches that true glory is luminous because it is selfless.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकट्याने, एकवीस वेळा, भगवंत रुजलेल्या अधर्माचा उच्छेद करतो — केवळ शक्ती नव्हे, तर चिकाटी हाच बोध आहे — भूमी स्वच्छ होईपर्यंत वाईटाशी पुन्हा पुन्हा सामना करावा लागतो. आणि पृथ्वी जिंकल्यावर तो ती स्वतःकडे ठेवीत नाही, तर योग्यांना देतो — त्यागातच विजय पूर्ण होतो. कुलचंद्र हे शिकवतो की खरी कीर्ती तेजस्वी असते, कारण ती निःस्वार्थ असते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The twenty-one campaigns are the heart of the Paraśurāma legend: the Bhāgavata (9.16.18–19) says he cleared the earth of kṣatriyas thrice seven times (त्रिःसप्तकृत्वः) and then gifted the conquered earth to the sage Kaśyapa — the पात्रसात् कृता of this verse, the earth made over to worthy recipients. Having given the earth away, he could not remain on donated land — which is why, in this sarga&#x27;s frame, he raises new land from the sea. कुलन्दु, moon of the clan, honours him as the jewel of the Bhṛgu line.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकवीस मोहिमा हे परशुराम-आख्यानाचे हृदय आहे — भागवत (९.१६.१८–१९) सांगते की त्याने पृथ्वी तीन गुणिले सात वेळा क्षत्रियांपासून मुक्त केली (त्रिःसप्तकृत्वः) आणि मग जिंकलेली पृथ्वी कश्यप ऋषींना दान दिली — या श्लोकातील पात्रसात् कृता, म्हणजे योग्य व्यक्तींना दिलेली भूमी. पृथ्वी दान दिल्यावर तो दान दिलेल्या भूमीवर राहू शकला नाही — म्हणूनच या सर्गाच्या चौकटीत तो समुद्रातून नवी भूमी वर काढतो. कुलन्दु — कुळाचा चंद्र — त्याचा भृगुवंशाचा मणी म्हणून गौरव करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. सप्तकृत्वः त्रिः is the arithmetic of the legend: 7 × 3 = 21, matching the Bhāgavata&#x27;s त्रिःसप्तकृत्वः. किल is the itihāsa particle — as is famed, as tradition holds. पात्रसात् carries the साति suffix (becoming, making over to). This verse closes the avatāra praise and with it the whole stuti arc 4.25–32, returning the narrative to the sarga&#x27;s frame: the gift of the earth (4.32) is the reason Paraśurāma must seek new land (4.1–6) — the very land on which Guhagar stands.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. सप्तकृत्वः त्रिः हे आख्यानाचे गणित आहे — ७ × ३ = २१, जे भागवताच्या त्रिःसप्तकृत्वः शी जुळते. किल हा इतिहास-वाचक निपात आहे — प्रसिद्ध आहे तसे, परंपरेनुसार. पात्रसात् मध्ये साति प्रत्यय आहे (होणे, स्वाधीन करणे). हा श्लोक अवतार-स्तुतीची आणि त्यासोबत संपूर्ण स्तुती-वळणाची (४.२५–३२) समाप्ती करतो आणि कथानकाला सर्गाच्या चौकटीकडे परत आणतो — भूमीचे दान (४.३२) हेच परशुरामाला नवी भूमी शोधावी लागण्याचे (४.१–६) कारण आहे — ज्या भूमीवर गुहागर उभे आहे तीच ही भूमी.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

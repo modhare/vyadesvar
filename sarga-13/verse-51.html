@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 51 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 51</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 51</span><span class="bl-mr lang-mr">श्लोक 51</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">चन्द्रार्कावधिकामेतां वृत्तिं योऽपहरेत्खलः ।<br>तन्मातरि खरो ह्येष इत्थं शपथदृष्टये ।।५१।।</div>
+  <div class="verse-iast">candrārkāvadhikāmetāṃ vṛttiṃ yo&#x27;paharetkhalaḥ । tanmātari kharo hyeṣa itthaṃ śapathadṛṣṭaye</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">चन्द्र-अर्क-अवधिकाम् एताम् वृत्तिम् यः अपहरेत् खलः । तत्-मातरि खरः हि एषः इत्थम् शपथ-दृष्टये ।</div><div class="vig-iast">candra-arka-avadhikām etām vṛttim yaḥ apaharet khalaḥ । tat-mātari kharaḥ hi eṣaḥ ittham śapatha-dṛṣṭaye ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">चन्द्र + अर्क = चन्द्रार्क · अर्क + अवधिकाम् = अर्कावधिकाम् · यः + अपहरेत् = योऽपहरेत् · अपहरेत् + खलः = अपहरेत्खलः · तत् + मातरि = तन्मातरि (अनुनासिक) · खरः + हि = खरो हि · हि + एषः = ह्येषः · एषः + इत्थम् = एष इत्थम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">‘चन्द्रार्कावधिकाम् एतां वृत्तिं यः खलः अपहरेत्, तन्मातरि एषः खरः हि’ — इत्थं शपथदृष्टये (सः) खरसंसृष्टसुरतनारीपुत्रिकया अन्वितान् चन्द्रार्काङ्कशिलापट्टान् वृत्तिस्थानेषु अरोपयत् । *(हे ‘गधेगाळ’ शिलालेखांचे वर्णन.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;This endowment, lasting as long as moon and sun — whatever villain would rob it, upon his mother may this ass indeed mount!&#x27; — thus, so that the oath-curse might be seen...</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जोपर्यंत चन्द्रसूर्य पृथ्वीवर प्रकाश देत आहेत तोपर्यंत जो दुष्ट मनुष्य या प्रवृत्तींचा अपहार करील त्याच्या मातेवर गर्दभ आरूढ होईल अशी शपथवजा धमकी दृष्टीला पडावी म्हणून त्याने उपजीविकेच्या निरनिराळ्या ठिकाणी चन्द्रसूर्यांच्या प्रतिमांनी अङ्कित शिळांवर गर्दभ ज्यांच्याशी सुरतक्रिया करीत आहे अशा स्त्रियांच्या मूर्ती कोरून ठेवल्या (अशा शिळांना गद्धेगळ म्हणतात).</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चन्द्र-अर्क-अवधिकाम्</span>
+    <span class="word-iast">candra-arka-avadhikām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: चन्द्रार्कावधिकाम्</div>
+  <p class="word-meaning lang-en">lasting as long as moon and sun</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्रसूर्य असेपर्यंत टिकणारी</p>
+  <div class="word-usage">
+    <div class="deva">चन्द्रार्कावधिकां वृत्तिं स ददौ।</div>
+    <div class="usage-iast">candrārkāvadhikāṃ vṛttiṃ sa dadau.</div>
+    <div class="usage-meaning lang-en">He gave an endowment lasting as long as moon and sun.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने चंद्रसूर्य असेपर्यंत टिकणारी वृत्ती दिली।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एताम्</span>
+    <span class="word-iast">etām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: एताम्</div>
+  <p class="word-meaning lang-en">this</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ही</p>
+  <div class="word-usage">
+    <div class="deva">एतां वृत्तिं रक्ष।</div>
+    <div class="usage-iast">etāṃ vṛttiṃ rakṣa.</div>
+    <div class="usage-meaning lang-en">Protect this endowment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या वृत्तीचे रक्षण कर।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वृत्तिम्</span>
+    <span class="word-iast">vṛttim</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वृत्तिम्</div>
+  <p class="word-meaning lang-en">endowment</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वृत्ती, इनाम</p>
+  <div class="word-usage">
+    <div class="deva">स वृत्तिं लभते।</div>
+    <div class="usage-iast">sa vṛttiṃ labhate.</div>
+    <div class="usage-meaning lang-en">He receives the endowment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याला वृत्ती मिळते।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यः</span>
+    <span class="word-iast">yaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यः</div>
+  <p class="word-meaning lang-en">whoever</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो</p>
+  <div class="word-usage">
+    <div class="deva">यः पठति, स जानाति।</div>
+    <div class="usage-iast">yaḥ paṭhati, sa jānāti.</div>
+    <div class="usage-meaning lang-en">Whoever studies, knows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो शिकतो, तो जाणतो।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपहरेत्</span>
+    <span class="word-iast">apaharet</span>
+  </div>
+  <div><span class="word-grammar">अप + हृ, विधिलिङ्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: अपहरेत्</div>
+  <p class="word-meaning lang-en">would seize</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हिरावून घेईल</p>
+  <div class="word-usage">
+    <div class="deva">यः परधनम् अपहरेत्, स दण्ड्यः।</div>
+    <div class="usage-iast">yaḥ paradhanam apaharet, sa daṇḍyaḥ.</div>
+    <div class="usage-meaning lang-en">Whoever would steal another&#x27;s wealth deserves punishment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो दुसऱ्याचे धन हिरावून घेईल, तो शिक्षेस पात्र ठरतो।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खलः</span>
+    <span class="word-iast">khalaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: खलः</div>
+  <p class="word-meaning lang-en">wicked man</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुष्ट</p>
+  <div class="word-usage">
+    <div class="deva">खलः सज्जनान् पीडयति।</div>
+    <div class="usage-iast">khalaḥ sajjanān pīḍayati.</div>
+    <div class="usage-meaning lang-en">The wicked man harasses good people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुष्ट माणूस सज्जनांना त्रास देतो।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्-मातरि</span>
+    <span class="word-iast">tat-mātari</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. स. एव.; मातृ</span></div>
+  <div class="word-form">In this verse: तन्मातरि</div>
+  <p class="word-meaning lang-en">upon his mother</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या आईवर</p>
+  <div class="word-usage">
+    <div class="deva">तन्मातरि स स्निह्यति।</div>
+    <div class="usage-iast">tanmātari sa snihyati.</div>
+    <div class="usage-meaning lang-en">He is affectionate toward his mother.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो त्याच्या आईवर प्रेम करतो।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खरः</span>
+    <span class="word-iast">kharaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: खरः</div>
+  <p class="word-meaning lang-en">an ass</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाढव</p>
+  <div class="word-usage">
+    <div class="deva">खरः भारं वहति।</div>
+    <div class="usage-iast">kharaḥ bhāraṃ vahati.</div>
+    <div class="usage-meaning lang-en">The ass carries the load.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाढव ओझे वाहते।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हि</span>
+    <span class="word-iast">hi</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: हि</div>
+  <p class="word-meaning lang-en">indeed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर</p>
+  <div class="word-usage">
+    <div class="deva">धर्मो हि रक्षति रक्षितः।</div>
+    <div class="usage-iast">dharmo hi rakṣati rakṣitaḥ.</div>
+    <div class="usage-meaning lang-en">Dharma indeed protects when protected.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षण केलेला धर्म खरोखर रक्षण करतो।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एषः</span>
+    <span class="word-iast">eṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: एषः</div>
+  <p class="word-meaning lang-en">this</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हा</p>
+  <div class="word-usage">
+    <div class="deva">एषः ग्रामः सुन्दरः।</div>
+    <div class="usage-iast">eṣaḥ grāmaḥ sundaraḥ.</div>
+    <div class="usage-meaning lang-en">This village is beautiful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे गाव सुंदर आहे।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इत्थम्</span>
+    <span class="word-iast">ittham</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: इत्थम्</div>
+  <p class="word-meaning lang-en">thus</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशा रीतीने</p>
+  <div class="word-usage">
+    <div class="deva">इत्थं स अवदत्।</div>
+    <div class="usage-iast">itthaṃ sa avadat.</div>
+    <div class="usage-meaning lang-en">Thus he spoke.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशा रीतीने तो बोलला।</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शपथ-दृष्टये</span>
+    <span class="word-iast">śapatha-dṛṣṭaye</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. च. एव.</span></div>
+  <div class="word-form">In this verse: शपथदृष्टये</div>
+  <p class="word-meaning lang-en">to make the curse visible</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शाप (शपथ) दिसावा म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">शपथदृष्टये शिलां स्थापयत्।</div>
+    <div class="usage-iast">śapathadṛṣṭaye śilāṃ sthāpayat.</div>
+    <div class="usage-meaning lang-en">He set up the stone so the oath would be seen.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शपथ दिसावी म्हणून त्याने शिळा उभी केली।</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The coarseness of the curse is deliberate: it is meant to shock the would-be usurper out of even the thought of seizing what belongs to the gods. For the devotee, the teaching is that temple property is inviolable — robbing it degrades the robber utterly. The modern reader should take the verse as the poet&#x27;s faithful record of a real medieval practice, the gaddhegaḷ stones of the Konkan and Deccan, rather than as a theological statement.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शापाची ही असभ्यता हेतुपुरस्सर आहे : देवांचे धन हिरावण्याचा विचारही करणाऱ्याला धक्का देऊन तो विचारच मोडून टाकावा, हा उद्देश आहे. भक्तासाठी शिकवण अशी की मंदिराची संपत्ती अनुल्लंघनीय आहे — तिचे हरण करणाऱ्याचे संपूर्ण अधःपतन होते. आधुनिक वाचकाने हा श्लोक तात्त्विक विधान म्हणून न घेता, कोकण-दख्खनातील गद्धेगळ शिळा या खऱ्या मध्ययुगीन प्रथेची कवीने केलेली प्रामाणिक नोंद म्हणून घ्यावा.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The gaddhegaḷ (ass-curse stones) are well known from medieval Maharashtra and the Konkan: stone slabs set up at endowed lands, carved with the sun and moon and with the figure of an ass joined with a woman, carrying the curse that whoever seizes the grant shall suffer this degradation. The sun-and-moon emblem marks the grant as perpetual — &#x27;lasting as long as moon and sun&#x27; (candrārkāvadhika), the standard formula of permanent endowments in inscriptions. The poet describes exactly what these stones meant.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गद्धेगळ (गाढवाच्या शापाच्या शिळा) मध्ययुगीन महाराष्ट्र व कोकणात प्रसिद्ध आहेत : इनामाच्या जमिनीवर उभारलेल्या शिळा, त्यांवर सूर्य-चंद्र आणि गाढवाशी संग करणारी स्त्री यांच्या मूर्ती कोरलेल्या असत; जो कोणी इनाम हिरावून घेईल त्याचे असे अधःपतन होईल, असा शाप त्यांवर असे. सूर्य-चंद्राचे चिन्ह देणगी शाश्वत असल्याचे दाखवते — &#x27;चंद्रसूर्य असेपर्यंत टिकणारी&#x27; (चन्द्रार्कावधिक) हा शिलालेखांतील शाश्वत देणग्यांचा ठरलेला शब्दप्रयोग आहे. या शिळांचा अर्थ काय होता, हेच कवी येथे वर्णन करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse gives the text of the curse and its purpose (śapathadṛṣṭaye, &#x27;so that the curse may be seen&#x27;); verse 52 completes the sentence with the setting-up of the slabs. The book&#x27;s Marathi adds the gloss &#x27;(अशा शिळांना गद्धेगळ म्हणतात)&#x27;. Candrārkāvadhikām is the classical inscriptional formula for a perpetual grant; yaḥ... khalaḥ apaharet is the standard imprecatory optative of such curses.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या श्लोकात शापाचा मजकूर आणि त्याचा उद्देश (शपथदृष्टये — &#x27;शाप दिसावा म्हणून&#x27;) दिला आहे; ५२ व्या श्लोकात शिळा उभारण्याने वाक्य पूर्ण होते. पुस्तकाच्या मराठीत &#x27;(अशा शिळांना गद्धेगळ म्हणतात)&#x27; ही टीप जोडली आहे. चन्द्रार्कावधिकाम् हा शाश्वत देणगीचा शिलालेखांतील ठरलेला शब्दप्रयोग आहे; यः... खलः अपहरेत् हा अशा शापांचा ठरलेला विध्यर्थ प्रयोग आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-50.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 50</div></a><a class="next" href="verse-52.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 52</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ काले सुमहति व्यतीते भगवान् हरिः ।<br>रामो दाशरथिर्नाम कलया क्षत्रियेष्वभूत् ।।१।।</div>
+  <div class="verse-iast">atha kāle sumahati vyatīte bhagavān hariḥ । rāmo dāśarathirnāma kalayā kṣatriyeṣvabhūt</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । काले । सुमहति । व्यतीते । भगवान् । हरिः । रामः । दाशरथिः । नाम । कलया । क्षत्रियेषु । अभूत् ।</div><div class="vig-iast">atha । kāle । sumahati । vyatīte । bhagavān । hariḥ । rāmaḥ । dāśarathiḥ । nāma । kalayā । kṣatriyeṣu । abhūt ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">रामः + दाशरथिः = रामो दाशरथिः · दाशरथिः + नाम = दाशरथिर्नाम · क्षत्रियेषु + अभूत् = क्षत्रियेष्वभूत् (यण्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ सुमहति काले व्यतीते (सति) भगवान् हरिः कलया क्षत्रियेषु दाशरथिः रामः नाम अभूत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then, when a very long time had passed, the blessed Hari took form as Rāma, the son of Daśaratha, by a portion of Himself, among the kṣatriyas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नंतर बराच काळ गेल्यानंतर भगवान विष्णूने क्षत्रियांत अंशाने दशरथपुत्र रामाचे रूप धारण केले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुमहति काले व्यतीते</span>
+    <span class="word-iast">sumahati kāle vyatīte</span>
+  </div>
+  <div><span class="word-grammar">सति सप्तमी (locative absolute): सुमहति (सुमहत् adj., सप्तमी एकवचन) + काले (काल m., सप्तमी एकवचन) + व्यतीते (व्यतीत, वि-अति-√इ + क्त, सप्तमी एकवचन)</span></div>
+  <div class="word-form">In this verse: सुमहति काले व्यतीते — locative-absolute phrase as printed</div>
+  <p class="word-meaning lang-en">when a very long time had elapsed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फार मोठा काळ उलटल्यावर (सति सप्तमी)</p>
+  <div class="word-usage">
+    <div class="deva">सुमहति काले व्यतीते जनाः रामम् स्मरन्ति</div>
+    <div class="usage-iast">sumahati kāle vyatīte janāḥ rāmam smaranti</div>
+    <div class="usage-meaning lang-en">When a long time has passed, people remember Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फार काळ उलटल्यानंतर लोक रामाचे स्मरण करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हरिः</span>
+    <span class="word-iast">hariḥ</span>
+  </div>
+  <div><span class="word-grammar">हरि (m., i-stem), प्रथमा एकवचन (nominative singular)</span></div>
+  <div class="word-form">In this verse: हरिः — nominative singular</div>
+  <p class="word-meaning lang-en">Viṣṇu, the remover (of sin and sorrow)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णू</p>
+  <div class="word-usage">
+    <div class="deva">हरिः जगताम् रक्षकः अस्ति</div>
+    <div class="usage-iast">hariḥ jagatām rakṣakaḥ asti</div>
+    <div class="usage-meaning lang-en">Hari is the protector of the worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरी हा जगतांचा रक्षक आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कलया</span>
+    <span class="word-iast">kalayā</span>
+  </div>
+  <div><span class="word-grammar">कला (f., ā-stem), तृतीया एकवचन (instrumental singular) — हेतौ तृतीया</span></div>
+  <div class="word-form">In this verse: कलया — instrumental singular</div>
+  <p class="word-meaning lang-en">by (a) portion; as a partial manifestation</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अंशाने (*पुस्तकात ‘कौशल्याने (किंवा आपला अंश देऊन)’; ४.३१, ५.१६ प्रमाणे ‘अंशाने’ हाच अर्थ*)</p>
+  <div class="word-usage">
+    <div class="deva">हरिः कलया क्षत्रियेषु अवतीर्णः अभवत्</div>
+    <div class="usage-iast">hariḥ kalayā kṣatriyeṣu avatīrṇaḥ abhavat</div>
+    <div class="usage-meaning lang-en">Hari descended among the kṣatriyas by a portion of Himself.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीने आपल्या अंशाने क्षत्रियांमध्ये अवतार घेतला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभूत्</span>
+    <span class="word-iast">abhūt</span>
+  </div>
+  <div><span class="word-grammar">√भू (भ्वादि), लुङ् (aorist), प्रथमपुरुष एकवचन, परस्मैपद</span></div>
+  <div class="word-form">In this verse: अभूत् — aorist 3rd singular</div>
+  <p class="word-meaning lang-en">came into being; was, became</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाला (√भू, लुङ्)</p>
+  <div class="word-usage">
+    <div class="deva">रामः दाशरथिः अभूत्</div>
+    <div class="usage-iast">rāmaḥ dāśarathiḥ abhūt</div>
+    <div class="usage-meaning lang-en">Rāma became the son of Daśaratha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम हा दशरथाचा पुत्र झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दाशरथिः</span>
+    <span class="word-iast">dāśarathiḥ</span>
+  </div>
+  <div><span class="word-grammar">दाशरथि (m., i-stem; तद्धित from दशरथ, &#x27;son of Daśaratha&#x27;), प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: दाशरथिः — nominative singular</div>
+  <p class="word-meaning lang-en">son of Daśaratha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दशरथपुत्र</p>
+  <div class="word-usage">
+    <div class="deva">दाशरथिः रामः धर्मात्मा आसीत्</div>
+    <div class="usage-iast">dāśarathiḥ rāmaḥ dharmātmā āsīt</div>
+    <div class="usage-meaning lang-en">Rāma, son of Daśaratha, was righteous-souled.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दशरथपुत्र राम धर्मात्मा होता.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse opens the Rāmāvatāra as the next link in the chain of divine descents: Viṣṇu comes &#x27;by a portion&#x27; (kalayā), taking a kṣatriya birth suited to the age&#x27;s need. For the sthala, it sets the frame for Agastya&#x27;s narration, which will draw Dāśarathi Rāma toward the southern lands — the Konkan that Paraśurāma raised from the sea. Devotionally, it teaches that the Lord does not remain distant: after &#x27;a very long time,&#x27; He comes down again, in a form the world can meet.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक रामावताराची दैवी अवतरणांच्या मालिकेतील पुढची कडी म्हणून स्थापना करतो : विष्णू &#x27;अंशाने&#x27; (कलया) येतात, युगाच्या गरजेला साजेसा क्षत्रिय जन्म घेतात. स्थलमहात्म्यासाठी हे अगस्त्यांच्या कथनाची चौकट तयार करते, जे दशरथी रामाला दक्षिणेतील भूमीकडे — परशुरामाने समुद्रातून वर आणलेल्या कोंकणाकडे — वळवेल. भक्तिभावातून हा श्लोक शिकवतो की भगवंत दूर राहत नाहीत : &#x27;फार मोठा काळ&#x27; गेल्यानंतरही ते जगाला भेटता येईल अशा रूपात पुन्हा अवतरतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas reckon Rāma as Viṣṇu&#x27;s descent by kalā — a portion of His being — as in the Bhāgavata Purāṇa&#x27;s avatāra lists (1.3), where each descent answers a specific crisis of dharma. The poet places the Rāmāvatāra immediately after the Paraśurāma cycle (sargas 4–5): just as Bhārgava Rāma cleared the earth of oppressive kṣatriyas, Dāśarathi Rāma will clear it of the rākṣasas — the same divine energy, a new form.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे रामाला विष्णूचा कलावतार — त्याच्या सत्तेच्या अंशाने झालेला अवतार — म्हणून गणतात; भागवत पुराणाच्या अवतारसूचीत (१.३) प्रत्येक अवतार धर्माच्या विशिष्ट संकटाला उत्तर देतो. कवी रामावतार परशुरामचक्रानंतर (सर्ग ४–५) लगेच ठेवतो : भार्गव रामाने जशी पृथ्वी जुलमी क्षत्रियांपासून मोकळी केली, तशी दशरथी राम राक्षसांपासून मोकळी करेल — तीच दैवी शक्ती, नवे रूप.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>On kalayā: the print glosses it loosely as &#x27;skillfully (or by giving his portion)&#x27;; but as in 4.31 and 5.16, kalā here means aṃśa, &#x27;portion&#x27; — Viṣṇu descends by a portion of Himself. The whole sarga is in Anuṣṭubh. The verse fixes the poem&#x27;s chronology: the Rāmāvatāra follows the Paraśurāma age, and the meeting of the two Rāmas (vv. 3–4) hands the divine mission from one to the other.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;कलया&#x27;बद्दल : छापील प्रतीत त्याचा अर्थ ढोबळपणे &#x27;कौशल्याने (किंवा आपला अंश देऊन)&#x27; दिला आहे; परंतु ४.३१ व ५.१६ प्रमाणे येथे कला म्हणजे अंश — विष्णू आपल्या अंशाने अवतरतात. संपूर्ण सर्ग अनुष्टुभात आहे. हा श्लोक काव्याची कालक्रमरचना निश्चित करतो : रामावतार परशुरामयुगानंतर येतो, आणि दोन रामांची भेट (श्लोक ३–४) दैवी कार्य एकाकडून दुसऱ्याकडे सोपवते.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-05/verse-49.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 5 — Kṣetraracanāvarṇanaḥ 49</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

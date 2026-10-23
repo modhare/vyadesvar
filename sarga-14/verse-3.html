@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 3 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 3</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 3</span><span class="bl-mr lang-mr">श्लोक 3</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">लसत्त्रिनेत्रं शुभपञ्चवक्त्रं भुजङ्गभूषं लघुचित्रवेषम् ।<br>भस्माङ्गरागं क्रतुशिष्टभागं वाडेश्वरं नौमि जगन्निवासम् ।।३।।</div>
+  <div class="verse-iast">lasattrinetraṃ śubhapañcavaktraṃ bhujaṅgabhūṣaṃ laghucitraveṣam । bhasmāṅgarāgaṃ kratuśiṣṭabhāgaṃ vāḍeśvaraṃ naumi jagannivāsam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">लसत्-त्रि-नेत्रम् । शुभ-पञ्च-वक्त्रम् । भुजङ्ग-भूषम् । लघु-चित्र-वेषम् । भस्म-अङ्गरागम् । क्रतु-शिष्ट-भागम् । वाडेश्वरम् । नौमि । जगत्-निवासम् ।</div><div class="vig-iast">lasat-tri-netram । śubha-pañca-vaktram । bhujaṅga-bhūṣam । laghu-citra-veṣam । bhasma-aṅgarāgam । kratu-śiṣṭa-bhāgam । vāḍeśvaram । naumi । jagat-nivāsam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भस्म + अङ्गराग = भस्माङ्गराग (सवर्णदीर्घ) · जगत् + निवासम् = जगन्निवासम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(अहं) लसत्त्रिनेत्रं शुभपञ्चवक्त्रं भुजङ्गभूषं लघुचित्रवेषं भस्माङ्गरागं क्रतुशिष्टभागं जगन्निवासं वाडेश्वरं नौमि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>With three gleaming eyes, five auspicious faces, adorned with serpents, simply yet strikingly clad, smeared with ash as his unguent, who takes the remnant portion of the sacrifice — Vāḍeśvara, the abode of the world, I bow to in praise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>चकाकणारे तीन नेत्र असलेल्या, भुजङ्गाने भूषित झालेल्या, लघू परन्तु विचित्र वेष आणि भस्मरूपी अङ्गराग धारण करणाऱ्या शुभ अशा पाच मुखे असलेल्या (पंचमुखी) शंकराचे, यज्ञातील अवशिष्ट भाग ग्रहण करणाऱ्या जगन्निवास वाडेश्वराचे मी स्तवन करतो.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Textual decision (applied): लसत्रिनेत्रं (print) → लसत्त्रिनेत्रं (लसत् + त्रिनेत्रम्, &quot;with shining three eyes&quot;); same meter. Marathi: the book&#x27;s शुभ व विशाल corrected per Sanskrit शुभपञ्चवक्त्रं → &quot;शुभ अशा पाच मुखे असलेल्या (पंचमुखी) शंकराचे&quot;.</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लसत्-त्रि-नेत्रम्</span>
+    <span class="word-iast">lasat-tri-netram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; लसत् (शतृ, लस्) + त्रि + नेत्र</span></div>
+  <div class="word-form">In this verse: लसत्त्रिनेत्रम्</div>
+  <p class="word-meaning lang-en">with three shining eyes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चकाकणारे तीन नेत्र असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">लसत्त्रिनेत्रं शम्भुं ध्यायामि।</div>
+    <div class="usage-iast">lasattrinetraṃ śambhuṃ dhyāyāmi.</div>
+    <div class="usage-meaning lang-en">I meditate on Śambhu with three shining eyes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चकाकणारे तीन नेत्र असलेल्या शंभूचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुभ-पञ्च-वक्त्रम्</span>
+    <span class="word-iast">śubha-pañca-vaktram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: शुभपञ्चवक्त्रम्</div>
+  <p class="word-meaning lang-en">with five auspicious faces</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुभ अशी पाच मुखे असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">शुभपञ्चवक्त्रं देवं वन्दे।</div>
+    <div class="usage-iast">śubhapañcavaktraṃ devaṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute the god with five auspicious faces.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुभ अशी पाच मुखे असलेल्या देवाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भुजङ्ग-भूषम्</span>
+    <span class="word-iast">bhujaṅga-bhūṣam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: भुजङ्गभूषम्</div>
+  <p class="word-meaning lang-en">adorned with serpents</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्प हेच भूषण असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">भुजङ्गभूषं हरं नमामि।</div>
+    <div class="usage-iast">bhujaṅgabhūṣaṃ haraṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to Hara adorned with serpents.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्प हेच भूषण असलेल्या हराला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लघु-चित्र-वेषम्</span>
+    <span class="word-iast">laghu-citra-veṣam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: लघुचित्रवेषम्</div>
+  <p class="word-meaning lang-en">simply yet strikingly dressed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधा पण विचित्र वेष असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">लघुचित्रवेषं मुनिं पश्य।</div>
+    <div class="usage-iast">laghucitraveṣaṃ muniṃ paśya.</div>
+    <div class="usage-meaning lang-en">Look at the sage simply yet strikingly dressed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधा पण विचित्र वेष असलेल्या मुनीला पाहा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भस्म-अङ्ग-रागम्</span>
+    <span class="word-iast">bhasma-aṅga-rāgam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; भस्म + अङ्गराग</span></div>
+  <div class="word-form">In this verse: भस्माङ्गरागम्</div>
+  <p class="word-meaning lang-en">whose body-paint is ash</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भस्म हाच अंगलेप असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">भस्माङ्गरागं योगिनं वन्दे।</div>
+    <div class="usage-iast">bhasmāṅgarāgaṃ yoginaṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute the yogin whose body-paint is ash.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भस्म हाच अंगलेप असलेल्या योगियाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रतु-शिष्ट-भागम्</span>
+    <span class="word-iast">kratu-śiṣṭa-bhāgam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; क्रतु + शिष्ट + भाग</span></div>
+  <div class="word-form">In this verse: क्रतुशिष्टभागम्</div>
+  <p class="word-meaning lang-en">whose share is the remnant of the sacrifice</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञाचा उरलेला अंश हाच ज्याचा भाग आहे अशाला</p>
+  <div class="word-usage">
+    <div class="deva">क्रतुशिष्टभागं रुद्रं यजन्ति।</div>
+    <div class="usage-iast">kratuśiṣṭabhāgaṃ rudraṃ yajanti.</div>
+    <div class="usage-meaning lang-en">They worship Rudra, whose share is the remnant of the sacrifice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञाचा उरलेला अंश हाच ज्याचा भाग आहे अशा रुद्राची ते पूजा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश्वरम्</span>
+    <span class="word-iast">vāḍeśvaram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वाडेश्वरम्</div>
+  <p class="word-meaning lang-en">Vāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वराला</p>
+  <div class="word-usage">
+    <div class="deva">वाडेश्वरं नौमि जगन्निवासम्।</div>
+    <div class="usage-iast">vāḍeśvaraṃ naumi jagannivāsam.</div>
+    <div class="usage-meaning lang-en">I praise Vāḍeśvara, the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान असलेल्या वाडेश्वराला मी स्तवन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नौमि</span>
+    <span class="word-iast">naumi</span>
+  </div>
+  <div><span class="word-grammar">नु, लट्, उ.पु. एव.</span></div>
+  <div class="word-form">In this verse: नौमि</div>
+  <p class="word-meaning lang-en">I praise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी स्तवन करतो</p>
+  <div class="word-usage">
+    <div class="deva">अहं देवं नौमि।</div>
+    <div class="usage-iast">ahaṃ devaṃ naumi.</div>
+    <div class="usage-meaning lang-en">I praise the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी देवाचे स्तवन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगत्-निवासम्</span>
+    <span class="word-iast">jagat-nivāsam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: जगन्निवासम्</div>
+  <p class="word-meaning lang-en">the abode of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगन्निवासाला</p>
+  <div class="word-usage">
+    <div class="deva">जगन्निवासं भजामि।</div>
+    <div class="usage-iast">jagannivāsaṃ bhajāmi.</div>
+    <div class="usage-meaning lang-en">I worship the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाच्या निवासस्थानाची मी भक्ती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लसत्त्रिनेत्रम्</span>
+    <span class="word-iast">lasattrinetram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: लसत्त्रिनेत्रम्</div>
+  <p class="word-meaning lang-en">with three shining eyes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे तीन नेत्र चकाकत आहेत (लसत् = चमकणारे)</p>
+  <div class="word-usage">
+    <div class="deva">लसत्त्रिनेत्रं स्तौमि।</div>
+    <div class="usage-iast">lasattrinetraṃ staumi.</div>
+    <div class="usage-meaning lang-en">I praise him with three shining eyes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चकाकणारे तीन नेत्र असणाऱ्याची मी स्तुती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुभपञ्चवक्त्रम्</span>
+    <span class="word-iast">śubhapañcavaktram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: शुभपञ्चवक्त्रम्</div>
+  <p class="word-meaning lang-en">with five auspicious faces</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याला पाच शुभ मुखे (वक्त्र) आहेत (पंचमुखी)</p>
+  <div class="word-usage">
+    <div class="deva">शुभपञ्चवक्त्रं नमामि।</div>
+    <div class="usage-iast">śubhapañcavaktraṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to him with five auspicious faces.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाच शुभ मुखे असणाऱ्याला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भुजङ्गभूषम्</span>
+    <span class="word-iast">bhujaṅgabhūṣam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: भुजङ्गभूषम्</div>
+  <p class="word-meaning lang-en">adorned with serpents</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साप हेच ज्याचे भूषण</p>
+  <div class="word-usage">
+    <div class="deva">भुजङ्गभूषं स्मरामि।</div>
+    <div class="usage-iast">bhujaṅgabhūṣaṃ smarāmi.</div>
+    <div class="usage-meaning lang-en">I remember him adorned with serpents.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साप हेच भूषण असणाऱ्याचे मी स्मरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लघुचित्रवेषम्</span>
+    <span class="word-iast">laghucitraveṣam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: लघुचित्रवेषम्</div>
+  <p class="word-meaning lang-en">simply yet strikingly dressed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचा वेष साधा पण विलक्षण</p>
+  <div class="word-usage">
+    <div class="deva">लघुचित्रवेषं पश्यामि।</div>
+    <div class="usage-iast">laghucitraveṣaṃ paśyāmi.</div>
+    <div class="usage-meaning lang-en">I behold him simply yet strikingly dressed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधा पण विलक्षण वेष असणाऱ्याला मी पाहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भस्माङ्गरागम्</span>
+    <span class="word-iast">bhasmāṅgarāgam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: भस्माङ्गरागम्</div>
+  <p class="word-meaning lang-en">whose body-paint is ash</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भस्म हाच ज्याचा अंगराग (उटी)</p>
+  <div class="word-usage">
+    <div class="deva">भस्माङ्गरागं ध्यायामि।</div>
+    <div class="usage-iast">bhasmāṅgarāgaṃ dhyāyāmi.</div>
+    <div class="usage-meaning lang-en">I meditate on him whose body-paint is ash.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भस्म हाच अंगराग असणाऱ्याचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रतुशिष्टभागम्</span>
+    <span class="word-iast">kratuśiṣṭabhāgam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: क्रतुशिष्टभागम्</div>
+  <p class="word-meaning lang-en">whose share is the remnant of the sacrifice</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञाचा (क्रतु) उरलेला (शिष्ट) भाग हाच ज्याचा वाटा</p>
+  <div class="word-usage">
+    <div class="deva">क्रतुशिष्टभागं भजामि।</div>
+    <div class="usage-iast">kratuśiṣṭabhāgaṃ bhajāmi.</div>
+    <div class="usage-meaning lang-en">I worship him whose share is the remnant of the sacrifice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञाचा उरलेला भाग हाच ज्याचा वाटा आहे त्याची मी भक्ती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगन्निवासम्</span>
+    <span class="word-iast">jagannivāsam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: जगन्निवासम्</div>
+  <p class="word-meaning lang-en">the abode of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान</p>
+  <div class="word-usage">
+    <div class="deva">जगन्निवासं शरणं व्रज।</div>
+    <div class="usage-iast">jagannivāsaṃ śaraṇaṃ vraja.</div>
+    <div class="usage-meaning lang-en">Take refuge in the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाच्या निवासस्थानाचा आश्रय घे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The five-faced form gathers the five directions and the five cosmic functions into the one Lord of Guhagar — this is the cosmic Śiva, not a village deity shrunk to locality. Yet he wears ash and serpents, teaching the devotee that the highest holiness is simplicity itself. The remnant of the sacrifice crowns the sthala: at Vyadeshwar it is the leftovers of the yajña, not the first offerings, that are the Lord&#x27;s share — a quiet ethic of contentment.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाच मुखांचे रूप पाच दिशा आणि पाच विश्वकार्ये गुहागरच्या एकाच स्वाम्यात सामावून घेते — हा वैश्विक शिव आहे, केवळ गावदेवता नव्हे. तरीही तो भस्म आणि सर्प धारण करतो, म्हणजे परम पावित्र्य हेच साधेपण आहे, हे भक्ताला शिकवितो. यज्ञाचा उरलेला अंश हे स्थानाचे भूषण आहे: वाडेश्वर येथे यज्ञातील प्रथम अर्पणे नव्हे, तर उरलेलेच देवाचा वाटा आहे; ही संतोषाची शांत नीती आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The five-faced (pañcavaktra) form is the Āgamic form of Śiva — the five faces named in the Śaiva āgamas — and the serpents, ash and crescent are his standard iconography in the Purāṇas. The share that is the remnant of the sacrifice recalls the old Vedic-Purāṇic motif in which Rudra-Śiva, standing apart from the devas&#x27; sacrificial order, receives the remaining portion as his share, honoured through the tryambaka oblation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पंचवक्त्र (पाच मुखांचे) रूप हे शैव आगमांतील शिवाचे रूप आहे — शैव आगमांत नावाला आलेली पाच मुखे — आणि सर्प, भस्म व अर्धचंद्र ही पुराणांतील त्याची ठराविक मूर्तिलक्षणे आहेत. यज्ञाचा उरलेला अंश हाच वाटा ही जुनी वैदिक-पौराणिक कल्पना आठवते, ज्यात देवांच्या यज्ञक्रमापासून वेगळा उभा असलेला रुद्र-शिव उरलेला भाग आपला वाटा म्हणून घेतो आणि त्र्यंबक आहुतीने त्याचा सन्मान होतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>लसत् is the present participle (śatṛ) of लस्, to shine; क्रतु is the Vedic word for the sacrifice (yajña), and शिष्ट means what is left over. Upajāti metre continues, with the same refrain as verse 2.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>लसत् हे लस् (चमकणे) धातूचे वर्तमानकालवाचक कृदन्त (शतृ) आहे; क्रतु हा यज्ञाचा वैदिक शब्द आहे, आणि शिष्ट म्हणजे उरलेले. उपजाति छंद चालू आहे, आणि श्लोक २ प्रमाणेच ध्रुवपद आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 2</div></a><a class="next" href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 4</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

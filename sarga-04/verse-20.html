@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 20 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 20</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 20</span><span class="bl-mr lang-mr">श्लोक 20</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">विश्वोत्पत्तिस्थितिध्वंसहेतुं मायागुणैस्त्रिभिः ।<br>ब्रह्मविष्णुमहेशाख्यं मुख्यं मायापथात्परम् ।।२०।।</div>
+  <div class="verse-iast">viśvotpattisthitidhvaṃsahetuṃ māyāguṇaistribhiḥ । brahmaviṣṇumaheśākhyaṃ mukhyaṃ māyāpathātparam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">विश्व-उत्पत्ति-स्थिति-ध्वंस-हेतुम् । माया-गुणैः । त्रिभिः । ब्रह्म-विष्णु-महेश-आख्यम् । मुख्यम् । माया-पथात् । परम् ।</div><div class="vig-iast">viśva-utpatti-sthiti-dhvaṃsa-hetum । māyā-guṇaiḥ । tribhiḥ । brahma-viṣṇu-maheśa-ākhyam । mukhyam । māyā-pathāt । param ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विश्व + उत्पत्ति = विश्वोत्पत्ति (गुण) · गुणैः + त्रिभिः = गुणैस्त्रिभिः (विसर्ग → स्) · महेश + आख्यम् = महेशाख्यम् · पथात् + परम् = पथात्परम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">जगतामीशं, प्रकृतेः पुरुषात् परं, अव्यक्तम् एकम् अभयं अनारतं, विश्वोत्पत्तिस्थितिध्वंसहेतुं, त्रिभिः मायागुणैः ब्रह्मविष्णुमहेशाख्यं, मायापथात् परं मुख्यं यत् तत् ब्रह्म (तद्रूपं) त्वां जाने ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>…the cause of the universe&#x27;s creation, preservation and dissolution; which, through the three guṇas of māyā, bears the names Brahmā, Viṣṇu and Maheśa; the foremost, beyond the range of māyā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भुवनांवर सत्ता गाजवणारे, अव्यक्त, भयरहित प्रकृती व पुरुष यांच्याही पलीकडे असणारे, विश्वाची उत्पत्ती, स्थिती व विनाश यांचे कारण व मायेच्या तीन गुणांमुळे ब्रह्मदेव, विष्णू व महेश ही तीन नावे धारण करणारे, मायामार्गाच्या पलीकडे असणारे मुख्य व शाश्वत असे जे ब्रह्म तेच तू आहेस हे मी जाणतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विश्वोत्पत्तिस्थितिध्वंसहेतुम्</span>
+    <span class="word-iast">viśvotpattisthitidhvaṃsahetum</span>
+  </div>
+  <div><span class="word-grammar">accusative singular (masc.) of the ṣaṣṭhī-tatpuruṣa compound — विश्वस्य उत्पत्तेः स्थितेः ध्वंसस्य च हेतुः, &#x27;the cause of the world&#x27;s origination, maintenance and destruction&#x27;</span></div>
+  <div class="word-form">In this verse: विश्वोत्पत्तिस्थितिध्वंसहेतुम् (विश्व + उत्पत्ति + स्थिति + ध्वंस + हेतुम्)</div>
+  <p class="word-meaning lang-en">the cause of the universe&#x27;s creation, preservation and dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वाच्या उत्पत्ती-स्थिती-नाशाचे कारण</p>
+  <div class="word-usage">
+    <div class="deva">ईश्वरः विश्वोत्पत्तिस्थितिध्वंसहेतुः अस्ति</div>
+    <div class="usage-iast">īśvaraḥ viśvotpattisthitidhvaṃsahetuḥ asti</div>
+    <div class="usage-meaning lang-en">The Lord is the cause of the universe&#x27;s creation, preservation and dissolution.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वाच्या उत्पत्ती, स्थिती व लयाचे कारण ईश्वर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मायागुणैः त्रिभिः</span>
+    <span class="word-iast">māyāguṇaiḥ tribhiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plurals — मायागुण (masc. a-stem, ṣaṣṭhī-tatpuruṣa: मायायाः गुणाः) and the numeral त्रि</span></div>
+  <div class="word-form">In this verse: मायागुणैः त्रिभिः</div>
+  <p class="word-meaning lang-en">by the three guṇas of māyā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायेच्या तीन गुणांमुळे</p>
+  <div class="word-usage">
+    <div class="deva">मायागुणैः त्रिभिः जगत् बद्धम् अस्ति</div>
+    <div class="usage-iast">māyāguṇaiḥ tribhiḥ jagat baddham asti</div>
+    <div class="usage-meaning lang-en">The world is bound by the three guṇas of māyā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायेच्या तीन गुणांनी जग बद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्मविष्णुमहेशाख्यम्</span>
+    <span class="word-iast">brahmaviṣṇumaheśākhyam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular (neuter) of the bahuvrīhi — &#x27;whose name (आख्या) is Brahmā, Viṣṇu, Maheśa&#x27;</span></div>
+  <div class="word-form">In this verse: ब्रह्मविष्णुमहेशाख्यम् (ब्रह्म + विष्णु + महेश + आख्यम्)</div>
+  <p class="word-meaning lang-en">bearing the names Brahmā, Viṣṇu and Maheśa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्मा-विष्णु-महेश अशी नावे असलेले</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्मविष्णुमहेशाख्यम् देवत्रयम् वन्दे</div>
+    <div class="usage-iast">brahmaviṣṇumaheśākhyam devatrayam vande</div>
+    <div class="usage-meaning lang-en">I salute the triad named Brahmā, Viṣṇu and Maheśa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्मा, विष्णू व महेश या नावांच्या देवत्रयीला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मायापथात् परम्</span>
+    <span class="word-iast">māyāpathāt param</span>
+  </div>
+  <div><span class="word-grammar">मायापथात्: ablative singular of मायापथ (masc., ṣaṣṭhī-tatpuruṣa); परम्: accusative singular neuter of पर</span></div>
+  <div class="word-form">In this verse: मायापथात् परम्</div>
+  <p class="word-meaning lang-en">beyond the path/range of māyā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायेच्या मार्गापलीकडचे</p>
+  <div class="word-usage">
+    <div class="deva">ज्ञानम् मायापथात् परम् नयति</div>
+    <div class="usage-iast">jñānam māyāpathāt param nayati</div>
+    <div class="usage-meaning lang-en">Knowledge leads beyond the range of māyā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्ञान मायेच्या पलीकडे नेते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुख्यम्</span>
+    <span class="word-iast">mukhyam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter of मुख्य — मुख + यत्, &#x27;foremost&#x27;</span></div>
+  <div class="word-form">In this verse: मुख्यम्</div>
+  <p class="word-meaning lang-en">primary, the foremost cause</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रधान, आदिकारण</p>
+  <div class="word-usage">
+    <div class="deva">मुख्यम् कारणम् ब्रह्म एव अस्ति</div>
+    <div class="usage-iast">mukhyam kāraṇam brahma eva asti</div>
+    <div class="usage-meaning lang-en">The primary cause is Brahman alone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुख्य कारण ब्रह्मच आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The three gods are not three rivals but one light seen through three colours: rajas creates through Brahmā, sattva preserves through Viṣṇu, tamas dissolves through Rudra — yet beyond all three stands the one Brahman untouched by māyā. For the devotee this dissolves sectarian quarrel: to worship any true form is to worship the one; the differences belong to the guṇas, not to God.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीन देव हे तीन प्रतिस्पर्धी नसून तीन रंगांतून दिसणारा एकच प्रकाश आहेत — रजोगुण ब्रह्मदेवामार्फत सृष्टि करतो, सत्त्वगुण विष्णूमार्फत पालन करतो, तमोगुण रुद्रामार्फत संहार करतो — पण या तिघांपलीकडे मायेला स्पर्श न झालेले एकच ब्रह्म उभे आहे. भक्तासाठी यातून पंथभेद मिटतो — कोणत्याही सत्य रूपाची उपासना म्हणजे एकाचीच उपासना; भेद गुणांचे आहेत, ईश्वराचे नव्हेत.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The trimūrti doctrine as the Purāṇas teach it: the one supreme takes three offices according to the three guṇas — creation, preservation, dissolution — and is therefore named Brahmā, Viṣṇu and Maheśa. The verse insists, in the same breath, that the one who wears these names stands beyond māyā&#x27;s path: the offices belong to the play, the wearer to eternity. Spoken by Śiva of Paraśurāma, the teaching gently places the listener beyond all three offices.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे शिकवतात तो त्रिमूर्ती-सिद्धान्त — एकच परमतत्त्व तीन गुणांनुसार तीन कार्ये घेते — सृष्टि, स्थिती, संहार — आणि म्हणून ब्रह्मा, विष्णू, महेश ही नावे धारण करते. त्याच श्वासात श्लोक आग्रह धरतो की ही नावे धारण करणारा मायेच्या मार्गापलीकडे उभा आहे — कार्ये लीलेची, धारण करणारा नित्यतेचा. परशुरामाला उद्देशून शिवाने सांगितलेला हा उपदेश श्रोत्याला हळुवारपणे तिन्ही कार्यांच्या पलीकडे नेतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh; the second half of the sentence begun in 19 (the book&#x27;s Marathi merges both). मायापथात् परम् — &#x27;beyond the path of māyā&#x27; — is the verse&#x27;s hinge: with one phrase it keeps the trimūrti real as function while denying it as essence.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्; १९ मध्ये सुरू झालेल्या वाक्याचा उत्तरार्ध (पुस्तकाचे मराठी दोन्ही एकत्र देते). मायापथात् परम् — &#x27;मायेच्या मार्गापलीकडचे&#x27; — हा श्लोकाचा कणा आहे — एका वाक्प्रयोगात त्रिमूर्ती कार्य म्हणून सत्य ठेवतो, तत्त्व म्हणून नाकारतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 19</div></a><a class="next" href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 21</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

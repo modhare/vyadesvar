@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 23 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 23</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 23</span><span class="bl-mr lang-mr">श्लोक 23</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पुरे वने वौकसि कुंजके वा घोरेऽन्धकारे भुवि वाम्बरे वा ।।<br>शिलातले वा शयनोत्तमे वा विभोर्विराजः किमुतास्य भूम्नः ।।२३।।</div>
+  <div class="verse-iast">pure vane vaukasi kuṃjake vā ghore&#x27;ndhakāre bhuvi vāmbare vā । । śilātale vā śayanottame vā vibhorvirājaḥ kimutāsya bhūmnaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पुरे । वने । वा । ओकसि । कुञ्जके । वा । घोरे । अन्धकारे । भुवि । वा । अम्बरे । वा । शिलातले । वा । शयन-उत्तमे । वा । विभोः । विराजः । किम् । उत । अस्य । भूम्नः ।</div><div class="vig-iast">pure । vane । vā । okasi । kuñjake । vā । ghore । andhakāre । bhuvi । vā । ambare । vā । śilātale । vā । śayana-uttame । vā । vibhoḥ । virājaḥ । kim । uta । asya । bhūmnaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वा + ओकसि = वौकसि (वृद्धि) · घोरे + अन्धकारे = घोरेऽन्धकारे · वा + अम्बरे = वाम्बरे · शयन + उत्तमे = शयनोत्तमे · विभोः + विराजः = विभोर्विराजः · किम् + उत = किमुत · उत + अस्य = उतास्य</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">पुरे वने वा, ओकसि कुञ्जके वा, घोरे अन्धकारे, भुवि अम्बरे वा, शिलातले शयनोत्तमे वा (यथा) विभोः विराजः (स्थितिः समाना), किमुत अस्य भूम्नः ?</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In a city or in a forest, in a house or in a bower, in dread darkness, on earth or in the sky, on a slab of stone or on the finest of beds — the radiant presence of the All-Pervader may be found anywhere: how much more, then, is the truth of His boundlessness!</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एखाद्या शहरात किंवा अरण्यात, घरात किंवा कुंजात ज्याप्रमाणे हा प्रभू विराजमान असू शकतो त्याप्रमाणे एखाद्या गहन अंधाराच्या ठिकाणी, पृथ्वीवर किंवा आकाशात, किंवा शिलातलावर अथवा एखाद्या उत्तम बिछान्यावरही याचे अस्तित्व असू शकेल. या अनंताचा निवास कोठेही असायला काय हरकत आहे?</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ओकसि</span>
+    <span class="word-iast">okasi</span>
+  </div>
+  <div><span class="word-grammar">ओकस् (नपुंसकलिङ्गम्), सप्तमी विभक्तिः, एकवचनम्</span></div>
+  <div class="word-form">In this verse: वौकसि</div>
+  <p class="word-meaning lang-en">in the dwelling, at home</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घरात</p>
+  <div class="word-usage">
+    <div class="deva">पक्षी सायम् ओकसि निवसति।</div>
+    <div class="usage-iast">pakṣī sāyam okasi nivasati.</div>
+    <div class="usage-meaning lang-en">The bird dwells in its nest in the evening.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पक्षी संध्याकाळी घरट्यात राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कुञ्जके</span>
+    <span class="word-iast">kuñjake</span>
+  </div>
+  <div><span class="word-grammar">कुञ्जक (पुंलिङ्गम्), सप्तमी विभक्तिः, एकवचनम्</span></div>
+  <div class="word-form">In this verse: कुंजके</div>
+  <p class="word-meaning lang-en">in the bower, in the leafy arbour</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लताकुंजात</p>
+  <div class="word-usage">
+    <div class="deva">बालकाः कुञ्जके क्रीडन्ति।</div>
+    <div class="usage-iast">bālakāḥ kuñjake krīḍanti.</div>
+    <div class="usage-meaning lang-en">The children play in the arbour.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुले कुंजात खेळतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अम्बरे</span>
+    <span class="word-iast">ambare</span>
+  </div>
+  <div><span class="word-grammar">अम्बर (नपुंसकलिङ्गम्), सप्तमी विभक्तिः, एकवचनम्</span></div>
+  <div class="word-form">In this verse: वाम्बरे</div>
+  <p class="word-meaning lang-en">in the sky, in the firmament</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशात</p>
+  <div class="word-usage">
+    <div class="deva">तारकाः अम्बरे प्रकाशन्ते।</div>
+    <div class="usage-iast">tārakāḥ ambare prakāśante.</div>
+    <div class="usage-meaning lang-en">The stars shine in the sky.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तारे आकाशात चमकतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शयनोत्तमे</span>
+    <span class="word-iast">śayanottame</span>
+  </div>
+  <div><span class="word-grammar">शयनानाम् उत्तमम् (षष्ठीतत्पुरुषः); नपुंसकलिङ्गम्, सप्तमी एकवचनम्</span></div>
+  <div class="word-form">In this verse: शयनोत्तमे</div>
+  <p class="word-meaning lang-en">on the finest of beds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम शय्येवर</p>
+  <div class="word-usage">
+    <div class="deva">राजा शयनोत्तमे सुखं शेते।</div>
+    <div class="usage-iast">rājā śayanottame sukhaṃ śete.</div>
+    <div class="usage-meaning lang-en">The king sleeps happily on the finest bed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा उत्तम बिछान्यावर सुखाने झोपतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विभोः विराजः</span>
+    <span class="word-iast">vibhoḥ virājaḥ</span>
+  </div>
+  <div><span class="word-grammar">विभु (पुंलिङ्गम्), षष्ठी एकवचनम् + विराज् (वि + √राज् + क्विप्, पुंलिङ्गम्), प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: विभोर्विराजः</div>
+  <p class="word-meaning lang-en">the radiant manifestation of the All-Pervader</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वव्यापी प्रभूची (विराज् = तेजस्वी) स्थिती कोठेही असू शकते</p>
+  <div class="word-usage">
+    <div class="deva">विभोः विराजः सर्वत्र दृश्यते।</div>
+    <div class="usage-iast">vibhoḥ virājaḥ sarvatra dṛśyate.</div>
+    <div class="usage-meaning lang-en">The radiant presence of the All-Pervader is seen everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वव्यापी प्रभूचे तेज सर्वत्र दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किमुत अस्य भूम्नः</span>
+    <span class="word-iast">kimuta asya bhūmnaḥ</span>
+  </div>
+  <div><span class="word-grammar">किम् + उत (अव्यये) + भूमन् (पुंलिङ्गम्), षष्ठी एकवचनम्</span></div>
+  <div class="word-form">In this verse: किमुतास्य भूम्नः</div>
+  <p class="word-meaning lang-en">how much more, then, of this One&#x27;s boundlessness!</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मग या अनंत (भूमा) परमेश्वराची काय कथा?</p>
+  <div class="word-usage">
+    <div class="deva">यत्र सन्तः तत्र किमुत अस्य भूम्नः।</div>
+    <div class="usage-iast">yatra santaḥ tatra kimuta asya bhūmnaḥ.</div>
+    <div class="usage-meaning lang-en">Where the good are, how much more is His infinitude there!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जिथे सज्जन तिथे त्याच्या अनंततेचे काय वर्णन!</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The Vibhu is omnipresent — city or forest, home or bower, dread darkness, earth or sky, stone slab or softest bed. The verse warns against confining God to the temple even as the temple remains where He chose to be found — the paradox of bhakti held together with Vedāntic truth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विभू सर्वव्यापी आहे — शहर असो वा अरण्य, घर असो वा कुंज, गहन अंधार, पृथ्वी वा आकाश, शिलातल असो वा उत्तम बिछाना. देवाला मंदिरात बंदिस्त करू नये, हे या श्लोकाचे तत्त्वज्ञान; तरीही तोच देव बांबूच्या बेटात प्रकट झाला — वेदान्तसत्य आणि भक्ती यांचा हा संगमच या श्लोकाचे रहस्य आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>That the Lord dwells everywhere — in the pure and the lowly, in darkness and light — is the Vedāntic doctrine of the vibhu, the all-pervading Brahman, taught in the Upaniṣads and the Gītā&#x27;s thirteenth chapter. The verse states this truth to prepare the paradox: the omnipresent One still chooses one particular bamboo clump.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रभू सर्वत्र वास करतो — पवित्रात आणि हीनात, अंधारात आणि प्रकाशात — हे उपनिषदे आणि गीतेच्या तेराव्या अध्यायात सांगितलेले विभू म्हणजे सर्वव्यापी ब्रह्म, याचे वेदान्ततत्त्व आहे. सर्वव्यापी असूनही तो एकाच बांबूच्या बेटाची निवड करतो, हा विरोधाभास मांडण्यासाठी श्लोक हे सत्य प्रथम प्रस्थापित करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Upajāti. Note the double daṇḍa mid-verse in the source (after vā) — a printing quirk of the edition, not a metrical pause. Kimuta (kim + uta) = &#x27;how much more,&#x27; closing the omnipresence catalogue with rhetorical force.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: उपजाति. श्लोकाच्या मध्यात आलेला दुहेरी दंड (।।) ही छापील आवृत्तीची खूण आहे, वृत्ताचा विराम नाही. किमुत (किम् + उत) म्हणजे &#x27;मग तर कितीतरी अधिक&#x27; — सर्वव्यापकतेच्या यादीचा रोखठोक समारोप.</p></div></div>
+
+<div class="pagenav"><a href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 22</div></a><a class="next" href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 24</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

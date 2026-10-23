@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 49 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 49</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 49</span><span class="bl-mr lang-mr">श्लोक 49</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Udgatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">समये तदा कलयति स्म मखहरवरस्य सर्वतः ।।<br>चंडपवनपरिवर्तपरिभ्रमदर्जुनवज्रविडंबनं पुरी ।।४९।।</div>
+  <div class="verse-iast">samaye tadā kalayati sma makhaharavarasya sarvataḥ । । caṃḍapavanaparivartaparibhramadarjunavajraviḍaṃbanaṃ purī</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">समये । तदा । कलयति । स्म । मखहर-वरस्य । सर्वतः । चण्ड-पवन-परिवर्त-परिभ्रमत्-अर्जुन-वज्र-विडम्बनम् । पुरी ।</div><div class="vig-iast">samaye । tadā । kalayati । sma । makhahara-varasya । sarvataḥ । caṇḍa-pavana-parivarta-paribhramat-arjuna-vajra-viḍambanam । purī ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">परिभ्रमत् + अर्जुन = परिभ्रमदर्जुन (त् → द्) · विडम्बनम् + पुरी = विडम्बनं पुरी (अनुस्वार)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तदा समये मखहरवरस्य पुरी सर्वतः चण्डपवनपरिवर्तपरिभ्रमदर्जुनवज्रविडम्बनं कलयति स्म ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>At that time, the city of Ravana — foremost among the destroyers of sacrifice — began on every side to imitate Kartavirya Arjuna&#x27;s weapon as it whirled, caught in the swirl of a raging wind: the whole city spun round and round.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्यावेळी त्या यज्ञविनाशी राक्षसश्रेष्ठाची ती नगरी सोसाट्याच्या वाऱ्यातील भोवऱ्यात सापडून गरगर फिरणाऱ्या कार्तवीर्याच्या आयुधाचे अनुकरण चहूं बाजूंनी करू लागली होती.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मखहरवरस्य</span>
+    <span class="word-iast">makhaharavarasya</span>
+  </div>
+  <div><span class="word-grammar">shashthi-tatpurusha compound (makhaharanam varah), genitive singular masculine</span></div>
+  <div class="word-form">In this verse: मखहरवरस्य</div>
+  <p class="word-meaning lang-en">of the foremost among the destroyers of sacrifice (Ravana)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञविध्वंसक (राक्षसां)मधील श्रेष्ठाची (रावणाची)</p>
+  <div class="word-usage">
+    <div class="deva">मखहरवरस्य पुरी लङ्का इति प्रसिद्धा ।</div>
+    <div class="usage-iast">makhahavararasya puri lanka iti prasiddha ।</div>
+    <div class="usage-meaning lang-en">The city of the chief of the sacrifice-destroyers is famous as Lanka.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञविध्वंसकांमध्ये श्रेष्ठ असलेल्याची नगरी लंका म्हणून प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुरी</span>
+    <span class="word-iast">purī</span>
+  </div>
+  <div><span class="word-grammar">nominative singular feminine (ikarant)</span></div>
+  <div class="word-form">In this verse: पुरी</div>
+  <p class="word-meaning lang-en">city</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नगरी (लंका)</p>
+  <div class="word-usage">
+    <div class="deva">सा पुरी सुवर्णमयी आसीत् ।</div>
+    <div class="usage-iast">sa puri suvarnamayi asit ।</div>
+    <div class="usage-meaning lang-en">That city was made of gold.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती नगरी सुवर्णमय होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सर्वतः</span>
+    <span class="word-iast">sarvataḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; tas-pratyayanta from sarva</span></div>
+  <div class="word-form">In this verse: सर्वतः</div>
+  <p class="word-meaning lang-en">on all sides, all around</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोहोबाजूंनी</p>
+  <div class="word-usage">
+    <div class="deva">सर्वतः पर्वताः सन्ति ।</div>
+    <div class="usage-iast">sarvatah parvatah santi ।</div>
+    <div class="usage-meaning lang-en">There are mountains on all sides.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोहोबाजूंनी पर्वत आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चण्डपवनपरिवर्तपरिभ्रमत्</span>
+    <span class="word-iast">caṇḍapavanaparivartaparibhramat</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha compound ending in the present participle (shatri) of pari + √bhram; accusative singular neuter agreeing with vidambanam</span></div>
+  <div class="word-form">In this verse: चण्डपवनपरिवर्तपरिभ्रमदर्जुन</div>
+  <p class="word-meaning lang-en">whirling in the revolutions of the fierce wind</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोसाट्याच्या वाऱ्याच्या भोवऱ्याने गरगर फिरणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">वात्यायां शुष्कपत्राणि चण्डपवनपरिवर्तपरिभ्रमन्ति ।</div>
+    <div class="usage-iast">vatyayam shushkapatrani candapavanaparivartaparibhramanti ।</div>
+    <div class="usage-meaning lang-en">In a whirlwind the dry leaves whirl round in the revolutions of the fierce wind.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वावटळीत सुकलेली पाने सोसाट्याच्या वाऱ्याच्या भोवऱ्यात गरगर फिरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विडम्बनं कलयति स्म</span>
+    <span class="word-iast">viḍambanaṃ kalayati sma</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter (vidambana) + present 3rd singular of √kal with sma — past narrative (imperfect sense)</span></div>
+  <div class="word-form">In this verse: विडम्बनं कलयति स्म</div>
+  <p class="word-meaning lang-en">was imitating, was exhibiting the likeness (of)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(त्याचे) अनुकरण करत होती, त्यासारखी दिसत होती</p>
+  <div class="word-usage">
+    <div class="deva">नटः राजानं विडम्बनं कलयति स्म ।</div>
+    <div class="usage-iast">natah rajanam vidambanam kalayati sma ।</div>
+    <div class="usage-meaning lang-en">The actor was imitating the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नट राजाचे अनुकरण करत होता.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The poet&#x27;s whirlwind-image shows cosmic terror at Parashurama&#x27;s wrath: even Lanka, Ravana&#x27;s proud and supposedly immovable golden city, spins helplessly like a leaf in a storm. The simile of Kartavirya&#x27;s whirling vajra recalls the sarga&#x27;s earlier battle and dramatizes how adharma&#x27;s proudest strongholds tremble when dharma&#x27;s champion is enraged. For the devotee it is a sober reminder that no fortress of pride stands firm before divine justice.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाच्या क्रोधापुढील वैश्विक भय कवी वावटळीच्या प्रतिमेतून दाखवतो: अभिमानी आणि अचल मानली जाणारी रावणाची सुवर्णलंकासुद्धा वादळातील पानासारखी असहायपणे गरगर फिरते. कार्तवीर्याच्या गरगर फिरणाऱ्या वज्राची उपमा सर्गातील आधीच्या युद्धाची आठवण करून देते आणि धर्माच्या योद्ध्याचा क्रोध पेटला की अधर्माचे गर्विष्ठ किल्ले कसे थरथरतात हे नाट्यमय रीतीने दाखवते. ईश्वरी न्यायापुढे गर्वाचा कोणताही किल्ला टिकत नाही, ही भक्तासाठी गंभीर आठवण आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The image of a city spinning like a whirled weapon belongs to the epic stock of similes for terror and cosmic disturbance. Kartavirya Arjuna, the thousand-armed Haihaya king slain by Parashurama, is the standing reference-point of this sarga: his vajra, the emblem of his might, now serves only as the measure of Lanka&#x27;s helpless giddiness. In Puranic narrative Ravana&#x27;s Lanka is famously immovable — built by Vishvakarma and guarded by rakshasas — so its spinning marks the extraordinary pitch of the sage&#x27;s wrath.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गरगर फिरणाऱ्या आयुधासारखी फिरणारी नगरी ही भय आणि वैश्विक अस्वस्थता दाखवणाऱ्या महाकाव्यपरंपरागत उपमांपैकी एक आहे. परशुरामाने वध केलेला सहस्रबाहू हैहय राजा कार्तवीर्य अर्जुन हा या सर्गाचा स्थिर संदर्भबिंदू आहे: त्याच्या पराक्रमाचे प्रतीक असलेले त्याचे वज्र आता लंकेच्या असहाय भोवळेचे मापदंड म्हणूनच काम करते. पौराणिक कथनात रावणाची लंका प्रसिद्धच अचल आहे — विश्वकर्म्याने बांधलेली आणि राक्षसांनी राखलेली — म्हणून तिचे फिरणे मुनींच्या क्रोधाची असाधारण तीव्रता दाखवते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Udgata (the sarga&#x27;s metre from verse 49 through 55; it shifts to Vamshastha/Upajati at verse 56 and Malini at verse 59). The long compound candapavanaparivartaparibhramadarjunavajravidambanam carries the verse&#x27;s whole picture in a single breath — characteristic of the poet&#x27;s compact kavya style. Note the sandhi paribhramat + arjuna = paribhramadarjuna. Arjuna here is Kartavirya Arjuna, not the Pandava — the sarga&#x27;s narrative context makes the identification certain.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: उद्गता (श्लोक ४९ ते ५५ पर्यंत या सर्गाचे वृत्त; श्लोक ५६ पासून वंशस्थ/उपजातीकडे आणि श्लोक ५९ मध्ये मालिनीकडे वळते). चण्डपवनपरिवर्तपरिभ्रमदर्जुनवज्रविडम्बनम् हे दीर्घ समासपद श्लोकाचे संपूर्ण चित्र एकाच श्वासात मांडते — हे कवीच्या संक्षिप्त काव्यशैलीचे वैशिष्ट्य आहे. परिभ्रमत् + अर्जुन = परिभ्रमदर्जुन ही संधी लक्षात घ्या. इथला अर्जुन पांडव नसून कार्तवीर्य अर्जुन आहे — सर्गाचा कथासंदर्भ ही ओळख निश्चित करतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-48.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 48</div></a><a class="next" href="verse-50.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 50</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

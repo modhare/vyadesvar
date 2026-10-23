@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 44 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 44</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 44</span><span class="bl-mr lang-mr">श्लोक 44</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">नाचलच्चाल्यमानं च स्थिरं काञ्चनशैलवत् ।<br>ततोऽतिमात्रखननान्निर्गताः पवनाशनाः ।।४४।।</div>
+  <div class="verse-iast">nācalaccālyamānaṃ ca sthiraṃ kāñcanaśailavat । tato&#x27;timātrakhananānnirgatāḥ pavanāśanāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">न । अचलत् । चाल्यमानम् । च । स्थिरम् । काञ्चन-शैल-वत् । ततः । अति-मात्र-खननात् । निर्गताः । पवन-अशनाः ।</div><div class="vig-iast">na । acalat । cālyamānam । ca । sthiram । kāñcana-śaila-vat । tataḥ । ati-mātra-khananāt । nirgatāḥ । pavana-aśanāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">न + अचलत् = नाचलत् · अचलत् + च = अचलच्च (त् + च → च्च) · ततः + अति = ततोऽति · खननात् + निर्गताः = खननान्निर्गताः (अनुनासिक) · पवन + अशनाः = पवनाशनाः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(तत् लिङ्गं) चाल्यमानं च न अचलत्, काञ्चनशैलवत् स्थिरम् (आसीत्); ततः अतिमात्रखननात् पवनाशनाः निर्गताः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Though they tried to move it, it did not budge — steady as the golden mountain (Meru). Then, from the excessive digging, serpents came forth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हलवले जात असतानाही सुवर्णपर्वतासारखे स्थिर असलेले ते लिङ्ग हलले नाही. आणखी व अतिशय खणल्यानंतर तेथून नाग बाहेर आले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चाल्यमानम्</span>
+    <span class="word-iast">cālyamānam</span>
+  </div>
+  <div><span class="word-grammar">√चल् णिजन्ताचे कर्मणि शानच् प्रत्यय ; नपुं. प्र./द्वि. ए.व.</span></div>
+  <div class="word-form">In this verse: शानच् कृदन्त — &#x27;हलविले जात असलेले&#x27;</div>
+  <p class="word-meaning lang-en">being moved, being shaken</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हलवले जात असतानाही (णिजन्त कर्मणि शानच्)</p>
+  <div class="word-usage">
+    <div class="deva">वायुना चाल्यमानम् पत्रम् पतति ।</div>
+    <div class="usage-iast">vāyunā cālyamānam patram patati.</div>
+    <div class="usage-meaning lang-en">The leaf, being shaken by the wind, falls.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाऱ्याने हलवले जाणारे पान पडते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काञ्चनशैलवत्</span>
+    <span class="word-iast">kāñcanaśailavat</span>
+  </div>
+  <div><span class="word-grammar">काञ्चनशैल + वति प्रत्यय (सादृश्यार्थ) ; अव्यय</span></div>
+  <div class="word-form">In this verse: वतिप्रत्ययान्त अव्यय — &#x27;…प्रमाणे&#x27;</div>
+  <p class="word-meaning lang-en">like the golden mountain (Meru)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुवर्णपर्वतासारखे (मेरूसारखे)</p>
+  <div class="word-usage">
+    <div class="deva">स काञ्चनशैलवत् स्थिरः अतिष्ठत् ।</div>
+    <div class="usage-iast">sa kāñcanaśailavat sthiraḥ atiṣṭhat.</div>
+    <div class="usage-meaning lang-en">He stood firm like the golden mountain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सुवर्णपर्वतासारखा स्थिर उभा राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतिमात्रखननात्</span>
+    <span class="word-iast">atimātrakhananāt</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुष : अतिमात्र + खनन (√खन् + ल्युट्) ; नपुं. पं. ए.व.</span></div>
+  <div class="word-form">In this verse: खनन चे पंचमी — &#x27;खणल्यामुळे&#x27;</div>
+  <p class="word-meaning lang-en">from excessive digging</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फार खोल खणल्यामुळे</p>
+  <div class="word-usage">
+    <div class="deva">अतिमात्रखननात् पर्वतः अपतत् ।</div>
+    <div class="usage-iast">atimātrakhananāt parvataḥ apatat.</div>
+    <div class="usage-meaning lang-en">From excessive digging the hill caved in.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फार खोल खणल्यामुळे डोंगर कोसळला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पवनाशनाः</span>
+    <span class="word-iast">pavanāśanāḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि : पवनः अशनम् येषाम् ; पुं. प्र. ब.व. (सर्पपर्याय)</span></div>
+  <div class="word-form">In this verse: पवनाशन चे प्रथमा बहुवचन</div>
+  <p class="word-meaning lang-en">serpents (lit. &#x27;wind-eaters&#x27;)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साप (वायूवर जगणारे)</p>
+  <div class="word-usage">
+    <div class="deva">बिलात् पवनाशनाः ससृपुः ।</div>
+    <div class="usage-iast">bilāt pavanāśanāḥ sasṛpuḥ.</div>
+    <div class="usage-meaning lang-en">The serpents crept out of the hole.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बिळातून साप बाहेर सरपटले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निर्गताः</span>
+    <span class="word-iast">nirgatāḥ</span>
+  </div>
+  <div><span class="word-grammar">निर् + √गम् + क्त ; पुं. प्र. ब.व.</span></div>
+  <div class="word-form">In this verse: क्तान्त विशेषण — &#x27;बाहेर पडलेले&#x27;</div>
+  <p class="word-meaning lang-en">emerged, came out</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाहेर पडले</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामात् निर्गताः जनाः वनम् ययुः ।</div>
+    <div class="usage-iast">grāmāt nirgatāḥ janāḥ vanam yayuḥ.</div>
+    <div class="usage-meaning lang-en">The people who had left the village went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावातून बाहेर पडलेले लोक वनात गेले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The liṅga&#x27;s immovability is its theology in stone: Śiva as the axis that cannot be shifted by human force — &#x27;steady as Meru.&#x27; The diggers learn that the sacred is not to be moved but to be worshipped where it stands. Then the nāgas emerge — guardians of the underworld&#x27;s wealth, the sign in sthala lore that one has dug too deep, and that the earth protects its own.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>लिंगाची अचलता हेच त्याचे शिलारूप तत्त्वज्ञान आहे — मानवी बळाने हलविता न येणारा शिव हा अक्ष आहे : &#x27;मेरूप्रमाणे स्थिर&#x27;. खणणाऱ्यांना कळते की पवित्र वस्तू हलवायची नसते, तर जिथे आहे तिथेच तिची पूजा करायची असते. मग नाग बाहेर येतात — पाताळधनाचे रक्षक; स्थलकथांत हे चिन्ह असते की आता फार खोल खणले गेले आहे, आणि पृथ्वी आपल्याचेच रक्षण करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Nāgas are Śiva&#x27;s own companions — Vāsuki rests on His neck — and the appointed guardians of hidden treasure and the nether world. In sthala accounts their emergence is a boundary-mark: the earth warns that the diggers have reached the limit of what may be uncovered, and the wise stop. The liṅga &#x27;steady as the golden mountain&#x27; needs no shifting; Meru, the axis of the world, is the stock image of what cannot be moved.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नाग हे शिवाचेच सहचर आहेत — वासुकी त्यांच्या गळ्यात विसावतो — आणि गुप्त धनाचे व पाताळाचे नेमलेले रक्षक आहेत. स्थलवृत्तांतांत त्यांचे बाहेर येणे ही सीमारेषा असते : खणणारे उघडकीस आणण्यायोग्याच्या मर्यादेपर्यंत पोचले आहेत असा पृथ्वीचा इशारा असतो, आणि शहाणे थांबतात. &#x27;सुवर्णपर्वतासारखे स्थिर&#x27; असलेले लिंग हलविण्याची गरजच नसते; जगाचा अक्ष असलेला मेरु ही हलविता न येणाऱ्या गोष्टीचे ठरलेले उदाहरण आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Kāñcanaśaila, &#x27;the golden mountain,&#x27; is Meru, the world-axis. Pavanāśana (&#x27;wind-eater&#x27;) is a standard poetic name for a serpent. Metre: Anuṣṭubh. The verse pivots the episode: the liṅga cannot be moved, and the diggers&#x27; persistence is answered not by the stone but by its guardians.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>काञ्चनशैल — &#x27;सुवर्णपर्वत&#x27; — म्हणजे जगाचा अक्ष असलेला मेरु. पवनाशन (&#x27;वायू खाणारा&#x27;) हे सापाचे ठरलेले काव्यात्मक नाव आहे. वृत्त : अनुष्टुभ्. हा श्लोक प्रसंगाला वळण देतो : लिंग हलविता येत नाही, आणि खणणाऱ्यांच्या चिकाटीला उत्तर दगडाकडून नव्हे, तर त्याच्या रक्षकांकडून मिळते.</p></div></div>
+
+<div class="pagenav"><a href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 43</div></a><a class="next" href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 45</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

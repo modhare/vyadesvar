@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">हरेर्महादेव इति प्रसिद्धः सुतः सतामग्रसरो वदान्यः ।<br>इयाज यः कोटिदलैस्तुलस्या विष्णुं शिवं रुद्रजपाध्वरैश्च ।।२५।।</div>
+  <div class="verse-iast">harermahādeva iti prasiddhaḥ sutaḥ satāmagrasaro vadānyaḥ । iyāja yaḥ koṭidalaistulasyā viṣṇuṃ śivaṃ rudrajapādhvaraiśca</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">हरेः । महादेवः । इति । प्रसिद्धः । सुतः । सताम् । अग्रसरः । वदान्यः । इयाज । यः । कोटि-दलैः । तुलस्याः । विष्णुम् । शिवम् । रुद्र-जप-अध्वरैः । च ।</div><div class="vig-iast">hareḥ । mahādevaḥ । iti । prasiddhaḥ । sutaḥ । satām । agrasaraḥ । vadānyaḥ । iyāja । yaḥ । koṭi-dalaiḥ । tulasyāḥ । viṣṇum । śivam । rudra-japa-adhvaraiḥ । ca ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">हरेः + महादेवः = हरेर्महादेवः (विसर्ग → र्) · महादेवः + इति = महादेव इति (विसर्गलोप) · सताम् + अग्रसरः = सतामग्रसरः · अग्रसरः + वदान्यः = अग्रसरो वदान्यः · कोटिदलैः + तुलस्याः = कोटिदलैस्तुलस्याः (विसर्ग → स्) · जप + अध्वरैः = जपाध्वरैः · अध्वरैः + च = अध्वरैश्च</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हरेः महादेवः इति प्रसिद्धः सताम् अग्रसरः वदान्यः सुतः (अभूत्), यः तुलस्याः कोटिदलैः विष्णुं रुद्रजपाध्वरैः च शिवम् इयाज ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>From Hari came a son renowned as Mahādeva — a foremost among the virtuous, generous-hearted. He worshipped Viṣṇu with crores of tulasī leaves, and Śiva with sacrificial recitations of the Rudra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या हरीपासून महादेव नावाचा सज्जनांचा अग्रणी व वदान्य (दानशूर) असा पुत्र जन्माला आला. त्याने कोटी तुलसीदलांनी विष्णूची व रुद्रजपरूपी यज्ञांनी शंकराची उपासना केली.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Textual decision (applied): रूद्रजपरूपी (print, Marathi) → रुद्रजपरूपी.</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हरेः</span>
+    <span class="word-iast">hareḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: हरेर्</div>
+  <p class="word-meaning lang-en">of Hari</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीचा</p>
+  <div class="word-usage">
+    <div class="deva">हरेः पुत्रः महादेवः आसीत् ।</div>
+    <div class="usage-iast">hareḥ putraḥ mahādevaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">Mahādeva was the son of Hari.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महादेव हा हरीचा पुत्र होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महादेवः</span>
+    <span class="word-iast">mahādevaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: महादेव</div>
+  <p class="word-meaning lang-en">Mahādeva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महादेव</p>
+  <div class="word-usage">
+    <div class="deva">महादेवः सताम् अग्रसरः आसीत् ।</div>
+    <div class="usage-iast">mahādevaḥ satām agrasaraḥ āsīt.</div>
+    <div class="usage-meaning lang-en">Mahādeva was the foremost among the virtuous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महादेव हा सज्जनांत अग्रणी होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इति</span>
+    <span class="word-iast">iti</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: इति</div>
+  <p class="word-meaning lang-en">thus</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असा</p>
+  <div class="word-usage">
+    <div class="deva">राम इति नाम प्रसिद्धम् अस्ति ।</div>
+    <div class="usage-iast">rāma iti nāma prasiddham asti.</div>
+    <div class="usage-meaning lang-en">The name &#x27;Rāma&#x27; is famous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;राम&#x27; हे नाव प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रसिद्धः</span>
+    <span class="word-iast">prasiddhaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: प्रसिद्धः</div>
+  <p class="word-meaning lang-en">known</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्ध</p>
+  <div class="word-usage">
+    <div class="deva">सः कविः प्रसिद्धः अभवत् ।</div>
+    <div class="usage-iast">saḥ kaviḥ prasiddhaḥ abhavat.</div>
+    <div class="usage-meaning lang-en">He became a famous poet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो प्रसिद्ध कवी झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुतः</span>
+    <span class="word-iast">sutaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सुतः</div>
+  <p class="word-meaning lang-en">son</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुत्र</p>
+  <div class="word-usage">
+    <div class="deva">राज्ञः सुतः धर्मज्ञः आसीत् ।</div>
+    <div class="usage-iast">rājñaḥ sutaḥ dharmajñaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">The king&#x27;s son was learned in dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाचा पुत्र धर्मज्ञ होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सताम्</span>
+    <span class="word-iast">satām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.</span></div>
+  <div class="word-form">In this verse: सतामग्रसरः</div>
+  <p class="word-meaning lang-en">of the good</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांचा</p>
+  <div class="word-usage">
+    <div class="deva">सतां सङ्गतिः श्रेयस्करी ।</div>
+    <div class="usage-iast">satāṃ saṅgatiḥ śreyaskarī.</div>
+    <div class="usage-meaning lang-en">The company of the good brings welfare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांची संगत कल्याणकारक असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अग्रसरः</span>
+    <span class="word-iast">agrasaraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अग्रसरो</div>
+  <p class="word-meaning lang-en">foremost</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्रणी</p>
+  <div class="word-usage">
+    <div class="deva">अग्रसरः पन्थानं दर्शयति ।</div>
+    <div class="usage-iast">agrasaraḥ panthānaṃ darśayati.</div>
+    <div class="usage-meaning lang-en">The leader shows the way.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्रणी मार्ग दाखवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वदान्यः</span>
+    <span class="word-iast">vadānyaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वदान्यः</div>
+  <p class="word-meaning lang-en">generous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानशूर</p>
+  <div class="word-usage">
+    <div class="deva">वदान्यः जनः दानं ददाति ।</div>
+    <div class="usage-iast">vadānyaḥ janaḥ dānaṃ dadāti.</div>
+    <div class="usage-meaning lang-en">A generous man gives gifts.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानशूर माणूस दान देतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इयाज</span>
+    <span class="word-iast">iyāja</span>
+  </div>
+  <div><span class="word-grammar">यज्, लिट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: इयाज</div>
+  <p class="word-meaning lang-en">worshipped</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपासना केली</p>
+  <div class="word-usage">
+    <div class="deva">यजमानः देवं हविषा इयाज ।</div>
+    <div class="usage-iast">yajamānaḥ devaṃ haviṣā iyāja.</div>
+    <div class="usage-meaning lang-en">The patron worshipped the god with oblations.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यजमानाने देवाची हविष्याने पूजा केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यः</span>
+    <span class="word-iast">yaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यः</div>
+  <p class="word-meaning lang-en">who</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याने</p>
+  <div class="word-usage">
+    <div class="deva">यः भक्तः सः सुखी भवति ।</div>
+    <div class="usage-iast">yaḥ bhaktaḥ saḥ sukhī bhavati.</div>
+    <div class="usage-meaning lang-en">He who is a devotee becomes happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो भक्त असतो तो सुखी होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कोटि-दलैः</span>
+    <span class="word-iast">koṭi-dalaiḥ</span>
+  </div>
+  <div><span class="word-grammar">नपुं. तृ. बव.</span></div>
+  <div class="word-form">In this verse: कोटिदलैस्</div>
+  <p class="word-meaning lang-en">with a crore of leaves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोटी दलांनी (पानांनी)</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः कोटिदलैः विष्णुम् अर्चयति ।</div>
+    <div class="usage-iast">bhaktaḥ koṭidalaiḥ viṣṇum arcayati.</div>
+    <div class="usage-meaning lang-en">The devotee worships Viṣṇu with a crore of leaves.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त कोटी पानांनी विष्णूची पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तुलस्याः</span>
+    <span class="word-iast">tulasyāḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. ष. एव.</span></div>
+  <div class="word-form">In this verse: तुलस्याः</div>
+  <p class="word-meaning lang-en">of tulasī</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुळशीच्या</p>
+  <div class="word-usage">
+    <div class="deva">तुलस्याः दलानि विष्णवे रोचन्ते ।</div>
+    <div class="usage-iast">tulasyāḥ dalāni viṣṇave rocante.</div>
+    <div class="usage-meaning lang-en">The leaves of tulasī please Viṣṇu.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुळशीची पाने विष्णूला आवडतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विष्णुम्</span>
+    <span class="word-iast">viṣṇum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: विष्णुम्</div>
+  <p class="word-meaning lang-en">Viṣṇu</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णूची</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः विष्णुम् उपास्ते ।</div>
+    <div class="usage-iast">bhaktaḥ viṣṇum upāste.</div>
+    <div class="usage-meaning lang-en">The devotee worships Viṣṇu.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त विष्णूची उपासना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिवम्</span>
+    <span class="word-iast">śivam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: शिवम्</div>
+  <p class="word-meaning lang-en">Śiva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवाची</p>
+  <div class="word-usage">
+    <div class="deva">योगी शिवम् ध्यायति ।</div>
+    <div class="usage-iast">yogī śivam dhyāyati.</div>
+    <div class="usage-meaning lang-en">The yogi meditates on Śiva.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योगी शिवाचे ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुद्र-जप-अध्वरैः</span>
+    <span class="word-iast">rudra-japa-adhvaraiḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. बव.</span></div>
+  <div class="word-form">In this verse: रुद्रजपाध्वरैश्च</div>
+  <p class="word-meaning lang-en">with sacrifices of Rudra-japa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुद्रजपरूपी यज्ञांनी</p>
+  <div class="word-usage">
+    <div class="deva">ब्राह्मणः रुद्रजपाध्वरैः शिवम् इयाज ।</div>
+    <div class="usage-iast">brāhmaṇaḥ rudrajapādhvaraiḥ śivam iyāja.</div>
+    <div class="usage-meaning lang-en">The brahmin worshipped Śiva with sacrifices of Rudra-recitation.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्राह्मणाने रुद्रजपरूपी यज्ञांनी शिवाची उपासना केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">रामः च कृष्णः च आगतौ ।</div>
+    <div class="usage-iast">rāmaḥ ca kṛṣṇaḥ ca āgatau.</div>
+    <div class="usage-meaning lang-en">Rāma and Kṛṣṇa both came.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम आणि कृष्ण दोघे आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महादेवः इति प्रसिद्धः</span>
+    <span class="word-iast">mahādevaḥ iti prasiddhaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: महादेव इति प्रसिद्धः</div>
+  <p class="word-meaning lang-en">known by the name Mahādeva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महादेव या नावाने प्रसिद्ध</p>
+  <div class="word-usage">
+    <div class="deva">महादेव इति प्रसिद्धः सुतः आसीत् ।</div>
+    <div class="usage-iast">mahādeva iti prasiddhaḥ sutaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">There was a son famed by the name Mahādeva.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महादेव या नावाने प्रसिद्ध असा एक पुत्र होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सताम् अग्रसरः</span>
+    <span class="word-iast">satām agrasaraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: सतामग्रसरः</div>
+  <p class="word-meaning lang-en">the foremost among the good</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांत अग्रणी</p>
+  <div class="word-usage">
+    <div class="deva">सः सताम् अग्रसरः अभवत् ।</div>
+    <div class="usage-iast">saḥ satām agrasaraḥ abhavat.</div>
+    <div class="usage-meaning lang-en">He became the foremost among the good.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सज्जनांत अग्रणी झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कोटिदलैः तुलस्याः</span>
+    <span class="word-iast">koṭidalaiḥ tulasyāḥ</span>
+  </div>
+  <div><span class="word-grammar">तृ. बव. / ष. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: कोटिदलैस्तुलस्याः</div>
+  <p class="word-meaning lang-en">with a crore of tulasī leaves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुळशीच्या कोटी पानांनी (कोटितुळसीअर्चन)</p>
+  <div class="word-usage">
+    <div class="deva">सः कोटिदलैः तुलस्याः विष्णुम् अर्चयत् ।</div>
+    <div class="usage-iast">saḥ koṭidalaiḥ tulasyāḥ viṣṇum arcayat.</div>
+    <div class="usage-meaning lang-en">He worshipped Viṣṇu with a crore of tulasī leaves.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने तुळशीच्या कोटी पानांनी विष्णूची पूजा केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुद्रजपाध्वरैः</span>
+    <span class="word-iast">rudrajapādhvaraiḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. बव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: रुद्रजपाध्वरैश्च</div>
+  <p class="word-meaning lang-en">with sacrifices in the form of Rudra-japa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुद्रजपरूपी यज्ञांनी (अध्वर = यज्ञ)</p>
+  <div class="word-usage">
+    <div class="deva">सः रुद्रजपाध्वरैः शिवम् इयाज ।</div>
+    <div class="usage-iast">saḥ rudrajapādhvaraiḥ śivam iyāja.</div>
+    <div class="usage-meaning lang-en">He worshipped Śiva with Rudra-japa sacrifices.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने रुद्रजपरूपी यज्ञांनी शिवाची उपासना केली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Mahādeva is the portrait of the ideal householder-devotee: foremost among the good (satām agrasaraḥ), generous (vadānyaḥ), and undivided in devotion — Viṣṇu honoured with a crore of tulasī leaves, Śiva with the sacrificial japa of the Rudra. The verse models the non-sectarian bhakti that runs through the whole kāvya: the same heart may serve Hari and Hara, each in the manner proper to him, and charity and worship are the twin fruits of a virtuous life.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महादेव हे आदर्श गृहस्थभक्ताचे चित्र आहे — सज्जनांत अग्रणी (सतामग्रसरः), उदारचित्त (वदान्यः), आणि भक्तीत अविभाजित. विष्णूची कोटी तुळशीदलांनी पूजा, शंकराची रुद्रजपरूपी यज्ञांनी उपासना. हा श्लोक संपूर्ण काव्यातून जाणाऱ्या असांप्रदायिक भक्तीचा आदर्श मांडतो — एकच हृदय हरीची आणि हराचीही, प्रत्येकास योग्य अशा पद्धतीने सेवा करू शकते; आणि दान व उपासना ही सदाचारी जीवनाची दोन फळे आहेत.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Purāṇic devotion assigns each deity his proper worship: tulasī leaves are Viṣṇu&#x27;s dearest offering — no Vaiṣṇava archana is complete without them — while the Rudra-mantra (the Śatarudrīya) is Śiva&#x27;s own great recitation, and its japa is itself counted a sacrifice (japa-yajña). That one devotee performs both shows the old Hari-Hara concord: the two gods are different faces of one worship, not rival sects. The &#x27;crore&#x27; of leaves marks the scale of a vow, not a number to be audited — such round figures in māhātmyas signal completeness of resolve.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणपरंपरेत प्रत्येक देवतेस तिची योग्य पूजा ठरलेली आहे — तुळशीची पाने हा विष्णूचा सर्वांत प्रिय नैवेद्य (त्याशिवाय वैष्णव अर्चना पूर्ण होत नाही), तर रुद्रमंत्र (शतरुद्रीय) हा शंकराचा स्वतःचा महामंत्र असून त्याचा जप हाच एक यज्ञ (जपयज्ञ) मानला जातो. एकाच भक्ताने दोन्ही करणे हे हरिहर-ऐक्याचे जुने तत्त्व दाखवते — दोन्ही देवता एकाच उपासनेची दोन रूपे आहेत, विरोधी संप्रदाय नाहीत. &#x27;कोटी&#x27; हा आकडा शब्दशः मोजायचा नसून माहात्म्यग्रंथांतील संकल्पपूर्णतेचे चिन्ह आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Genealogy: Hari → his son Mahādeva (vv. 25–26) → Mahādeva&#x27;s son Viśvanātha the poet (v. 27) — the Kauśika-gotra Pitre family of Guhagrāma, per the book&#x27;s preface. Note &#x27;iyāja&#x27; is the perfect (liṭ, 3rd person singular) of √yaj, &#x27;he worshipped&#x27;. The family&#x27;s tulasī-archana to Viṣṇu here quietly prepares the poem&#x27;s final gesture: at 14.28 the finished kāvya itself is offered &#x27;at the feet of Cakrapāṇi (Viṣṇu)&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वंशावळ : हरी → त्याचा पुत्र महादेव (श्लोक २५–२६) → महादेवाचा पुत्र कवी विश्वनाथ (श्लोक २७) — पुस्तकाच्या प्रस्तावनेनुसार गुहागरचे कौशिकगोत्री पित्रे घराणे. &#x27;इयाज&#x27; हे √यज् धातूचे पूर्णभूतकाळी (लिट्, प्रथमपुरुषी एकवचन) रूप आहे. विष्णूला केलेली ही तुळशीअर्चना काव्याच्या शेवटच्या कृतीची पूर्वतयारीच आहे — १४.२८ मध्ये पूर्ण झालेले काव्य स्वतः &#x27;चक्रपाणी विष्णूच्या चरणी&#x27; अर्पण केले जाते.</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

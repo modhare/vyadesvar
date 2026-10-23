@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 48 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 48</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 48</span><span class="bl-mr lang-mr">श्लोक 48</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ये तत्र निहता वीरा विनिखाता रणक्षितौ ।<br>तेऽमी ग्रामस्य मध्यस्था दृश्यन्तेऽश्मसु चित्रिताः ।।४८।।</div>
+  <div class="verse-iast">ye tatra nihatā vīrā vinikhātā raṇakṣitau । te&#x27;mī grāmasya madhyasthā dṛśyante&#x27;śmasu citritāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ये तत्र निहताः वीराः विनिखाताः रण-क्षितौ । ते अमी ग्रामस्य मध्य-स्थाः दृश्यन्ते अश्मसु चित्रिताः ।</div><div class="vig-iast">ye tatra nihatāḥ vīrāḥ vinikhātāḥ raṇa-kṣitau । te amī grāmasya madhya-sthāḥ dṛśyante aśmasu citritāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वीराः + विनिखाताः = वीरा विनिखाताः · ते + अमी = तेऽमी · मध्यस्थाः + दृश्यन्ते = मध्यस्था दृश्यन्ते · दृश्यन्ते + अश्मसु = दृश्यन्तेऽश्मसु</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">ये वीराः तत्र निहताः रणक्षितौ विनिखाताः, ते अमी अश्मसु चित्रिताः ग्रामस्य मध्यस्थाः दृश्यन्ते ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Those heroes who were slain there and buried in the battlefield&#x27;s soil are seen standing carved on stones in the village&#x27;s midst.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जे जे वीरपुरुष येथे रणभूमीवर मारले जाऊन समाधिस्थ झाले त्यांच्या या प्रतिमा गावाच्या मध्यभागी दगडांवर कोरलेल्या आहेत (वीरगळ).</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> 13.48: निहंता → निहताः (&quot;slain&quot;; also repairs the heavy 5th syllable).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ये</span>
+    <span class="word-iast">ye</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: ये</div>
+  <p class="word-meaning lang-en">who</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे</p>
+  <div class="word-usage">
+    <div class="deva">ये परिश्रमन्ति ते लभन्ते ।</div>
+    <div class="usage-iast">ye pariśramanti te labhante.</div>
+    <div class="usage-meaning lang-en">Those who labour, obtain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे कष्ट करतात ते मिळवतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्र</span>
+    <span class="word-iast">tatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तत्र</div>
+  <p class="word-meaning lang-en">there</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे</p>
+  <div class="word-usage">
+    <div class="deva">तत्र एकः वृक्षः अस्ति ।</div>
+    <div class="usage-iast">tatra ekaḥ vṛkṣaḥ asti.</div>
+    <div class="usage-meaning lang-en">There is a tree there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे एक झाड आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निहताः</span>
+    <span class="word-iast">nihatāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.; क्त, नि + हन्</span></div>
+  <div class="word-form">In this verse: निहताः</div>
+  <p class="word-meaning lang-en">slain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मारले गेलेले</p>
+  <div class="word-usage">
+    <div class="deva">निहताः शत्रवः पतिताः ।</div>
+    <div class="usage-iast">nihatāḥ śatravaḥ patitāḥ.</div>
+    <div class="usage-meaning lang-en">The slain enemies have fallen.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मारले गेलेले शत्रू पडले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वीराः</span>
+    <span class="word-iast">vīrāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: वीराः</div>
+  <p class="word-meaning lang-en">heroes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वीर</p>
+  <div class="word-usage">
+    <div class="deva">वीराः रणं न त्यजन्ति ।</div>
+    <div class="usage-iast">vīrāḥ raṇaṃ na tyajanti.</div>
+    <div class="usage-meaning lang-en">Heroes do not abandon battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वीर रण सोडत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विनिखाताः</span>
+    <span class="word-iast">vinikhātāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.; क्त, वि + नि + खन्</span></div>
+  <div class="word-form">In this verse: विनिखाताः</div>
+  <p class="word-meaning lang-en">buried</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुरले गेलेले (समाधिस्थ)</p>
+  <div class="word-usage">
+    <div class="deva">विनिखाताः अस्थयः लब्धाः ।</div>
+    <div class="usage-iast">vinikhātāḥ asthayaḥ labdhāḥ.</div>
+    <div class="usage-meaning lang-en">The buried bones were found.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुरलेली हाडे सापडली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रण-क्षितौ</span>
+    <span class="word-iast">raṇa-kṣitau</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. स. एव.</span></div>
+  <div class="word-form">In this verse: रणक्षितौ</div>
+  <p class="word-meaning lang-en">on the battlefield</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रणभूमीवर</p>
+  <div class="word-usage">
+    <div class="deva">रणक्षितौ ध्वजः पतितः ।</div>
+    <div class="usage-iast">raṇakṣitau dhvajaḥ patitaḥ.</div>
+    <div class="usage-meaning lang-en">The flag has fallen on the battlefield.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रणभूमीवर ध्वज पडला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ते अमी</span>
+    <span class="word-iast">te amī</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: तेऽमी</div>
+  <p class="word-meaning lang-en">these same</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते हे</p>
+  <div class="word-usage">
+    <div class="deva">ते अमी एव मम मित्राणि ।</div>
+    <div class="usage-iast">te amī eva mama mitrāṇi.</div>
+    <div class="usage-meaning lang-en">These same are my friends.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते हेच माझे मित्र आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ग्रामस्य</span>
+    <span class="word-iast">grāmasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: ग्रामस्य</div>
+  <p class="word-meaning lang-en">of the village</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामस्य मध्ये कूपः अस्ति ।</div>
+    <div class="usage-iast">grāmasya madhye kūpaḥ asti.</div>
+    <div class="usage-meaning lang-en">There is a well in the middle of the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या मध्यभागी विहीर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मध्य-स्थाः</span>
+    <span class="word-iast">madhya-sthāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: मध्यस्थाः</div>
+  <p class="word-meaning lang-en">standing in the middle</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मध्यभागी असलेले</p>
+  <div class="word-usage">
+    <div class="deva">मध्यस्थाः जनाः विवादं पश्यन्ति ।</div>
+    <div class="usage-iast">madhyasthāḥ janāḥ vivādaṃ paśyanti.</div>
+    <div class="usage-meaning lang-en">The people standing in the middle watch the dispute.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मध्यभागी उभे असलेले लोक वाद पाहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृश्यन्ते</span>
+    <span class="word-iast">dṛśyante</span>
+  </div>
+  <div><span class="word-grammar">कर्मणि लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: दृश्यन्ते</div>
+  <p class="word-meaning lang-en">are seen</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिसतात</p>
+  <div class="word-usage">
+    <div class="deva">तत्र शिल्पानि दृश्यन्ते ।</div>
+    <div class="usage-iast">tatra śilpāni dṛśyante.</div>
+    <div class="usage-meaning lang-en">Sculptures are seen there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे शिल्पे दिसतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अश्मसु</span>
+    <span class="word-iast">aśmasu</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. बव.; अश्मन्</span></div>
+  <div class="word-form">In this verse: अश्मसु</div>
+  <p class="word-meaning lang-en">on stones</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दगडांवर</p>
+  <div class="word-usage">
+    <div class="deva">अश्मसु लेखाः उत्कीर्णाः ।</div>
+    <div class="usage-iast">aśmasu lekhāḥ utkīrṇāḥ.</div>
+    <div class="usage-meaning lang-en">Inscriptions are engraved on stones.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दगडांवर शिलालेख कोरलेले आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्रिताः</span>
+    <span class="word-iast">citritāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.; क्त</span></div>
+  <div class="word-form">In this verse: चित्रिताः</div>
+  <p class="word-meaning lang-en">carved</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोरलेले</p>
+  <div class="word-usage">
+    <div class="deva">चित्रिताः मूर्तयः सुन्दराः ।</div>
+    <div class="usage-iast">citritāḥ mūrtayaḥ sundarāḥ.</div>
+    <div class="usage-meaning lang-en">The carved idols are beautiful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोरलेल्या मूर्ती सुंदर आहेत.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The companion verse to v. 47 names the vīragaḷ for what they are: the carved likenesses (चित्रीताः) of warriors who died and were buried where they fell. &#x27;विनिखाताः रणक्षितौ&#x27; carries the old belief that a hero&#x27;s burial ground itself becomes sacred soil. The sarga thus closes its restoration tour on a note of martial memory — the village honours not only gods and institutions but the blood that defended its earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लो. ४७ चा जोडीदार हा श्लोक वीरगळांना त्यांच्या खऱ्या स्वरूपात नाव देतो — रणात पडून जिथे पडले तिथेच पुरल्या गेलेल्या योद्ध्यांच्या कोरलेल्या प्रतिमा (चित्रिताः). &#x27;विनिखाताः रणक्षितौ&#x27; या पदांत शूराच्या समाधिभूमीची माती स्वतःच पवित्र होते, ही जुनी श्रद्धा दडली आहे. अशा प्रकारे सर्ग आपला पुनरुज्जीवनफेरा शौर्यस्मृतीच्या सुरावर संपवतो — गाव देवता आणि संस्थांचाच नव्हे, तर आपल्या मातीचे रक्षण करण्यासाठी सांडलेल्या रक्ताचाही सन्मान करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>In Deccan folk religion, the vīra commemorated on a hero-stone is worshipped almost like a minor deity — offered oil, flowers and animal sacrifice on festival days. The verse&#x27;s &#x27;ग्रामस्य मध्यस्थाः&#x27; — standing in the village&#x27;s midst — matches the practice of keeping the vīragaḷ at the settlement&#x27;s heart, so the protector dead remain among the living they defended.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दख्खनच्या लोकधर्मात वीरगळावर सन्मानित वीराची उपासना जवळजवळ छोट्या देवतेइतकीच होते — उत्सवाच्या दिवशी त्याला तेल, फुले आणि पशुबली अर्पण केला जातो. श्लोकातील &#x27;ग्रामस्य मध्यस्थाः&#x27; — गावाच्या मध्यभागी उभे — हे वीरगळ गावाच्या हृदयस्थानी ठेवण्याच्या पद्धतीशी जुळते, जेणेकरून रक्षक मृत त्यांनी रक्षण केलेल्या जिवंतांमध्ये राहतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The two pādas form a clean relative-correlative pair: ये वीराः … निहताः विनिखाताः — ते अमी … दृश्यन्ते. &#x27;विनिखाताः&#x27; (वि + नि + खन्, kta) means &#x27;dug in, buried&#x27; — the book&#x27;s Marathi renders it as समाधिस्थ, consecrated in burial. &#x27;चित्रीताः&#x27; is from चित्र् (denominative) in the sense &#x27;depicted, carved in relief&#x27;. Together vv. 47–48 give the kāvya&#x27;s etiology of the hero-stones still visible around Guhagar.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दोन चरण स्वच्छ संबंधी-निर्देशक जोडी बनवतात — ये वीराः … निहताः विनिखाताः — ते अमी … दृश्यन्ते. &#x27;विनिखाताः&#x27; (वि + नि + खन्, क्त) म्हणजे &#x27;खणून पुरलेले&#x27; — पुस्तकाचे मराठी त्याला समाधिस्थ असे म्हणते. &#x27;चित्रिताः&#x27; हे चित्र् (नामधातू) पासून &#x27;कोरून दर्शवलेले&#x27; या अर्थाने आहे. श्लो. ४७–४८ मिळून गुहागरभोवती आजही दिसणाऱ्या वीरगळांची काव्यातील उत्पत्तीकथा देतात.</p></div></div>
+
+<div class="pagenav"><a href="verse-47.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 47</div></a><a class="next" href="verse-49.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 49</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

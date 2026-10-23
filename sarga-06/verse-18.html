@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 18 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 18</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 18</span><span class="bl-mr lang-mr">श्लोक 18</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ततः कोपपरीतात्मा रामः स्वागस्कृतः खलान् ।<br>जघान राक्षसान् संख्येऽसंख्यातान्खरपूर्वकान् ।।१८।।</div>
+  <div class="verse-iast">tataḥ kopaparītātmā rāmaḥ svāgaskṛtaḥ khalān । jaghāna rākṣasān saṃkhye&#x27;saṃkhyātānkharapūrvakān</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ततः । कोप-परीत-आत्मा । रामः । स्वागस्कृतः (सु-आगस्कृतः) । खलान् । जघान । राक्षसान् । संख्ये । असंख्यातान् । खर-पूर्वकान् ।</div><div class="vig-iast">tataḥ । kopa-parīta-ātmā । rāmaḥ । svāgaskṛtaḥ (su-āgaskṛtaḥ) । khalān । jaghāna । rākṣasān । saṃkhye । asaṃkhyātān । khara-pūrvakān ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ततः + कोप = ततः कोप · परीत + आत्मा = परीतात्मा · सु + आगस्कृतः = स्वागस्कृतः (यण्) · संख्ये + असंख्यातान् = संख्येऽसंख्यातान् (पूर्वरूप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">ततः कोपपरीतात्मा रामः स्वागस्कृतः खलान् असंख्यातान् खरपूर्वकान् राक्षसान् संख्ये जघान ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then Rāma, his heart seized with fury, slew in battle the countless wicked rākṣasas — led by Khara — who stood guilty of a great offence.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नंतर कोपाने पेटलेल्या रामाने मोठा अपराध करणाऱ्या खरप्रभृती असंख्य दुष्ट राक्षसांना युद्धात ठार मारले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कोपपरीतात्मा</span>
+    <span class="word-iast">kopaparītātmā</span>
+  </div>
+  <div><span class="word-grammar">कोप-परीत-आत्मा; तृतीया-तत्पुरुषगर्भ बहुव्रीहि (&#x27;कोपेन परीतः आत्मा यस्य&#x27;); प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: कोपपरीतात्मा</div>
+  <p class="word-meaning lang-en">whose heart was seized by anger</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रोधाने व्यापलेला</p>
+  <div class="word-usage">
+    <div class="deva">रामः कोपपरीतात्मा युद्धम् अकरोत्</div>
+    <div class="usage-iast">rāmaḥ kopaparītātmā yuddham akarot</div>
+    <div class="usage-meaning lang-en">Rāma, his heart seized with anger, fought the battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रोधाने व्यापलेल्या रामाने युद्ध केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वागस्कृतः</span>
+    <span class="word-iast">svāgaskṛtaḥ</span>
+  </div>
+  <div><span class="word-grammar">सु + आगस् + कृत (क्त); बहुव्रीहि (&#x27;सु आगः कृतं येषाम्&#x27;); द्वितीया बहुवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: स्वागस्कृतः</div>
+  <p class="word-meaning lang-en">who had committed a great offence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठा अपराध करणाऱ्या (द्वितीया बहु.)</p>
+  <div class="word-usage">
+    <div class="deva">स्वागस्कृताः खलाः दण्डम् अर्हन्ति</div>
+    <div class="usage-iast">svāgaskṛtāḥ khalāḥ daṇḍam arhanti</div>
+    <div class="usage-meaning lang-en">Wicked men guilty of great offence deserve punishment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठा अपराध करणारे दुष्ट दंडास पात्र असतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संख्ये असंख्यातान्</span>
+    <span class="word-iast">saṃkhye asaṃkhyātān</span>
+  </div>
+  <div><span class="word-grammar">संख्ये (संख्य, सप्तमी एकवचन, नपुंसकलिङ्ग — &#x27;युद्ध&#x27;) + असंख्यात (नञ्-तत्पुरुष, क्त); द्वितीया बहुवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: संख्येऽसंख्यातान्</div>
+  <p class="word-meaning lang-en">the countless ones, in battle — a wordplay</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>युद्धात (संख्य = युद्ध) असंख्य — शब्दक्रीडा</p>
+  <div class="word-usage">
+    <div class="deva">संख्ये असंख्याताः शत्रवः हताः</div>
+    <div class="usage-iast">saṃkhye asaṃkhyātāḥ śatravaḥ hatāḥ</div>
+    <div class="usage-meaning lang-en">Countless enemies were slain in battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>युद्धात असंख्य शत्रू मारले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खरपूर्वकान्</span>
+    <span class="word-iast">kharapūrvakān</span>
+  </div>
+  <div><span class="word-grammar">खर-पूर्वक; बहुव्रीहि (&#x27;खरः पूर्वः येषाम्&#x27;); द्वितीया बहुवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: असंख्यातान्खरपूर्वकान्</div>
+  <p class="word-meaning lang-en">led by Khara, Khara and the rest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खर इत्यादी</p>
+  <div class="word-usage">
+    <div class="deva">रामः खरपूर्वकान् राक्षसान् जघान</div>
+    <div class="usage-iast">rāmaḥ kharapūrvakān rākṣasān jaghāna</div>
+    <div class="usage-meaning lang-en">Rāma slew the rākṣasas led by Khara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने खरादी राक्षसांना मारले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जघान</span>
+    <span class="word-iast">jaghāna</span>
+  </div>
+  <div><span class="word-grammar">√हन्; लिट् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: जघान</div>
+  <p class="word-meaning lang-en">slew, struck down</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मारले (√हन्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">अर्जुनः शत्रून् जघान</div>
+    <div class="usage-iast">arjunaḥ śatrūn jaghāna</div>
+    <div class="usage-meaning lang-en">Arjuna slew the enemies.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अर्जुनाने शत्रूंना मारले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāma&#x27;s wrath is never private passion; it is dharma&#x27;s fire, kindled only by the offence of the wicked against the innocent. The poet&#x27;s wordplay — &#x27;in battle (संख्ये) the countless (असंख्यातान्)&#x27; — is a small delight set in the middle of carnage, reminding us that kāvya can hold both terror and play. For the devotee, the lesson is discrimination: anger is condemned when it serves the ego, and sanctified when it serves the protection of the good.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामाचा क्रोध ही कधीही व्यक्तिगत वासना नसते; तो धर्माचा अग्नी असतो, जो निरपराध्यांवरील दुष्टांच्या अपराधामुळेच पेटतो. कवीची शब्दक्रीडा — &#x27;युद्धात (संख्ये) असंख्यांना (असंख्यातान्)&#x27; — ही संहाराच्या मध्ये ठेवलेली छोटीशी रसिकता आहे; काव्य भय आणि क्रीडा दोन्ही एकाच वेळी धारण करू शकते, हे ती आठवते. भक्तासाठी धडा विवेकाचा आहे : अहंकाराची सेवा करणारा क्रोध निंद्य, आणि सज्जनांच्या रक्षणासाठी असलेला क्रोध पवित्र.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Khara, with Dūṣaṇa and Triśiras, ruled Janasthāna with fourteen thousand rākṣasas who tormented the sages, defiled their sacrifices and devoured ascetics (Vālmīki Rāmāyaṇa, Araṇyakāṇḍa 30). Their &#x27;great offence&#x27; (su-āgas) is this systematic war on dharma&#x27;s custodians. Rāma&#x27;s single-handed slaughter of the host is the avatāra&#x27;s first great public act — the deed whose report, carried to Laṅkā, sets the whole later tragedy in motion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>खर, दूषण व त्रिशिरा यांसह चौदा हजार राक्षस जनस्थानावर राज्य करत होते; ते ऋषींना त्रास देत, त्यांचे यज्ञ विटाळत व तपस्व्यांना खात (वाल्मीकि रामायण, अरण्यकाण्ड ३०). त्यांचा &#x27;मोठा अपराध&#x27; (सु-आगस्) म्हणजे धर्माच्या रक्षकांवरील हेच नियोजित युद्ध. रामाने एकट्याने केलेला त्या सैन्याचा संहार हे अवताराचे पहिले मोठे जाहीर कृत्य — ज्या कृत्याची वार्ता लंकेला पोहोचून पुढील संपूर्ण शोकांतिकेला गती मिळते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;संख्ये&#x27; is the poet&#x27;s chosen word for &#x27;battle&#x27; (from the counting of armies), and its pairing with &#x27;असंख्यातान्&#x27; — &#x27;the un-counted&#x27; — is a deliberate śabdakrīḍā the book&#x27;s Marathi also savours. &#x27;स्वागस्कृतः&#x27; resolves as सु + आगस्कृतः (yaṇ sandhi). The verse&#x27;s sacrificial context is v12 (क्रतुविघ्नानि): the rākṣasas&#x27; obstruction of the rites. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;संख्ये&#x27; हा कवीने &#x27;युद्ध&#x27; या अर्थी निवडलेला शब्द (सैन्याच्या गणनेवरून), आणि &#x27;असंख्यातान्&#x27; — &#x27;गणती न झालेल्यांना&#x27; — यांच्याशी त्याची जोडी ही हेतुपुरस्सर शब्दक्रीडा आहे, जिचा आस्वाद पुस्तकाच्या मराठीतही घेतला आहे. &#x27;स्वागस्कृतः&#x27; चा विग्रह सु + आगस्कृतः (यण् संधी) असा. या श्लोकाचा यज्ञसंदर्भ श्लोक १२ मध्ये (क्रतुविघ्नानि) : राक्षसांनी यज्ञांत आणलेली विघ्ने. वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-17.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 17</div></a><a class="next" href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 19</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 39 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 39</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 39</span><span class="bl-mr lang-mr">श्लोक 39</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">त्रस्तस्ततस्तत्क्षणमम्बुराशिर्ब्रह्मण्यदेवोऽयमिति प्रबुद्धः ।।<br>भूत्वा द्विजः प्राञ्जलिरग्रगोऽस्य प्राह स्म पाहीति गिरं सुदीनाम् ।।३९।।</div>
+  <div class="verse-iast">trastastatastatkṣaṇamamburāśirbrahmaṇyadevo&#x27;yamiti prabuddhaḥ । । bhūtvā dvijaḥ prāñjaliragrago&#x27;sya prāha sma pāhīti giraṃ sudīnām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">त्रस्तः । ततः । तत्-क्षणम् । अम्बु-राशिः । ब्रह्मण्य-देवः । अयम् । इति । प्रबुद्धः । भूत्वा । द्विजः । प्राञ्जलिः । अग्र-गः । अस्य । प्राह । स्म । पाहि । इति । गिरम् । सु-दीनाम् ।</div><div class="vig-iast">trastaḥ । tataḥ । tat-kṣaṇam । ambu-rāśiḥ । brahmaṇya-devaḥ । ayam । iti । prabuddhaḥ । bhūtvā । dvijaḥ । prāñjaliḥ । agra-gaḥ । asya । prāha । sma । pāhi । iti । giram । su-dīnām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">त्रस्तः + ततः = त्रस्तस्ततः · ततः + तत्क्षणम् = ततस्तत्क्षणम् (विसर्ग → स्) · अम्बुराशिः + ब्रह्मण्य = अम्बुराशिर्ब्रह्मण्य (विसर्ग → र्) · देवः + अयम् = देवोऽयम् (ओ, पूर्वरूप) · अयम् + इति = अयमिति · प्राञ्जलिः + अग्रगः = प्राञ्जलिरग्रगः · अग्रगः + अस्य = अग्रगोऽस्य · पाहि + इति = पाहीति (सवर्णदीर्घ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">ततः तत्क्षणम् ‘अयं ब्रह्मण्यदेवः’ इति प्रबुद्धः त्रस्तः अम्बुराशिः द्विजः प्राञ्जलिः भूत्वा अस्य अग्रगः (सन्) ‘पाहि’ इति सुदीनां गिरं प्राह स्म ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then, that very instant, perceiving &#x27;this is Brahmaṇyadeva&#x27; — the God who befriends the brāhmaṇas — the terrified Ocean took the form of a brāhmaṇa, and with folded hands, coming before him, uttered in a most piteous voice the words: &#x27;Protect me!&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्याच क्षणी &#x27;हा ब्राह्मणहितकारी देव — प्रत्यक्ष विष्णूच — आहे&#x27; हे उमगून त्रस्त झालेल्या समुद्राने हात जोडलेल्या ब्राह्मणाचे रूप घेतले व या परशुरामाच्या समोर येऊन दीन वाणीने &#x27;माझे रक्षण कर&#x27; असे उद्गार काढले.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 39, line 1: प्रवृद्धः → प्रबुद्धः (Marathi: हे समजून)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रस्तः</span>
+    <span class="word-iast">trastaḥ</span>
+  </div>
+  <div><span class="word-grammar">√त्रस् (4th class, parasmaipada) + kta (agentive); nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: त्रस्तस्ततः</div>
+  <p class="word-meaning lang-en">terrified; frightened</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घाबरलेला</p>
+  <div class="word-usage">
+    <div class="deva">त्रस्तः चोरः पलायते।</div>
+    <div class="usage-iast">trastaḥ coraḥ palāyate.</div>
+    <div class="usage-meaning lang-en">The terrified thief flees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घाबरलेला चोर पळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्क्षणम्</span>
+    <span class="word-iast">tatkṣaṇam</span>
+  </div>
+  <div><span class="word-grammar">तत् + क्षण; accusative singular, masculine; येथे adverb</span></div>
+  <div class="word-form">In this verse: ततस्तत्क्षणमम्बुराशिः</div>
+  <p class="word-meaning lang-en">at that very instant</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच क्षणी</p>
+  <div class="word-usage">
+    <div class="deva">तत्क्षणं सः आगतः।</div>
+    <div class="usage-iast">tatkṣaṇaṃ saḥ āgataḥ.</div>
+    <div class="usage-meaning lang-en">He came that very instant.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो त्याच क्षणी आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अम्बुराशिः</span>
+    <span class="word-iast">amburāśiḥ</span>
+  </div>
+  <div><span class="word-grammar">अम्बु + राशि (&#x27;जलांचा समूह&#x27;); nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: ततस्तत्क्षणमम्बुराशिः</div>
+  <p class="word-meaning lang-en">the ocean; the mass of waters</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र</p>
+  <div class="word-usage">
+    <div class="deva">अम्बुराशिः गम्भीरः भवति।</div>
+    <div class="usage-iast">amburāśiḥ gabhīraḥ bhavati.</div>
+    <div class="usage-meaning lang-en">The ocean is deep.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र खोल आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्मण्यदेवः</span>
+    <span class="word-iast">brahmaṇyadevaḥ</span>
+  </div>
+  <div><span class="word-grammar">ब्रह्मन् + यत् (हितार्थे taddhita — &#x27;ब्राह्मणेभ्यो हितः&#x27;) + देव; nominative singular, masculine; विष्णूचे प्रसिद्ध adjective</span></div>
+  <div class="word-form">In this verse: अम्बुराशिर्ब्रह्मण्यदेवोऽयम्</div>
+  <p class="word-meaning lang-en">the God who befriends the brāhmaṇas; Viṣṇu</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्राह्मणांचा हितकर्ता देव (विष्णूचे नाव, ‘नमो ब्रह्मण्यदेवाय’)</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्मण्यदेवः विष्णुः पूज्यते।</div>
+    <div class="usage-iast">brahmaṇyadevaḥ viṣṇuḥ pūjyate.</div>
+    <div class="usage-meaning lang-en">Viṣṇu, the friend of brāhmaṇas, is worshipped.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्राह्मणहितकारी विष्णूची पूजा केली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अयम् इति प्रबुद्धः</span>
+    <span class="word-iast">ayam iti prabuddhaḥ</span>
+  </div>
+  <div><span class="word-grammar">इदम्-शब्द, nominative singular, masculine + इति (indeclinable) + प्र + √बुध् (1st class) + kta; nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: अयमिति प्रबुद्धः</div>
+  <p class="word-meaning lang-en">awakened to the knowledge &#x27;this is he&#x27;; having recognized</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘हा तोच आहे’ असे जाणणारा. *पुस्तकाच्या मराठीत ‘अतिशय रागावलेला ब्रह्मदेवच’ आहे — ‘अतिशय रागावलेला’ हे जुन्या ‘प्रवृद्धः’ पाठाचे अवशेष; ‘प्रबुद्धः’ = जाणणारा.*</p>
+  <div class="word-usage">
+    <div class="deva">अयमिति प्रबुद्धः सः शरणं ययौ।</div>
+    <div class="usage-iast">ayamiti prabuddhaḥ saḥ śaraṇaṃ yayau.</div>
+    <div class="usage-meaning lang-en">Knowing &#x27;this is he,&#x27; he sought refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;हा तोच आहे&#x27; हे जाणून तो शरण गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्विजः भूत्वा</span>
+    <span class="word-iast">dvijaḥ bhūtvā</span>
+  </div>
+  <div><span class="word-grammar">द्विज-शब्द, nominative singular, masculine + √भू (1st class) + ktvā; used like an indeclinable</span></div>
+  <div class="word-form">In this verse: द्विजः</div>
+  <p class="word-meaning lang-en">having become a brāhmaṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्राह्मण होऊन</p>
+  <div class="word-usage">
+    <div class="deva">सः द्विजो भूत्वा भिक्षां याचते।</div>
+    <div class="usage-iast">saḥ dvijo bhūtvā bhikṣāṃ yācate.</div>
+    <div class="usage-meaning lang-en">Having become a brāhmaṇa, he begs alms.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्राह्मण होऊन तो भिक्षा मागतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राञ्जलिः</span>
+    <span class="word-iast">prāñjaliḥ</span>
+  </div>
+  <div><span class="word-grammar">प्र + अञ्जलि; &#x27;प्रकृष्टा अञ्जलिः यस्य&#x27; — bahuvrīhi; nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: प्राञ्जलिरग्रगोऽस्य</div>
+  <p class="word-meaning lang-en">with folded hands; with joined palms</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हात जोडलेला</p>
+  <div class="word-usage">
+    <div class="deva">प्राञ्जलिः भक्तः देवं नमति।</div>
+    <div class="usage-iast">prāñjaliḥ bhaktaḥ devaṃ namati.</div>
+    <div class="usage-meaning lang-en">The devotee with folded hands bows to God.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हात जोडलेला भक्त देवाला नमतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अग्रगः अस्य</span>
+    <span class="word-iast">agragaḥ asya</span>
+  </div>
+  <div><span class="word-grammar">अग्र + √गम् + ड (agentive कृदन्त); nominative singular, masculine + इदम्-शब्द, genitive singular</span></div>
+  <div class="word-form">In this verse: प्राञ्जलिरग्रगोऽस्य</div>
+  <p class="word-meaning lang-en">having come before him; standing in his presence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>याच्या समोर गेलेला</p>
+  <div class="word-usage">
+    <div class="deva">अग्रगोऽस्य सः तिष्ठति।</div>
+    <div class="usage-iast">agrago&#x27;sya saḥ tiṣṭhati.</div>
+    <div class="usage-meaning lang-en">He stands before him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो त्याच्यासमोर उभा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राह स्म</span>
+    <span class="word-iast">prāha sma</span>
+  </div>
+  <div><span class="word-grammar">प्र + √अह् (2nd class, parasmaipada), liṭ, 3rd person singular + स्म (indeclinable marking past time)</span></div>
+  <div class="word-form">In this verse: प्राह स्म</div>
+  <p class="word-meaning lang-en">he said (narrative past)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणाला (प्र + √अह्)</p>
+  <div class="word-usage">
+    <div class="deva">सः प्राह स्म — रक्ष माम्।</div>
+    <div class="usage-iast">saḥ prāha sma — rakṣa mām.</div>
+    <div class="usage-meaning lang-en">He said: protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो म्हणाला — माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पाहि</span>
+    <span class="word-iast">pāhi</span>
+  </div>
+  <div><span class="word-grammar">√पा (2nd class, parasmaipada — &#x27;रक्षण करणे&#x27;), imperative (lot), 2nd person singular</span></div>
+  <div class="word-form">In this verse: पाहीति</div>
+  <p class="word-meaning lang-en">protect! save!</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षण कर</p>
+  <div class="word-usage">
+    <div class="deva">देव, मां पाहि।</div>
+    <div class="usage-iast">deva, māṃ pāhi.</div>
+    <div class="usage-meaning lang-en">O God, protect me!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे देवा, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुदीनां गिरम्</span>
+    <span class="word-iast">sudīnāṃ giram</span>
+  </div>
+  <div><span class="word-grammar">सु + दीन (√दी + kta) + गिर्-शब्द; accusative singular, feminine</span></div>
+  <div class="word-form">In this verse: गिरं सुदीनाम्</div>
+  <p class="word-meaning lang-en">a most piteous, humble speech</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत दीन वाणी</p>
+  <div class="word-usage">
+    <div class="deva">सुदीनां गिरं श्रुत्वा सः दयां चकार।</div>
+    <div class="usage-iast">sudīnāṃ giraṃ śrutvā saḥ dayāṃ cakāra.</div>
+    <div class="usage-meaning lang-en">Hearing the piteous speech, he showed mercy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत दीन वाणी ऐकून त्याने दया केली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The Ocean&#x27;s surrender is the fruit of recognition: &#x27;ayam brahmaṇyadevaḥ&#x27; — this is the God who befriends the brāhmaṇas. Terror (trastaḥ) turns to wisdom the instant the divine is truly seen, and the proud sea comes as a humble brāhmaṇa with folded hands. The spiritual teaching is twofold: first, that śaraṇāgati needs no elaborate ritual — two gestures, folded hands and the cry &#x27;pāhi,&#x27; suffice; second, that the wise suppliant appeals to the very dharma of the one he supplicates, as the Ocean appeals to Paraśurāma&#x27;s vow of protecting brāhmaṇas. Surrender that understands the heart of God is never refused.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्राची शरणागती ही ओळखीचे फळ आहे : &#x27;अयं ब्रह्मण्यदेवः&#x27; — हा ब्राह्मणांचा हितकर्ता देव आहे. दैवी सत्यदर्शन होताच भीतीचे (त्रस्तः) ज्ञानात रूपांतर होते, आणि गर्विष्ठ समुद्र नम्र ब्राह्मण म्हणून हात जोडून येतो. आध्यात्मिक शिकवण दुहेरी आहे : पहिली, शरणागतीला कसल्याही विस्तृत विधीची गरज नसते — दोन हावभाव, जोडलेले हात आणि &#x27;पाहि&#x27; हा आक्रोश, पुरेसे आहेत; दुसरी, शहाणा शरणागत ज्याच्याकडे शरण येतो त्याच्याच धर्माला आवाहन करतो — जसे समुद्र परशुरामाच्या ब्राह्मणरक्षणाच्या व्रतालाच आवाहन करतो. देवाचे हृदय जाणणारी शरणागती कधीही नाकारली जात नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Brahmaṇyadeva&#x27; — the God who befriends the brāhmaṇas — is a celebrated epithet of Viṣṇu (it stands in the Viṣṇu-sahasranāma as &#x27;brahmaṇyaḥ&#x27;), and the Ocean&#x27;s cry &#x27;ayam brahmaṇyadevaḥ&#x27; is the moment of recognition: the threatening archer is no mere warrior but Viṣṇu himself in his Paraśurāma avatāra. That the Ocean approaches in the form of a brāhmaṇa (dvija) is exquisite fitness — he appeals to the very dharma Paraśurāma serves, the protection of brāhmaṇas, and thereby disarms the wrath aimed at him. The folded hands (prāñjali) and the single word &#x27;pāhi&#x27; (protect!) are the whole grammar of śaraṇāgati, surrender, in two gestures.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;ब्रह्मण्यदेव&#x27; — ब्राह्मणांचा हितकर्ता देव — हे विष्णूचे प्रसिद्ध विशेषण आहे (विष्णुसहस्रनामात &#x27;ब्रह्मण्यः&#x27; म्हणून आले आहे); आणि समुद्राचा &#x27;अयं ब्रह्मण्यदेवः&#x27; हा उद्गार हाच ओळखीचा क्षण आहे : धमकावणारा धनुर्धर केवळ योद्धा नसून परशुराम अवतारातील प्रत्यक्ष विष्णूच आहे. समुद्र ब्राह्मणाच्या (द्विज) रूपात समोर येतो यात विलक्षण औचित्य आहे — तो परशुराम ज्या धर्माची सेवा करतो त्याच धर्माला, ब्राह्मणरक्षणाला, आवाहन करतो आणि अशा रीतीने स्वतःवर रोखलेला क्रोध निःशस्त्र करतो. जोडलेले हात (प्राञ्जलि) आणि एकच शब्द &#x27;पाहि&#x27; (रक्षण कर!) — ही दोन हावभावांतली संपूर्ण शरणागतीची व्याकरणे आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Textual note (the hinge of the sarga): the print&#x27;s &#x27;प्रवृद्धः&#x27; has been emended to &#x27;प्रबुद्धः&#x27; — &#x27;awakened to the knowledge (that this is Brahmaṇyadeva).&#x27; The book&#x27;s Marathi renders an older layer (&#x27;अतिशय रागावलेला&#x27; — &#x27;exceedingly enraged,&#x27; from pravṛddha), a leftover of the corrupt print; the strictest honest reading is prabuddhaḥ, &#x27;having recognized,&#x27; which alone suits &#x27;trastaḥ&#x27; (terrified) and the surrender that follows. The reasoning is preserved here as a pāṭha-carca note rather than silently smoothed over. Cross-link: the Ocean&#x27;s brāhmaṇa-guise parallels Sāgara&#x27;s submission before Rāma (Yuddhakāṇḍa); sarga 2 will show what Paraśurāma demands in return — the land itself.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाठ-चर्चा (सर्गाचा कळस) : छापील &#x27;प्रवृद्धः&#x27; हे &#x27;प्रबुद्धः&#x27; असे दुरुस्त केले आहे — &#x27;(हा ब्रह्मण्यदेव आहे) हे जाणून जागा झालेला.&#x27; पुस्तकाच्या मराठीत जुन्या थराचे अवशेष आहेत (&#x27;अतिशय रागावलेला&#x27; — प्रवृद्धपासून), जे दूषित छपाईचे शिल्लक आहे; कठोर प्रामाणिक वाचन प्रबुद्धः हेच आहे — &#x27;ओळखून&#x27;, जे &#x27;त्रस्तः&#x27; (घाबरलेला) ला आणि पुढील शरणागतीला एकटेच शोभते. हा युक्तिवाद येथे पाठ-चर्चा नोंद म्हणून जतन केला आहे, न सांगता गुळगुळीत केलेला नाही. आंतरसंदर्भ : समुद्राचे ब्राह्मणवेश हे रामासमोरील सागराच्या शरणागतीशी (युद्धकांड) समांतर आहे; परशुराम मोबदल्यात काय मागतो — स्वतः भूमीच — हे सर्ग २ दाखवेल.</p></div></div>
+
+<div class="pagenav"><a href="verse-38.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 38</div></a><a class="next" href="verse-40.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 40</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

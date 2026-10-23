@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 46 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 46</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 46</span><span class="bl-mr lang-mr">श्लोक 46</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Udgatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इति देवताः समभिरक्ष्य विहितखलशासनो मुनिः ।।<br>मायिककृतमपराधमुरुं मनसावधार्य रुषितः प्रतस्थिवान् ।।४६।।</div>
+  <div class="verse-iast">iti devatāḥ samabhirakṣya vihitakhalaśāsano muniḥ । । māyikakṛtamaparādhamuruṃ manasāvadhārya ruṣitaḥ pratasthivān</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । देवताः । समभिरक्ष्य । विहित-खल-शासनः । मुनिः । मायिक-कृतम् । अपराधम् । उरुम् । मनसा । अवधार्य । रुषितः । प्रतस्थिवान् ।</div><div class="vig-iast">iti । devatāḥ । samabhirakṣya । vihita-khala-śāsanaḥ । muniḥ । māyika-kṛtam । aparādham । urum । manasā । avadhārya । ruṣitaḥ । pratasthivān ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">देवताः + समभिरक्ष्य = देवताः समभिरक्ष्य · शासनः + मुनिः = शासनो मुनिः (विसर्ग → ओ) · कृतम् + अपराधम् + उरुम् = कृतमपराधमुरुम् · मनसा + अवधार्य = मनसावधार्य (सवर्णदीर्घ) · रुषितः + प्रतस्थिवान् = रुषितः प्रतस्थिवान्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति देवताः समभिरक्ष्य विहितखलशासनः मुनिः मायिककृतम् उरुम् अपराधं मनसा अवधार्य रुषितः (सन्) प्रतस्थिवान् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Thus, having fully protected the gods and chastised the wicked, the muni — judging in his mind that the grave offence committed by the deceitful maya-wielders was indeed great — set forth in wrath.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अशा रीतीने देवतांचे रक्षण करून ज्याने दुष्टांचे शासन केलेले आहे असा तो मुनी मायावी राक्षसांनी केलेला अपराध फारच मोठा (म्हणून दंडनीय) आहे असे मनांत आणून क्रुद्ध होऊन निघाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समभिरक्ष्य</span>
+    <span class="word-iast">samabhirakṣya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (lyap), sam + abhi + √raksh</span></div>
+  <div class="word-form">In this verse: समभिरक्ष्य</div>
+  <p class="word-meaning lang-en">having fully protected</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्ण रक्षण करून</p>
+  <div class="word-usage">
+    <div class="deva">प्रजाः समभिरक्ष्य राजा सुखम् अवसत् ।</div>
+    <div class="usage-iast">prajāḥ samabhirakṣya rājā sukham avasat ।</div>
+    <div class="usage-meaning lang-en">Having fully protected his subjects, the king lived happily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजांचे पूर्ण रक्षण करून राजा सुखाने राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विहितखलशासनः</span>
+    <span class="word-iast">vihitakhalaśāsanaḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrihi compound (vihita + khala + shasana), nominative masculine singular</span></div>
+  <div class="word-form">In this verse: विहितखलशासनः</div>
+  <p class="word-meaning lang-en">by whom the wicked have been chastised</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याने दुष्टांचे शासन केले आहे असा</p>
+  <div class="word-usage">
+    <div class="deva">विहितखलशासनः नृपः पूज्यते ।</div>
+    <div class="usage-iast">vihitakhalaśāsanaḥ nṛpaḥ pūjyate ।</div>
+    <div class="usage-meaning lang-en">The king who has chastised the wicked is honoured.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुष्टांचे शासन केलेला राजा पूजला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मायिककृतम्</span>
+    <span class="word-iast">māyikakṛtam</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha (mayika + krita), accusative neuter singular</span></div>
+  <div class="word-form">In this verse: मायिककृतम्</div>
+  <p class="word-meaning lang-en">done by the deceitful maya-wielders (the rakshasas)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायावी (रावणाने) केलेला</p>
+  <div class="word-usage">
+    <div class="deva">मायिककृतम् कपटम् ज्ञातम् अभवत् ।</div>
+    <div class="usage-iast">māyikakṛtam kapaṭam jñātam abhavat ।</div>
+    <div class="usage-meaning lang-en">The deceit wrought by the maya-wielders became known.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायावींनी केलेले कपट कळले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उरुम् अपराधम्</span>
+    <span class="word-iast">urum aparādham</span>
+  </div>
+  <div><span class="word-grammar">adjective uru + noun aparadha, accusative masculine singular</span></div>
+  <div class="word-form">In this verse: उरुम् अपराधम्</div>
+  <p class="word-meaning lang-en">a grave, great offence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठा अपराध</p>
+  <div class="word-usage">
+    <div class="deva">उरुम् अपराधम् कृत्वा सः दण्डम् आप ।</div>
+    <div class="usage-iast">urum aparādham kṛtvā saḥ daṇḍam āpa ।</div>
+    <div class="usage-meaning lang-en">Having committed a grave offence, he received punishment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठा अपराध करून त्याला दंड मिळाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मनसा अवधार्य</span>
+    <span class="word-iast">manasā avadhārya</span>
+  </div>
+  <div><span class="word-grammar">instrumental singular of manas + absolutive (lyap) of ava + √dhri</span></div>
+  <div class="word-form">In this verse: मनसा अवधार्य</div>
+  <p class="word-meaning lang-en">having determined in his mind</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मनात निश्चित करून</p>
+  <div class="word-usage">
+    <div class="deva">मनसा अवधार्य सः निश्चयम् अकरोत् ।</div>
+    <div class="usage-iast">manasā avadhārya saḥ niścayam akarot ।</div>
+    <div class="usage-meaning lang-en">Having determined in his mind, he resolved.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मनात निश्चित करून त्याने निश्चय केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुषितः प्रतस्थिवान्</span>
+    <span class="word-iast">ruṣitaḥ pratasthivān</span>
+  </div>
+  <div><span class="word-grammar">past passive participle of √rush + perfect active participle (kvasu) of pra + √stha, nominative masculine singular</span></div>
+  <div class="word-form">In this verse: रुषितः प्रतस्थिवान्</div>
+  <p class="word-meaning lang-en">having become wrathful, set forth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रुद्ध होऊन निघाला (प्र + √स्था, क्वसु)</p>
+  <div class="word-usage">
+    <div class="deva">रुषितः प्रतस्थिवान् वीरः रणाय ।</div>
+    <div class="usage-iast">ruṣitaḥ pratasthivān vīraḥ raṇāya ।</div>
+    <div class="usage-meaning lang-en">The hero, wrathful, set forth for battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रुद्ध झालेला वीर युद्धासाठी निघाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The saint&#x27;s wrath (manyu) is not personal anger but dharma&#x27;s response to persistent evil: the same muni who granted abhaya now marches to punish, and compassion and chastisement are revealed as two faces of protection. The devotee learns that the Lord&#x27;s grace includes His justice — refuge for the surrendered, reckoning for the defiant. What provokes Him is not insult to Himself but cruelty to the helpless.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>संताचा क्रोध (मन्यू) हा वैयक्तिक राग नसून सततच्या वाईटाला धर्माचे उत्तर आहे — ज्या मुनीने अभय दिले तोच आता शिक्षा करायला निघतो; आणि करुणा व शासन ही रक्षणाची दोन रूपे आहेत हे उघड होते. भगवंताच्या कृपेत त्याचा न्यायही समाविष्ट आहे — शरणागतांना आश्रय, उद्दामांना हिशेब. त्याला जे चिडवते ते स्वतःचा अपमान नव्हे तर असहाय्यांवरील क्रूरता.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Muni-manyu — the sage&#x27;s wrath as a cosmic force — is a Puranic commonplace (Durvasas, Vishvamitra). Parashurama&#x27;s march against the wicked continues his avatara-mission of ridding the earth of oppressors, the same mission that defines him in the Mahabharata and the Bhagavata Purana. Pratasthivan (kvasu participle) marks the solemnity of the setting-forth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मुनिमन्यू — वैश्विक शक्ती म्हणून ऋषीचा क्रोध — ही पुराणप्रसिद्ध गोष्ट आहे (दुर्वास, विश्वामित्र). दुष्टांविरुद्ध परशुरामाची वाटचाल पृथ्वीला जुलमींपासून मुक्त करण्याच्या त्याच्या अवतारकार्याचेच पुढे चालू राहणे आहे; महाभारत आणि भागवत पुराण यांत हेच त्याचे लक्षण आहे. प्रतस्थिवान् (क्वसु कृदन्त) हे निघण्याच्या गांभीर्याची नोंद करते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Udgata. Vihitakhalashasanah looks back to the battle just fought (vv. 39–44) and forward to the resolve of v. 47 — the muni now turns from the Konkan field toward Lanka itself. The verse is the hinge of the sarga&#x27;s second half: protection accomplished, punishment contemplated.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : उद्गता. विहितखलशासनः हे नुकत्याच झालेल्या युद्धाकडे (श्लोक ३९–४४) मागे पाहते आणि श्लोक ४७ च्या निश्चयाकडे पुढे पाहते — मुनी आता कोकणच्या रणांगणावरून थेट लंकेकडे वळतो. हा श्लोक सर्गाच्या उत्तरार्धाचा सांधा आहे — रक्षण पूर्ण, शिक्षा विचाराधीन.</p></div></div>
+
+<div class="pagenav"><a href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 45</div></a><a class="next" href="verse-47.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 47</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

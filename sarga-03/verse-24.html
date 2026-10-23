@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 24 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 24</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 24</span><span class="bl-mr lang-mr">श्लोक 24</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">वद किं प्रयोजनमिहागमने करवाणि वा हितकरं तव किम् ।।<br>इति वादिनं वरदमाद्यमुनिं समवीवदन्मुदित आशरपः ।।२४।।</div>
+  <div class="verse-iast">vada kiṃ prayojanamihāgamane karavāṇi vā hitakaraṃ tava kim । । iti vādinaṃ varadamādyamuniṃ samavīvadanmudita āśarapaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">वद । किम् । प्रयोजनम् । इह । आगमने । करवाणि । वा । हितकरम् । तव । किम् । इति । वादिनम् । वरदम् । आद्य-मुनिम् । समवीवदत् । मुदितः । आशर-पः ।</div><div class="vig-iast">vada । kim । prayojanam । iha । āgamane । karavāṇi । vā । hitakaram । tava । kim । iti । vādinam । varadam । ādya-munim । samavīvadat । muditaḥ । āśara-paḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रयोजनम् + इह = प्रयोजनमिह · इह + आगमने = इहागमने (सवर्णदीर्घ) · वरदम् + आद्य = वरदमाद्य · समवीवदत् + मुदितः = समवीवदन्मुदितः (त् → न्) · मुदितः + आशरपः = मुदित आशरपः (विसर्गलोप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">‘इह आगमने किं प्रयोजनम्? वद; तव किं हितकरं करवाणि वा?’ इति वादिनं वरदम् आद्यमुनिं मुदितः आशरपः समवीवदत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Tell me, what is the purpose of your coming here? Or what good may I do for you?&#x27; To the primeval sage, the giver of boons, who spoke thus, the delighted lord of the demons replied.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;येथे येण्याचे तुझे प्रयोजन काय? किंवा तुला हितकारक असे मी काय करू?&#x27;&#x27; असे विचारणाऱ्या त्या वरदात्या आद्य मुनीला आनंदित झालेला तो राक्षसांचा पालनकर्ता म्हणाला:-</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इहागमने प्रयोजनम्</span>
+    <span class="word-iast">ihāgamane prayojanam</span>
+  </div>
+  <div><span class="word-grammar">इह — indeclinable; आगमने — neuter locative singular (&#x27;in the coming&#x27;); प्रयोजनम् — neuter nominative singular</span></div>
+  <div class="word-form">In this verse: इह + आगमने (सप्तमी) + प्रयोजनम्</div>
+  <p class="word-meaning lang-en">the purpose of (your) coming here</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथे येण्याचे प्रयोजन</p>
+  <div class="word-usage">
+    <div class="deva">इह आगमने प्रयोजनम् वद ।</div>
+    <div class="usage-iast">iha āgamane prayojanam vada ।</div>
+    <div class="usage-meaning lang-en">Tell me the purpose of your coming here.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथे येण्याचे प्रयोजन सांग.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">करवाणि</span>
+    <span class="word-iast">karavāṇi</span>
+  </div>
+  <div><span class="word-grammar">√कृ, parasmaipada, imperative (loṭ), first person singular</span></div>
+  <div class="word-form">In this verse: करवाणि (√कृ, लोट्, उत्तमपुरुष)</div>
+  <p class="word-meaning lang-en">may I do</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी करू (लोट्, उत्तम पुरुष)</p>
+  <div class="word-usage">
+    <div class="deva">किम् अहम् तव हितम् करवाणि ।</div>
+    <div class="usage-iast">kim aham tava hitam karavāṇi ।</div>
+    <div class="usage-meaning lang-en">What good may I do for you?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी तुझे काय हित करू?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हितकरम्</span>
+    <span class="word-iast">hitakaram</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular adjective; हित + √कृ + अच् (&#x27;doing good&#x27;)</span></div>
+  <div class="word-form">In this verse: हितकरम् (stem हितकर)</div>
+  <p class="word-meaning lang-en">beneficial, doing good</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हितकारक</p>
+  <div class="word-usage">
+    <div class="deva">गुरोः वचनम् सर्वदा हितकरम् भवति ।</div>
+    <div class="usage-iast">guroḥ vacanam sarvadā hitakaram bhavati ।</div>
+    <div class="usage-meaning lang-en">The guru&#x27;s word is always beneficial.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूचे वचन नेहमी हितकारक असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वादिनम्</span>
+    <span class="word-iast">vādinam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular; present participle (णिनि) of √वद्</span></div>
+  <div class="word-form">In this verse: वादिनम् (द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">speaking; to him who spoke</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बोलणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">इति वादिनम् मुनिम् सः अवदत् ।</div>
+    <div class="usage-iast">iti vādinam munim saḥ avadat ।</div>
+    <div class="usage-meaning lang-en">He spoke to the sage who had spoken thus.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे बोलणाऱ्या मुनीला तो म्हणाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वरदम् आद्यमुनिम्</span>
+    <span class="word-iast">varadam ādyamunim</span>
+  </div>
+  <div><span class="word-grammar">वरदम् — masculine accusative singular (&#x27;giver of boons&#x27;); आद्यमुनिम् — accusative singular, तत्पुरुष आद्य-मुनि (&#x27;the primeval sage&#x27;)</span></div>
+  <div class="word-form">In this verse: वरदम् + आद्यमुनिम् (द्वितीया)</div>
+  <p class="word-meaning lang-en">the boon-giving primeval sage</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर देणाऱ्या आदिमुनीला</p>
+  <div class="word-usage">
+    <div class="deva">शिष्यः वरदम् आद्यमुनिम् अनमत् ।</div>
+    <div class="usage-iast">śiṣyaḥ varadam ādyamunim anamat ।</div>
+    <div class="usage-meaning lang-en">The disciple bowed to the boon-giving primeval sage.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्य वरदात्या आदिमुनीला नमन केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समवीवदत्</span>
+    <span class="word-iast">samavīvadat</span>
+  </div>
+  <div><span class="word-grammar">सम् + √वद्, causative (णिच्), parasmaipada, aorist (luṅ), third person singular</span></div>
+  <div class="word-form">In this verse: समवीवदत् (√वद्, णिजन्त, लुङ्)</div>
+  <p class="word-meaning lang-en">he addressed, he spoke (to)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(रावण) बोलला (सम् + √वद्, णिच्, लुङ्)</p>
+  <div class="word-usage">
+    <div class="deva">राजा दूतम् समवीवदत् ।</div>
+    <div class="usage-iast">rājā dūtam samavīvadat ।</div>
+    <div class="usage-meaning lang-en">The king addressed the messenger.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा दूताशी बोलला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s question is the host&#x27;s dharma in its purest form — the great sage asks the guest what he needs before the guest must ask. The poet shows courtesy as the first fruit of tapas: power that has conquered itself turns at once to service. &#x27;The delighted lord of the demons&#x27; hints that Rāvaṇa&#x27;s heart is already won by this grace before he even speaks his request.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाचा प्रश्न हा अतिथिधर्माचे शुद्धतम रूप आहे — पाहुण्याला मागावे लागण्यापूर्वीच महाऋषी त्याला काय हवे ते विचारतो. तपस्येचे पहिले फळ सौजन्य, असे कवी दाखवतो : स्वतःवर विजय मिळवलेले सामर्थ्य तत्काळ सेवेकडे वळते. &#x27;आनंदित झालेला राक्षसाधिपती&#x27; यावरून त्याची विनंती तो बोलण्यापूर्वीच त्याचे हृदय या कृपेने जिंकले गेले आहे, असे सूचित होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>वरद (&#x27;giver of boons&#x27;) is the standing epithet of the compassionate great one in epic and Purāṇa — the sage&#x27;s tapas overflows as grace toward whoever approaches. The host&#x27;s question &#x27;what may I do for you?&#x27; (kiṃ karavāṇi) is the classical formula of welcome, as when a king receives a Brāhmaṇa guest in the Rāmāyaṇa.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वरद (&#x27;वर देणारा&#x27;) हा महाभारत-पुराणांतील करुणामय थोरांचे ठरलेले विशेषण आहे — ऋषीची तपस्या जवळ येणाऱ्याप्रती कृपा म्हणून ओसंडते. &#x27;मी तुझ्यासाठी काय करू?&#x27; (किं करवाणि) हे स्वागताचे शास्त्रीय सूत्र आहे — रामायणात राजा ब्राह्मण अतिथीचे स्वागत करतो तसे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The OCR-notes correct the print&#x27;s वादिनि to वादिनम् (accusative, agreeing with वरदम् आद्यमुनिम्). समवीवदत् is the aorist (luṅ) of सम् + √वद् in the causative — &#x27;he addressed, spoke to.&#x27; The verse is in Pramitākṣarā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शुद्धिपत्रात छापील वादिनि हे वादिनम् (द्वितीया, वरदम् आद्यमुनिम्‌शी जुळणारे) असे शुद्ध केले आहे. समवीवदत् हे सम् + √वद्‌चे णिजन्त लुङ्-रूप आहे — &#x27;तो म्हणाला&#x27;. वृत्त प्रमिताक्षरा.</p></div></div>
+
+<div class="pagenav"><a href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 23</div></a><a class="next" href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 25</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

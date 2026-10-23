@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 7 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 7</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 7</span><span class="bl-mr lang-mr">श्लोक 7</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">विन्ध्यस्योत्तरदिग्भागे स्फीतो जनपदो महान् ।<br>दक्षिणे विरलः कस्मात्प्रक्षीण इव लक्ष्यते ।।७।।</div>
+  <div class="verse-iast">vindhyasyottaradigbhāge sphīto janapado mahān । dakṣiṇe viralaḥ kasmātprakṣīṇa iva lakṣyate</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">विन्ध्यस्य । उत्तर-दिक्-भागे । स्फीतः । जनपदः । महान् । दक्षिणे । विरलः । कस्मात् । प्रक्षीणः । इव । लक्ष्यते ।</div><div class="vig-iast">vindhyasya । uttara-dik-bhāge । sphītaḥ । janapadaḥ । mahān । dakṣiṇe । viralaḥ । kasmāt । prakṣīṇaḥ । iva । lakṣyate ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विन्ध्यस्य + उत्तर = विन्ध्यस्योत्तर (गुण) · दिक् + भागे = दिग्भागे · स्फीतः + जनपदः = स्फीतो जनपदो · कस्मात् + प्रक्षीणः = कस्मात्प्रक्षीणः · प्रक्षीणः + इव = प्रक्षीण इव (विसर्गलोप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">विन्ध्यस्य उत्तरदिग्भागे महान् जनपदः स्फीतः (अस्ति); दक्षिणे (सः) कस्मात् विरलः प्रक्षीणः इव लक्ष्यते ?</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&quot;To the north of the Vindhya the country is populous — a great thriving land; but in the south it appears sparse and as though wasted away. Why is that?&quot;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;विंध्य पर्वताच्या उत्तर दिशेला भूभाग वस्तीने बराच गजबजलेला दिसतो; दक्षिणेला (मात्र) वस्ती विरळ आणि जणू आटल्यासारखी का दिसते?&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उत्तरदिग्भागे</span>
+    <span class="word-iast">uttaradigbhāge</span>
+  </div>
+  <div><span class="word-grammar">उत्तरदिक्भाग (तत्पुरुष: उत्तरस्य दिशः भागः), पुंलिङ्ग सप्तमी एकवचन (locative singular)</span></div>
+  <div class="word-form">In this verse: उत्तरदिग्भागे — locative singular</div>
+  <p class="word-meaning lang-en">in the northern region</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तर भागात</p>
+  <div class="word-usage">
+    <div class="deva">अयोध्या उत्तरदिग्भागे अस्ति</div>
+    <div class="usage-iast">ayodhyā uttaradigbhāge asti</div>
+    <div class="usage-meaning lang-en">Ayodhyā lies in the northern region.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अयोध्या उत्तर भागात आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्फीतः</span>
+    <span class="word-iast">sphītaḥ</span>
+  </div>
+  <div><span class="word-grammar">√स्फाय् (भ्वादि) + क्त, पुंलिङ्ग प्रथमा एकवचन (past participle, nominative singular)</span></div>
+  <div class="word-form">In this verse: स्फीतः — past participle, nominative singular</div>
+  <p class="word-meaning lang-en">prosperous, thriving, populous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समृद्ध, गजबजलेला</p>
+  <div class="word-usage">
+    <div class="deva">स्फीतः जनपदः सुखम् अवाप्नोत्</div>
+    <div class="usage-iast">sphītaḥ janapadaḥ sukham avāpnot</div>
+    <div class="usage-meaning lang-en">The thriving country attained happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समृद्ध प्रदेशाने सुख मिळवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जनपदः</span>
+    <span class="word-iast">janapadaḥ</span>
+  </div>
+  <div><span class="word-grammar">जनपद (m., तत्पुरुष: जनानां पदम्), प्रथमा एकवचन (nominative singular)</span></div>
+  <div class="word-form">In this verse: जनपदः — nominative singular</div>
+  <p class="word-meaning lang-en">inhabited country, realm</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वस्तीचा प्रदेश</p>
+  <div class="word-usage">
+    <div class="deva">जनपदः जनेन पूर्णः आसीत्</div>
+    <div class="usage-iast">janapadaḥ janena pūrṇaḥ āsīt</div>
+    <div class="usage-meaning lang-en">The country was full of people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रदेश लोकांनी भरलेला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विरलः</span>
+    <span class="word-iast">viralaḥ</span>
+  </div>
+  <div><span class="word-grammar">विरल (adjective), पुंलिङ्ग प्रथमा एकवचन (nominative singular)</span></div>
+  <div class="word-form">In this verse: विरलः — nominative singular</div>
+  <p class="word-meaning lang-en">sparse, thin, scanty</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विरळ</p>
+  <div class="word-usage">
+    <div class="deva">दक्षिणे जनः विरलः आसीत्</div>
+    <div class="usage-iast">dakṣiṇe janaḥ viralaḥ āsīt</div>
+    <div class="usage-meaning lang-en">In the south the people were sparse.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दक्षिणेत लोक विरळ होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रक्षीणः इव</span>
+    <span class="word-iast">prakṣīṇaḥ iva</span>
+  </div>
+  <div><span class="word-grammar">प्र-√क्षि (भ्वादि) + क्त, पुंलिङ्ग प्रथमा एकवचन + इव (अव्यय, particle of comparison)</span></div>
+  <div class="word-form">In this verse: प्रक्षीणः इव — nominative + particle (&#x27;as if wasted&#x27;)</div>
+  <p class="word-meaning lang-en">as if wasted away, as if depleted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जणू आटलेला</p>
+  <div class="word-usage">
+    <div class="deva">देशः प्रक्षीणः इव लक्ष्यते</div>
+    <div class="usage-iast">deśaḥ prakṣīṇaḥ iva lakṣyate</div>
+    <div class="usage-meaning lang-en">The land appears as if wasted away.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देश जणू आटलेला दिसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लक्ष्यते</span>
+    <span class="word-iast">lakṣyate</span>
+  </div>
+  <div><span class="word-grammar">√लक्ष् (चुरादि), लट् (present), प्रथमपुरुष एकवचन, आत्मनेपद — कर्मणि प्रयोग (passive)</span></div>
+  <div class="word-form">In this verse: लक्ष्यते — passive 3rd singular</div>
+  <p class="word-meaning lang-en">is seen, appears</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिसतो (कर्मणि)</p>
+  <div class="word-usage">
+    <div class="deva">तत्र सुन्दरम् नगरम् लक्ष्यते</div>
+    <div class="usage-iast">tatra sundaram nagaram lakṣyate</div>
+    <div class="usage-meaning lang-en">A beautiful city is seen there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे सुंदर नगर दिसते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāma&#x27;s question is the devotee&#x27;s question too: why does one region of life flourish while another lies barren? The verse sets up the sthala&#x27;s central contrast — the populous north against the emptied south — and invites the answer that desolation has a moral cause. Spiritually, the &#x27;south&#x27; is the neglected quarter of the heart: where vigilance lapses, the land of the soul grows विरल, sparse. The question itself is the beginning of remedy, for it turns the seeker toward the sage.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामाचा प्रश्न भक्ताचाही प्रश्न आहे : जीवनाचा एक प्रदेश का फुलतो आणि दुसरा का ओसाड पडतो? श्लोक स्थलाचा मध्यवर्ती विरोध मांडतो — गजबजलेला उत्तर विरुद्ध रिकामा झालेला दक्षिण — आणि ओसाडीला नैतिक कारण असते, हे उत्तर आमंत्रित करतो. आध्यात्मिकदृष्ट्या &#x27;दक्षिण&#x27; म्हणजे हृदयाचा दुर्लक्षित कोपरा : जेथे दक्षता ढिली पडते, तेथे आत्म्याची भूमी विरल होते. प्रश्न स्वतःच उपायाची सुरुवात आहे, कारण तो साधकाला मुनीकडे वळवतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Vindhya range is the classical divide between Āryāvarta and the Deccan in Sanskrit geography (Manu 2.21–22); the poet uses it as his moral map. In the Rāmāyaṇa&#x27;s world the south — Daṇḍaka, Janasthāna — is rākṣasa-haunted and thinly settled, while the northern kingdoms prosper under dharma. Rāma&#x27;s innocent question lets Agastya, the sage of the south, give the theodicy: the land is empty because evil has emptied it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>संस्कृत भूगोलात विंध्य पर्वत हा आर्यावर्त आणि दख्खन यांमधील रूढ विभाग आहे (मनु २.२१–२२); कवी त्याचा नैतिक नकाशा म्हणून उपयोग करतो. रामायणाच्या जगात दक्षिण — दंडक, जनस्थान — राक्षसांनी गांजलेला व तुरळक वस्तीचा आहे, तर उत्तरेकडील राज्ये धर्माखाली भरभराटतात. रामाचा निरागस प्रश्न दक्षिणेच्या मुनीला — अगस्त्याला — ईश्वरी न्यायाची मीमांसा देण्याची संधी देतो : भूमी रिकामी आहे, कारण दुष्टतेने ती रिकामी केली आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>कस्मात् (&#x27;why, from what cause&#x27;) governs the whole inquiry — the verse is Rāma&#x27;s direct speech, continued in Agastya&#x27;s reply at v.8. The north–south contrast is not ethnography but stage-setting: the desolate south is the field of Rāma&#x27;s coming action and, for this poem, the Konkan coast that Paraśurāma raised and that Rāma&#x27;s story will sanctify. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;कस्मात्&#x27; (&#x27;का, कोणत्या कारणाने&#x27;) संपूर्ण जिज्ञासा चालवते — हा श्लोक रामाचे प्रत्यक्ष भाषण आहे, जे श्लोक ८ मधील अगस्त्यांच्या उत्तरात पुढे चालू राहते. उत्तर-दक्षिण विरोध हा मानववंशवर्णन नसून रंगमंचरचना आहे : ओसाड दक्षिण हे रामाच्या येणाऱ्या कार्याचे क्षेत्र आहे आणि या काव्यासाठी परशुरामाने वर आणलेला, रामकथा पवित्र करणारा कोंकणकिनारा आहे. वृत्त : अनुष्टुभ.</p></div></div>
+
+<div class="pagenav"><a href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 6</div></a><a class="next" href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 8</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

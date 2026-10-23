@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 7 — Kṛṣṇāvatāravarṇanaḥ 4 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 4</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 4</span><span class="bl-mr lang-mr">श्लोक 4</span></h1>
+<p class="meta">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ &middot; <span class="deva">सप्तमः सर्गः · कृष्णावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स द्विषड्योजनोत्सेधात्तस्मान्मागधवेष्टितात् ।<br>पुप्लुवे तेन गिरिराड्भाराक्रान्तो धरां गतः ।।४।।</div>
+  <div class="verse-iast">sa dviṣaḍyojanotsedhāttasmānmāgadhaveṣṭitāt । pupluve tena girirāḍbhārākrānto dharāṃ gataḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">सः । द्विषड्योजन-उत्सेधात् । तस्मात् । मागध-वेष्टितात् । पुप्लुवे । तेन । गिरिराट् । भार-आक्रान्तः । धराम् । गतः ।</div><div class="vig-iast">saḥ । dviṣaḍyojana-utsedhāt । tasmāt । māgadha-veṣṭitāt । pupluve । tena । girirāṭ । bhāra-ākrāntaḥ । dharām । gataḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">द्वि + षट् = द्विषट् · षट् + योजन = षड्योजन (ट् → ड्) · योजन + उत्सेधात् = योजनोत्सेधात् (गुण) · उत्सेधात् + तस्मात् = उत्सेधात्तस्मात् · तस्मात् + मागध = तस्मान्मागध (त् → न्) · गिरिराट् + भार = गिरिराड्भार (ट् → ड्) · भार + आक्रान्तः = भाराक्रान्तः · आक्रान्तः + धराम् = आक्रान्तो धराम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">सः द्विषड्योजनोत्सेधात् मागधवेष्टितात् तस्मात् (गिरेः) पुप्लुवे; तेन भाराक्रान्तः गिरिराट् धरां गतः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>From that mountain — twelve yojanas high and encircled by the Māgadha&#x27;s (Jarāsandha&#x27;s) forces — he leapt down; and thereby that king of mountains, crushed by the weight, sank level with the earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बारा योजने उंच असलेल्या व जरासंधाने वेढलेल्या त्या पर्वतावरून कृष्णाने उडी मारली. त्यामुळे भाराने दबलेला तो पर्वत पृथ्वीसपाट झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्विषड्योजनोत्सेधात्</span>
+    <span class="word-iast">dviṣaḍyojanotsedhāt</span>
+  </div>
+  <div><span class="word-grammar">द्वि-षड् (द्विगु, गुणाकारार्थी) + योजन + उत्-सेध (उत् + √सिध् + घञ्, &#x27;उंची&#x27;) — पुंलिंगी पञ्चमी एकवचन; अपादान (&#x27;उंची असलेल्यावरून&#x27;)</span></div>
+  <div class="word-form">In this verse: द्विषड्योजनोत्सेधात्तस्मान्</div>
+  <p class="word-meaning lang-en">from (the mountain) twelve yojanas in height</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बारा (२ × ६) योजने उंची असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">द्विषड्योजनोत्सेधात् पर्वतात् नदी निर्गता ।</div>
+    <div class="usage-iast">dviṣaḍyojanotsedhāt parvatāt nadī nirgatā ।</div>
+    <div class="usage-meaning lang-en">A river issued from the mountain twelve yojanas high.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बारा योजने उंच पर्वतावरून नदी निघाली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मागधवेष्टितात्</span>
+    <span class="word-iast">māgadhaveṣṭitāt</span>
+  </div>
+  <div><span class="word-grammar">मागध-वेष्टित (तृतीया तत्पुरुष, वि + √वेष्ट् + क्त) — पुंलिंगी पञ्चमी एकवचन; विशेषण</span></div>
+  <div class="word-form">In this verse: मागधवेष्टितात् ।</div>
+  <p class="word-meaning lang-en">encircled/besieged by the Māgadha (Jarāsandha)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मगधराज जरासंधाने वेढलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">मागधवेष्टितात् पुरात् सः निर्गतः ।</div>
+    <div class="usage-iast">māgadhaveṣṭitāt purāt saḥ nirgataḥ ।</div>
+    <div class="usage-meaning lang-en">He escaped from the city besieged by the Māgadha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मागधाने वेढलेल्या पुरातून तो निसटला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुप्लुवे</span>
+    <span class="word-iast">pupluve</span>
+  </div>
+  <div><span class="word-grammar">√प्लु (प्लवते) — लिट्, प्रथमपुरुष एकवचन; द्वित्व : पु-प्लु</span></div>
+  <div class="word-form">In this verse: पुप्लुवे तेन</div>
+  <p class="word-meaning lang-en">leapt, plunged down</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उडी मारली (√प्लु, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">सः पर्वतात् पुप्लुवे ।</div>
+    <div class="usage-iast">saḥ parvatāt pupluve ।</div>
+    <div class="usage-meaning lang-en">He leapt down from the mountain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने पर्वतावरून उडी मारली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गिरिराट्</span>
+    <span class="word-iast">girirāṭ</span>
+  </div>
+  <div><span class="word-grammar">गिरि-राज् (षष्ठी तत्पुरुष, &#x27;पर्वतांचा राजा&#x27;) — पुंलिंगी प्रथमा एकवचन; राज्-शब्दाचा रूप</span></div>
+  <div class="word-form">In this verse: गिरिराड्भाराक्रान्तो</div>
+  <p class="word-meaning lang-en">the king of mountains</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पर्वतराज</p>
+  <div class="word-usage">
+    <div class="deva">गिरिराट् हिमालयः भारतम् रक्षति ।</div>
+    <div class="usage-iast">girirāṭ himālayaḥ bhāratam rakṣati ।</div>
+    <div class="usage-meaning lang-en">Himālaya, the king of mountains, guards Bhārata.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पर्वतराज हिमालय भारताचे रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भाराक्रान्तः</span>
+    <span class="word-iast">bhārākrāntaḥ</span>
+  </div>
+  <div><span class="word-grammar">भार-आक्रान्त (तृतीया तत्पुरुष, आ + √क्रम् + क्त) — पुंलिंगी प्रथमा एकवचन; विशेषण</span></div>
+  <div class="word-form">In this verse: गिरिराड्भाराक्रान्तो</div>
+  <p class="word-meaning lang-en">overwhelmed/crushed by the weight</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(कृष्णाच्या) भाराने दबलेला</p>
+  <div class="word-usage">
+    <div class="deva">भाराक्रान्तः वृषभः मन्दं चचार ।</div>
+    <div class="usage-iast">bhārākrāntaḥ vṛṣabhaḥ mandaṃ cacāra ।</div>
+    <div class="usage-meaning lang-en">The weight-laden bull moved slowly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भाराने दबलेला बैल हळू चालला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धरां गतः</span>
+    <span class="word-iast">dharāṃ gataḥ</span>
+  </div>
+  <div><span class="word-grammar">धरा (स्त्रीलिंगी) — द्वितीया एकवचन; √गम् + क्त — पुंलिंगी प्रथमा एकवचन; &#x27;जमिनीस गेलेला&#x27; = सपाट झालेला</span></div>
+  <div class="word-form">In this verse: भाराक्रान्तो धरां गतः</div>
+  <p class="word-meaning lang-en">gone to the earth, levelled flat</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जमिनीसपाट झाला</p>
+  <div class="word-usage">
+    <div class="deva">वज्रेण वृक्षः धरां गतः ।</div>
+    <div class="usage-iast">vajreṇa vṛkṣaḥ dharāṃ gataḥ ।</div>
+    <div class="usage-meaning lang-en">The tree was felled to the ground by the thunderbolt.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वृक्ष वज्राने जमिनीसपाट झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The leap is the suddenness of grace: the Lord does not climb down by stages but descends in one bound, and the lofty mountain — pride, the high peak of ego — is levelled by His touch. Bhāra here is double-edged: the mountain cannot bear the weight of the divine, yet that very crushing founds a tīrtha (v. 5). So too the devotee: contact with the Lord first flattens every eminence of &#x27;I&#x27;, and on that levelled ground holiness takes root.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ही उडी कृपेची अकस्मात्ता आहे : भगवान टप्प्याटप्प्याने उतरत नाही, तर एकाच उडीत अवतरतो; आणि उंच पर्वत — अहंकाराचे उंच शिखर — त्याच्या स्पर्शाने सपाट होते. येथील &#x27;भार&#x27; दुहेरी हे : पर्वत दिव्य भार सहू शकत नाही, पण त्याच दबल्याजागेवर तीर्थ उभे राहते (श्लोक ५). भक्ताचेही तसेच : भगवंताचा स्पर्श प्रथम &#x27;मी&#x27;-पणाच्या सर्व उंचीवर सपाट करतो, आणि त्या सपाट भूमीवरच पावित्र्य रुजते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas know several divine leap-and-flatten motifs — Viṣṇu&#x27;s Trivikrama stride measuring the worlds is the archetype — and sthala-māhātmyas regularly derive a tīrtha from the violent impress of a deity&#x27;s body (footprints, leaps, falls). Here the poet inverts the Bhāgavata&#x27;s Gomantaka episode (where Jarāsandha sets the mountain ablaze around the brothers) into his own marvel: the mountain that the Māgadha besieged is instead flattened by the sheer weight (bhāra) of the Lord&#x27;s descent, and the flattened ground becomes the tīrtha of v. 5. Girirāṭ, &#x27;king of mountains&#x27;, is the stock epithet (Meru, Himālaya) here humbled into a hillock.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणांत दैवी उडी-व-सपाटीकरणाचे अनेक प्रसंग माहीत आहेत — विष्णूचे त्रिविक्रम-पादविक्षेप हा आदर्श आहे — आणि स्थल-माहात्म्ये देवतेच्या शरीराच्या तीव्र ठस्स्यापासून (पादचिह्ने, उड्या, पतने) तीर्थ निर्माण होणे ही नियमित पद्धत आहे. येथे कवी भागवतातील गोमन्तक-प्रसंग (ज्येथे जरासंध बंधूंभोवती असलेल्या पर्वताला आग लावतो) अपल्या अद्भुतात बदलतो : मागधाने वेढलेला पर्वत भगवंताच्या अवतरणाच्या भारानेच सपाट होतो, आणि तीच सपाट भूमी श्लोक ५-चे तीर्थ बनते. &#x27;गिरिराट्&#x27; (पर्वतराज — मेरू, हिमालय यांचे रूढ विशेषण) येथे टेकडीत नम्र झालेला आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Dvi-ṣaḍ-yojana = &#x27;two-six&#x27;, i.e. twelve yojanas — a dvigu-style multiplicative compound; the yojana being some eight miles, the figure is mythic scale, not survey. Māgadha is Jarāsandha, king of Magadha. Pupluve is the perfect (liṭ) of √plu (&#x27;to leap, swim&#x27;), reduplicated pu-plu. Metre: Anuṣṭubh. The verse&#x27;s textual note in the edition records no emendation here (the noted sandhi girirāṭ bhārākrāntaḥ → girirāḍbhārākrāntaḥ belongs to v. 7.4&#x27;s line as printed in the book). Dharaṃ gataḥ, &#x27;gone to the earth&#x27;, is the idiom for &#x27;levelled flat&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;द्विषड्&#x27; म्हणजे दोन-सहा, म्हणजे बारा योजने — द्विगु-पद्धतीचा गुणाकारक समास; योजन म्हणजे सुमारे आठ मैल, म्हणून हा आकडा पौराणिक प्रमाणाचा आहे, मोजमापाचा नाही. &#x27;मागध&#x27; म्हणजे मगधराज जरासंध. &#x27;पुप्लुवे&#x27; हे √प्लु (&#x27;उडी मारणे, पोहणे&#x27;)-चे लिट्-रूप (द्वित्वयुक्त पु-प्लु). वृत्त : अनुष्टुभ्. या श्लोकात पाठभेद नोंदविलेला नाही. &#x27;धरां गतः&#x27; म्हणजे &#x27;जमिनीसपाट झाला&#x27; असा रूढ प्रयोग आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 3</div></a><a class="next" href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 5</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

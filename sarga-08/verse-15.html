@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 15 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 15</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 15</span><span class="bl-mr lang-mr">श्लोक 15</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">राम राम महाभाग शरणागतवत्सल ।<br>एकेषामपराधेन क्रोधः सर्वेषु ते कथम् ।।१५।।</div>
+  <div class="verse-iast">rāma rāma mahābhāga śaraṇāgatavatsala । ekeṣāmaparādhena krodhaḥ sarveṣu te katham</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">राम । राम । महाभाग । शरण-आगत-वत्सल । एकेषाम् । अपराधेन । क्रोधः । सर्वेषु । ते । कथम् ।</div><div class="vig-iast">rāma । rāma । mahābhāga । śaraṇa-āgata-vatsala । ekeṣām । aparādhena । krodhaḥ । sarveṣu । te । katham ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">शरण + आगत = शरणागत · एकेषाम् + अपराधेन = एकेषामपराधेन</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे राम राम महाभाग शरणागतवत्सल, एकेषाम् अपराधेन ते क्रोधः सर्वेषु कथम् ?</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O Rama, Rama, greatly blessed one, lover of those who seek refuge — how is it that your anger, provoked by the offence of a few, falls upon all?</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बा परशुरामा, महाभागा, शरणागतवत्सला रामा, काहींच्या अपराधामुळे तू सर्वांवर क्रोध करतोस किंवा राग काढतोस हे कसे?</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शरणागतवत्सल</span>
+    <span class="word-iast">śaraṇāgatavatsala</span>
+  </div>
+  <div><span class="word-grammar">masculine vocative singular; bahuvrīhi (शरणागत + वत्सल)</span></div>
+  <div class="word-form">In this verse: शरणागतवत्सल</div>
+  <p class="word-meaning lang-en">O lover of those who seek refuge</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरण आलेल्यांवर प्रेम करणारा (संबोधन)</p>
+  <div class="word-usage">
+    <div class="deva">हे शरणागतवत्सल, मां रक्ष।</div>
+    <div class="usage-iast">he śaraṇāgatavatsala, māṃ rakṣa.</div>
+    <div class="usage-meaning lang-en">O lover of refugees, protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे शरणागतवत्सला, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकेषाम्</span>
+    <span class="word-iast">ekeṣām</span>
+  </div>
+  <div><span class="word-grammar">genitive plural; pronominal declension of एक</span></div>
+  <div class="word-form">In this verse: एकेषाम्</div>
+  <p class="word-meaning lang-en">of some, of a few</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काहींच्या (एक सर्वनाम, षष्ठी बहु.)</p>
+  <div class="word-usage">
+    <div class="deva">एकेषां मतमेव ग्राह्यम्।</div>
+    <div class="usage-iast">ekeṣāṃ matameva grāhyam.</div>
+    <div class="usage-meaning lang-en">Only the opinion of some is to be accepted.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काहींचेच मत स्वीकारार्ह आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रोधः सर्वेषु</span>
+    <span class="word-iast">krodhaḥ sarveṣu</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular + masculine locative plural</span></div>
+  <div class="word-form">In this verse: क्रोधः सर्वेषु</div>
+  <p class="word-meaning lang-en">anger upon all</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वांवर राग</p>
+  <div class="word-usage">
+    <div class="deva">तव क्रोधः सर्वेषु दृश्यते।</div>
+    <div class="usage-iast">tava krodhaḥ sarveṣu dṛśyate.</div>
+    <div class="usage-meaning lang-en">Your anger is seen upon all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझा राग सर्वांवर दिसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ते</span>
+    <span class="word-iast">te</span>
+  </div>
+  <div><span class="word-grammar">genitive singular; enclitic form of त्वद्</span></div>
+  <div class="word-form">In this verse: ते</div>
+  <p class="word-meaning lang-en">your</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझा</p>
+  <div class="word-usage">
+    <div class="deva">ते यशो दिक्षु गीयते।</div>
+    <div class="usage-iast">te yaśo dikṣu gīyate.</div>
+    <div class="usage-meaning lang-en">Your fame is sung in all directions.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझी कीर्ती दाही दिशांत गायली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कथम्</span>
+    <span class="word-iast">katham</span>
+  </div>
+  <div><span class="word-grammar">interrogative adverb (indeclinable)</span></div>
+  <div class="word-form">In this verse: कथम्</div>
+  <p class="word-meaning lang-en">how? why?</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कसा?</p>
+  <div class="word-usage">
+    <div class="deva">कथमेतत् त्वया कृतम्।</div>
+    <div class="usage-iast">kathametat tvayā kṛtam.</div>
+    <div class="usage-meaning lang-en">How was this done by you?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे तू कसे केलेस?</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The elders&#x27; plea turns on the deity&#x27;s own nature: a refuge-lover cannot abandon refugees. Their question — how can the fault of a few condemn all? — is the classic ground of mercy in Indian devotional thought, where the devotee holds the Lord to His own declared compassion. For the sthala, it cements Parashurama&#x27;s identity as शरणागतवत्सल, the protector whose anger is never the last word.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्येष्ठांची विनवणी देवतेच्या स्वतःच्या स्वभावावर आधारलेली आहे — शरणागतांवर प्रेम करणारा शरणागतांना सोडू शकत नाही. &#x27;काहींच्या दोषाने सर्वांना शिक्षा कशी?&#x27; हा त्यांचा प्रश्न भारतीय भक्तिविचारातील दयेचा शास्त्रीय आधार आहे, जेथे भक्त देवाला त्याच्याच घोषित करुणेची आठवण करून देतो. स्थलमाहात्म्याच्या दृष्टीने याने परशुरामाची शरणागतवत्सल ही ओळख पक्की होते — त्याचा क्रोध हा कधीच शेवटचा शब्द नसतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>शरणागतवत्सल is among the most cherished epithets of Rama in the devotional tradition — the Lord who never turns away one who surrenders. Invoking it at the head of a plea is itself the argument: the name binds the named. The proportionality plea, &#x27;punish the guilty, spare the rest,&#x27; echoes the standard of just rule praised throughout dharma literature.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शरणागतवत्सल हे भक्तिपरंपरेतील रामाच्या सर्वांत प्रिय विशेषणांपैकी एक आहे — शरण येणाऱ्याला कधीही परत न पाठवणारा प्रभू. विनवणीच्या सुरुवातीलाच त्याचा उच्चार करणे हाच युक्तिवाद आहे — नाव हे नामधारकाला बांधते. &#x27;दोषींना शिक्षा करा, बाकीच्यांना सोडा&#x27; ही प्रमाणबद्धतेची विनंती धर्मसाहित्यात सर्वत्र गौरविलेल्या न्याय्य शासनाच्या मापदंडाचा प्रतिध्वनी आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The doubled vocative राम राम carries the trembling urgency of direct address, and the verse&#x27;s question is answered in 8.19, where Parashurama shifts the blame from the youths to Kali himself. Note the pointed contrast एकेषाम्–सर्वेषु, &#x27;of a few&#x27; against &#x27;upon all,&#x27; which frames the whole moral argument.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दुहेरी संबोधन राम राम मध्ये प्रत्यक्ष संवादाची थरथरणारी तातडी आहे, आणि या श्लोकातील प्रश्नाचे उत्तर ८.१९ मध्ये मिळते, जेथे परशुराम दोष तरुणांकडून कलीकडे वळवतो. एकेषाम्–सर्वेषु हा &#x27;काहींच्या&#x27; विरुद्ध &#x27;सर्वांवर&#x27; असा टोकाचा विरोध लक्षात घेण्यासारखा आहे — तोच संपूर्ण नैतिक युक्तिवादाची चौकट आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-14.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 14</div></a><a class="next" href="verse-16.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 16</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

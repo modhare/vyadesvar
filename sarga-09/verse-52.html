@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 52 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 52</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 52</span><span class="bl-mr lang-mr">श्लोक 52</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यस्माद्वाडस्य सामीप्ये दृष्टो मस्करकुञ्जरः ।<br>तस्माद्वाडेश्वरो नाम्ना भवत्वेष जगद्गुरुः ।।५२।।</div>
+  <div class="verse-iast">yasmādvāḍasya sāmīpye dṛṣṭo maskarakuñjaraḥ । tasmādvāḍeśvaro nāmnā bhavatveṣa jagadguruḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यस्मात् । वाडस्य । सामीप्ये । दृष्टः । मस्कर-कुञ्जरः । तस्मात् । वाडेश्वरः । नाम्ना । भवतु । एषः । जगत्-गुरुः ।</div><div class="vig-iast">yasmāt । vāḍasya । sāmīpye । dṛṣṭaḥ । maskara-kuñjaraḥ । tasmāt । vāḍeśvaraḥ । nāmnā । bhavatu । eṣaḥ । jagat-guruḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यस्मात् + वाडस्य = यस्माद्वाडस्य · दृष्टः + मस्कर = दृष्टो मस्कर · तस्मात् + वाडेश्वरः = तस्माद्वाडेश्वरः · वाडेश्वरः + नाम्ना = वाडेश्वरो नाम्ना · भवतु + एषः = भवत्वेषः (यण्) · एषः + जगत् = एष जगत् · जगत् + गुरुः = जगद्गुरुः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्मात् वाडस्य सामीप्ये (एषः) मस्करकुञ्जरः दृष्टः, तस्मात् एषः जगद्गुरुः नाम्ना वाडेश्वरः भवतु ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Since the maskara-kuñjara — the king of bamboos, and by double meaning the foremost among ascetics — was seen near the vāḍā (the cow-shed), let this Teacher of the world be known by the name Vāḍeśvara.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्या अर्थी वाडाच्या (तबेल्याच्या) जवळच मस्करश्रेष्ठ — १) श्रेष्ठ बांबू, २) संन्याश्यांचा राजा — दृष्टीला पडला त्या अर्थी हा जगद्गुरू वाडेश्वर नावाने ओळखला जावो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडस्य सामीप्ये</span>
+    <span class="word-iast">vāḍasya sāmīpye</span>
+  </div>
+  <div><span class="word-grammar">genitive singular (ṣaṣṭhī ekavacana) of vāḍa (masculine) + locative singular (saptamī ekavacana) of sāmīpya (neuter, a-kārānta)</span></div>
+  <div class="word-form">In this verse: वाडस्य सामीप्ये — as printed</div>
+  <p class="word-meaning lang-en">near the vāḍā (cow-shed, stable)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाड्याच्या (तबेल्याच्या) जवळ</p>
+  <div class="word-usage">
+    <div class="deva">गावः वाडस्य सामीप्ये चरन्ति</div>
+    <div class="usage-iast">gāvaḥ vāḍasya sāmīpye caranti</div>
+    <div class="usage-meaning lang-en">The cows graze near the stable.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाई तबेल्याजवळ चरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मस्करकुञ्जरः</span>
+    <span class="word-iast">maskarakuñjaraḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (prathamā ekavacana), masculine, of the tatpuruṣa compound maskara-kuñjara (carrying a śleṣa)</span></div>
+  <div class="word-form">In this verse: मस्करकुञ्जरः — as printed</div>
+  <p class="word-meaning lang-en">the chief of bamboos — by śleṣa, the foremost among ascetics</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(१) बांबूंमधील श्रेष्ठ (मस्कर = बांबू) (२) संन्याश्यांमधील श्रेष्ठ (मस्करिन्) — श्लेष</p>
+  <div class="word-usage">
+    <div class="deva">वने मस्करकुञ्जरः शोभते</div>
+    <div class="usage-iast">vane maskarakuñjaraḥ śobhate</div>
+    <div class="usage-meaning lang-en">The king of bamboos shines in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वनात श्रेष्ठ बांबू शोभतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवतु</span>
+    <span class="word-iast">bhavatu</span>
+  </div>
+  <div><span class="word-grammar">imperative (loṭ), 3rd person singular, parasmaipada, of √bhū (class 1)</span></div>
+  <div class="word-form">In this verse: भवतु — as printed</div>
+  <p class="word-meaning lang-en">let him be (known as)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>होवो (लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">तव कल्याणं भवतु</div>
+    <div class="usage-iast">tava kalyāṇaṃ bhavatu</div>
+    <div class="usage-meaning lang-en">May welfare be yours.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझे कल्याण होवो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The naming sanctifies the lowly place: the Lord takes His name not from a palace but from a cow-shed. Sthala-names are never accidents — they preserve, in a single word, the memory of how the Lord was found, so that every utterance of &#x27;Vāḍeśvara&#x27; retells the āvirbhāva. And the śleṣa crowns it: in the bamboo-chief the poet sees the ascetic-chief, teaching that nature and the life of renunciation both point to the same Lord. The devotee learns that God dwells gladly where humility is — the cowshed, not the court, becomes His address.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे नामकरण सामान्य ठिकाणाला पवित्र करते : भगवंत आपले नाव राजवाड्यावरून नव्हे, तर गोठ्यावरून घेतो. स्थाननावे कधी योगायोग नसतात — भगवंत कसा सापडला याची स्मृती ते एका शब्दात जतन करतात, त्यामुळे &#x27;वाडेश्वर&#x27; या प्रत्येक उच्चारातून आविर्भावाची कथा पुन्हा सांगितली जाते. आणि श्लेष त्यावर कळस चढवतो : बांबूश्रेष्ठात कवी संन्यासिश्रेष्ठ पाहतो — निसर्ग आणि संन्यासजीवन दोन्ही एकाच भगवंताकडे बोट दाखवतात, हे शिकवतो. भाविकाला धडा मिळतो की देव नम्रता जेथे असते तेथे आनंदाने वसतो — दरबार नव्हे, गोठा त्याचा पत्ता बनतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Naming the deity after the place of its discovery is ancient sthala practice — cf. vv. 2–3, where the gods take the names of the sages who installed them. Here the liṅga takes its name from the humble vāḍā, the cow-shed near which the marvel appeared. The śleṣa on maskara-kuñjara is the poet&#x27;s signature touch: maskara is the bamboo, and the maskarin (bearer of the bamboo staff) the wandering ascetic — so the word means at once &#x27;the king of bamboos&#x27; and &#x27;the foremost among ascetics&#x27;, binding the forest&#x27;s nature and the ascetic tradition into the Lord&#x27;s very name.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शोध लागलेल्या ठिकाणावरून देवतेचे नामकरण ही प्राचीन स्थानप्रथा आहे — श्लोक २–३ पाहा, जेथे देव स्थापन करणाऱ्या मुनींची नावे घेतात. येथे लिंगाला चमत्कार जेथे घडला त्या सामान्य वाड्याचे — गोठ्याचे — नाव मिळते. मस्करकुञ्जरावरील श्लेष ही कवीची खास खूण आहे : मस्कर म्हणजे बांबू आणि मस्करी (बांबू-दंडधारी) म्हणजे परिव्राजक संन्यासी — त्यामुळे या शब्दाचा अर्थ एकाच वेळी &#x27;बांबूंमधील श्रेष्ठ&#x27; आणि &#x27;संन्याश्यांमधील अग्रणी&#x27; असा होतो; वनाचे निसर्गरूप आणि संन्यासपरंपरा भगवंताच्या नावातच गुंफली जातात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. Note the metre-driven spelling वाडेश्वरः — the group intro records that the verses keep वाडेश/वाडेश्वर wherever the metre requires it, against the colophons&#x27; व्याडेश्वर. &#x27;Jagadguru&#x27; (&#x27;teacher of the world&#x27;) is here an epithet of Śiva. The vāḍā-connection is the sthala&#x27;s founding memory: the liṅga was found beside the cow-shed, and the humble setting becomes the Lord&#x27;s eternal name. The verse&#x27;s yasmāt… tasmāt frame makes the naming a reasoned royal decree, not a casual label.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. वृत्तचालित वाडेश्वरः हे रूपलेखन लक्षात घ्या — पुष्पिकांतील व्याडेश्वराच्या विरुद्ध वृत्तासाठी जेथे आवश्यक तेथे श्लोकांत वाडेश/वाडेश्वर ठेवले जाते, असे समूह-प्रस्तावनेत नोंदवले आहे. &#x27;जगद्गुरु&#x27; (&#x27;जगाचा गुरु&#x27;) हे येथे शिवाचे विशेषण आहे. वाड्याशी असलेला संबंध ही स्थानाची संस्थापक स्मृती आहे : लिंग गोठ्याशेजारी सापडले आणि ते सामान्य ठिकाण भगवंताचे शाश्वत नाव बनले. श्लोकाची यस्मात्… तस्मात् ही रचना नामकरणाला तर्कशुद्ध राजाज्ञा बनवते, नुसती वरवरची खूण नव्हे.</p></div></div>
+
+<div class="pagenav"><a href="verse-51.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 51</div></a><a class="next" href="verse-53.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 53</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

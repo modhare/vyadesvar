@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 29 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 29</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 29</span><span class="bl-mr lang-mr">श्लोक 29</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Udgatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ तत्र यातुनिगृहीतदितितनयवैरिदासिकाः ।।<br>हैहयरिपुमहिमानमुरुं गुरुहर्षमापुरवधार्य लोकतः ।।२९।।</div>
+  <div class="verse-iast">atha tatra yātunigṛhītadititanayavairidāsikāḥ । । haihayaripumahimānamuruṃ guruharṣamāpuravadhārya lokataḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । तत्र । यातु-निगृहीत-दितितनय-वैरि-दासिकाः । हैहय-रिपु-महिमानम् । उरुम् । गुरु-हर्षम् । आपुः । अवधार्य । लोकतः ।</div><div class="vig-iast">atha । tatra । yātu-nigṛhīta-dititanaya-vairi-dāsikāḥ । haihaya-ripu-mahimānam । urum । guru-harṣam । āpuḥ । avadhārya । lokataḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">महिमानम् + उरुम् = महिमानमुरुम् · हर्षम् + आपुः = हर्षमापुः · आपुः + अवधार्य = आपुरवधार्य (विसर्ग → र्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ तत्र यातुनिगृहीतदितितनयवैरिदासिकाः लोकतः हैहयरिपुमहिमानम् उरुम् अवधार्य गुरुहर्षम् आपुः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then the waiting-maids of the gods — held captive by the demons, those foes of Diti&#x27;s sons — hearing from the people of the boundless glory of Haihaya&#x27;s foe (Paraśurāma), attained great joy.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>लोकांकडून हैहयशत्रू (कार्तवीर्याचा शत्रू) परशुरामाचा हा अपार महिमा ऐकून राक्षसांनी पकडून ठेवलेल्या देवांच्या त्या दासींना (देवकन्यांना) अतिशय आनंद झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यातुनिगृहीत</span>
+    <span class="word-iast">yātunigṛhīta</span>
+  </div>
+  <div><span class="word-grammar">past passive participle of नि + √गृह् with यातु (&#x27;demon&#x27;) as agent — &#x27;seized by demons&#x27;; adjective</span></div>
+  <div class="word-form">In this verse: यातुनिगृहीत (stem यातुनिगृहीत)</div>
+  <p class="word-meaning lang-en">captured by the demons</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसांनी (यातु) पकडून ठेवलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">यातु निगृहीताः कन्याः मोचिताः अभवन् ।</div>
+    <div class="usage-iast">yātu nigṛhītāḥ kanyāḥ mocitāḥ abhavan ।</div>
+    <div class="usage-meaning lang-en">The maidens captured by the demons were freed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसांनी पकडलेल्या कन्या मुक्त झाल्या.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दितितनयवैरिदासिकाः</span>
+    <span class="word-iast">dititanayavairidāsikāḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative plural; तत्पुरुष: दितितनयवैरि (&#x27;foes of Diti&#x27;s sons,&#x27; i.e. the gods) + दासिका (&#x27;maidservants&#x27;)</span></div>
+  <div class="word-form">In this verse: दितितनयवैरिदासिकाः (प्रथमा बहुवचन)</div>
+  <p class="word-meaning lang-en">the maidservants of the gods (foes of Diti&#x27;s sons)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दैत्यांच्या शत्रूंच्या (देवांच्या) दासी, देवकन्या</p>
+  <div class="word-usage">
+    <div class="deva">दितितनय वैरि दासिकाः स्वर्गे वसन्ति ।</div>
+    <div class="usage-iast">dititanaya vairi dāsikāḥ svarge vasanti ।</div>
+    <div class="usage-meaning lang-en">The gods&#x27; maidservants dwell in heaven.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांच्या दासी स्वर्गात राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हैहयरिपुमहिमानम्</span>
+    <span class="word-iast">haihayaripumahimānam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular; तत्पुरुष हैहयरिपु-महिमन् (&#x27;the glory of Haihaya&#x27;s foe&#x27;)</span></div>
+  <div class="word-form">In this verse: हैहयरिपुमहिमानम् (द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">the glory of the foe of the Haihayas (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हैहयांचा (कार्तवीर्याचा) शत्रू परशुराम याचा महिमा</p>
+  <div class="word-usage">
+    <div class="deva">जनाः हैहय रिपु महिमानम् उरुम् अवर्णयन् ।</div>
+    <div class="usage-iast">janāḥ haihaya ripu mahimānam urum avarṇayan ।</div>
+    <div class="usage-meaning lang-en">The people described the vast glory of Haihaya&#x27;s foe.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांनी हैहयशत्रूचा अपार महिमा वर्णिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकतः अवधार्य</span>
+    <span class="word-iast">lokataḥ avadhārya</span>
+  </div>
+  <div><span class="word-grammar">लोकतः — ablative singular of लोक (&#x27;from people&#x27;); अवधार्य — gerund (ल्यप्) of अव + √धृ</span></div>
+  <div class="word-form">In this verse: लोकतः (पञ्चमी) + अवधार्य (धातुसाधित अव्यय)</div>
+  <p class="word-meaning lang-en">having heard / learnt from people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांकडून ऐकून</p>
+  <div class="word-usage">
+    <div class="deva">सः लोकतः अवधार्य सत्यम् अजानात् ।</div>
+    <div class="usage-iast">saḥ lokataḥ avadhārya satyam ajānāt ।</div>
+    <div class="usage-meaning lang-en">Having learnt it from people, he knew the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांकडून ऐकून त्याला सत्य कळले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गुरुहर्षम् आपुः</span>
+    <span class="word-iast">guruharṣam āpuḥ</span>
+  </div>
+  <div><span class="word-grammar">गुरुहर्षम् — masculine accusative singular, तत्पुरुष गुरु-हर्ष (&#x27;great joy&#x27;); आपुः — √आप्, perfect (liṭ), third person plural</span></div>
+  <div class="word-form">In this verse: गुरुहर्षम् + आपुः (√आप्, लिट्)</div>
+  <p class="word-meaning lang-en">they attained great joy</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठा आनंद पावल्या (√आप्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">बालाः गुरु हर्षम् आपुः ।</div>
+    <div class="usage-iast">bālāḥ guru harṣam āpuḥ ।</div>
+    <div class="usage-meaning lang-en">The children attained great joy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुलांना मोठा आनंद झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The captive deva-maidens rejoice at Paraśurāma&#x27;s glory because his axe is the terror of their captors: the wicked tremble when dharma rises. The poet gives voice to the silent sufferers of the world — their joy at the triumph of righteousness is itself a form of worship. It teaches that the devotee should rejoice, not envy, when divine power humbles the mighty.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बंदिवान देवदासी परशुरामाच्या महिम्याने आनंदित होतात कारण त्याचा परशू त्यांच्या बंदिकर्त्यांचा धाक आहे : धर्म उदय पावतो तेव्हा दुष्ट थरथरतात. जगातील मुक्या पीडितांना कवी वाणी देतो — नीतीच्या विजयावरील त्यांचा आनंद हीच एक प्रकारची पूजा आहे. दैवी शक्ती बलवानांना नमवते तेव्हा भक्ताने आनंद मानावा, मत्सर करू नये, हा बोध.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>हैहयरिपु, &#x27;the foe of the Haihayas,&#x27; recalls Paraśurāma&#x27;s slaying of Kārtavīrya Arjuna, the Haihaya king who stole Kāmadhenu — the central episode of the Bhāgavata&#x27;s Paraśurāma narrative (9.15). Diti&#x27;s sons are the asuras; their &#x27;foes&#x27; are the devas, whose dāsikās (maidens) the rākṣasas had seized as captives — a stock epic motif of the demon&#x27;s pride.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हैहयरिपु — &#x27;हैहयांचा शत्रू&#x27; — कामधेनू चोरणाऱ्या हैहयराज कार्तवीर्य अर्जुनाचा परशुरामाने केलेला वध आठवतो — भागवताच्या परशुराम-कथेतील (९.१५) मध्यवर्ती प्रसंग. दितीचे पुत्र हेच असुर; त्यांचे &#x27;शत्रू&#x27; म्हणजे देव, ज्यांच्या दासिका (देवकन्या) राक्षसांनी बंदिवान केल्या होत्या — राक्षसी गर्वाचा ठरावीक महाकाव्य-प्रसंग.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The metre changes here from Pramitākṣarā to Udgatā (verses 29–32), marking the shift from the Rāvaṇa dialogue to the deva-maidens&#x27; chorus. लोकतः is the ablative with the sense &#x27;from people&#x27; (hearing from people). आपुः is √आप्, perfect, third person plural.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे वृत्त प्रमिताक्षरातून उद्गतात (श्लोक २९–३२) बदलते — रावण-संवादातून देवदासींच्या समूहगानाकडे वळण. लोकतः ही &#x27;लोकांकडून&#x27; या अर्थी पञ्चमी आहे. आपुः हे √आप्‌चे लिट्-रूप, तृतीयपुरुष बहुवचन.</p></div></div>
+
+<div class="pagenav"><a href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 28</div></a><a class="next" href="verse-30.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 30</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

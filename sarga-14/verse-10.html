@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 10 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 10</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 10</span><span class="bl-mr lang-mr">श्लोक 10</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pṛthvī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">समस्तसुरवन्दितं शिवविरिञ्चिसंपूजितं<br>श्रुतिक्रतुभिरीडितं मुनिसमूहसंप्रार्थितम् ।<br>सरोजनिलयान्वितं सरसिजस्रगाद्यन्वितं<br>गरामठसमाह्वयं प्रतिभजेम नारायणम् ।।१०।।</div>
+  <div class="verse-iast">samastasuravanditaṃ śivaviriñcisaṃpūjitaṃ śrutikratubhirīḍitaṃ munisamūhasaṃprārthitam । sarojanilayānvitaṃ sarasijasragādyanvitaṃ garāmaṭhasamāhvayaṃ pratibhajema nārāyaṇam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">समस्त-सुर-वन्दितम् । शिव-विरिञ्चि-संपूजितम् । श्रुति-क्रतुभिः । ईडितम् । मुनि-समूह-संप्रार्थितम् । सरोज-निलया-अन्वितम् । सरसिज-स्रज्-आदि-अन्वितम् । गरामठ-समाह्वयम् । प्रतिभजेम । नारायणम् ।</div><div class="vig-iast">samasta-sura-vanditam । śiva-viriñci-saṃpūjitam । śruti-kratubhiḥ । īḍitam । muni-samūha-saṃprārthitam । saroja-nilayā-anvitam । sarasija-sraj-ādi-anvitam । garāmaṭha-samāhvayam । pratibhajema । nārāyaṇam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">श्रुतिक्रतुभिः + ईडितम् = श्रुतिक्रतुभिरीडितम् (विसर्ग → र्) · निलया + अन्वितम् = निलयान्वितम् (सवर्णदीर्घ) · स्रज् + आदि = स्रगादि (ज् → ग्) · आदि + अन्वितम् = आद्यन्वितम् (इ → य्, यण्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(वयं) समस्तसुरवन्दितं शिवविरिञ्चिसंपूजितं श्रुतिक्रतुभिरीडितं मुनिसमूहसंप्रार्थितं सरोजनिलयान्वितं सरसिजस्रगाद्यन्वितं गरामठसमाह्वयं नारायणं प्रतिभजेम ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Let us devotedly worship Nārāyaṇa, called Garāmaṭha — saluted by all the gods, worshipped by Śiva and Brahmā, praised by the Vedas and the sacrifices, entreated by hosts of sages, accompanied by Lakṣmī the lotus-dweller, and adorned with lotus garlands and the like.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सर्व देवांनी ज्याला वन्दन केले, शिव व ब्रह्मदेव यांनी देखील ज्याची पूजा केली, श्रुती व यज्ञ यांनी ज्याचे स्तवन केले, मुनिसमूहांनी ज्याची वारंवार प्रार्थना केली त्या देवाची, लक्ष्मीसहित असलेल्या व कमळांच्या हारांनी अलंकृत अशा गरामठ नावाच्या विष्णूची आम्ही निष्ठेने उपासना करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समस्त-सुर-वन्दितम्</span>
+    <span class="word-iast">samasta-sura-vanditam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: समस्तसुरवन्दितम्</div>
+  <p class="word-meaning lang-en">worshipped by all gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व देवांनी वंदन केलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">समस्तसुरवन्दितं देवं ध्यायामि ।</div>
+    <div class="usage-iast">samastasuravanditaṃ devaṃ dhyāyāmi.</div>
+    <div class="usage-meaning lang-en">I meditate on the god worshipped by all gods.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व देवांनी वंदन केलेल्या देवाचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिव-विरिञ्चि-संपूजितम्</span>
+    <span class="word-iast">śiva-viriñci-saṃpūjitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; विरिञ्चि = ब्रह्मा</span></div>
+  <div class="word-form">In this verse: शिवविरिञ्चिसंपूजितम्</div>
+  <p class="word-meaning lang-en">worshipped by Śiva and Brahmā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिव व ब्रह्मदेव यांनी पूजिलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">शिवविरिञ्चिसंपूजितः नारायणः सर्वोपरि ।</div>
+    <div class="usage-iast">śivaviriñcisaṃpūjitaḥ nārāyaṇaḥ sarvopari.</div>
+    <div class="usage-meaning lang-en">Nārāyaṇa, worshipped by Śiva and Brahmā, is supreme over all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिव व ब्रह्मदेव यांनी पूजिलेला नारायण सर्वांहून श्रेष्ठ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रुति-क्रतुभिः</span>
+    <span class="word-iast">śruti-kratubhiḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. बव.; द्वंद्व</span></div>
+  <div class="word-form">In this verse: श्रुतिक्रतुभिः</div>
+  <p class="word-meaning lang-en">by Vedas and sacrifices</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रुती (वेद) व यज्ञ यांनी</p>
+  <div class="word-usage">
+    <div class="deva">श्रुतिक्रतुभिः देवः स्तूयते ।</div>
+    <div class="usage-iast">śrutikratubhiḥ devaḥ stūyate.</div>
+    <div class="usage-meaning lang-en">The god is praised by the Vedas and the sacrifices.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेद व यज्ञ यांनी देवाची स्तुती केली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ईडितम्</span>
+    <span class="word-iast">īḍitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; क्त, ईड्</span></div>
+  <div class="word-form">In this verse: ईडितम्</div>
+  <p class="word-meaning lang-en">praised</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्तविलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">ईडितं तं परमात्मानं नमामि ।</div>
+    <div class="usage-iast">īḍitaṃ taṃ paramātmānaṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to that praised Supreme Self.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्तविलेल्या त्या परमात्म्याला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुनि-समूह-संप्रार्थितम्</span>
+    <span class="word-iast">muni-samūha-saṃprārthitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: मुनिसमूहसंप्रार्थितम्</div>
+  <p class="word-meaning lang-en">prayed to by hosts of sages</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनिसमूहांनी प्रार्थिलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">मुनिसमूहसंप्रार्थितः हरिः प्रसन्नो भवति ।</div>
+    <div class="usage-iast">munisamūhasaṃprārthitaḥ hariḥ prasanno bhavati.</div>
+    <div class="usage-meaning lang-en">Hari, entreated by hosts of sages, becomes gracious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनिसमूहांनी प्रार्थिलेला हरी प्रसन्न होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरोज-निलया-अन्वितम्</span>
+    <span class="word-iast">saroja-nilayā-anvitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; सरोजनिलया = लक्ष्मी</span></div>
+  <div class="word-form">In this verse: सरोजनिलयान्वितम्</div>
+  <p class="word-meaning lang-en">accompanied by Lakṣmī (the lotus-dweller)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लक्ष्मीसह असलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">सरोजनिलयान्वितं विष्णुं भजामि ।</div>
+    <div class="usage-iast">sarojanilayānvitaṃ viṣṇuṃ bhajāmi.</div>
+    <div class="usage-meaning lang-en">I worship Viṣṇu accompanied by Lakṣmī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लक्ष्मीसह असलेल्या विष्णूची मी उपासना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरसिज-स्रज्-आदि-अन्वितम्</span>
+    <span class="word-iast">sarasija-sraj-ādi-anvitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; (conjectural reading)</span></div>
+  <div class="word-form">In this verse: सरसिजस्रगाद्यन्वितम्</div>
+  <p class="word-meaning lang-en">adorned with lotus garlands and the like</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळांच्या माळा आदींनी युक्त</p>
+  <div class="word-usage">
+    <div class="deva">सरसिजस्रगाद्यन्वितं देवं पूजयामि ।</div>
+    <div class="usage-iast">sarasijasragādyanvitaṃ devaṃ pūjayāmi.</div>
+    <div class="usage-meaning lang-en">I worship the god adorned with lotus garlands and the like.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळांच्या माळा आदींनी अलंकृत देवाची मी पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गरामठ-समाह्वयम्</span>
+    <span class="word-iast">garāmaṭha-samāhvayam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; समाह्वय = नाव</span></div>
+  <div class="word-form">In this verse: गरामठसमाह्वयम्</div>
+  <p class="word-meaning lang-en">named Garāmaṭha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरामठ नावाच्या</p>
+  <div class="word-usage">
+    <div class="deva">गरामठसमाह्वयं नारायणं वन्दे ।</div>
+    <div class="usage-iast">garāmaṭhasamāhvayaṃ nārāyaṇaṃ vande.</div>
+    <div class="usage-meaning lang-en">I bow to Nārāyaṇa named Garāmaṭha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरामठ नावाच्या नारायणाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतिभजेम</span>
+    <span class="word-iast">pratibhajema</span>
+  </div>
+  <div><span class="word-grammar">प्रति + भज्, विधिलिङ्, उ.पु. बव.</span></div>
+  <div class="word-form">In this verse: प्रतिभजेम</div>
+  <p class="word-meaning lang-en">let us worship</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आम्ही भजावे, उपासना करावी</p>
+  <div class="word-usage">
+    <div class="deva">प्रतिभजेम वयं देवम् ।</div>
+    <div class="usage-iast">pratibhajema vayaṃ devam.</div>
+    <div class="usage-meaning lang-en">Let us worship the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आम्ही देवाची उपासना करूया.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नारायणम्</span>
+    <span class="word-iast">nārāyaṇam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: नारायणम्</div>
+  <p class="word-meaning lang-en">Nārāyaṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नारायणाला</p>
+  <div class="word-usage">
+    <div class="deva">नारायणं सर्वे नमन्ति ।</div>
+    <div class="usage-iast">nārāyaṇaṃ sarve namanti.</div>
+    <div class="usage-meaning lang-en">All bow to Nārāyaṇa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वजण नारायणाला नमन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समस्तसुरवन्दितम्</span>
+    <span class="word-iast">samastasuravanditam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: समस्तसुरवन्दितम्</div>
+  <p class="word-meaning lang-en">worshipped by all gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व देवांनी वंदन केलेला</p>
+  <div class="word-usage">
+    <div class="deva">समस्तसुरवन्दितस्य महिमा अगाधः ।</div>
+    <div class="usage-iast">samastasuravanditasya mahimā agādhaḥ.</div>
+    <div class="usage-meaning lang-en">The glory of him worshipped by all gods is unfathomable.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व देवांनी वंदन केलेल्याचा महिमा अगाध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिवविरिञ्चिसंपूजितम्</span>
+    <span class="word-iast">śivaviriñcisaṃpūjitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: शिवविरिञ्चिसंपूजितम्</div>
+  <p class="word-meaning lang-en">worshipped by Śiva and Brahmā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिव व ब्रह्मदेव (विरिञ्चि) यांनी पूजिलेला</p>
+  <div class="word-usage">
+    <div class="deva">शिवविरिञ्चिसंपूजितं तं शरणं यामि ।</div>
+    <div class="usage-iast">śivaviriñcisaṃpūjitaṃ taṃ śaraṇaṃ yāmi.</div>
+    <div class="usage-meaning lang-en">I take refuge in him who is worshipped by Śiva and Brahmā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिव व ब्रह्मदेव यांनी पूजिलेल्या त्याला मी शरण जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रुतिक्रतुभिः ईडितम्</span>
+    <span class="word-iast">śrutikratubhiḥ īḍitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. बव. + द्वि. एव. (क्त, ईड्)</span></div>
+  <div class="word-form">In this verse: श्रुतिक्रतुभिरीडितम्</div>
+  <p class="word-meaning lang-en">praised by the Vedas and sacrifices</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेद (श्रुति) व यज्ञ (क्रतु) यांनी स्तविलेला (√ईड्)</p>
+  <div class="word-usage">
+    <div class="deva">श्रुतिक्रतुभिरीडितं देवं स्तौमि ।</div>
+    <div class="usage-iast">śrutikratubhirīḍitaṃ devaṃ staumi.</div>
+    <div class="usage-meaning lang-en">I praise the god praised by the Vedas and sacrifices.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेद व यज्ञ यांनी स्तविलेल्या देवाची मी स्तुती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुनिसमूहसंप्रार्थितम्</span>
+    <span class="word-iast">munisamūhasaṃprārthitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: मुनिसमूहसंप्रार्थितम्</div>
+  <p class="word-meaning lang-en">prayed to by hosts of sages</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनिसमूहांनी प्रार्थना केलेला</p>
+  <div class="word-usage">
+    <div class="deva">मुनिसमूहसंप्रार्थितः कृपां करोति ।</div>
+    <div class="usage-iast">munisamūhasaṃprārthitaḥ kṛpāṃ karoti.</div>
+    <div class="usage-meaning lang-en">He who is entreated by hosts of sages bestows grace.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनिसमूहांनी प्रार्थिलेला कृपा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरोजनिलयान्वितम्</span>
+    <span class="word-iast">sarojanilayānvitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: सरोजनिलयान्वितम्</div>
+  <p class="word-meaning lang-en">accompanied by Lakṣmī, the lotus-dweller</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमलवासिनी (सरोजनिलया) लक्ष्मीसहित</p>
+  <div class="word-usage">
+    <div class="deva">सरोजनिलयान्वितः श्रीमान् जयति ।</div>
+    <div class="usage-iast">sarojanilayānvitaḥ śrīmān jayati.</div>
+    <div class="usage-meaning lang-en">The glorious one accompanied by Lakṣmī is victorious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लक्ष्मीसहित श्रीमान् विजयी होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरसिजस्रगाद्यन्वितम्</span>
+    <span class="word-iast">sarasijasragādyanvitam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद; अनुमानित पाठ)</span></div>
+  <div class="word-form">In this verse: सरसिजस्रगाद्यन्वितम्</div>
+  <p class="word-meaning lang-en">adorned with lotus garlands and the like</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळांच्या माळा (स्रज्) इत्यादींनी अलंकृत</p>
+  <div class="word-usage">
+    <div class="deva">सरसिजस्रगाद्यन्वितां मूर्तिं स्थापयामि ।</div>
+    <div class="usage-iast">sarasijasragādyanvitāṃ mūrtiṃ sthāpayāmi.</div>
+    <div class="usage-meaning lang-en">I install the image adorned with lotus garlands and the like.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळांच्या माळा आदींनी अलंकृत मूर्तीची मी प्रतिष्ठापना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गरामठसमाह्वयम्</span>
+    <span class="word-iast">garāmaṭhasamāhvayam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: गरामठसमाह्वयम्</div>
+  <p class="word-meaning lang-en">named Garāmaṭha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरामठ हे ज्याचे नाव (समाह्वय)</p>
+  <div class="word-usage">
+    <div class="deva">गरामठसमाह्वयः देवः गुहाग्रामे वसति ।</div>
+    <div class="usage-iast">garāmaṭhasamāhvayaḥ devaḥ guhagrāme vasati.</div>
+    <div class="usage-meaning lang-en">The god named Garāmaṭha dwells at Guhagar.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरामठ नावाचा देव गुहागरात वास करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse establishes Garāmaṭha&#x27;s universality: even Śiva and Brahmā worship him, and śruti itself sings him — no higher testimony exists. The pairing with Lakṣmī (सरोजनिलया) presents the complete Vaiṣṇava theology of the Lord with his consort, grace inseparable from glory. The optative प्रतिभजेम (&#x27;let us worship&#x27;) turns from declaration to invitation: the whole community is summoned into devotion, each hearer made a participant in the hymn.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक गरामठाचे वैश्विकत्व प्रस्थापित करतो : शिव व ब्रह्मदेवही त्याची पूजा करतात आणि श्रुतीच त्याची स्तुती करते — याहून श्रेष्ठ साक्ष असू शकत नाही. लक्ष्मीसह (सरोजनिलया) जोडी ही भगवंत व त्याची पत्नी यांची पूर्ण वैष्णव धर्मशास्त्रीय जोडी मांडते — कृपा व महिमा अभिन्न आहेत. प्रतिभजेम (&#x27;आपण उपासना करूया&#x27;) हे विध्यर्थक रूप घोषणेपासून निमंत्रणाकडे वळते : संपूर्ण समुदायाला भक्तीत बोलावले जाते, प्रत्येक श्रोता स्तोत्राचा सहभागी बनतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse follows the standard stotra rhetoric of sarva-devatā-vanditatva — &#x27;worshipped by all the gods&#x27; — the stock proof of a deity&#x27;s supremacy, used for Viṣṇu and Śiva alike in the Purāṇas. Śiva and Brahmā worshipping Viṣṇu is the Vaiṣṇava counterpart of the Śaiva claim that Viṣṇu worships Śiva; the poet asserts Garāmaṭha&#x27;s place at the summit without entering the sectarian dispute. &#x27;Accompanied by Lakṣmī&#x27; is the Pāñcarātra doctrine of the Lord never apart from his śakti.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक सर्वदेवतावंदितत्व या प्रमाणभूत स्तोत्रयुक्तीला धरून आहे — &#x27;सर्व देवांनी वंदन केलेला&#x27; हा देवतेच्या श्रेष्ठत्वाचा ठरलेला पुरावा असून पुराणांत विष्णू व शिव दोघांनाही लावलेला आहे. शिव व ब्रह्मदेव विष्णूची पूजा करतात हे शैवांच्या &#x27;विष्णू शिवाची पूजा करतो&#x27; या दाव्याचे वैष्णव प्रतिरूप आहे; सांप्रदायिक वादात न शिरता कवी गरामठाचे शिखरस्थान मांडतो. &#x27;लक्ष्मीसहित&#x27; हे पांचरात्रांचे तत्त्व आहे — भगवान आपल्या शक्तीपासून कधीही वेगळा नसतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Pṛthvī, as in 14.9 and 14.11. Textual note on the third pāda: the word list marks सरसिज-स्रज्-आदि-अन्वितम् (&#x27;adorned with lotus garlands and the like&#x27;) as a conjectural reading — the print&#x27;s shorter form leaves the pāda one syllable short of Pṛthvī&#x27;s seventeen. The restoration सरसिजस्रगाद्यन्वितम् mends the metre and suits the sense; it is kept as a conjecture, not a certainty.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : १४.९ व १४.११ प्रमाणेच पृथ्वी. तिसऱ्या चरणाबद्दल पाठ-चर्चा : शब्दसूचींत सरसिज-स्रज्-आदि-अन्वितम् (&#x27;कमळांच्या माळा आदींनी अलंकृत&#x27;) हे अनुमानित पाठ म्हणून नोंदवले आहे — छापील लहान रूपामुळे चरण पृथ्वीच्या सतरा अक्षरांपेक्षा एका अक्षराने कमी पडतो. सरसिजस्रगाद्यन्वितम् हा पुनरुद्धार वृत्त दुरुस्त करतो व अर्थालाही साजेसा आहे; तो अनुमान म्हणूनच ठेवला आहे, निश्चय म्हणून नव्हे.</p></div></div>
+
+<div class="pagenav"><a href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 9</div></a><a class="next" href="verse-11.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 11</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 23 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 23</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 23</span><span class="bl-mr lang-mr">श्लोक 23</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अवनी निहत्य नृपतीनखिलानखिलार्पिता द्विजनुषे यदतः ।।<br>स्वकृतेऽर्थिना जलनिधिं धरणी व्यपदिश्य सायकविसर्गमियम् ।।२३।।</div>
+  <div class="verse-iast">avanī nihatya nṛpatīnakhilānakhilārpitā dvijanuṣe yadataḥ । । svakṛte&#x27;rthinā jalanidhiṃ dharaṇī vyapadiśya sāyakavisargamiyam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अवनी । निहत्य । नृपतीन् । अखिलान् । अखिल-अर्पिता । द्विजनुषे । यत् । अतः । स्व-कृते । अर्थिना । जलनिधिम् । धरणी । व्यपदिश्य । सायक-विसर्गम् । इयम् ।</div><div class="vig-iast">avanī । nihatya । nṛpatīn । akhilān । akhila-arpitā । dvijanuṣe । yat । ataḥ । sva-kṛte । arthinā । jalanidhim । dharaṇī । vyapadiśya । sāyaka-visargam । iyam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">नृपतीन् + अखिलान् = नृपतीनखिलान् · अखिलान् + अखिल = अखिलानखिल · अखिल + अर्पिता = अखिलार्पिता · यत् + अतः = यदतः (त् → द्) · स्वकृते + अर्थिना = स्वकृतेऽर्थिना (पूर्वरूप) · सायकविसर्गम् + इयम् = सायकविसर्गमियम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अखिलान् नृपतीन् निहत्य यत् अवनी द्विजनुषे अखिलार्पिता, अतः स्वकृते अर्थिना (मया) सायकविसर्गं व्यपदिश्य जलनिधिं (याचित्वा) इयं धरणी (प्राप्ता) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Having slain all the kings, I gave the whole earth to the Brāhmaṇa (Kaśyapa); therefore, become myself a supplicant for my own dwelling, I begged this land of the ocean, making the discharge of my arrow the pretext.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;सर्व नृपतींना कण्ठस्नान घालून ब्राह्मणाला सर्व पृथ्वी दान दिल्यामुळे बाणाच्या विसर्गाचे निमित्त करून स्वतःच्या निवासासाठी याचक होऊन समुद्राकडे ही धरणी मागितली.&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निहत्य नृपतीन् अखिलान्</span>
+    <span class="word-iast">nihatya nṛpatīn akhilān</span>
+  </div>
+  <div><span class="word-grammar">निहत्य — gerund (ल्यप्) of नि + √हन्; नृपतीन् — masculine accusative plural; अखिलान् — adjective, accusative plural</span></div>
+  <div class="word-form">In this verse: निहत्य (धातुसाधित अव्यय) + नृपतीन् अखिलान्</div>
+  <p class="word-meaning lang-en">having slain all the kings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व राजांना मारून</p>
+  <div class="word-usage">
+    <div class="deva">वीरः निहत्य नृपतीन् अखिलान् राज्यम् अलभत ।</div>
+    <div class="usage-iast">vīraḥ nihatya nṛpatīn akhilān rājyam alabhata ।</div>
+    <div class="usage-meaning lang-en">Having slain all the kings, the hero obtained the kingdom.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व राजांना मारून वीराला राज्य मिळाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अखिलार्पिता द्विजनुषे</span>
+    <span class="word-iast">akhilārpitā dvijanuṣe</span>
+  </div>
+  <div><span class="word-grammar">अखिलार्पिता — feminine nominative singular past passive participle, अखिल + आ + √ऋ; द्विजनुषे — dative singular of द्विजनुस्</span></div>
+  <div class="word-form">In this verse: अखिलार्पिता + द्विजनुषे (चतुर्थी)</div>
+  <p class="word-meaning lang-en">offered in whole to the Brāhmaṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्राह्मणाला (काश्यपाला) संपूर्ण अर्पण केली</p>
+  <div class="word-usage">
+    <div class="deva">पृथ्वी अखिल अर्पिता द्विजनुषे अभवत् ।</div>
+    <div class="usage-iast">pṛthvī akhila arpitā dvijanuṣe abhavat ।</div>
+    <div class="usage-meaning lang-en">The earth was offered in whole to the Brāhmaṇa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी संपूर्ण ब्राह्मणाला अर्पण केली गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यदतः</span>
+    <span class="word-iast">yadataḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; यत् + अतः (&#x27;from which, therefore&#x27;)</span></div>
+  <div class="word-form">In this verse: यदतः (अव्यय)</div>
+  <p class="word-meaning lang-en">therefore, for this reason</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणूनच</p>
+  <div class="word-usage">
+    <div class="deva">सः श्रान्तः अभवत् यदतः विश्रामम् अकरोत् ।</div>
+    <div class="usage-iast">saḥ śrāntaḥ abhavat yadataḥ viśrāmam akarot ।</div>
+    <div class="usage-meaning lang-en">He was tired; therefore he rested.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो थकला होता; म्हणून त्याने विश्रांती घेतली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वकृते अर्थिना</span>
+    <span class="word-iast">svakṛte arthinā</span>
+  </div>
+  <div><span class="word-grammar">स्वकृते — neuter locative singular (&#x27;for one&#x27;s own sake&#x27;); अर्थिना — masculine instrumental singular of अर्थिन् (&#x27;seeker, supplicant&#x27;)</span></div>
+  <div class="word-form">In this verse: स्वकृते (सप्तमी) + अर्थिना (तृतीया)</div>
+  <p class="word-meaning lang-en">by me, become a supplicant for my own (dwelling)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःसाठी (जागा) मागणाऱ्या (मी)</p>
+  <div class="word-usage">
+    <div class="deva">स्वकृते अर्थिना मया धनम् याचितम् ।</div>
+    <div class="usage-iast">svakṛte arthinā mayā dhanam yācitam ।</div>
+    <div class="usage-meaning lang-en">As a supplicant for my own sake, I begged for wealth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःसाठी याचक होऊन मी धन मागितले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सायकविसर्गं व्यपदिश्य</span>
+    <span class="word-iast">sāyakavisargaṃ vyapadiśya</span>
+  </div>
+  <div><span class="word-grammar">सायकविसर्गम् — masculine accusative singular, तत्पुरुष सायक-विसर्ग (&#x27;discharge of the arrow&#x27;); व्यपदिश्य — gerund of वि + अप + √दिश्</span></div>
+  <div class="word-form">In this verse: सायकविसर्गम् + व्यपदिश्य (धातुसाधित अव्यय)</div>
+  <p class="word-meaning lang-en">making the discharge of the arrow the pretext</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाण सोडण्याचे निमित्त करून</p>
+  <div class="word-usage">
+    <div class="deva">सः सायक विसर्गम् व्यपदिश्य वनम् अगच्छत् ।</div>
+    <div class="usage-iast">saḥ sāyaka visargam vyapadiśya vanam agacchat ।</div>
+    <div class="usage-meaning lang-en">Making the shooting of an arrow his pretext, he went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाण सोडण्याचे निमित्त करून तो वनात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इयं धरणी</span>
+    <span class="word-iast">iyaṃ dharaṇī</span>
+  </div>
+  <div><span class="word-grammar">इयम् — feminine nominative singular demonstrative; धरणी — feminine nominative singular</span></div>
+  <div class="word-form">In this verse: इयम् + धरणी (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">this land, this (new) earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ही (नवी) भूमी</p>
+  <div class="word-usage">
+    <div class="deva">इयम् धरणी समुद्रात् उद्धृता अभवत् ।</div>
+    <div class="usage-iast">iyam dharaṇī samudrāt uddhṛtā abhavat ।</div>
+    <div class="usage-meaning lang-en">This land was raised up from the sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ही भूमी समुद्रातून वर आणली गेली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s own account states the moral economy of the avatāra: the earth, won by the axe, is given away entire to the Brāhmaṇa, leaving the giver himself homeless — so he must beg new land from the sea. The poet&#x27;s lesson is dāna taken to its absolute limit: the true giver keeps nothing, not even standing-room, and trusts the Lord (here, the ocean at his arrow&#x27;s bidding) to provide. The Konkan itself is thus born of perfect renunciation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाचे स्वतःचे निवेदन अवताराची नैतिक अर्थव्यवस्था सांगते : परशूने जिंकलेली पृथ्वी संपूर्ण ब्राह्मणाला दान दिली जाते आणि दाता स्वतःच बेघर राहतो — म्हणून त्याला समुद्राकडे नवी भूमी मागावी लागते. कवीचा बोध पराकोटीचे दान आहे : खरा दाता काहीच ठेवत नाही — उभे राहण्याइतकीही जागा नाही — आणि (येथे बाणाच्या इशाऱ्यावर असलेल्या) समुद्राकडून मिळेल यावर भगवंतावर विश्वास ठेवतो. अशा प्रकारे कोकणच परिपूर्ण त्यागातून जन्मले आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The gift of the whole earth to Kaśyapa after the twenty-one extirpations of the kṣatriyas is told in the Mahābhārata and the Bhāgavata (9.15–16): the landless Paraśurāma then won new territory from the sea with his arrows — the Purāṇic charter of the Konkan and Kerala coasts, echoed in the Sahyādri-khaṇḍa. &#x27;Making the arrow&#x27;s discharge the pretext&#x27; recalls the epic motif of the hero claiming land by bowshot.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकवीस वेळा क्षत्रियसंहारानंतर काश्यपाला संपूर्ण पृथ्वीचे दान — ही कथा महाभारत आणि भागवत (९.१५–१६) यांत आहे : भूमिहीन परशुरामाने नंतर बाणांनी समुद्राकडून नवा प्रदेश मिळवला — हीच कोकण आणि केरळ किनाऱ्यांची पुराण-आधारपत्रे असून सह्याद्रिखंडातही त्याचा उल्लेख आहे. &#x27;बाण सोडण्याचे निमित्त करून&#x27; हा महाकाव्यांतील धनुर्विद्येने भूमी मिळवण्याच्या ठरावीक प्रसंगाची आठवण करून देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>द्विजनुषे is the dative singular of द्विजनुस् — here, the Brāhmaṇa Kaśyapa, to whom Paraśurāma gave the earth. व्यपदिश्य (वि + अप + √दिश्, gerund) means &#x27;making a pretext of, using as an occasion.&#x27; The verse is in Pramitākṣarā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>द्विजनुषे हे द्विजनुस्‌चे चतुर्थी एकवचन आहे — येथे तो ब्राह्मण काश्यप, ज्याला परशुरामाने पृथ्वी दिली. व्यपदिश्य (वि + अप + √दिश्, धातुसाधित अव्यय) म्हणजे &#x27;निमित्त करून&#x27;. वृत्त प्रमिताक्षरा.</p></div></div>
+
+<div class="pagenav"><a href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 22</div></a><a class="next" href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 24</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

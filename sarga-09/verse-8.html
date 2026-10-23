@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 8 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 8</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 8</span><span class="bl-mr lang-mr">श्लोक 8</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">देशे देशे पत्तनं यत्र रम्यं राजा धन्यः पत्तने पत्तने च ।<br>लोकः श्रीमान् यत्र तत्तत्क्षितीशे लोके लोके यत्र धर्मैकनिष्ठा ।।८।।</div>
+  <div class="verse-iast">deśe deśe pattanaṃ yatra ramyaṃ rājā dhanyaḥ pattane pattane ca । lokaḥ śrīmān yatra tattatkṣitīśe loke loke yatra dharmaikaniṣṭhā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">देशे । देशे । पत्तनम् । यत्र । रम्यम् । राजा । धन्यः । पत्तने । पत्तने । च । लोकः । श्रीमान् । यत्र । तत्-तत्-क्षितीशे । लोके । लोके । यत्र । धर्म-एक-निष्ठा ।</div><div class="vig-iast">deśe । deśe । pattanam । yatra । ramyam । rājā । dhanyaḥ । pattane । pattane । ca । lokaḥ । śrīmān । yatra । tat-tat-kṣitīśe । loke । loke । yatra । dharma-eka-niṣṭhā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत् + तत् = तत्तत् · धर्म + एक = धर्मैक (वृद्धि)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र देशे देशे रम्यं पत्तनं, पत्तने पत्तने च धन्यः राजा, यत्र तत्तत्क्षितीशे लोकः श्रीमान्, यत्र लोके लोके धर्मैकनिष्ठा — तत्र रामस्य क्षेत्रे अयं सुपवित्रः सुन्दरः देशः, सः नाम्ना गूढः, यस्मिन् त्रिदशाः अपि वासं वाञ्छन्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In the country where every land has its delightful city, and every city its blessed king — where under each such king the people are prosperous, and where every soul holds single-minded devotion to dharma alone… (the sentence completes in verse 9).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्या प्रदेशात सर्वत्र रम्य शहरे, प्रत्येक शहरात धन्य राजा, त्या त्या राजाच्या अधिकारात संपन्न लोक व प्रत्येक जनात धर्मावरच एकनिष्ठा आहे — तेथे, परशुरामाच्या क्षेत्रात, हा अतिपवित्र सुंदर देश आहे; तो &#x27;गूढ&#x27; नावाने ओळखला जातो व तेथे निवास करण्याची देवही अभिलाषा बाळगतात.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देशे देशे</span>
+    <span class="word-iast">deśe deśe</span>
+  </div>
+  <div><span class="word-grammar">locative singular of desha, repeated (vipsa)</span></div>
+  <div class="word-form">In this verse: देशे देशे — as printed</div>
+  <p class="word-meaning lang-en">in every land</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रत्येक प्रदेशात</p>
+  <div class="word-usage">
+    <div class="deva">देशे देशे धर्मः प्रसरति</div>
+    <div class="usage-iast">deshe deshe dharmah prasarati</div>
+    <div class="usage-meaning lang-en">Dharma spreads in every land.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रत्येक प्रदेशात धर्म पसरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पत्तनम् रम्यम्</span>
+    <span class="word-iast">pattanam ramyam</span>
+  </div>
+  <div><span class="word-grammar">pattanam nominative/accusative singular neuter of pattana + ramyam of ramya</span></div>
+  <div class="word-form">In this verse: पत्तनम् रम्यम् — in पत्तनं यत्र रम्यं</div>
+  <p class="word-meaning lang-en">a delightful city</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रम्य शहर</p>
+  <div class="word-usage">
+    <div class="deva">पत्तनम् रम्यम् जनैः आकुलम् आसीत्</div>
+    <div class="usage-iast">pattanam ramyam janaih akulam asit</div>
+    <div class="usage-meaning lang-en">The delightful city was crowded with people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रम्य शहर लोकांनी गजबजलेले होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राजा धन्यः</span>
+    <span class="word-iast">rājā dhanyaḥ</span>
+  </div>
+  <div><span class="word-grammar">raja nominative singular masculine of rajan + dhanyah of dhanya</span></div>
+  <div class="word-form">In this verse: राजा धन्यः — in राजा धन्यः पत्तने पत्तने च</div>
+  <p class="word-meaning lang-en">a blessed, fortunate king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धन्य (भाग्यशाली) राजा</p>
+  <div class="word-usage">
+    <div class="deva">राजा धन्यः प्रजाः सुखेन पालयति</div>
+    <div class="usage-iast">raja dhanyah prajah sukhena palayati</div>
+    <div class="usage-meaning lang-en">The blessed king protects his subjects happily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धन्य राजा प्रजेचे सुखाने पालन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्तत्क्षितीशे</span>
+    <span class="word-iast">tattatkṣitīśe</span>
+  </div>
+  <div><span class="word-grammar">locative singular masculine of the tatpurusha tat-tat (vipsa) + kshiti-isha</span></div>
+  <div class="word-form">In this verse: तत्तत्क्षितीशे — as printed</div>
+  <p class="word-meaning lang-en">under each respective king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या त्या राजाच्या अधिकारात</p>
+  <div class="word-usage">
+    <div class="deva">तत्तत्क्षितीशे लोकाः निर्भयाः वसन्ति</div>
+    <div class="usage-iast">tattatkshitishe lokah nirbhayah vasanti</div>
+    <div class="usage-meaning lang-en">Under each respective king the people live fearlessly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या त्या राजाच्या अधिकारात लोक निर्भयपणे राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकः श्रीमान्</span>
+    <span class="word-iast">lokaḥ śrīmān</span>
+  </div>
+  <div><span class="word-grammar">lokah nominative singular masculine of loka + shriman of shrimat</span></div>
+  <div class="word-form">In this verse: लोकः श्रीमान् — as printed</div>
+  <p class="word-meaning lang-en">the people are prosperous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोक संपन्न</p>
+  <div class="word-usage">
+    <div class="deva">यत्र राजा धार्मिकः तत्र लोकः श्रीमान् भवति</div>
+    <div class="usage-iast">yatra raja dharmikah tatra lokah shriman bhavati</div>
+    <div class="usage-meaning lang-en">Where the king is righteous, there the people are prosperous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे राजा धार्मिक असतो तेथे लोक संपन्न होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोके लोके</span>
+    <span class="word-iast">loke loke</span>
+  </div>
+  <div><span class="word-grammar">locative singular of loka, repeated (vipsa)</span></div>
+  <div class="word-form">In this verse: लोके लोके — as printed</div>
+  <p class="word-meaning lang-en">in every person, in every heart</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रत्येक जनात</p>
+  <div class="word-usage">
+    <div class="deva">लोके लोके धर्मनिष्ठा दृश्यते</div>
+    <div class="usage-iast">loke loke dharmanishtha drishyate</div>
+    <div class="usage-meaning lang-en">Devotion to dharma is seen in every person.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रत्येक जनात धर्मनिष्ठा दिसून येते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धर्मैकनिष्ठा</span>
+    <span class="word-iast">dharmaikaniṣṭhā</span>
+  </div>
+  <div><span class="word-grammar">nominative singular feminine of the tatpurusha dharma + eka + nishtha</span></div>
+  <div class="word-form">In this verse: धर्मैकनिष्ठा — as printed</div>
+  <p class="word-meaning lang-en">single-minded devotion to dharma alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्मावरच एकनिष्ठा</p>
+  <div class="word-usage">
+    <div class="deva">धर्मैकनिष्ठा जनानाम् भूषणम्</div>
+    <div class="usage-iast">dharmaikanishtha jananam bhushanam</div>
+    <div class="usage-meaning lang-en">Single-minded devotion to dharma is the ornament of people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्मावरची एकनिष्ठा हेच लोकांचे भूषण आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The poet&#x27;s utopia is strikingly inward: the perfection of the land is measured not by palaces but by hearts — &#x27;in every soul, single-minded devotion to dharma alone.&#x27; Outer prosperity (city, king, wealthy people) is real but secondary; it is the fruit of the inner condition. For the pilgrim, the verse sets the true pilgrimage goal: not merely to visit a holy place, but to become the kind of person in whom dharma-nishtha dwells — the land is holy because its people are.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कवीचा आदर्शलोक आश्चर्यकारकपणे अंतरंग आहे : देशाची परिपूर्णता राजवाड्यांनी नव्हे, तर हृदयांनी मोजली जाते — &#x27;प्रत्येक जीवात धर्मावरच एकनिष्ठा.&#x27; बाह्य समृद्धी (शहर, राजा, संपन्न लोक) खरी आहे पण दुय्यम; ती अंतरंग अवस्थेचे फळ आहे. यात्रेकरूसाठी हा श्लोक खरी यात्रा-ध्येय ठरवतो : केवळ पवित्र स्थळाला भेट देणे नव्हे, तर धर्मनिष्ठा वसणारी व्यक्ती बनणे — लोक पवित्र आहेत म्हणूनच भूमी पवित्र आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The dharma-shastra ideal of the ramya-desha — a &#x27;delightful country&#x27; — is defined exactly so: good kings, prosperous subjects, and dharma-nishtha in every heart (cf. Manu 7-9 on the king&#x27;s duty to make the realm so). The Shalini&#x27;s gentle cadence suits this idyll. Note the progression: desha to pattana to raja to loka to hridaya — the poet zooms from geography to the soul.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>धर्मशास्त्रातील रम्यदेशाचा आदर्श नेमका असाच व्याख्येत आहे : चांगले राजे, संपन्न प्रजा आणि प्रत्येक हृदयात धर्मनिष्ठा (राजाने राज्य असे करावे याविषयी मनु ७–९ पहा). शालिनीची मृदु लय या रम्यचित्राला शोभते. प्रगती लक्षात घ्या : देश ते पत्तन ते राजा ते लोक ते हृदय — कवी भूगोलापासून आत्म्यापर्यंत झूम करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Shalini metre (11 syllables). The book&#x27;s Marathi renders verses 8 and 9 as a single sentence (the yatra-clauses of 8 find their main clause in 9: &#x27;tatrāyaṁ supavitraḥ … deśaḥ&#x27;). The translation above keeps verse 8&#x27;s four relative clauses, ending with an ellipsis to mark the continuation. This is the first of the sarga&#x27;s two &#x27;Gudha&#x27; etymologies — the country whose heart is hidden in dharma.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शालिनी वृत्त (११ अक्षरे). पुस्तकातील मराठी ८ व ९ या श्लोकांचे एकच वाक्य करते (८ मधील यत्र-वाक्यांना ९ मध्ये मुख्य वाक्य मिळते : &#x27;तत्रायं सुपवित्रः… देशः&#x27;). वरील भाषांतर श्लोक ८ च्या चार संबंधवाक्यांना धरून असून पुढे चालू असल्याचे दीर्घविरामाने दाखवले आहे. ही सर्गातील दोन &#x27;गूढ&#x27; व्युत्पत्तींपैकी पहिली आहे — ज्या देशाचे हृदय धर्मात गुप्त आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 7</div></a><a class="next" href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 9</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

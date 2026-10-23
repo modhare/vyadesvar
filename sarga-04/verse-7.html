@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 7 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 7</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 7</span><span class="bl-mr lang-mr">श्लोक 7</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">गुरौ गरीयस्युडुराजचूडे सदा समाबद्धनितान्तभक्तिः ।<br>कदापि तद्दर्शनमन्तरेण विलंघयामास न वासरं सः ।।७।।</div>
+  <div class="verse-iast">gurau garīyasyuḍurājacūḍe sadā samābaddhanitāntabhaktiḥ । kadāpi taddarśanamantareṇa vilaṃghayāmāsa na vāsaraṃ saḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">गुरौ । गरीयसि । उडुराज-चूडे । सदा । समाबद्ध-नितान्त-भक्तिः । कदा । अपि । तत्-दर्शनम् । अन्तरेण । विलङ्घयामास । न । वासरम् । सः ।</div><div class="vig-iast">gurau । garīyasi । uḍurāja-cūḍe । sadā । samābaddha-nitānta-bhaktiḥ । kadā । api । tat-darśanam । antareṇa । vilaṅghayāmāsa । na । vāsaram । saḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">गरीयसि + उडुराज = गरीयस्युडुराज (यण्) · कदा + अपि = कदापि · तत् + दर्शनम् = तद्दर्शनम् · दर्शनम् + अन्तरेण = दर्शनमन्तरेण</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">गरीयसि उडुराजचूडे गुरौ सदा समाबद्धनितान्तभक्तिः सः तद्दर्शनम् अन्तरेण कदापि वासरं न विलङ्घयामास ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>His heart bound in eternal, boundless devotion to his most venerable guru — the moon-crested one who bears the king of stars on his crest — he never let a single day pass without that Lord&#x27;s darśana.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नक्षत्राधिपती चन्द्राला मस्तकावर धारण करणाऱ्या आपल्या महान गुरूवरील शाश्वत निरतिशय भक्तीने युक्त अंतःकरण असणाऱ्या त्या परशुरामाने त्या शंकराचे दर्शन घेतल्याशिवाय एक दिवसही वाया जाऊ दिला नाही.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उडुराजचूडे</span>
+    <span class="word-iast">uḍurājacūḍe</span>
+  </div>
+  <div><span class="word-grammar">loc. sg. m., bahuvrīhi compound (उडु-राज-चूड)</span></div>
+  <div class="word-form">In this verse: उडुराजचूडे</div>
+  <p class="word-meaning lang-en">on him whose crest bears the moon, king of stars</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र (उडुराज = नक्षत्रांचा राजा) मस्तकी असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः उडुराजचूडे शङ्करे भक्तिं करोति</div>
+    <div class="usage-iast">bhaktaḥ uḍurājacūḍe śaṅkare bhaktiṃ karoti</div>
+    <div class="usage-meaning lang-en">The devotee is devoted to Śaṅkara, on whose crest rests the moon.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त चंद्र मस्तकी असलेल्या शंकरावर भक्ती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गरीयसि गुरौ</span>
+    <span class="word-iast">garīyasi gurau</span>
+  </div>
+  <div><span class="word-grammar">गरीयसि loc. sg. m., comparative of गुरु; गुरौ loc. sg. m. of गुरु</span></div>
+  <div class="word-form">In this verse: गरीयसि गुरौ</div>
+  <p class="word-meaning lang-en">toward his most venerable guru</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ गुरूच्या ठायी</p>
+  <div class="word-usage">
+    <div class="deva">शिष्यस्य गरीयसि गुरौ अचला भक्तिः अस्ति</div>
+    <div class="usage-iast">śiṣyasya garīyasi gurau acalā bhaktiḥ asti</div>
+    <div class="usage-meaning lang-en">The disciple has unshaken devotion toward his most venerable guru.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्याची आपल्या श्रेष्ठ गुरूवर अढळ भक्ती आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समाबद्धनितान्तभक्तिः</span>
+    <span class="word-iast">samābaddhanitāntabhaktiḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m., bahuvrīhi compound</span></div>
+  <div class="word-form">In this verse: समाबद्धनितान्तभक्तिः</div>
+  <p class="word-meaning lang-en">he whose intense devotion is firmly bound</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत दृढ भक्ती असलेला</p>
+  <div class="word-usage">
+    <div class="deva">समाबद्धनितान्तभक्तिः भक्तः नित्यं पूजां करोति</div>
+    <div class="usage-iast">samābaddhanitāntabhaktiḥ bhaktaḥ nityaṃ pūjāṃ karoti</div>
+    <div class="usage-meaning lang-en">The devotee of firmly bound, intense devotion worships daily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दृढ बांधलेल्या अत्यंत भक्तीचा भक्त नित्य पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तद्दर्शनम् अन्तरेण</span>
+    <span class="word-iast">taddarśanam antareṇa</span>
+  </div>
+  <div><span class="word-grammar">तद्दर्शनम् acc. sg. n.; अन्तरेण indeclinable governing the accusative (&#x27;without&#x27;)</span></div>
+  <div class="word-form">In this verse: तद्दर्शनम् अन्तरेण</div>
+  <p class="word-meaning lang-en">without his darśana</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या दर्शनाशिवाय (‘अन्तरेण’ + द्वितीया)</p>
+  <div class="word-usage">
+    <div class="deva">सः तद्दर्शनम् अन्तरेण भोजनं न करोति</div>
+    <div class="usage-iast">saḥ taddarśanam antareṇa bhojanaṃ na karoti</div>
+    <div class="usage-meaning lang-en">He does not take food without his darśana.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो त्याच्या दर्शनाशिवाय जेवत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वासरं न विलङ्घयामास</span>
+    <span class="word-iast">vāsaraṃ na vilaṅghayāmāsa</span>
+  </div>
+  <div><span class="word-grammar">वासरम् acc. sg. m.; विलङ्घयामास 3rd sg. periphrastic (ām-) perfect of the causative of वि-√लङ्घ् (1st class)</span></div>
+  <div class="word-form">In this verse: वासरं न विलङ्घयामास</div>
+  <p class="word-meaning lang-en">he never let a day pass</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकही दिवस घालवला नाही</p>
+  <div class="word-usage">
+    <div class="deva">सः जपं विना वासरं न विलङ्घयामास</div>
+    <div class="usage-iast">saḥ japaṃ vinā vāsaraṃ na vilaṅghayāmāsa</div>
+    <div class="usage-meaning lang-en">He never let a day pass without japa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने जपाशिवाय एकही दिवस जाऊ दिला नाही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Bhakti here is not an emotion but a discipline: not one day without darśana. The verse defines the devotee&#x27;s vow in the negative — what he will never do — which is often stricter and truer than any positive resolve. For the pilgrim of Guhagar the message is direct: the deity is not visited on occasion but met daily; regularity, not intensity of rare festivals, is the mark of समाबद्ध (firmly bound) devotion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथील भक्ती भावना नसून शिस्त आहे — दर्शनाशिवाय एकही दिवस नाही. भक्ताचा संकल्प नकारार्थी मांडला आहे — तो काय कधीही करणार नाही — जो बहुधा कोणत्याही होकारार्थी निश्चयापेक्षा कठोर आणि खरा असतो. गुहागरच्या यात्रेकरूसाठी संदेश थेट आहे — देवतेचे दर्शन प्रसंगी नव्हे, तर रोज घ्यायचे; क्वचितच्या उत्सवांची तीव्रता नव्हे, तर नियमितता हेच समाबद्ध (दृढ बांधलेल्या) भक्तीचे लक्षण आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>उडुराज, &#x27;king of the stars&#x27;, is the moon, whom Śiva wears on his crest — the standard iconographic mark by which the devotee recognises his Lord even before approaching. The guru-śiṣya bond here is the dhanurveda lineage of 4.4: Paraśurāma learned arms from Śiva, so his devotion is simultaneously disciple&#x27;s duty and worshipper&#x27;s love. Daily darśana as an unbroken vow (nitya-niyama) is the backbone of Purāṇic bhakti practice.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उडुराज — &#x27;नक्षत्रांचा राजा&#x27; — म्हणजे चंद्र, ज्याला शिव मस्तकावर धारण करतो — जवळ जाण्यापूर्वीच भक्त आपल्या भगवंताला ओळखतो ते हे नेहमीचे मूर्तिलक्षण. येथील गुरू-शिष्य नाते हे ४.४ मधील धनुर्वेद परंपरा आहे — परशुरामाने शिवाकडून अस्त्रविद्या शिकली, म्हणून त्याची भक्ती एकाच वेळी शिष्याचे कर्तव्य आणि उपासकाचे प्रेम आहे. अखंड व्रत म्हणून नित्य दर्शन (नित्य-नियम) हा पौराणिक भक्तीमार्गाचा कणा आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>गरीयसि is the comparative of गुरु in the locative, agreeing with गुरौ — &#x27;toward his more-venerable guru&#x27;. विलङ्घयामास is the periphrastic (ām-) perfect of the causative of वि-√लङ्घ्, &#x27;he caused to be crossed / let pass&#x27;. अन्तरेण with the accusative तद्दर्शनम् means &#x27;without, excluding&#x27;. The double negative न … कदापि … अन्तरेण yields the strong positive &#x27;never without&#x27;. Metre: Upajāti.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गरीयसि हे गुरु शब्दाचे तुलनात्मक रूप सप्तमीत — गुरौ शी अन्वित — &#x27;आपल्या अधिक वंदनीय गुरूकडे&#x27;. विलङ्घयामास हे वि-√लङ्घ् धातूच्या प्रयोजकाचे आम्-प्रत्ययाचे पूर्ण भूतकाल — &#x27;त्याने ओलांडू दिला / जाऊ दिला&#x27;. तद्दर्शनम् या द्वितीयेसोबत अन्तरेण म्हणजे &#x27;शिवाय, वगळून&#x27;. न … कदापि … अन्तरेण या दुहेरी नकारातून &#x27;कधीही … शिवाय नाही&#x27; हा ठाम होकार निघतो. वृत्त : उपजाती.</p></div></div>
+
+<div class="pagenav"><a href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 6</div></a><a class="next" href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 8</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

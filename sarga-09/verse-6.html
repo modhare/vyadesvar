@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तेष्वासन् शुद्धसत्त्वा हिमकरदिनकृद्वंशजाः कीर्तिमन्तो<br>रामक्षेत्रे पवित्रे कतिचन नरपाः क्षत्रियास्तीक्ष्णवीर्याः ।<br>सह्याद्रेः सिन्धुगाभिर्व्यवहितविषयास्तन्महानिम्नगाभिः<br>साम्राज्ये लब्धदीक्षाः क्षपितकलिमला भार्गवाराधनेन ।।६।।</div>
+  <div class="verse-iast">teṣvāsan śuddhasattvā himakaradinakṛdvaṃśajāḥ kīrtimanto rāmakṣetre pavitre katicana narapāḥ kṣatriyāstīkṣṇavīryāḥ । sahyādreḥ sindhugābhirvyavahitaviṣayāstanmahānimnagābhiḥ sāmrājye labdhadīkṣāḥ kṣapitakalimalā bhārgavārādhanena</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तेषु । आसन् । शुद्ध-सत्त्वाः । हिमकर-दिनकृत्-वंशजाः । कीर्तिमन्तः । रामक्षेत्रे । पवित्रे । कतिचन । नरपाः । क्षत्रियाः । तीक्ष्ण-वीर्याः । सह्याद्रेः । सिन्धुगाभिः । व्यवहित-विषयाः । तत्-महा-निम्नगाभिः । साम्राज्ये । लब्ध-दीक्षाः । क्षपित-कलि-मलाः । भार्गव-आराधनेन ।</div><div class="vig-iast">teṣu । āsan । śuddha-sattvāḥ । himakara-dinakṛt-vaṃśajāḥ । kīrtimantaḥ । rāmakṣetre । pavitre । katicana । narapāḥ । kṣatriyāḥ । tīkṣṇa-vīryāḥ । sahyādreḥ । sindhugābhiḥ । vyavahita-viṣayāḥ । tat-mahā-nimnagābhiḥ । sāmrājye । labdha-dīkṣāḥ । kṣapita-kali-malāḥ । bhārgava-ārādhanena ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तेषु + आसन् = तेष्वासन् (यण्) · दिनकृत् + वंशजाः = दिनकृद्वंशजाः · कीर्तिमन्तः + राम = कीर्तिमन्तो राम · क्षत्रियाः + तीक्ष्ण = क्षत्रियास्तीक्ष्ण · सिन्धुगाभिः + व्यवहित = सिन्धुगाभिर्व्यवहित · विषयाः + तत् = विषयास्तत् · तत् + महा = तन्महा (अनुनासिक) · भार्गव + आराधनेन = भार्गवाराधनेन</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तेषु (सामन्तेषु) पवित्रे रामक्षेत्रे कतिचन शुद्धसत्त्वाः हिमकरदिनकृद्वंशजाः कीर्तिमन्तः तीक्ष्णवीर्याः क्षत्रियाः नरपाः आसन् — सह्याद्रेः सिन्धुगाभिः तन्महानिम्नगाभिः व्यवहितविषयाः, भार्गवाराधनेन क्षपितकलिमलाः, साम्राज्ये लब्धदीक्षाः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Among them, in the holy Rama-kshetra, there lived some kshatriya kings — pure in nature, born of the lunar and solar lines, glorious, of keen valour — whose realms were bounded by the great rivers that run from the Sahyadri to the sea; consecrated to empire, with Kali&#x27;s stain washed away by the worship of Bhargava.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्यांपैकी पवित्र अशा रामक्षेत्रात शुद्धसत्त्व, चंद्र-सूर्यवंशांत जन्मलेले, कीर्तिमान व तीक्ष्णपराक्रमी असे काही क्षत्रिय नृपती होऊन गेले; सह्याद्रीपासून निघून सागराला मिळणाऱ्या महान नद्यांनी ज्यांच्या राज्यांच्या सीमा आखल्या गेल्या ते हे राजे परशुरामाच्या आराधनेमुळे साम्राज्याची दीक्षा घेतलेले व कलीने उत्पन्न होणारे कल्मष नष्ट झालेले होते.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हिमकरदिनकृद्वंशजाः</span>
+    <span class="word-iast">himakaradinakṛdvaṃśajāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine of the tatpurusha himakara (&#x27;moon&#x27;) + dinakrit (&#x27;sun&#x27;) + vamshaja (&#x27;born of the line&#x27;)</span></div>
+  <div class="word-form">In this verse: हिमकरदिनकृद्वंशजाः — as printed</div>
+  <p class="word-meaning lang-en">born of the lunar and solar dynasties</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्रवंश व सूर्यवंश यांत जन्मलेले</p>
+  <div class="word-usage">
+    <div class="deva">हिमकरदिनकृद्वंशजाः राजानः धर्मेण प्रजाः अपालयन्</div>
+    <div class="usage-iast">himakaradinakridvamshajah rajanah dharmena prajah apalayan</div>
+    <div class="usage-meaning lang-en">The kings born of the lunar and solar lines protected their subjects righteously.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र-सूर्यवंशांत जन्मलेल्या राजांनी धर्माने प्रजेचे पालन केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुद्धसत्त्वाः</span>
+    <span class="word-iast">śuddhasattvāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine of the bahuvrihi shuddha + sattva</span></div>
+  <div class="word-form">In this verse: शुद्धसत्त्वाः — as printed</div>
+  <p class="word-meaning lang-en">pure in nature, pure in being</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुद्ध स्वभावाचे</p>
+  <div class="word-usage">
+    <div class="deva">शुद्धसत्त्वाः मुनयः सत्यम् वदन्ति</div>
+    <div class="usage-iast">shuddhasattvah munayah satyam vadanti</div>
+    <div class="usage-meaning lang-en">Sages pure in being speak the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुद्ध स्वभावाचे मुनी सत्य बोलतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कतिचन</span>
+    <span class="word-iast">katicana</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; kati + chana (indefinite particle)</span></div>
+  <div class="word-form">In this verse: कतिचन — as printed</div>
+  <p class="word-meaning lang-en">some, a few</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काही</p>
+  <div class="word-usage">
+    <div class="deva">कतिचन जनाः तत्र आगताः</div>
+    <div class="usage-iast">katicana janah tatra agatah</div>
+    <div class="usage-meaning lang-en">Some people came there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काही लोक तेथे आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तीक्ष्णवीर्याः</span>
+    <span class="word-iast">tīkṣṇavīryāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine of the bahuvrihi tikshna + virya</span></div>
+  <div class="word-form">In this verse: तीक्ष्णवीर्याः — in क्षत्रियास्तीक्ष्णवीर्याः</div>
+  <p class="word-meaning lang-en">of keen valour</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रखर पराक्रमी</p>
+  <div class="word-usage">
+    <div class="deva">तीक्ष्णवीर्याः क्षत्रियाः रिपून् अजयन्</div>
+    <div class="usage-iast">tikshnaviryah kshatriyah ripun ajayan</div>
+    <div class="usage-meaning lang-en">The kshatriyas of keen valour conquered their foes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रखर पराक्रमी क्षत्रियांनी शत्रूंवर विजय मिळवला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सह्याद्रेः तन्महानिम्नगाभिः</span>
+    <span class="word-iast">sahyādreḥ tanmahānimnagābhiḥ</span>
+  </div>
+  <div><span class="word-grammar">sahyadreh ablative singular of sahyadri + instrumental plural feminine of the tatpurusha tat + mahat + nimnaga (&#x27;river&#x27;)</span></div>
+  <div class="word-form">In this verse: सह्याद्रेः तन्महानिम्नगाभिः — in तन्महानिम्नगाभिः</div>
+  <p class="word-meaning lang-en">by those great rivers (flowing) from the Sahyadri</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सह्याद्रीतून निघणाऱ्या त्या मोठ्या नद्यांनी</p>
+  <div class="word-usage">
+    <div class="deva">सह्याद्रेः तन्महानिम्नगाभिः देशः समृद्धः अभवत्</div>
+    <div class="usage-iast">sahyadreh tanmahanimnagabhih deshah samriddhah abhavat</div>
+    <div class="usage-meaning lang-en">The country became prosperous by those great rivers from the Sahyadri.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सह्याद्रीतून निघणाऱ्या त्या मोठ्या नद्यांनी देश समृद्ध झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सिन्धुगाभिः</span>
+    <span class="word-iast">sindhugābhiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural feminine of the tatpurusha sindhu + ga (from gam, &#x27;going&#x27;)</span></div>
+  <div class="word-form">In this verse: सिन्धुगाभिः — in सिन्धुगाभिर्व्यवहित</div>
+  <p class="word-meaning lang-en">flowing to the sea</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राला जाणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">सिन्धुगाभिः नदीभिः क्षेत्रम् सिञ्च्यते</div>
+    <div class="usage-iast">sindhugabhih nadibhih kshetram sinchyate</div>
+    <div class="usage-meaning lang-en">The land is watered by the rivers flowing to the sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राला जाणाऱ्या नद्यांनी क्षेत्र सिंचित होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्यवहितविषयाः</span>
+    <span class="word-iast">vyavahitaviṣayāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine of the bahuvrihi vyavahita (past participle of vi + ava + dha, &#x27;separated&#x27;) + vishaya</span></div>
+  <div class="word-form">In this verse: व्यवहितविषयाः — in विषयास्तन्महानिम्नगाभिः</div>
+  <p class="word-meaning lang-en">whose territories are demarcated, separated</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्यांचे प्रदेश विभक्त झाले आहेत</p>
+  <div class="word-usage">
+    <div class="deva">व्यवहितविषयाः राजानः सीमाम् रक्षन्ति स्म</div>
+    <div class="usage-iast">vyavahitavishayah rajanah simam rakshanti sma</div>
+    <div class="usage-meaning lang-en">The kings with demarcated territories used to guard their borders.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विभक्त प्रदेश असलेले राजे आपल्या सीमा राखीत असत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">साम्राज्ये लब्धदीक्षाः</span>
+    <span class="word-iast">sāmrājye labdhadīkṣāḥ</span>
+  </div>
+  <div><span class="word-grammar">samrajye locative singular neuter of samrajya + labdha-dikshah nominative plural masculine bahuvrihi (labdha + diksha)</span></div>
+  <div class="word-form">In this verse: साम्राज्ये लब्धदीक्षाः — as printed</div>
+  <p class="word-meaning lang-en">consecrated, initiated into empire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साम्राज्यावर अभिषिक्त</p>
+  <div class="word-usage">
+    <div class="deva">साम्राज्ये लब्धदीक्षाः नृपतिः धर्मेण शशास</div>
+    <div class="usage-iast">samrajye labdhadikshah nripatih dharmena shashasa</div>
+    <div class="usage-meaning lang-en">The king consecrated to empire ruled righteously.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साम्राज्यावर अभिषिक्त झालेल्या राजाने धर्माने राज्य केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भार्गवाराधनेन क्षपितकलिमलाः</span>
+    <span class="word-iast">bhārgavārādhanena kṣapitakalimalāḥ</span>
+  </div>
+  <div><span class="word-grammar">bhargavaradhanena instrumental singular neuter of the tatpurusha bhargava + aradhana + kshapita-kalimalah nominative plural masculine bahuvrihi (kshapita, past participle of kshap, + kali-mala)</span></div>
+  <div class="word-form">In this verse: भार्गवाराधनेन क्षपितकलिमलाः — as printed</div>
+  <p class="word-meaning lang-en">with Kali&#x27;s stain destroyed by the worship of Bhargava (Parashurama)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या उपासनेने कलीचा मळ नष्ट केलेले</p>
+  <div class="word-usage">
+    <div class="deva">भार्गवाराधनेन क्षपितकलिमलाः भक्ताः सुखिनः अभवन्</div>
+    <div class="usage-iast">bhargavaradhanena kshitakalimalah bhaktah sukhinah abhavan</div>
+    <div class="usage-meaning lang-en">The devotees, with Kali&#x27;s stain destroyed by Parashurama&#x27;s worship, became happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या उपासनेने कलीचा मळ नष्ट झालेले भक्त सुखी झाले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The kings of the kshetra are praised not for conquest but for purity: birth in the solar-lunar lines matters less than the worship of Bhargava that washed away Kali&#x27;s stain. This is the sarga&#x27;s moral axis — legitimacy comes from devotion, not descent. For the pilgrim, the verse promises that no age is so dark that worship cannot cleanse it: even in Kali-yuga, the stain lifts for the one who turns to the Lord of the kshetra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्षेत्रातील राजांची स्तुती विजयासाठी नव्हे, तर शुद्धतेसाठी केली आहे : सूर्य-चंद्रवंशातील जन्मापेक्षा कलीचा मळ धुऊन टाकणारी भार्गवउपासना महत्त्वाची आहे. हाच सर्गाचा नैतिक अक्ष आहे — वैधता भक्तीपासून येते, वंशापासून नव्हे. यात्रेकरूसाठी हा श्लोक आश्वासन देतो की कोणताही काळ इतका अंधारमय नसतो की उपासना त्याला शुद्ध करू शकणार नाही : कलियुगातही क्षेत्रस्वामीकडे वळणाऱ्याचा मळ निघून जातो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Puranic ideal king — Ikshvaku, Harishchandra, Raghu — is &#x27;kshapitakali&#x27; in the same sense: dharma-practice in a dark age keeps the yuga-dharma at bay locally. Parashurama as the kshetra&#x27;s guardian-deity who &#x27;washes the stain&#x27; recalls his role in the Sahyadri-khanda and local Konkan lore as the ever-present protector of Aparanta.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणांतील आदर्श राजा — इक्ष्वाकु, हरिश्चंद्र, रघु — याच अर्थाने &#x27;क्षपितकली&#x27; आहे : अंधारयुगातील धर्माचरण स्थानिक पातळीवर युगधर्माला दूर ठेवते. क्षेत्राचा रक्षकदेव म्हणून परशुराम &#x27;मळ धुऊन टाकतो&#x27; — सह्याद्रिखंडातील आणि कोकणच्या स्थानिक आख्यायिकांतील अपरांताचा सर्वकाळ रक्षक या त्याच्या भूमिकेची आठवण.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Sragdhara metre (21 syllables). &#x27;Rama-kshetra&#x27; here is Parashurama&#x27;s kshetra, not Ayodhya — the poet uses Rama for Jamadagnya throughout this sarga (cf. 9.8 ramasya kshetre). The Sahyadri-to-sea rivers are the west-flowing Konkan rivers (the Vashishthi and the Jaitapur creek system near Guhagar). &#x27;Himakara-dinakrit&#x27; (moon + sun) elegantly compresses the two royal vamshas into one compound.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्रग्धरा वृत्त (२१ अक्षरे). येथील &#x27;रामक्षेत्र&#x27; म्हणजे परशुरामाचे क्षेत्र, अयोध्या नव्हे — कवी या सर्गात जामदग्न्यासाठी राम हेच नाव वापरतो (तुलना ९.८ रामस्य क्षेत्रे). सह्याद्रीतून समुद्राला जाणाऱ्या नद्या म्हणजे कोकणातील पश्चिमवाहिनी नद्या (गुहागरजवळील वाशिष्ठी व जैतापूर खाडीप्रणाली). &#x27;हिमकरदिनकृत्&#x27; (चंद्र + सूर्य) हे दोन्ही राजवंश एकाच समासात सुंदरपणे सामावून घेते.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

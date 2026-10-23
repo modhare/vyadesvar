@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 16 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 16</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 16</span><span class="bl-mr lang-mr">श्लोक 16</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्यादिष्टो जगद्धात्रा सिन्धुरानतकन्धरः ।।<br>विसृष्टः प्रययौ दिष्ट्या नष्टारिष्टः स्वमालयम् ।।१६।।</div>
+  <div class="verse-iast">ityādiṣṭo jagaddhātrā sindhurānatakandharaḥ । । visṛṣṭaḥ prayayau diṣṭyā naṣṭāriṣṭaḥ svamālayam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । आदिष्टः । जगत्-धात्रा । सिन्धुः । आनत-कन्धरः । विसृष्टः । प्रययौ । दिष्ट्या । नष्ट-अरिष्टः । स्वम् । आलयम् ।</div><div class="vig-iast">iti । ādiṣṭaḥ । jagat-dhātrā । sindhuḥ । ānata-kandharaḥ । visṛṣṭaḥ । prayayau । diṣṭyā । naṣṭa-ariṣṭaḥ । svam । ālayam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">इति + आदिष्टः = इत्यादिष्टः (यण्) · आदिष्टः + जगत् = आदिष्टो जगत् (विसर्ग → ओ) · जगत् + धात्रा = जगद्धात्रा (त् → द्) · सिन्धुः + आनत = सिन्धुरानत (विसर्ग → र्) · नष्ट + अरिष्टः = नष्टारिष्टः · स्वम् + आलयम् = स्वमालयम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">जगद्धात्रा इति आदिष्टः विसृष्टः (च) आनतकन्धरः सिन्धुः दिष्ट्या नष्टारिष्टः (सन्) स्वम् आलयं प्रययौ ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>So commanded by the world&#x27;s maker, and dismissed, the ocean — his neck bowed — went to his own abode, by good fortune with the calamity past.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जगाची रचना करणाऱ्या परशुरामाने अशी आज्ञा देऊन पाठविलेला व मान खाली घातलेला तो समुद्र सुदैवाने अरिष्ट टळल्यामुळे स्वतःच्या घरी परत गेला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगद्धात्रा</span>
+    <span class="word-iast">jagaddhātrā</span>
+  </div>
+  <div><span class="word-grammar">जगत् (नपुं.) + √धा + तृच् (कर्तरि कृत्); पुंल्लिङ्ग, तृतीया विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: जगद्धात्रा</div>
+  <p class="word-meaning lang-en">by the maker/sustainer of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचा निर्माता/धारक (विष्णुरूप परशुराम) याने</p>
+  <div class="word-usage">
+    <div class="deva">विष्णुः जगद्धात्रा इति स्तूयते ।</div>
+    <div class="usage-iast">viṣṇuḥ jagaddhātrā iti stūyate ।</div>
+    <div class="usage-meaning lang-en">Viṣṇu is praised as the maker of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णूची जगाचा निर्माता म्हणून स्तुती केली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आदिष्टः</span>
+    <span class="word-iast">ādiṣṭaḥ</span>
+  </div>
+  <div><span class="word-grammar">आ + √दिश् (अतिसर्जने, तुदादिः) + क्त; पुंल्लिङ्ग, प्रथमा विभक्ति, एकवचन; सिन्धोः विशेषणम्</span></div>
+  <div class="word-form">In this verse: इत्यादिष्टो</div>
+  <p class="word-meaning lang-en">commanded, ordered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आज्ञा दिलेला</p>
+  <div class="word-usage">
+    <div class="deva">राज्ञा आदिष्टः दूतः गच्छति ।</div>
+    <div class="usage-iast">rājñā ādiṣṭaḥ dūtaḥ gacchati ।</div>
+    <div class="usage-meaning lang-en">The messenger commanded by the king goes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने आज्ञा दिलेला दूत जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विसृष्टः</span>
+    <span class="word-iast">visṛṣṭaḥ</span>
+  </div>
+  <div><span class="word-grammar">वि + √सृज् (विसर्गे, तुदादिः) + क्त; पुंल्लिङ्ग, प्रथमा विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: विसृष्टः</div>
+  <p class="word-meaning lang-en">dismissed, sent away with leave</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निरोप दिलेला</p>
+  <div class="word-usage">
+    <div class="deva">सः विसृष्टः गृहम् अगच्छत् ।</div>
+    <div class="usage-iast">saḥ visṛṣṭaḥ gṛham agacchat ।</div>
+    <div class="usage-meaning lang-en">Dismissed, he went home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निरोप मिळाल्यावर तो घरी गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आनतकन्धरः</span>
+    <span class="word-iast">ānatakandharaḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि समास (आनता कन्धरा यस्य); आनत = आ + √नम् + क्त; पुंल्लिङ्ग, प्रथमा विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: सिन्धुरानतकन्धरः</div>
+  <p class="word-meaning lang-en">with bowed neck, head bent low</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मान खाली घातलेला</p>
+  <div class="word-usage">
+    <div class="deva">विनयी शिष्यः आनतकन्धरः तिष्ठति ।</div>
+    <div class="usage-iast">vinayī śiṣyaḥ ānatakandharaḥ tiṣṭhati ।</div>
+    <div class="usage-meaning lang-en">The humble pupil stands with bowed head.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विनयी शिष्य मान खाली घालून उभा राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दिष्ट्या</span>
+    <span class="word-iast">diṣṭyā</span>
+  </div>
+  <div><span class="word-grammar">दिष्टि (स्त्री., “दैव, भाग्य”), तृतीया विभक्ति, एकवचन; हेत्वर्थे क्रियाविशेषणवत्</span></div>
+  <div class="word-form">In this verse: दिष्ट्या</div>
+  <p class="word-meaning lang-en">luckily, by good fortune</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुदैवाने</p>
+  <div class="word-usage">
+    <div class="deva">दिष्ट्या सः जीवितः अभवत् ।</div>
+    <div class="usage-iast">diṣṭyā saḥ jīvitaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">Luckily he survived.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुदैवाने तो वाचला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नष्टारिष्टः</span>
+    <span class="word-iast">naṣṭāriṣṭaḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि समास (नष्टम् अरिष्टं यस्य); नष्ट = √नश् + क्त; पुंल्लिङ्ग, प्रथमा विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: नष्टारिष्टः</div>
+  <p class="word-meaning lang-en">one whose calamity has vanished, freed from danger</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकट टळलेला</p>
+  <div class="word-usage">
+    <div class="deva">युद्धात् नष्टारिष्टः सैनिकः गृहम् आगतः ।</div>
+    <div class="usage-iast">yuddhāt naṣṭāriṣṭaḥ sainikaḥ gṛham āgataḥ ।</div>
+    <div class="usage-meaning lang-en">The soldier, freed from danger, came home from the war.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकट टळलेला सैनिक युद्धातून घरी आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वम् आलयम् प्रययौ</span>
+    <span class="word-iast">svam ālayam prayayau</span>
+  </div>
+  <div><span class="word-grammar">स्व (सर्वनाम-विशेषण), नपुंसकलिङ्ग, द्वितीया विभक्ति, एकवचन + आलय (पुं.), द्वितीया विभक्ति, एकवचन (गत्यर्थकर्म) + प्र + √या (गतौ, अदादिः), परस्मैपद, लिट्, प्रथमपुरुष, एकवचन</span></div>
+  <div class="word-form">In this verse: स्वमालयम् प्रययौ</div>
+  <p class="word-meaning lang-en">went to his own abode</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या घरी गेला (प्र + √या, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">सः स्वम् आलयम् प्रययौ ।</div>
+    <div class="usage-iast">saḥ svam ālayam prayayau ।</div>
+    <div class="usage-meaning lang-en">He went to his own home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो आपल्या घरी गेला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The episode closes as it should in dharma-kathā: the suppliant departs unharmed, the hero&#x27;s word is kept, and no one is diminished — the ocean keeps his waters, Paraśurāma gains his land. दिष्ट्या (“by good fortune”) is the poet&#x27;s quiet theology: grace, not mere power, resolved the standoff. For the pilgrim the verse seals the kṣetra&#x27;s origin in a double blessing — the sea spared and the land given.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>धर्मकथेला शोभेल असा या प्रसंगाचा शेवट होतो : शरणागत अभय पावून जातो, वीराचे वचन पाळले जाते, आणि कोणीही कमी होत नाही — समुद्राला त्याचे पाणी राहते, परशुरामाला त्याची भूमी मिळते. दिष्ट्या (“सुदैवाने”) हे कवीचे शांत तत्त्वज्ञान आहे : केवळ सामर्थ्याने नव्हे, तर कृपेने हा पेच सुटला. यात्रेकरूसाठी हा श्लोक क्षेत्राच्या उत्पत्तीवर दुहेरी आशीर्वादाची मोहोर उठवतो — समुद्र वाचला आणि भूमी मिळाली.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>जगद्धातृ — the maker and sustainer of the world — is a standard Purāṇic epithet of Viṣṇu, and hence of Paraśurāma as his avatāra. The bowed neck (आनतकन्धर) is the bodily signature of śaraṇāgati across itihāsa, seen when Samudra surrenders to Rāma. The “return to his own abode” (स्वमालयम्) restores cosmic order after the confrontation: each party keeps what is his.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जगद्धातृ — जगाचा निर्माता आणि धारक — हे विष्णूचे प्रमाणित पौराणिक विशेषण आहे, आणि त्यामुळे त्याचा अवतार असलेल्या परशुरामाचेही. खाली घातलेली मान (आनतकन्धर) ही इतिहासभर शरणागतीची शारीरिक खूण आहे — समुद्र रामाला शरण जातो तेव्हाही तीच दिसते. “आपल्या घरी परतणे” (स्वमालयम्) हे संघर्षानंतर वैश्विक व्यवस्था पूर्ववत करते : प्रत्येकाला त्याचे त्याचे राहते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. This verse closes the ocean-dialogue episode (2.8–2.16) before the narrative moves on (2.17: the bow laid down at dusk). Note the elegant pairing आदिष्टः … विसृष्टः — commanded, then graciously dismissed — and the closing दिष्ट्या नष्टारिष्टः, the poet&#x27;s sigh of relief on the ocean&#x27;s behalf.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ् वृत्त. कथानक पुढे जाण्यापूर्वी (२.१७ : संध्याकाळी धनुष्य खाली ठेवणे) हा श्लोक समुद्र-संवादाचा प्रसंग (२.८–२.१६) संपवतो. आदिष्टः … विसृष्टः ही सुंदर जोडी लक्षात घ्या — आज्ञा दिली, मग कृपेने निरोप दिला — आणि शेवटचे दिष्ट्या नष्टारिष्टः, समुद्रासाठी कवीचा सुटकेचा नि:श्वास.</p></div></div>
+
+<div class="pagenav"><a href="verse-15.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 15</div></a><a class="next" href="verse-17.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 17</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

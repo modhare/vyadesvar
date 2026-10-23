@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vaṃśastha</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ततः कृतार्थो भगवान् भृगूद्वहो महेश्वराभ्यागमनिर्वृतः कृती ।<br>महामतिस्तां स्वकृतां महीमलंचकार नानारचनाभिरादृतः ।।१।।</div>
+  <div class="verse-iast">tataḥ kṛtārtho bhagavān bhṛgūdvaho maheśvarābhyāgamanirvṛtaḥ kṛtī । mahāmatistāṃ svakṛtāṃ mahīmalaṃcakāra nānāracanābhirādṛtaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ततः । कृत-अर्थः । भगवान् । भृगु-उद्वहः । महेश्वर-अभ्यागम-निर्वृतः । कृती । महामतिः । ताम् । स्व-कृताम् । महीम् । अलंचकार । नाना-रचनाभिः । आदृतः ।</div><div class="vig-iast">tataḥ । kṛta-arthaḥ । bhagavān । bhṛgu-udvahaḥ । maheśvara-abhyāgama-nirvṛtaḥ । kṛtī । mahāmatiḥ । tām । sva-kṛtām । mahīm । alaṃcakāra । nānā-racanābhiḥ । ādṛtaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ततः + कृतार्थः = ततः कृतार्थो · कृतार्थः + भगवान् = कृतार्थो भगवान् · भृगु + उद्वहः = भृगूद्वहः · महेश्वर + अभ्यागम = महेश्वराभ्यागम · महामतिः + ताम् = महामतिस्ताम् · महीम् + अलंचकार = महीमलंचकार · रचनाभिः + आदृतः = रचनाभिरादृतः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">ततः कृतार्थः महेश्वराभ्यागमनिर्वृतः कृती महामतिः भगवान् भृगूद्वहः आदृतः (सन्) तां स्वकृतां महीं नानारचनाभिः अलंचकार ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then the blessed Bhṛgūdvaha — his purpose fulfilled, gladdened by Maheshvara&#x27;s arrival, skilled and of great wisdom — with devotion adorned with manifold compositions the earth he himself had fashioned.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्यानंतर महेश्वराच्या आगमनामुळे समाधान पावलेल्या, कृतार्थ झालेल्या त्या आदरयुक्त महाबुद्धिमान, व निपुण अशा भगवान् परशुरामाने स्वतः निर्माण केलेल्या त्या भूभागाला निरनिराळ्या रचनांनी सजविले; त्याची शोभा वाढविली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृतार्थः</span>
+    <span class="word-iast">kṛtārthaḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि समास (कृत + अर्थ), पुंलिङ्ग प्रथमा एकवचन — भगवान्‌चे विशेषण</span></div>
+  <div class="word-form">In this verse: कृतार्थः — &#x27;ज्याचे कार्य सिद्ध झाले आहे असा&#x27;</div>
+  <p class="word-meaning lang-en">one whose purpose is accomplished; fulfilled, content</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृतार्थ</p>
+  <div class="word-usage">
+    <div class="deva">सः कृतार्थः सन् गृहम् आगच्छत्</div>
+    <div class="usage-iast">saḥ kṛtārthaḥ san gṛham āgacchat</div>
+    <div class="usage-meaning lang-en">Content, he returned home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समाधानी होऊन तो घरी परतला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृगूद्वहः</span>
+    <span class="word-iast">bhṛgūdvahaḥ</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुष समास (भृगु + उद्वहः; उद् + वह् + अच्), पुंलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: भृगूद्वहः — &#x27;भृगुकुलाचा भार वाहणारा&#x27;</div>
+  <p class="word-meaning lang-en">uplifter/bearer of the Bhṛgu line; an epithet of Paraśurāma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भृगुकुलाचा धुरीण (परशुराम)</p>
+  <div class="word-usage">
+    <div class="deva">भृगूद्वहः रामः क्षत्रियान् अजयत्</div>
+    <div class="usage-iast">bhṛgūdvahaḥ rāmaḥ kṣatriyān ajayat</div>
+    <div class="usage-meaning lang-en">Rāma, the uplifter of the Bhṛgus, conquered the kshatriyas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भृगुकुलाचा धुरीण राम याने क्षत्रियांना जिंकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महेश्वराभ्यागमनिर्वृतः</span>
+    <span class="word-iast">maheśvarābhyāgamanirvṛtaḥ</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुष समास — महेश्वर-अभ्यागम-निर्वृत (निर् + वृ + क्त), पुंलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: महेश्वराभ्यागमनिर्वृतः — &#x27;महेश्वराच्या आगमनाने आनंदित&#x27;</div>
+  <p class="word-meaning lang-en">gladdened, delighted by Maheshvara&#x27;s arrival</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महेश्वराच्या आगमनाने संतुष्ट</p>
+  <div class="word-usage">
+    <div class="deva">महेश्वराभ्यागमनिर्वृतः मुनिः पूजाम् अकरोत्</div>
+    <div class="usage-iast">maheśvarābhyāgamanirvṛtaḥ muniḥ pūjām akarot</div>
+    <div class="usage-meaning lang-en">The sage, delighted by Maheshvara&#x27;s arrival, performed worship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महेश्वराच्या आगमनाने आनंदित झालेल्या मुनीने पूजा केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृती</span>
+    <span class="word-iast">kṛtī</span>
+  </div>
+  <div><span class="word-grammar">कृ + इन् (कर्तरि), विशेषण; पुंलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: कृती — &#x27;कुशल, कार्यसिद्ध&#x27;</div>
+  <p class="word-meaning lang-en">skillful, clever; one who has accomplished his work</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुशल</p>
+  <div class="word-usage">
+    <div class="deva">कृती शिल्पी देवालयम् अरचयत्</div>
+    <div class="usage-iast">kṛtī śilpī devālayam aracayat</div>
+    <div class="usage-meaning lang-en">The skillful sculptor built the temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुशल शिल्पकाराने देवालय बांधले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वकृतां महीम्</span>
+    <span class="word-iast">svakṛtāṃ mahīm</span>
+  </div>
+  <div><span class="word-grammar">स्व-कृत (कृ + क्त, भूतकालवाचक धातुसाधित) + मही (स्त्रीलिङ्ग) द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: स्वकृताम् महीम् — &#x27;स्वतः निर्मिलेली भूमी (तिला)&#x27;</div>
+  <p class="word-meaning lang-en">the land made by himself (accusative)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतः निर्मिलेल्या भूमीला</p>
+  <div class="word-usage">
+    <div class="deva">सः स्वकृताम् महीम् अपरयत्</div>
+    <div class="usage-iast">saḥ svakṛtām mahīm aparayat</div>
+    <div class="usage-meaning lang-en">He beheld the land made by himself.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने स्वतः निर्माण केलेली भूमी पाहिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नानारचनाभिः</span>
+    <span class="word-iast">nānāracanābhiḥ</span>
+  </div>
+  <div><span class="word-grammar">नाना (अव्यय) + रचना (रच् + ल्युट्, स्त्रीलिङ्ग) तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: नानारचनाभिः — &#x27;विविध रचनांनी&#x27;</div>
+  <p class="word-meaning lang-en">with various arrangements, compositions, adornments</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विविध रचनांनी</p>
+  <div class="word-usage">
+    <div class="deva">सः नानारचनाभिः गृहम् अलंचकार</div>
+    <div class="usage-iast">saḥ nānāracanābhiḥ gṛham alaṃcakāra</div>
+    <div class="usage-meaning lang-en">He adorned the house with various decorations.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने विविध रचनांनी घर सजवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आदृतः</span>
+    <span class="word-iast">ādṛtaḥ</span>
+  </div>
+  <div><span class="word-grammar">आ + दृश् + क्त (भूतकालवाचक धातुसाधित), पुंलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: आदृतः — &#x27;आदरलेला, सन्मानित&#x27;</div>
+  <p class="word-meaning lang-en">attentive, careful, devoted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आस्थेने</p>
+  <div class="word-usage">
+    <div class="deva">आदृतः अतिथिः भोजनम् अलभत</div>
+    <div class="usage-iast">ādṛtaḥ atithiḥ bhojanam alabhata</div>
+    <div class="usage-meaning lang-en">The honored guest received food.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आदरलेल्या अतिथीला भोजन मिळाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अलंचकार</span>
+    <span class="word-iast">alaṃcakāra</span>
+  </div>
+  <div><span class="word-grammar">अलम् + कृ, लिट् (पूर्ण भूतकाळ) प्रथमपुरुष एकवचन, परस्मैपद</span></div>
+  <div class="word-form">In this verse: अलंचकार — &#x27;त्याने सजवले&#x27;</div>
+  <p class="word-meaning lang-en">he adorned, decorated, beautified</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सजवली (अलम् + √कृ, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">देवः पुष्पैः मण्डपम् अलंचकार</div>
+    <div class="usage-iast">devaḥ puṣpaiḥ maṇḍapam alaṃcakāra</div>
+    <div class="usage-meaning lang-en">The lord adorned the pavilion with flowers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाने फुलांनी मंडप सजवला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma first secures Śiva&#x27;s grace and only then beautifies his creation: the sthala-kāvya teaches that sacred land is not made by labor alone but by divine sanction. The &#x27;adorning&#x27; of the land mirrors the devotee&#x27;s adornment of the heart — both must be prepared as a fitting seat for the Lord before He dwells there.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाने प्रथम शंकराची कृपा संपादन केली आणि मगच आपल्या निर्मितीचे अलंकरण केले : पवित्र भूमी केवळ श्रमाने नव्हे, तर दैवी संमतीने तयार होते, हे स्थलकाव्य शिकवते. भूमीचे अलंकरण हे भक्ताच्या हृदयाच्या अलंकरणाचे प्रतिबिंब आहे — देवता तेथे वास करण्यापूर्वी दोन्ही योग्य आसन म्हणून सज्ज करावी लागतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas present Paraśurāma as the maker of the Konkan coast — the Sahyādri-khaṇḍa and Kerala-māhātmyas tell how he threw his axe and reclaimed the land from the sea. Here the poet places that cosmogony before the local sthala-story: the land is first won from the ocean (earlier sargas), then sanctified by Śiva&#x27;s visit (sarga 4), and only now decorated — creation follows the same order as a temple&#x27;s prāṇa-pratiṣṭhā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे परशुरामाला कोकणकिनाऱ्याचा निर्माता म्हणून सांगतात — सह्याद्रिखंड व केरळमाहात्म्ये सांगतात की त्याने परशू फेकून समुद्रातून भूमी वर आणली. येथे कवी ती विश्वरचना स्थानिक स्थलकथेपूर्वी ठेवतो : भूमी प्रथम समुद्रातून जिंकली जाते (मागील सर्ग), मग शिवाच्या भेटीने पवित्र होते (चौथा सर्ग), आणि आताच सजवली जाते — निर्मिती मंदिराच्या प्राणप्रतिष्ठेइतक्याच क्रमाने होते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Verse 1 is in Vaṃśastha metre (12 syllables per pāda), the only non-Anuṣṭubh verse in this batch. &#x27;Maheshvara&#x27;s coming&#x27; looks back to sarga 4, where Śiva visits the newly raised land. Note the epithet Bhṛgūdvaha, &#x27;uplifter of the Bhṛgus&#x27; — from the root vah, &#x27;to carry&#x27; — a standard Paraśurāma epithet.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक १ वंशस्थ वृत्तात आहे (प्रत्येक पादात १२ अक्षरे) — या तुकडीतील एकमेव अनुष्टुभेतर श्लोक. &#x27;महेश्वराचे आगमन&#x27; हे चौथ्या सर्गाकडे वळते, जेथे शिव नव्याने वर आणलेल्या भूमीला भेट देतात. &#x27;भृगूद्वहः&#x27; हे विशेषण लक्षात घ्या — &#x27;भृगुवंशाचा धुरीण&#x27;, वह् धातूपासून — परशुरामाचे रूढ विशेषण.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-04/verse-56.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 4 — Śambhuprasādaḥ 56</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

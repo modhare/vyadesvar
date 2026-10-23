@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 24 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 24</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 24</span><span class="bl-mr lang-mr">श्लोक 24</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">माहात्म्यं यस्य बाह्वोस्त्रिपुरहरधनुः पादयोर्गौतमस्त्री<br>पौलस्त्यः पौरुषस्य क्रुध उदकनिधिर्ब्रह्मचर्यस्य सीता ।<br>सन्धेः पौलस्त्यबन्धुः प्लवगकुलपतिर्मित्रताया हनूमा-<br>न्भक्ते राज्यस्य पुत्री द्विज इह बुबुधे रामभद्रः स वोऽव्यात् ।।२४।।</div>
+  <div class="verse-iast">māhātmyaṃ yasya bāhvostripuraharadhanuḥ pādayorgautamastrī paulastyaḥ pauruṣasya krudha udakanidhirbrahmacaryasya sītā । sandheḥ paulastyabandhuḥ plavagakulapatirmitratāyā hanūmā- nbhakte rājyasya putrī dvija iha bubudhe rāmabhadraḥ sa vo&#x27;vyāt</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">माहात्म्यम् । यस्य । बाह्वोः । त्रिपुरहर-धनुः । पादयोः । गौतम-स्त्री । पौलस्त्यः । पौरुषस्य । क्रुधः । उदकनिधिः । ब्रह्मचर्यस्य । सीता । सन्धेः । पौलस्त्य-बन्धुः । प्लवगकुलपतिः । मित्रतायाः । हनूमान् । भक्तेः । राज्यस्य । पुत्री । द्विजः । इह । बुबुधे । रामभद्रः । सः । वः । अव्यात् ।</div><div class="vig-iast">māhātmyam । yasya । bāhvoḥ । tripurahara-dhanuḥ । pādayoḥ । gautama-strī । paulastyaḥ । pauruṣasya । krudhaḥ । udakanidhiḥ । brahmacaryasya । sītā । sandheḥ । paulastya-bandhuḥ । plavagakulapatiḥ । mitratāyāḥ । hanūmān । bhakteḥ । rājyasya । putrī । dvijaḥ । iha । bubudhe । rāmabhadraḥ । saḥ । vaḥ । avyāt ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">बाह्वोः + त्रिपुर = बाह्वोस्त्रिपुर · धनुः + पादयोः = धनुः पादयोः · पादयोः + गौतम = पादयोर्गौतम · क्रुधः + उदक = क्रुध उदक (विसर्गलोप) · निधिः + ब्रह्म = निधिर्ब्रह्म · पतिः + मित्र = पतिर्मित्र · हनूमान् + भक्तेः = हनूमान्भक्तेः · सः + वः = स वः · वः + अव्यात् = वोऽव्यात्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्य बाह्वोः माहात्म्यं त्रिपुरहरधनुः, पादयोः गौतमस्त्री, पौरुषस्य पौलस्त्यः, क्रुधः उदकनिधिः, ब्रह्मचर्यस्य सीता, सन्धेः पौलस्त्यबन्धुः, मित्रतायाः प्लवगकुलपतिः, भक्तेः हनूमान्, राज्यस्य पुत्री द्विजः — इह बुबुधे, सः रामभद्रः वः अव्यात् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>May that Rāmabhadra protect you — he whose glory was known in this world: the might of his arms, by the bow of Śiva the destroyer of Tripura; of his feet, by Gautama&#x27;s wife; of his valour, by Paulastya; of his wrath, by the ocean; of his continence, by Sītā; of his peacemaking, by Paulastya&#x27;s kinsman; of his friendship, by the lord of the vānara host; of the devotion he inspires, by Hanumān; and of his kingship, by the brahmin restored to fatherhood.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याच्या बाहूंचे सामर्थ्य शंकराच्या धनुष्याने, पायांचा महिमा गौतमपत्नीने, पौरुषाचा मोठेपणा रावणाने, क्रोधाचे सामर्थ्य समुद्राने, ब्रह्मचर्याचा महिमा सीतेने, संधीचा मोठेपणा रावणाच्या बंधूने, मैत्रीचा महिमा वानरकुळाच्या अधिपतीने, भक्तीचे माहात्म्य हनुमंताने व राज्याचा गरिमा पुत्रवंत ब्राह्मणाने या लोकात अनुभवला तो रामभद्र तुमचे रक्षण करो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रिपुरहरधनुः</span>
+    <span class="word-iast">tripuraharadhanuḥ</span>
+  </div>
+  <div><span class="word-grammar">त्रिपुर-हर-धनुस्; षष्ठी-तत्पुरुष; प्रथमा एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: बाह्वोस्त्रिपुरहरधनुः</div>
+  <p class="word-meaning lang-en">the bow of Śiva, destroyer of Tripura</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवधनुष्य</p>
+  <div class="word-usage">
+    <div class="deva">रामः त्रिपुरहरधनुः बभञ्ज</div>
+    <div class="usage-iast">rāmaḥ tripuraharadhanuḥ babhañja</div>
+    <div class="usage-meaning lang-en">Rāma broke Śiva&#x27;s bow.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने शिवधनुष्य मोडले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गौतमस्त्री</span>
+    <span class="word-iast">gautamastrī</span>
+  </div>
+  <div><span class="word-grammar">गौतम-स्त्री; षष्ठी-तत्पुरुष; प्रथमा एकवचन, स्त्रीलिङ्ग</span></div>
+  <div class="word-form">In this verse: पादयोर्गौतमस्त्री</div>
+  <p class="word-meaning lang-en">Gautama&#x27;s wife (Ahalyā)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अहल्या</p>
+  <div class="word-usage">
+    <div class="deva">रामपादरजसा गौतमस्त्री शापात् अमुच्यत</div>
+    <div class="usage-iast">rāmapādarajasā gautamastrī śāpāt amucyata</div>
+    <div class="usage-meaning lang-en">By the dust of Rāma&#x27;s feet Gautama&#x27;s wife was freed from the curse.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाच्या पायधुळीने गौतमपत्नी शापातून मुक्त झाली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पौलस्त्यः</span>
+    <span class="word-iast">paulastyaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुलस्त्य + यञ् (अपत्यार्थे); प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: पौलस्त्यः</div>
+  <p class="word-meaning lang-en">Paulastya (Rāvaṇa)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रावण</p>
+  <div class="word-usage">
+    <div class="deva">पौलस्त्यः रामबाणैः निपपात</div>
+    <div class="usage-iast">paulastyaḥ rāmabāṇaiḥ nipapāta</div>
+    <div class="usage-meaning lang-en">Paulastya fell to Rāma&#x27;s arrows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रावण रामबाणांनी पडला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उदकनिधिः</span>
+    <span class="word-iast">udakanidhiḥ</span>
+  </div>
+  <div><span class="word-grammar">उदक-निधि; सप्तमी-तत्पुरुष (&#x27;उदकानां निधिः&#x27;); प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: उदकनिधिर्ब्रह्मचर्यस्य</div>
+  <p class="word-meaning lang-en">the ocean (treasure-house of waters)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र</p>
+  <div class="word-usage">
+    <div class="deva">उदकनिधिः रामाय मार्गम् ददौ</div>
+    <div class="usage-iast">udakanidhiḥ rāmāya mārgam dadau</div>
+    <div class="usage-meaning lang-en">The ocean gave way to Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राने रामाला मार्ग दिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पौलस्त्यबन्धुः</span>
+    <span class="word-iast">paulastyabandhuḥ</span>
+  </div>
+  <div><span class="word-grammar">पौलस्त्य-बन्धु; षष्ठी-तत्पुरुष; प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: पौलस्त्यबन्धुः</div>
+  <p class="word-meaning lang-en">Paulastya&#x27;s kinsman (Vibhīṣaṇa)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बिभीषण</p>
+  <div class="word-usage">
+    <div class="deva">पौलस्त्यबन्धुः रामम् शरणम् अगच्छत्</div>
+    <div class="usage-iast">paulastyabandhuḥ rāmam śaraṇam agacchat</div>
+    <div class="usage-meaning lang-en">Paulastya&#x27;s kinsman sought refuge with Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रावणाचा बंधू रामाला शरण गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्लवगकुलपतिः</span>
+    <span class="word-iast">plavagakulapatiḥ</span>
+  </div>
+  <div><span class="word-grammar">प्लवग-कुल-पति; षष्ठी-तत्पुरुष; प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: प्लवगकुलपतिर्मित्रताया</div>
+  <p class="word-meaning lang-en">lord of the vānara clan (Sugrīva)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुग्रीव</p>
+  <div class="word-usage">
+    <div class="deva">प्लवगकुलपतिः रामेण सख्यम् अकरोत्</div>
+    <div class="usage-iast">plavagakulapatiḥ rāmeṇa sakhyam akarot</div>
+    <div class="usage-meaning lang-en">The lord of the vānara clan made friendship with Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वानराधिपतीने रामाशी मैत्री केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्मचर्यस्य</span>
+    <span class="word-iast">brahmacaryasya</span>
+  </div>
+  <div><span class="word-grammar">ब्रह्मचर्य; षष्ठी एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: निधिर्ब्रह्मचर्यस्य</div>
+  <p class="word-meaning lang-en">of (his) continence — here, the one-wife vow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(एकपत्नीव्रतरूप) ब्रह्मचर्याचे</p>
+  <div class="word-usage">
+    <div class="deva">सीता रामस्य ब्रह्मचर्यम् अजानात्</div>
+    <div class="usage-iast">sītā rāmasya brahmacaryam ajānāt</div>
+    <div class="usage-meaning lang-en">Sītā knew Rāma&#x27;s continence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सीतेला रामाच्या ब्रह्मचर्याची जाणीव होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुत्री द्विजः</span>
+    <span class="word-iast">putrī dvijaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुत्र + इनि (मतुबर्थे); प्रथमा एकवचन, पुल्लिङ्ग + द्विज प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: पुत्री द्विज</div>
+  <p class="word-meaning lang-en">the brahmin (now) possessed of a son</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मृत पुत्र पुन्हा लाभलेला ब्राह्मण (उत्तरकाण्ड)</p>
+  <div class="word-usage">
+    <div class="deva">पुत्री द्विजः रामम् आशिषा अयोजयत्</div>
+    <div class="usage-iast">putrī dvijaḥ rāmam āśiṣā ayojayat</div>
+    <div class="usage-meaning lang-en">The brahmin, (again) possessed of a son, blessed Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुत्र लाभलेल्या ब्राह्मणाने रामाला आशीर्वाद दिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बुबुधे</span>
+    <span class="word-iast">bubudhe</span>
+  </div>
+  <div><span class="word-grammar">√बुध्; लिट् प्रथमपुरुष एकवचन, आत्मनेपद</span></div>
+  <div class="word-form">In this verse: बुबुधे</div>
+  <p class="word-meaning lang-en">came to be known, was experienced</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जाणले (√बुध्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">लोके राममाहात्म्यम् बुबुधे</div>
+    <div class="usage-iast">loke rāmamāhātmyam bubudhe</div>
+    <div class="usage-meaning lang-en">Rāma&#x27;s glory came to be known in the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकात रामाचे माहात्म्य जाणले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वः अव्यात्</span>
+    <span class="word-iast">vaḥ avyāt</span>
+  </div>
+  <div><span class="word-grammar">वः (युष्मद्, षष्ठी/चतुर्थी बहुवचन) + √अव्; आशीर्लिङ् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: वोऽव्यात्</div>
+  <p class="word-meaning lang-en">may he protect you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुमचे रक्षण करो (√अव्, आशीर्लिङ्)</p>
+  <div class="word-usage">
+    <div class="deva">देवः वः अव्यात् सर्वदा</div>
+    <div class="usage-iast">devaḥ vaḥ avyāt sarvadā</div>
+    <div class="usage-meaning lang-en">May the Lord protect you always.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव तुमचे नेहमी रक्षण करो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sarga closes as a benediction — the poet&#x27;s āśīrvāda — and its device is remembrance through witnesses: nine deeds, nine knowers. Each pair is a dhyāna-point the devotee may turn over lifelong: the broken bow, the redeemed Ahalyā, the fallen Rāvaṇa, the bridged ocean, the one-wife vow, the sheltered Vibhīṣaṇa, the befriended Sugrīva, the devoted Hanumān, the revived brahmin boy. To recall the Lord by his deeds is itself the blessing — and the blessing is protection: &#x27;स वोऽव्यात्&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सर्ग आशीर्वादाने संपतो — कवीचा आशीर्वाद — आणि त्याची युक्ती साक्षीदारांमार्फत स्मरण आहे : नऊ कृत्ये, नऊ जाणणारे. प्रत्येक जोडी भक्ताने आयुष्यभर चिंतावी अशी ध्यानबिंदू आहे : मोडलेले धनुष्य, उद्धरलेली अहल्या, पडलेला रावण, बांधलेला समुद्र, एकपत्नीव्रत, आश्रय दिलेला बिभीषण, मैत्री केलेला सुग्रीव, भक्त हनुमान, जिवंत झालेला ब्राह्मणपुत्र. भगवंताचे त्याच्या कृत्यांनी स्मरण करणे हाच आशीर्वाद — आणि आशीर्वाद हेच रक्षण : &#x27;स वोऽव्यात्&#x27;.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The nine witnesses map the whole Rāmāyaṇa: the bow-breaking and Ahalyā&#x27;s redemption (Bālakāṇḍa), Rāvaṇa&#x27;s fall and the ocean&#x27;s submission at the Setubandha (Yuddhakāṇḍa), the ekapatnīvrata, Vibhīṣaṇa&#x27;s refuge, Sugrīva&#x27;s friendship and Hanumān&#x27;s devotion (Sundara–Yuddha), and the brahmin&#x27;s son restored to life (Uttarakāṇḍa 7.73–74) — the standing proof-text of Rāma-rājya&#x27;s power over death itself. &#x27;Rāmabhadra&#x27;, &#x27;the auspicious Rāma&#x27;, is the benedictory form of the name with which sthala-kāvyas love to close a varṇana.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नऊ साक्षीदार संपूर्ण रामायणाचे नकाशेच आहेत : धनुर्भंग व अहल्योद्धार (बालकाण्ड), रावणाचा पाडाव व सेतुबंधावेळी समुद्राची शरणागती (युद्धकाण्ड), एकपत्नीव्रत, बिभीषणाची शरणागती, सुग्रीवाची मैत्री व हनुमंताची भक्ती (सुंदर–युद्ध), आणि जिवंत झालेला ब्राह्मणपुत्र (उत्तरकाण्ड ७.७३–७४) — मृत्यूवरही रामराज्याच्या सत्तेचा स्थिर पुरावा. &#x27;रामभद्र&#x27; — &#x27;मंगल राम&#x27; — हे नावाचे आशीर्वादात्मक रूप असून स्थलकाव्ये वर्णनाचा शेवट यानेच करायला आवडतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Sragdharā, closing the sarga&#x27;s Rāma-varṇana. &#x27;पुत्री&#x27; is पुत्रिन् (possessive -ini suffix), nominative singular — &#x27;the brahmin (now) possessed of a son&#x27;. &#x27;बुबुधे&#x27; is √बुध्, lit, middle voice — &#x27;came to be known&#x27;. &#x27;क्रुधः&#x27; (from क्रुध्, anger) is the genitive the verse pairs with the ocean as its witness. The print&#x27;s line-break &#x27;हनूमा-न्भक्ते&#x27; is a hyphenation artefact; the sandhi is हनूमान् + भक्तेः. Metre: Sragdharā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्रग्धरा; सर्गाच्या रामवर्णनाचा समारोप. &#x27;पुत्री&#x27; हे पुत्रिन् (स्वामित्वार्थक -इनि प्रत्यय) चे प्रथमा एकवचन आहे — &#x27;पुत्र लाभलेला ब्राह्मण&#x27;. &#x27;बुबुधे&#x27; हे √बुध् धातूचे लिट्, आत्मनेपद — &#x27;जाणले गेले&#x27;. &#x27;क्रुधः&#x27; (क्रुध्, क्रोध यापासून) ही षष्ठी असून तिचा साक्षीदार समुद्र आहे. छापील &#x27;हनूमा-न्भक्ते&#x27; हा ओळखंडाचा जोडचिन्ह-दोष आहे; संधी हनूमान् + भक्तेः अशी. वृत्त : स्रग्धरा.</p></div></div>
+
+<div class="pagenav"><a href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 23</div></a><a class="next" href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 25</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

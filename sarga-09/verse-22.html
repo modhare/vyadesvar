@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 22 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 22</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 22</span><span class="bl-mr lang-mr">श्लोक 22</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">एष वाडेश्वरस्तत्र भगवान् वेणुगुल्मगः ।<br>अलक्षितपदो दैवादासीद्योगेश्वरो विभुः ।।२२।।</div>
+  <div class="verse-iast">eṣa vāḍeśvarastatra bhagavān veṇugulmagaḥ । alakṣitapado daivādāsīdyogeśvaro vibhuḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">एषः । वाडेश्वरः । तत्र । भगवान् । वेणु-गुल्म-गः । अलक्षित-पदः । दैवात् । आसीत् । योगेश्वरः । विभुः ।</div><div class="vig-iast">eṣaḥ । vāḍeśvaraḥ । tatra । bhagavān । veṇu-gulma-gaḥ । alakṣita-padaḥ । daivāt । āsīt । yogeśvaraḥ । vibhuḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">एषः + वाडेश्वरः = एष वाडेश्वरः · वाडेश्वरः + तत्र = वाडेश्वरस्तत्र · पदः + दैवात् = पदो दैवात् · दैवात् + आसीत् = दैवादासीत् · आसीत् + योगेश्वरः = आसीद्योगेश्वरः · योगेश्वरः + विभुः = योगेश्वरो विभुः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत्र एषः योगेश्वरः विभुः भगवान् वाडेश्वरः दैवात् वेणुगुल्मगः अलक्षितपदः आसीत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>There, the Blessed Lord Vādeśvara sat within a bamboo thicket — by a fortunate chance his presence went unnoticed: that all-pervading Lord of yoga.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या ठिकाणी योगायोगाने बांबूच्या बेटात (किंवा जाळ्यात) हा भगवान् वाडेश्वर होता; या योगेश्वर विभूचे अस्तित्व कोणाच्या लक्षात आलेले नव्हते.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वेणुगुल्मगः</span>
+    <span class="word-iast">veṇugulmagaḥ</span>
+  </div>
+  <div><span class="word-grammar">वेणुगुल्मं गतः (√गम् + डप्रत्ययः), द्वितीयातत्पुरुषः; पुंलिङ्गम्, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: वेणुगुल्मगः</div>
+  <p class="word-meaning lang-en">seated/dwelling within the bamboo thicket</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बांबूच्या बेटात (जाळीत) असलेला</p>
+  <div class="word-usage">
+    <div class="deva">तपस्वी वेणुगुल्मगः ध्यानं करोति।</div>
+    <div class="usage-iast">tapasvī veṇugulmagaḥ dhyānaṃ karoti.</div>
+    <div class="usage-meaning lang-en">The ascetic, seated in the bamboo clump, meditates.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बांबूच्या बेटात बसलेला तपस्वी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अलक्षितपदः</span>
+    <span class="word-iast">alakṣitapadaḥ</span>
+  </div>
+  <div><span class="word-grammar">अलक्षितं पदं यस्य (नञ्-बहुव्रीहिसमासः); पुंलिङ्गम्, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: अलक्षितपदः</div>
+  <p class="word-meaning lang-en">whose presence went unnoticed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे स्थान कोणाला कळले नव्हते असा</p>
+  <div class="word-usage">
+    <div class="deva">साधुः अलक्षितपदः वने वसति।</div>
+    <div class="usage-iast">sādhuḥ alakṣitapadaḥ vane vasati.</div>
+    <div class="usage-meaning lang-en">The sage dwells in the forest, his presence unnoticed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधू कोणाच्या नजरेस न पडता वनात राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दैवात्</span>
+    <span class="word-iast">daivāt</span>
+  </div>
+  <div><span class="word-grammar">दैव (नपुंसकलिङ्गम्), पञ्चमी विभक्तिः, एकवचनम् (क्रियाविशेषणार्थे)</span></div>
+  <div class="word-form">In this verse: दैवात्</div>
+  <p class="word-meaning lang-en">by a fortunate chance, providentially</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दैवयोगाने</p>
+  <div class="word-usage">
+    <div class="deva">दैवात् वयं पुनः मिलिताः।</div>
+    <div class="usage-iast">daivāt vayaṃ punaḥ militāḥ.</div>
+    <div class="usage-meaning lang-en">By good fortune we have met again.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुदैवाने आपण पुन्हा भेटलो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">योगेश्वरः विभुः</span>
+    <span class="word-iast">yogeśvaraḥ vibhuḥ</span>
+  </div>
+  <div><span class="word-grammar">योगेश्वर (योगानाम् ईश्वरः, षष्ठीतत्पुरुषः; पुंलिङ्गम्, प्रथमा एकवचनम्) + विभु (वि + √भू + कु प्रत्ययः; पुंलिङ्गम्, प्रथमा एकवचनम्)</span></div>
+  <div class="word-form">In this verse: योगेश्वरो विभुः</div>
+  <p class="word-meaning lang-en">the Lord of yoga, the all-pervading One</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योगेश्वर, सर्वव्यापी</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः योगेश्वरं विभुं नमन्ति।</div>
+    <div class="usage-iast">bhaktāḥ yogeśvaraṃ vibhuṃ namanti.</div>
+    <div class="usage-meaning lang-en">Devotees bow to the all-pervading Lord of yoga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त योगेश्वर विभूला नमन करतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the heart of the sthala: the Lord hidden in a bamboo clump, His presence unnoticed. God waits to be discovered by the seeking devotee; &#x27;daivāt&#x27; — by a fortunate turn — is the touch of grace by which He reveals Himself. Every great shrine begins in such concealment.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक या स्थलाचे हृदय आहे — बांबूच्या बेटात लपलेला प्रभू, ज्याचे अस्तित्व कोणाच्या लक्षात आले नाही. देव शोधणाऱ्या भक्ताची वाट पाहतो; &#x27;दैवात्&#x27; म्हणजे सुदैवाचा योग — ज्या कृपेने तो स्वतः प्रकट होतो. प्रत्येक महान देवालयाची सुरुवात अशाच गुप्ततेतून होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Purāṇic sthala legends love the motif of the self-manifest (svayambhū) deity lying hidden — in ant-hills, forests, or bamboo clumps — until a devotee or a chance event reveals Him. The bamboo grove as a shrine&#x27;s cradle echoes such discovery narratives along the Konkan coast.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्वयंभू देवता लपलेली असते — वारुळात, वनात किंवा बांबूच्या बेटात — जोपर्यंत एखादा भक्त किंवा योगायोग तिला प्रकट करत नाही, हे पुराणांतील स्थलकथांचे आवडते सूत्र आहे. देवालयाचे पाळणाघर म्हणून बांबूवन, हे कोकण किनाऱ्यावरील अशा शोधकथांचे प्रतिध्वनी आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Vāḍeśvara is kept exactly as printed; the vāḍeśvara/vyāḍeśvara spelling question remains open per the user&#x27;s parked decision. Daivāt (ablative of daiva used adverbially) = &#x27;by a fortunate turn.&#x27; The bamboo-clump (veṇugulma) shrine is the narrative seed of the sthala.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: अनुष्टुभ्. वाडेश्वर हे छापील रूप तसेच ठेवले आहे; वाडेश्वर/व्याडेश्वर या अक्षरविन्यासाचा निर्णय अद्याप प्रलंबित आहे. दैवात् (पंचमी, क्रियाविशेषणाप्रमाणे वापरलेली) म्हणजे &#x27;सुदैवाने&#x27;. वेणुगुल्मातील देवालय हेच स्थलकथेचे बीज आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 21</div></a><a class="next" href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 23</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 5 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 5</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अमृतत्वं मृतो याति पंकभाक् पंकहीनताम् ।<br>चित्रं यत्र भवांभोधौ निमज्जन्न निमज्जति ।।५।।</div>
+  <div class="verse-iast">amṛtatvaṃ mṛto yāti paṃkabhāk paṃkahīnatām । citraṃ yatra bhavāṃbhodhau nimajjanna nimajjati</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अमृतत्वम् । मृतः । याति । पङ्कभाक् । पङ्क-हीनताम् । चित्रम् । यत्र । भव-अम्भोधौ । निमज्जन् । न । निमज्जति ।</div><div class="vig-iast">amṛtatvam । mṛtaḥ । yāti । paṅkabhāk । paṅka-hīnatām । citram । yatra । bhava-ambhodhau । nimajjan । na । nimajjati ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">मृतः + याति = मृतो याति · भव + अम्भोधौ = भवाम्भोधौ · निमज्जन् + न = निमज्जन्न (ङमुट् द्वित्व)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र मृतः अमृतत्वं याति, पङ्कभाक् पङ्कहीनतां (याति); चित्रं (यत्) निमज्जन् भवाम्भोधौ न निमज्जति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The dead attain deathlessness there; the mud-smeared attain freedom from mud. It is a wonder: plunging in, one does not sink in the ocean of existence.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>(या तीर्थात) मरण पावलेली व्यक्ती अमरत्व प्राप्त करते; काळिमा लागलेला मनुष्य पंकहीन (म्हणजे स्वच्छ) होऊन जातो व येथे आलेला मनुष्य भवसागरात बुडूनही बुडत नाही हे आश्चर्यकारक आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मृतः अमृतत्वं याति</span>
+    <span class="word-iast">mṛtaḥ amṛtatvaṃ yāti</span>
+  </div>
+  <div><span class="word-grammar">मृत (मृ + क्त, पुंलिङ्ग प्रथमा एकवचन) + अमृतत्व (अमृत + त्व, नपुंसकलिङ्ग द्वितीया एकवचन) + या धातु, लट् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: मृतः अमृतत्वं याति — &#x27;मेलेला अमरत्व पावतो&#x27;</div>
+  <p class="word-meaning lang-en">the dead one attains immortality</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मेलेला अमरत्व (मोक्ष) पावतो</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः मृतः अमृतत्वम् याति</div>
+    <div class="usage-iast">bhaktaḥ mṛtaḥ amṛtatvam yāti</div>
+    <div class="usage-meaning lang-en">The devotee, though dead, attains immortality.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त मेला तरी अमरत्व पावतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पङ्कभाक्</span>
+    <span class="word-iast">paṅkabhāk</span>
+  </div>
+  <div><span class="word-grammar">पङ्क + भाज् (भज् + क्विप्), पुंलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: पङ्कभाक् — &#x27;(पापरूपी) चिखलाने माखलेला&#x27;</div>
+  <p class="word-meaning lang-en">smeared with mud (of sin), sharing in mire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(पापरूपी) चिखलाने माखलेला</p>
+  <div class="word-usage">
+    <div class="deva">पङ्कभाक् जनः स्नानेन शुध्यति</div>
+    <div class="usage-iast">paṅkabhāk janaḥ snānena śudhyati</div>
+    <div class="usage-meaning lang-en">The sin-smeared man is cleansed by bathing.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापाने माखलेला मनुष्य स्नानाने शुद्ध होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पङ्कहीनताम्</span>
+    <span class="word-iast">paṅkahīnatām</span>
+  </div>
+  <div><span class="word-grammar">पङ्क-हीनता (हीन + तल्, स्त्रीलिङ्ग) द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: पङ्कहीनताम् — &#x27;चिखलरहितता, निष्पापता&#x27;</div>
+  <p class="word-meaning lang-en">(attains) freedom from mud, stainlessness</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निष्पापता</p>
+  <div class="word-usage">
+    <div class="deva">सः तीर्थे पङ्कहीनताम् आप्नोत्</div>
+    <div class="usage-iast">saḥ tīrthe paṅkahīnatām āpnot</div>
+    <div class="usage-meaning lang-en">He attained freedom from stain at the tīrtha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने तीर्थावर निष्पापता प्राप्त केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्रम्</span>
+    <span class="word-iast">citram</span>
+  </div>
+  <div><span class="word-grammar">विशेषण/क्रियाविशेषण; नपुंसकलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: चित्रम् — &#x27;आश्चर्यकारक&#x27;</div>
+  <p class="word-meaning lang-en">wonderful, astonishing; it is a wonder that</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आश्चर्य</p>
+  <div class="word-usage">
+    <div class="deva">चित्रम् इदम् यत् सः न निमज्जति</div>
+    <div class="usage-iast">citram idam yat saḥ na nimajjati</div>
+    <div class="usage-meaning lang-en">It is a wonder that he does not sink.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो बुडत नाही हे आश्चर्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निमज्जन्</span>
+    <span class="word-iast">nimajjan</span>
+  </div>
+  <div><span class="word-grammar">नि + मस्ज् + शतृ (वर्तमानकालवाचक धातुसाधित), पुंलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: निमज्जन् — &#x27;(पाण्यात) बुडणारा&#x27;</div>
+  <p class="word-meaning lang-en">plunging, diving, sinking in</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(तीर्थात) डुबकी घेणारा</p>
+  <div class="word-usage">
+    <div class="deva">निमज्जन् जनः तीर्थे स्नाति</div>
+    <div class="usage-iast">nimajjan janaḥ tīrthe snāti</div>
+    <div class="usage-meaning lang-en">The plunging man bathes in the tīrtha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुडणारा मनुष्य तीर्थात स्नान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवाम्भोधौ न निमज्जति</span>
+    <span class="word-iast">bhavāmbhodhau na nimajjati</span>
+  </div>
+  <div><span class="word-grammar">भव-अम्भोधि (पुंलिङ्ग) सप्तमी एकवचन + न + नि + मस्ज् धातु, लट् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: भवाम्भोधौ न निमज्जति — &#x27;संसारसागरात बुडत नाही&#x27;</div>
+  <p class="word-meaning lang-en">he does not sink in the ocean of existence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसारसागरात बुडत नाही</p>
+  <div class="word-usage">
+    <div class="deva">ज्ञानी भवाम्भोधौ न निमज्जति</div>
+    <div class="usage-iast">jñānī bhavāmbhodhau na nimajjati</div>
+    <div class="usage-meaning lang-en">The knower does not drown in the ocean of existence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्ञानी संसारसागरात बुडत नाही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse plays on two deaths and two drownings: the body dies but the soul becomes immortal; the bather plunges into water yet does not drown in saṃsāra. This is the tīrtha&#x27;s deepest promise — that the outer rite, sincerely taken, carries the inner crossing. The &#x27;wonder&#x27; (citram) is the poet&#x27;s invitation to trust what reason cannot fully grasp.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक दोन मरणे व दोन बुडणे यांवर खेळतो : शरीर मरते पण आत्मा अमर होतो; स्नानकर्ता पाण्यात बुडतो पण संसारात बुडत नाही. हेच तीर्थाचे सखोल आश्वासन आहे — बाह्य विधी निष्ठेने केला तर आंतरिक तरण होते. &#x27;आश्चर्य&#x27; (चित्रम्) हे कवीचे बुद्धीला पूर्णपणे न समजणाऱ्या गोष्टीवर विश्वास ठेवण्याचे निमंत्रण आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Amṛtatva for the dead echoes the Purāṇic promise that dying at a tīrtha frees one from rebirth (compare Kāśī&#x27;s &#x27;mokṣa for the dying&#x27;). Paṅka as sin and its washing is an old Vedic image — waters are &#x27;mothers&#x27; that carry away evil (Ṛgveda 10.9). Bhava as an ocean to be crossed (saṃsāra-sāgara) is the central soteriological metaphor of the epics and Purāṇas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मेलेल्यांना अमृतत्व हे तीर्थावर मरण पावणाऱ्यास पुनर्जन्मातून मुक्ती मिळते या पौराणिक आश्वासनाचे प्रतिध्वनन आहे (मरणाऱ्यांना मोक्ष देणाऱ्या काशीशी तुलना करा). पाप म्हणून पंक आणि त्याचे धुणे ही जुनी वैदिक प्रतिमा आहे — जल &#x27;माता&#x27; आहेत ज्या पाप वाहून नेतात (ऋग्वेद १०.९). तरावयाचा सागर म्हणून भव (संसारसागर) हे महाभारत व पुराणांचे मध्यवर्ती मोक्षशास्त्रीय रूपक आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Note the wordplay: mṛta → amṛtatva (the dead become undying), paṅkabhāk → paṅkahīnatā (the mud-covered become mud-free). The final pāda&#x27;s paradox — nimajjan na nimajjati, &#x27;plunging, he does not plunge&#x27; — turns on the double sense of &#x27;sinking&#x27;: into the tīrtha&#x27;s water, and into the bhava-ocean. A classic māhātmya phala-verse.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शब्दखेळ लक्षात घ्या : मृतः → अमृतत्वम् (मेलेला अमर होतो), पंकभाक् → पंकहीनताम् (चिखलाने माखलेला चिखलरहित होतो). शेवटच्या पादाचा विरोधाभास — निमज्जन् न निमज्जति, &#x27;बुडत असूनही बुडत नाही&#x27; — &#x27;बुडणे&#x27; या शब्दाच्या दुहेरी अर्थावर वळतो : तीर्थाच्या पाण्यात, आणि भवसागरात. हा माहात्म्याच्या फलश्लोकाचा उत्कृष्ट नमुना आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 4</div></a><a class="next" href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 6</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 19 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 19</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तच्छ्रुत्वा रावणो मंदः स्वमृत्युमविचारयन् ।<br>जहार रामदयितां मैथिलीं कालचोदितः ।।१९।।</div>
+  <div class="verse-iast">tacchrutvā rāvaṇo maṃdaḥ svamṛtyumavicārayan । jahāra rāmadayitāṃ maithilīṃ kālacoditaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत् । श्रुत्वा । रावणः । मन्दः । स्व-मृत्युम् । अविचारयन् । जहार । राम-दयिताम् । मैथिलीम् । काल-चोदितः ।</div><div class="vig-iast">tat । śrutvā । rāvaṇaḥ । mandaḥ । sva-mṛtyum । avicārayan । jahāra । rāma-dayitām । maithilīm । kāla-coditaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत् + श्रुत्वा = तच्छ्रुत्वा (त् + श् → च्छ्) · रावणः + मन्दः = रावणो मन्दः · मृत्युम् + अविचारयन् = मृत्युमविचारयन्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत् श्रुत्वा मन्दः रावणः स्वमृत्युम् अविचारयन् कालचोदितः (सन्) रामदयितां मैथिलीं जहार ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Hearing of it, the dull-witted Rāvaṇa — sparing not a thought for his own death, driven on by Fate — abducted Rāma&#x27;s beloved, the princess of Mithilā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते ऐकून मंदमती रावणाने स्वतःच्या मृत्यूचा विचार न करता काळानेच प्रेरित होऊन रामपत्नी मैथिलीचे (सीतेचे) हरण केले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्दः</span>
+    <span class="word-iast">mandaḥ</span>
+  </div>
+  <div><span class="word-grammar">विशेषण; प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: रावणो मन्दः</div>
+  <p class="word-meaning lang-en">dull-witted, foolish</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदबुद्धी</p>
+  <div class="word-usage">
+    <div class="deva">मन्दः नरः हितम् न जानाति</div>
+    <div class="usage-iast">mandaḥ naraḥ hitam na jānāti</div>
+    <div class="usage-meaning lang-en">A dull-witted man does not know his own good.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदबुद्धी माणूस आपले हित जाणत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वमृत्युम् अविचारयन्</span>
+    <span class="word-iast">svamṛtyum avicārayan</span>
+  </div>
+  <div><span class="word-grammar">स्व-मृत्यु (षष्ठी-तत्पुरुष), द्वितीया एकवचन + अविचारयन् (नञ् + वि-√चर् (णिजन्त), शतृ); प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: स्वमृत्युमविचारयन्</div>
+  <p class="word-meaning lang-en">not considering his own death</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःच्या मृत्यूचा विचार न करता</p>
+  <div class="word-usage">
+    <div class="deva">मूढः स्वमृत्युम् अविचारयन् पापम् करोति</div>
+    <div class="usage-iast">mūḍhaḥ svamṛtyum avicārayan pāpam karoti</div>
+    <div class="usage-meaning lang-en">The fool commits sin without considering his own death.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूर्ख स्वतःच्या मृत्यूचा विचार न करता पाप करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कालचोदितः</span>
+    <span class="word-iast">kālacoditaḥ</span>
+  </div>
+  <div><span class="word-grammar">काल-चोदित (√चुद्, क्त); तृतीया-तत्पुरुष; प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: कालचोदितः</div>
+  <p class="word-meaning lang-en">impelled by Fate, driven by Time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळाने (दैवाने) प्रेरित</p>
+  <div class="word-usage">
+    <div class="deva">कालचोदितः रावणः सीताम् अहरत्</div>
+    <div class="usage-iast">kālacoditaḥ rāvaṇaḥ sītām aharat</div>
+    <div class="usage-meaning lang-en">Driven by Fate, Rāvaṇa carried off Sītā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळाने प्रेरित झालेल्या रावणाने सीतेचे हरण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रामदयितां मैथिलीम्</span>
+    <span class="word-iast">rāmadayitāṃ maithilīm</span>
+  </div>
+  <div><span class="word-grammar">राम-दयिता (षष्ठी-तत्पुरुष) + मैथिली (मिथिला + अण् + ङीप्); द्वितीया एकवचन, स्त्रीलिङ्ग</span></div>
+  <div class="word-form">In this verse: रामदयितां मैथिलीं</div>
+  <p class="word-meaning lang-en">Rāma&#x27;s beloved, the Maithilī (Sītā)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाच्या प्रिय सीतेला</p>
+  <div class="word-usage">
+    <div class="deva">रावणः रामदयितां मैथिलीं जहार</div>
+    <div class="usage-iast">rāvaṇaḥ rāmadayitāṃ maithilīṃ jahāra</div>
+    <div class="usage-meaning lang-en">Rāvaṇa abducted Rāma&#x27;s beloved Maithilī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रावणाने रामपत्नी मैथिलीचे हरण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जहार</span>
+    <span class="word-iast">jahāra</span>
+  </div>
+  <div><span class="word-grammar">√हृ; लिट् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: जहार</div>
+  <p class="word-meaning lang-en">carried off, abducted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरण केले</p>
+  <div class="word-usage">
+    <div class="deva">दस्युः धनम् जहार</div>
+    <div class="usage-iast">dasyuḥ dhanam jahāra</div>
+    <div class="usage-meaning lang-en">The robber carried off the wealth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोराने धन हरण केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>&#x27;मन्दः&#x27; — dull-witted — is the poet&#x27;s whole psychology of adharma in one word: Rāvaṇa is not ignorant, he is learned; what he lacks is viveka, the clarity that connects knowledge to consequence. &#x27;कालचोदितः&#x27; adds the deeper note: delusion itself becomes the instrument of destiny, and the wicked walk willingly toward the doom they refuse to see. For the sthala devotee, Sītā&#x27;s abduction is also the wound that summons the Lord&#x27;s redeeming action — grace often enters through the very breach that evil makes.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;मन्दः&#x27; — मंदबुद्धी — हा अधर्माचे संपूर्ण मानसशास्त्र कवीने एका शब्दात सांगितले आहे : रावण अज्ञानी नाही, तो विद्वान आहे; त्याच्यात जे नाही ते विवेक — ज्ञानाला परिणामाशी जोडणारी स्पष्टता. &#x27;कालचोदितः&#x27; हा अधिक खोल सूर लावतो : मोह हाच दैवाचे साधन बनतो, आणि दुष्ट स्वतः पाहू न इच्छिणाऱ्या विनाशाकडेच स्वेच्छेने चालत जातात. स्थलभक्तासाठी सीताहरण हे भगवंताच्या उद्धारकार्याला बोलावणारी जखमही आहे — दुष्टाने पाडलेल्या भगदाडातूनच कृपा अनेकदा प्रवेश करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The news is Khara&#x27;s fall, carried to Laṅkā by Śūrpaṇakhā (Rāmāyaṇa 3.33–34); Rāvaṇa&#x27;s counsel with Mārīca follows, and the golden-deer ruse. The tradition never tires of the paradox the verse states: the mightiest intellect of the age undone by &#x27;mandatva&#x27; — brilliance without wisdom. &#x27;Kāla&#x27; here is destiny personified, the same power that earlier moved the gods to pray for the avatāra (v2).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वार्ता म्हणजे खराचा पाडाव, जो शूर्पणखेने लंकेला नेला (रामायण ३.३३–३४); त्यानंतर रावणाचा मारीचाशी सल्ला आणि सुवर्णमृगाची युक्ती. परंपरा या श्लोकातील विरोधाभासाचा कधीच कंटाळा करत नाही : युगातील सर्वांत बुद्धिमान पुरुष &#x27;मंदत्वा&#x27;ने — विवेकहीन बुद्धिमत्तेने — नष्ट झाला. येथील &#x27;काल&#x27; म्हणजे मूर्तिमंत दैव; त्याच शक्तीने पूर्वी देवांना अवतारासाठी प्रार्थना करायला लावली होती (श्लोक २).</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The poet compresses the entire Śūrpaṇakhā–Mārīca episode into two pādas — a characteristic kāvya condensation; the narrative never pauses for the deer or the duel with Jaṭāyu. &#x27;मैथिली&#x27; — &#x27;she of the Mithilā line&#x27; — is the patronymic the kāvya prefers for Sītā (cf. v23). Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शूर्पणखा-मारीच हा संपूर्ण प्रसंग कवीने दोन चरणांत संक्षिप्त केला आहे — हे काव्याचे वैशिष्ट्यपूर्ण संक्षेपण; कथा मृगासाठी वा जटायूशी झालेल्या द्वंद्वासाठी कधीच थांबत नाही. &#x27;मैथिली&#x27; — &#x27;मिथिला वंशातील&#x27; — हे सीतेसाठी काव्याला प्रिय असलेले वंशाभिधान आहे (श्लोक २३ पहा). वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 18</div></a><a class="next" href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 20</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

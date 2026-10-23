@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 27 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 27</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 27</span><span class="bl-mr lang-mr">श्लोक 27</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तद्भुवैतद्गुहग्रामे शश्वन्निवसता सता ।<br>विश्वनाथद्विजेनेदं काव्यं रचितमाञ्चितम् ।।२७।।</div>
+  <div class="verse-iast">tadbhuvaitadguhagrāme śaśvannivasatā satā । viśvanāthadvijenedaṃ kāvyaṃ racitamāñcitam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत्-भुवा । एतत्-गुहग्रामे । शश्वत् । निवसता । सता । विश्वनाथ-द्विजेन । इदम् । काव्यम् । रचितम् । आञ्चितम् ।</div><div class="vig-iast">tat-bhuvā । etat-guhagrāme । śaśvat । nivasatā । satā । viśvanātha-dvijena । idam । kāvyam । racitam । āñcitam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत् + भुवा = तद्भुवा (त् → द्) · भुवा + एतत् = भुवैतत् (वृद्धि) · एतत् + गुह = एतद्गुह · शश्वत् + निवसता = शश्वन्निवसता (त् → न्) · द्विजेन + इदम् = द्विजेनेदम् (गुण)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">एतद्गुहग्रामे शश्वत् निवसता सता तद्भुवा विश्वनाथद्विजेन इदम् आञ्चितं काव्यं रचितम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>By his son — the virtuous brahmin Viśvanātha, who dwelt ever after in this very Guhagrāma — this graceful poem was composed.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गुहग्रामात सतत रहाणाऱ्या त्याच्या विश्वनाथ नावाच्या मुलाने हे सुन्दर काव्य रचले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्-भुवा</span>
+    <span class="word-iast">tat-bhuvā</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.; तद्भू = पुत्र</span></div>
+  <div class="word-form">In this verse: तद्भुवैतत्</div>
+  <p class="word-meaning lang-en">by his son</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या पुत्राने</p>
+  <div class="word-usage">
+    <div class="deva">तद्भुवा काव्यं रचितम् ।</div>
+    <div class="usage-iast">tadbhuvā kāvyaṃ racitam.</div>
+    <div class="usage-meaning lang-en">The poem was composed by his son.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या पुत्राने हे काव्य रचले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एतत्-गुहग्रामे</span>
+    <span class="word-iast">etat-guhagrāme</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: एतद्गुहग्रामे</div>
+  <p class="word-meaning lang-en">in this Guhagrāma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या गुहग्रामात</p>
+  <div class="word-usage">
+    <div class="deva">एतद्गुहग्रामे देवालयः अस्ति ।</div>
+    <div class="usage-iast">etadguhagrāme devālayaḥ asti.</div>
+    <div class="usage-meaning lang-en">There is a temple in this Guhagrāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या गुहग्रामात एक मंदिर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शश्वत्</span>
+    <span class="word-iast">śaśvat</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: शश्वन्</div>
+  <p class="word-meaning lang-en">always</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सतत</p>
+  <div class="word-usage">
+    <div class="deva">सः शश्वत् अत्र निवसति ।</div>
+    <div class="usage-iast">saḥ śaśvat atra nivasati.</div>
+    <div class="usage-meaning lang-en">He lives here always.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो येथे सतत राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निवसता</span>
+    <span class="word-iast">nivasatā</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.; शतृ, नि + वस्</span></div>
+  <div class="word-form">In this verse: निवसता</div>
+  <p class="word-meaning lang-en">living</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राहणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">अत्र निवसता जनेन गीतं श्रुतम् ।</div>
+    <div class="usage-iast">atra nivasatā janena gītaṃ śrutam.</div>
+    <div class="usage-meaning lang-en">The song was heard by the man living here.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथे राहणाऱ्या माणसाने गाणे ऐकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सता</span>
+    <span class="word-iast">satā</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.; सत्</span></div>
+  <div class="word-form">In this verse: सता</div>
+  <p class="word-meaning lang-en">the good man</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनाने</p>
+  <div class="word-usage">
+    <div class="deva">सता कृतं कार्यं शुभं भवति ।</div>
+    <div class="usage-iast">satā kṛtaṃ kāryaṃ śubhaṃ bhavati.</div>
+    <div class="usage-meaning lang-en">The work done by a good man is auspicious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनाने केलेले कार्य शुभ होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विश्वनाथ-द्विजेन</span>
+    <span class="word-iast">viśvanātha-dvijena</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.</span></div>
+  <div class="word-form">In this verse: विश्वनाथद्विजेन</div>
+  <p class="word-meaning lang-en">by the brahmin Viśvanātha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वनाथ नावाच्या ब्राह्मणाने</p>
+  <div class="word-usage">
+    <div class="deva">विश्वनाथद्विजेन इदं काव्यं रचितम् ।</div>
+    <div class="usage-iast">viśvanāthadvijena idaṃ kāvyaṃ racitam.</div>
+    <div class="usage-meaning lang-en">This poem was composed by the brahmin Viśvanātha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वनाथ नावाच्या ब्राह्मणाने हे काव्य रचले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इदम्</span>
+    <span class="word-iast">idam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: इदं</div>
+  <p class="word-meaning lang-en">this</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे</p>
+  <div class="word-usage">
+    <div class="deva">इदं काव्यं मनोहरम् अस्ति ।</div>
+    <div class="usage-iast">idaṃ kāvyaṃ manoharam asti.</div>
+    <div class="usage-meaning lang-en">This poem is charming.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे काव्य मनोहर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काव्यम्</span>
+    <span class="word-iast">kāvyam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: काव्यं</div>
+  <p class="word-meaning lang-en">poem</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काव्य</p>
+  <div class="word-usage">
+    <div class="deva">काव्यं रसिकानां आनन्दाय भवति ।</div>
+    <div class="usage-iast">kāvyaṃ rasikānāṃ ānandāya bhavati.</div>
+    <div class="usage-meaning lang-en">A poem is for the delight of connoisseurs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काव्य रसिकांच्या आनंदासाठी असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रचितम्</span>
+    <span class="word-iast">racitam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.; क्त, रच्</span></div>
+  <div class="word-form">In this verse: रचितम्</div>
+  <p class="word-meaning lang-en">composed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रचले</p>
+  <div class="word-usage">
+    <div class="deva">तेन सुन्दरं काव्यं रचितम् ।</div>
+    <div class="usage-iast">tena sundaraṃ kāvyaṃ racitam.</div>
+    <div class="usage-meaning lang-en">A beautiful poem was composed by him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने सुंदर काव्य रचले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आञ्चितम्</span>
+    <span class="word-iast">āñcitam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.; क्त, आ + अञ्च्</span></div>
+  <div class="word-form">In this verse: आञ्चितम्</div>
+  <p class="word-meaning lang-en">graceful</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर, सुशोभित</p>
+  <div class="word-usage">
+    <div class="deva">इदं काव्यम् आञ्चितम् अस्ति ।</div>
+    <div class="usage-iast">idaṃ kāvyam āñcitam asti.</div>
+    <div class="usage-meaning lang-en">This poem is graceful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे काव्य सुंदर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तद्भुवा</span>
+    <span class="word-iast">tadbhuvā</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: तद्भुवैतत्</div>
+  <p class="word-meaning lang-en">by his (Mahādeva&#x27;s) son</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या (महादेवाच्या) पुत्राने (तत्-भू, ‘त्याच्यापासून जन्मलेला’)</p>
+  <div class="word-usage">
+    <div class="deva">तद्भुवा एतत् कार्यं कृतम् ।</div>
+    <div class="usage-iast">tadbhuvā etat kāryaṃ kṛtam.</div>
+    <div class="usage-meaning lang-en">This work was done by his son.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या पुत्राने हे कार्य केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एतद्गुहग्रामे</span>
+    <span class="word-iast">etadguhagrāme</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: एतद्गुहग्रामे</div>
+  <p class="word-meaning lang-en">in this Guhagrāma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या गुहग्रामात (गुहागरात)</p>
+  <div class="word-usage">
+    <div class="deva">सः एतद्गुहग्रामे शश्वत् निवसति ।</div>
+    <div class="usage-iast">saḥ etadguhagrāme śaśvat nivasati.</div>
+    <div class="usage-meaning lang-en">He lives always in this Guhagrāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो या गुहग्रामात सतत राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विश्वनाथद्विजेन</span>
+    <span class="word-iast">viśvanāthadvijena</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: विश्वनाथद्विजेनेदं</div>
+  <p class="word-meaning lang-en">by the brahmin Viśvanātha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वनाथ ब्राह्मणाने</p>
+  <div class="word-usage">
+    <div class="deva">विश्वनाथद्विजेन इदं कार्यं साधितम् ।</div>
+    <div class="usage-iast">viśvanāthadvijena idaṃ kāryaṃ sādhitam.</div>
+    <div class="usage-meaning lang-en">This task was accomplished by the brahmin Viśvanātha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वनाथ ब्राह्मणाने हे कार्य सिद्धीस नेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इदं काव्यं रचितम्</span>
+    <span class="word-iast">idaṃ kāvyaṃ racitam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.; अन्वय-योजना</span></div>
+  <div class="word-form">In this verse: इदं काव्यं रचितम्</div>
+  <p class="word-meaning lang-en">this poem was composed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे काव्य रचले</p>
+  <div class="word-usage">
+    <div class="deva">तेन इदं काव्यं रचितम् ।</div>
+    <div class="usage-iast">tena idaṃ kāvyaṃ racitam.</div>
+    <div class="usage-meaning lang-en">This poem was composed by him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने हे काव्य रचले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The kāvya closes its human frame by naming its maker — a humility formula (kavi-praśasti) old in Sanskrit literature: the work belongs to the kṣetra, the poet is only its instrument. &#x27;Ever-dwelling&#x27; (śaśvat-nivasatā) matters: this is not a traveller&#x27;s account but the song of a man rooted lifelong in Guhagrāma, for whom composing the poem is itself a form of service to the deity.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>काव्य आपल्या मानवी चौकटीचा शेवट कर्त्याचे नाव घेऊन करतो — संस्कृत साहित्यातली ही जुनी नम्रता-परंपरा (कविप्रशस्ति) : ग्रंथ हा क्षेत्राचा, कवी केवळ त्याचे साधन. &#x27;शश्वन्निवसता&#x27; (सतत राहणारा) हे महत्त्वाचे आहे — हे एखाद्या प्रवाशाचे वर्णन नसून गुहागरात आजन्म रुजलेल्या माणसाचे गीत आहे; काव्यरचना हेच त्याचे देवसेवा-कर्म आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Poets signing their names at a work&#x27;s close — with gotra, family and village — is an ancient convention, from Kālidāsa&#x27;s prologues to the colophons of the Purāṇas. The self-naming is not self-praise but witness: it fixes the work in a lineage and a place, so that the merit (puṇya) of the composition accrues to the named line and the reader knows whose devotion speaks.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ग्रंथाच्या शेवटी कवीने गोत्र, घराणे व गाव यांसह स्वतःचे नाव देणे ही प्राचीन परंपरा आहे — कालिदासाच्या प्रस्तावनांपासून पुराणांच्या पुष्पिकांपर्यंत ती दिसते. हे आत्मनामनिर्देशन आत्मस्तुती नसून साक्ष आहे — ग्रंथ एका वंशावळीत व एका ठिकाणी स्थिर होतो, रचनेचे पुण्य त्या नावापुरते जमा होते, आणि वाचकाला कळते की कोणाच्या भक्तीचा हा स्वर आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Viśvanātha, son of Mahādeva, grandson of Hari, of the Kauśika gotra and the Pitre (Chitpāvan) family — a lifelong resident of Guhagrāma (modern Guhagar, Ratnagiri district, on the Konkan coast), per the book&#x27;s preface. The verse completes the three-generation frame opened at 14.25: Hari → Mahādeva → Viśvanātha. Metre: Anuṣṭubh, regular.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विश्वनाथ — महादेवाचा पुत्र, हरीचा नातू, कौशिक गोत्री, पित्रे (चित्पावन) घराण्यातील; पुस्तकाच्या प्रस्तावनेनुसार गुहाग्रामचा (आजचे गुहागर, रत्नागिरी जिल्हा, कोकण किनारा) आजन्म रहिवासी. हा श्लोक १४.२५ पासून सुरू झालेली तीन पिढ्यांची चौकट पूर्ण करतो — हरी → महादेव → विश्वनाथ. वृत्त : अनुष्टुभ्, नियमित.</p></div></div>
+
+<div class="pagenav"><a href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 26</div></a><a class="next" href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 28</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

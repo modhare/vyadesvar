@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">न चोपभुङ्क्ते स्म सुरक्षितां क्ष्मां स्वनिर्मितक्षेत्रनिवासशीलः ।<br>यतः स्वविश्राणितवस्तुभोगं पापाय पर्याप्ततमं वदन्ति ।।६।।</div>
+  <div class="verse-iast">na copabhuṅkte sma surakṣitāṃ kṣmāṃ svanirmitakṣetranivāsaśīlaḥ । yataḥ svaviśrāṇitavastubhogaṃ pāpāya paryāptatamaṃ vadanti</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">न । च । उपभुङ्क्ते । स्म । सुरक्षिताम् । क्ष्माम् । स्व-निर्मित-क्षेत्र-निवास-शीलः । यतः । स्व-विश्राणित-वस्तु-भोगम् । पापाय । पर्याप्ततमम् । वदन्ति ।</div><div class="vig-iast">na । ca । upabhuṅkte । sma । surakṣitām । kṣmām । sva-nirmita-kṣetra-nivāsa-śīlaḥ । yataḥ । sva-viśrāṇita-vastu-bhogam । pāpāya । paryāptatamam । vadanti ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">च + उपभुङ्क्ते = चोपभुङ्क्ते (गुण) · शीलः + यतः = शीलो यतः (विसर्ग → ओ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">स्वनिर्मितक्षेत्रनिवासशीलः (सः) सुरक्षितां क्ष्मां न च उपभुङ्क्ते स्म; यतः स्वविश्राणितवस्तुभोगं पापाय पर्याप्ततमं वदन्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Dwelling in the region he himself had created, he never enjoyed the protected earth — for the wise declare that enjoying a thing one has given away is the fullest cause of sin.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्वतः निर्माण केलेल्या भूमीत निवास करणाऱ्या त्या परशुरामाने सुरक्षित असलेल्या जमिनीवर पाऊल ठेवले नाही (शब्दशः त्या जमिनीचा उपभोग घेतला नाही). कारण स्वतः देऊन टाकलेल्या वस्तूचा भोग घेणे हे फारच पापकारक असे (जाणते) म्हणतात.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्ष्माम्</span>
+    <span class="word-iast">kṣmām</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. f. of क्ष्मा (&#x27;earth&#x27;)</span></div>
+  <div class="word-form">In this verse: क्ष्माम्</div>
+  <p class="word-meaning lang-en">the earth (the donated one)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीचा (दान दिलेल्या)</p>
+  <div class="word-usage">
+    <div class="deva">राजा क्ष्मां ब्राह्मणेभ्यः ददौ</div>
+    <div class="usage-iast">rājā kṣmāṃ brāhmaṇebhyaḥ dadau</div>
+    <div class="usage-meaning lang-en">The king gave the earth to the brahmins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने पृथ्वी ब्राह्मणांना दान दिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपभुङ्क्ते स्म</span>
+    <span class="word-iast">upabhuṅkte sma</span>
+  </div>
+  <div><span class="word-grammar">उपभुङ्क्ते 3rd sg. present, ātmanepada, of उप-√भुज् (7th class); स्म marks past habitual</span></div>
+  <div class="word-form">In this verse: उपभुङ्क्ते स्म</div>
+  <p class="word-meaning lang-en">he used not to enjoy</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपभोग घेत असे (√भुज्, आत्मनेपद)</p>
+  <div class="word-usage">
+    <div class="deva">त्यागी परद्रव्यं न उपभुङ्क्ते स्म</div>
+    <div class="usage-iast">tyāgī paradravyaṃ na upabhuṅkte sma</div>
+    <div class="usage-meaning lang-en">The renunciant never used to enjoy another&#x27;s property.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यागी दुसऱ्याच्या धनाचा कधीही उपभोग घेत नसे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वनिर्मितक्षेत्रनिवासशीलः</span>
+    <span class="word-iast">svanirmitakṣetranivāsaśīlaḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m., bahuvrīhi compound</span></div>
+  <div class="word-form">In this verse: स्वनिर्मितक्षेत्रनिवासशीलः</div>
+  <p class="word-meaning lang-en">dwelling in the region he himself created</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतः निर्मिलेल्या क्षेत्रात राहणारा</p>
+  <div class="word-usage">
+    <div class="deva">स्वनिर्मितक्षेत्रनिवासशीलः मुनिः समुद्रतीरे अवसत्</div>
+    <div class="usage-iast">svanirmitakṣetranivāsaśīlaḥ muniḥ samudratīre avasat</div>
+    <div class="usage-meaning lang-en">The sage dwelling in the region he himself created lived on the seashore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतः निर्मिलेल्या क्षेत्रात राहणारा मुनी समुद्रकाठी राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वविश्राणितवस्तुभोगम्</span>
+    <span class="word-iast">svaviśrāṇitavastubhogam</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. m., tatpuruṣa compound (विश्राणित = past participle of वि-√श्रण्, &#x27;given away&#x27;)</span></div>
+  <div class="word-form">In this verse: स्वविश्राणितवस्तुभोगम्</div>
+  <p class="word-meaning lang-en">the enjoyment of a thing one has oneself given away</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण दान केलेल्या वस्तूचा उपभोग</p>
+  <div class="word-usage">
+    <div class="deva">स्वविश्राणितवस्तुभोगः महापापम् इति शास्त्रं वदति</div>
+    <div class="usage-iast">svaviśrāṇitavastubhogaḥ mahāpāpam iti śāstraṃ vadati</div>
+    <div class="usage-meaning lang-en">Scripture says that enjoying what one has given away is a great sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण दान केलेल्या वस्तूचा उपभोग घेणे हे महापाप आहे असे शास्त्र सांगते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पापाय पर्याप्ततमम्</span>
+    <span class="word-iast">pāpāya paryāptatamam</span>
+  </div>
+  <div><span class="word-grammar">पापाय dat. sg. n.; पर्याप्ततमम् superlative (tamap) adjective</span></div>
+  <div class="word-form">In this verse: पापाय पर्याप्ततमम्</div>
+  <p class="word-meaning lang-en">fully sufficient to cause sin</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापाला पुरेपूर कारण</p>
+  <div class="word-usage">
+    <div class="deva">असत्यभाषणं पापाय पर्याप्ततमं भवति</div>
+    <div class="usage-iast">asatyabhāṣaṇaṃ pāpāya paryāptatamaṃ bhavati</div>
+    <div class="usage-meaning lang-en">Speaking untruth is fully enough to bring sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खोटे बोलणे हे पापासाठी पुरेपूर कारण ठरते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वदन्ति</span>
+    <span class="word-iast">vadanti</span>
+  </div>
+  <div><span class="word-grammar">3rd pl. present, parasmaipada, of √वद् (1st class)</span></div>
+  <div class="word-form">In this verse: वदन्ति</div>
+  <p class="word-meaning lang-en">the wise say; they declare</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(शास्त्रज्ञ) सांगतात</p>
+  <div class="word-usage">
+    <div class="deva">वृद्धाः धर्मं वदन्ति</div>
+    <div class="usage-iast">vṛddhāḥ dharmaṃ vadanti</div>
+    <div class="usage-meaning lang-en">The elders declare the dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वडीलधारी धर्म सांगतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the dharma of the perfect gift: dāna is complete only when the giver&#x27;s claim ends absolutely — even setting foot on donated land reopens the account. Paraśurāma, who gave away the whole earth, honours his own gift by living only on land the sea yielded to him. For the devotee the lesson is plain and severe: what is offered to God or to others must never be taken back in enjoyment, not even in thought.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा परिपूर्ण दानाचा धर्म आहे — दान तेव्हाच पूर्ण होते जेव्हा दात्याचा हक्क पूर्णपणे संपतो — दान दिलेल्या भूमीवर पाऊल ठेवणे म्हणजेही हिशेब पुन्हा उघडणे. संपूर्ण पृथ्वी दान दिलेल्या परशुरामाने समुद्राने त्याला दिलेल्या भूमीवरच राहून आपल्या दानाचा सन्मान केला. भक्तासाठी धडा स्पष्ट आणि कठोर आहे — देवाला किंवा इतरांना अर्पण केलेले कधीही उपभोगासाठी परत घेऊ नये, विचारातही नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse restates the smārta rule that re-enjoying a gifted thing (dattāpahāra in spirit) destroys the merit of the gift and incurs sin; Manu and the dharmaśāstras treat dāna as irrevocable. The &#x27;protected earth&#x27; is the earth Paraśurāma gave to Kaśyapa and which Kaśyapa guards; Paraśurāma instead dwells in his svanirmitakṣetra, the Konkan raised from the sea. वदन्ति — &#x27;the wise say&#x27; — cites the śāstric consensus without naming a text, a common kāvya idiom.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दान दिलेल्या वस्तूचा पुन्हा उपभोग (भावनेने दत्तापहार) दानाचे पुण्य नष्ट करतो आणि पाप देतो हा स्मार्त नियम श्लोक पुन्हा सांगतो; मनु आणि धर्मशास्त्रे दान अपरिवर्तनीय मानतात. &#x27;सुरक्षित पृथ्वी&#x27; म्हणजे परशुरामाने कश्यपांना दिलेली आणि कश्यप रक्षण करीत असलेली पृथ्वी; परशुराम त्याऐवजी आपल्या स्वनिर्मितक्षेत्रात — समुद्रातून वर आणलेल्या कोंकणात — राहतो. वदन्ति — &#x27;(जाणते) म्हणतात&#x27; — ग्रंथाचे नाव न घेता शास्त्रीय एकमताचा हवाला देतो, हा काव्यातील नेहमीचा प्रयोग आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>न चोपभुङ्क्ते स्म is negated past habitual (&#x27;he never used to enjoy&#x27;), with स्म softening the present उपभुङ्क्ते (ātmanepada of उप-√भुज्) into past custom. पर्याप्ततमम् is the superlative of पर्याप्त, governing the dative पापाय (&#x27;quite sufficient for sin&#x27;). The verse links sarga 3&#x27;s sea-reclamation to the ethics of sarga 4: the new land exists precisely so the donor need not touch the old. Metre: Upajāti.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>न चोपभुङ्क्ते स्म हा नकारार्थी भूतकाळातील सवय (&#x27;तो कधीही उपभोग घेत नसे&#x27;) — स्म ने वर्तमान उपभुङ्क्ते (उप-√भुज्, आत्मनेपद) ला भूतकाळातील सवयीचा अर्थ दिला आहे. पर्याप्ततमम् हे पर्याप्त चे तमप् प्रत्ययाचे रूप, पापाय या चतुर्थीशी अन्वित (&#x27;पापासाठी पुरेपूर&#x27;). हा श्लोक तिसऱ्या सर्गातील समुद्रातून भूमी वर आणणे याला चौथ्या सर्गाच्या नीतीशी जोडतो — नवी भूमी यासाठीच आहे की दात्याला जुन्या भूमीला स्पर्श करावा लागू नये. वृत्त : उपजाती.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

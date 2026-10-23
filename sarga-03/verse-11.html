@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 11 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 11</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">मुमुदे समुद्रजठरस्थमहीं स समीक्ष्य कामगमपुष्पकगः ।।<br>प्रविभिन्नशुक्तिमुखमुक्तलसद्दलदच्छमौक्तिकचितां परितः ।।११।।</div>
+  <div class="verse-iast">mumude samudrajaṭharasthamahīṃ sa samīkṣya kāmagamapuṣpakagaḥ । । pravibhinnaśuktimukhamuktalasaddaladacchamauktikacitāṃ paritaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">मुमुदे । समुद्र-जठर-स्थ-महीम् । सः । समीक्ष्य । काम-गम-पुष्पक-गः । प्रविभिन्न-शुक्ति-मुख-मुक्त-लसत्-दलत्-अच्छ-मौक्तिक-चिताम् । परितः ।</div><div class="vig-iast">mumude । samudra-jaṭhara-stha-mahīm । saḥ । samīkṣya । kāma-gama-puṣpaka-gaḥ । pravibhinna-śukti-mukha-mukta-lasat-dalat-accha-mauktika-citām । paritaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">महीम् + सः = महीं सः (पुढे ‘स समीक्ष्य’) · लसत् + दलत् = लसद्दलत् (त् → द्) · दलत् + अच्छ = दलदच्छ</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">कामगमपुष्पकगः सः परितः प्रविभिन्नशुक्तिमुखमुक्तलसद्दलदच्छमौक्तिकचितां समुद्रजठरस्थमहीं समीक्ष्य मुमुदे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Riding the wish-going Pushpaka, he gazed around at the sea-bed earth, all strewn with gleaming, bursting, bright pearls fallen from the mouths of split shells — and he rejoiced.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सभोवार विदीर्ण झालेल्या शिंपल्यांमधून बाहेर पडलेल्या व स्वच्छ अशा मोत्यांनी भरलेल्या त्या समुद्रगर्भातील पृथ्वीला बघून इच्छेनुसार चालणाऱ्या पुष्पक विमानातून आलेला तो (रावण) आनंदित झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुमुदे</span>
+    <span class="word-iast">mumude</span>
+  </div>
+  <div><span class="word-grammar">3rd singular perfect (liṭ, atmanepada), √mud</span></div>
+  <div class="word-form">In this verse: मुमुदे</div>
+  <p class="word-meaning lang-en">rejoiced</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आनंदला (√मुद्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">पुत्रजन्मना पिता मुमुदे ।</div>
+    <div class="usage-iast">putrajanmanā pitā mumude ।</div>
+    <div class="usage-meaning lang-en">The father rejoiced at his son&#x27;s birth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुत्रजन्माने पिता आनंदला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कामगमपुष्पकगः</span>
+    <span class="word-iast">kāmagamapuṣpakagaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; काम + गम + पुष्पक + ग</span></div>
+  <div class="word-form">In this verse: कामगमपुष्पकगः</div>
+  <p class="word-meaning lang-en">riding the wish-going Pushpaka</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इच्छेनुसार चालणाऱ्या पुष्पक विमानात बसलेला</p>
+  <div class="word-usage">
+    <div class="deva">कामगमपुष्पकगः रावणः आकाशे चचार ।</div>
+    <div class="usage-iast">kāmagamapuṣpakagaḥ rāvaṇaḥ ākāśe cacāra ।</div>
+    <div class="usage-meaning lang-en">Ravana, riding the wish-going Pushpaka, roamed the sky.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इच्छेनुसार चालणाऱ्या पुष्पक विमानात बसलेला रावण आकाशात फिरला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुद्रजठरस्थमहीम्</span>
+    <span class="word-iast">samudrajaṭharasthamahīm</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular; समुद्र + जठर + स्थ + मही</span></div>
+  <div class="word-form">In this verse: समुद्रजठरस्थमहीम्</div>
+  <p class="word-meaning lang-en">the earth lying in the ocean&#x27;s belly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या पोटात असलेली भूमी</p>
+  <div class="word-usage">
+    <div class="deva">समुद्रजठरस्थमहीम् दृष्ट्वा सः विस्मितः अभवत् ।</div>
+    <div class="usage-iast">samudrajaṭharasthamahīm dṛṣṭvā saḥ vismitaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">Seeing the earth in the ocean&#x27;s belly, he was amazed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या पोटात असलेली भूमी पाहून तो आश्चर्यचकित झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रविभिन्नशुक्तिमुख</span>
+    <span class="word-iast">pravibhinnaśuktimukha</span>
+  </div>
+  <div><span class="word-grammar">stem (part of compound); प्र + विभिन्न (√bhid + kta) + शुक्ति + मुख</span></div>
+  <div class="word-form">In this verse: प्रविभिन्नशुक्तिमुख</div>
+  <p class="word-meaning lang-en">(from) the mouths of split shells</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फुटलेल्या शिंपल्यांच्या तोंडांतून</p>
+  <div class="word-usage">
+    <div class="deva">प्रविभिन्नशुक्तिमुखात् मुक्ताः पतन्ति ।</div>
+    <div class="usage-iast">pravibhinnaśuktimukhāt muktāḥ patanti ।</div>
+    <div class="usage-meaning lang-en">Pearls fall from the mouths of split shells.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फुटलेल्या शिंपल्यांच्या तोंडांतून मोती पडतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुक्त</span>
+    <span class="word-iast">mukta</span>
+  </div>
+  <div><span class="word-grammar">stem of past participle (√muc + kta), used within the compound</span></div>
+  <div class="word-form">In this verse: मुक्त</div>
+  <p class="word-meaning lang-en">released, fallen out</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाहेर पडलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">मुक्तम् पुष्पम् भूमौ पतति ।</div>
+    <div class="usage-iast">muktam puṣpam bhūmau patati ।</div>
+    <div class="usage-meaning lang-en">The released flower falls to the ground.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुटलेले फूल जमिनीवर पडते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लसद्दलदच्छमौक्तिकचिताम्</span>
+    <span class="word-iast">lasaddaladacchamauktikacitām</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular; लसत् + दलत् + अच्छ + मौक्तिक + चित (√ci + kta)</span></div>
+  <div class="word-form">In this verse: लसद्दलदच्छमौक्तिकचिताम्</div>
+  <p class="word-meaning lang-en">strewn with gleaming, bursting, bright pearls</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चमकणाऱ्या, उकलणाऱ्या, स्वच्छ मोत्यांनी भरलेली (या ओळीवर शुद्धिपत्रातील ३.११ ची टीप पहा)</p>
+  <div class="word-usage">
+    <div class="deva">लसद्दलदच्छमौक्तिकचिताम् मालाम् सा धारयति ।</div>
+    <div class="usage-iast">lasaddaladacchamauktikacitām mālām sā dhārayati ।</div>
+    <div class="usage-meaning lang-en">She wears a garland strewn with gleaming bright pearls.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चमकणाऱ्या स्वच्छ मोत्यांनी भरलेली माळ ती घालते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sea-bed revealed as a treasure-house is the poet&#x27;s vision of the new land&#x27;s sanctity: the earth Parashurama raises is not barren but jewel-laden, fit for gods and brahmanas to dwell in. The pilgrim at Guhagar is invited to see the visible coast as the ocean&#x27;s gift — pearls and coral as the sea&#x27;s farewell offering to the land.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्रतळ खजिन्याचे घर म्हणून दाखवणे ही कवीची नव्या भूमीच्या पावित्र्याची दृष्टी आहे — परशुरामाने वर आणलेली भूमी वांझ नसून रत्नांनी भरलेली, देव व ब्राह्मण राहण्यायोग्य आहे. गुहागरच्या यात्रेकरूला दृश्य किनारा समुद्राची भेट म्हणून पाहायला सांगितले आहे — मोती व पोवळे ही समुद्राची भूमीला निरोपाची देणगी आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Pushpaka is the aerial car seized by Ravana from Kubera (Ramayana, Sundarakanda); kamagama — going at will — is its defining epithet in the epics.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुष्पक हे रावणाने कुबेराकडून हिसकावलेले विमान आहे (रामायण, सुंदरकांड); कामगम — इच्छेनुसार जाणारे — हे महाकाव्यांतील त्याचे ठरलेले विशेषण आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The word-list note points to the shuddhipatra on 3.11 (mahim sa samikshya — the conjectural sa restoring the syllable); the long pearl-compound is the sarga&#x27;s most ornate description, suited to Pramitakshara&#x27;s compact padas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शब्दसूचीतील टीप ३.११ वरील शुद्धिपत्राकडे निर्देश करते (महीं स समीक्ष्य — अक्षरपूर्तीसाठी कल्पित स); मोत्यांवरील दीर्घ समास हा सर्गातील सर्वांत अलंकृत वर्णन असून प्रमिताक्षरेच्या संक्षिप्त चरणांना साजेसा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 10</div></a><a class="next" href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 12</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

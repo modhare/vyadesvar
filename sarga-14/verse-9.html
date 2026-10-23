@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 9 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 9</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 9</span><span class="bl-mr lang-mr">श्लोक 9</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pṛthvī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">प्रपन्नपरिपालकं सकलरोगसन्दारकं<br>महानिरयतारकं समयगुप्तवृन्दारकम् ।<br>विपद्गतिविमोचकं कलुषकोटिनिर्णेजकं<br>गरामठमुपास्महे हरिमनादिमीशं गुरुम् ।।९।।</div>
+  <div class="verse-iast">prapannaparipālakaṃ sakalarogasandārakaṃ mahānirayatārakaṃ samayaguptavṛndārakam । vipadgativimocakaṃ kaluṣakoṭinirṇejakaṃ garāmaṭhamupāsmahe harimanādimīśaṃ gurum</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">प्रपन्न-परिपालकम् । सकल-रोग-सन्दारकम् । महा-निरय-तारकम् । समय-गुप्त-वृन्दारकम् । विपद्-गति-विमोचकम् । कलुष-कोटि-निर्णेजकम् । गरामठम् । उपास्महे । हरिम् । अनादिम् । ईशम् । गुरुम् ।</div><div class="vig-iast">prapanna-paripālakam । sakala-roga-sandārakam । mahā-niraya-tārakam । samaya-gupta-vṛndārakam । vipad-gati-vimocakam । kaluṣa-koṭi-nirṇejakam । garāmaṭham । upāsmahe । harim । anādim । īśam । gurum ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विपत् + गति = विपद्गति (त् → द्) · गरामठम् + उपास्महे = गरामठमुपास्महे · हरिम् + अनादिम् + ईशम् = हरिमनादिमीशम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(वयम्) प्रपन्नपरिपालकं सकलरोगसन्दारकं महानिरयतारकं समयगुप्तवृन्दारकं विपद्गतिविमोचकं कलुषकोटिनिर्णेजकम् अनादिम् ईशं गुरुं हरिं गरामठम् उपास्महे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>We worship Lord Garāmaṭha — Hari, the beginningless Lord, the teacher — the protector of those who take refuge, the destroyer of all diseases, the saviour from the great hells, the guardian of the gods in the hour of need, the releaser from the course of misfortune, and the cleanser of crores of sins.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शरण आलेल्यांचे पालन व सकल रोगांचे निवारण करणाऱ्या, वेळेवर देवांचे व महानरकांपासून मानवाचे संरक्षण करणाऱ्या, विपत्तीतून सोडविणाऱ्या व कोटी कोटी कल्मषे नष्ट करणाऱ्या अशा अनादि गुरुस्वरूप हरीची, भगवान् गरामठाची आम्ही उपासना करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रपन्न-परिपालकम्</span>
+    <span class="word-iast">prapanna-paripālakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: प्रपन्नपरिपालकम्</div>
+  <p class="word-meaning lang-en">protector of those who take refuge</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरणागतांचे पालन करणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">प्रपन्नपरिपालको हरिः शरणागतान् रक्षति ।</div>
+    <div class="usage-iast">prapannaparipālako hariḥ śaraṇāgatān rakṣati.</div>
+    <div class="usage-meaning lang-en">Hari, the protector of the surrendered, guards those who take refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरणागतांचे पालन करणारा हरी शरण आलेल्यांचे रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सकल-रोग-सन्दारकम्</span>
+    <span class="word-iast">sakala-roga-sandārakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; सन्दारक = विदारक</span></div>
+  <div class="word-form">In this verse: सकलरोगसन्दारकम्</div>
+  <p class="word-meaning lang-en">destroyer of all diseases</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व रोगांचा नाश करणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">सकलरोगसन्दारकं विष्णुं भक्ताः स्तुवन्ति ।</div>
+    <div class="usage-iast">sakalarogasandārakaṃ viṣṇuṃ bhaktāḥ stuvanti.</div>
+    <div class="usage-meaning lang-en">Devotees praise Viṣṇu, the destroyer of all diseases.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व रोगांचा नाश करणाऱ्या विष्णूची भक्त स्तुती करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महा-निरय-तारकम्</span>
+    <span class="word-iast">mahā-niraya-tārakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; निरय = नरक</span></div>
+  <div class="word-form">In this verse: महानिरयतारकम्</div>
+  <p class="word-meaning lang-en">saviour from great hells</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महानरकातून तारणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">महानिरयतारकः प्रभुः पापिनं तारयति ।</div>
+    <div class="usage-iast">mahānirayatārakaḥ prabhuḥ pāpinaṃ tārayati.</div>
+    <div class="usage-meaning lang-en">The Lord, saviour from the great hells, saves the sinner.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महानरकांतून तारणारा प्रभू पाप्याला तारतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समय-गुप्त-वृन्दारकम्</span>
+    <span class="word-iast">samaya-gupta-vṛndārakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; वृन्दारक = देव</span></div>
+  <div class="word-form">In this verse: समयगुप्तवृन्दारकम्</div>
+  <p class="word-meaning lang-en">who guards the gods in time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य वेळी देवांचे रक्षण करणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">समयगुप्तवृन्दारकः कृष्णः देवान् अपालयत् ।</div>
+    <div class="usage-iast">samayaguptavṛndārakaḥ kṛṣṇaḥ devān apālayat.</div>
+    <div class="usage-meaning lang-en">Kṛṣṇa, who guards the gods in time, protected the gods.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य वेळी देवांचे रक्षण करणाऱ्या कृष्णाने देवांचे पालन केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विपत्-गति-विमोचकम्</span>
+    <span class="word-iast">vipat-gati-vimocakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: विपद्गतिविमोचकम्</div>
+  <p class="word-meaning lang-en">releaser from misfortune</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकटाच्या स्थितीतून सोडवणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">विपद्गतिविमोचकं देवं शरणं यामि ।</div>
+    <div class="usage-iast">vipadgativimocakaṃ devaṃ śaraṇaṃ yāmi.</div>
+    <div class="usage-meaning lang-en">I take refuge in the god who frees us from misfortune.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकटांतून सोडविणाऱ्या देवाला मी शरण जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कलुष-कोटि-निर्णेजकम्</span>
+    <span class="word-iast">kaluṣa-koṭi-nirṇejakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; निर्णेजक = धुणारा</span></div>
+  <div class="word-form">In this verse: कलुषकोटिनिर्णेजकम्</div>
+  <p class="word-meaning lang-en">cleanser of countless sins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोटी पापे धुऊन टाकणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">कलुषकोटिनिर्णेजकः स्मरणमात्रेण पापं हरति ।</div>
+    <div class="usage-iast">kaluṣakoṭinirṇejakaḥ smaraṇamātreṇa pāpaṃ harati.</div>
+    <div class="usage-meaning lang-en">The cleanser of crores of sins removes sin by mere remembrance.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोटी पापे धुऊन टाकणारा केवळ स्मरणानेच पाप हरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गरामठम्</span>
+    <span class="word-iast">garāmaṭham</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: गरामठम्</div>
+  <p class="word-meaning lang-en">Garāmaṭha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरामठाला</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः गरामठं नित्यं पूजयन्ति ।</div>
+    <div class="usage-iast">bhaktāḥ garāmaṭhaṃ nityaṃ pūjayanti.</div>
+    <div class="usage-meaning lang-en">Devotees worship Garāmaṭha daily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त दररोज गरामठाची पूजा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपास्महे</span>
+    <span class="word-iast">upāsmahe</span>
+  </div>
+  <div><span class="word-grammar">उप + आस्, लट्, उ.पु. बव.</span></div>
+  <div class="word-form">In this verse: उपास्महे</div>
+  <p class="word-meaning lang-en">we worship</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आम्ही उपासना करतो</p>
+  <div class="word-usage">
+    <div class="deva">वयं देवमुपास्महे ।</div>
+    <div class="usage-iast">vayaṃ devamupāsmahe.</div>
+    <div class="usage-meaning lang-en">We worship the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आम्ही देवाची उपासना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हरिम्</span>
+    <span class="word-iast">harim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: हरिम्</div>
+  <p class="word-meaning lang-en">Hari</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीला (विष्णूला)</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः हरिं भजन्ति ।</div>
+    <div class="usage-iast">bhaktāḥ hariṃ bhajanti.</div>
+    <div class="usage-meaning lang-en">Devotees worship Hari.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त हरीचे भजन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनादिम्</span>
+    <span class="word-iast">anādim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: अनादिम्</div>
+  <p class="word-meaning lang-en">beginningless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनादि</p>
+  <div class="word-usage">
+    <div class="deva">अनादिं परमात्मानं मुनयः ध्यायन्ति ।</div>
+    <div class="usage-iast">anādiṃ paramātmānaṃ munayaḥ dhyāyanti.</div>
+    <div class="usage-meaning lang-en">Sages meditate on the beginningless Supreme Self.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनी अनादि परमात्म्याचे ध्यान करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ईशम्</span>
+    <span class="word-iast">īśam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: ईशम्</div>
+  <p class="word-meaning lang-en">the Lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ईश्वराला</p>
+  <div class="word-usage">
+    <div class="deva">सर्वे ईशं नमन्ति ।</div>
+    <div class="usage-iast">sarve īśaṃ namanti.</div>
+    <div class="usage-meaning lang-en">All bow to the Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वजण ईश्वराला नमन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गुरुम्</span>
+    <span class="word-iast">gurum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: गुरुम्</div>
+  <p class="word-meaning lang-en">the teacher</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूला</p>
+  <div class="word-usage">
+    <div class="deva">शिष्याः गुरुं सेवन्ते ।</div>
+    <div class="usage-iast">śiṣyāḥ guruṃ sevante.</div>
+    <div class="usage-meaning lang-en">Disciples serve the teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्य गुरूंची सेवा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रपन्नपरिपालकम्</span>
+    <span class="word-iast">prapannaparipālakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: प्रपन्नपरिपालकम्</div>
+  <p class="word-meaning lang-en">protector of those who take refuge</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरण आलेल्यांचे पालन करणारा</p>
+  <div class="word-usage">
+    <div class="deva">प्रपन्नपरिपालकं तं देवं वन्दे ।</div>
+    <div class="usage-iast">prapannaparipālakaṃ taṃ devaṃ vande.</div>
+    <div class="usage-meaning lang-en">I bow to that god, the protector of the surrendered.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरणागतांचे पालन करणाऱ्या त्या देवाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सकलरोगसन्दारकम्</span>
+    <span class="word-iast">sakalarogasandārakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: सकलरोगसन्दारकम्</div>
+  <p class="word-meaning lang-en">destroyer of all diseases</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व रोगांचा नाश करणारा (सन्दारक = विदारण करणारा)</p>
+  <div class="word-usage">
+    <div class="deva">सकलरोगसन्दारकस्य नाम स्मर ।</div>
+    <div class="usage-iast">sakalarogasandārakasya nāma smara.</div>
+    <div class="usage-meaning lang-en">Remember the name of the destroyer of all diseases.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व रोगांचा नाश करणाऱ्याचे नाव स्मर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महानिरयतारकम्</span>
+    <span class="word-iast">mahānirayatārakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: महानिरयतारकम्</div>
+  <p class="word-meaning lang-en">saviour from great hells</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महान नरकांतून (निरय) तारणारा</p>
+  <div class="word-usage">
+    <div class="deva">महानिरयतारकं शरणं व्रज ।</div>
+    <div class="usage-iast">mahānirayatārakaṃ śaraṇaṃ vraja.</div>
+    <div class="usage-meaning lang-en">Take refuge in the saviour from the great hells.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महानरकांतून तारणाऱ्याला शरण जा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समयगुप्तवृन्दारकम्</span>
+    <span class="word-iast">samayaguptavṛndārakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: समयगुप्तवृन्दारकम्</div>
+  <p class="word-meaning lang-en">who guards the gods in time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य वेळी (समय) देवांचे (वृन्दारक) रक्षण करणारा</p>
+  <div class="word-usage">
+    <div class="deva">समयगुप्तवृन्दारकः सदा जयति ।</div>
+    <div class="usage-iast">samayaguptavṛndārakaḥ sadā jayati.</div>
+    <div class="usage-meaning lang-en">He who guards the gods in time is ever victorious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य वेळी देवांचे रक्षण करणारा सदा विजयी होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विपद्गतिविमोचकम्</span>
+    <span class="word-iast">vipadgativimocakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: विपद्गतिविमोचकम्</div>
+  <p class="word-meaning lang-en">releaser from misfortune</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकटाच्या स्थितीतून सोडविणारा</p>
+  <div class="word-usage">
+    <div class="deva">विपद्गतिविमोचकं कृष्णं स्मरामि ।</div>
+    <div class="usage-iast">vipadgativimocakaṃ kṛṣṇaṃ smarāmi.</div>
+    <div class="usage-meaning lang-en">I remember Kṛṣṇa, the releaser from misfortune.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकटांतून सोडविणाऱ्या कृष्णाचे मी स्मरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कलुषकोटिनिर्णेजकम्</span>
+    <span class="word-iast">kaluṣakoṭinirṇejakam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: कलुषकोटिनिर्णेजकम्</div>
+  <p class="word-meaning lang-en">cleanser of countless sins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोट्यवधी पापे (कलुष) धुऊन टाकणारा (निर्णेजक)</p>
+  <div class="word-usage">
+    <div class="deva">कलुषकोटिनिर्णेजकस्य चरणौ शरणम् ।</div>
+    <div class="usage-iast">kaluṣakoṭinirṇejakasya caraṇau śaraṇam.</div>
+    <div class="usage-meaning lang-en">The feet of the cleanser of countless sins are my refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असंख्य पापे धुऊन टाकणाऱ्याचे चरण माझे आश्रयस्थान आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हरिम् अनादिम् ईशम् गुरुम्</span>
+    <span class="word-iast">harim anādim īśam gurum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव. (सर्व)</span></div>
+  <div class="word-form">In this verse: हरिमनादिमीशं गुरुम्</div>
+  <p class="word-meaning lang-en">Hari, the beginningless Lord, the teacher</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनादी, ईश्वर व गुरुरूप हरीची</p>
+  <div class="word-usage">
+    <div class="deva">हरिमनादिमीशं गुरुं वन्दामहे ।</div>
+    <div class="usage-iast">harimanādimīśaṃ guruṃ vandāmahe.</div>
+    <div class="usage-meaning lang-en">We bow to Hari, the beginningless Lord, the teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनादि ईश्वर व गुरुरूप हरीला आम्ही वंदन करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This opening verse of the Garāmaṭha stotra gathers the traditional Vaiṣṇava roles of Viṣṇu as the refuge of the prapanna — he who protects the surrendered, heals all affliction, and delivers from the hells. The first-person plural &#x27;upāsmahe&#x27; (&#x27;we worship&#x27;) marks this as the collective devotion of Guhagar itself, not the poet&#x27;s alone. For the devotee the verse teaches that refuge (śaraṇāgati) is the whole of the path: the protecting, the destroying of disease, and the washing of sin are all the Lord&#x27;s work — the worshipper&#x27;s part is only to take shelter.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गरामठ स्तोत्राचा हा पहिला श्लोक विष्णूच्या पारंपरिक भूमिकांना एकत्र करतो — शरणागतांचे रक्षण करणारा, सर्व रोगांचा नाश करणारा, नरकांतून तारणारा. &#x27;उपास्महे&#x27; (आम्ही उपासना करतो) हा बहुवचन प्रयोग दाखवतो की ही भक्ती केवळ कवीची नसून संपूर्ण गुहागरची सामूहिक भक्ती आहे. भक्तासाठी या श्लोकाचा बोध असा की शरणागती हाच संपूर्ण मार्ग आहे : रक्षण करणे, रोग नष्ट करणे, पापे धुऊन टाकणे ही सर्व भगवंताची कामे आहेत; भक्ताचे काम फक्त आश्रय घेणे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The six epithets follow the classical Vaiṣṇava picture of Viṣṇu as the protector of the surrendered: the Bhāgavata Purāṇa and the Pāñcarātra tradition alike present him as the one who guards his devotees, destroys their afflictions, and delivers them from the hells. &#x27;Guards the gods in time&#x27; recalls his avatāras, taken whenever the gods are oppressed — as in the stories of Vāmana, Kūrma and Varāha. The verse thus places Garāmaṭha within the all-India Vaiṣṇava tradition, not as a merely local deity.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ही सहा विशेषणे शरणागतांचे रक्षण करणाऱ्या विष्णूच्या शास्त्रीय वैष्णव चित्राला धरून आहेत : भागवत पुराण व पांचरात्र परंपरा दोन्ही त्याला भक्तांचे रक्षण करणारा, त्यांची दुःखे नष्ट करणारा व नरकांतून सोडविणारा मानतात. &#x27;योग्य वेळी देवांचे रक्षण करणारा&#x27; हे विशेषण त्याच्या अवतारांची आठवण करून देते — देव पीडित झाले की तो वामन, कूर्म, वराह अशा रूपांनी अवतरतो. अशा रीतीने हा श्लोक गरामठाला केवळ स्थानिक देवता न मानता अखिल भारतीय वैष्णव परंपरेतच स्थान देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Pṛthvī (17 syllables to the pāda), used for all three Garāmaṭha verses (14.9–11) before the phala-śruti at 14.12. Note सन्दारक, glossed in the word list as विदारक (&#x27;rend, destroyer&#x27;) — a rare form; and वृन्दारक for &#x27;god&#x27; (from वृन्द, &#x27;host&#x27;, i.e. &#x27;best of the host&#x27;). The compound कलुषकोटिनिर्णेजकम् (&#x27;cleanser of crores of sins&#x27;) uses निर्णेजक, &#x27;one who washes clean&#x27;, from निर् + √निज्.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : पृथ्वी (प्रत्येक चरणांत १७ अक्षरे); फलश्रुतीच्या (१४.१२) आधीची गरामठाची तिन्ही स्तोत्रे (१४.९–११) याच वृत्तांत आहेत. सन्दारक (शब्दसूचीत विदारक = &#x27;फाडून टाकणारा&#x27; असा अर्थ दिला आहे) हे दुर्मिळ रूप लक्षात घ्या; तसेच देव या अर्थी वृन्दारक (वृन्द = समूह, म्हणजे &#x27;समूहातील श्रेष्ठ&#x27;). कलुषकोटिनिर्णेजकम् या समासांत निर्णेजक म्हणजे &#x27;धुऊन टाकणारा&#x27; (निर् + √निज्) हा शब्द वापरला आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 8</div></a><a class="next" href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 10</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

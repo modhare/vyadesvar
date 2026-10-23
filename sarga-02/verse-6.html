@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">विचार्य विदुषा कार्यं कार्यं क्वापि कदापि च।।<br>अविचारो हि पुरुषः पङ्के गौरिव सीदति ।।६।।</div>
+  <div class="verse-iast">vicārya viduṣā kāryaṃ kāryaṃ kvāpi kadāpi ca । । avicāro hi puruṣaḥ paṅke gauriva sīdati</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">विचार्य । विदुषा । कार्यम् । कार्यम् । क्व । अपि । कदापि । च । अविचारः । हि । पुरुषः । पङ्के । गौः । इव । सीदति ।</div><div class="vig-iast">vicārya । viduṣā । kāryam । kāryam । kva । api । kadāpi । ca । avicāraḥ । hi । puruṣaḥ । paṅke । gauḥ । iva । sīdati ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्व + अपि = क्वापि (सवर्णदीर्घ) · अविचारः + हि = अविचारो हि (विसर्ग → ओ) · गौः + इव = गौरिव (विसर्ग → र्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">क्वापि कदापि च (यत्) कार्यं (तत्) विदुषा विचार्य कार्यम्; हि अविचारः पुरुषः पङ्के गौः इव सीदति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Whatever duty falls to one, wherever and whenever, the wise should perform it after due deliberation; for the heedless man sinks like a cow stuck in mire.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;कोठेही व केव्हाही जे कर्तव्य असेल ते जाणकाराने विचार करून करावे. अविचारी पुरुष चिखलात रुतलेल्या गाईप्रमाणे बुडतो.&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विचार्य</span>
+    <span class="word-iast">vicārya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (lyap) of वि + √चर्</span></div>
+  <div class="word-form">In this verse: विचार्य (lyap)</div>
+  <p class="word-meaning lang-en">having deliberated, after reflection</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विचार करून</p>
+  <div class="word-usage">
+    <div class="deva">विचार्य एव कार्यम् कुर्यात् ।</div>
+    <div class="usage-iast">vicārya eva kāryam kuryāt ।</div>
+    <div class="usage-meaning lang-en">One should act only after deliberation.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विचार करूनच काम करावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विदुषा</span>
+    <span class="word-iast">viduṣā</span>
+  </div>
+  <div><span class="word-grammar">masculine instrumental singular (तृतीया एकवचन) of विद्वस् (√विद् + वसु, present participle)</span></div>
+  <div class="word-form">In this verse: विदुषा (stem विद्वस्)</div>
+  <p class="word-meaning lang-en">by the wise man, by the learned</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहाण्याने</p>
+  <div class="word-usage">
+    <div class="deva">विदुषा उक्तम् सत्यम् भवति ।</div>
+    <div class="usage-iast">viduṣā uktam satyam bhavati ।</div>
+    <div class="usage-meaning lang-en">What is spoken by the wise is true.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहाण्याने सांगितलेले खरे असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कार्यं कार्यम्</span>
+    <span class="word-iast">kāryaṃ kāryam</span>
+  </div>
+  <div><span class="word-grammar">कार्य: √कृ + ṇyat, neuter nominative/accusative singular, doubled; yamaka — first = noun &#x27;duty&#x27;, second = optative &#x27;should be done&#x27;</span></div>
+  <div class="word-form">In this verse: कार्यं कार्यम् (stem कार्य; yamaka noted in the book)</div>
+  <p class="word-meaning lang-en">whatever is duty must be done</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे कर्तव्य ते करावे (*यमक: पहिले ‘कार्यम्’ = कर्तव्य, दुसरे = करावे*)</p>
+  <div class="word-usage">
+    <div class="deva">प्रातः कार्यम् कार्यम् इति स्मर ।</div>
+    <div class="usage-iast">prātaḥ kāryam kāryam iti smara ।</div>
+    <div class="usage-meaning lang-en">Remember: the morning&#x27;s duty must be done.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सकाळचे कर्तव्य केले पाहिजे हे लक्षात ठेव.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्वापि कदापि च</span>
+    <span class="word-iast">kvāpi kadāpi ca</span>
+  </div>
+  <div><span class="word-grammar">क्व + अपि, कदा + अपि, च — indeclinable adverbs</span></div>
+  <div class="word-form">In this verse: क्वापि कदापि च (in verse क्व + अपि → क्वापि)</div>
+  <p class="word-meaning lang-en">anywhere and at any time whatsoever</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोठेही व केव्हाही</p>
+  <div class="word-usage">
+    <div class="deva">सत्यम् क्वापि कदापि च वक्तव्यम् ।</div>
+    <div class="usage-iast">satyam kvāpi kadāpi ca vaktavyam ।</div>
+    <div class="usage-meaning lang-en">Truth should be spoken anywhere and at any time.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सत्य कोठेही व केव्हाही बोलावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अविचारः पुरुषः</span>
+    <span class="word-iast">avicāraḥ puruṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">अविचारः: नञ्-तत्पुरुष/बहुव्रीहि (&#x27;without deliberation&#x27;), masculine nominative singular; पुरुषः: masculine nominative singular</span></div>
+  <div class="word-form">In this verse: अविचारः पुरुषः (in verse अविचारः + हि → अविचारो हि)</div>
+  <p class="word-meaning lang-en">the thoughtless, heedless man</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अविचारी माणूस</p>
+  <div class="word-usage">
+    <div class="deva">अविचारः पुरुषः दुःखम् आप्नोति ।</div>
+    <div class="usage-iast">avicāraḥ puruṣaḥ duḥkham āpnoti ।</div>
+    <div class="usage-meaning lang-en">The thoughtless man meets with suffering.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अविचारी माणूस दुःख भोगतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पङ्के गौः इव</span>
+    <span class="word-iast">paṅke gauḥ iva</span>
+  </div>
+  <div><span class="word-grammar">पङ्के: masculine locative singular of पङ्क; गौः: feminine nominative singular of गो (&#x27;cow&#x27;); इव: avyaya</span></div>
+  <div class="word-form">In this verse: पङ्के गौः इव (in verse गौः + इव → गौरिव)</div>
+  <p class="word-meaning lang-en">like a cow (stuck) in the mire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चिखलात (रुतलेल्या) गाईप्रमाणे</p>
+  <div class="word-usage">
+    <div class="deva">सः पङ्के गौः इव सीदति ।</div>
+    <div class="usage-iast">saḥ paṅke gauḥ iva sīdati ।</div>
+    <div class="usage-meaning lang-en">He sinks like a cow in the mire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो चिखलात रुतलेल्या गाईप्रमाणे बुडतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सीदति</span>
+    <span class="word-iast">sīdati</span>
+  </div>
+  <div><span class="word-grammar">√सद्, laṭ (present), parasmaipada, third person singular</span></div>
+  <div class="word-form">In this verse: सीदति</div>
+  <p class="word-meaning lang-en">sinks, suffers, perishes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कष्टी होतो, बुडतो (√सद्)</p>
+  <div class="word-usage">
+    <div class="deva">अज्ञानी संसारे सीदति ।</div>
+    <div class="usage-iast">ajñānī saṃsāre sīdati ।</div>
+    <div class="usage-meaning lang-en">The ignorant man sinks in worldly life.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अज्ञानी संसारात बुडतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Vicāra, deliberation, is the hinge of all righteous action: the verse makes reflection a universal duty, binding in every place and time. The cow sunk in mire is a vivid emblem of the avicārī — one who acts on impulse and then cannot move, trapped by consequences. On the spiritual path this counsels pausing before speech and deed, so that karma does not become the mire one drowns in.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विचार हा सर्व धर्माचरणाचा कणा आहे : प्रत्येक ठिकाणी आणि प्रत्येक काळी चिंतन हे सार्वत्रिक कर्तव्य ठरवणारा हा श्लोक आहे. चिखलात रुतलेली गाय ही अविचारी माणसाचे ज्वलंत प्रतीक आहे — जो आवेगाने वागतो आणि मग परिणामांत अडकून हालचाल करू शकत नाही. आध्यात्मिक मार्गावर बोलण्या-वागण्यापूर्वी थांबण्याचा हा सल्ला आहे, जेणेकरून कर्म हेच बुडवणारे चिखल होऊ नये.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Vicāra-pūrvaka karma, action preceded by deliberation, is a constant refrain of the dharma-śāstras and the nīti texts — &#x27;deliberate first&#x27; opens the Pañcatantra&#x27;s counsel to kings. The cow in the mire is a stock image of helplessness brought on by one&#x27;s own heedlessness, found also in the Mahābhārata&#x27;s didactic passages. Spoken by the avatāra, the maxim carries a gentle self-reference: even his own wrath, in verse 1, was mastered by a moment&#x27;s reflection.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विचारपूर्वक कर्म — चिंतनाने आधी केलेले कार्य — हा धर्मशास्त्रे आणि नीतिग्रंथांचा सततचा घोष आहे; राजांना पंचतंत्राचा सल्ला &#x27;आधी विचार कर&#x27; यानेच सुरू होतो. चिखलातील गाय ही स्वतःच्याच अविचाराने आलेल्या असहायतेची ठरलेली प्रतिमा असून महाभारतातील उपदेशपर भागांतही आढळते. अवताराच्या मुखातील ही सूक्ती सौम्य आत्मनिर्देशही करते : पहिल्या श्लोकातील त्यांचा स्वतःचाच क्रोध क्षणभराच्या विचाराने जिंकला गेला होता.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The book&#x27;s note flags a yamaka (paronomasia) in कार्यं कार्यम्: the first कार्यम् is the noun &#x27;duty&#x27; (√कृ + ṇyat), the second the optative &#x27;should be done&#x27;. गौरिव shows visarga → r before इव (गौः + इव). क्वापि कदापि च (&#x27;wherever and whenever&#x27;) universalises the injunction — a sāmānyokti with no exception admitted.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कार्यं कार्यम् मधील यमक (शब्दचमत्कृती) पुस्तकाची टीप नमूद करते : पहिले कार्यम् हे नाम (&#x27;कर्तव्य&#x27;, √कृ + ण्यत्), दुसरे विध्यर्थ (&#x27;करावे&#x27;). गौरिव मध्ये इव पुढे विसर्गाचा र् होतो (गौः + इव). क्वापि कदापि च (&#x27;कोठेही व केव्हाही&#x27;) आज्ञेला सार्वत्रिक करते — अपवाद न मानणारी सामान्योक्ती.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

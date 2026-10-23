@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 14 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 14</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 14</span><span class="bl-mr lang-mr">श्लोक 14</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">व्यायामात्सह्यमानेन दैर्घ्येणोत्सर सत्वरः ।।<br>अस्याधरे त्वदुदरे पदं मेऽभीप्सितं यतः ।।१४।।</div>
+  <div class="verse-iast">vyāyāmātsahyamānena dairghyeṇotsara satvaraḥ । । asyādhare tvadudare padaṃ me&#x27;bhīpsitaṃ yataḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">व्यायामात् । सह्यमानेन । दैर्घ्येण । उत्सर । सत्वरः । अस्य । अधरे । त्वत्-उदरे । पदम् । मे । अभीप्सितम् । यतः ।</div><div class="vig-iast">vyāyāmāt । sahyamānena । dairghyeṇa । utsara । satvaraḥ । asya । adhare । tvat-udare । padam । me । abhīpsitam । yataḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">व्यायामात् + सह्य = व्यायामात्सह्य · दैर्घ्येण + उत्सर = दैर्घ्येणोत्सर (गुण) · अस्य + अधरे = अस्याधरे · त्वत् + उदरे = त्वदुदरे (त् → द्) · मे + अभीप्सितम् = मेऽभीप्सितम् (पूर्वरूप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(हे समुद्र,) व्यायामात् सह्यमानेन दैर्घ्येण सत्वरः (सन्) उत्सर; यतः अस्य (शरस्य) अधरे त्वदुदरे मे पदम् अभीप्सितम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>“Draw back swiftly, lessening yourself to a length bearable in keeping with the bowshot&#x27;s range; for the ground beneath this arrow, within your belly, is the place I desire.”</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बाणाच्या टप्प्याच्या प्रमाणात योग्य तेवढी आपली लांबी सत्वर कमी करून तू मागे सरक; कारण या बाणाखालची तुझ्यामधली (उदरामधली) जागा मला हवी आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्यायामात्</span>
+    <span class="word-iast">vyāyāmāt</span>
+  </div>
+  <div><span class="word-grammar">वि + आ + √यम् + घञ् (भावे); पुंल्लिङ्ग, पञ्चमी विभक्ति, एकवचन; प्रमाणार्थे पञ्चमी (“in proportion to”)</span></div>
+  <div class="word-form">In this verse: व्यायामात्सह्यमानेन</div>
+  <p class="word-meaning lang-en">in proportion to the exertion, the range (of the bowshot)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(बाणाच्या) व्यायामाच्या / टप्प्याच्या प्रमाणातून</p>
+  <div class="word-usage">
+    <div class="deva">धनुषः व्यायामात् लक्ष्यम् दूरम् अस्ति ।</div>
+    <div class="usage-iast">dhanuṣaḥ vyāyāmāt lakṣyam dūram asti ।</div>
+    <div class="usage-meaning lang-en">The target is far in proportion to the bow&#x27;s range.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनुष्याच्या टप्प्याच्या प्रमाणात लक्ष्य दूर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सह्यमानेन दैर्घ्येण</span>
+    <span class="word-iast">sahyamānena dairghyeṇa</span>
+  </div>
+  <div><span class="word-grammar">सह्यमान — √सह्-धातोः कृदन्त विशेषण (“सहन होणारे”), तृतीया विभक्ति, एकवचन + दैर्घ्य (दीर्घ + ष्यञ् भावे, नपुं.), तृतीया विभक्ति, एकवचन; करणम्</span></div>
+  <div class="word-form">In this verse: सह्यमानेन दैर्घ्येण</div>
+  <p class="word-meaning lang-en">with a length that can be borne, to a bearable extent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सहन होईल इतक्या (योग्य) लांबीने</p>
+  <div class="word-usage">
+    <div class="deva">सः सह्यमानेन दैर्घ्येण गच्छति ।</div>
+    <div class="usage-iast">saḥ sahyamānena dairghyeṇa gacchati ।</div>
+    <div class="usage-meaning lang-en">He goes to a bearable distance.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सहन होईल इतक्या अंतरापर्यंत जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उत्सर</span>
+    <span class="word-iast">utsara</span>
+  </div>
+  <div><span class="word-grammar">उत् + √सृ (गतौ, भ्वादिः), परस्मैपद, लोट्, मध्यमपुरुष, एकवचन</span></div>
+  <div class="word-form">In this verse: दैर्घ्येणोत्सर</div>
+  <p class="word-meaning lang-en">move back! withdraw!</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मागे सर</p>
+  <div class="word-usage">
+    <div class="deva">हे अश्व उत्सर मार्गात् ।</div>
+    <div class="usage-iast">he aśva utsara mārgāt ।</div>
+    <div class="usage-meaning lang-en">O horse, move back from the path.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे घोड्या, रस्त्यातून मागे सर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्वरः</span>
+    <span class="word-iast">satvaraḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि (सह त्वरया वर्तते); पुंल्लिङ्ग, प्रथमा विभक्ति, एकवचन; क्रियाविशेषणवत् प्रयुक्तम्</span></div>
+  <div class="word-form">In this verse: सत्वरः</div>
+  <p class="word-meaning lang-en">quickly, with haste</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्वरेने</p>
+  <div class="word-usage">
+    <div class="deva">दूतः सत्वरः गच्छति ।</div>
+    <div class="usage-iast">dūtaḥ satvaraḥ gacchati ।</div>
+    <div class="usage-meaning lang-en">The messenger goes quickly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दूत त्वरेने जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्य अधरे</span>
+    <span class="word-iast">asya adhare</span>
+  </div>
+  <div><span class="word-grammar">इदम् (सर्वनाम), पुं./नपुं., षष्ठी विभक्ति, एकवचन + अधर (“खालचा भाग”), सप्तमी विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: अस्याधरे</div>
+  <p class="word-meaning lang-en">below this (arrow)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या (बाणा)च्या खाली</p>
+  <div class="word-usage">
+    <div class="deva">वृक्षस्य अधरे छाया अस्ति ।</div>
+    <div class="usage-iast">vṛkṣasya adhare chāyā asti ।</div>
+    <div class="usage-meaning lang-en">Below the tree there is shade.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाडाखाली सावली आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वदुदरे</span>
+    <span class="word-iast">tvadudare</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुष समास (त्वत् [युष्मद्] + उदर); उदर (नपुं.), सप्तमी विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: त्वदुदरे</div>
+  <p class="word-meaning lang-en">in your belly, in your midst (waters)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझ्या पोटातील</p>
+  <div class="word-usage">
+    <div class="deva">त्वत् उदरे गाम्भीर्यम् अस्ति ।</div>
+    <div class="usage-iast">tvat udare gāmbhīryam asti ।</div>
+    <div class="usage-meaning lang-en">In your depths there is profundity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझ्या पोटात (खोलीत) गांभीर्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पदं मे अभीप्सितम्</span>
+    <span class="word-iast">padaṃ me abhīpsitam</span>
+  </div>
+  <div><span class="word-grammar">पद (नपुं.), प्रथमा विभक्ति, एकवचन + अस्मद्, षष्ठी विभक्ति, एकवचन + अभि + √आप् (सन्नन्त) + क्त, नपुंसकलिङ्ग, प्रथमा विभक्ति, एकवचन</span></div>
+  <div class="word-form">In this verse: पदं मेऽभीप्सितं</div>
+  <p class="word-meaning lang-en">a place is desired by me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला जागा हवी आहे</p>
+  <div class="word-usage">
+    <div class="deva">मे पदम् अभीप्सितम् अस्ति ।</div>
+    <div class="usage-iast">me padam abhīpsitam asti ।</div>
+    <div class="usage-meaning lang-en">A place is desired by me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला जागा हवी आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यतः</span>
+    <span class="word-iast">yataḥ</span>
+  </div>
+  <div><span class="word-grammar">यद् (सर्वनाम), पञ्चमी विभक्ति, एकवचन; हेत्वर्थे अव्ययवत् प्रयुक्तम्</span></div>
+  <div class="word-form">In this verse: यतः</div>
+  <p class="word-meaning lang-en">because, since</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कारण</p>
+  <div class="word-usage">
+    <div class="deva">सः न आगतः यतः व्याधितः आसीत् ।</div>
+    <div class="usage-iast">saḥ na āgataḥ yataḥ vyādhitaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">He did not come because he was ill.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो आला नाही कारण तो आजारी होता.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The command is urgent but not cruel — measure for measure, the ocean yields only what the bowshot needs. This is the dharma of righteous conquest: taking no more than is required, and naming the reason (यतः) openly. The sthala thus begins not in plunder but in measured, declared appropriation — the land is asked for, delimited, and taken in the open.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आज्ञा तातडीची आहे पण क्रूर नाही — मापासाठी माप, समुद्र बाणाच्या टप्प्याला हवे तेवढेच मागे सरकतो. हा न्याय्य विजयाचा धर्म आहे : हवे तेवढेच घेणे, आणि कारण (यतः) मोकळेपणाने सांगणे. त्यामुळे या स्थलाची सुरुवात लुटीत नव्हे, तर मोजक्या, जाहीर केलेल्या स्वीकारात होते — भूमी मागितली जाते, तिची मर्यादा ठरवली जाते, आणि ती उघडपणे घेतली जाते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The ocean withdrawing at the hero&#x27;s command recalls the Rāmāyaṇa&#x27;s Samudra yielding to Rāma at the causeway — but here the yielding creates new land rather than a bridge. The “desired ground” (अभीप्सितं पदम्) within the sea&#x27;s belly is the future Paraśurāma-kṣetra: the Konkan strip between the Sahyadri and the Arabian Sea, whose sacred geography the whole kāvya goes on to map.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वीराच्या आज्ञेने समुद्र मागे सरणे हे सेतुबन्धाच्या वेळी रामापुढे नमणाऱ्या रामायणातील समुद्राची आठवण करून देते — पण येथे त्या नमण्यातून सेतू नव्हे, तर नवी भूमी निर्माण होते. समुद्राच्या उदरातील “इच्छिलेली जागा” (अभीप्सितं पदम्) हे भावी परशुराम-क्षेत्र आहे : सह्याद्री आणि अरबी समुद्र यांमधील कोकणपट्टी, जिचा पवित्र भूगोल हे संपूर्ण काव्य पुढे रेखाटते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. Note the terse military diction — उत्सर सत्वरः (“withdraw, swiftly”). व्यायाम here = the bow&#x27;s “exertion,” i.e. its range. The verse leads directly into 2.15, which fixes the extent at five to six yojanas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ् वृत्त. ठसकेबाज लष्करी भाषा लक्षात घ्या — उत्सर सत्वरः (“मागे सर, त्वरेने”). येथे व्यायाम = धनुष्याचा “व्यायाम”, म्हणजे त्याचा टप्पा. हा श्लोक थेट २.१५ कडे नेतो, जो विस्तार पाच ते सहा योजने असा निश्चित करतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-13.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 13</div></a><a class="next" href="verse-15.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 15</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

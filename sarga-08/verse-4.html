@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 4 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 4</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 4</span><span class="bl-mr lang-mr">श्लोक 4</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इति संमन्त्र्य दुर्वृत्ता बालिशाः कलिलालिताः ।<br>वाससा वेष्टयित्वैकं मृषाप्रेतं प्रचक्रुशुः ।।४।।</div>
+  <div class="verse-iast">iti saṃmantrya durvṛttā bāliśāḥ kalilālitāḥ । vāsasā veṣṭayitvaikaṃ mṛṣāpretaṃ pracakruśuḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । संमन्त्र्य । दुर्वृत्ताः । बालिशाः । कलि-लालिताः । वाससा । वेष्टयित्वा । एकम् । मृषा-प्रेतम् । प्रचक्रुशुः ।</div><div class="vig-iast">iti । saṃmantrya । durvṛttāḥ । bāliśāḥ । kali-lālitāḥ । vāsasā । veṣṭayitvā । ekam । mṛṣā-pretam । pracakruśuḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">दुर्वृत्ताः + बालिशाः = दुर्वृत्ता बालिशाः (विसर्ग-लोप) · वेष्टयित्वा + एकम् = वेष्टयित्वैकम् (वृद्धि)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति संमन्त्र्य दुर्वृत्ताः बालिशाः कलिलालिताः (ते) एकं वाससा मृषाप्रेतं वेष्टयित्वा प्रचक्रुशुः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Having thus conspired, the misbehaving, foolish, Kali-spoiled lads wrapped one (of their number) up in a cloth as a fake corpse and began to wail aloud.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>असा बेत करून त्या दुर्वृत्त, बालिश व कलिप्रेरित ब्राह्मणपुत्रांनी एका खोट्याच प्रेताला वस्त्राने झाकून आक्रोश करण्यास सुरुवात केली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संमन्त्र्य</span>
+    <span class="word-iast">saṃmantrya</span>
+  </div>
+  <div><span class="word-grammar">sam + √मन्त्र्, lyap (absolutive/gerund)</span></div>
+  <div class="word-form">In this verse: सं-मन्त्र्य</div>
+  <p class="word-meaning lang-en">having conspired, having taken counsel together</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मसलत करून</p>
+  <div class="word-usage">
+    <div class="deva">संमन्त्र्य ते निर्गताः</div>
+    <div class="usage-iast">saṃmantrya te nirgatāḥ</div>
+    <div class="usage-meaning lang-en">Having conspired, they went out.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मसलत करून ते बाहेर पडले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दुर्वृत्ताः</span>
+    <span class="word-iast">durvṛttāḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi, nominative plural masculine</span></div>
+  <div class="word-form">In this verse: दुर्-वृत्ताः</div>
+  <p class="word-meaning lang-en">of bad conduct, misbehaving</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुर्वर्तनी</p>
+  <div class="word-usage">
+    <div class="deva">दुर्वृत्ताः जनाः त्याज्याः</div>
+    <div class="usage-iast">durvṛttāḥ janāḥ tyājyāḥ</div>
+    <div class="usage-meaning lang-en">Men of bad conduct should be shunned.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुर्वर्तनी लोक टाळावेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बालिशाः</span>
+    <span class="word-iast">bāliśāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine</span></div>
+  <div class="word-form">In this verse: बालिशाः</div>
+  <p class="word-meaning lang-en">foolish, childish, immature</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूर्ख</p>
+  <div class="word-usage">
+    <div class="deva">बालिशः बालकः रोदिति</div>
+    <div class="usage-iast">bāliśaḥ bālakaḥ roditi</div>
+    <div class="usage-meaning lang-en">The childish boy cries.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूर्ख मुलगा रडतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कलिलालिताः</span>
+    <span class="word-iast">kalilālitāḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa, √लल् + kta, nominative plural masculine</span></div>
+  <div class="word-form">In this verse: कलि-लालिताः</div>
+  <p class="word-meaning lang-en">fondled/spoiled by Kali</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कलीने लाडावलेले (बिघडवलेले)</p>
+  <div class="word-usage">
+    <div class="deva">लालितः पुत्रः दुष्टः भवति</div>
+    <div class="usage-iast">lālitaḥ putraḥ duṣṭaḥ bhavati</div>
+    <div class="usage-meaning lang-en">A pampered son turns bad.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लाडावलेला मुलगा वाईट होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाससा वेष्टयित्वा</span>
+    <span class="word-iast">vāsasā veṣṭayitvā</span>
+  </div>
+  <div><span class="word-grammar">instrumental singular + vi + √वेष्ट्, ktvā (absolutive)</span></div>
+  <div class="word-form">In this verse: वाससा वेष्टयित्वा</div>
+  <p class="word-meaning lang-en">having wrapped (him) with a cloth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वस्त्राने गुंडाळून</p>
+  <div class="word-usage">
+    <div class="deva">वाससा वेष्टयित्वा सः अशेत</div>
+    <div class="usage-iast">vāsasā veṣṭayitvā saḥ aśeta</div>
+    <div class="usage-meaning lang-en">Having wrapped himself in a cloth, he slept.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वस्त्राने गुंडाळून तो झोपला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकं मृषाप्रेतम्</span>
+    <span class="word-iast">ekaṃ mṛṣāpretam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter (mṛṣā indeclinable)</span></div>
+  <div class="word-form">In this verse: एकम् मृषा-प्रेतम्</div>
+  <p class="word-meaning lang-en">one (of them) as a false corpse</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकाला खोटे प्रेत (म्हणून)</p>
+  <div class="word-usage">
+    <div class="deva">एकम् पुरुषम् आह्वयत्</div>
+    <div class="usage-iast">ekam puruṣam āhvayat</div>
+    <div class="usage-meaning lang-en">He called one man.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने एका माणसाला बोलावले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रचक्रुशुः</span>
+    <span class="word-iast">pracakruśuḥ</span>
+  </div>
+  <div><span class="word-grammar">pra + √क्रुश् (1st class), liṭ (perfect), 3rd plural</span></div>
+  <div class="word-form">In this verse: प्र-चक्रुशुः</div>
+  <p class="word-meaning lang-en">they burst into wailing, wailed aloud</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आक्रोश केला (प्र + √क्रुश्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">दुःखिताः प्रचक्रुशुः</div>
+    <div class="usage-iast">duḥkhitāḥ pracakruśuḥ</div>
+    <div class="usage-meaning lang-en">The grieving ones wailed aloud.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुःखी लोकांनी आक्रोश केला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The poet&#x27;s three adjectives — durvṛttāḥ, bāliśāḥ, kalilālitāḥ — are a moral diagnosis, not mere abuse: bad conduct, immaturity, and being &#x27;fondled by Kali&#x27; arrive together. The staged funeral is a parody of the death-rite, and that sacrilege is the point: Kali&#x27;s first casualty is reverence itself, and once reverence falls, even a tīrtha becomes a stage for mockery.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कवीची तीन विशेषणे — दुर्वृत्ताः, बालिशाः, कलिलालिताः — ही केवळ निंदा नसून नैतिक निदान आहे : दुराचार, अपरिपक्वता आणि &#x27;कलीने लाडावलेपणा&#x27; हे एकत्रच येतात. खोटे अंत्यसंस्कार ही मृत्युसंस्काराचीच विटंबना आहे, आणि हाच तिचा दोष आहे — कलीचा पहिला बळी म्हणजे आदरभावच; आणि एकदा आदरभाव पडला की तीर्थसुद्धा खिल्लीचे रंगमंच बनते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Wailing over a corpse at a holy tīrtha, even a staged one, is a grave impropriety in the dharmaśāstric view — the tīrtha is a place of purification, not of pretended death-rites. The verse thus shows the classic Kali inversion: the sacred made into an instrument of mockery, dharma&#x27;s own forms turned against dharma. The boys&#x27; lament (verse 5) will ironically take the perfect form of a prayer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पवित्र तीर्थावर प्रेतावर आक्रोश करणे — जरी तो खोटा असला तरी — धर्मशास्त्रीय दृष्टीने मोठा अपराध आहे; तीर्थ हे शुद्धीचे स्थान आहे, खोट्या अंत्यसंस्कारांचे नव्हे. त्यामुळे हा श्लोक कलियुगाची ठरलेली उलटापालट दाखवतो — पवित्र गोष्टीच खिल्लीचे साधन बनतात, धर्माचीच रूपे धर्माविरुद्ध वळवली जातात. मुलांचा आक्रोश (श्लोक ५) विडंबनाने परिपूर्ण प्रार्थनेचेच रूप घेणार आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Sandhi in the verse: veṣṭayitvā + ekam → veṣṭayitvaikam (vṛddhi). Pracakruśuḥ is the perfect (liṭ) of √kruś with the prefix pra — the perfect tense here marks the completed onset of the wailing (&#x27;they burst into wailing&#x27;).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुभ्. श्लोकातील संधी : वेष्टयित्वा + एकम् → वेष्टयित्वैकम् (वृद्धी). प्रचक्रुशुः हे प्र उपसर्गासह √क्रुश् धातूचे पूर्णभूतकाळी (लिट्) रूप आहे — येथे पूर्णभूतकाळ आक्रोशाची झालेली सुरुवात दर्शवतो (&#x27;त्यांनी आक्रोशास सुरुवात केली&#x27;).</p></div></div>
+
+<div class="pagenav"><a href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 3</div></a><a class="next" href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 5</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

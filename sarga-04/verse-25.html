@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तस्य ते रजसा विश्वं सृजतस्तमसा घ्नतः ।<br>सत्त्वेन त्रायतस्त्रीणि रूपाणि प्राकृतैर्गुणैः ।।२५।।</div>
+  <div class="verse-iast">tasya te rajasā viśvaṃ sṛjatastamasā ghnataḥ । sattvena trāyatastrīṇi rūpāṇi prākṛtairguṇaiḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तस्य । ते । रजसा । विश्वम् । सृजतः । तमसा । घ्नतः । सत्त्वेन । त्रायतः । त्रीणि । रूपाणि । प्राकृतैः । गुणैः ।</div><div class="vig-iast">tasya । te । rajasā । viśvam । sṛjataḥ । tamasā । ghnataḥ । sattvena । trāyataḥ । trīṇi । rūpāṇi । prākṛtaiḥ । guṇaiḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सृजतः + तमसा = सृजतस्तमसा (विसर्ग → स्) · त्रायतः + त्रीणि = त्रायतस्त्रीणि · प्राकृतैः + गुणैः = प्राकृतैर्गुणैः (विसर्ग → र्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">रजसा विश्वं सृजतः, तमसा घ्नतः, सत्त्वेन त्रायतः तस्य ते प्राकृतैः गुणैः त्रीणि रूपाणि (भवन्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>By rajas You create the universe, by tamas You destroy it, and by sattva You protect it: these are Your three forms, assumed through the three guṇas of prakṛti.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रजोगुणाने विश्व निर्माण करीत, सत्त्वगुणाने त्याचे रक्षण व तमोगुणाने त्याचा विध्वंस करीत असतोस. प्रकृतीच्या तीन गुणांनी धारण केलेली ही तुझीच तीन रूपे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रजसा सृजतः</span>
+    <span class="word-iast">rajasā sṛjataḥ</span>
+  </div>
+  <div><span class="word-grammar">रजसा: instr. sg. n. of रजस्; सृजतः: gen. sg. m. of the present participle (शतृ) of √सृज् (6th class, tudādi)</span></div>
+  <div class="word-form">In this verse: रजसा … सृजतस्तमसा (सृजतः + तमसा)</div>
+  <p class="word-meaning lang-en">of Him who creates through rajas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रजोगुणाने उत्पन्न करणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्मा रजसा विश्वं सृजति</div>
+    <div class="usage-iast">brahmā rajasā viśvaṃ sṛjati</div>
+    <div class="usage-meaning lang-en">Brahmā creates the universe through rajas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्मा रजोगुणाने विश्व निर्माण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तमसा घ्नतः</span>
+    <span class="word-iast">tamasā ghnataḥ</span>
+  </div>
+  <div><span class="word-grammar">तमसा: instr. sg. n. of तमस्; घ्नतः: gen. sg. m. of the present participle of √हन् (2nd class) — हन् takes the weak stem घ्नत्</span></div>
+  <div class="word-form">In this verse: तमसा … घ्नतः</div>
+  <p class="word-meaning lang-en">of Him who destroys through tamas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तमोगुणाने संहार करणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">रुद्रः तमसा जगत् संहरति</div>
+    <div class="usage-iast">rudraḥ tamasā jagat saṃharati</div>
+    <div class="usage-meaning lang-en">Rudra dissolves the world through tamas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुद्र तमोगुणाने जगाचा संहार करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्त्वेन त्रायतः</span>
+    <span class="word-iast">sattvena trāyataḥ</span>
+  </div>
+  <div><span class="word-grammar">सत्त्वेन: instr. sg. n. of सत्त्व; त्रायतः: gen. sg. m. of the present participle of √त्रै (1st class)</span></div>
+  <div class="word-form">In this verse: सत्त्वेन … त्रायतस्त्रीणि (त्रायतः + त्रीणि)</div>
+  <p class="word-meaning lang-en">of Him who protects through sattva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सत्त्वगुणाने रक्षण करणाऱ्या (सर्व शतृ, षष्ठी — ‘ते’ शी अन्वय)</p>
+  <div class="word-usage">
+    <div class="deva">विष्णुः सत्त्वेन जगत् त्रायते</div>
+    <div class="usage-iast">viṣṇuḥ sattvena jagat trāyate</div>
+    <div class="usage-meaning lang-en">Viṣṇu protects the world through sattva.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णू सत्त्वगुणाने जगाचे रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राकृतैः गुणैः</span>
+    <span class="word-iast">prākṛtaiḥ guṇaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instr. pl. m. of प्राकृतैः (प्रकृति + अण्, relating to prakṛti) + गुणैः</span></div>
+  <div class="word-form">In this verse: प्राकृतैर्गुणैः (प्राकृतैः + गुणैः)</div>
+  <p class="word-meaning lang-en">through the guṇas of prakṛti</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रकृतीच्या गुणांमुळे</p>
+  <div class="word-usage">
+    <div class="deva">प्राकृतैः गुणैः सर्वं जगत् बद्धम्</div>
+    <div class="usage-iast">prākṛtaiḥ guṇaiḥ sarvaṃ jagad baddham</div>
+    <div class="usage-meaning lang-en">All the world is bound by the guṇas of prakṛti.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपूर्ण जग प्रकृतीच्या गुणांनी बांधलेले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रीणि रूपाणि</span>
+    <span class="word-iast">trīṇi rūpāṇi</span>
+  </div>
+  <div><span class="word-grammar">nom./acc. pl. n. of त्रि + रूप</span></div>
+  <div class="word-form">In this verse: त्रीणि रूपाणि</div>
+  <p class="word-meaning lang-en">three forms</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीन रूपे (ब्रह्मा, विष्णू, रुद्र)</p>
+  <div class="word-usage">
+    <div class="deva">देवस्य त्रीणि रूपाणि पूज्यन्ते</div>
+    <div class="usage-iast">devasya trīṇi rūpāṇi pūjyante</div>
+    <div class="usage-meaning lang-en">The three forms of the Lord are worshipped.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाची तीन रूपे पूजिली जातात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The Lord wears rajas, tamas and sattva as three robes, but the wearer is one — creation, destruction and protection are three gestures of a single compassion. For the devotee this dissolves sectarian quarrel: to honour Brahmā, Viṣṇu or Śiva is to honour the same Lord in a different office. At Guhagar this carries double weight, for it is Śiva himself who teaches it, blessing the sthala where Hari&#x27;s avatāra walked.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रज, तम आणि सत्त्व ही भगवंताची तीन वस्त्रे आहेत, पण ती धारण करणारा एकच आहे — सृष्टी, संहार आणि रक्षण ही एकाच करुणेची तीन कार्ये आहेत. भक्तासाठी यातून पंथभेद संपतो — ब्रह्मा, विष्णू वा शिव यांपैकी कोणाचीही उपासना केली तरी तो एकाच भगवंताची, वेगळ्या कार्यातील उपासना आहे. गुहागरसाठी याला दुहेरी महत्त्व आहे, कारण हे स्वतः शिव शिकवतात — ज्या स्थली हरीचा अवतार वावरला त्या स्थलाला ते आशीर्वाद देतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>This verse echoes the Bhāgavata&#x27;s famous formulation that the one supreme Puruṣa takes on creation, protection and destruction through the three guṇas of prakṛti — sattva, rajas and tamas (Bhāgavata 1.2.23) — and the Viṣṇu Purāṇa&#x27;s teaching that the same Lord bears the names Brahmā, Viṣṇu and Rudra according as rajas, sattva or tamas predominates. The Trimūrti are thus not three rival gods but three guṇa-conditioned offices of one Lord.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक भागवताच्या प्रसिद्ध सूत्राचा प्रतिध्वनी आहे — सत्त्व, रज आणि तम या प्रकृतीच्या तीन गुणांमधून एकच परमपुरुष सृष्टी, रक्षण आणि संहार ही कार्ये धारण करतो — आणि विष्णुपुराणाच्या शिकवणीचाही — रज, सत्त्व वा तम यांपैकी जो प्रधान असेल त्यानुसार तोच भगवंत ब्रह्मा, विष्णू आणि रुद्र ही नावे धारण करतो. त्रिमूर्ती म्हणजे तीन प्रतिस्पर्धी देव नव्हेत, तर एकाच भगवंताची गुणानुरूप तीन कार्ये आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. This stuti (4.25–29) is spoken by Śiva — the temple&#x27;s own Lord Vyāḍeśvara — to Viṣṇu in the person of Paraśurāma: a striking moment in a Shaiva sthala-kāvya, where the presiding deity voices the Vedantic identity of Hari and Hara. The three present participles (सृजतः, घ्नतः, त्रायतः) stand in the genitive agreeing with ते, identifying the addressee as the supreme Lord addressed as You. Cross-link: the guṇa-forms named here are particularised in 4.26.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. ही स्तुती (४.२५–२९) शिव — मंदिराचे स्वामी व्याडेश्वर — परशुरामाच्या रूपातील विष्णूला उद्देशून करतात — शैव स्थलकाव्यातील हा लक्षणीय क्षण आहे, जिथे अधिष्ठाता देवताच हरी-हरांच्या वेदान्तिक अभेदाचे प्रतिपादन करते. सृजतः, घ्नतः, त्रायतः ही तीन वर्तमानकालवाचक धातुसाधिते षष्ठीत ‘ते’ शी अन्वय पावतात आणि संबोधिताला ‘तू’ म्हणून परमेश्वर ओळख देतात. संदर्भ — येथे सांगितलेली गुणरूपे ४.२६ मध्ये व्यक्तिशः सांगितली आहेत.</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

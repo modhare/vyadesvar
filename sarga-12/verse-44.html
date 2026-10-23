@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 44 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 44</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 44</span><span class="bl-mr lang-mr">श्लोक 44</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Rathoddhatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">भीमभीषणगदाविदारित-क्ष्माधरोदरदरीसमर्थिता ।<br>यत्प्रमाणसरणिर्यमेभभूर्भंगिका तदिति तीर्थमीक्ष्यते ।।४४।।</div>
+  <div class="verse-iast">bhīmabhīṣaṇagadāvidārita-kṣmādharodaradarīsamarthitā । yatpramāṇasaraṇiryamebhabhūrbhaṃgikā taditi tīrthamīkṣyate</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">भीम-भीषण-गदा-विदारित-क्ष्माधर-उदर-दरी-समर्थिता । यत्-प्रमाण-सरणिः यम-इभ-भू-भङ्गिका तत् इति तीर्थम् ईक्ष्यते ।</div><div class="vig-iast">bhīma-bhīṣaṇa-gadā-vidārita-kṣmādhara-udara-darī-samarthitā । yat-pramāṇa-saraṇiḥ yama-ibha-bhū-bhaṅgikā tat iti tīrtham īkṣyate ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्ष्माधर + उदर = क्ष्माधरोदर (गुण) · यत् + प्रमाण = यत्प्रमाण · सरणिः + यम = सरणिर्यम · यम + इभ = यमेभ (गुण) · भूः + भङ्गिका = भूर्भङ्गिका · तत् + इति = तदिति · तीर्थम् + ईक्ष्यते = तीर्थमीक्ष्यते</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भीमभीषणगदाविदारितक्ष्माधरोदरदरीसमर्थिता यत्प्रमाणसरणिः (अस्ति), तत् ‘यमेभभूर्भङ्गिका’ (?) इति तीर्थम् ईक्ष्यते । (वृत्त: रथोद्धता) *(उत्तरार्धाची रचना अस्पष्ट; भीमाच्या गदेने फोडलेल्या डोंगरदरीचा पुरावा देणारे तीर्थ असा सारांश.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The approach to this place — a path formed by the cleft in the mountain riven by Bhīma&#x27;s terrible mace — is one that shatters the road leading toward the Yama-like elephant — the road of death; and so it is esteemed a tīrtha.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भीमाच्या भीषण गदेने विदीर्ण झालेल्या पर्वतामधील दरीने निर्माण केलेला या ठिकाणी जाण्याचा मार्ग यमरूपी हत्तीच्या अमलाखालील दिशेने म्हणजे मृत्यूच्या दिशेने जाण्याचा रस्ता खंडित करणारा आहे; म्हणूनच याला तीर्थ म्हटले जाते.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भीम-भीषण-गदा-विदारित-क्ष्माधर-उदर-दरी-समर्थिता</span>
+    <span class="word-iast">bhīma-bhīṣaṇa-gadā-vidārita-kṣmādhara-udara-darī-samarthitā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: भीमभीषणगदाविदारितक्ष्माधरोदरदरीसमर्थिता</div>
+  <p class="word-meaning lang-en">formed by the cleft in the mountain split by Bhīma&#x27;s fearsome mace</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भीमाच्या भीषण गदेने फोडलेल्या पर्वतातील दरीने बनलेली</p>
+  <div class="word-usage">
+    <div class="deva">सा गुहा भीमभीषणगदाविदारितक्ष्माधरोदरदरीसमर्थिता।</div>
+    <div class="usage-iast">sā guhā bhīmabhīṣaṇagadāvidāritakṣmādharodaradarīsamarthitā.</div>
+    <div class="usage-meaning lang-en">That cave was formed by the cleft in the mountain split by Bhīma&#x27;s fearsome mace.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती गुहा भीमाच्या भीषण गदेने फोडलेल्या पर्वतातील दरीने बनलेली आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्-प्रमाण-सरणिः</span>
+    <span class="word-iast">yat-pramāṇa-saraṇiḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यत्प्रमाणसरणिः</div>
+  <p class="word-meaning lang-en">the path to which</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याकडे जाण्याचा मार्ग</p>
+  <div class="word-usage">
+    <div class="deva">यत्प्रमाणसरणिः सुदुर्गमा।</div>
+    <div class="usage-iast">yatpramāṇasaraṇiḥ sudurgamā.</div>
+    <div class="usage-meaning lang-en">The path leading to it is very hard to traverse.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे जाण्याचा मार्ग अत्यंत कठीण आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यम-इभ-भू-भङ्गिका</span>
+    <span class="word-iast">yama-ibha-bhū-bhaṅgikā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यमेभभूर्भङ्गिका</div>
+  <p class="word-meaning lang-en">breaking the way of Yama</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यमाच्या (दिशेच्या) हत्तीच्या भूमीचा (मृत्युमार्गाचा) भंग करणारी</p>
+  <div class="word-usage">
+    <div class="deva">तीर्थसरणिर्यमेभभूर्भङ्गिका।</div>
+    <div class="usage-iast">tīrthasaraṇiryamebhabhūrbhaṅgikā.</div>
+    <div class="usage-meaning lang-en">The path to the tīrtha breaks the road to Yama&#x27;s realm.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीर्थाकडे जाणारा मार्ग यमाच्या दिशेचा (मृत्युमार्गाचा) भंग करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत् इति</span>
+    <span class="word-iast">tat iti</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तदिति</div>
+  <p class="word-meaning lang-en">therefore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">रामो वनं गतस्तदिति सीता अन्वगच्छत्।</div>
+    <div class="usage-iast">rāmo vanaṃ gatastaditi sītā anvagacchat.</div>
+    <div class="usage-meaning lang-en">Rāma went to the forest; therefore Sītā followed him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम वनात गेला म्हणून सीता त्याच्या मागे गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तीर्थम्</span>
+    <span class="word-iast">tīrtham</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: तीर्थम्</div>
+  <p class="word-meaning lang-en">tīrtha (a crossing)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीर्थ (तरून नेणारे)</p>
+  <div class="word-usage">
+    <div class="deva">वाराणसी पवित्रं तीर्थम्।</div>
+    <div class="usage-iast">vārāṇasī pavitraṃ tīrtham.</div>
+    <div class="usage-meaning lang-en">Vārāṇasī is a holy tīrtha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाराणसी हे पवित्र तीर्थ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ईक्ष्यते</span>
+    <span class="word-iast">īkṣyate</span>
+  </div>
+  <div><span class="word-grammar">ईक्ष्, कर्मणि लट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: ईक्ष्यते</div>
+  <p class="word-meaning lang-en">is regarded</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मानले जाते</p>
+  <div class="word-usage">
+    <div class="deva">स विद्वानिति सर्वैरीक्ष्यते।</div>
+    <div class="usage-iast">sa vidvāniti sarvairīkṣyate.</div>
+    <div class="usage-meaning lang-en">He is regarded as learned by all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सर्वांकडून विद्वान मानला जातो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse gives a folk etymology with a moral: a tīrtha (from √tṛ, &#x27;to cross&#x27;) is literally a crossing — and this one &#x27;breaks the road to Yama,&#x27; the road of death itself. The Bhīma legend lends the place Mahābhārata-age antiquity, a common claim of Konkan sthala-lore. The teaching is stark and consoling: whoever reaches this crossing need not fear the road every mortal dreads.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक नैतिक शिकवणीसह एक लोकव्युत्पत्ती देतो : तीर्थ (√तृ, &#x27;तरून जाणे&#x27; धातूपासून) हे शब्दशः &#x27;तरून जाण्याचे ठिकाण&#x27; आहे — आणि हे तीर्थ &#x27;यमाच्या मार्गाचा&#x27;, म्हणजे मृत्यूच्याच रस्त्याचा भंग करते. भीमाची आख्यायिका या स्थानाला महाभारतकालीन प्राचीनत्व देते — कोकणातील स्थलकथांत हा दावा नेहमीचाच आहे. शिकवण स्पष्ट आणि दिलासादायक आहे : जो या तरतीर्थापर्यंत पोहोचतो त्याला प्रत्येक मर्त्याला भेडसावणाऱ्या रस्त्याची भीती बाळगण्याची गरज नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The name tīrtha is traditionally derived from √tṛ, &#x27;to cross&#x27; — a ford across the river of saṃsāra. This verse applies the etymology boldly: the tīrtha does not merely help one cross, it shatters (bhaṅgikā) the very road leading to Yama&#x27;s quarter. Local legends of Bhīma&#x27;s mace clefting Konkan hills belong to the Pāṇḍava-vana-vāsa cycle retold at many west-coast shrines.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीर्थ या नावाची पारंपरिक व्युत्पत्ती √तृ (&#x27;तरून जाणे&#x27;) धातूपासून आहे — संसारनदी ओलांडण्याचा घाट. हा श्लोक ती व्युत्पत्ती धाडसाने लागू करतो : तीर्थ केवळ तरून जाण्यास मदत करत नाही, तर यमाच्या दिशेकडे जाणाऱ्या रस्त्याचाच भंग (भङ्गिका) करते. भीमाच्या गदेने कोकणातील डोंगर फोडल्याच्या स्थानिक आख्यायिका पश्चिम किनाऱ्यावरील अनेक तीर्थांत सांगितल्या जाणाऱ्या पांडव-वनवासचक्रातील आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Rathoddhatā. The transcription flags the second half as syntactically obscure (&#x27;उत्तरार्धाची रचना अस्पष्ट&#x27;), and the English follows the reviewed Marathi: यमेभभूर्भङ्गिका is read as &#x27;breaking the road toward Yama&#x27;s domain&#x27; (the quarter of death). The verse&#x27;s point is the wordplay on tīrtha as &#x27;that by which one crosses&#x27; — the path (saraṇi) to the tīrtha doubles as the crossing itself.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : रथोद्धता. प्रतिलेखनात उत्तरार्ध वाक्यरचनेच्या दृष्टीने अस्पष्ट म्हणून नोंदवला आहे (&#x27;उत्तरार्धाची रचना अस्पष्ट&#x27;); इंग्रजी तपासलेल्या मराठी अर्थाला अनुसरून आहे : &#x27;यमेभभूर्भङ्गिका&#x27; चा अर्थ &#x27;यमाच्या (मृत्यूच्या) दिशेकडे जाणाऱ्या मार्गाचा भंग करणारी&#x27; असा घेतला आहे. श्लोकाचा मुद्दा &#x27;तीर्थ&#x27; शब्दावरील श्लेषात आहे — &#x27;ज्याने तरून जाता येते ते&#x27;; तीर्थाकडे जाणारा मार्ग (सरणिः) स्वतःच ते तरणसाधन बनतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 43</div></a><a class="next" href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 45</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

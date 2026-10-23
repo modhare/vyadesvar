@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 23 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 23</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 23</span><span class="bl-mr lang-mr">श्लोक 23</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तत्रोच्चकैस्तापससेवितं वनं रम्यं तपःसाधनमेकमुत्तमम् ।<br>यस्मिन् मनः शाम्यति यत्र गोचरा हरन्ति न क्षुन्न च तृट्प्रबाधते ।।२३।।</div>
+  <div class="verse-iast">tatroccakaistāpasasevitaṃ vanaṃ ramyaṃ tapaḥsādhanamekamuttamam । yasmin manaḥ śāmyati yatra gocarā haranti na kṣunna ca tṛṭprabādhate</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत्र । उच्चकैः । तापस-सेवितम् । वनम् । रम्यम् । तपः-साधनम् । एकम् । उत्तमम् । यस्मिन् । मनः । शाम्यति । यत्र । गोचराः । हरन्ति । न । क्षुत् । न । च । तृट् । प्रबाधते ।</div><div class="vig-iast">tatra । uccakaiḥ । tāpasa-sevitam । vanam । ramyam । tapaḥ-sādhanam । ekam । uttamam । yasmin । manaḥ । śāmyati । yatra । gocarāḥ । haranti । na । kṣut । na । ca । tṛṭ । prabādhate ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत्र + उच्चकैः = तत्रोच्चकैः (गुण) · उच्चकैः + तापस = उच्चकैस्तापस · साधनम् + एकम् = साधनमेकम् · एकम् + उत्तमम् = एकमुत्तमम् · क्षुत् + न = क्षुन्न (अनुनासिक) · तृट् + प्रबाधते = तृट्प्रबाधते</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत्र उच्चकैः तापससेवितं रम्यम् एकम् उत्तमं तपःसाधनं वनम् (अस्ति), यस्मिन् मनः शाम्यति, यत्र गोचराः (मनः) न हरन्ति, क्षुत् न (बाधते), तृट् च न प्रबाधते ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>There, on high, lies a lovely forest frequented by ascetics — the single finest instrument of tapas — in which the mind grows calm, where sense-objects do not drag the mind away, hunger does not afflict, and thirst does not trouble.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तेथे उंचावर रम्य व तपस्येचे एक उत्तम साधन असे तापससेवित वन आहे ज्यांत मन शान्त होते, भूक बाधत नाही, तहानेचा त्रास होत नाही व इंद्रियांचे विषय मनाला ओढून नेऊ शकत नाहीत.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उच्चकैः</span>
+    <span class="word-iast">uccakaiḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable adverb (variant of उच्चैः)</span></div>
+  <div class="word-form">In this verse: उच्चकैः — adverb as printed</div>
+  <p class="word-meaning lang-en">on high, aloft, up above</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उंचावर</p>
+  <div class="word-usage">
+    <div class="deva">उच्चकैः गत्वा सः वनं ददर्श</div>
+    <div class="usage-iast">uccakaiḥ gatvā saḥ vanaṃ dadarśa</div>
+    <div class="usage-meaning lang-en">Having gone up high, he saw the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उंचावर जाऊन त्याने वन पाहिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तापससेवितम्</span>
+    <span class="word-iast">tāpasasevitam</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular of the compound तापससेवित (तापस m. + सेवित, √सेव् + क्त), agreeing with वनम्</span></div>
+  <div class="word-form">In this verse: तापससेवितम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">frequented, served, resorted to by ascetics</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपस्व्यांनी सेविलेले</p>
+  <div class="word-usage">
+    <div class="deva">तापससेवितं वनं शान्तम् अस्ति</div>
+    <div class="usage-iast">tāpasasevitaṃ vanaṃ śāntam asti</div>
+    <div class="usage-meaning lang-en">The forest frequented by ascetics is tranquil.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपस्व्यांनी सेविलेले वन शांत आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तपःसाधनम्</span>
+    <span class="word-iast">tapaḥsādhanam</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular of the compound तपःसाधन (तपस् n. + साधन n., &#x27;means, instrument&#x27;)</span></div>
+  <div class="word-form">In this verse: तपःसाधनम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">a means, an instrument, of austerity (tapas)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपाचे साधन</p>
+  <div class="word-usage">
+    <div class="deva">मौनं तपःसाधनम् उत्तमम्</div>
+    <div class="usage-iast">maunaṃ tapaḥsādhanam uttamam</div>
+    <div class="usage-meaning lang-en">Silence is an excellent instrument of austerity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मौन हे तपाचे उत्तम साधन आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शाम्यति</span>
+    <span class="word-iast">śāmyati</span>
+  </div>
+  <div><span class="word-grammar">√शम् (class 4), laṭ, 3rd person singular</span></div>
+  <div class="word-form">In this verse: शाम्यति — present as printed</div>
+  <p class="word-meaning lang-en">grows calm, becomes tranquil</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शांत होते</p>
+  <div class="word-usage">
+    <div class="deva">ध्यानेन मनः शाम्यति</div>
+    <div class="usage-iast">dhyānena manaḥ śāmyati</div>
+    <div class="usage-meaning lang-en">Through meditation the mind grows calm.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ध्यानाने मन शांत होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गोचराः</span>
+    <span class="word-iast">gocarāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural of गोचर (गो + चर, &#x27;range, field of the senses&#x27;)</span></div>
+  <div class="word-form">In this verse: गोचराः — nominative plural as printed</div>
+  <p class="word-meaning lang-en">the sense-objects, the fields of the senses</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इंद्रियांचे विषय</p>
+  <div class="word-usage">
+    <div class="deva">गोचराः मनः क्षोभयन्ति</div>
+    <div class="usage-iast">gocarāḥ manaḥ kṣobhayanti</div>
+    <div class="usage-meaning lang-en">Sense-objects agitate the mind.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इंद्रियांचे विषय मनाला क्षुब्ध करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न हरन्ति</span>
+    <span class="word-iast">na haranti</span>
+  </div>
+  <div><span class="word-grammar">न — negative particle; हरन्ति — √हृ (class 1), laṭ, 3rd person plural</span></div>
+  <div class="word-form">In this verse: न हरन्ति — phrase as printed</div>
+  <p class="word-meaning lang-en">do not carry away, do not drag off</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(मन) ओढून नेत नाहीत</p>
+  <div class="word-usage">
+    <div class="deva">तत्र गोचराः मनः न हरन्ति</div>
+    <div class="usage-iast">tatra gocarāḥ manaḥ na haranti</div>
+    <div class="usage-meaning lang-en">There the sense-objects do not carry the mind away.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे इंद्रियांचे विषय मनाला ओढून नेत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षुत्</span>
+    <span class="word-iast">kṣut</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; क्षुध् f. (&#x27;hunger&#x27;) → क्षुत् in sandhi</span></div>
+  <div class="word-form">In this verse: क्षुत् — nominative singular as printed</div>
+  <p class="word-meaning lang-en">hunger</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भूक</p>
+  <div class="word-usage">
+    <div class="deva">तपसा क्षुत् न बाधते</div>
+    <div class="usage-iast">tapasā kṣut na bādhate</div>
+    <div class="usage-meaning lang-en">Through austerity hunger does not afflict.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपामुळे भूक बाधत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तृट्</span>
+    <span class="word-iast">tṛṭ</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; तृष् f. (&#x27;thirst&#x27;) → तृट् in sandhi</span></div>
+  <div class="word-form">In this verse: तृट् — nominative singular as printed</div>
+  <p class="word-meaning lang-en">thirst</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तहान</p>
+  <div class="word-usage">
+    <div class="deva">तृट् तं न प्रबाधते</div>
+    <div class="usage-iast">tṛṭ taṃ na prabādhate</div>
+    <div class="usage-meaning lang-en">Thirst does not trouble him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तहान त्याला त्रास देत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रबाधते</span>
+    <span class="word-iast">prabādhate</span>
+  </div>
+  <div><span class="word-grammar">प्र-√बाध् (class 1, ātmanepada), laṭ, 3rd person singular</span></div>
+  <div class="word-form">In this verse: प्रबाधते — present ātmanepada as printed</div>
+  <p class="word-meaning lang-en">troubles, afflicts, presses hard upon</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रास देते</p>
+  <div class="word-usage">
+    <div class="deva">व्याधिः तं न प्रबाधते</div>
+    <div class="usage-iast">vyādhiḥ taṃ na prabādhate</div>
+    <div class="usage-meaning lang-en">Sickness does not afflict him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आजार त्याला त्रास देत नाही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The forest on the height is the perfect tapas-field: lovely, frequented by ascetics, and — the verse&#x27;s real marvel — inwardly transformative, for in it the mind grows calm of itself, sense-objects lose their pull, and even hunger and thirst fall silent. Outer sanctuary produces inner stillness: this is the yogic ideal of the secluded, pure place embodied in a real Konkan hillside. The sthala sanctifies nature itself, not only its shrines.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उंचीवरील वन हे परिपूर्ण तपःक्षेत्र आहे: रम्य, तपस्व्यांनी सेविलेले आणि — श्लोकाचे खरे आश्चर्य — आंतरिक रूपांतर करणारे; कारण त्यात मन आपोआप शांत होते, इंद्रियांचे विषय आपली ओढ गमावतात, आणि भूक-तहानही शांत होतात. बाह्य एकांतातून आंतरिक स्थिरता निर्माण होते: एकांत, शुद्ध स्थळाचा योगिक आदर्श इथे खऱ्या कोकणच्या डोंगरउताराच्या वर्णनात साकारला आहे. स्थल केवळ आपली देवस्थाने नव्हे, तर निसर्गालाच पवित्र करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The tapovana description follows the classical ideal: seclusion, the company of ascetics, and — crucially — the spontaneous quieting of the senses. The Bhagavadgītā&#x27;s yogin likewise seeks a solitary, pure place where the mind can settle (6.11–12); hunger and thirst unfelt is the stock sign that a place is charged with tapas-śakti. The forest is not a backdrop to austerity but, as the verse says, its very instrument.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तपोवनाचे वर्णन ठरलेल्या आदर्शानुसार आहे: एकांत, तपस्व्यांची संगत आणि — महत्त्वाचे म्हणजे — इंद्रियांचे सहज शांत होणे. भगवद्गीतेचा योगीही मन स्थिर व्हावे म्हणून एकांत, शुद्ध स्थळ शोधतो (६.११–१२); भूक-तहान न जाणवणे हे स्थळ तपःशक्तीने भारलेले असल्याचे ठरलेले लक्षण आहे. वन हे तपस्येची केवळ पार्श्वभूमी नव्हे, तर श्लोक म्हणतो तसे तिचेच साधन आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Note the careful chain of effects: the mind calms (śāmyati), sense-objects cannot drag it away (na haranti), hunger does not press, thirst does not trouble — outer sanctuary producing inner stillness, each clause tightening the last. &#x27;Tapaḥsādhanam ekam uttamam&#x27; — the forest itself is the instrument of tapas, not merely its setting: the sthala&#x27;s nature is an active participant in the ascetic&#x27;s work.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परिणामांची काळजीपूर्वक साखळी लक्षात घ्या: मन शांत होते (शाम्यति), इंद्रियांचे विषय त्याला ओढून नेऊ शकत नाहीत (न हरन्ति), भूक बाधत नाही, तहान त्रास देत नाही — बाह्य एकांतातून आंतरिक स्थिरता, प्रत्येक खंड मागच्याला घट्ट करत जातो. &#x27;तपःसाधनम् एकम् उत्तमम्&#x27; — वन हेच तपाचे साधन आहे, केवळ त्याची बैठक नव्हे: स्थलाचा निसर्ग तपस्व्याच्या कार्यातील सक्रिय सहभागी आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 22</div></a><a class="next" href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 24</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

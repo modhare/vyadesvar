@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 19 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 19</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">जाने त्वां जगतामीशं प्रकृतेः पुरुषात्परम् ।<br>अव्यक्तमेकमभयं ब्रह्म यत्तदनारतम् ।।१९।।</div>
+  <div class="verse-iast">jāne tvāṃ jagatāmīśaṃ prakṛteḥ puruṣātparam । avyaktamekamabhayaṃ brahma yattadanāratam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">जाने । त्वाम् । जगताम् । ईशम् । प्रकृतेः । पुरुषात् । परम् । अव्यक्तम् । एकम् । अभयम् । ब्रह्म । यत् । तत् । अनारतम् ।</div><div class="vig-iast">jāne । tvām । jagatām । īśam । prakṛteḥ । puruṣāt । param । avyaktam । ekam । abhayam । brahma । yat । tat । anāratam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">जगताम् + ईशम् = जगतामीशम् · पुरुषात् + परम् = पुरुषात्परम् · अव्यक्तम् + एकम् + अभयम् = अव्यक्तमेकमभयम् · यत् + तत् = यत्तत् · तत् + अनारतम् = तदनारतम् (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">जगतामीशं, प्रकृतेः पुरुषात् परं, अव्यक्तम् एकम् अभयं अनारतं, विश्वोत्पत्तिस्थितिध्वंसहेतुं, त्रिभिः मायागुणैः ब्रह्मविष्णुमहेशाख्यं, मायापथात् परं मुख्यं यत् तत् ब्रह्म (तद्रूपं) त्वां जाने ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>I know you — the lord of the worlds; beyond prakṛti and puruṣa; unmanifest, one, fearless; the Brahman which is eternal…</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भुवनांवर सत्ता गाजवणारे, अव्यक्त, भयरहित प्रकृती व पुरुष यांच्याही पलीकडे असणारे, विश्वाची उत्पत्ती, स्थिती व विनाश यांचे कारण व मायेच्या तीन गुणांमुळे ब्रह्मदेव, विष्णू व महेश ही तीन नावे धारण करणारे, मायामार्गाच्या पलीकडे असणारे मुख्य व शाश्वत असे जे ब्रह्म तेच तू आहेस हे मी जाणतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जाने</span>
+    <span class="word-iast">jāne</span>
+  </div>
+  <div><span class="word-grammar">1st person singular, present (laṭ), ātmanepada, of √ज्ञा (9th class, क्र्यादि)</span></div>
+  <div class="word-form">In this verse: जाने (√ज्ञा, लट्, आत्मनेपद)</div>
+  <p class="word-meaning lang-en">I know</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी जाणतो (√ज्ञा, आत्मनेपद)</p>
+  <div class="word-usage">
+    <div class="deva">अहम् सत्यम् जाने</div>
+    <div class="usage-iast">aham satyam jāne</div>
+    <div class="usage-meaning lang-en">I know the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला सत्य माहीत आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगताम् ईशम्</span>
+    <span class="word-iast">jagatām īśam</span>
+  </div>
+  <div><span class="word-grammar">जगताम्: genitive plural of जगत् (neuter t-stem); ईशम्: accusative singular of ईश (masc. a-stem)</span></div>
+  <div class="word-form">In this verse: जगताम् ईशम् (जगत् + ईशम्)</div>
+  <p class="word-meaning lang-en">the lord of the worlds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगांचा स्वामी</p>
+  <div class="word-usage">
+    <div class="deva">जगताम् ईशम् शिवम् नमामि</div>
+    <div class="usage-iast">jagatām īśam śivam namāmi</div>
+    <div class="usage-meaning lang-en">I bow to Śiva, the lord of the worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगांचा स्वामी असलेल्या शिवाला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रकृतेः पुरुषात् परम्</span>
+    <span class="word-iast">prakṛteḥ puruṣāt param</span>
+  </div>
+  <div><span class="word-grammar">प्रकृतेः, पुरुषात्: ablative singulars (feminine i-stem, masculine a-stem); परम्: accusative singular neuter of पर</span></div>
+  <div class="word-form">In this verse: प्रकृतेः पुरुषात् परम्</div>
+  <p class="word-meaning lang-en">beyond prakṛti and puruṣa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रकृती व पुरुष यांच्या पलीकडचे</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्म प्रकृतेः पुरुषात् परम् अस्ति</div>
+    <div class="usage-iast">brahma prakṛteḥ puruṣāt param asti</div>
+    <div class="usage-meaning lang-en">Brahman is beyond prakṛti and puruṣa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्म प्रकृती व पुरुष यांच्या पलीकडे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अव्यक्तम्</span>
+    <span class="word-iast">avyaktam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter of अव्यक्त — नञ्-तत्पुरुष: न व्यक्तम्, &#x27;unmanifest&#x27;</span></div>
+  <div class="word-form">In this verse: अव्यक्तम् (न + व्यक्तम्)</div>
+  <p class="word-meaning lang-en">unmanifest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अप्रकट</p>
+  <div class="word-usage">
+    <div class="deva">अव्यक्तम् ब्रह्म मनसा ध्यायते</div>
+    <div class="usage-iast">avyaktam brahma manasā dhyāyate</div>
+    <div class="usage-meaning lang-en">The unmanifest Brahman is meditated upon with the mind.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अव्यक्त ब्रह्माचे मनाने ध्यान केले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकम्</span>
+    <span class="word-iast">ekam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter of एक (numeral/pronoun)</span></div>
+  <div class="word-form">In this verse: एकम्</div>
+  <p class="word-meaning lang-en">one, without a second</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अद्वितीय</p>
+  <div class="word-usage">
+    <div class="deva">एकम् एव परमम् सत्यम् अस्ति</div>
+    <div class="usage-iast">ekam eva paramam satyam asti</div>
+    <div class="usage-meaning lang-en">There is only one supreme truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकच परम सत्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभयम्</span>
+    <span class="word-iast">abhayam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter of अभय — नञ्-बहुव्रीहि: &#x27;in which there is no fear&#x27;</span></div>
+  <div class="word-form">In this verse: अभयम् (न + भयम्)</div>
+  <p class="word-meaning lang-en">fearless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्भय</p>
+  <div class="word-usage">
+    <div class="deva">अभयम् पदम् मोक्षः इति उच्यते</div>
+    <div class="usage-iast">abhayam padam mokṣaḥ iti ucyate</div>
+    <div class="usage-meaning lang-en">The fearless state is called liberation.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्भय पदालाच मोक्ष म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत् तत् ब्रह्म</span>
+    <span class="word-iast">yat tat brahma</span>
+  </div>
+  <div><span class="word-grammar">यत्, तत्: nominative/accusative singular neuter of the relative and correlative pronouns यद्, तद्; ब्रह्म: nominative singular neuter of ब्रह्मन् (n-stem)</span></div>
+  <div class="word-form">In this verse: यत् तत् ब्रह्म</div>
+  <p class="word-meaning lang-en">that Brahman which</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते जे ब्रह्म</p>
+  <div class="word-usage">
+    <div class="deva">यत् तत् ब्रह्म उपनिषत्सु गीयते</div>
+    <div class="usage-iast">yat tat brahma upaniṣatsu gīyate</div>
+    <div class="usage-meaning lang-en">That Brahman which is sung of in the Upaniṣads.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे ब्रह्म उपनिषदांत गायिले जाते ते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनारतम्</span>
+    <span class="word-iast">anāratam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter of अनारत — नञ्-तत्पुरुष: &#x27;unceasing&#x27; (√रम् + क्त with उपसर्ग आ)</span></div>
+  <div class="word-form">In this verse: अनारतम् (न + आरतम्)</div>
+  <p class="word-meaning lang-en">unceasing, eternal</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सतत, शाश्वत</p>
+  <div class="word-usage">
+    <div class="deva">अनारतम् जपः सिद्धिम् ददाति</div>
+    <div class="usage-iast">anāratam japaḥ siddhim dadāti</div>
+    <div class="usage-meaning lang-en">Unceasing repetition grants success.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अखंड जप सिद्धी देतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Here the guru turns the mirror on the disciple: Śiva tells Paraśurāma that he is none other than Brahman itself. This is the heart of Vedānta — that the worshipper and the worshipped are one reality, and that liberation is not becoming something new but recognizing what one has always been. The string of negatives and absolutes (unmanifest, one, fearless) teaches apophatic devotion: God is known by what He is not, until the heart leaps beyond words.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे गुरू शिष्यापुढे आरसा धरतात — शिव परशुरामाला सांगतात की तू साक्षात ब्रह्मच आहेस. हेच वेदान्ताचे हृदय आहे — उपासक व उपास्य एकच तत्त्व आहेत, आणि मोक्ष म्हणजे काही नवे होणे नव्हे, तर आपण नेहमीच जे होतो त्याची ओळख पटणे. नकारात्मक व निरपेक्ष विशेषणांची माळ (अव्यक्त, एक, अभय) निषेधमुख भक्ती शिकवते — ईश्वर तो काय नाही यातून ओळखला जातो, जोवर हृदय शब्दांपलीकडे झेप घेत नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Śiva addresses Paraśurāma — Viṣṇu&#x27;s aṃśa (4.4) — as the supreme Brahman itself, using the classical Vedāntic vocabulary: beyond the Sāṅkhya pair prakṛti and puruṣa, unmanifest (avyakta), one without a second (eka), free from fear (abhaya), eternal. The pattern follows the Upaniṣadic way of pointing to the absolute through negation and superlatives, and it prepares the trimūrti teaching of the next verses: the one Brahman appearing as three through the guṇas of māyā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शिव परशुरामाला — विष्णूचा अंश (४.४) — साक्षात परब्रह्म म्हणून संबोधतात; पारंपरिक वेदान्तिक शब्दावली वापरून — सांख्यांच्या प्रकृती-पुरुष या जोडीपलीकडचे, अव्यक्त, अद्वितीय (एक), भयरहित (अभय), शाश्वत. निषेध व अतिशयोक्ती यांमधून परमतत्त्वाकडे बोट दाखवण्याची ही उपनिषदांची पद्धत आहे; आणि पुढील श्लोकांतील त्रिमूर्ती-उपदेशाची ती पूर्वतयारी आहे — मायेच्या गुणांमुळे तीन रूपांत प्रकटणारे एकच ब्रह्म.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. The sentence begun here (जाने त्वां … यत् तत् ब्रह्म) is completed in verse 20, so the book&#x27;s Marathi gives 19–20 as a single sentence. Note the speaker: it is Śiva who says &#x27;I know you,&#x27; addressing the Bhārgava — the same reversal (the god declaring the devotee&#x27;s divinity) that verse 28 will seal with &#x27;I am made of you and you of me.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. येथे सुरू झालेले वाक्य (जाने त्वां … यत् तत् ब्रह्म) २० व्या श्लोकात पूर्ण होते; म्हणून पुस्तकाचे मराठी १९–२० एकाच वाक्यात दिले आहे. वक्ता लक्षात घ्या — &#x27;मी जाणतो&#x27; म्हणणारा शिव आहे, भार्गवाला उद्देशून — तीच उलटापालट (भक्ताचे दैवत्व देवाने घोषित करणे) जी २८ वा श्लोक &#x27;मी त्वन्मय, तू मन्मय&#x27; म्हणून शिक्कामोर्तब करील.</p></div></div>
+
+<div class="pagenav"><a href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 18</div></a><a class="next" href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 20</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

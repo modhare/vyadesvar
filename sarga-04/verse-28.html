@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 28 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 28</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 28</span><span class="bl-mr lang-mr">श्लोक 28</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तस्मादहं त्वन्मयोऽस्मि मन्मयस्त्वं च भार्गव ।<br>नावयोरन्तरं किञ्चिद्विधेश्च विधिवित्तम ।।२८।।</div>
+  <div class="verse-iast">tasmādahaṃ tvanmayo&#x27;smi manmayastvaṃ ca bhārgava । nāvayorantaraṃ kiñcidvidheśca vidhivittama</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तस्मात् । अहम् । त्वत्-मयः । अस्मि । मत्-मयः । त्वम् । च । भार्गव । न । आवयोः । अन्तरम् । किञ्चित् । विधेः । च । विधिवित्तम ।</div><div class="vig-iast">tasmāt । aham । tvat-mayaḥ । asmi । mat-mayaḥ । tvam । ca । bhārgava । na । āvayoḥ । antaram । kiñcit । vidheḥ । ca । vidhivittama ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तस्मात् + अहम् = तस्मादहम् · त्वत् + मयः = त्वन्मयः (त्→न्) · त्वन्मयः + अस्मि = त्वन्मयोऽस्मि · मत् + मयः = मन्मयः · मन्मयः + त्वम् = मन्मयस्त्वम् · न + आवयोः = नावयोः · अन्तरम् + किञ्चित् = अन्तरं किञ्चित् · किञ्चित् + विधेः = किञ्चिद्विधेः · विधेः + च = विधेश्च (विसर्ग → श्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तस्मात्, हे भार्गव, अहं त्वन्मयः अस्मि त्वं च मन्मयः (असि); हे विधिवित्तम, आवयोः विधेः च किञ्चित् अन्तरं न (अस्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Therefore I am made of You, O Bhārgava, and You are made of me; O foremost knower of the sacred law, there is not the slightest difference between us two — nor with Brahmā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>म्हणून मी त्वन्मय आहे व हे भार्गवा, तू मन्मय आहेस. आपल्या दोघांत व ब्रह्मदेवात हे विधिवेत्यांत श्रेष्ठ असलेल्या (भार्गवा), काहीच अंतर नाही.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वन्मयः</span>
+    <span class="word-iast">tvanmayaḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m.; त्वद् + मयट् (the -मयट् suffix: made of, consisting of, full of)</span></div>
+  <div class="word-form">In this verse: त्वन्मयोऽस्मि (त्वन्मयः + अस्मि)</div>
+  <p class="word-meaning lang-en">made of You, consisting of You</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझ्या स्वरूपाचा</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः त्वन्मयः भवति</div>
+    <div class="usage-iast">bhaktaḥ tvanmayaḥ bhavati</div>
+    <div class="usage-meaning lang-en">The devotee becomes made of You (one with You).</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त तुझ्या स्वरूपाचा होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्मयः</span>
+    <span class="word-iast">manmayaḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m.; मद् + मयट् (made of me)</span></div>
+  <div class="word-form">In this verse: मन्मयस्त्वं (मन्मयः + त्वम्)</div>
+  <p class="word-meaning lang-en">made of me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझ्या स्वरूपाचा</p>
+  <div class="word-usage">
+    <div class="deva">त्वं मन्मयः असि</div>
+    <div class="usage-iast">tvaṃ manmayaḥ asi</div>
+    <div class="usage-meaning lang-en">You are made of me (one with me).</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू माझ्या स्वरूपाचा आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आवयोः विधेः च</span>
+    <span class="word-iast">āvayoḥ vidheḥ ca</span>
+  </div>
+  <div><span class="word-grammar">आवयोः: gen. dual of अस्मद्; विधेः: gen. sg. m. of विधि (here = Brahmā, the Ordainer); च indecl.</span></div>
+  <div class="word-form">In this verse: नावयोरन्तरं किञ्चिद्विधेश्च (न + आवयोः + अन्तरम् + किञ्चित् + विधेः + च)</div>
+  <p class="word-meaning lang-en">between us two and Brahmā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या दोघांत व ब्रह्मदेवात</p>
+  <div class="word-usage">
+    <div class="deva">आवयोः विधेः च भेदः नास्ति</div>
+    <div class="usage-iast">āvayoḥ vidheḥ ca bhedaḥ nāsti</div>
+    <div class="usage-meaning lang-en">There is no difference between us two and Vidhī (Brahmā).</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या दोघांत व ब्रह्मदेवात भेद नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्तरम्</span>
+    <span class="word-iast">antaram</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. n. of अन्तर (difference, distinction, interval)</span></div>
+  <div class="word-form">In this verse: अन्तरं किञ्चित्</div>
+  <p class="word-meaning lang-en">any difference</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भेद</p>
+  <div class="word-usage">
+    <div class="deva">हरिहरयोः अन्तरं नास्ति</div>
+    <div class="usage-iast">hariharayoḥ antaraṃ nāsti</div>
+    <div class="usage-meaning lang-en">There is no difference between Hari and Hara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरी आणि हर यांच्यात भेद नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विधिवित्तम</span>
+    <span class="word-iast">vidhivittama</span>
+  </div>
+  <div><span class="word-grammar">voc. sg. m.; विधि + विद् + तमप् (superlative: foremost knower of the sacred ordinance)</span></div>
+  <div class="word-form">In this verse: विधिवित्तम</div>
+  <p class="word-meaning lang-en">O foremost knower of the sacred law</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(संबोधन) विधी (शास्त्र) जाणणाऱ्यांत श्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">हे विधिवित्तम, शास्त्रं वद</div>
+    <div class="usage-iast">he vidhivittama, śāstraṃ vada</div>
+    <div class="usage-meaning lang-en">O foremost knower of the sacred law, speak the śāstra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे शास्त्रज्ञांत श्रेष्ठा, शास्त्र सांग.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Identity does not cancel love: I am made of You, You are made of me — the highest non-dualism flowers into the most intimate devotion. Between the Lord&#x27;s forms there is not even a hair&#x27;s breadth of difference, yet the devotee&#x27;s heart still finds room to adore. This is the sthala&#x27;s living theology: at Vyāḍeśvara, Hari and Hara are one reality adored in two beloved forms.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अभेदाने प्रेम संपत नाही — मी तुझा बनलेला, तू माझा बनलेला — सर्वोच्च अद्वैत सर्वात जवळच्या भक्तीत फुलते. भगवंताच्या रूपांमध्ये केसाइतकाही भेद नाही, तरी भक्ताच्या हृदयात आदराला जागा उरतेच. हेच या स्थलाचे जिवंत तत्त्वज्ञान आहे — व्याडेश्वरात हरी आणि हर एकच सत्य, दोन लाडक्या रूपांत पूजिलेले.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The mutual immanence of Hari and Hara — Viṣṇu as Śiva&#x27;s heart and Śiva as Viṣṇu&#x27;s heart — is a beloved traditional theme, sung wherever the two deities meet. The verse states it with philosophical precision: त्वन्मय and मन्मय are not metaphors but the -मयट् of identity of substance. Paraśurāma is addressed as विधिवित्तम, foremost knower of the sacred ordinance — fitting for the dharma-restorer whom the next verses praise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हरी-हरांची परस्पर अंतर्व्याप्ती — शिवाचे हृदय विष्णू आणि विष्णूचे हृदय शिव — ही दोन्ही देवता जिथे भेटतात तिथे गायिली जाणारी लाडकी पारंपरिक संकल्पना आहे. हा श्लोक ती तात्त्विक नेमकेपणाने मांडतो — त्वन्मय आणि मन्मय ही रूपके नव्हेत, तर द्रव्याच्या ऐक्याचा -मयट् प्रत्यय आहे. परशुरामाला विधिवित्तम — पवित्र विधीचा श्रेष्ठ ज्ञाता — असे संबोधले आहे — पुढच्या श्लोकांत स्तुतील्या धर्मसंस्थापकालाच हे शोभते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. The elegant chiasmus त्वन्मयः/मन्मयः is the pivot of the whole stuti: after establishing metaphysical identity (4.25–27), Śiva now speaks as the devotee, modelling for the sthala&#x27;s pilgrims the attitude of loving surrender within non-difference. The vocatives भार्गव and विधिवित्तम confirm the addressee is Paraśurāma; विधिः here is Brahmā, the Ordainer, completing the triad — आवयोः (Śiva and Viṣṇu) विधेः च (and Brahmā).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. त्वन्मयः/मन्मयः हा सुंदर व्यत्यास संपूर्ण स्तुतीचा केंद्रबिंदू आहे — तात्त्विक अभेद सिद्ध केल्यानंतर (४.२५–२७) शिव आता भक्त म्हणून बोलतात आणि अभेदातही प्रेमपूर्ण शरणागतीची वृत्ती स्थलाच्या यात्रेकरूंसमोर आदर्श म्हणून ठेवतात. भार्गव आणि विधिवित्तम ही संबोधने संबोधित परशुरामच असल्याचे निश्चित करतात; येथे विधिः म्हणजे ब्रह्मदेव, विधाता — त्रयी पूर्ण करणारा — आवयोः (शिव आणि विष्णू) विधेः च (आणि ब्रह्मदेव).</p></div></div>
+
+<div class="pagenav"><a href="verse-27.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 27</div></a><a class="next" href="verse-29.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 29</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

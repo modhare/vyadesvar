@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 40 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 40</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 40</span><span class="bl-mr lang-mr">श्लोक 40</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">भजनार्थं मम गिरौ मम मूर्तिं दृषन्मयीम् ।<br>मम कृत्वा विधानेन स्थापयध्वं समाहिताः ।।४०।।</div>
+  <div class="verse-iast">bhajanārthaṃ mama girau mama mūrtiṃ dṛṣanmayīm । mama kṛtvā vidhānena sthāpayadhvaṃ samāhitāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">भजन-अर्थम् । मम । गिरौ । मम । मूर्तिम् । दृषत्-मयीम् । मम । कृत्वा । विधानेन । स्थापयध्वम् । समाहिताः ।</div><div class="vig-iast">bhajana-artham । mama । girau । mama । mūrtim । dṛṣat-mayīm । mama । kṛtvā । vidhānena । sthāpayadhvam । samāhitāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भजन + अर्थम् = भजनार्थम् · दृषत् + मयीम् = दृषन्मयीम् (त् → न्, अनुनासिक)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(यूयं) समाहिताः भजनार्थं मम गिरौ मम दृषन्मयीं मूर्तिं कृत्वा विधानेन स्थापयध्वम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>For my worship, fashion my stone image on my hill and, with collected minds, install it according to rite.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उपासनेसाठी या पर्वतावर माझी पाषाणमय मूर्ती तयार करून तिची एकचित्ताने विधिपूर्वक स्थापना करा.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भजनार्थम्</span>
+    <span class="word-iast">bhajanārtham</span>
+  </div>
+  <div><span class="word-grammar">भजन + अर्थ (तुमर्थे प्रत्ययवत्), नपुं. प्रथमा एकवचन → क्रियाविशेषण</span></div>
+  <div class="word-form">In this verse: भजनार्थम्</div>
+  <p class="word-meaning lang-en">for the sake of worship</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपासनेसाठी</p>
+  <div class="word-usage">
+    <div class="deva">भजनार्थम् मन्दिरम् निर्मीयते ।</div>
+    <div class="usage-iast">bhajanārtham mandiram nirmīyate .</div>
+    <div class="usage-meaning lang-en">A temple is built for the sake of worship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपासनेसाठी मंदिर बांधले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मम गिरौ</span>
+    <span class="word-iast">mama girau</span>
+  </div>
+  <div><span class="word-grammar">मम — अस्मद् षष्ठी एकवचन; गिरौ — गिरि (इकारान्त पुं.) सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: मम गिरौ</div>
+  <p class="word-meaning lang-en">on my hill</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझ्या पर्वतावर</p>
+  <div class="word-usage">
+    <div class="deva">मम गिरौ मूर्तिः स्थापिता अस्ति ।</div>
+    <div class="usage-iast">mama girau mūrtiḥ sthāpitā asti .</div>
+    <div class="usage-meaning lang-en">The image stands installed on my hill.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझ्या पर्वतावर मूर्ती स्थापन झालेली आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृषन्मयीम्</span>
+    <span class="word-iast">dṛṣanmayīm</span>
+  </div>
+  <div><span class="word-grammar">दृषद् + मयट् (विकारार्थ), स्त्री. द्वितीया एकवचन (मूर्तिम् विशेषण)</span></div>
+  <div class="word-form">In this verse: दृषन्मयीम्</div>
+  <p class="word-meaning lang-en">made of stone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाषाणाची (दृषद् = दगड)</p>
+  <div class="word-usage">
+    <div class="deva">दृषन्मयीम् मूर्तिम् पूजयामि ।</div>
+    <div class="usage-iast">dṛṣanmayīm mūrtim pūjayāmi .</div>
+    <div class="usage-meaning lang-en">I worship the image made of stone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी पाषाणाची मूर्ती पूजतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विधानेन</span>
+    <span class="word-iast">vidhānena</span>
+  </div>
+  <div><span class="word-grammar">विधान (अकारान्त नपुं.) तृतीया एकवचन</span></div>
+  <div class="word-form">In this verse: विधानेन</div>
+  <p class="word-meaning lang-en">according to rite, in due form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विधिपूर्वक</p>
+  <div class="word-usage">
+    <div class="deva">सर्वम् विधानेन कर्तव्यम् ।</div>
+    <div class="usage-iast">sarvam vidhānena kartavyam .</div>
+    <div class="usage-meaning lang-en">Everything should be done according to rite.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व काही विधिपूर्वक केले पाहिजे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्थापयध्वम्</span>
+    <span class="word-iast">sthāpayadhvam</span>
+  </div>
+  <div><span class="word-grammar">√स्था + णिच्, लोट्, मध्यमपुरुष बहुवचन (आत्मनेपद)</span></div>
+  <div class="word-form">In this verse: स्थापयध्वम्</div>
+  <p class="word-meaning lang-en">do install, cause to be established</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थापना करा (णिजन्त, लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">मूर्तिम् विधानेन स्थापयध्वम् ।</div>
+    <div class="usage-iast">mūrtim vidhānena sthāpayadhvam .</div>
+    <div class="usage-meaning lang-en">Install the image according to rite.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूर्ती विधिपूर्वक स्थापन करा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समाहिताः</span>
+    <span class="word-iast">samāhitāḥ</span>
+  </div>
+  <div><span class="word-grammar">सम् + आ + √धा + क्त, पुं. प्रथमा बहुवचन</span></div>
+  <div class="word-form">In this verse: समाहिताः</div>
+  <p class="word-meaning lang-en">with collected minds, concentrated</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकाग्र चित्ताने</p>
+  <div class="word-usage">
+    <div class="deva">समाहिताः जनाः पूजाम् कुर्वन्ति ।</div>
+    <div class="usage-iast">samāhitāḥ janāḥ pūjām kurvanti .</div>
+    <div class="usage-meaning lang-en">Collected-minded people perform worship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकाग्र चित्ताचे लोक पूजा करतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The hidden God is not left without a face: the brahmins are commanded to fashion his stone image on the hill and install it with full rite and collected minds. This is the aetiological moment of the hill-shrine — the mūrti becomes the fixed address of grace in the age when direct darśana has ceased. For the sthala, this verse is the charter of its worship.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गुप्त देव मुखाविना सोडलेला नाही : ब्राह्मणांना आज्ञा होते की पर्वतावर त्याची पाषाणमूर्ती तयार करून पूर्ण विधीने आणि एकाग्र चित्ताने तिची स्थापना करावी. हा पर्वतमंदिराचा उत्पत्तिक्षण आहे — प्रत्यक्ष दर्शन थांबलेल्या युगात मूर्ती ही कृपेचे स्थिर निवासस्थान बनते. या स्थलासाठी हा श्लोक त्याच्या पूजेचे अधिकारपत्र आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The command to install a stone mūrti on the hill is the aetiological core of the sthala-māhātmya: it explains why the Lord is worshipped in visible form on the hill even after his tirodhāna. In Kali, when direct darśana ceases (v.33), the consecrated image — established vidhānena, with full rite — becomes the Lord&#x27;s appointed presence, approachable by all devotees.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पर्वतावर पाषाणमूर्ती स्थापन करण्याची आज्ञा हेच स्थलमाहात्म्याचे उत्पत्तिमूल आहे : तिरोधानानंतरही पर्वतावर भगवंताची दृश्य रूपात पूजा का होते, हे ती स्पष्ट करते. कलीत प्रत्यक्ष दर्शन थांबल्यावर (३३) विधानेन — पूर्ण विधीने — प्रतिष्ठित मूर्ती भगवंताची नियत उपस्थिती बनते, सर्व भक्तांना सुलभ.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Girau, &#x27;on the hill,&#x27; points to the temple hill at Guhagar; the verse is thus the kāvya&#x27;s own charter for the worship of Paraśurāma&#x27;s image on that hill. Dṛṣanmayī (from dṛṣad, &#x27;stone,&#x27; + mayat, &#x27;made of&#x27;) specifies a stone image; samāhitāḥ (&#x27;with collected minds&#x27;) makes the installers&#x27; inner state part of the rite. The book&#x27;s anvaya reads mama kṛtvā as &#x27;having fashioned my (image)&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गिरौ, &#x27;पर्वतावर,&#x27; हा गुहागरच्या मंदिरपर्वताकडे निर्देश करतो; हा श्लोक अशा रीतीने त्या पर्वतावर परशुरामाच्या मूर्तीच्या पूजेचे या काव्यातीलच अधिकारपत्र आहे. दृषन्मयीम् (दृषद्, &#x27;दगड,&#x27; + मयट्, &#x27;चे बनलेले&#x27;) ही पाषाणमूर्ती स्पष्ट करते; समाहिताः (&#x27;एकाग्र चित्ताने&#x27;) स्थापन करणाऱ्यांची अंतःस्थिती विधीचाच भाग बनवते. पुस्तकाचा अन्वय मम कृत्वा चा &#x27;माझी (मूर्ती) तयार करून&#x27; असा अर्थ घेतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-39.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 39</div></a><a class="next" href="verse-41.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 41</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

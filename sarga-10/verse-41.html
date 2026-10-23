@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 41 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 41</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 41</span><span class="bl-mr lang-mr">श्लोक 41</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">साकुराणनृपादीनां तेषां भक्तामलात्मनाम् ।<br>प्रत्यब्दं यत्र कार्तिक्यां प्रार्थ्यन्ते ब्राह्मणैर्वराः ।।४१।।</div>
+  <div class="verse-iast">sākurāṇanṛpādīnāṃ teṣāṃ bhaktāmalātmanām । pratyabdaṃ yatra kārtikyāṃ prārthyante brāhmaṇairvarāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">साकुराण-नृप-आदीनाम् । तेषाम् । भक्त-अमल-आत्मनाम् । प्रति-अब्दम् । यत्र । कार्तिक्याम् । प्रार्थ्यन्ते । ब्राह्मणैः । वराः ।</div><div class="vig-iast">sākurāṇa-nṛpa-ādīnām । teṣām । bhakta-amala-ātmanām । prati-abdam । yatra । kārtikyām । prārthyante । brāhmaṇaiḥ । varāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">नृप + आदीनाम् = नृपादीनाम् · भक्त + अमल = भक्तामल · अमल + आत्मनाम् = अमलात्मनाम् · प्रति + अब्दम् = प्रत्यब्दम् (यण्) · ब्राह्मणैः + वराः = ब्राह्मणैर्वराः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र प्रत्यब्दं कार्तिक्यां ब्राह्मणैः तेषां भक्तामलात्मनां साकुराणनृपादीनां (कृते) वराः प्रार्थ्यन्ते ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Year after year, when Kārtikī comes round, the brāhmaṇas beseech boons for those devotees of stainless heart — King Sākuraṇa foremost among them.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रतिवर्षी कार्तिकी एकादशीला ब्राह्मणांकडून त्या विमलहृदय भक्तांसाठी — साकुराण राजा आदींसाठी — वर मागितले जातात.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भक्तामलात्मनाम्</span>
+    <span class="word-iast">bhaktāmalātmanām</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound, masculine genitive plural; stem भक्तामलात्मन् (भक्त + अमल + आत्मन्)</span></div>
+  <div class="word-form">In this verse: भक्तामलात्मनाम्</div>
+  <p class="word-meaning lang-en">of those whose hearts are pure through devotion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त व निर्मळ मनाच्या</p>
+  <div class="word-usage">
+    <div class="deva">भक्तामलात्मनां दर्शनं पापहरं भवति।</div>
+    <div class="usage-iast">bhaktāmalātmanāṃ darśanaṃ pāpaharaṃ bhavati.</div>
+    <div class="usage-meaning lang-en">The sight of those pure-hearted devotees removes sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्मळ मनाच्या भक्तांचे दर्शन पाप दूर करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रत्यब्दम्</span>
+    <span class="word-iast">pratyabdam</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (avyaya); प्रति + accusative of अब्द (year), used adverbially</span></div>
+  <div class="word-form">In this verse: प्रत्यब्दम्</div>
+  <p class="word-meaning lang-en">every year, annually</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दरवर्षी</p>
+  <div class="word-usage">
+    <div class="deva">प्रत्यब्दं कार्तिके मासि दीपोत्सवो भवति।</div>
+    <div class="usage-iast">pratyabdaṃ kārtike māsi dīpotsavo bhavati.</div>
+    <div class="usage-meaning lang-en">Every year, in the month of Kārtika, the festival of lights takes place.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रत्येक वर्षी कार्तिक महिन्यात दीपोत्सव होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कार्तिक्याम्</span>
+    <span class="word-iast">kārtikyām</span>
+  </div>
+  <div><span class="word-grammar">feminine locative singular of कार्तिकी (the Kārtikī holy day)</span></div>
+  <div class="word-form">In this verse: कार्तिक्याम्</div>
+  <p class="word-meaning lang-en">on Kārtikī (the holy day of Kārtika)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कार्तिकी (एकादशीला)</p>
+  <div class="word-usage">
+    <div class="deva">कार्तिक्यां स्नानं पुण्यप्रदं मतम्।</div>
+    <div class="usage-iast">kārtikyāṃ snānaṃ puṇyapradaṃ matam.</div>
+    <div class="usage-meaning lang-en">A bath on Kārtikī is considered merit-giving.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कार्तिकीला केलेले स्नान पुण्य देणारे मानले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रार्थ्यन्ते</span>
+    <span class="word-iast">prārthyante</span>
+  </div>
+  <div><span class="word-grammar">passive present, 3rd plural; √arth (to ask) with pra, laṭ</span></div>
+  <div class="word-form">In this verse: प्रार्थ्यन्ते</div>
+  <p class="word-meaning lang-en">are prayed for, are requested</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मागितले जातात (कर्मणि)</p>
+  <div class="word-usage">
+    <div class="deva">देवेभ्यो वराः प्रार्थ्यन्ते।</div>
+    <div class="usage-iast">devebhyo varāḥ prārthyante.</div>
+    <div class="usage-meaning lang-en">Boons are prayed for from the gods.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांकडून वर मागितले जातात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse records a living temple custom: once a year, at Kārtikī, brāhmaṇas stand as the voice of the community and pray for boons on behalf of the pure-hearted devotees of earlier generations — King Sākuraṇa, the temple&#x27;s royal builder, and the rest. It teaches that devotion is not a private affair: the community keeps its forebears in its prayers, and purity of heart (amala-ātman) is the mark that makes a life worth remembering at the altar. The sthala thus binds past and present in one unbroken chain of grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक मंदिराची जिवंत परंपरा नोंदवतो — दरवर्षी कार्तिकीला ब्राह्मण समुदायाच्या वतीने उभे राहतात आणि पूर्वीच्या पिढ्यांतील विमलहृदय भक्तांसाठी — मंदिराचा राजनिर्माता साकुराण राजा आदींसाठी — वरांची प्रार्थना करतात. भक्ती ही केवळ वैयक्तिक बाब नसते, हा याचा संदेश आहे — समाज आपल्या पूर्वजांना प्रार्थनेत जिवंत ठेवतो, आणि निर्मळ अंतःकरण हेच ते लक्षण आहे जे जीवनाला वेदिकेवर स्मरणीय बनवते. अशा रीतीने हे स्थल भूतकाळ आणि वर्तमानकाळ यांना कृपेच्या एका अखंड शृंखलेत बांधते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The month of Kārtika is the dearest of all months to Śiva: Kārtika pūrṇimā keeps the memory of His victory as Tripurāntaka, and Kārtikī ekādaśī — Prabodhinī — closes the four holy months of Cāturmāsya, when vows are completed and blessings sought. That brāhmaṇas should voice the prayers for boons on behalf of the royal devotees of earlier days shows the temple&#x27;s dharma at work: the community carries its benefactors in living remembrance, and a boon sought for another (parārtha) is itself an act of dharma. The verse marks the devotees by their stainless hearts — for it is purity, not rank, that makes a life worthy of being prayed for at the altar.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कार्तिक महिना शिवाला सर्वांत प्रिय आहे — कार्तिक पौर्णिमा त्रिपुरान्तक म्हणून त्याच्या विजयाची आठवण जपते, आणि कार्तिकी एकादशी — प्रबोधिनी — चातुर्मास्याच्या चार पवित्र महिन्यांची सांगता करते; त्या वेळी व्रते पूर्ण होतात आणि आशीर्वाद मागितले जातात. पूर्वीच्या काळातील राजभक्तांसाठी ब्राह्मणांनी वरांची प्रार्थना करावी, यात मंदिराचा धर्म दिसतो — समाज आपल्या उपकारकर्त्यांना जिवंत स्मरणात धारण करतो, आणि दुसऱ्यासाठी मागितलेला वर (परार्थ) हाच स्वतः एक धर्मकार्य आहे. श्लोक भक्तांना त्यांच्या निर्मळ हृदयाने ओळखतो — कारण पदवी नव्हे, तर शुद्धीच जीवनाला वेदिकेवर प्रार्थनीय बनवते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>प्रत्यब्दम् joins प्रति and the accusative अब्दम् (&#x27;year&#x27;) into an adverbial indeclinable — &#x27;yearly, every year&#x27;. कार्तिक्याम् is the feminine locative, the holy day of Kārtika; the book&#x27;s Marathi renders the annual observance as Kārtikī ekādaśī while the word-gloss takes it as the pūrṇimā — both are great Kārtika festivals, and the verse&#x27;s point is the yearly rite itself. Sākuraṇa is the temple-building king of this very sarga (v. 1), named here with his followers (ādi) as the honoured forebears for whom blessings are sought. The anvaya supplies कृते (&#x27;for the sake of&#x27;), completing the construction.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रत्यब्दम् हे प्रति आणि अब्दम् (वर्ष) या द्वितीयेचे क्रियाविशेषणासारखे अव्यय आहे — &#x27;दरवर्षी&#x27;. कार्तिक्याम् ही स्त्रीलिंगी सप्तमी आहे — कार्तिकातील पवित्र दिवस; ग्रंथाचे मराठी भाषांतर वार्षिक उत्सव कार्तिकी एकादशी मानते, तर शब्दार्थ पौर्णिमा घेतो — दोन्ही कार्तिकातील मोठे सण आहेत, आणि श्लोकाचा मुद्दा वार्षिक विधी हाच आहे. साकुराण हा याच सर्गातील (श्लोक १) मंदिरनिर्माता राजा आहे; येथे त्याच्या अनुयायांसह (आदि) त्याचे नाव येते — ज्यांच्यासाठी आशीर्वाद मागितले जातात ते सन्मानित पूर्वज. अन्वयात कृते (&#x27;करिता&#x27;) अध्याहृत आहे, ज्याने वाक्यरचना पूर्ण होते.</p></div></div>
+
+<div class="pagenav"><a href="verse-40.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 40</div></a><a class="next" href="verse-42.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 42</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

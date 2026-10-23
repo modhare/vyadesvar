@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 46 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 46</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 46</span><span class="bl-mr lang-mr">श्लोक 46</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vasantatilakā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्थं यथार्थवचनैरभिपूज्य पूज्यं दत्वाञ्जलिं चरणयोर्वररत्नपूर्णम् ।।<br>तूर्णं प्रसादनपरः परमानुभावं रत्नाकरः शरणदं शिरसा ननाम ।।४६।।</div>
+  <div class="verse-iast">itthaṃ yathārthavacanairabhipūjya pūjyaṃ datvāñjaliṃ caraṇayorvararatnapūrṇam । । tūrṇaṃ prasādanaparaḥ paramānubhāvaṃ ratnākaraḥ śaraṇadaṃ śirasā nanāma</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इत्थम् । यथार्थ-वचनैः । अभिपूज्य । पूज्यम् । दत्वा । अञ्जलिम् । चरणयोः । वर-रत्न-पूर्णम् । तूर्णम् । प्रसादन-परः । परम-अनुभावम् । रत्न-आकरः । शरण-दम् । शिरसा । ननाम ।</div><div class="vig-iast">ittham । yathārtha-vacanaiḥ । abhipūjya । pūjyam । datvā । añjalim । caraṇayoḥ । vara-ratna-pūrṇam । tūrṇam । prasādana-paraḥ । parama-anubhāvam । ratna-ākaraḥ । śaraṇa-dam । śirasā । nanāma ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वचनैः + अभिपूज्य = वचनैरभिपूज्य (विसर्ग → र्) · दत्वा + अञ्जलिम् = दत्वाञ्जलिम् (सवर्णदीर्घ) · चरणयोः + वर = चरणयोर्वर · परम + अनुभावम् = परमानुभावम् · रत्न + आकरः = रत्नाकरः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इत्थं रत्नाकरः यथार्थवचनैः पूज्यम् अभिपूज्य, चरणयोः वररत्नपूर्णम् अञ्जलिं दत्वा, तूर्णं प्रसादनपरः (सन्) परमानुभावं शरणदं (तं) शिरसा ननाम ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Thus, having worshipped the worshipful one with truthful words, and having offered at His feet an añjali full of the finest gems, the Ocean — intent on swiftly winning His grace — bowed with his head before that supremely majestic giver of refuge.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अशा रीतीने यथार्थ शब्दांनी त्या पूजनीयाची पूजा करून, त्याच्या पायांवर श्रेष्ठ रत्नांनी भरलेली ओंजळ वाहून रत्नाकराने त्या महानुभावाला लवकर प्रसन्न करून घेण्याची तत्परता दाखवली व आश्रय देणाऱ्या त्याला मस्तक लववून वन्दन केले.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 46, line 2: नमाम → ननाम (perfect, subject रत्नाकरः)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इत्थम्</span>
+    <span class="word-iast">ittham</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (of manner)</span></div>
+  <div class="word-form">In this verse: इत्थं</div>
+  <p class="word-meaning lang-en">thus, in this manner</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशा रीतीने</p>
+  <div class="word-usage">
+    <div class="deva">इत्थम् उक्त्वा सः तूष्णीम् अभवत् ।</div>
+    <div class="usage-iast">ittham uktvā saḥ tūṣṇīm abhavat.</div>
+    <div class="usage-meaning lang-en">Having spoken thus, he fell silent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे बोलून तो गप्प झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथार्थवचनैः</span>
+    <span class="word-iast">yathārthavacanaiḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound containing a tatpuruṣa (यथार्थानि वचनानि), neuter instrumental plural</span></div>
+  <div class="word-form">In this verse: यथार्थवचनैः</div>
+  <p class="word-meaning lang-en">with truthful words</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यथार्थ (खऱ्या) वचनांनी</p>
+  <div class="word-usage">
+    <div class="deva">सः यथार्थवचनैः गुरुम् अतोषयत् ।</div>
+    <div class="usage-iast">saḥ yathārthavacanaiḥ gurum atoṣayat.</div>
+    <div class="usage-meaning lang-en">He pleased the teacher with truthful words.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने खऱ्या शब्दांनी गुरूला संतुष्ट केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभिपूज्य पूज्यम्</span>
+    <span class="word-iast">abhipūjya pūjyam</span>
+  </div>
+  <div><span class="word-grammar">अभिपूज्य = अभि + √पूज् (10th class) + lyap, indeclinable; पूज्यम् = √पूज् + ṇyat, masculine accusative singular</span></div>
+  <div class="word-form">In this verse: अभिपूज्य पूज्यं</div>
+  <p class="word-meaning lang-en">having worshipped the worshipful one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूजनीयाची पूजा करून (*पूज्य/अभिपूज्य — शब्दक्रीडा*)</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः अभिपूज्य पूज्यम् देवम् गृहम् अगच्छत् ।</div>
+    <div class="usage-iast">bhaktaḥ abhipūjya pūjyam devam gṛham agacchat.</div>
+    <div class="usage-meaning lang-en">The devotee, having worshipped the worshipful Lord, went home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त पूजनीय देवाची पूजा करून घरी गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दत्वा अञ्जलिम्</span>
+    <span class="word-iast">datvā añjalim</span>
+  </div>
+  <div><span class="word-grammar">दत्वा = √दा (3rd class) + ktvā (छान्दसं रूपम्; शुद्धं &#x27;दत्त्वा&#x27;), indeclinable; अञ्जलिम् masculine accusative singular</span></div>
+  <div class="word-form">In this verse: दत्वाञ्जलिं</div>
+  <p class="word-meaning lang-en">having offered the cupped hands (añjali)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओंजळ वाहून (शुद्ध रूप ‘दत्त्वा’; छापील ‘दत्वा’ हे प्रचलित लेखन)</p>
+  <div class="word-usage">
+    <div class="deva">सः दत्वा अञ्जलिम् पुष्पाणि समर्पयत् ।</div>
+    <div class="usage-iast">saḥ datvā añjalim puṣpāṇi samarpayat.</div>
+    <div class="usage-meaning lang-en">He offered flowers with cupped hands.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने ओंजळ करून फुले अर्पण केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चरणयोः</span>
+    <span class="word-iast">caraṇayoḥ</span>
+  </div>
+  <div><span class="word-grammar">चरण locative dual</span></div>
+  <div class="word-form">In this verse: चरणयोर्वररत्नपूर्णम्</div>
+  <p class="word-meaning lang-en">at the two feet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही पायांवर</p>
+  <div class="word-usage">
+    <div class="deva">शिष्यः गुरोः चरणयोः अपतत् ।</div>
+    <div class="usage-iast">śiṣyaḥ guroḥ caraṇayoḥ apatat.</div>
+    <div class="usage-meaning lang-en">The disciple fell at the teacher&#x27;s feet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्य गुरूच्या पायांवर पडला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वररत्नपूर्णम्</span>
+    <span class="word-iast">vararatnapūrṇam</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (वराणि रत्नानि पूर्णानि यस्मिन्), accusative singular (adjective of अञ्जलिम्)</span></div>
+  <div class="word-form">In this verse: वररत्नपूर्णम्</div>
+  <p class="word-meaning lang-en">full of the finest gems</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ रत्नांनी भरलेली</p>
+  <div class="word-usage">
+    <div class="deva">सः वररत्नपूर्णम् करण्डकम् राज्ञे ददौ ।</div>
+    <div class="usage-iast">saḥ vararatnapūrṇam karaṇḍakam rājñe dadau.</div>
+    <div class="usage-meaning lang-en">He gave the king a casket full of the finest gems.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने राजाला श्रेष्ठ रत्नांनी भरलेली पेटी दिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तूर्णम्</span>
+    <span class="word-iast">tūrṇam</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (adverb)</span></div>
+  <div class="word-form">In this verse: तूर्णं</div>
+  <p class="word-meaning lang-en">quickly, at once</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्वरित</p>
+  <div class="word-usage">
+    <div class="deva">दूतः तूर्णम् धावित्वा वार्ताम् आनीतवान् ।</div>
+    <div class="usage-iast">dūtaḥ tūrṇam dhāvitvā vārtām ānītavān.</div>
+    <div class="usage-meaning lang-en">The messenger ran swiftly and brought the news.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दूत त्वरेने धावून बातमी घेऊन आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रसादनपरः</span>
+    <span class="word-iast">prasādanaparaḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (प्रसादने परः = तत्परः), masculine nominative singular</span></div>
+  <div class="word-form">In this verse: प्रसादनपरः</div>
+  <p class="word-meaning lang-en">intent on propitiating</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसन्न करण्यास तत्पर</p>
+  <div class="word-usage">
+    <div class="deva">सेवकः प्रसादनपरः स्वामिनम् असेवत ।</div>
+    <div class="usage-iast">sevakaḥ prasādanaparaḥ svāminam asevata.</div>
+    <div class="usage-meaning lang-en">The servant, eager to please, served his master.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सेवक प्रसन्न करण्यास तत्पर होऊन स्वामीची सेवा करू लागला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परमानुभावम्</span>
+    <span class="word-iast">paramānubhāvam</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (परमः अनुभावः यस्य), masculine accusative singular adjective</span></div>
+  <div class="word-form">In this verse: परमानुभावं</div>
+  <p class="word-meaning lang-en">the supremely majestic one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परम प्रभावशाली</p>
+  <div class="word-usage">
+    <div class="deva">सर्वे परमानुभावम् तम् ऋषिम् अनमन् ।</div>
+    <div class="usage-iast">sarve paramānubhāvam tam ṛṣim anaman.</div>
+    <div class="usage-meaning lang-en">All bowed to that supremely majestic sage.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वांनी त्या परम प्रभावशाली ऋषीला वंदन केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शरणदम्</span>
+    <span class="word-iast">śaraṇadam</span>
+  </div>
+  <div><span class="word-grammar">शरणं ददाति (√दा + क, upapada-tatpuruṣa), masculine accusative singular adjective</span></div>
+  <div class="word-form">In this verse: शरणदं</div>
+  <p class="word-meaning lang-en">the giver of refuge</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आश्रय देणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः शरणदम् हरिम् भजन्ति ।</div>
+    <div class="usage-iast">bhaktāḥ śaraṇadam harim bhajanti.</div>
+    <div class="usage-meaning lang-en">Devotees worship Hari, the giver of refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त आश्रय देणाऱ्या हरीचे भजन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रत्नाकरः</span>
+    <span class="word-iast">ratnākaraḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (रत्नानाम् आकरः), masculine nominative singular (समुद्रस्य नामान्तरम्)</span></div>
+  <div class="word-form">In this verse: रत्नाकरः</div>
+  <p class="word-meaning lang-en">the mine of gems, the Ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रत्नांची खाण, समुद्र</p>
+  <div class="word-usage">
+    <div class="deva">रत्नाकरः सर्वरत्नानाम् निधिः इति उच्यते ।</div>
+    <div class="usage-iast">ratnākaraḥ sarvaratnānām nidhiḥ iti ucyate.</div>
+    <div class="usage-meaning lang-en">The ocean is called the treasure-house of all gems.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राला सर्व रत्नांचा खजिना म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिरसा ननाम</span>
+    <span class="word-iast">śirasā nanāma</span>
+  </div>
+  <div><span class="word-grammar">शिरसा = शिरस् neuter instrumental singular (instrumental of means); ननाम = √नम् (1st class) liṭ 3rd person singular</span></div>
+  <div class="word-form">In this verse: शिरसा ननाम</div>
+  <p class="word-meaning lang-en">bowed with the head</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मस्तकाने वंदन केले (√नम्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">पुत्रः पितरम् शिरसा ननाम ।</div>
+    <div class="usage-iast">putraḥ pitaram śirasā nanāma.</div>
+    <div class="usage-meaning lang-en">The son bowed to his father with his head.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुत्राने मस्तकाने पित्याला वंदन केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Word becomes deed: the Ocean&#x27;s surrender, spoken in verses 40–45, is now sealed with worship — truthful praise (yathārthavacanaiḥ) and the offering of his finest treasures (vararatnapūrṇam añjalim) at the Lord&#x27;s feet. Devotionally this is the perfection of śaraṇāgati: one offers not excuses but one&#x27;s best. For the sthala, this is the first pūjā of the Lord of Guhagar, offered by Ratnākara himself — the mine of gems enriching the temple&#x27;s Lord prefigures the coastal prosperity and the devotees&#x27; offerings that will sustain the shrine through the centuries.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शब्दाचे कृतीत रूपांतर होते: ४०–४५ श्लोकांतून बोललेली समुद्राची शरणागती आता पूजेने शिक्कामोर्तब होते — यथार्थ स्तुती (यथार्थवचनैः) व भगवंताच्या चरणी श्रेष्ठ ठेव्यांची ओंजळ (वररत्नपूर्णम् अञ्जलिम्). भक्तीच्या दृष्टीने ही शरणागतीची परिपूर्ती आहे: सबबी नव्हे, तर आपले सर्वोत्तम अर्पण करावे. स्थलाच्या दृष्टीने ही गुहागरच्या भगवंताची पहिली पूजा — स्वतः रत्नाकराने केलेली; रत्नांच्या खाणीने मंदिराच्या भगवंताला समृद्ध करणे हे किनारपट्टीच्या समृद्धीचे व शतकानुशतके मंदिर टिकवणाऱ्या भक्तांच्या अर्पणांचे पूर्वसूचन आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The purāṇas constantly call the ocean Ratnākara, the mine of gems — the fourteen jewels (ratnas) emerged from his churning, and Lakṣmī herself rose from his waters. That the Ocean should worship the Lord with gems is therefore supremely fitting: he offers what is most his own. The word-play abhipūjya pūjyam (worshipping the worshipful) is a classical alaṅkāra, sealing the Ocean&#x27;s transformation from offender to foremost devotee.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे समुद्राला सतत &#x27;रत्नाकर&#x27; — रत्नांची खाण — म्हणतात; त्याच्या मंथनातून चौदा रत्ने निघाली व लक्ष्मीही त्याच्याच जलातून वर आली. समुद्राने भगवंताची पूजा रत्नांनी करावी हे अत्यंत उचित आहे: तो आपले सर्वांत स्वतःचे तेच अर्पण करतो. &#x27;अभिपूज्य पूज्यम्&#x27; (पूजनीयाची पूजा) ही शब्दक्रीडा शास्त्रीय अलंकार असून अपराधी ते परम भक्त या समुद्राच्या रूपांतरावर शिक्का मारते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: vasantatilakā (14 syllables), marking the close of the Ocean&#x27;s surrender episode with a grander cadence after five upajāti verses. Textual note (kept from the review): line 2 reads ननाम (perfect of √nam, subject रत्नाकरः), corrected from the print&#x27;s नमाम. The añjali of gems at the Lord&#x27;s feet is the kāvya&#x27;s founding image of temple worship at Guhagar — the devotee&#x27;s offering answering the Lord&#x27;s grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: वसन्ततिलका (चौदा अक्षरे); पाच उपजाति श्लोकांनंतर समुद्र-शरणागती प्रसंगाचा शेवट अधिक भव्य लयीत होतो. पाठनोंद (पुनरावलोकनातून जतन केलेली): दुसऱ्या ओळीत &#x27;ननाम&#x27; (√नम् धातूचे पूर्णभूतकाल, कर्ता रत्नाकरः) असे वाचावे; छापील &#x27;नमाम&#x27; वरून दुरुस्त केले आहे. भगवंताच्या चरणी रत्नांची ओंजळ ही गुहागरच्या मंदिरपूजेची काव्यातील मूलप्रतिमा आहे — भक्ताचे अर्पण भगवंताच्या कृपेला उत्तर देते.</p></div></div>
+
+<div class="pagenav"><a href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 45</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-02/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 2 — Kṣetranirmāṇaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

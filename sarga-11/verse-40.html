@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 40 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 40</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 40</span><span class="bl-mr lang-mr">श्लोक 40</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तेषु क्षेत्राणि चित्राणि देवतायतनानि च ।<br>प्राधान्येन मुनेः क्षेत्रे वर्णये तानि कानिचित् ।।४०।।</div>
+  <div class="verse-iast">teṣu kṣetrāṇi citrāṇi devatāyatanāni ca । prādhānyena muneḥ kṣetre varṇaye tāni kānicit</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तेषु । क्षेत्राणि । चित्राणि । देवता-आयतनानि । च । प्राधान्येन । मुनेः । क्षेत्रे । वर्णये । तानि । कानिचित् ।</div><div class="vig-iast">teṣu । kṣetrāṇi । citrāṇi । devatā-āyatanāni । ca । prādhānyena । muneḥ । kṣetre । varṇaye । tāni । kānicit ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">देवता + आयतनानि = देवतायतनानि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">गूढदेशात् दक्षिणतः ये पाटनादयः देशाः, तथा एव उत्तरतः (ये) परं विद्युताः खेटाद्याः देशाः, तेषु मुनेः क्षेत्रे (यानि) चित्राणि क्षेत्राणि देवतायतनानि च, तानि कानिचित् प्राधान्येन वर्णये ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Among them, in the muni&#x27;s domain, I shall describe some of the wondrous shrines and temples, giving the foremost their due.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गूढदेशाच्या दक्षिणेला जे पाटनादि भूभाग व उत्तरेला खेटादि (बहुधा आजचे खेड) प्रकाशमान देश आहेत त्यांत जी क्षेत्रे व विविध देवस्थाने आहेत. त्यांपैकी प्राधान्याने मुनी परशुरामाच्या क्षेत्रांतील काहींचे मी वर्णन करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्राणि</span>
+    <span class="word-iast">citrāṇi</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative plural; citra, &#x27;variegated, wondrous&#x27;</span></div>
+  <div class="word-form">In this verse: चित्राणि</div>
+  <p class="word-meaning lang-en">wondrous, manifold</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विलक्षण, नानाविध</p>
+  <div class="word-usage">
+    <div class="deva">तानि चित्राणि मन्दिराणि पश्य ।</div>
+    <div class="usage-iast">tāni citrāṇi mandirāṇi paśya ।</div>
+    <div class="usage-meaning lang-en">Behold those wondrous temples.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती विलक्षण देवालये पाहा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राधान्येन</span>
+    <span class="word-iast">prādhānyena</span>
+  </div>
+  <div><span class="word-grammar">neuter instrumental singular used adverbially; pradhāna + ya</span></div>
+  <div class="word-form">In this verse: प्राधान्येन</div>
+  <p class="word-meaning lang-en">giving the foremost their due; by way of prominence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुख्यत्वेकरून</p>
+  <div class="word-usage">
+    <div class="deva">प्राधान्येन धर्मं पालय ।</div>
+    <div class="usage-iast">prādhānyena dharmaṃ pālaya ।</div>
+    <div class="usage-meaning lang-en">Uphold dharma above all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुख्यत्वेकरून धर्माचे पालन कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुनेः क्षेत्रे</span>
+    <span class="word-iast">muneḥ kṣetre</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular muni + neuter locative singular kṣetra</span></div>
+  <div class="word-form">In this verse: मुनेः क्षेत्रे</div>
+  <p class="word-meaning lang-en">in the muni&#x27;s domain (Paraśurāma-kṣetra)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामक्षेत्रात</p>
+  <div class="word-usage">
+    <div class="deva">मुनेः क्षेत्रे शान्तिः अस्ति ।</div>
+    <div class="usage-iast">muneḥ kṣetre śāntiḥ asti ।</div>
+    <div class="usage-meaning lang-en">In the muni&#x27;s domain there is peace.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनींच्या क्षेत्रात शांती आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वर्णये</span>
+    <span class="word-iast">varṇaye</span>
+  </div>
+  <div><span class="word-grammar">1st person singular, present, ātmanepada; √varṇ (curādi), &#x27;to describe&#x27;</span></div>
+  <div class="word-form">In this verse: वर्णये</div>
+  <p class="word-meaning lang-en">I describe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर्णन करतो (आत्मनेपद लट्)</p>
+  <div class="word-usage">
+    <div class="deva">अहं कथां वर्णये ।</div>
+    <div class="usage-iast">ahaṃ kathāṃ varṇaye ।</div>
+    <div class="usage-meaning lang-en">I narrate the story.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी कथा वर्णन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कानिचित्</span>
+    <span class="word-iast">kānicit</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative plural, indefinite pronoun; kim + cit</span></div>
+  <div class="word-form">In this verse: कानिचित्</div>
+  <p class="word-meaning lang-en">some</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काही</p>
+  <div class="word-usage">
+    <div class="deva">कानिचित् पुस्तकानि पठ ।</div>
+    <div class="usage-iast">kānicit pustakāni paṭha ।</div>
+    <div class="usage-meaning lang-en">Read some books.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काही पुस्तके वाच.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse completes the sentence begun in 39 and with it a promise: &#x27;some, and the foremost first&#x27;. There is a quiet dharma of storytelling here — the poet does not claim to exhaust the sacred, because the sacred cannot be exhausted; he chooses, and he honours rank. For the pilgrim it is an invitation to continue the journey on foot: the book points, but the feet must go.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक ३९ मध्ये सुरू झालेले वाक्य पूर्ण करतो आणि त्यासोबत एक आश्वासन : &#x27;काही, आणि प्रथम श्रेष्ठांचे&#x27;. येथे कथनाचा एक शांत धर्म आहे — कवी पवित्रतेचा शेवट करण्याचा दावा करत नाही, कारण पवित्रतेचा शेवट होऊ शकत नाही; तो निवडतो, आणि तो श्रेणीचा सन्मान करतो. यात्रेकरूसाठी हे पायी यात्रा सुरू ठेवण्याचे निमंत्रण आहे : ग्रंथ बोट दाखवतो, पण पायांनीच जावे लागते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The &#x27;muni&#x27; here is Paraśurāma himself — Jāmadagnya the sage-warrior — and &#x27;the muni&#x27;s domain&#x27; is another name for the whole Paraśurāma-kṣetra of the Konkan. That the poet selects only &#x27;some&#x27; shrines is in the spirit of the Purāṇas themselves, which always present their catalogues as samples, never as closures.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथील &#x27;मुनी&#x27; म्हणजे स्वतः परशुराम — जामदग्न्य योद्धा-मुनी — आणि &#x27;मुनींचे क्षेत्र&#x27; हे कोकणातील संपूर्ण परशुरामक्षेत्राचे दुसरे नाव आहे. कवीने फक्त &#x27;काही&#x27; देवस्थाने निवडणे हे स्वतः पुराणांच्या भावनेत आहे, जी आपल्या याद्या नेहमी नमुने म्हणून सादर करतात, समापन म्हणून नव्हे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Varṇaye is the 1st person singular, present, ātmanepada of √varṇ (curādi, &#x27;to describe&#x27;) — the poet steps forward in his own voice. Muneḥ kṣetre pairs the genitive of muni with the locative of kṣetra: &#x27;in the domain of the sage&#x27;. Kānicit (&#x27;some&#x27;) is the indefinite pronoun that lets the catalogue remain open-ended.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुभ्. वर्णये हे √वर्ण् (चुरादि, &#x27;वर्णन करणे&#x27;) चे प्रथमपुरुष एकवचन, वर्तमानकाळ, आत्मनेपद आहे — कवी स्वतःच्या आवाजात पुढे येतो. मुनेः क्षेत्रे मध्ये मुनीची षष्ठी आणि क्षेत्राची सप्तमी जोडली आहे : &#x27;मुनींच्या क्षेत्रात&#x27;. कानिचित् (&#x27;काही&#x27;) हे अनिश्चित सर्वनाम आहे जे यादी खुली ठेवते.</p></div></div>
+
+<div class="pagenav"><a href="verse-39.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 39</div></a><a class="next" href="verse-41.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 41</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

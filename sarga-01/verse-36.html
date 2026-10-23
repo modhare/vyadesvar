@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 36 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 36</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 36</span><span class="bl-mr lang-mr">श्लोक 36</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पश्यत्विदानीमधमाम्बुधे त्वां त्वदीश्वरः शुष्कजलं समन्तात् ।।<br>ताम्यत्तिमिव्याकुलगर्भभूमिं प्रकाशरत्नं विगतप्रयत्नम् ।।३६।।</div>
+  <div class="verse-iast">paśyatvidānīmadhamāmbudhe tvāṃ tvadīśvaraḥ śuṣkajalaṃ samantāt । । tāmyattimivyākulagarbhabhūmiṃ prakāśaratnaṃ vigataprayatnam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पश्यतु । इदानीम् । अधम-अम्बुधे । त्वाम् । त्वत्-ईश्वरः । शुष्क-जलम् । समन्तात् । ताम्यत्-तिमि-व्याकुल-गर्भ-भूमिम् । प्रकाश-रत्नम् । विगत-प्रयत्नम् ।</div><div class="vig-iast">paśyatu । idānīm । adhama-ambudhe । tvām । tvat-īśvaraḥ । śuṣka-jalam । samantāt । tāmyat-timi-vyākula-garbha-bhūmim । prakāśa-ratnam । vigata-prayatnam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पश्यतु + इदानीम् = पश्यत्विदानीम् (यण्) · इदानीम् + अधम = इदानीमधम · अधम + अम्बुधे = अधमाम्बुधे (सवर्णदीर्घ) · त्वत् + ईश्वरः = त्वदीश्वरः (त् → द्) · ताम्यत् + तिमि = ताम्यत्तिमि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे अधमाम्बुधे, इदानीं त्वदीश्वरः समन्तात् शुष्कजलं ताम्यत्तिमिव्याकुलगर्भभूमिं प्रकाशरत्नं विगतप्रयत्नं त्वां पश्यतु ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O base Ocean, may your lord now behold you — your waters dried up all around, your inmost depths agitated by languishing great fishes, your jewels laid bare, and all your striving spent.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्राधमा, आता सर्व बाजूंनी पाणी सुकून गेलेल्या, तडफडणाऱ्या माशांमुळे अन्तर्भाग व्याकुळ झालेल्या, उघड्यावर आलेल्या रत्नांचा परंतु विफल प्रयत्नांचा अशा तुला तुझा अधिपती पाहो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पश्यतु</span>
+    <span class="word-iast">paśyatu</span>
+  </div>
+  <div><span class="word-grammar">√दृश् (1st class, parasmaipada) — पश्यादेश; imperative (lot), 3rd person singular</span></div>
+  <div class="word-form">In this verse: पश्यत्विदानीमधमाम्बुधे</div>
+  <p class="word-meaning lang-en">let him see; may he behold</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाहो (आज्ञार्थ, प्रथम पुरुष)</p>
+  <div class="word-usage">
+    <div class="deva">गुरुः शिष्यं पश्यतु।</div>
+    <div class="usage-iast">guruḥ śiṣyaṃ paśyatu.</div>
+    <div class="usage-meaning lang-en">Let the teacher see the pupil.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरू शिष्याला पाहो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इदानीम्</span>
+    <span class="word-iast">idānīm</span>
+  </div>
+  <div><span class="word-grammar">इदम् + दानीम् (taddhita); indeclinable</span></div>
+  <div class="word-form">In this verse: पश्यत्विदानीमधमाम्बुधे</div>
+  <p class="word-meaning lang-en">now; at this time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आता</p>
+  <div class="word-usage">
+    <div class="deva">इदानीं गच्छामि।</div>
+    <div class="usage-iast">idānīṃ gacchāmi.</div>
+    <div class="usage-meaning lang-en">I go now.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आता मी जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अधमाम्बुधे</span>
+    <span class="word-iast">adhamāmbudhe</span>
+  </div>
+  <div><span class="word-grammar">अधम + अम्बुधि; vocative singular, masculine</span></div>
+  <div class="word-form">In this verse: पश्यत्विदानीमधमाम्बुधे</div>
+  <p class="word-meaning lang-en">O base, degraded Ocean! (vocative)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे अधम समुद्रा</p>
+  <div class="word-usage">
+    <div class="deva">रे अधमाम्बुधे, लज्जस्व।</div>
+    <div class="usage-iast">re adhamāmbudhe, lajjasva.</div>
+    <div class="usage-meaning lang-en">O base Ocean, be ashamed!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे अधम समुद्रा, लाज वाटू दे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वदीश्वरः</span>
+    <span class="word-iast">tvadīśvaraḥ</span>
+  </div>
+  <div><span class="word-grammar">युष्मद् (त्वद्) + ईश्वर; &#x27;तव ईश्वरः&#x27; — genitive tatpuruṣa; nominative singular, masculine; येथे जलाधिपती वरुण</span></div>
+  <div class="word-form">In this verse: त्वदीश्वरः</div>
+  <p class="word-meaning lang-en">your lord (Varuṇa, lord of the waters)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझा स्वामी (बहुधा जलाधिपती वरुण)</p>
+  <div class="word-usage">
+    <div class="deva">त्वदीश्वरः त्वां रक्षतु।</div>
+    <div class="usage-iast">tvadīśvaraḥ tvāṃ rakṣatu.</div>
+    <div class="usage-meaning lang-en">May your lord protect you.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझा स्वामी तुझे रक्षण करो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समन्तात्</span>
+    <span class="word-iast">samantāt</span>
+  </div>
+  <div><span class="word-grammar">समन्त + tasil; indeclinable</span></div>
+  <div class="word-form">In this verse: समन्तात्</div>
+  <p class="word-meaning lang-en">all around; on every side</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व बाजूंनी</p>
+  <div class="word-usage">
+    <div class="deva">समन्तात् पर्वताः सन्ति।</div>
+    <div class="usage-iast">samantāt parvatāḥ santi.</div>
+    <div class="usage-meaning lang-en">Mountains stand all around.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व बाजूंनी पर्वत आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुष्कजलम्</span>
+    <span class="word-iast">śuṣkajalam</span>
+  </div>
+  <div><span class="word-grammar">शुष्क (√शुष् + kta) + जल; &#x27;शुष्कं जलं यस्य&#x27; — bahuvrīhi; accusative singular, masculine (त्वाम्‌चे adjective)</span></div>
+  <div class="word-form">In this verse: शुष्कजलं</div>
+  <p class="word-meaning lang-en">whose waters are dried up; waterless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाणी आटलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">शुष्कजलं सरः न शोभते।</div>
+    <div class="usage-iast">śuṣkajalaṃ saraḥ na śobhate.</div>
+    <div class="usage-meaning lang-en">A waterless lake does not shine.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाणी आटलेले तळे शोभत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ताम्यत्तिमिव्याकुलगर्भभूमिम्</span>
+    <span class="word-iast">tāmyattimivyākulagarbhabhūmim</span>
+  </div>
+  <div><span class="word-grammar">ताम्यत् (√तम् &#x27;ग्लानी येणे&#x27; + śatṛ) + तिमि (मोठा समुद्रमासा) + व्याकुल + गर्भ-भूमि; bahuvrīhi; accusative singular, masculine</span></div>
+  <div class="word-form">In this verse: ताम्यत्तिमिव्याकुलगर्भभूमिं</div>
+  <p class="word-meaning lang-en">whose inmost depths are agitated by languishing great fishes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तडफडणाऱ्या मोठ्या माशांनी (तिमि) तळ व्याकुळ झालेल्या (√तम्, शतृ)</p>
+  <div class="word-usage">
+    <div class="deva">ताम्यत्तिमिव्याकुलगर्भभूमिः सागरः करुणं दृश्यते।</div>
+    <div class="usage-iast">tāmyattimivyākulagarbhabhūmim sāgaraḥ karuṇaṃ dṛśyate.</div>
+    <div class="usage-meaning lang-en">The ocean, its depths agitated by thrashing fishes, looks piteous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तडफडणाऱ्या माशांनी तळ व्याकुळ झालेला समुद्र करुण दिसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रकाशरत्नम्</span>
+    <span class="word-iast">prakāśaratnam</span>
+  </div>
+  <div><span class="word-grammar">प्रकाश + रत्न; &#x27;प्रकाशानि रत्नानि यस्य&#x27; — bahuvrīhi; accusative singular, masculine</span></div>
+  <div class="word-form">In this verse: प्रकाशरत्नं</div>
+  <p class="word-meaning lang-en">whose jewels are laid bare, exposed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची रत्ने उघडी पडली आहेत अशा</p>
+  <div class="word-usage">
+    <div class="deva">प्रकाशरत्नं सागरं देवाः पश्यन्ति।</div>
+    <div class="usage-iast">prakāśaratnaṃ sāgaraṃ devāḥ paśyanti.</div>
+    <div class="usage-meaning lang-en">The gods behold the ocean with its jewels laid bare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रत्ने उघडी पडलेला समुद्र देव पाहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विगतप्रयत्नम्</span>
+    <span class="word-iast">vigataprayatnam</span>
+  </div>
+  <div><span class="word-grammar">विगत (वि + √गम् + kta) + प्रयत्न; &#x27;विगतः प्रयत्नो यस्य&#x27; — bahuvrīhi; accusative singular, masculine</span></div>
+  <div class="word-form">In this verse: विगतप्रयत्नम्</div>
+  <p class="word-meaning lang-en">whose efforts are all spent; helpless, exhausted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे सर्व प्रयत्न संपले आहेत अशा, हतबल</p>
+  <div class="word-usage">
+    <div class="deva">विगतप्रयत्नः शत्रुः शरणं याति।</div>
+    <div class="usage-iast">vigataprayatnaḥ śatruḥ śaraṇaṃ yāti.</div>
+    <div class="usage-meaning lang-en">The helpless foe seeks refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हतबल शत्रू शरण जातो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Verse 36 paints, in advance, the wages of opposing divine will: waters dried, creatures thrashing, treasures laid bare, efforts spent. It is a spiritual anatomy of downfall — when one sets oneself against dharma, first the inner resources dry up (śuṣkajala), then the dependants suffer (tāmyattimi), then hidden faults stand exposed (prakāśaratna), and at last even the power to strive is gone (vigataprayatna). The devotee reads it as a mirror held up in mercy: see the end of the path of resistance, and choose surrender while the choice is still open.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>३६ वा श्लोक दैवी इच्छेला विरोध करण्याचे फळ आधीच चित्रित करतो : आटलेले पाणी, तडफडणारे जीव, उघडी पडलेली रत्ने, संपलेले प्रयत्न. हा अधःपतनाचा आध्यात्मिक शरीरशास्त्र-अभ्यास आहे — धर्माविरुद्ध उभे राहिले की आधी अंतर्गत स्रोत आटतात (शुष्कजल), मग आश्रित दुःख भोगतात (ताम्यत्तिमि), मग गुप्त दोष उघडे पडतात (प्रकाशरत्न), आणि शेवटी प्रयत्न करण्याची शक्तीही जाते (विगतप्रयत्न). भक्त याकडे दयेने धरलेल्या आरशाप्रमाणे पाहतो : विरोधाच्या मार्गाचा शेवट पाहा, आणि निवड अजून हातात असताना शरणागती निवडा.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The optative &#x27;paśyatu&#x27; (let him see) is a curse uttered as a blessing&#x27;s mirror-image: Paraśurāma does not strike the Ocean himself but calls upon the Ocean&#x27;s own lord — Varuṇa, the Vedic guardian of the waters — to witness his vassal&#x27;s humiliation. The fourfold picture (dried waters, thrashing fishes, exposed jewels, spent efforts) systematically strips the sea of its four glories: its vastness, its teeming life, its hidden treasures, and its power. In dharma-śāstra terms this is the fate of one who obstructs a righteous undertaking: loss of substance, of retinue, of wealth, and of capacity itself.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;पश्यतु&#x27; (पाहो) हा विध्यर्थी प्रयोग आशीर्वादाच्या आरशातील शाप आहे : परशुराम स्वतः समुद्रावर प्रहार करत नाही, तर समुद्राच्याच स्वामीला — जलांचे वैदिक रक्षक वरुणाला — आपल्या अंकिताचा अपमान पाहण्यास बोलावतो. चतुर्विध चित्र (आटलेले पाणी, तडफडणारे मासे, उघडी पडलेली रत्ने, संपलेले प्रयत्न) समुद्राची चारही वैभवे पद्धतशीरपणे हिरावून घेते : त्याचा विस्तार, त्यातील सजीव सृष्टी, त्याची गुप्त रत्ने आणि त्याची शक्ती. धर्मशास्त्रदृष्ट्या न्याय्य कार्याला अडथळा आणणाऱ्याचे हेच भवितव्य असते : द्रव्यनाश, परिवारनाश, धननाश आणि सामर्थ्यनाश.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Tvadīśvaraḥ&#x27; (your lord) most naturally denotes Varuṇa, lord of the waters in Vedic and Purāṇic cosmology — the Ocean&#x27;s overlord before whom its disgrace would be complete. The compound &#x27;tāmyattimivyākulagarbhabhūmim&#x27; is a fine example of the poet&#x27;s long samāsas: tāmyat (present participle of √tam, &#x27;to languish&#x27;) + timi (the great sea-fish, often a whale) + vyākula + garbha-bhūmi. Stylistically the verse is a śāpa-kāvya miniature — a curse in ornate dress — and it prepares the Ocean&#x27;s surrender in verse 39: humiliation pictured in advance makes submission the rational choice.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;त्वदीश्वरः&#x27; (तुझा स्वामी) याचा सर्वांत स्वाभाविक अर्थ वरुण — वैदिक-पुराण विश्वशास्त्रातील जलाधिपती, ज्याच्यासमोर समुद्राचा अपमान पूर्ण होईल. &#x27;ताम्यत्तिमिव्याकुलगर्भभूमिम्&#x27; हे कवीच्या दीर्घ समासांचे उत्तम उदाहरण आहे : ताम्यत् (√तम् &#x27;ग्लानी येणे&#x27; याचे वर्तमानकालवाचक) + तिमि (मोठा समुद्रमासा, बहुधा देवमासा) + व्याकुल + गर्भभूमि. शैलीदृष्ट्या हा श्लोक शापकाव्याचे लघुरूप आहे — नक्षीदार वेशातील शाप — आणि तो ३९ व्या श्लोकातील समुद्राच्या शरणागतीची तयारी करतो : आधीच चित्रित केलेला अपमान शरण येणे हाच सुज्ञ पर्याय ठरवतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-35.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 35</div></a><a class="next" href="verse-37.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 37</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

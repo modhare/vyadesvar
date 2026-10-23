@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अशपच्चोपली रोषान्न वः संस्थितिरश्मसु ।।<br>यत्रास्यथ क्वचन च तत्र वो वदनेऽस्तु मृत् ।।२५।।</div>
+  <div class="verse-iast">aśapaccopalī roṣānna vaḥ saṃsthitiraśmasu । । yatrāsyatha kvacana ca tatra vo vadane&#x27;stu mṛt</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अशपत् । च । उपलीः । रोषात् । न । वः । संस्थितिः । अश्मसु । यत्र । आस्यथ । क्वचन । च । तत्र । वः । वदने । अस्तु । मृत् ।</div><div class="vig-iast">aśapat । ca । upalīḥ । roṣāt । na । vaḥ । saṃsthitiḥ । aśmasu । yatra । āsyatha । kvacana । ca । tatra । vaḥ । vadane । astu । mṛt ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">अशपत् + च = अशपच्च (त् → च्) · च + उपलीः = चोपलीः (गुण) · उपलीः + रोषात् = उपली रोषात् (र् पुढे र् आल्याने लोप) · रोषात् + न = रोषान्न (त् → न्) · संस्थितिः + अश्मसु = संस्थितिरश्मसु · यत्र + आस्यथ = यत्रास्यथ · वः + वदने = वो वदने · वदने + अस्तु = वदनेऽस्तु</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(रामः) रोषात् उपलीः अशपत् च — ‘अश्मसु वः संस्थितिः न (भवतु); यत्र क्वचन च आस्यथ, तत्र वः वदने मृत् अस्तु ।’</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In his wrath, Rāma cursed the termites: &#x27;You shall have no dwelling upon stones; and wherever you happen to stay, let your mouths be full of dust.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;तुम्ही दगडावर (कधीही) जिवंत राहू शकणार नाही आणि ज्या ठिकाणी तुम्ही राहाल तेथे तुमच्या तोंडात (सतत) माती राहील&#x27; असा रामाने त्या किड्यांना रागाने शाप दिला.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 2.25, line 1: अशापच्चोपली रोषात्र → अशपच्चोपली रोषान्न</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अशपत्</span>
+    <span class="word-iast">aśapat</span>
+  </div>
+  <div><span class="word-grammar">√शप् (class 1, भ्वादि), parasmaipada, imperfect (laṅ), third person singular</span></div>
+  <div class="word-form">In this verse: अशपत् (लङ्, प्रथमपुरुष एकवचन)</div>
+  <p class="word-meaning lang-en">he cursed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शाप दिला (√शप्, लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">क्रुद्धः मुनिः अपराधिनम् अशपत् ।</div>
+    <div class="usage-iast">kruddhaḥ muniḥ aparādhinam aśapat ।</div>
+    <div class="usage-meaning lang-en">The angry sage cursed the offender.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रोधित मुनीने अपराधीला शाप दिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रोषात्</span>
+    <span class="word-iast">roṣāt</span>
+  </div>
+  <div><span class="word-grammar">masculine ablative singular (पञ्चमी एकवचन) of रोष</span></div>
+  <div class="word-form">In this verse: रोषात् (पञ्चमी)</div>
+  <p class="word-meaning lang-en">out of anger, in anger</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रागाने</p>
+  <div class="word-usage">
+    <div class="deva">सः रोषात् कठोरम् वचनम् उवाच ।</div>
+    <div class="usage-iast">saḥ roṣāt kaṭhoram vacanam uvāca ।</div>
+    <div class="usage-meaning lang-en">He spoke harsh words out of anger.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो रागाच्या भरात कठोर बोलला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपलीः</span>
+    <span class="word-iast">upalīḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative plural (द्वितीया बहुवचन) of उपलिका (उपलीका, &#x27;termite, white ant&#x27;)</span></div>
+  <div class="word-form">In this verse: उपलीः (द्वितीया बहुवचन)</div>
+  <p class="word-meaning lang-en">the termites</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाळवीला (द्वितीया बहुवचन)</p>
+  <div class="word-usage">
+    <div class="deva">भूमेः उपलीः बहिः निर्गच्छन्ति ।</div>
+    <div class="usage-iast">bhūmeḥ upalīḥ bahiḥ nirgacchanti ।</div>
+    <div class="usage-meaning lang-en">The termites come out of the ground.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाळवी जमिनीतून बाहेर पडते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अश्मसु</span>
+    <span class="word-iast">aśmasu</span>
+  </div>
+  <div><span class="word-grammar">masculine locative plural (सप्तमी बहुवचन) of अश्मन्</span></div>
+  <div class="word-form">In this verse: अश्मसु (सप्तमी बहुवचन)</div>
+  <p class="word-meaning lang-en">on stones, among rocks</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दगडांवर</p>
+  <div class="word-usage">
+    <div class="deva">अश्मसु शैवालः न वर्धते ।</div>
+    <div class="usage-iast">aśmasu śaivālaḥ na vardhate ।</div>
+    <div class="usage-meaning lang-en">Moss does not grow on stones.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दगडांवर शेवाळ वाढत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संस्थितिः</span>
+    <span class="word-iast">saṃsthitiḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; सम् + √स्था + क्तिन् (action noun)</span></div>
+  <div class="word-form">In this verse: संस्थितिः (प्रथमा)</div>
+  <p class="word-meaning lang-en">dwelling, abode, settled state</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वसती</p>
+  <div class="word-usage">
+    <div class="deva">तस्य संस्थितिः वने आसीत् ।</div>
+    <div class="usage-iast">tasya saṃsthitiḥ vane āsīt ।</div>
+    <div class="usage-meaning lang-en">His dwelling was in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे वास्तव्य वनात होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र क्वचन</span>
+    <span class="word-iast">yatra kvacana</span>
+  </div>
+  <div><span class="word-grammar">यत्र: indeclinable (locative of यद् used adverbially); क्वचन: indefinite indeclinable adverb</span></div>
+  <div class="word-form">In this verse: यत्र क्वचन (अव्यय)</div>
+  <p class="word-meaning lang-en">wherever, anywhere at all</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे कोठे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र क्वचन गच्छसि तत्र सुखम् लभस्व ।</div>
+    <div class="usage-iast">yatra kvacana gacchasi tatra sukham labhasva ।</div>
+    <div class="usage-meaning lang-en">Wherever you go, may you find happiness there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू जेथे कोठे जाशील तेथे तुला सुख लाभो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आस्यथ</span>
+    <span class="word-iast">āsyatha</span>
+  </div>
+  <div><span class="word-grammar">√आस् (class 2, अदादि), ātmanepada; ārṣa (irregular) form standing for the future second person plural आसिष्यध्वे</span></div>
+  <div class="word-form">In this verse: आस्यथ (आर्ष रूप, √आस्)</div>
+  <p class="word-meaning lang-en">you (plural) will dwell, will stay</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राहाल (√आस्; व्याकरणदृष्ट्या आसिष्यध्वे — आर्ष रूप)</p>
+  <div class="word-usage">
+    <div class="deva">यूयम् अत्र सुखेन आस्यथ ।</div>
+    <div class="usage-iast">yūyam atra sukhena āsyatha ।</div>
+    <div class="usage-meaning lang-en">You (all) will dwell here happily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुम्ही येथे सुखाने राहाल.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वदने मृत् अस्तु</span>
+    <span class="word-iast">vadane mṛt astu</span>
+  </div>
+  <div><span class="word-grammar">वदने: neuter locative singular; मृत्: feminine nominative singular (&#x27;clay, dust&#x27;); अस्तु: √अस् (class 2), parasmaipada, imperative (loṭ), third person singular</span></div>
+  <div class="word-form">In this verse: वदने मृत् अस्तु (लोट्)</div>
+  <p class="word-meaning lang-en">let there be dust in the mouth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तोंडात माती असो</p>
+  <div class="word-usage">
+    <div class="deva">तस्य वदने मृत् अस्तु इति सः अशपत् ।</div>
+    <div class="usage-iast">tasya vadane mṛt astu iti saḥ aśapat ।</div>
+    <div class="usage-meaning lang-en">&#x27;Let there be dust in his mouth&#x27; — thus he cursed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;त्याच्या तोंडात माती असो&#x27; असा त्याने शाप दिला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the sthala-kāvya&#x27;s etiology of the termite: the creature that builds with mud, its mouth ever full of earth, and cannot settle on bare rock — its very nature read as the fruit of a great soul&#x27;s word. The curse also carries a moral edge: the termites acted from loyalty and gratitude toward the ocean (2.20), yet loyalty that works against dharma still earns its consequence. The devotee learns that a good intention does not sanctify a wrong means — loyalty must walk together with dharma.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा शाप वाळवीच्या स्वभावाची काव्यमय उत्पत्ती सांगतो — ती मातीचे वारूळ बांधते, तिचे तोंड सदैव मातीने भरलेले असते आणि उघड्या दगडावर ती वसत नाही; हा सर्व तिचा स्वभाव महात्म्याच्या वाणीचे फळ म्हणून वाचला आहे. यात नैतिक बोधही आहे : किड्यांनी सागराच्या उपकाराची परतफेड म्हणून (२.२०) कृत्य केले, तरी धर्माविरुद्ध जाणारी निष्ठाही परिणाम टाळू शकत नाही. भक्ताला यातून शिकवण मिळते : चांगला हेतू चुकीच्या मार्गाला पवित्र करीत नाही — निष्ठा धर्मासोबतच चालली पाहिजे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The curse-and-boon pair is a classic Purāṇic mechanism: a great soul&#x27;s word, spoken in anger or in grace, takes effect as natural law. Here Paraśurāma&#x27;s curse &#x27;explains&#x27; the termite&#x27;s observed habits — its mud tunnels, its avoidance of bare rock. Note the balance of the next verse (2.27): the ocean cannot annul the avatāra&#x27;s curse, but he tempers it with a boon — the familiar śāpānugraha pattern, grace folded into the curse, that runs through the epics and Purāṇas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शाप आणि वर ही जोडी ही पुराणांतील परिचित योजना आहे : महात्म्याचे वचन — रागातले असो वा कृपेतले — निसर्गनियम म्हणून फळाला येते. येथे परशुरामाचा शाप वाळवीच्या दिसून येणाऱ्या सवयींचे &#x27;स्पष्टीकरण&#x27; देतो — तिचे मातीचे बोगदे, उघड्या दगडाचा त्याग. पुढच्या श्लोकातील (२.२७) तोल लक्षात घ्या : सागर अवताराचा शाप रद्द करू शकत नाही, पण वरदानाने तो सौम्य करतो — हाच महाकाव्ये व पुराणे यांतून वाहणारा परिचित शापानुग्रह, शापात गुंफलेली कृपा.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The print read अशापच्चोपली रोषात्र; the sarga&#x27;s textual notes emend to अशपच्चोपली रोषान्न, which the Anuṣṭubh metre requires — अशपत् + च + उपलीः + रोषात् + न. The form आस्यथ is flagged in the transcription as an ārṣa (irregular) form standing for the future आसिष्यध्वे (&#x27;you will dwell&#x27;). The curse&#x27;s two clauses map exactly onto termite natural history: no dwelling on stone (अश्मसु संस्थितिः न), and the mud-carrying mouth (वदने मृत्).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>छापील पाठ अशापच्चोपली रोषात्र असा होता; सर्गाच्या पाठ-चर्चा नोंदींत तो अशपच्चोपली रोषान्न असा शुद्ध केला आहे — अनुष्टुभ् वृत्ताला तेच बसते (अशपत् + च + उपलीः + रोषात् + न). आस्यथ हे रूप प्रतिलेखनात आर्ष (अनियमित) म्हणून नोंदवले आहे — भविष्यकाळातील आसिष्यध्वे (&#x27;तुम्ही राहाल&#x27;) याच्या जागी. शापाची दोन कलमे वाळवीच्या नैसर्गिक इतिहासाशी तंतोतंत जुळतात : दगडावर वसती नाही (अश्मसु संस्थितिः न), आणि माती वाहणारे तोंड (वदने मृत्).</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

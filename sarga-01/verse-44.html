@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 44 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 44</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 44</span><span class="bl-mr lang-mr">श्लोक 44</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कर्तुं समर्थोऽसि जगत्समस्तमकर्तुमप्येतदतोऽन्यथा वा।।<br>कस्ते प्रयत्नोऽम्बुधिशोषणार्थे बभ्राविभानामिव घातुकस्य ।।४४।।</div>
+  <div class="verse-iast">kartuṃ samartho&#x27;si jagatsamastamakartumapyetadato&#x27;nyathā vā । । kaste prayatno&#x27;mbudhiśoṣaṇārthe babhrāvibhānāmiva ghātukasya</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कर्तुम् । समर्थः । असि । जगत् । समस्तम् । अकर्तुम् । अपि । एतत् । अतः । अन्यथा । वा । कः । ते । प्रयत्नः । अम्बुधि-शोषण-अर्थे । बभ्रौ । इभानाम् । इव । घातुकस्य ।</div><div class="vig-iast">kartum । samarthaḥ । asi । jagat । samastam । akartum । api । etat । ataḥ । anyathā । vā । kaḥ । te । prayatnaḥ । ambudhi-śoṣaṇa-arthe । babhrau । ibhānām । iva । ghātukasya ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">समर्थः + असि = समर्थोऽसि (पूर्वरूप) · समस्तम् + अकर्तुम् = समस्तमकर्तुम् · अपि + एतत् = अप्येतत् (यण्) · एतत् + अतः = एतदतः (त् → द्) · अतः + अन्यथा = अतोऽन्यथा · कः + ते = कस्ते (विसर्ग → स्) · प्रयत्नः + अम्बुधि = प्रयत्नोऽम्बुधि · शोषण + अर्थे = शोषणार्थे · बभ्रौ + इभानाम् = बभ्राविभानाम् (औ → आव्) · इभानाम् + इव = इभानामिव</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(त्वं) समस्तं जगत् कर्तुम्, एतत् अकर्तुम् अपि, अतः अन्यथा वा (कर्तुं) समर्थः असि । इभानां घातुकस्य बभ्रौ इव, ते अम्बुधिशोषणार्थे कः प्रयत्नः?</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;You are able to create this entire world, to refrain from creating it, or to make it otherwise. What effort would the drying up of the ocean cost You — just as the tawny lion, the slayer of elephants, crushes its victim with ease?&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तू हे सर्व जग निर्माण करण्यास व नष्ट करण्यासही समर्थ आहेस. तुला हे जग असे किंवा तसे (अन्यथा) ही करता येईल. हत्तींचा घात करणारा पिंगट सिंह ज्याप्रमाणे (आपले भक्ष्य) सहज मारतो, त्याप्रमाणे समुद्रशोषणाच्या कामात तुला कोणता मोठा प्रयत्न करावा लागणार?</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 44: बभ्राविभानामिव confirmed as printed (बभ्रौ + इभानाम् + इव)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कर्तुम् … अकर्तुम् … अन्यथा (कर्तुम्)</span>
+    <span class="word-iast">kartum … akartum … anyathā (kartum)</span>
+  </div>
+  <div><span class="word-grammar">कर्तुम् = √कृ (8th class) + tumun, indeclinable; अकर्तुम् (nañ-tatpuruṣa); अन्यथा indeclinable</span></div>
+  <div class="word-form">In this verse: कर्तुं … अकर्तुमप्येतदतोऽन्यथा</div>
+  <p class="word-meaning lang-en">to do, to not do, or to do otherwise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करण्यास, न करण्यास, किंवा वेगळे करण्यास (‘कर्तुमकर्तुमन्यथाकर्तुं समर्थः’ — ईश्वराचे प्रसिद्ध लक्षण)</p>
+  <div class="word-usage">
+    <div class="deva">ईश्वरः जगत् कर्तुम् अकर्तुम् अन्यथा कर्तुम् च समर्थः ।</div>
+    <div class="usage-iast">īśvaraḥ jagat kartum akartum anyathā kartum ca samarthaḥ.</div>
+    <div class="usage-meaning lang-en">The Lord is able to make the world, to not make it, or to make it otherwise.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ईश्वर जग निर्माण करण्यास, न करण्यास किंवा वेगळे करण्यास समर्थ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समर्थः असि</span>
+    <span class="word-iast">samarthaḥ asi</span>
+  </div>
+  <div><span class="word-grammar">समर्थः masculine nominative singular adjective; असि = √अस् laṭ 2nd person singular</span></div>
+  <div class="word-form">In this verse: समर्थोऽसि</div>
+  <p class="word-meaning lang-en">You are able</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समर्थ आहेस</p>
+  <div class="word-usage">
+    <div class="deva">त्वम् सर्वम् कर्तुम् समर्थः असि ।</div>
+    <div class="usage-iast">tvam sarvam kartum samarthaḥ asi.</div>
+    <div class="usage-meaning lang-en">You are able to do everything.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू सर्व करण्यास समर्थ आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कः ते प्रयत्नः</span>
+    <span class="word-iast">kaḥ te prayatnaḥ</span>
+  </div>
+  <div><span class="word-grammar">कः = किम् masculine nominative singular; ते = genitive (तव इत्यर्थे); प्रयत्नः masculine nominative singular</span></div>
+  <div class="word-form">In this verse: कस्ते प्रयत्नः</div>
+  <p class="word-meaning lang-en">what effort (is it) for You?</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुला कोणता (मोठा) प्रयत्न?</p>
+  <div class="word-usage">
+    <div class="deva">महात्मने कः ते प्रयत्नः दुष्टनिग्रहे ।</div>
+    <div class="usage-iast">mahātmane kaḥ te prayatnaḥ duṣṭanigrahe.</div>
+    <div class="usage-meaning lang-en">What effort is it for the great one to curb the wicked?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महात्म्याला दुष्टनिग्रहात कोणता प्रयत्न?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अम्बुधिशोषणार्थे</span>
+    <span class="word-iast">ambudhiśoṣaṇārthe</span>
+  </div>
+  <div><span class="word-grammar">caturthī-tatpuruṣa (अम्बुधेः शोषणम्, तदर्थम्), neuter locative singular</span></div>
+  <div class="word-form">In this verse: अम्बुधिशोषणार्थे</div>
+  <p class="word-meaning lang-en">in the matter of drying up the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र सुकवण्याच्या बाबतीत</p>
+  <div class="word-usage">
+    <div class="deva">अगस्त्यः अम्बुधिशोषणार्थे समर्थः आसीत् ।</div>
+    <div class="usage-iast">agastyaḥ ambudhiśoṣaṇārthe samarthaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">Agastya was capable in the matter of drying up the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अगस्त्य समुद्र सुकवण्याच्या कामी समर्थ होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इभानां घातुकस्य</span>
+    <span class="word-iast">ibhānāṃ ghātukasya</span>
+  </div>
+  <div><span class="word-grammar">इभानाम् = इभ genitive plural; घातुकस्य = √हन् (2nd class) + ṇvul (agentive), masculine genitive singular</span></div>
+  <div class="word-form">In this verse: बभ्राविभानामिव घातुकस्य</div>
+  <p class="word-meaning lang-en">of the slayer of elephants (the lion)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तींना मारणाऱ्याला (सिंहाला)</p>
+  <div class="word-usage">
+    <div class="deva">सिंहः इभानां घातुकः इति प्रसिद्धः ।</div>
+    <div class="usage-iast">siṃhaḥ ibhānāṃ ghātukaḥ iti prasiddhaḥ.</div>
+    <div class="usage-meaning lang-en">The lion is famed as the slayer of elephants.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सिंह हत्तींचा घातक म्हणून प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बभ्रौ</span>
+    <span class="word-iast">babhrau</span>
+  </div>
+  <div><span class="word-grammar">बभ्रु (पिङ्गलवर्णः, सिंहः) masculine locative singular</span></div>
+  <div class="word-form">In this verse: बभ्राविभानामिव</div>
+  <p class="word-meaning lang-en">in/among the tawny one (the lion)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिंगट (सिंहा)च्या बाबतीत (सप्तमी)</p>
+  <div class="word-usage">
+    <div class="deva">बभ्रौ सिंहे मृगाः बिभ्यति ।</div>
+    <div class="usage-iast">babhrau siṃhe mṛgāḥ bibhyati.</div>
+    <div class="usage-meaning lang-en">The deer fear the tawny lion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिंगट सिंहाला हरणे भितात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इव</span>
+    <span class="word-iast">iva</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (in comparison)</span></div>
+  <div class="word-form">In this verse: इव</div>
+  <p class="word-meaning lang-en">like, as</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जसे</p>
+  <div class="word-usage">
+    <div class="deva">मुखम् चन्द्रः इव शोभते ।</div>
+    <div class="usage-iast">mukham candraḥ iva śobhate.</div>
+    <div class="usage-meaning lang-en">The face shines like the moon.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुख चंद्राप्रमाणे शोभते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Kartum akartum anyathā kartum samarthaḥ — able to do, not to do, or to do otherwise — is the classical definition of the Lord&#x27;s absolute freedom. For the devotee this is pure assurance: nothing the Lord wills is difficult for Him, so surrender is never a gamble. The lion-and-elephant image drives home the proportion — what is effortless play for the mighty is impossible for the weak — and therefore the wise choose refuge over resistance, as the Ocean himself now does.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कर्तुम् अकर्तुम् अन्यथा कर्तुं समर्थः — करणे, न करणे किंवा वेगळे करणे यास समर्थ — ही भगवंताच्या निरपेक्ष स्वातंत्र्याची शास्त्रीय व्याख्या आहे. भक्तासाठी ही शुद्ध आश्वासन आहे: भगवंताला जे करायचे असते ते त्याला कठीण नसते, म्हणून शरणागती कधीच जुगार नसते. सिंह-हत्तीची उपमा प्रमाण पटवून देते — बलवानाला जे सहज क्रीडा ते दुर्बलाला अशक्य — म्हणून शहाणा प्रतिकारापेक्षा आश्रय निवडतो, जसे आता स्वतः समुद्र करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The formula &#x27;kartum akartum anyathā kartum samarthaḥ&#x27; is the stock Vedāntic definition of īśvara&#x27;s omnipotence, used by commentators such as Śrīdhara Svāmī on the Bhāgavata to explain how the Lord&#x27;s will meets no obstruction. The Ocean applies it to his own case: his threatened drying-up (ambudhiśoṣaṇa) — the very threat Rāma once held over Sāgara in the Rāmāyaṇa — would cost Paraśurāma no more effort than a lion spends on an elephant.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भगवंताची इच्छा कशानेही अडत नाही हे स्पष्ट करण्यासाठी &#x27;कर्तुमकर्तुमन्यथाकर्तुं समर्थः&#x27; हे वेदान्ताचे ठरलेले ईश्वरलक्षण आहे; भागवतावर श्रीधरस्वामींसारखे टीकाकार ते वापरतात. समुद्र ते स्वतःच्या बाबतीत लावतो: त्याला सुकवण्याची (अम्बुधिशोषण) धमकी — रामायणात रामाने सागराला दिलेली धमकीच — परशुरामाला सिंहाला हत्ती मारण्याइतकीही सहज जाईल.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: upajāti. Textual note (kept from the transcription review): the printed &#x27;बभ्राविभानामिव&#x27; is confirmed as बभ्रौ (locative of बभ्रु, &#x27;the tawny one,&#x27; i.e. the lion) + इभानाम् (of elephants) + इव (like) — &#x27;like the tawny slayer among elephants.&#x27; The book&#x27;s Marathi renders the image freely; the English above follows the Sanskrit parse. Cross-link: the drying of the ocean recalls both the Rāmāyaṇa&#x27;s Sāgara episode and Agastya&#x27;s drinking of the ocean.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: उपजाति. पाठनोंद (प्रतिलेखन-पुनरावलोकनातून जतन केलेली): छापील &#x27;बभ्राविभानामिव&#x27; हे बभ्रौ (बभ्रुची सप्तमी, &#x27;पिंगट&#x27;, म्हणजे सिंह) + इभानाम् (हत्तींच्या) + इव (प्रमाणे) असे निश्चित झाले आहे — &#x27;हत्तींमधील पिंगट घातकाप्रमाणे.&#x27; ग्रंथाचे मराठी भाषांतर ही प्रतिमा मोकळेपणाने मांडते; वरील इंग्रजी संस्कृत वाचनाला अनुसरते. संदर्भसूत्र: समुद्र सुकवणे रामायणातील सागर-प्रसंग व अगस्त्याने समुद्र प्राशन केल्याची कथा या दोन्हींची आठवण करून देते.</p></div></div>
+
+<div class="pagenav"><a href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 43</div></a><a class="next" href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 45</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

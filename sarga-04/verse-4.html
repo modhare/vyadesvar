@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 4 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 4</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 4</span><span class="bl-mr lang-mr">श्लोक 4</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तत्रावसत्तापसशेखरोऽसौ मुनिर्महात्मा मधुसूदनांशः ।<br>उपासमानो गिरिशं गुरुं स्वं भर्गं निसर्गादविमृग्यमार्गम् ।।४।।</div>
+  <div class="verse-iast">tatrāvasattāpasaśekharo&#x27;sau munirmahātmā madhusūdanāṃśaḥ । upāsamāno giriśaṃ guruṃ svaṃ bhargaṃ nisargādavimṛgyamārgam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत्र । अवसत् । तापस-शेखरः । असौ । मुनिः । महात्मा । मधुसूदन-अंशः । उपासमानः । गिरिशम् । गुरुम् । स्वम् । भर्गम् । निसर्गात् । अविमृग्य-मार्गम् ।</div><div class="vig-iast">tatra । avasat । tāpasa-śekharaḥ । asau । muniḥ । mahātmā । madhusūdana-aṃśaḥ । upāsamānaḥ । giriśam । gurum । svam । bhargam । nisargāt । avimṛgya-mārgam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत्र + अवसत् = तत्रावसत् · अवसत् + तापस = अवसत्तापस · शेखरः + असौ = शेखरोऽसौ (पूर्वरूप) · मुनिः + महात्मा = मुनिर्महात्मा · उपासमानः + गिरिशम् = उपासमानो गिरिशम् · निसर्गात् + अविमृग्य = निसर्गादविमृग्य (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तापसशेखरः महात्मा मधुसूदनांशः असौ मुनिः निसर्गात् अविमृग्यमार्गं स्वं गुरुं भर्गं गिरिशम् उपासमानः तत्र अवसत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The great-souled sage, the crest-jewel of ascetics, a portion of Madhusūdana, settled there, worshipping his own guru — Giriśa, the radiant Bharga, whose path is by nature untraceable.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मधुसूदन विष्णूचा अंश असलेला तो महात्मा तापसश्रेष्ठ मुनी निसर्गतः ज्याचा माग लागणे कठिण आहे अशा आपल्या गुरुस्वरूप गिरीश शंकराची उपासना करीत तेथेच राहिला.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 4.2, Marathi: my misreading जगतावनिका corrected to the book&#x27;s जगत्पावनिका (matches the Sanskrit). Verse 4.3, line 1: my misreading तुल्यसत्वो corrected to the book&#x27;s तुल्यसत्त्वो. Verse 4.4, line 2: my misreading निसर्गादभिमृग्यमार्गम् corrected to the book&#x27;s निसर्गादविमृग्यमार्गम्. Both scan (दभि and दवि are both two light syllables), but only अविमृग्य, &quot;untraceable&quot;, gives the Marathi&#x27;s ज्याचा माग लागणे कठिण; अभिमृग्य would only mean &quot;to be sought&quot;. Verse 4.8, line 2: स्वदर्शनामागतम् confirmed from the book. The meter needs a long ना here, so स्वदर्शनमागतम् would not scan; left as printed. Verse 4.9, line 2: the book&#x27;s भर्गोन्मुखसंगहस्तम् → भर्गोन्मुखसंगहस्तः (conjectural; nominative bahuvrīhi agreeing with मुनिः, Marathi त्या मुनीने हात जोडून; meter unchanged). Verse 4.10, line 2: the book&#x27;s धरानिर्जराधीशमड्छेखराय → धरानिर्जराधीशसच्छेखराय, following the book&#x27;s own note (ड्छे अक्षर स असावे): सत् + शेखर, त् + श → च्छ, &quot;the true crown&quot; (Marathi अधिपतीत श्रेष्ठ); scans. Verse 4.14, line 1: मुक्तोत्सप्तोन्तकाले\* left as printed. The book&#x27;s own footnote (p. 36) says the word&#x27;s meaning is not clear. It scans. The Marathi (सात सागरांनी मर्यादा सोडून सृष्टी बुडवली त्या वेळी) suggests …अन्तकाले, &quot;at the dissolution&quot;, but मुक्तोत्सप्तो- stays obscure, so no emendation is proposed. Verse 4.14, Marathi: completed from page 36. Verse 4.15, line 1: the book&#x27;s विभक्ते-र्मायागुणैः → विभक्तै-र्मायागुणैः (विभक्तैः agrees with मायागुणैः, &quot;by the guṇas of māyā, divided&quot;; meter unchanged). Verse 4.15, line 3: the book&#x27;s मृग्यङ्घ्रि → मृग्याङ्घ्रि. मृग्य + अङ्घ्रि must give आ by सवर्णदीर्घ sandhi (&quot;whose feet are sought&quot;, Marathi चरणकमलांचा शोध घेतात). The meter does not decide it: य is heavy either way before the conjunct ङ्घ्र. Verse 4.21, line 2: the book&#x27;s ईहक्षा → ईदृक्षा. ईहक्षा is not a word; ईदृक्षाः (&quot;such&quot;, feminine plural agreeing with ब्रह्माण्डकोटयः) gives the sense &quot;such \[universes\], by the lakh, as this one with you, me and the rest&quot;. The meter is the same (both ईह- and ईदृ- before क्ष are heavy). Verse 4.25, Marathi: continues on page 38. Verse 4.27, line 2: गुणैरपार्थैः confirmed from the book and left as printed (अपार्थ, &quot;unreal, without substance&quot;). The book&#x27;s Marathi अगाध would suit अपारैः, but अपार्थैः scans and fits the Vedānta point that the three are one in reality. Verse 4.39: completed from page 40. Verse 4.35, line 2: तस्य तेऽध्ययनं मत्तः confirmed from the book and left as printed. It scans and makes good sense: &quot;that you, whose breath is the Vedas and from whose portion Sarasvatī was born, studied under me, I count the cause of my fame&quot; (Paraśurāma is Śiva&#x27;s pupil, 1.11, 4.4). The book&#x27;s Marathi (त्या तुला मी जाणले) is a loose rendering, not a different reading. Verse 4.43, line 2: the book&#x27;s तत्सिन्धुसंगमाद्याभ्यां → तत्सिन्धुसंगमाद्याम्यां (conjectural, one-stroke भ → म). याभ्याम्, the dual of यद्, cannot agree with दिशि; याम्यां (याम्या दिक्, &quot;the south&quot;) agrees with it and fits समुद्रतीरे in 4.44. The book&#x27;s Marathi पूर्व दिशेला would need प्राच्यां and is left as printed. Meter unchanged. Verse 4.52: completed from page 42. Verse 4.39: Marathi aligned to तव अस्य पाता अस्मि (&quot;I am the protector of this world of yours&quot;); the book&#x27;s आस्य = &quot;face&quot; reading dropped (see grammar note).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तापसशेखरः</span>
+    <span class="word-iast">tāpasaśekharaḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m., bahuvrīhi compound (तापस-शेखर)</span></div>
+  <div class="word-form">In this verse: तापसशेखरः</div>
+  <p class="word-meaning lang-en">the crest-jewel of ascetics</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपस्व्यांचा मुकुटमणी</p>
+  <div class="word-usage">
+    <div class="deva">तापसशेखरः वनं प्राविशत्</div>
+    <div class="usage-iast">tāpasaśekharaḥ vanaṃ prāviśat</div>
+    <div class="usage-meaning lang-en">The crest-jewel of ascetics entered the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपस्व्यांचा मुकुटमणी वनात प्रवेशला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मधुसूदनांशः</span>
+    <span class="word-iast">madhusūdanāṃśaḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m., tatpuruṣa/bahuvrīhi compound</span></div>
+  <div class="word-form">In this verse: मधुसूदनांशः</div>
+  <p class="word-meaning lang-en">a portion (aṃśa) of Madhusūdana, i.e. Viṣṇu</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णूचा अंश</p>
+  <div class="word-usage">
+    <div class="deva">परशुरामः मधुसूदनांशः इति ज्ञायते</div>
+    <div class="usage-iast">paraśurāmaḥ madhusūdanāṃśaḥ iti jñāyate</div>
+    <div class="usage-meaning lang-en">Paraśurāma is known as a portion of Madhusūdana.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुराम मधुसूदनाचा अंश म्हणून ओळखला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवसत्</span>
+    <span class="word-iast">avasat</span>
+  </div>
+  <div><span class="word-grammar">3rd sg. imperfect (laṅ), parasmaipada, of √वस् (1st class)</span></div>
+  <div class="word-form">In this verse: अवसत्</div>
+  <p class="word-meaning lang-en">he dwelt; he settled</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राहिला (लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">मुनिः तत्र वर्षाणि अवसत्</div>
+    <div class="usage-iast">muniḥ tatra varṣāṇi avasat</div>
+    <div class="usage-meaning lang-en">The sage dwelt there for years.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनी तेथे वर्षानुवर्षे राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गिरिशम्, भर्गम्</span>
+    <span class="word-iast">giriśam, bhargam</span>
+  </div>
+  <div><span class="word-grammar">both acc. sg. m., epithets of Śiva (गिरि-श, &#x27;lord of the mountain&#x27;; भर्ग, &#x27;the radiant one&#x27;, from √भ्राज्)</span></div>
+  <div class="word-form">In this verse: गिरिशम्, भर्गम्</div>
+  <p class="word-meaning lang-en">Śiva — Giriśa (lord of the mountain), Bharga (the radiant)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शंकराला</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः गिरिशं भर्गं च प्रणमति</div>
+    <div class="usage-iast">bhaktaḥ giriśaṃ bhargaṃ ca praṇamati</div>
+    <div class="usage-meaning lang-en">The devotee bows to Giriśa and Bharga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त गिरीशाला आणि भर्गाला नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वं गुरुम्</span>
+    <span class="word-iast">svaṃ gurum</span>
+  </div>
+  <div><span class="word-grammar">स्वम् acc. sg. m. of स्व; गुरुम् acc. sg. m. of गुरु</span></div>
+  <div class="word-form">In this verse: स्वं गुरुम्</div>
+  <p class="word-meaning lang-en">his own guru (Śiva, Paraśurāma&#x27;s teacher of arms)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या गुरूला (परशुरामाचा अस्त्रगुरू शिव)</p>
+  <div class="word-usage">
+    <div class="deva">शिष्यः स्वं गुरुं नित्यं स्मरति</div>
+    <div class="usage-iast">śiṣyaḥ svaṃ guruṃ nityaṃ smarati</div>
+    <div class="usage-meaning lang-en">The disciple ever remembers his own guru.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्य आपल्या गुरूचे नित्य स्मरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निसर्गात् अविमृग्यमार्गम्</span>
+    <span class="word-iast">nisargāt avimṛgyamārgam</span>
+  </div>
+  <div><span class="word-grammar">निसर्गात् abl. sg. m., used adverbially (&#x27;by nature&#x27;); अविमृग्यमार्गम् acc. sg. m., bahuvrīhi (अ-विमृग्य-मार्ग)</span></div>
+  <div class="word-form">In this verse: निसर्गात् अविमृग्यमार्गम्</div>
+  <p class="word-meaning lang-en">whose path is by nature untraceable</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वभावतःच ज्याचा मार्ग शोधता येत नाही अशा</p>
+  <div class="word-usage">
+    <div class="deva">वायुः निसर्गात् अविमृग्यमार्गः इव चरति</div>
+    <div class="usage-iast">vāyuḥ nisargāt avimṛgyamārgaḥ iva carati</div>
+    <div class="usage-meaning lang-en">The wind moves as though its path were by nature untraceable.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वारा जणू स्वभावतःच ज्याचा मार्ग शोधता येत नाही अशा रीतीने वाहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपासमानः</span>
+    <span class="word-iast">upāsamānaḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m., present participle (śānac) of उप-√आस् (2nd class, ātmanepada)</span></div>
+  <div class="word-form">In this verse: उपासमानः</div>
+  <p class="word-meaning lang-en">worshipping; attending upon</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपासना करीत</p>
+  <div class="word-usage">
+    <div class="deva">शिष्यः गुरुं उपासमानः विद्यां लभते</div>
+    <div class="usage-iast">śiṣyaḥ guruṃ upāsamānaḥ vidyāṃ labhate</div>
+    <div class="usage-meaning lang-en">The pupil, attending upon his teacher, gains knowledge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूची सेवा करणाऱ्या शिष्याला विद्या मिळते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma is presented as Viṣṇu&#x27;s own portion worshipping Śiva as his guru — the poem refuses sectarian walls, showing the avatāra himself at Śiva&#x27;s feet. Yet that guru is &#x27;by nature untraceable&#x27;: the highest truth cannot be tracked by effort, only met in worship. The verse thus frames the whole sarga: the Lord who hides (4.8) is the same Lord who is worshipped, and the devotee&#x27;s task is steadfast upāsanā, not capture.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुराम हा विष्णूचाच अंश म्हणून शिवाला आपला गुरू मानून त्याची उपासना करतो — काव्य पंथाच्या भिंती नाकारते; अवतार स्वतः शिवाच्या चरणी दाखवला आहे. पण तो गुरू &#x27;स्वभावतःच ज्याचा मार्ग शोधता येत नाही&#x27; असा आहे — परम सत्य प्रयत्नाने गाठता येत नाही, ते फक्त उपासनेत भेटते. हा श्लोक संपूर्ण सर्गाची चौकट ठरवतो : जो भगवान लपतो (४.८) तोच उपास्य भगवान आहे, आणि भक्ताचे काम अचल उपासना आहे, पकडणे नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma is counted among the aṃśāvatāras of Viṣṇu (Madhusūdana, slayer of Madhu), while Śiva is his dhanurveda-guru: the Purāṇas tell how he propitiated Śiva on the Himālaya and received the divine weapons, including the paraśu. &#x27;Whose path is untraceable&#x27; echoes the Upaniṣadic neti-neti — the Lord is known only by grace, never by pursuit.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुराम विष्णूच्या (मधुसूदन — मधूचा वध करणाऱ्या) अंशावतारांत गणला जातो, तर शिव हा त्याचा धनुर्वेदगुरू — पुराणे सांगतात की त्याने हिमालयात शिवाची आराधना केली आणि परशूसह दिव्यास्त्रे मिळवली. &#x27;ज्याचा मार्ग शोधता येत नाही&#x27; हे औपनिषदिक नेति-नेतीचे प्रतिध्वनन आहे — भगवान केवळ कृपेनेच ज्ञात होतो, पाठलागाने कधीच नाही.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The source transcription notes three corrections by the editor on this verse&#x27;s neighbours: 4.2 जगतावनिका → जगत्पावनिका, 4.3 तुल्यसत्वो → तुल्यसत्त्वो, and here निसर्गादभिमृग्यमार्गम् → निसर्गादविमृग्यमार्गम्. Only अविमृग्य (&#x27;untraceable&#x27;) yields the book&#x27;s Marathi ज्याचा माग लागणे कठिण; अभिमृग्य would mean merely &#x27;to be sought&#x27;. Both scan, so sense alone decides — a model case of the editor&#x27;s method. Metre: Upajāti.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मूळ प्रतिलेखनात या श्लोकाच्या शेजारी तीन दुरुस्त्या संपादकाने नोंदवल्या आहेत : ४.२ जगतावनिका → जगत्पावनिका, ४.३ तुल्यसत्वो → तुल्यसत्त्वो, आणि येथे निसर्गादभिमृग्यमार्गम् → निसर्गादविमृग्यमार्गम्. पुस्तकाच्या मराठीतील ज्याचा माग लागणे कठिण हा अर्थ फक्त अविमृग्य (&#x27;ज्याचा माग लागणे अशक्य&#x27;) देतो; अभिमृग्य म्हणजे केवळ &#x27;शोधायचा&#x27;. दोन्ही वृत्तात बसतात, म्हणून अर्थच निर्णय देतो — संपादकाच्या पद्धतीचे आदर्श उदाहरण. वृत्त : उपजाती.</p></div></div>
+
+<div class="pagenav"><a href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 3</div></a><a class="next" href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 5</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

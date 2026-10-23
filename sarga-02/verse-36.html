@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 36 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 36</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 36</span><span class="bl-mr lang-mr">श्लोक 36</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स ययौ मेघमार्गेण प्रविमुक्तः शिलीमुखः।<br>नादयन् ध्वनिना व्योमगां तथोपदिशोदिताम् ।।३६।।</div>
+  <div class="verse-iast">sa yayau meghamārgeṇa pravimuktaḥ śilīmukhaḥ । nādayan dhvaninā vyomagāṃ tathopadiśoditām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">सः । ययौ । मेघ-मार्गेण । प्रविमुक्तः । शिलीमुखः । नादयन् । ध्वनिना । व्योम-गाम् । तथा । उपदिशा । उदिताम् ।</div><div class="vig-iast">saḥ । yayau । megha-mārgeṇa । pravimuktaḥ । śilīmukhaḥ । nādayan । dhvaninā । vyoma-gām । tathā । upadiśā । uditām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सः + ययौ = स ययौ · तथा + उपदिशा = तथोपदिशा (गुण) · उपदिशा + उदिताम् = उपदिशोदिताम् (गुण)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">प्रविमुक्तः सः शिलीमुखः तथा उपदिशा उदितां व्योमगां ध्वनिना नादयन् मेघमार्गेण ययौ ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>That released arrow sped along the path of clouds, making the Milky Way — risen in the corner-quarter — resound with its twang.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>(रामाकडून) सोडलेला तो बाण त्या उपदिशेत उदित झालेल्या आकाशगंगेला आपल्या ध्वनीने निनादित करीत मेघमार्गाने म्हणजे आकाशमार्गाने गेला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रविमुक्तः शिलीमुखः</span>
+    <span class="word-iast">pravimuktaḥ śilīmukhaḥ</span>
+  </div>
+  <div><span class="word-grammar">both masculine nominative singular; प्रविमुक्तः: प्र + वि + √मुच् + क्त; शिलीमुखः: बहुव्रीहि शिली मुखे यस्य</span></div>
+  <div class="word-form">In this verse: प्रविमुक्तः शिलीमुखः (stem प्रविमुक्त / शिलीमुख)</div>
+  <p class="word-meaning lang-en">the released arrow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोडलेला बाण</p>
+  <div class="word-usage">
+    <div class="deva">प्रविमुक्तः शिलीमुखः आकाशे गच्छति ।</div>
+    <div class="usage-iast">pravimuktaḥ śilīmukhaḥ ākāśe gacchati ।</div>
+    <div class="usage-meaning lang-en">The released arrow travels through the sky.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोडलेला बाण आकाशात जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ययौ</span>
+    <span class="word-iast">yayau</span>
+  </div>
+  <div><span class="word-grammar">√या, perfect (lit), third person singular</span></div>
+  <div class="word-form">In this verse: ययौ (√या, लिट्)</div>
+  <p class="word-meaning lang-en">went</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गेला (√या, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">रामः वनं ययौ ।</div>
+    <div class="usage-iast">rāmaḥ vanaṃ yayau ।</div>
+    <div class="usage-meaning lang-en">Rāma went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम वनात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मेघमार्गेण</span>
+    <span class="word-iast">meghamārgeṇa</span>
+  </div>
+  <div><span class="word-grammar">masculine instrumental singular; तत्पुरुष मेघानां मार्गः</span></div>
+  <div class="word-form">In this verse: मेघमार्गेण (stem मेघमार्ग, तृतीया एकवचन)</div>
+  <p class="word-meaning lang-en">by the cloud-path, through the sky</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशमार्गाने</p>
+  <div class="word-usage">
+    <div class="deva">पक्षिणः मेघमार्गेण उड्डयन्ते ।</div>
+    <div class="usage-iast">pakṣiṇaḥ meghamārgeṇa uḍḍayante ।</div>
+    <div class="usage-meaning lang-en">Birds fly by the sky-path.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पक्षी आकाशमार्गाने उडतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्योमगाम्</span>
+    <span class="word-iast">vyomagām</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular; व्योमगङ्गा, तत्पुरुष</span></div>
+  <div class="word-form">In this verse: व्योमगाम् (stem व्योमगा, द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">the celestial Ganges, the Milky Way</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशगंगेला</p>
+  <div class="word-usage">
+    <div class="deva">व्योमगा रात्रौ दृश्यते ।</div>
+    <div class="usage-iast">vyomagā rātrau dṛśyate ।</div>
+    <div class="usage-meaning lang-en">The Milky Way is seen at night.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशगंगा रात्री दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपदिशा उदिताम्</span>
+    <span class="word-iast">upadiśā uditām</span>
+  </div>
+  <div><span class="word-grammar">उपदिशा: feminine instrumental singular (intermediate quarter); उदिताम्: feminine accusative singular, उत् + √इ + क्त</span></div>
+  <div class="word-form">In this verse: उपदिशा (तृतीया) + उदिताम् (क्तान्त)</div>
+  <p class="word-meaning lang-en">risen in the intermediate (corner) quarter</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपदिशेत (कोपऱ्यातील दिशेत) उगवलेली</p>
+  <div class="word-usage">
+    <div class="deva">चन्द्रः उपदिशा उदितः आसीत् ।</div>
+    <div class="usage-iast">candraḥ upadiśā uditaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">The moon had risen in the corner-quarter.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र कोपऱ्यातील दिशेत उगवला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नादयन् ध्वनिना</span>
+    <span class="word-iast">nādayan dhvaninā</span>
+  </div>
+  <div><span class="word-grammar">नादयन्: masculine nominative singular, शतृ of the causative (णिजन्त) of √नद्; ध्वनिना: masculine instrumental singular</span></div>
+  <div class="word-form">In this verse: नादयन् (शतृ, णिजन्त) + ध्वनिना (तृतीया)</div>
+  <p class="word-meaning lang-en">making resound with its sound</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आवाजाने निनादित करीत</p>
+  <div class="word-usage">
+    <div class="deva">सिंहः वनं नादयन् गर्जति ।</div>
+    <div class="usage-iast">siṃhaḥ vanaṃ nādayan garjati ।</div>
+    <div class="usage-meaning lang-en">The lion roars, making the forest resound.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सिंह वन निनादित करीत गर्जना करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The arrow&#x27;s flight shakes even the heavens: its twang fills the Milky Way, as if earth and sky both witness the avatāra&#x27;s resolve. The poet&#x27;s cosmos is alive and listening — nature itself answers the hero&#x27;s deed. For the devotee, this is the assurance that righteous resolve echoes beyond its immediate mark.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बाणाच्या उड्डाणाने स्वर्गही हादरतो : त्याच्या टणत्काराने आकाशगंगा निनादित होते, जणू पृथ्वी आणि आकाश दोघेही अवताराच्या निर्धाराचे साक्षीदार आहेत. कवीचे विश्व जिवंत आणि ऐकणारे आहे — निसर्गच वीराच्या कृतीला उत्तर देतो. भक्तासाठी हा दिलासा आहे की न्याय्य निर्धार आपल्या तात्काळ लक्ष्यापलीकडे प्रतिध्वनित होतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Vyomagā, &#x27;she who goes through the sky,&#x27; is the celestial Ganges — the Milky Way. Seeing the Milky Way &#x27;risen in the intermediate quarter&#x27; places the arrow&#x27;s flight at night, a classic kāvya touch: the hero&#x27;s deed lights up even the night sky.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>व्योमगा — &#x27;आकाशातून जाणारी&#x27; — म्हणजे आकाशगंगा. उपदिशेत (कोपऱ्यातील दिशेत) उगवलेली आकाशगंगा दिसणे म्हणजे बाणाची उड्डाणे रात्रीची; हा शास्त्रीय काव्याचा ठरलेला स्पर्श आहे : वीराची कृती रात्रीच्या आकाशालाही उजळवते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Meghamārga, &#x27;the path of clouds,&#x27; is a standard poetic name for the sky. The arrow&#x27;s dhvani (twang) resounding in the Milky Way continues the verse&#x27;s play of vast distances — from bowstring to galaxy in one śloka.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मेघमार्ग — &#x27;मेघांचा मार्ग&#x27; — हे आकाशाचे ठरलेले काव्यनाम आहे. बाणाचा ध्वनी आकाशगंगेत निनादणे हे या श्लोकाच्या अफाट अंतरांच्या खेळाला पुढे नेते — एकाच श्लोकात धनुष्याच्या दोरीपासून आकाशगंगेपर्यंत.</p></div></div>
+
+<div class="pagenav"><a href="verse-35.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 35</div></a><a class="next" href="verse-37.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 37</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 14 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 14</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 14</span><span class="bl-mr lang-mr">श्लोक 14</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पूर्वेषामघहरणाय मोक्षदां का वानिन्ये सुरसदनाद्भगीरथस्त्वाम् ।<br>तद्भागीरथि जननि त्वमन्वितार्था श्रीगंगे सनति गृहाण सन्ममार्घ्यम् ।।१४।।</div>
+  <div class="verse-iast">pūrveṣāmaghaharaṇāya mokṣadāṃ kā vāninye surasadanādbhagīrathastvām । tadbhāgīrathi janani tvamanvitārthā śrīgaṃge sanati gṛhāṇa sanmamārghyam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पूर्वेषाम् अघ-हरणाय मोक्ष-दाम् का वा (?) आनिन्ये सुर-सदनात् भगीरथः त्वाम् । तत् भागीरथि जननि त्वम् अन्वित-अर्था श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम् ।</div><div class="vig-iast">pūrveṣām agha-haraṇāya mokṣa-dām kā vā (?) āninye sura-sadanāt bhagīrathaḥ tvām । tat bhāgīrathi janani tvam anvita-arthā śrīgaṅge sa-nati gṛhāṇa sat mama arghyam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पूर्वेषाम् + अघ = पूर्वेषामघ · वा + आनिन्ये = वानिन्ये · सदनात् + भगीरथः = सदनाद्भगीरथः · भगीरथः + त्वाम् = भगीरथस्त्वाम् · तत् + भागीरथि = तद्भागीरथि · त्वम् + अन्वित = त्वमन्वित · अन्वित + अर्था = अन्वितार्था · ध्रुवपद: सन्मम, ममार्घ्यम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भगीरथः पूर्वेषाम् अघहरणाय मोक्षदां त्वां सुरसदनात् आनिन्ये (का वा — ?); तत् जननि, त्वम् अन्वितार्था भागीरथि (असि) । श्रीगङ्गे, मम सत् अर्घ्यं सनति गृहाण । *(अन्वितार्था = ‘भागीरथी’ हे नाव सार्थ.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Bhagīratha brought you down from heaven for the removal of his ancestors&#x27; sins and the granting of liberation to them — hence, O Bhāgīrathī, mother whose name is true to its meaning: here I praise you, O Śrī Gaṅgā; accept the auspicious arghya I offer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भगीरथाने पूर्वजांच्या पापांच्या नाशासाठी मोक्षप्रद अशा तुला स्वर्गातून पृथ्वीवर आणले — म्हणूनच, श्रीगंगे, हा मी तुझे स्तवन करीत आहे, मी दिलेल्या शुभ अर्घ्याचा तू स्वीकार कर.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूर्वेषाम्</span>
+    <span class="word-iast">pūrveṣām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.</span></div>
+  <div class="word-form">In this verse: पूर्वेषाम्</div>
+  <p class="word-meaning lang-en">of the ancestors</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्वजांच्या</p>
+  <div class="word-usage">
+    <div class="deva">पूर्वेषां पुण्येन वयं सुखिनः।</div>
+    <div class="usage-iast">pūrveṣāṃ puṇyena vayaṃ sukhinaḥ।</div>
+    <div class="usage-meaning lang-en">By the merit of our ancestors we are happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्वजांच्या पुण्याने आम्ही सुखी आहोत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अघ-हरणाय</span>
+    <span class="word-iast">agha-haraṇāya</span>
+  </div>
+  <div><span class="word-grammar">नपुं. च. एव.</span></div>
+  <div class="word-form">In this verse: अघहरणाय</div>
+  <p class="word-meaning lang-en">for removing the sins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापनाशासाठी</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गास्नानम् अघहरणाय भवति।</div>
+    <div class="usage-iast">gaṅgāsnānam aghaharaṇāya bhavati।</div>
+    <div class="usage-meaning lang-en">Bathing in the Gaṅgā is for the removal of sins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगास्नान पापनाशासाठी असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मोक्ष-दाम्</span>
+    <span class="word-iast">mokṣa-dām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: मोक्षदां</div>
+  <p class="word-meaning lang-en">giver of liberation</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोक्ष देणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गां मोक्षदां वन्दे।</div>
+    <div class="usage-iast">gaṅgāṃ mokṣadāṃ vande।</div>
+    <div class="usage-meaning lang-en">I bow to Gaṅgā, the giver of liberation.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोक्ष देणाऱ्या गंगेला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">का वा</span>
+    <span class="word-iast">kā vā</span>
+  </div>
+  <div><span class="word-grammar">—</span></div>
+  <div class="word-form">In this verse: का वा (मूळ अस्पष्ट)</div>
+  <p class="word-meaning lang-en">(obscure)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(मूळ अस्पष्ट)</p>
+  <div class="word-usage">
+    <div class="deva">का वा गङ्गा, किं वा यमुना — सर्वाः नद्यः पुण्याः।</div>
+    <div class="usage-iast">kā vā gaṅgā, kiṃ vā yamunā — sarvāḥ nadyaḥ puṇyāḥ।</div>
+    <div class="usage-meaning lang-en">Whether the Gaṅgā or the Yamunā — all rivers are holy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगा असो वा यमुना — सर्व नद्या पवित्र आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आनिन्ये</span>
+    <span class="word-iast">āninye</span>
+  </div>
+  <div><span class="word-grammar">आ + नी, लिट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: आनिन्ये</div>
+  <p class="word-meaning lang-en">brought</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणले</p>
+  <div class="word-usage">
+    <div class="deva">राजा मुनिम् आश्रमम् आनिन्ये।</div>
+    <div class="usage-iast">rājā munim āśramam āninye।</div>
+    <div class="usage-meaning lang-en">The king brought the sage to the āśrama.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने मुनीला आश्रमात आणले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुर-सदनात्</span>
+    <span class="word-iast">sura-sadanāt</span>
+  </div>
+  <div><span class="word-grammar">नपुं. पं. एव.</span></div>
+  <div class="word-form">In this verse: सुरसदनात्</div>
+  <p class="word-meaning lang-en">from heaven</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वर्गातून</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गा सुरसदनात् अवातरत्।</div>
+    <div class="usage-iast">gaṅgā surasadanāt avātarat।</div>
+    <div class="usage-meaning lang-en">The Gaṅgā descended from heaven.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगा स्वर्गातून खाली आली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भगीरथः</span>
+    <span class="word-iast">bhagīrathaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: भगीरथः</div>
+  <p class="word-meaning lang-en">Bhagīratha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भगीरथ</p>
+  <div class="word-usage">
+    <div class="deva">भगीरथः तपसा गङ्गाम् आनिन्ये।</div>
+    <div class="usage-iast">bhagīrathaḥ tapasā gaṅgām āninye।</div>
+    <div class="usage-meaning lang-en">Bhagīratha brought the Gaṅgā down by austerities.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भगीरथाने तपाने गंगेला खाली आणले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वाम्</span>
+    <span class="word-iast">tvām</span>
+  </div>
+  <div><span class="word-grammar">द्वि. एव.</span></div>
+  <div class="word-form">In this verse: त्वाम्</div>
+  <p class="word-meaning lang-en">you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुला</p>
+  <div class="word-usage">
+    <div class="deva">देवाः त्वाम् एव पूजयन्ति।</div>
+    <div class="usage-iast">devāḥ tvām eva pūjayanti।</div>
+    <div class="usage-meaning lang-en">The gods worship you alone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव तुझीच पूजा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्</span>
+    <span class="word-iast">tat</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तत् (तद्भागीरथि मध्ये)</div>
+  <p class="word-meaning lang-en">therefore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">सः तपः अकरोत्, तत् फलम् अलभत।</div>
+    <div class="usage-iast">saḥ tapaḥ akarot, tat phalam alabhata।</div>
+    <div class="usage-meaning lang-en">He practised austerities; therefore he obtained the fruit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने तप केले; म्हणून त्याला फळ मिळाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भागीरथि</span>
+    <span class="word-iast">bhāgīrathi</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: भागीरथि</div>
+  <p class="word-meaning lang-en">O Bhāgīrathī</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे भागीरथी</p>
+  <div class="word-usage">
+    <div class="deva">हे भागीरथि, मम पितॄन् तारय।</div>
+    <div class="usage-iast">he bhāgīrathi, mama pitṝn tāraya।</div>
+    <div class="usage-meaning lang-en">O Bhāgīrathī, deliver my ancestors.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे भागीरथी, माझ्या पितरांचा उद्धार कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जननि</span>
+    <span class="word-iast">janani</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: जननि</div>
+  <p class="word-meaning lang-en">O mother</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे माते</p>
+  <div class="word-usage">
+    <div class="deva">हे जननि, तव कृपां याचे।</div>
+    <div class="usage-iast">he janani, tava kṛpāṃ yāce।</div>
+    <div class="usage-meaning lang-en">O mother, I beg your grace.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे माते, मी तुझी कृपा मागतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वम्</span>
+    <span class="word-iast">tvam</span>
+  </div>
+  <div><span class="word-grammar">प्र. एव.</span></div>
+  <div class="word-form">In this verse: त्वम् (त्वमन्वितार्था मध्ये)</div>
+  <p class="word-meaning lang-en">you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू</p>
+  <div class="word-usage">
+    <div class="deva">त्वं भागीरथी नाम्ना प्रसिद्धा असि।</div>
+    <div class="usage-iast">tvaṃ bhāgīrathī nāmnā prasiddhā asi।</div>
+    <div class="usage-meaning lang-en">You are famous by the name Bhāgīrathī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू भागीरथी या नावाने प्रसिद्ध आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्वित-अर्था</span>
+    <span class="word-iast">anvita-arthā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अन्वितार्था</div>
+  <p class="word-meaning lang-en">true to your name</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाव सार्थ करणारी</p>
+  <div class="word-usage">
+    <div class="deva">तस्याः नाम अन्वितार्थं जातम्।</div>
+    <div class="usage-iast">tasyāḥ nāma anvitārthaṃ jātam।</div>
+    <div class="usage-meaning lang-en">Her name proved true to its meaning.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिचे नाव अर्थाला सार्थ ठरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम्</span>
+    <span class="word-iast">śrīgaṅge sa-nati gṛhāṇa sat mama arghyam</span>
+  </div>
+  <div><span class="word-grammar">ध्रुवपद</span></div>
+  <div class="word-form">In this verse: श्रीगंगे सनति गृहाण सन्ममार्घ्यम्</div>
+  <p class="word-meaning lang-en">refrain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार</p>
+  <div class="word-usage">
+    <div class="deva">भगीरथकथायां ध्रुवपदं गीयते — श्रीगङ्गे सनति गृहाण सन्ममार्घ्यम्।</div>
+    <div class="usage-iast">bhagīrathakathāyāṃ dhruvapadaṃ gīyate — śrīgaṅge sanati gṛhāṇa sanmamārghyam।</div>
+    <div class="usage-meaning lang-en">In the telling of Bhagīratha&#x27;s story the refrain is sung — O Śrī Gaṅgā, accept my good arghya with obeisance.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भगीरथकथेत ध्रुवपद गायले जाते — हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Bhagīratha&#x27;s tapas was not for himself but for his ancestors — the sixty thousand sons of Sagara — and the verse holds this up as the model of devotion: merit earned for others. The Māgha bath at Dabhol continues his work: every pilgrim&#x27;s bath is, in miniature, a Bhagīratha-act, lifting forebears as well as self. A name like Bhāgīrathī, true to its meaning (anvitārthā), reminds us that the gods honour sincere effort by letting it name them.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भगीरथाचे तप स्वतःसाठी नव्हते तर त्याच्या पूर्वजांसाठी होते — सगराच्या साठ हजार पुत्रांसाठी — आणि श्लोक ही भक्तीचे आदर्श म्हणून उभी करतो : दुसऱ्यांसाठी मिळवलेले पुण्य. दाभोळचे माघस्नान त्याचे कार्य पुढे चालवते : प्रत्येक यात्रेकरूचे स्नान हे लघुरूपाने भगीरथकृत्यच असते — स्वतःबरोबर पूर्वजांचाही उद्धार करणारे. भागीरथी सारखे नाव — अर्थाला सार्थक (अन्वितार्था) — आपल्याला आठवण करून देते की निष्ठावान प्रयत्नांना देव त्यांच्या नावात स्थान देऊन सन्मानित करतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Bhagīratha legend is the charter-myth of Gaṅgā on earth: King Sagara&#x27;s sixty thousand sons, burnt to ash by the sage Kapila&#x27;s glance, could be liberated only by her waters, and Bhagīratha&#x27;s fierce tapas brought her down from heaven. Anvitārthā — whose meaning is fulfilled — is the poet&#x27;s seal of approval on the name Bhāgīrathī: the river earned the name by being led down by Bhagīratha.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भगीरथकथा ही पृथ्वीवरील गंगेची संस्थापन-मिथकथा आहे : कपिलमुनींच्या दृष्टीने भस्म झालेले सगर राजाचे साठ हजार पुत्र केवळ तिच्या जलानेच मुक्त होऊ शकत होते, आणि भगीरथाच्या उग्र तपाने तिला स्वर्गातून खाली आणले. अन्वितार्था — जिचा अर्थ सार्थ झाला — हे भागीरथी या नावावर कवीची मोहोर आहे : भगीरथाने आणल्यामुळे नदीने हे नाव मिळवले.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>12.14: मोक्षदां का वानिन्ये (= मोक्षदां का वा आनिन्ये) is obscure — का वा is ungrammatical as it stands and may be a corrupted particle or a lost interrogative; the book&#x27;s Marathi passes over it (भगीरथाने ... आणले — म्हणूनच), and the enrichment does the same. The text is kept as printed and flagged; āninye (ā + √nī, perfect) is the regular verb of bringing.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>१२.१४ : मोक्षदां का वानिन्ये (= मोक्षदां का वा आनिन्ये) अस्पष्ट आहे — का वा हे आहे तसे अव्याकरणिक असून ते भ्रष्ट निपात किंवा हरवलेले प्रश्नार्थक असावे; पुस्तकाचे मराठी त्याकडे दुर्लक्ष करते (भगीरथाने ... आणले — म्हणूनच), आणि संवर्धनही तसेच करते. पाठ छापीलप्रमाणे ठेवून नोंदवला आहे; आनिन्ये (आ + √नी, लिट्) हे आणण्याचे नियमित क्रियापद आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-13.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 13</div></a><a class="next" href="verse-15.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 15</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

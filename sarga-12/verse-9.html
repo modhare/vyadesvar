@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 9 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 9</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 9</span><span class="bl-mr lang-mr">श्लोक 9</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ब्रह्माण्डप्रविततभूरिपुण्यगन्धै-राकृष्टत्रिभुवनसज्जनद्विरेफे ।<br>भावोष्मप्रशमिनि मालतीसमाह्वे श्रीगंगे सनति गृहाण सन्ममार्घ्यम् ।।९।।</div>
+  <div class="verse-iast">brahmāṇḍapravitatabhūripuṇyagandhai-rākṛṣṭatribhuvanasajjanadvirephe । bhāvoṣmapraśamini mālatīsamāhve śrīgaṃge sanati gṛhāṇa sanmamārghyam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ब्रह्माण्ड-प्रवितत-भूरि-पुण्य-गन्धैः आकृष्ट-त्रि-भुवन-सज्जन-द्विरेफे । भाव-ऊष्म-प्रशमिनि मालती-समाह्वे श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम् ।</div><div class="vig-iast">brahmāṇḍa-pravitata-bhūri-puṇya-gandhaiḥ ākṛṣṭa-tri-bhuvana-sajjana-dvirephe । bhāva-ūṣma-praśamini mālatī-samāhve śrīgaṅge sa-nati gṛhāṇa sat mama arghyam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">गन्धैः + आकृष्ट = गन्धैराकृष्ट · भाव + ऊष्म = भावोष्म (गुण) · ध्रुवपद: सन्मम, ममार्घ्यम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे ब्रह्माण्डप्रविततभूरिपुण्यगन्धैः आकृष्टत्रिभुवनसज्जनद्विरेफे, भावोष्मप्रशमिनि, ‘मालती’-समाह्वे श्रीगङ्गे, मम सत् अर्घ्यं सनति गृहाण ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>By the fragrance of abundant merit spread through the universe, you draw to yourself the bees that are the good men of the three worlds. O Śrī Gaṅgā who allay the fever of worldly life and who bear the name Mālatī — here I sing your praise; accept the auspicious arghya I offer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ब्रह्माण्डात पसरलेल्या विपुल पुण्याच्या सुवासाने तू त्रिभुवनातील सज्जनरूपी भृंगांना आपल्याकडे खेचून घेतेस. संसाराचा ताप शांत करणाऱ्या, मालती नाव धारण करणाऱ्या श्रीगंगे, हा मी तुझे स्तवन करीत आहे; मी दिलेल्या शुभ अर्घ्यांचा स्वीकार कर.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्माण्ड-प्रवितत-भूरि-पुण्य-गन्धैः</span>
+    <span class="word-iast">brahmāṇḍa-pravitata-bhūri-puṇya-gandhaiḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. बव.</span></div>
+  <div class="word-form">In this verse: ब्रह्माण्डप्रविततभूरिपुण्यगन्धैः (पुढे गन्धैराकृष्ट)</div>
+  <p class="word-meaning lang-en">with the fragrance of abundant merit spread through the universe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्मांडभर पसरलेल्या विपुल पुण्याच्या सुगंधाने</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गायाः पुण्यगन्धैः त्रिभुवनम् आपूरितम्।</div>
+    <div class="usage-iast">gaṅgāyāḥ puṇyagandhaiḥ tribhuvanam āpūritam।</div>
+    <div class="usage-meaning lang-en">The three worlds are filled with the fragrance of Gaṅgā&#x27;s merits.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगेच्या पुण्याच्या सुगंधाने त्रिभुवन भरून गेले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आकृष्ट-त्रि-भुवन-सज्जन-द्विरेफे</span>
+    <span class="word-iast">ākṛṣṭa-tri-bhuvana-sajjana-dvirephe</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.; द्विरेफ = भ्रमर</span></div>
+  <div class="word-form">In this verse: आकृष्टत्रिभुवनसज्जनद्विरेफे</div>
+  <p class="word-meaning lang-en">you who draw the good of the three worlds like bees</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रिभुवनातील सज्जनरूपी भ्रमर आकर्षित केलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">हे द्विरेफ, कमलं मा त्यज।</div>
+    <div class="usage-iast">he dvirepha, kamalaṃ mā tyaja।</div>
+    <div class="usage-meaning lang-en">O bee, do not leave the lotus.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे भ्रमरा, कमळ सोडू नकोस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भाव-ऊष्म-प्रशमिनि</span>
+    <span class="word-iast">bhāva-ūṣma-praśamini</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: भावोष्मप्रशमिनि</div>
+  <p class="word-meaning lang-en">you who allay the heat of existence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसाराचा ताप शांत करणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">हे भावोष्मप्रशमिनि, अस्मान् रक्ष।</div>
+    <div class="usage-iast">he bhāvoṣmapraśamini, asmān rakṣa।</div>
+    <div class="usage-meaning lang-en">O allayer of the heat of existence, protect us.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे संसारताप शांत करणाऱ्या, आमचे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मालती-समाह्वे</span>
+    <span class="word-iast">mālatī-samāhve</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: मालतीसमाह्वे</div>
+  <p class="word-meaning lang-en">O you named Mālatī</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;मालती&#x27; नाव असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">हे मालतीसमाह्वे गङ्गे, तव नाम स्मरामि।</div>
+    <div class="usage-iast">he mālatīsamāhve gaṅge, tava nāma smarāmi।</div>
+    <div class="usage-meaning lang-en">O Gaṅgā called Mālatī, I remember your name.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे मालती नावाच्या गंगे, मी तुझे नाम स्मरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम्</span>
+    <span class="word-iast">śrīgaṅge sa-nati gṛhāṇa sat mama arghyam</span>
+  </div>
+  <div><span class="word-grammar">ध्रुवपद</span></div>
+  <div class="word-form">In this verse: श्रीगंगे सनति गृहाण सन्ममार्घ्यम्</div>
+  <p class="word-meaning lang-en">O Śrī Gaṅgā, accept my good arghya with obeisance</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः पूजान्ते वदति — श्रीगङ्गे सनति गृहाण सन्ममार्घ्यम्।</div>
+    <div class="usage-iast">bhaktaḥ pūjānte vadati — śrīgaṅge sanati gṛhāṇa sanmamārghyam।</div>
+    <div class="usage-meaning lang-en">At the end of worship the devotee says — O Śrī Gaṅgā, accept my good arghya with obeisance.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूजेच्या शेवटी भक्त म्हणतो — हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Gaṅgā&#x27;s holiness is not passive: her fragrance — the merit gathered from ages of purifying sinners — actively draws the good of all three worlds, as flowers draw bees. For the pilgrim at Dabhol this is a promise: sincerity of heart will be drawn to the tīrtha and never turned away. The fever of worldly life (bhāvoṣma), which no medicine cools, is allayed by her waters — the verse turns bathing into a spiritual therapy.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गंगेचे पावित्र्य निष्क्रिय नाही : तिचा सुगंध — पापींना पावन करून मिळवलेले पुण्य — त्रिभुवनातील सज्जनांना फुलांकडे भ्रमर जसे, तसे आपल्याकडे खेचतो. दाभोळच्या यात्रेकरूसाठी हे आश्वासन आहे : मनाची निष्ठा तीर्थाकडे खेचली जाईल, परत फिरवली जाणार नाही. कोणत्याही औषधाने शांत न होणारा संसाराचा ताप (भावोष्म) तिच्या जलाने शांत होतो — श्लोक स्नानालाच आध्यात्मिक चिकित्सा बनवतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Each verse of this twelve-name arghya (12.6–17) opens with one of Gaṅgā&#x27;s names — here Mālatī. The image of good men drawn like bees to the fragrance of her merit is a classic kāvya conceit: sanctity attracts devotion as flowers attract bees. The fever of existence (bhāvoṣma) is the stock name for the burning of repeated birth, grief and desire, which only the waters of grace can cool.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या द्वादश-नाम अर्घ्याचा (१२.६–१७) प्रत्येक श्लोक गंगेच्या एका नावाने उघडतो — इथे मालती. तिच्या पुण्याच्या सुगंधाकडे सज्जन भ्रमरांसारखे खेचले जाणे ही अभिजात काव्यप्रतिमा आहे : फुलांकडे भ्रमर जसे, तसे पावित्र्याकडे भक्ती खेचली जाते. भावोष्म — संसाराचा ताप — हे पुनर्जन्म, शोक आणि कामना यांच्या जळजळीचे रूढ नाव आहे, जे केवळ कृपाजलानेच शांत होते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Praharṣiṇī (13 syllables per pāda), like the rest of the hymn (12.6–17). This is the fourth verse of the twelve-name sequence prescribed at 12.5. The long instrumental compound in the first pāda qualifies the bee-image grammatically and scans cleanly; the text here is sound and follows the book without emendation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : प्रहर्षिणी (प्रत्येक पादात १३ अक्षरे), स्तोत्राच्या उर्वरित भागाप्रमाणेच (१२.६–१७). १२.५ मध्ये विहित केलेल्या द्वादश-नाम क्रमातील हा चौथा श्लोक आहे. पहिल्या पादातील दीर्घ तृतीयान्त समास भ्रमरप्रतिमेला व्याकरणदृष्ट्या विशेषित करतो आणि नीट बसतो; इथला पाठ शुद्ध असून पुस्तकाप्रमाणेच घेतला आहे, दुरुस्तीशिवाय.</p></div></div>
+
+<div class="pagenav"><a href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 8</div></a><a class="next" href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 10</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

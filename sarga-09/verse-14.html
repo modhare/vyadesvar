@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 14 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 14</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 14</span><span class="bl-mr lang-mr">श्लोक 14</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">शूरो विद्वानास्पदं संपदां यः सीमाभूमिर्दानशीलाग्रणीनाम् ।<br>चातुर्यौदार्यातिगंभीरधैर्यार्यत्वादीनां स्थानमेकं गुणानाम् ।।१४।।</div>
+  <div class="verse-iast">śūro vidvānāspadaṃ saṃpadāṃ yaḥ sīmābhūmirdānaśīlāgraṇīnām । cāturyaudāryātigaṃbhīradhairyāryatvādīnāṃ sthānamekaṃ guṇānām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">शूरः । विद्वान् । आस्पदम् । संपदाम् । यः । सीमा-भूमिः । दान-शील-अग्रणीनाम् । चातुर्य-औदार्य-अतिगंभीर-धैर्य-आर्यत्व-आदीनाम् । स्थानम् । एकम् । गुणानाम् ।</div><div class="vig-iast">śūraḥ । vidvān । āspadam । saṃpadām । yaḥ । sīmā-bhūmiḥ । dāna-śīla-agraṇīnām । cāturya-audārya-atigaṃbhīra-dhairya-āryatva-ādīnām । sthānam । ekam । guṇānām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">शूरः + विद्वान् = शूरो विद्वान् · भूमिः + दान = भूमिर्दान · शील + अग्रणीनाम् = शीलाग्रणीनाम् · चातुर्य + औदार्य = चातुर्यौदार्य (वृद्धि) · धैर्य + आर्यत्व = धैर्यार्यत्व · आर्यत्व + आदीनाम् = आर्यत्वादीनाम् · स्थानम् + एकम् = स्थानमेकम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यः शूरः विद्वान् संपदाम् आस्पदं, दानशीलाग्रणीनां सीमाभूमिः, चातुर्यौदार्यातिगंभीरधैर्यार्यत्वादीनां गुणानाम् एकं स्थानम् (आसीत्) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>That Sākurāṇa — brave, learned, the very seat of riches, the touchstone even of the foremost among the generous — was the sole abode of the virtues of cleverness, liberality, exceeding profundity, fortitude, nobility, and the rest.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा शूर, विद्वान, संपत्तीचा आधार व दानशीलांच्या अग्रणींचाही निकष असणारा साकुराण चातुर्य, औदार्य, गांभीर्य, धैर्य, आर्यत्व इत्यादि गुणांचे एकमेव आश्रयस्थान असा होता.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आस्पदं संपदाम्</span>
+    <span class="word-iast">āspadaṃ saṃpadām</span>
+  </div>
+  <div><span class="word-grammar">आस्पदम् = आ + √पद् + क (lyuṭ-ādi, &#x27;seat, support&#x27;), nominative/accusative neuter singular; संपदाम् = सम् + √पद् + क्विप्, genitive feminine plural.</span></div>
+  <div class="word-form">In this verse: nominative/accusative neuter + genitive plural</div>
+  <p class="word-meaning lang-en">the seat (support, abode) of riches</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपत्तींचे स्थान</p>
+  <div class="word-usage">
+    <div class="deva">आस्पदं संपदां सः राजा आसीत् ।</div>
+    <div class="usage-iast">āspadaṃ saṃpadāṃ saḥ rājā āsīt.</div>
+    <div class="usage-meaning lang-en">That king was the very seat of riches.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो राजा संपत्तीचेच स्थान होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सीमाभूमिः</span>
+    <span class="word-iast">sīmābhūmiḥ</span>
+  </div>
+  <div><span class="word-grammar">सीमा (limit) + भूमि (ground); tatpuruṣa, nominative feminine singular.</span></div>
+  <div class="word-form">In this verse: nominative feminine singular</div>
+  <p class="word-meaning lang-en">the very limit, the touchstone, the ultimate standard</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वोच्च मानदंड/सीमा</p>
+  <div class="word-usage">
+    <div class="deva">सीमाभूमिः सः दानशीलानाम् आसीत् ।</div>
+    <div class="usage-iast">sīmābhūmiḥ saḥ dānaśīlānām āsīt.</div>
+    <div class="usage-meaning lang-en">He was the very touchstone of the generous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो दानशूरांचा सर्वोच्च मानदंड होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दानशीलाग्रणीनाम्</span>
+    <span class="word-iast">dānaśīlāgraṇīnām</span>
+  </div>
+  <div><span class="word-grammar">दान-शील (generous by nature) + अग्रणी (अग्र + √णी + इनि, &#x27;foremost&#x27;); tatpuruṣa, genitive masculine plural.</span></div>
+  <div class="word-form">In this verse: genitive masculine plural</div>
+  <p class="word-meaning lang-en">of the foremost among the generous, of the leading givers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानशूरांच्या अग्रणींचीही</p>
+  <div class="word-usage">
+    <div class="deva">दानशीलाग्रणीनाम् अपि सः आदर्शः आसीत् ।</div>
+    <div class="usage-iast">dānaśīlāgraṇīnām api saḥ ādarśaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">He was the ideal even of the foremost among givers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानशूरांच्या अग्रणींचाही तो आदर्श होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चातुर्य … आर्यत्वादीनाम्</span>
+    <span class="word-iast">cāturya … āryatvādīnām</span>
+  </div>
+  <div><span class="word-grammar">चातुर्य (चतुर + ष्यञ्), औदार्य (उदार + ष्यञ्), अतिगंभीर-धैर्य, आर्यत्व (आर्य + त्व) + आदि; dvandva within a tatpuruṣa, genitive neuter/masculine plural.</span></div>
+  <div class="word-form">In this verse: genitive plural (compound list)</div>
+  <p class="word-meaning lang-en">of cleverness, liberality, exceeding profundity, fortitude, nobility, and the rest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चातुर्य, औदार्य, अतिगंभीर धैर्य, सज्जनता इत्यादी</p>
+  <div class="word-usage">
+    <div class="deva">चातुर्यादयः गुणाः तस्मिन् वसन्ति ।</div>
+    <div class="usage-iast">cāturyādayaḥ guṇāḥ tasmin vasanti.</div>
+    <div class="usage-meaning lang-en">The virtues beginning with cleverness dwell in him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चातुर्यादी गुण त्याच्यात वास करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकं स्थानम्</span>
+    <span class="word-iast">ekaṃ sthānam</span>
+  </div>
+  <div><span class="word-grammar">एक (one, sole) + स्थानम् (√स्था + ल्युट्); nominative/accusative neuter singular.</span></div>
+  <div class="word-form">In this verse: nominative/accusative neuter singular</div>
+  <p class="word-meaning lang-en">the sole abode, the one and only dwelling-place</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकमेव आश्रयस्थान</p>
+  <div class="word-usage">
+    <div class="deva">एकं स्थानं सः सर्वगुणानाम् आसीत् ।</div>
+    <div class="usage-iast">ekaṃ sthānaṃ saḥ sarvaguṇānām āsīt.</div>
+    <div class="usage-meaning lang-en">He was the sole abode of all virtues.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सर्व गुणांचे एकमेव आश्रयस्थान होता.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the kāvya&#x27;s portrait of the ideal kṣatriya: valour wedded to learning, wealth held as a trust, generosity as his very measure. The striking phrase — that even the foremost givers took him as their standard — teaches that true nobility is not in possessing virtues but in becoming their living benchmark. For the devotee, Sākurāṇa prefigures the hero the sarga will need: strength placed entirely at dharma&#x27;s service.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे आदर्श क्षत्रियाचे काव्य-चित्रण आहे — विद्वत्तेशी जोडलेले शौर्य, विश्वस्त म्हणून धारण केलेली संपत्ती, आणि त्याचेच माप बनलेले औदार्य. लक्षवेधी वाक्प्रचार — की दानशूरांतल्या अग्रणींनीही त्यालाच आपला निकष मानले — हे शिकवतो की खरी श्रेष्ठता गुण बाळगण्यात नसून त्यांचा जिवंत मानदंड बनण्यात आहे. भक्तासाठी साकुराण त्या वीराची पूर्वकल्पना देतो, ज्याची सर्गाला पुढे गरज भासणार आहे — धर्मसेवेत पूर्णपणे अर्पिलेले बळ.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Sanskrit kāvya delights in such catalogue-portraits of kings — the Raghuvaṃśa&#x27;s Dilīpa is &#x27;the touchstone of the generous&#x27; in the same idiom. Calling a man the sīmā-bhūmi (&#x27;boundary-land, limit&#x27;) of a virtue means he defines its farthest extent; nothing beyond him is conceivable. The pairing of śauryam with vidyā and dāna-śīlatā reflects the threefold kṣatriya ideal of the dharmaśāstras: prowess, learning, and liberality.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>संस्कृत काव्य राजांच्या अशा सूची-चित्रणांत रमते — रघुवंशाचा दिलीप त्याच शैलीत &#x27;दानशूरांचा निकष&#x27; आहे. एखाद्या माणसाला गुणाची सीमा-भूमी म्हणणे म्हणजे तो त्या गुणाची अंतिम मर्यादा ठरवतो; त्यापलीकडे काही कल्पनातीत. शौर्याची विद्या आणि दानशीलतेशी जोडी धर्मशास्त्रांचा तिहेरी क्षत्रिय-आदर्श दर्शवते — पराक्रम, विद्या आणि औदार्य.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Upajāti metre. Note the elegant compounding: सीमाभूमिः (&#x27;the very limit/standard&#x27;) governs दानशीलाग्रणीनाम् (genitive plural), and एकं स्थानम् (&#x27;the sole abode&#x27;) governs the long genitive list चातुर्यौदार्यातिगंभीरधैर्यार्यत्वादीनाम्. The vigraha splits this as चातुर्य-औदार्य-अतिगंभीर-धैर्य-आर्यत्व-आदीनाम् — cleverness, liberality, exceeding profundity, fortitude, nobility, and the rest.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उपजाती वृत्त. सुबोध समासरचना लक्षात घ्या — सीमाभूमिः (&#x27;सर्वोच्च मानदंड&#x27;) हे दानशीलाग्रणीनाम् (षष्ठी बहुवचन) वर अवलंबून आहे, आणि एकं स्थानम् (&#x27;एकमेव आश्रयस्थान&#x27;) हे दीर्घ षष्ठी-सूची चातुर्यौदार्यातिगंभीरधैर्यार्यत्वादीनाम् वर अवलंबून आहे. विग्रहात याचे विभाजन चातुर्य-औदार्य-अतिगंभीर-धैर्य-आर्यत्व-आदीनाम् असे आहे — चातुर्य, औदार्य, अतिगंभीरता, धैर्य, सज्जनता इत्यादी.</p></div></div>
+
+<div class="pagenav"><a href="verse-13.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 13</div></a><a class="next" href="verse-15.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 15</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

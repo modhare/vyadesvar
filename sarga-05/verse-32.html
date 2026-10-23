@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पुरं हृद्यतमं नाम्ना विदधे चित्तपावनम् ।<br>ततस्ते ब्राह्मणास्तत्स्था नाम्नासंश्चित्तपावनाः ।।३२।।</div>
+  <div class="verse-iast">puraṃ hṛdyatamaṃ nāmnā vidadhe cittapāvanam । tataste brāhmaṇāstatsthā nāmnāsaṃścittapāvanāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पुरम् । हृद्यतमम् । नाम्ना । विदधे । चित्तपावनम् । ततः । ते । ब्राह्मणाः । तत्रस्थाः (तत्-स्थाः) । नाम्ना । आसन् । चित्तपावनाः ।</div><div class="vig-iast">puram । hṛdyatamam । nāmnā । vidadhe । cittapāvanam । tataḥ । te । brāhmaṇāḥ । tatrasthāḥ (tat-sthāḥ) । nāmnā । āsan । cittapāvanāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ततः + ते = ततस्ते (विसर्ग → स्) · ब्राह्मणाः + तत्स्थाः = ब्राह्मणास्तत्स्थाः · नाम्ना + आसन् = नाम्नासन् · आसन् + चित्तपावनाः = आसंश्चित्तपावनाः (न् + च् → ंश्च्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(सः) हृद्यतमं पुरं नाम्ना ‘चित्तपावनम्’ विदधे; ततः तत्स्थाः ते ब्राह्मणाः नाम्ना ‘चित्तपावनाः’ आसन् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>He gave that most delightful city the name &#x27;Cittapāvana,&#x27; purifier of the mind; and hence those brāhmaṇas dwelling there came to be called, by that name, the Cittapāvanas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या अत्यन्त आकर्षक अशा नगराला त्याने चित्तपावन (बहुधा आजचे चिपळूण) हे नाव दिले व त्यामुळे तेथे राहणारे ते सर्व ब्राह्मण चित्तपावन (चित्पावन) गणले गेले.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 5.32, line 1: the print&#x27;s ह्द्यतमं → हृद्यतमं (&quot;most charming&quot;, Marathi अत्यन्त आकर्षक); spelling only.</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हृद्यतमम्</span>
+    <span class="word-iast">hṛdyatamam</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. n. of हृद्यतम (हृद्य + तमप्, superlative), agreeing with पुरम्</span></div>
+  <div class="word-form">In this verse: पुरं हृद्यतमम्</div>
+  <p class="word-meaning lang-en">most delightful</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय मनोहर</p>
+  <div class="word-usage">
+    <div class="deva">काव्यं हृद्यतमं रसिकान् आनन्दयति</div>
+    <div class="usage-iast">kāvyaṃ hṛdyatamaṃ rasikān ānandayati</div>
+    <div class="usage-meaning lang-en">The most delightful poem delights the connoisseurs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय मनोहर काव्य रसिकांना आनंद देते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नाम्ना विदधे</span>
+    <span class="word-iast">nāmnā vidadhe</span>
+  </div>
+  <div><span class="word-grammar">नाम्ना: instr. sg. n. of नामन्; विदधे: 3rd sg. perfect (लिट्, प्रथम-पुरुष एकवचन) of √धा (3rd class, juhotyādi), ātmanepada</span></div>
+  <div class="word-form">In this verse: नाम्ना विदधे चित्तपावनम्</div>
+  <p class="word-meaning lang-en">gave the name</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाव ठेवले</p>
+  <div class="word-usage">
+    <div class="deva">पिता पुत्राय राम इति नाम्ना विदधे</div>
+    <div class="usage-iast">pitā putrāya rāma iti nāmnā vidadhe</div>
+    <div class="usage-meaning lang-en">The father gave his son the name &#x27;Rāma.&#x27;</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पित्याने मुलाला &#x27;राम&#x27; असे नाव ठेवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्तपावनम्</span>
+    <span class="word-iast">cittapāvanam</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. n. of चित्तपावन (चित्त + पावन, उपपद-तत्पुरुष, &#x27;purifying the mind&#x27;)</span></div>
+  <div class="word-form">In this verse: विदधे चित्तपावनम्</div>
+  <p class="word-meaning lang-en">&#x27;Cittapāvana,&#x27; purifier of the mind (the city&#x27;s name)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चित्त पावन करणारे (बहुधा आजचे चिपळूण)</p>
+  <div class="word-usage">
+    <div class="deva">तीर्थं चित्तपावनं पापं हरति</div>
+    <div class="usage-iast">tīrthaṃ cittapāvanaṃ pāpaṃ harati</div>
+    <div class="usage-meaning lang-en">The mind-purifying holy place removes sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चित्त पावन करणारे तीर्थ पाप हरण करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्स्थाः</span>
+    <span class="word-iast">tatsthāḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. pl. m. of तत्स्थ (तत् + स्थ, उपपद-तत्पुरुष, &#x27;dwelling there&#x27;)</span></div>
+  <div class="word-form">In this verse: ब्राह्मणास्तत्स्थाः (ब्राह्मणाः + तत्स्थाः)</div>
+  <p class="word-meaning lang-en">dwelling there</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे राहणारे</p>
+  <div class="word-usage">
+    <div class="deva">तत्स्थाः जनाः सुखिनः अभवन्</div>
+    <div class="usage-iast">tatsthāḥ janāḥ sukhinaḥ abhavan</div>
+    <div class="usage-meaning lang-en">The people dwelling there became happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे राहणारे लोक सुखी झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आसन्</span>
+    <span class="word-iast">āsan</span>
+  </div>
+  <div><span class="word-grammar">3rd pl. imperfect (लङ्, प्रथम-पुरुष बहुवचन) of √अस् (2nd class, adādi)</span></div>
+  <div class="word-form">In this verse: नाम्नासंश्चित्तपावनाः (नाम्ना + आसन् + चित्तपावनाः)</div>
+  <p class="word-meaning lang-en">they became</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाले (√अस्, लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">ते सर्वे विद्वांसः आसन्</div>
+    <div class="usage-iast">te sarve vidvāṃsaḥ āsan</div>
+    <div class="usage-meaning lang-en">They all became learned.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते सर्व विद्वान झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्तपावनाः</span>
+    <span class="word-iast">cittapāvanāḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. pl. m. of चित्तपावन (चित्त + पावन, उपपद-तत्पुरुष)</span></div>
+  <div class="word-form">In this verse: आसंश्चित्तपावनाः</div>
+  <p class="word-meaning lang-en">the Cittapāvanas (Chitpavans)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चित्पावन (ब्राह्मण)</p>
+  <div class="word-usage">
+    <div class="deva">चित्तपावनाः ब्राह्मणाः कोकणे वसन्ति</div>
+    <div class="usage-iast">cittapāvanāḥ brāhmaṇāḥ kokaṇe vasanti</div>
+    <div class="usage-meaning lang-en">The Chitpavan brāhmaṇas dwell in the Konkan.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चित्पावन ब्राह्मण कोकणात राहतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>A name is a destiny: the city that purifies the mind lends its name to its people, and the people carry the city&#x27;s promise. The sthala thus founds a community — the Chitpavans — whose very name remembers that they were settled by the Lord beside His own abode, for the purification of the heart.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नाव हेच नशीब आहे: चित्त पावन करणारे नगर आपले नाव लोकांना देते, व लोक नगराचे वचन वाहतात. अशा रीतीने स्थल एक समाज स्थापते — चित्पावन — ज्यांचे नावच स्मरते की त्यांना भगवंताने आपल्या निवासाजवळ, हृदयशुद्धीसाठी वसविले.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>This is the kāvya&#x27;s etymological legend for the Chitpavan (Kokanastha) brāhmaṇa community of the Konkan coast: their name derives not from caste or gotra but from the sthala itself — from Cittapāvana, the mind-purifying city of Paraśurāma&#x27;s founding. The tradition thus roots communal identity in sacred geography and in the Bhārgava&#x27;s grace, a charter-myth of belonging.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कोकण किनाऱ्यावरील चित्पावन (कोकणस्थ) ब्राह्मणसमाजासाठी ही काव्याची व्युत्पत्ती-कथा आहे: त्यांचे नाव जातीवरून वा गोत्रावरून नव्हे, तर स्थलावरूनच आले — परशुरामाने स्थापलेल्या चित्त पावन करणाऱ्या चित्तपावन नगरावरून. परंपरा अशा रीतीने सामुदायिक ओळख पवित्र भूगोलात व भार्गवाच्या कृपेत रुजवते — आपलेपणाचा हा अधिकारपत्र-सदृश मिथक.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. The book identifies Cittapāvana with present-day Chiplun — an editorial hypothesis, recorded as such; the identification rests on the name&#x27;s survival in the community&#x27;s own designation, चित्पावन. Note the sandhi chain नाम्नासंश्चित्तपावनाः (नाम्ना + आसन् + चित्तपावनाः, न् + च् → ंश्च्) and तत्स्थाः (तत् + स्थ). हृद्यतमम् is the superlative of हृद्य (&#x27;pleasing to the heart&#x27;).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. ग्रंथ चित्तपावनाची ओळख आजच्या चिपळूणाशी करतो — ही संपादकीय उपपत्ती आहे, तशीच नोंदवलेली; ही ओळख समाजाच्या स्वतःच्या चित्पावन या नावाच्या टिकून राहण्यावर अवलंबून आहे. नाम्नासंश्चित्तपावनाः (नाम्ना + आसन् + चित्तपावनाः, न् + च् → ंश्च्) ही संधिशृंखला व तत्स्थाः (तत् + स्थ) लक्षात घ्या. हृद्यतमम् हे हृद्य (&#x27;हृदयाला प्रिय&#x27;) चे अतिशयार्थी रूप.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

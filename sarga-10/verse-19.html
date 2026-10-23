@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 19 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 19</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">देवालयस्य तां भूमिं यावदिष्टपदां मुदा ।<br>चक्राम गणयन्पद्भ्यां पुमांसाववलम्ब्य सः ।।१९।।</div>
+  <div class="verse-iast">devālayasya tāṃ bhūmiṃ yāvadiṣṭapadāṃ mudā । cakrāma gaṇayanpadbhyāṃ pumāṃsāvavalambya saḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">देव-आलयस्य । ताम् । भूमिम् । यावत्-इष्ट-पदाम् । मुदा । चक्राम । गणयन् । पद्भ्याम् । पुमांसौ । अवलम्ब्य । सः ।</div><div class="vig-iast">deva-ālayasya । tām । bhūmim । yāvat-iṣṭa-padām । mudā । cakrāma । gaṇayan । padbhyām । pumāṃsau । avalambya । saḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">देव + आलयस्य = देवालयस्य · यावत् + इष्ट = यावदिष्ट · गणयन् + पद्भ्याम् = गणयन्पद्भ्याम् · पुमांसौ + अवलम्ब्य = पुमांसाववलम्ब्य (औ → आव्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">सः पुमांसौ अवलम्ब्य, मुदा गणयन्, देवालयस्य तां यावदिष्टपदां भूमिं पद्भ्यां चक्राम ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then he, leaning on two men and counting with joy, strode with both his lengthened feet over the god&#x27;s temple-land, to as many paces as the king desired.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मग देवालयासाठी ती भूमी राजाला इष्ट अशा मापाइतकी दोन्ही पावलांनी मोजत, दोन माणसांचा आधार घेऊन आनंदाने ओलांडली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यावदिष्टपदाम्</span>
+    <span class="word-iast">yāvadiṣṭapadām</span>
+  </div>
+  <div><span class="word-grammar">adjective, feminine accusative singular (qualifying भूमिम्); यावत्-इष्ट-पदा, &#x27;having as many paces as desired&#x27;</span></div>
+  <div class="word-form">In this verse: यावदिष्टपदाम्</div>
+  <p class="word-meaning lang-en">consisting of as many paces as desired</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(राजाला) हवी तितक्या पावलांची</p>
+  <div class="word-usage">
+    <div class="deva">तेभ्यो यावदिष्टपदां भूमिं ददौ।</div>
+    <div class="usage-iast">tebhyo yāvadiṣṭapadāṃ bhūmiṃ dadau।</div>
+    <div class="usage-meaning lang-en">He gave them land of as many paces as they wished.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांना त्यांना हवी तितक्या पावलांची जमीन दिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुदा</span>
+    <span class="word-iast">mudā</span>
+  </div>
+  <div><span class="word-grammar">feminine instrumental singular of मुद् (joy), used adverbially</span></div>
+  <div class="word-form">In this verse: मुदा</div>
+  <p class="word-meaning lang-en">with joy, gladly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आनंदाने</p>
+  <div class="word-usage">
+    <div class="deva">मुदा स देवं पूजयति।</div>
+    <div class="usage-iast">mudā sa devaṃ pūjayati।</div>
+    <div class="usage-meaning lang-en">Gladly he worships the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो आनंदाने देवाची पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गणयन्</span>
+    <span class="word-iast">gaṇayan</span>
+  </div>
+  <div><span class="word-grammar">present participle (शतृ), masculine nominative singular, of √गण् (to count)</span></div>
+  <div class="word-form">In this verse: गणयन्</div>
+  <p class="word-meaning lang-en">counting</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोजत</p>
+  <div class="word-usage">
+    <div class="deva">गणयन् स श्लोकान् पठति।</div>
+    <div class="usage-iast">gaṇayan sa ślokān paṭhati।</div>
+    <div class="usage-meaning lang-en">Counting, he recites the verses.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोजत तो श्लोक म्हणतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चक्राम</span>
+    <span class="word-iast">cakrāma</span>
+  </div>
+  <div><span class="word-grammar">√क्रम् (to stride), लिट् third person singular, परस्मैपद</span></div>
+  <div class="word-form">In this verse: चक्राम</div>
+  <p class="word-meaning lang-en">he strode, he traversed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओलांडली (√क्रम्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">विष्णुः त्रिभिः पदैः लोकान् चक्राम।</div>
+    <div class="usage-iast">viṣṇuḥ tribhiḥ padaiḥ lokān cakrāma।</div>
+    <div class="usage-meaning lang-en">Viṣṇu strode over the worlds in three paces.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णूने तीन पावलांनी लोक ओलांडले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पद्भ्याम्</span>
+    <span class="word-iast">padbhyām</span>
+  </div>
+  <div><span class="word-grammar">neuter instrumental dual of पाद् (foot)</span></div>
+  <div class="word-form">In this verse: पद्भ्याम्</div>
+  <p class="word-meaning lang-en">with the two feet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही पायांनी</p>
+  <div class="word-usage">
+    <div class="deva">स पद्भ्यां नदीम् अतरत्।</div>
+    <div class="usage-iast">sa padbhyāṃ nadīm atarat।</div>
+    <div class="usage-meaning lang-en">He crossed the river on foot, with his two feet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो दोन्ही पायांनी नदी ओलांडून गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुमांसौ अवलम्ब्य</span>
+    <span class="word-iast">pumāṃsau avalambya</span>
+  </div>
+  <div><span class="word-grammar">पुमांसौ: पुंस् masculine accusative dual; अवलम्ब्य: absolutive (ल्यप्) of अव + √लम्ब्</span></div>
+  <div class="word-form">In this verse: पुमांसौ अवलम्ब्य</div>
+  <p class="word-meaning lang-en">having taken the support of two men</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन माणसांचा आधार घेऊन</p>
+  <div class="word-usage">
+    <div class="deva">वृद्धः पुमांसौ अवलम्ब्य गच्छति।</div>
+    <div class="usage-iast">vṛddhaḥ pumāṃsau avalambya gacchati।</div>
+    <div class="usage-meaning lang-en">The old man walks leaning on two men.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वृद्ध माणूस दोन माणसांचा आधार घेऊन चालतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The measurement completed, the temple&#x27;s boundaries are fixed by a body offered in devotion — the plot of Vyadeshwar&#x27;s shrine is literally paced out by grace. Local tradition anchors the present temple&#x27;s site to this pacing. The moral is plain: divine work done with joy (mudā) completes itself, however impossible it looked at the start.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>माप पूर्ण झाले; भक्तीत अर्पिलेल्या शरीराने मंदिराच्या सीमा निश्चित झाल्या — व्याडेश्वराच्या मंदिराची जागा कृपेने पायांनी मोजली गेली. स्थानिक परंपरा सध्याचे मंदिरस्थान या मापणीशी जोडते. नैतिक स्पष्ट आहे : आनंदाने (मुदा) केलेले दैवी कार्य सुरूवातीला कितीही अशक्य वाटले तरी पूर्ण होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Vāstu texts prescribe measuring the temple plot by the patron&#x27;s feet or cubits; the legend inverts the rule — here the measurer&#x27;s own feet become the unit. And the dwarf&#x27;s paces recall Vāmana&#x27;s three cosmic strides: what the avatāra did for the universe, the devotee re-enacts for the temple.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वास्तुग्रंथ यजमानाच्या पायांनी किंवा हातांनी मंदिरभूमी मोजण्यास सांगतात; कथा हा नियम उलटवते — येथे मोजणार्याचेच पाय मापणीचे साधन बनतात. बुटक्याची पावले वामनाच्या तिनी ब्रह्मांडव्यापी पावलांची आठवण करून देतात : अवताराने विश्वासाठी जे केले, तेच भक्त मंदिरासाठी पुन्हा करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Leaning on two men (पुमांसौ अवलम्ब्य) is the legend&#x27;s own consistency: the mutilated feet need support, yet he strides on. This fulfils the dream-command of 10.8 — तत्पदमितं कुरु, &#x27;make it measured by his feet&#x27; — literally now, since the feet were remade for the purpose.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दोन माणसांचा आधार (पुमांसौ अवलम्ब्य) ही कथेचीच अंतर्गत सुसंगती आहे : चिरलेल्या पायांना आधार लागतो, तरीही तो चालत राहतो. याने १०.८ मधील स्वप्नादेश पूर्ण होतो — तत्पदमितं कुरु, &#x27;त्याच्या पावलांनी मोजलेले कर&#x27; — आता अक्षरशः खरे, कारण पायही त्याच कामासाठी नव्याने घडवले गेले आहेत.</p></div></div>
+
+<div class="pagenav"><a href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 18</div></a><a class="next" href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 20</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

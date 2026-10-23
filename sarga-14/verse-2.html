@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 2 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 2</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 2</span><span class="bl-mr lang-mr">श्लोक 2</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अनाथबन्धुं करुणैकसिन्धुं प्रसन्नमूर्तिं सुपवित्रकीर्तिम् ।<br>गौरीकलत्रं कमनीयगात्रं वाडेश्वरं नौमि जगन्निवासम् ।।२।।</div>
+  <div class="verse-iast">anāthabandhuṃ karuṇaikasindhuṃ prasannamūrtiṃ supavitrakīrtim । gaurīkalatraṃ kamanīyagātraṃ vāḍeśvaraṃ naumi jagannivāsam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अनाथबन्धुम् । करुणा-एक-सिन्धुम् । प्रसन्न-मूर्तिम् । सु-पवित्र-कीर्तिम् । गौरी-कलत्रम् । कमनीय-गात्रम् । वाडेश्वरम् । नौमि । जगत्-निवासम् ।</div><div class="vig-iast">anāthabandhum । karuṇā-eka-sindhum । prasanna-mūrtim । su-pavitra-kīrtim । gaurī-kalatram । kamanīya-gātram । vāḍeśvaram । naumi । jagat-nivāsam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">करुणा + एक = करुणैक (वृद्धि) · जगत् + निवासम् = जगन्निवासम् (त् → न्, अनुनासिक)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(अहम्) अनाथबन्धुं करुणैकसिन्धुं प्रसन्नमूर्तिं सुपवित्रकीर्तिं गौरीकलत्रं कमनीयगात्रं जगन्निवासं वाडेश्वरं नौमि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Friend of the helpless, the single ocean of compassion, of serene form and most holy fame — the husband of Gaurī, of lovely limbs — Vāḍeśvara, the abode of the world, I bow to in praise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनाथांचा मित्र; करुणेचा एकमात्र सागर, प्रसन्नमूर्ती, सुपवित्र कीर्ती व कमनीय गात्रे असणाऱ्या गौरीपती जगन्निवास वाडेश्वराचे मी स्तवन करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनाथ-बन्धुम्</span>
+    <span class="word-iast">anātha-bandhum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; अनाथ + बन्धु</span></div>
+  <div class="word-form">In this verse: अनाथबन्धुम्</div>
+  <p class="word-meaning lang-en">friend of the helpless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनाथांचा मित्र (असणाऱ्याला)</p>
+  <div class="word-usage">
+    <div class="deva">शिवः अनाथबन्धुः इति प्रसिद्धः।</div>
+    <div class="usage-iast">śivaḥ anāthabandhuḥ iti prasiddhaḥ.</div>
+    <div class="usage-meaning lang-en">Śiva is famed as the friend of the helpless.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिव अनाथांचा बंधू म्हणून प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">करुणा-एक-सिन्धुम्</span>
+    <span class="word-iast">karuṇā-eka-sindhum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; करुणा + एक + सिन्धु</span></div>
+  <div class="word-form">In this verse: करुणैकसिन्धुम्</div>
+  <p class="word-meaning lang-en">sole ocean of compassion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करुणेचा एकमेव सागर</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः करुणैकसिन्धुं भजन्ति।</div>
+    <div class="usage-iast">bhaktāḥ karuṇaikasindhuṃ bhajanti.</div>
+    <div class="usage-meaning lang-en">Devotees worship the sole ocean of compassion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त करुणेच्या एकमेव सागराची उपासना करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रसन्न-मूर्तिम्</span>
+    <span class="word-iast">prasanna-mūrtim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: प्रसन्नमूर्तिम्</div>
+  <p class="word-meaning lang-en">of serene form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसन्न मूर्ती असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">देवालये प्रसन्नमूर्तिः शिवः तिष्ठति।</div>
+    <div class="usage-iast">devālaye prasannamūrtiḥ śivaḥ tiṣṭhati.</div>
+    <div class="usage-meaning lang-en">In the temple stands Śiva of serene form.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवळात प्रसन्नमूर्ती शिव उभा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सु-पवित्र-कीर्तिम्</span>
+    <span class="word-iast">su-pavitra-kīrtim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: सुपवित्रकीर्तिम्</div>
+  <p class="word-meaning lang-en">of very holy fame</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत पवित्र कीर्ती असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">सुपवित्रकीर्तिः राजा प्रजाः रक्षति।</div>
+    <div class="usage-iast">supavitrakīrtiḥ rājā prajāḥ rakṣati.</div>
+    <div class="usage-meaning lang-en">The king of very holy fame protects his subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत पवित्र कीर्तीचा राजा प्रजेचे रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गौरी-कलत्रम्</span>
+    <span class="word-iast">gaurī-kalatram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: गौरीकलत्रम्</div>
+  <p class="word-meaning lang-en">whose wife is Gaurī</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गौरी जिची पत्नी आहे अशाला</p>
+  <div class="word-usage">
+    <div class="deva">गौरीकलत्रं शम्भुं वन्दे।</div>
+    <div class="usage-iast">gaurīkalatraṃ śambhuṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute Śambhu whose wife is Gaurī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गौरी जिची पत्नी आहे अशा शंभूला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कमनीय-गात्रम्</span>
+    <span class="word-iast">kamanīya-gātram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: कमनीयगात्रम्</div>
+  <p class="word-meaning lang-en">of lovely limbs</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर शरीर असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">कमनीयगात्रः कुमारः आगच्छति।</div>
+    <div class="usage-iast">kamanīyagātraḥ kumāraḥ āgacchati.</div>
+    <div class="usage-meaning lang-en">The youth of lovely limbs approaches.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर शरीराचा कुमार येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश्वरम्</span>
+    <span class="word-iast">vāḍeśvaram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वाडेश्वरम्</div>
+  <p class="word-meaning lang-en">Vāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वराला</p>
+  <div class="word-usage">
+    <div class="deva">वाडेश्वरं नौमि जगन्निवासम्।</div>
+    <div class="usage-iast">vāḍeśvaraṃ naumi jagannivāsam.</div>
+    <div class="usage-meaning lang-en">I praise Vāḍeśvara, the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान असलेल्या वाडेश्वराला मी स्तवन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नौमि</span>
+    <span class="word-iast">naumi</span>
+  </div>
+  <div><span class="word-grammar">नु, लट्, उ.पु. एव.</span></div>
+  <div class="word-form">In this verse: नौमि</div>
+  <p class="word-meaning lang-en">I praise, bow to</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी स्तवन करतो, नमन करतो</p>
+  <div class="word-usage">
+    <div class="deva">अहं गुरुं नौमि।</div>
+    <div class="usage-iast">ahaṃ guruṃ naumi.</div>
+    <div class="usage-meaning lang-en">I bow to the guru.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी गुरूंना नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगत्-निवासम्</span>
+    <span class="word-iast">jagat-nivāsam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; जगत् + निवास</span></div>
+  <div class="word-form">In this verse: जगन्निवासम्</div>
+  <p class="word-meaning lang-en">the abode of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">जगन्निवासः सर्वं पाति।</div>
+    <div class="usage-iast">jagannivāsaḥ sarvaṃ pāti.</div>
+    <div class="usage-meaning lang-en">The abode of the world protects all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान सर्वांचे रक्षण करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनाथबन्धुम्</span>
+    <span class="word-iast">anāthabandhum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: अनाथबन्धुम्</div>
+  <p class="word-meaning lang-en">friend of the helpless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनाथांचा मित्र</p>
+  <div class="word-usage">
+    <div class="deva">अनाथबन्धुं तं नमामि।</div>
+    <div class="usage-iast">anāthabandhuṃ taṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to him, the friend of the helpless.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनाथांच्या मित्राला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">करुणैकसिन्धुम्</span>
+    <span class="word-iast">karuṇaikasindhum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: करुणैकसिन्धुम्</div>
+  <p class="word-meaning lang-en">sole ocean of compassion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करुणेचा एकमेव सागर</p>
+  <div class="word-usage">
+    <div class="deva">करुणैकसिन्धुं स्मरामि।</div>
+    <div class="usage-iast">karuṇaikasindhuṃ smarāmi.</div>
+    <div class="usage-meaning lang-en">I remember the sole ocean of compassion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करुणेच्या एकमेव सागराचे मी स्मरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रसन्नमूर्तिम्</span>
+    <span class="word-iast">prasannamūrtim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: प्रसन्नमूर्तिम्</div>
+  <p class="word-meaning lang-en">of serene form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची मूर्ती (रूप) प्रसन्न आहे</p>
+  <div class="word-usage">
+    <div class="deva">प्रसन्नमूर्तिं देवं पश्यामि।</div>
+    <div class="usage-iast">prasannamūrtiṃ devaṃ paśyāmi.</div>
+    <div class="usage-meaning lang-en">I behold the god of serene form.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसन्न मूर्ती असलेल्या देवाला मी पाहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुपवित्रकीर्तिम्</span>
+    <span class="word-iast">supavitrakīrtim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: सुपवित्रकीर्तिम्</div>
+  <p class="word-meaning lang-en">of very holy fame</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची कीर्ती अत्यंत पवित्र आहे</p>
+  <div class="word-usage">
+    <div class="deva">सुपवित्रकीर्तिं स्तौमि।</div>
+    <div class="usage-iast">supavitrakīrtiṃ staumi.</div>
+    <div class="usage-meaning lang-en">I praise him of very holy fame.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत पवित्र कीर्ती असणाऱ्याची मी स्तुती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गौरीकलत्रम्</span>
+    <span class="word-iast">gaurīkalatram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: गौरीकलत्रम्</div>
+  <p class="word-meaning lang-en">whose wife is Gaurī</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गौरी ही ज्याची पत्नी (कलत्र) आहे</p>
+  <div class="word-usage">
+    <div class="deva">गौरीकलत्रं प्रणमामि।</div>
+    <div class="usage-iast">gaurīkalatraṃ praṇamāmi.</div>
+    <div class="usage-meaning lang-en">I salute him whose wife is Gaurī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गौरी ही ज्याची पत्नी आहे त्याला मी प्रणाम करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कमनीयगात्रम्</span>
+    <span class="word-iast">kamanīyagātram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: कमनीयगात्रम्</div>
+  <p class="word-meaning lang-en">of lovely limbs</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे शरीर (गात्र) सुंदर आहे</p>
+  <div class="word-usage">
+    <div class="deva">कमनीयगात्रं बालं पश्य।</div>
+    <div class="usage-iast">kamanīyagātraṃ bālaṃ paśya.</div>
+    <div class="usage-meaning lang-en">Look at the child of lovely limbs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर शरीर असलेल्या बाळाला पाहा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगन्निवासम्</span>
+    <span class="word-iast">jagannivāsam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: जगन्निवासम्</div>
+  <p class="word-meaning lang-en">the abode of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">जगन्निवासं शरणं व्रज।</div>
+    <div class="usage-iast">jagannivāsaṃ śaraṇaṃ vraja.</div>
+    <div class="usage-meaning lang-en">Take refuge in the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाच्या निवासस्थानाचा आश्रय घे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse teaches that the Lord of Guhagar is refuge and compassion together: he is the friend of the helpless, the single ocean in which all suffering dissolves. The epithets balance the terrible and the tender — the abode of the whole world is also the gentle husband of Gaurī. For the devotee at the shrine the promise is direct: no one who comes is too low for his grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे कडवे शिकवते की गुहागरचा स्वामी आश्रय आणि करुणा दोन्ही आहे: तो अनाथांचा बंधू आहे, ज्यात सर्व दुःख विरघळते असा एकमेव सागर आहे. विशेषणे भीषण आणि कोमल यांचा समतोल साधतात — संपूर्ण जगाचे निवासस्थान असलेला तोच गौरीचा कोमल पती आहे. देवस्थानात येणाऱ्या भक्ताला थेट आश्वासन आहे: जो येईल तो त्याच्या कृपेसाठी फार लहान नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Friend of the helpless and ocean of compassion are classic Śaiva epithets: the Purāṇas picture Śiva as the lord who takes the fallen, the poor and the afflicted into his grace. He who drank the poison to save the worlds — the blue-necked one of verse 6 — is precisely the one who becomes the friend of the helpless. The title जगन्निवास (abode of the world) echoes Viṣṇu&#x27;s जगन्नाथ but here claims the same universality for Śiva.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनाथांचा बंधू आणि करुणेचा सागर ही शैव परंपरेतील शंकराची ओळखीची विशेषणे आहेत: पुराणे शिवाला पतित, दरिद्री व पीडित यांना आपल्या कृपेत घेणारा स्वामी म्हणून दाखवितात. जग वाचविण्यासाठी विष प्यालेला — सहाव्या श्लोकातील नीलकंठ — तोच अनाथांचा मित्र होतो. जगन्निवास ही उपाधी विष्णूच्या जगन्नाथाचा प्रतिध्वनी आहे, पण येथे तीच वैश्विकता शिवाला दिली आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Verses 2–6 are a set of four-pāda stanzas in Upajāti metre, each closing with the fixed refrain वाडेश्वरं नौमि जगन्निवासम् and built on chiming rhymes — the शिवाष्टक/भुजङ्ग style noted in the context notes, made for recitation at the shrine. The refrain means: I bow in praise to Vāḍeśvara, the abode of the world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक २–६ ही उपजाति छंदातील चार पादांची पदे आहेत; प्रत्येकाच्या शेवटी वाडेश्वरं नौमि जगन्निवासम् ही ध्रुवपद-वाक्ये आहेत आणि कडव्यात यमक आहेत — संदर्भनोंदीनुसार ही शिवाष्टक/भुजङ्ग शैली आहे, देवस्थानात पाठासाठी रचलेली. ध्रुवपदाचा अर्थ: जगाचे निवासस्थान असलेल्या वाडेश्वराला मी स्तवनाने नमन करतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-1.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 1</div></a><a class="next" href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 3</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

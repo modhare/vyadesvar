@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 24 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 24</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 24</span><span class="bl-mr lang-mr">श्लोक 24</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स्त्रियो न तस्मिन्परिसंचरन्ति योगीशशापादभिशङ्कमानाः ।<br>या योषितस्तत्पदमाव्रजेयु-र्नश्येयुरक्षीणि बताशु तासाम् ।।२४।।</div>
+  <div class="verse-iast">striyo na tasminparisaṃcaranti yogīśaśāpādabhiśaṅkamānāḥ । yā yoṣitastatpadamāvrajeyu-rnaśyeyurakṣīṇi batāśu tāsām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">स्त्रियः । न । तस्मिन् । परिसंचरन्ति । योगीश-शापात् । अभिशङ्कमानाः । याः । योषितः । तत्-पदम् । आव्रजेयुः । नश्येयुः । अक्षीणि । बत । आशु । तासाम् ।</div><div class="vig-iast">striyaḥ । na । tasmin । parisaṃcaranti । yogīśa-śāpāt । abhiśaṅkamānāḥ । yāḥ । yoṣitaḥ । tat-padam । āvrajeyuḥ । naśyeyuḥ । akṣīṇi । bata । āśu । tāsām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">स्त्रियः + न = स्त्रियो न · तस्मिन् + परि = तस्मिन्परि · शापात् + अभि = शापादभि · योषितः + तत् = योषितस्तत् · पदम् + आव्रजेयुः = पदमाव्रजेयुः · आव्रजेयुः + नश्येयुः = आव्रजेयुर्नश्येयुः · नश्येयुः + अक्षीणि = नश्येयुरक्षीणि · बत + आशु = बताशु</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">योगीशशापात् अभिशङ्कमानाः स्त्रियः तस्मिन् न परिसंचरन्ति; याः योषितः तत्पदम् आव्रजेयुः, बत तासाम् अक्षीणि आशु नश्येयुः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Women do not roam in that forest, fearful of the yogīśvara&#x27;s curse — for, it is believed, the eyes of any woman who should set foot in that place would instantly perish. Alas!</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या वनांत योगीश्वरांच्या शापाच्या भीतीने स्त्रिया वावरत नाहीत, कारण ज्या स्त्रिया या ठिकाणी पाऊल ठेवतील त्यांचे डोळे त्याक्षणीच नष्ट होतील अशी समजूत आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिसंचरन्ति</span>
+    <span class="word-iast">parisaṃcaranti</span>
+  </div>
+  <div><span class="word-grammar">परि-सम्-√चर् (class 1), laṭ, 3rd person plural</span></div>
+  <div class="word-form">In this verse: परिसंचरन्ति — present as printed</div>
+  <p class="word-meaning lang-en">move about, roam, wander around</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फिरतात</p>
+  <div class="word-usage">
+    <div class="deva">हरिणाः वने परिसंचरन्ति</div>
+    <div class="usage-iast">hariṇāḥ vane parisaṃcaranti</div>
+    <div class="usage-meaning lang-en">Deer roam about in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरणे वनात फिरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">योगीशशापात्</span>
+    <span class="word-iast">yogīśaśāpāt</span>
+  </div>
+  <div><span class="word-grammar">masculine ablative singular of the compound योगीशशाप (योगीश m. + शाप m.), &#x27;from the curse of the yogīśvara&#x27;</span></div>
+  <div class="word-form">In this verse: योगीशशापात् — ablative singular as printed</div>
+  <p class="word-meaning lang-en">from the curse of the yogīśvara (the lord of yogins)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योगीश्वराच्या शापामुळे</p>
+  <div class="word-usage">
+    <div class="deva">योगीशशापात् सर्वे बिभ्यति</div>
+    <div class="usage-iast">yogīśaśāpāt sarve bibhyati</div>
+    <div class="usage-meaning lang-en">All fear the yogīśvara&#x27;s curse.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योगीश्वराच्या शापाची सर्वांना भीती वाटते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभिशङ्कमानाः</span>
+    <span class="word-iast">abhiśaṅkamānāḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative plural present participle (śānac) of अभि-√शङ्क् (class 1, ātmanepada), agreeing with स्त्रियः</span></div>
+  <div class="word-form">In this verse: अभिशङ्कमानाः — participle as printed</div>
+  <p class="word-meaning lang-en">fearing, apprehensive, suspicious of</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भीत होऊन</p>
+  <div class="word-usage">
+    <div class="deva">अभिशङ्कमानाः जनाः तत्र न गच्छन्ति</div>
+    <div class="usage-iast">abhiśaṅkamānāḥ janāḥ tatra na gacchanti</div>
+    <div class="usage-meaning lang-en">The fearful people do not go there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भीत झालेले लोक तेथे जात नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">योषितः</span>
+    <span class="word-iast">yoṣitaḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative plural of योषित् f.</span></div>
+  <div class="word-form">In this verse: योषितः — nominative plural as printed</div>
+  <p class="word-meaning lang-en">women</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्त्रिया</p>
+  <div class="word-usage">
+    <div class="deva">योषितः उत्सवे गायन्ति</div>
+    <div class="usage-iast">yoṣitaḥ utsave gāyanti</div>
+    <div class="usage-meaning lang-en">The women sing at the festival.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्त्रिया उत्सवात गातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आव्रजेयुः</span>
+    <span class="word-iast">āvrajeyuḥ</span>
+  </div>
+  <div><span class="word-grammar">आ-√व्रज् (class 1), vidhiliṅ (optative), 3rd person plural</span></div>
+  <div class="word-form">In this verse: आव्रजेयुः — optative as printed</div>
+  <p class="word-meaning lang-en">should come, would step (into), would approach</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येतील (विधिलिङ्)</p>
+  <div class="word-usage">
+    <div class="deva">ते वनं प्रति आव्रजेयुः</div>
+    <div class="usage-iast">te vanaṃ prati āvrajeyuḥ</div>
+    <div class="usage-meaning lang-en">They would come toward the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते वनाकडे येतील.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अक्षीणि नश्येयुः</span>
+    <span class="word-iast">akṣīṇi naśyeyuḥ</span>
+  </div>
+  <div><span class="word-grammar">अक्षीणि — neuter nominative plural of अक्षि n. (&#x27;eye&#x27;); नश्येयुः — √नश् (class 4), vidhiliṅ (optative), 3rd person plural</span></div>
+  <div class="word-form">In this verse: अक्षीणि नश्येयुः — phrase as printed</div>
+  <p class="word-meaning lang-en">(their) eyes would perish, would be destroyed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>डोळे नष्ट होतील</p>
+  <div class="word-usage">
+    <div class="deva">तेजसा तेषाम् अक्षीणि नश्येयुः</div>
+    <div class="usage-iast">tejasā teṣām akṣīṇi naśyeyuḥ</div>
+    <div class="usage-meaning lang-en">By the (blinding) radiance their eyes would perish.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेजामुळे त्यांचे डोळे नष्ट होतील.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बत</span>
+    <span class="word-iast">bata</span>
+  </div>
+  <div><span class="word-grammar">indeclinable particle of astonishment, pity, or dismay</span></div>
+  <div class="word-form">In this verse: बत — particle as printed</div>
+  <p class="word-meaning lang-en">alas! oh! (exclamation of dismay)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हाय!</p>
+  <div class="word-usage">
+    <div class="deva">बत कष्टम् इदं वृत्तम्</div>
+    <div class="usage-iast">bata kaṣṭam idaṃ vṛttam</div>
+    <div class="usage-meaning lang-en">Alas, this is a grievous event!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हाय! ही गोष्ट फार वाईट घडली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आशु</span>
+    <span class="word-iast">āśu</span>
+  </div>
+  <div><span class="word-grammar">indeclinable adverb</span></div>
+  <div class="word-form">In this verse: आशु — adverb as printed</div>
+  <p class="word-meaning lang-en">swiftly, quickly, at once</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्वरित</p>
+  <div class="word-usage">
+    <div class="deva">सः आशु आगच्छत्</div>
+    <div class="usage-iast">saḥ āśu āgacchat</div>
+    <div class="usage-meaning lang-en">He came swiftly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो त्वरित आला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The forest&#x27;s stillness is guarded by a dread taboo: fearing the yogīśvara&#x27;s curse, women do not enter, for lore holds that any woman setting foot there would lose her eyes at once. The verse must be read as the place&#x27;s own protective legend — a niṣedha that keeps the tapovana inviolate — rather than as universal dharma. Its devotional point is the intensity of the tapas once practised there: a field so charged that the poet can only shudder — &#x27;bata!&#x27; — at the thought of its violation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वनाच्या शांततेचे रक्षण एका भीतिदायक निषेधाने होते: योगीश्वराच्या शापाच्या भीतीने स्त्रिया आत प्रवेश करत नाहीत; कारण समजूत अशी आहे की तेथे पाऊल ठेवणाऱ्या कोणत्याही स्त्रीचे डोळे त्याक्षणीच नष्ट होतील. हा श्लोक त्या स्थळाची स्वतःची रक्षक-कथा — तपोवन अबाधित ठेवणारा निषेध — म्हणून वाचावा, वैश्विक धर्म म्हणून नव्हे. त्याचा भक्तिपर मुद्दा तेथे कधी केलेल्या तपाची तीव्रता आहे: इतके भारलेले क्षेत्र की त्याच्या उल्लंघनाच्या कल्पनेने कवीही थरथरतो — &#x27;बत!&#x27;</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Exclusion taboos guarded by a sage&#x27;s curse are a familiar sthala-purāṇa device for keeping a tapovana undisturbed — sanctity maintained by niṣedha (prohibition), the counterpart of the vidhi (injunction) that invites the pilgrim in. Such narratives belong to the place&#x27;s own protective lore and must be read as such, not as statements of universal dharma; their function is to mark the ground as set apart.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ऋषींच्या शापाने रक्षिलेले प्रवेशबंदीचे नियम हे तपोवन अबाधित ठेवण्याची स्थलपुराणांतील परिचित युक्ती आहे — निषेधाने पावित्र्याचे रक्षण; यात्रेकरूला आत बोलावणाऱ्या विधीची ही पूरक बाजू. अशा कथा त्या स्थळाच्या स्वतःच्या रक्षक-कथेत मोडतात आणि तशाच वाचाव्या; वैश्विक धर्माची विधाने म्हणून नव्हे; त्यांचे कार्य भूमी वेगळी, पवित्र म्हणून चिन्हांकित करणे हे आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Bata&#x27; is an exclamatory particle of pity and dismay (&#x27;alas!&#x27;), marking the poet&#x27;s shudder at the curse&#x27;s severity — a rare crack of human feeling in the catalogue of shrines. The eye-perishing threat is presented as received lore of the place (&#x27;अशी समजूत आहे&#x27; in the Marathi rendering), not as observed fact; and &#x27;yogīśa&#x27; — the lord of yogins — leaves the curser unnamed, which heightens the dread. The verse closes the Ṭāḷadeva unit (22–24): shrine, forest, and the taboo that guards them.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;बत&#x27; हा करुणा व विषाद यांचा उद्गारवाचक शब्द आहे (&#x27;हाय!&#x27;); शापाच्या तीव्रतेपुढे कवी थरथरतो — देवस्थानांच्या यादीत मानवी भावनेची दुर्मीळ तडफ. डोळे नष्ट होण्याची धमकी त्या स्थळाची प्रचलित समजूत म्हणून मांडली आहे (&#x27;अशी समजूत आहे&#x27; — मराठी विवरणात), प्रत्यक्ष घडलेली गोष्ट म्हणून नव्हे; आणि &#x27;योगीश&#x27; — योगीश्वर — शाप देणाऱ्याचे नाव न घेता उल्लेख करतो, ज्यामुळे भीती वाढते. टाळदेव-घटकाचा (२२–२४) या श्लोकाने समारोप होतो: देवस्थान, वन आणि त्यांचे रक्षण करणारा निषेध.</p></div></div>
+
+<div class="pagenav"><a href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 23</div></a><a class="next" href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 25</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

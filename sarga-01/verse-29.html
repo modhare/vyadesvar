@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 29 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 29</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 29</span><span class="bl-mr lang-mr">श्लोक 29</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">त्वङ्गत्समुत्तुङ्गतरङ्गमालं महोर्मिसंक्षालितपादशैलम् ।।<br>अनेकयादोनिकुरंबलोलं ताराविडम्बिस्फुटफेनजालम् ।।२९।।</div>
+  <div class="verse-iast">tvaṅgatsamuttuṅgataraṅgamālaṃ mahormisaṃkṣālitapādaśailam । । anekayādonikuraṃbalolaṃ tārāviḍambisphuṭaphenajālam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">त्वङ्गत्-समुत्तुङ्ग-तरङ्ग-मालम् । महा-ऊर्मि-संक्षालित-पाद-शैलम् । अनेक-यादः-निकुरम्ब-लोलम् । तारा-विडम्बि-स्फुट-फेन-जालम् ।</div><div class="vig-iast">tvaṅgat-samuttuṅga-taraṅga-mālam । mahā-ūrmi-saṃkṣālita-pāda-śailam । aneka-yādaḥ-nikuramba-lolam । tārā-viḍambi-sphuṭa-phena-jālam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">महा + ऊर्मि = महोर्मि (गुण) · यादः + निकुरम्ब = यादोनिकुरम्ब (विसर्ग → ओ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">रामः त्वङ्गत्समुत्तुङ्गतरङ्गमालं … गम्भीरनादं तं (समुद्रं) मन्द्रेण स्वरेण उवाच — ‘(हे) समुद्र, शीघ्रं प्रकामम् अपसर; प्रवीरजेता (अहं) त्वदन्तः पदं प्रचिकीर्षुः अस्मि ।’</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>To the ocean — surging, garlanded with towering waves; its mountain-feet washed by mighty billows; lively with throngs of sea-creatures; netted with bright foam rivalling the stars; and deep-voiced —</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उसळणाऱ्या, उत्तुंग लाटांच्या रांगांनी युक्त असलेल्या, महान लाटांनी पर्वतांच्या पायथ्यांचे प्रक्षालन करणाऱ्या, अनेक जलचरांच्या थव्यांनी चंचल असलेल्या, तारकांचे अनुकरण करणाऱ्या स्पष्ट फेसाच्या जाळ्याने अलंकृत असणाऱ्या व गंभीर गर्जना करणाऱ्या त्या समुद्राला —</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 29, line 1: त्वंगत्समुत्तुङ्गतरमालं → त्वङ्गत्समुत्तुङ्गतरङ्गमालं (meter and sense: उत्तुंग लाटा)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वङ्गत्</span>
+    <span class="word-iast">tvaṅgat</span>
+  </div>
+  <div><span class="word-grammar">neuter/masculine accusative singular; present participle (śatṛ) of √त्वङ्ग्</span></div>
+  <div class="word-form">In this verse: त्वङ्गत्</div>
+  <p class="word-meaning lang-en">surging, leaping up</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उसळणाऱ्या (√त्वङ्ग्, शतृ)</p>
+  <div class="word-usage">
+    <div class="deva">त्वङ्गत् अश्वः धावति ।</div>
+    <div class="usage-iast">tvaṅgat aśvaḥ dhāvati ।</div>
+    <div class="usage-meaning lang-en">The leaping horse runs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उसळणारा घोडा धावतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुत्तुङ्गतरङ्गमालम्</span>
+    <span class="word-iast">samuttuṅgataraṅgamālam</span>
+  </div>
+  <div><span class="word-grammar">masculine/neuter accusative singular; bahuvrīhi (समुत्तुङ्ग-तरङ्ग-माला)</span></div>
+  <div class="word-form">In this verse: समुत्तुङ्गतरङ्गमालम्</div>
+  <p class="word-meaning lang-en">garlanded with towering waves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उंच लाटांच्या रांगा असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">समुत्तुङ्गतरङ्गमालम् समुद्रम् सः अपश्यत् ।</div>
+    <div class="usage-iast">samuttuṅgataraṅgamālam samudram saḥ apaśyat ।</div>
+    <div class="usage-meaning lang-en">He saw the ocean garlanded with towering waves.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उंच लाटांच्या रांगा असलेला समुद्र त्याने पाहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महोर्मिसंक्षालितपादशैलम्</span>
+    <span class="word-iast">mahormisaṃkṣālitapādaśailam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular; bahuvrīhi (महा-ऊर्मि-संक्षालित-पाद-शैल)</span></div>
+  <div class="word-form">In this verse: महोर्मिसंक्षालितपादशैलम्</div>
+  <p class="word-meaning lang-en">whose mountains&#x27; feet are washed by mighty waves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठ्या लाटांनी पर्वतांचे पायथे धुणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">महोर्मिसंक्षालितपादशैलम् तटम् रमणीयम् ।</div>
+    <div class="usage-iast">mahormisaṃkṣālitapādaśailam taṭam ramaṇīyam ।</div>
+    <div class="usage-meaning lang-en">Lovely is the shore whose cliffs&#x27; feet are washed by mighty waves.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठ्या लाटांनी पायथे धुणारा किनारा रमणीय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनेकयादोनिकुरम्बलोलम्</span>
+    <span class="word-iast">anekayādonikurambalolam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular; bahuvrīhi (अनेक-यादस्-निकुरम्ब-लोल)</span></div>
+  <div class="word-form">In this verse: अनेकयादोनिकुरम्बलोलम्</div>
+  <p class="word-meaning lang-en">lively with throngs of sea-creatures</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक जलचरांच्या (यादस्) थव्यांनी चंचल</p>
+  <div class="word-usage">
+    <div class="deva">अनेकयादोनिकुरम्बलोलम् जलम् गम्भीरम् ।</div>
+    <div class="usage-iast">anekayādonikurambalolam jalam gambhīram ।</div>
+    <div class="usage-meaning lang-en">Deep is the water lively with throngs of sea-beasts.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक जलचरांच्या थव्यांनी चंचल असलेले पाणी गंभीर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ताराविडम्बिस्फुटफेनजालम्</span>
+    <span class="word-iast">tārāviḍambisphuṭaphenajālam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular; bahuvrīhi (तारा-विडम्बि-स्फुट-फेन-जाल)</span></div>
+  <div class="word-form">In this verse: ताराविडम्बिस्फुटफेनजालम्</div>
+  <p class="word-meaning lang-en">netted with bright foam rivalling the stars</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ताऱ्यांचे अनुकरण करणाऱ्या स्पष्ट फेसाच्या जाळ्याने युक्त</p>
+  <div class="word-usage">
+    <div class="deva">ताराविडम्बिस्फुटफेनजालाः तरङ्गाः शोभन्ते ।</div>
+    <div class="usage-iast">tārāviḍambisphuṭaphenajālāḥ taraṅgāḥ śobhante ।</div>
+    <div class="usage-meaning lang-en">The waves shine, netted with bright foam like stars.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ताऱ्यांसारख्या स्पष्ट फेसाच्या जाळ्याने लाटा शोभतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The ocean is painted in all its majesty — surging waves, foam like stars, hosts of sea-beasts — not to frighten but to magnify the hero&#x27;s demand: even this vast power must yield to dharma. Rāma&#x27;s command is calm and measured — &#x27;withdraw amply&#x27; — for he seeks a dwelling, not a war. Devotionally, the verse teaches that nature&#x27;s greatest forces bow before a righteous will; the Lord asks first, and only wrath follows refusal.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्र त्याच्या संपूर्ण वैभवात रंगवला आहे — उसळणाऱ्या लाटा, ताऱ्यांसारखा फेस, जलचरांचे थवे — घाबरवण्यासाठी नव्हे, तर नायकाच्या मागणीचे महत्त्व वाढवण्यासाठी; एवढी विशाल शक्तीही धर्मापुढे नमली पाहिजे. रामाची आज्ञा शांत व मोजकी आहे — &#x27;पुरेसा मागे सर&#x27; — कारण त्याला निवास हवा आहे, युद्ध नको. भक्तिभावाने हा श्लोक शिकवतो की निसर्गाच्या सर्वांत मोठ्या शक्तीही न्यायी इच्छेपुढे नमतात; भगवंत आधी विनंती करतो, नकारानंतरच क्रोध येतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Samudra-varṇana follows the epic convention of painting the ocean in majesty before the hero confronts it. Rāma&#x27;s command observes the royal dharma of sāma before daṇḍa — conciliation before punishment — as in the Rāmāyaṇa&#x27;s setu episode, where Rāma first propitiates the ocean before threatening it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्रवर्णन नायक त्याला सामोरा जाण्याआधी समुद्राचे वैभव रंगवण्याच्या महाकाव्यरूढीचे अनुसरण करते. रामाची आज्ञा सामानंतर दंड या राजधर्माचे पालन करते — शिक्षेआधी समेट — रामायणातील सेतुप्रसंगाप्रमाणे, जेथे राम आधी समुद्राची आराधना करतो, मग धमकी देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Vv. 29–30 form a yugmaka (like 5–6): v. 29 supplies the accusatives describing the ocean, v. 30 the verb उवाच and the speech. Textual note: त्वंगत्समुत्तुङ्गतरमालं → त्वङ्गत्समुत्तुङ्गतरङ्गमालं (metre and sense: towering waves). Yugmaka — read vv. 29–30 as one sentence. Full reading: “To the ocean — surging, garlanded with towering waves; its mountain-feet washed by mighty billows; lively with throngs of sea-creatures; netted with bright foam rivalling the stars; and deep-voiced — Rāma spoke in a grave, deep voice: ‘O Ocean, withdraw quickly and amply. I, the vanquisher of mighty heroes, wish to make a dwelling-place within you.’”</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>२९–३० ही युग्मक आहेत (५–६ प्रमाणे) : २९ वा श्लोक समुद्राचे विशेषणरूप द्वितीया देतो, ३० वा क्रियापद उवाच व भाषण देतो. पाठटीप : त्वंगत्समुत्तुङ्गतरमालं → त्वङ्गत्समुत्तुङ्गतरङ्गमालं (वृत्त व अर्थ : उत्तुंग लाटा). युग्मक — २९–३० मिळून एकच वाक्य म्हणून वाचावे. पूर्ण वाचन : “उसळणाऱ्या, उत्तुंग लाटांच्या रांगांनी युक्त असलेल्या, महान लाटांनी पर्वतांच्या पायथ्यांचे प्रक्षालन करणाऱ्या, अनेक जलचरांच्या थव्यांनी चंचल असलेल्या, तारकांचे अनुकरण करणाऱ्या स्पष्ट फेसाच्या जाळ्याने अलंकृत असणाऱ्या व गंभीर गर्जना करणाऱ्या त्या समुद्राला — परशुराम खोल स्वरात म्हणाला — &#x27;&#x27;हे समुद्रा, तू लवकर पुरेसा मागे सरक; मोठमोठ्या वीरांना जिंकणारा मी तुझ्या आत जागा करू इच्छितो.&#x27;&#x27;”</p></div></div>
+
+<div class="pagenav"><a href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 28</div></a><a class="next" href="verse-30.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 30</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

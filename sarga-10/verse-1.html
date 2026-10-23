@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ विश्वंभराभर्ता साकुराणो महायशाः ।<br>प्रासादकरणोद्युक्तस्त्रिक्रमं प्राह मंत्रिणम् ।।१।।</div>
+  <div class="verse-iast">atha viśvaṃbharābhartā sākurāṇo mahāyaśāḥ । prāsādakaraṇodyuktastrikramaṃ prāha maṃtriṇam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । विश्वंभरा-भर्ता । साकुराणः । महायशाः । प्रासाद-करण-उद्युक्तः । त्रिक्रमम् । प्राह । मन्त्रिणम् ।</div><div class="vig-iast">atha । viśvaṃbharā-bhartā । sākurāṇaḥ । mahāyaśāḥ । prāsāda-karaṇa-udyuktaḥ । trikramam । prāha । mantriṇam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">साकुराणः + महा = साकुराणो महा · करण + उद्युक्तः = करणोद्युक्तः (गुण) · उद्युक्तः + त्रिक्रमम् = उद्युक्तस्त्रिक्रमम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ प्रासादकरणोद्युक्तः महायशाः विश्वंभराभर्ता साकुराणः त्रिक्रमं मन्त्रिणं प्राह ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then the earth-lord Sākurāṇa, a king of great renown and now eager to raise the temple, summoned his minister Trikram and spoke to him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मग त्या प्रासाद (तुल्य मंदिर) बांधण्यास उद्युक्त झालेल्या महायशस्वी पृथ्वीपती राजा साकुराणाने त्रिक्रम नामक मंत्र्याला (बोलावून) सांगितले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विश्वंभराभर्ता</span>
+    <span class="word-iast">viśvaṃbharābhartā</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुषसमासः — विश्वंभरा (पृथ्वी) + भर्तृ (स्वामी, √भृ + तृच्); पुंलिङ्ग, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: प्रथमा एकवचन (भर्तृ → भर्ता)</div>
+  <p class="word-meaning lang-en">lord of the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीचा स्वामी (विश्वंभरा = पृथ्वी)</p>
+  <div class="word-usage">
+    <div class="deva">वसुन्धरायाः पालनम् विश्वंभराभर्तुः परमः धर्मः ।</div>
+    <div class="usage-iast">vasundharāyāḥ pālanam viśvaṃbharābhartuḥ paramaḥ dharmaḥ ।</div>
+    <div class="usage-meaning lang-en">Protecting the earth is the supreme duty of the lord of the earth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीचे पालन करणे हे पृथ्वीपतीचे परम कर्तव्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महायशाः</span>
+    <span class="word-iast">mahāyaśāḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहिसमासः — महत् यशः यस्य सः; महायशस्-शब्दः, पुंलिङ्ग, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: प्रथमा एकवचन (महायशस् → महायशाः)</div>
+  <p class="word-meaning lang-en">of great fame, glorious</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महायशस्वी</p>
+  <div class="word-usage">
+    <div class="deva">महायशाः राजा प्रजानाम् हितम् आचरति ।</div>
+    <div class="usage-iast">mahāyaśāḥ rājā prajānām hitam ācarati ।</div>
+    <div class="usage-meaning lang-en">The glorious king works for the welfare of his subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महायशस्वी राजा प्रजांच्या हितासाठी कार्य करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रासादकरणोद्युक्तः</span>
+    <span class="word-iast">prāsādakaraṇodyuktaḥ</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुषः — प्रासादकरण (मंदिरनिर्माण) + उद्युक्त (उद् + √युज् + क्त); पुंलिङ्ग, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: प्रथमा एकवचन</div>
+  <p class="word-meaning lang-en">intent on building the temple, eager for the temple-work</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिर बांधण्यास उद्युक्त</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः प्रासादकरणोद्युक्तः सन् धनम् अर्पयति ।</div>
+    <div class="usage-iast">bhaktaḥ prāsādakaraṇodyuktaḥ san dhanam arpayati ।</div>
+    <div class="usage-meaning lang-en">Eager to build the temple, the devotee offers wealth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिर बांधण्यास उद्युक्त झालेला भक्त धन अर्पण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रिक्रमं मन्त्रिणम्</span>
+    <span class="word-iast">trikramaṃ mantriṇam</span>
+  </div>
+  <div><span class="word-grammar">त्रिक्रम (विशेषनाम) + मन्त्रिन्-शब्दः; पुंलिङ्ग, द्वितीया एकवचनम् (उभयोः)</span></div>
+  <div class="word-form">In this verse: द्वितीया एकवचन</div>
+  <p class="word-meaning lang-en">the minister Trikram</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रिक्रम नामक मंत्र्याला</p>
+  <div class="word-usage">
+    <div class="deva">नृपः त्रिक्रमं मन्त्रिणम् आहूय आदिशत् ।</div>
+    <div class="usage-iast">nṛpaḥ trikramaṃ mantriṇam āhūya ādiśat ।</div>
+    <div class="usage-meaning lang-en">The king summoned the minister Trikram and commanded him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने त्रिक्रम मंत्र्याला बोलावून आज्ञा दिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राह</span>
+    <span class="word-iast">prāha</span>
+  </div>
+  <div><span class="word-grammar">प्र + √अह् (ब्रूञ्-स्थाने); लिट्, प्रथमपुरुष, एकवचनम्</span></div>
+  <div class="word-form">In this verse: लिट् प्रथमपुरुष एकवचन</div>
+  <p class="word-meaning lang-en">he said, he spoke</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणाला</p>
+  <div class="word-usage">
+    <div class="deva">आचार्यः शिष्यम् इति प्राह ।</div>
+    <div class="usage-iast">ācāryaḥ śiṣyam iti prāha ।</div>
+    <div class="usage-meaning lang-en">The teacher spoke thus to the pupil.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आचार्य शिष्याला असे म्हणाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sthala-kāvya presents temple-building as the highest royal service (rāja-dharma): the king&#x27;s glory is fulfilled not in conquest but in raising a house for Śiva. The dream that follows (10.6–8) shows that such devotion draws divine guidance — God Himself instructs the measurements of His shrine. The episode roots the living Vyadeshwar temple in a royal foundation legend, linking the present kṣetra to its legendary builder Sākurāṇa.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्थलकाव्य मंदिरबांधकाम हे राजाचे सर्वश्रेष्ठ सेवाकार्य (राजधर्म) मानते: राजाचे यश विजयात नव्हे, तर शिवासाठी मंदिर उभारण्यात पूर्ण होते. पुढे येणारे स्वप्न (१०.६–८) दाखवते की अशा भक्तीने दैवी मार्गदर्शन लाभते — देव स्वतः आपल्या मंदिराचे माप सांगतो. हा प्रसंग जिवंत व्याडेश्वर मंदिराला साकुराण राजाच्या पौराणिक बांधकामाशी जोडतो आणि आजच्या क्षेत्राला त्याच्या आख्यायिकेशी बांधतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Purāṇic tradition counts the building of a temple (devālaya-nirmāṇa) among the most meritorious acts a king can perform — texts like the Matsya Purāṇa praise the founder of a shrine as earning imperishable merit. Here the poet frames Sākurāṇa&#x27;s undertaking in that mould: the king commands not from pride but from bhakti, and the Lord Himself will oversee the plan. The minister Trikram, whose name recalls Viṣṇu&#x27;s &#x27;three strides&#x27; (Trivikrama), stands for the capable administration through which sacred work is executed in the world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणपरंपरेत देवालयनिर्माण हे राजाला करता येणाऱ्या सर्वांत पुण्यकारक कर्मांपैकी एक मानले आहे — मत्स्यपुराणासारखे ग्रंथ मंदिराच्या संस्थापकाला अक्षय पुण्य मिळते असे सांगतात. येथे कवी साकुराणाचा उपक्रम याच साच्यात मांडतो: राजा अहंकाराने नव्हे, तर भक्तीने आज्ञा देतो आणि प्रभू स्वतः योजनेवर लक्ष ठेवील. त्रिक्रम हे नाव विष्णूच्या &#x27;त्रिविक्रम&#x27; पदाची आठवण करून देते; तो मंत्री पवित्र कार्य जगात प्रत्यक्ष साकारणाऱ्या सक्षम प्रशासनाचे प्रतीक आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Sarga 10 opens the temple-construction episode; its summary runs &#x27;King Sākurāṇa builds the temple, measured by the dwarf Gāṅgaḍaka (pp. 83–90).&#x27; The verse is in the standard śloka (anuṣṭubh). Note the sandhi प्रासादकरणोद्युक्तः + त्रिक्रमम् → प्रासादकरणोद्युक्तस्त्रिक्रमम्. For the stable mentioned in 10.3, see the cross-reference at 9.24.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दहावा सर्ग मंदिरबांधकामाचा प्रसंग उघडतो; सारांश सांगतो — &#x27;साकुराण राजा मंदिर बांधतो, वामन गांगडकाच्या मापाने (पृ. ८३–९०).&#x27; हा श्लोक प्रमाण श्लोकवृत्तात (अनुष्टुभ्) आहे. प्रासादकरणोद्युक्तः + त्रिक्रमम् यांची संधी प्रासादकरणोद्युक्तस्त्रिक्रमम् अशी झाली आहे, हे लक्षात घ्या. १०.३ मधील अश्वशाळेसाठी ९.२४ येथील उल्लेख पाहा.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-09/verse-53.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 53</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

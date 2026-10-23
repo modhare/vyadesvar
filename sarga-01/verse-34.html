@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 34 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 34</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 34</span><span class="bl-mr lang-mr">श्लोक 34</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">क्षाराम्बुधे गर्जसि मोच्चकै रे किं मामजानन्नसि जामदग्न्यम् ।।<br>मया निकृत्ताः समरे समस्तास्त्रिःसप्तकृत्वो नरलोकपालाः ।।३४।।</div>
+  <div class="verse-iast">kṣārāmbudhe garjasi moccakai re kiṃ māmajānannasi jāmadagnyam । । mayā nikṛttāḥ samare samastāstriḥsaptakṛtvo naralokapālāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">क्षार-अम्बुधे । गर्जसि । मा । उच्चकैः । रे । किम् । माम् । अजानन् । असि । जामदग्न्यम् । मया । निकृत्ताः । समरे । समस्ताः । त्रिः-सप्त-कृत्वः । नर-लोक-पालाः ।</div><div class="vig-iast">kṣāra-ambudhe । garjasi । mā । uccakaiḥ । re । kim । mām । ajānan । asi । jāmadagnyam । mayā । nikṛttāḥ । samare । samastāḥ । triḥ-sapta-kṛtvaḥ । nara-loka-pālāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्षार + अम्बुधे = क्षाराम्बुधे (सवर्णदीर्घ) · मा + उच्चकैः = मोच्चकैः (गुण) · उच्चकैः + रे = उच्चकै रे (र् पुढे विसर्गलोप) · माम् + अजानन् = मामजानन् · अजानन् + असि = अजानन्नसि (न् द्वित्व) · समस्ताः + त्रिः = समस्तास्त्रिः (विसर्ग → स्) · कृत्वः + नर = कृत्वो नर (विसर्ग → ओ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">रे क्षाराम्बुधे, उच्चकैः मा गर्जसि (= मा गर्ज); किं जामदग्न्यं माम् अजानन् असि? मया समरे समस्ताः नरलोकपालाः त्रिःसप्तकृत्वः निकृत्ताः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O briny Ocean, roar not so loudly! Hey — do you not know me, Jāmadagnya? With my own hands I cut down all the kings, the guardians of the world of men, in battle — twenty-one times over.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे समुद्रा, फार मोठ्याने गर्जना करू नकोस. अरे, तू मला, जमदग्निपुत्र परशुरामाला ओळखत नाहीस का? मी समस्त राजांना समरांगणात एकवीस वेळा ठार मारलेले आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षाराम्बुधे</span>
+    <span class="word-iast">kṣārāmbudhe</span>
+  </div>
+  <div><span class="word-grammar">क्षार + अम्बुधि; &#x27;क्षारम् अम्बु यस्य&#x27; — bahuvrīhi; vocative singular, masculine</span></div>
+  <div class="word-form">In this verse: क्षाराम्बुधे</div>
+  <p class="word-meaning lang-en">O briny, salty Ocean! (vocative)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे खाऱ्या समुद्रा (संबोधन)</p>
+  <div class="word-usage">
+    <div class="deva">रे क्षाराम्बुधे, शान्तो भव।</div>
+    <div class="usage-iast">re kṣārāmbudhe, śānto bhava.</div>
+    <div class="usage-meaning lang-en">O salty Ocean, be calm!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे खाऱ्या समुद्रा, शांत हो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रे</span>
+    <span class="word-iast">re</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; vocative marker, येथे तुच्छतादर्शक</span></div>
+  <div class="word-form">In this verse: रे</div>
+  <p class="word-meaning lang-en">hey! (vocative particle, here contemptuous)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरे (तुच्छतादर्शक)</p>
+  <div class="word-usage">
+    <div class="deva">रे बाल, अत्र आगच्छ।</div>
+    <div class="usage-iast">re bāla, atra āgaccha.</div>
+    <div class="usage-meaning lang-en">Hey boy, come here!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरे बाळा, इथे ये.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उच्चकैः</span>
+    <span class="word-iast">uccakaiḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (उच्च + kais); adverb</span></div>
+  <div class="word-form">In this verse: मोच्चकै रे</div>
+  <p class="word-meaning lang-en">loudly; in a high voice</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठ्याने</p>
+  <div class="word-usage">
+    <div class="deva">सः उच्चकैः हसति।</div>
+    <div class="usage-iast">saḥ uccakaiḥ hasati.</div>
+    <div class="usage-meaning lang-en">He laughs loudly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो मोठ्याने हसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मा गर्जसि</span>
+    <span class="word-iast">mā garjasi</span>
+  </div>
+  <div><span class="word-grammar">मा (negative indeclinable) + √गर्ज् (1st class), laṭ, 2nd person singular; &#x27;मा&#x27; सह वर्तमानकाळ — काव्यात्म usage</span></div>
+  <div class="word-form">In this verse: मोच्चकै रे</div>
+  <p class="word-meaning lang-en">do not roar</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गर्जू नकोस (‘मा’ सह वर्तमानकाळ — काव्यात्म प्रयोग)</p>
+  <div class="word-usage">
+    <div class="deva">मेघ, मा गर्जसि।</div>
+    <div class="usage-iast">megha, mā garjasi.</div>
+    <div class="usage-meaning lang-en">O cloud, do not thunder!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे मेघा, गर्जू नकोस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किम् अजानन् असि</span>
+    <span class="word-iast">kim ajānan asi</span>
+  </div>
+  <div><span class="word-grammar">किम् (प्रश्नार्थक indeclinable) + अ (नञ्) + √ज्ञा (9th class) + śatṛ (अजानत्, nominative singular, त्वम्‌शी अन्वित) + √अस्, laṭ, 2nd person singular</span></div>
+  <div class="word-form">In this verse: मामजानन्नसि</div>
+  <p class="word-meaning lang-en">do you not know?</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओळखत नाहीस का?</p>
+  <div class="word-usage">
+    <div class="deva">किं मां अजानन् असि।</div>
+    <div class="usage-iast">kiṃ māṃ ajānan asi.</div>
+    <div class="usage-meaning lang-en">Do you not know me?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला ओळखत नाहीस का?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जामदग्न्यं माम्</span>
+    <span class="word-iast">jāmadagnyaṃ mām</span>
+  </div>
+  <div><span class="word-grammar">जमदग्नि + ष्यञ् (अपत्यार्थे taddhita); accusative singular, masculine + अस्मद्-शब्द, accusative singular</span></div>
+  <div class="word-form">In this verse: जामदग्न्यम्</div>
+  <p class="word-meaning lang-en">me, the son of Jamadagni</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला, जमदग्निपुत्राला</p>
+  <div class="word-usage">
+    <div class="deva">जामदग्न्यं मां सर्वे जानन्ति।</div>
+    <div class="usage-iast">jāmadagnyaṃ māṃ sarve jānanti.</div>
+    <div class="usage-meaning lang-en">All know me, the son of Jamadagni.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जमदग्निपुत्र अशा मला सर्व जाणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मया निकृत्ताः</span>
+    <span class="word-iast">mayā nikṛttāḥ</span>
+  </div>
+  <div><span class="word-grammar">अस्मद्-शब्द, instrumental singular + नि + √कृत् (6th class) + kta (passive usage); nominative plural, masculine</span></div>
+  <div class="word-form">In this verse: निकृत्ताः</div>
+  <p class="word-meaning lang-en">were cut down by me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझ्याकडून कापले गेले (नि + √कृत्, क्त)</p>
+  <div class="word-usage">
+    <div class="deva">शत्रवः मया निकृत्ताः।</div>
+    <div class="usage-iast">śatravaḥ mayā nikṛttāḥ.</div>
+    <div class="usage-meaning lang-en">The foes were cut down by me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रू माझ्याकडून कापले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समरे</span>
+    <span class="word-iast">samare</span>
+  </div>
+  <div><span class="word-grammar">समर-शब्द, locative singular, masculine</span></div>
+  <div class="word-form">In this verse: समरे</div>
+  <p class="word-meaning lang-en">in battle; on the battlefield</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>युद्धात</p>
+  <div class="word-usage">
+    <div class="deva">वीरः समरे जयति।</div>
+    <div class="usage-iast">vīraḥ samare jayati.</div>
+    <div class="usage-meaning lang-en">The hero triumphs in battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वीर युद्धात जिंकतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नरलोकपालाः</span>
+    <span class="word-iast">naralokapālāḥ</span>
+  </div>
+  <div><span class="word-grammar">नर-लोक-पाल (√पाल् + aṇ, agentive); &#x27;नराणां लोकं पालयन्ति&#x27; — tatpuruṣa; nominative plural, masculine</span></div>
+  <div class="word-form">In this verse: नरलोकपालाः</div>
+  <p class="word-meaning lang-en">the kings; the protectors of the world of men</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजे</p>
+  <div class="word-usage">
+    <div class="deva">नरलोकपालाः प्रजां पालयन्ति।</div>
+    <div class="usage-iast">naralokapālāḥ prajāṃ pālayanti.</div>
+    <div class="usage-meaning lang-en">Kings protect their subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजे प्रजेचे पालन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रिःसप्तकृत्वः</span>
+    <span class="word-iast">triḥsaptakṛtvaḥ</span>
+  </div>
+  <div><span class="word-grammar">त्रिस् + सप्तन् + kṛtvas (संख्यापूर्वक taddhita); indeclinable</span></div>
+  <div class="word-form">In this verse: त्रिःसप्तकृत्वो नर</div>
+  <p class="word-meaning lang-en">twenty-one times (thrice seven times)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीन गुणिले सात = एकवीस वेळा</p>
+  <div class="word-usage">
+    <div class="deva">सः त्रिःसप्तकृत्वः शत्रून् अजयत्।</div>
+    <div class="usage-iast">saḥ triḥsaptakṛtvaḥ śatrūn ajayat.</div>
+    <div class="usage-meaning lang-en">He conquered his foes twenty-one times.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने शत्रूंना एकवीस वेळा जिंकले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>&#x27;Do you not know me, Jāmadagnya?&#x27; is not the boast of ego but the claim of dharma: Paraśurāma cites his record — the twenty-onefold cleansing of tyrannical kings — as his credential before the Ocean. The spiritual lesson is that authority in the service of dharma need not be timid; the devotee who has spent himself in righteous work may stand erect even before the powers of nature. Yet the verse also carries a warning for the sādhaka: recounting one&#x27;s own past victories is perilous ground, and only an avatāra can tread it without falling into pride.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;तू मला, जामदग्न्याला ओळखत नाहीस का?&#x27; हा अहंकाराचा बढाईखोरपणा नसून धर्माचा दावा आहे : परशुराम समुद्रासमोर आपला दाखला देतो — जुलमी राजांचा एकवीसपट निःपात. आध्यात्मिक धडा असा की धर्माच्या सेवेतले अधिकारवाणी संकोच बाळगण्याची गरज नसते; न्याय्य कार्यात स्वतःला झोकून दिलेला भक्त निसर्गशक्तींसमोरही ताठ उभा राहू शकतो. पण या श्लोकात साधकासाठी इशाराही आहे : स्वतःच्या जुन्या विजयांची गणती करणे हे धोक्याचे मैदान आहे, आणि अवतारावाचून कोणीही त्यावर अहंकारात न पडता चालू शकत नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Twenty-one times&#x27; (triḥsaptakṛtvaḥ) is the canonical number of Paraśurāma&#x27;s extirpation of the kṣatriyas, told in the Mahābhārata&#x27;s Ādi Parva and in Bhāgavata Purāṇa 9.15–16 — the very text of the sibling &#x27;Parashuram&#x27; library. &#x27;Jāmadagnya&#x27; (son of Jamadagni) is his proudest patronymic: it recalls the father&#x27;s murder by Kārtavīrya&#x27;s sons, which set the whole cycle in motion. &#x27;Kṣārāmbudhi&#x27; (briny ocean) is mildly contemptuous — the sea is addressed by its saltiness, the quality that makes its water undrinkable, hence useless to men.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;एकवीस वेळा&#x27; (त्रिःसप्तकृत्वः) ही परशुरामाने क्षत्रियांचा निःपात केल्याची पारंपरिक संख्या आहे — महाभारताच्या आदिपर्वात आणि भागवतपुराण ९.१५–१६ मध्ये (हाच आपल्या &#x27;परशुराम&#x27; ग्रंथालयाचा मूळ पाठ) ती सांगितली आहे. &#x27;जामदग्न्य&#x27; (जमदग्नीचा पुत्र) हे त्याचे अभिमानास्पद पितृनाम आहे; कार्तवीर्याच्या पुत्रांनी केलेल्या पितृवधाची आठवण त्यात आहे — त्यातूनच हे संपूर्ण चक्र सुरू झाले. &#x27;क्षाराम्बुधि&#x27; (खारा समुद्र) हा किंचित तुच्छतादर्शक संबोधन आहे — समुद्राला त्याच्या खारटपणावरून, म्हणजे माणसांना पिण्यास अयोग्य अशा गुणावरून, संबोधले आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The construction &#x27;mā garjasi&#x27; (mā with the present indicative) is a poetic licence; classical prose would use mā with the aorist injunctive (mā garjīḥ). The poet&#x27;s Marathi translator renders it plainly as &#x27;गर्जू नकोस&#x27;. &#x27;Naralokapālāḥ&#x27; (protectors of the world of men) is a courtly periphrasis for kings — the very kṣatriyas Paraśurāma slew. Cross-link: the twenty-onefold slaughter is treated at length in the sibling &#x27;Parashuram&#x27; library (Bhāgavata 9.15–16).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;मा गर्जसि&#x27; (मा + वर्तमानकाळ) ही काव्यात्म सवलत आहे; शास्त्रीय गद्यात &#x27;मा&#x27; सोबत लुङ्‌चा निषेधार्थी प्रयोग (मा गर्जीः) अपेक्षित असतो. मराठी भाषांतरकाराने ते सरळ &#x27;गर्जू नकोस&#x27; असे घेतले आहे. &#x27;नरलोकपालाः&#x27; (मानवलोकाचे रक्षक) हा राजांसाठी — म्हणजे परशुरामाने मारलेल्या क्षत्रियांसाठीच — दरबारी पर्यायी शब्द आहे. आंतरसंदर्भ : एकवीसपट संहाराचे सविस्तर वर्णन &#x27;परशुराम&#x27; या भगिनी-ग्रंथालयात (भागवत ९.१५–१६) आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 33</div></a><a class="next" href="verse-35.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 35</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 5 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 5</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">हा राम हा भृगूत्तंस हा महाभाग हा विभो ।<br>पाहि नो बाधितान्दीनानकाले बत मृत्युना ।।५।।</div>
+  <div class="verse-iast">hā rāma hā bhṛgūttaṃsa hā mahābhāga hā vibho । pāhi no bādhitāndīnānakāle bata mṛtyunā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">हा । राम । हा । भृगु-उत्तंस । हा । महाभाग । हा । विभो । पाहि । नः । बाधितान् । दीनान् । अकाले । बत । मृत्युना ।</div><div class="vig-iast">hā । rāma । hā । bhṛgu-uttaṃsa । hā । mahābhāga । hā । vibho । pāhi । naḥ । bādhitān । dīnān । akāle । bata । mṛtyunā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भृगु + उत्तंस = भृगूत्तंस (सवर्णदीर्घ) · बाधितान् + दीनान् = बाधितान्दीनान् · दीनान् + अकाले = दीनानकाले</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हा राम, हा भृगूत्तंस, हा महाभाग, हा विभो! बत अकाले मृत्युना बाधितान् दीनान् नः पाहि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Alas, O Rāma! O crest-jewel of the Bhṛgus! O greatly fortunate one! O all-pervading Lord! Protect us — the afflicted and the wretched — whom untimely death has struck. Alas!&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बा रामा, भृगूत्तंसा, महाभागा, विभो, अकालीच मृत्यूने बाधित अशा आम्हा दीनांचे तूच रक्षण कर.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हा</span>
+    <span class="word-iast">hā</span>
+  </div>
+  <div><span class="word-grammar">indeclinable interjection (avyaya)</span></div>
+  <div class="word-form">In this verse: हा</div>
+  <p class="word-meaning lang-en">alas! O! (cry of grief)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(शोकोद्गार) अरे!</p>
+  <div class="word-usage">
+    <div class="deva">हा कष्टम्</div>
+    <div class="usage-iast">hā kaṣṭam</div>
+    <div class="usage-meaning lang-en">Alas, what hardship!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरेरे, केवढे कष्ट!</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृगूत्तंस</span>
+    <span class="word-iast">bhṛgūttaṃsa</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa, vocative singular masculine</span></div>
+  <div class="word-form">In this verse: भृगु-उत्तंस</div>
+  <p class="word-meaning lang-en">O crest-jewel of the Bhṛgu clan</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भृगुकुलाचा शिरोमणी</p>
+  <div class="word-usage">
+    <div class="deva">हे भृगूत्तंस माम् पाहि</div>
+    <div class="usage-iast">he bhṛgūttaṃsa mām pāhi</div>
+    <div class="usage-meaning lang-en">O crest-jewel of the Bhṛgus, protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे भृगुकुलशिरोमणे, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विभो</span>
+    <span class="word-iast">vibho</span>
+  </div>
+  <div><span class="word-grammar">vocative singular masculine of विभु</span></div>
+  <div class="word-form">In this verse: विभो</div>
+  <p class="word-meaning lang-en">O all-pervading one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे सर्वव्यापी (संबोधन)</p>
+  <div class="word-usage">
+    <div class="deva">हे विभो जगतः त्राहि</div>
+    <div class="usage-iast">he vibho jagataḥ trāhi</div>
+    <div class="usage-meaning lang-en">O all-pervading one, save the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे सर्वव्यापी, जगाचे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पाहि</span>
+    <span class="word-iast">pāhi</span>
+  </div>
+  <div><span class="word-grammar">√पा (2nd class), loṭ (imperative), 2nd singular</span></div>
+  <div class="word-form">In this verse: पाहि</div>
+  <p class="word-meaning lang-en">protect! save!</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षण कर (√पा, लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">माम् पाहि देव</div>
+    <div class="usage-iast">mām pāhi deva</div>
+    <div class="usage-meaning lang-en">Protect me, O Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे देवा, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बाधितान् दीनान् नः</span>
+    <span class="word-iast">bādhitān dīnān naḥ</span>
+  </div>
+  <div><span class="word-grammar">accusative plural masculine + enclitic pronoun</span></div>
+  <div class="word-form">In this verse: बाधितान् दीनान् नः</div>
+  <p class="word-meaning lang-en">us, the afflicted and the wretched</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पीडित दीन अशा आमचे</p>
+  <div class="word-usage">
+    <div class="deva">दीनान् जनान् सः अरक्षत्</div>
+    <div class="usage-iast">dīnān janān saḥ arakṣat</div>
+    <div class="usage-meaning lang-en">He protected the wretched people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने दीन लोकांचे रक्षण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अकाले</span>
+    <span class="word-iast">akāle</span>
+  </div>
+  <div><span class="word-grammar">locative singular masculine</span></div>
+  <div class="word-form">In this verse: अ-काले</div>
+  <p class="word-meaning lang-en">untimely, at the wrong time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अवेळी</p>
+  <div class="word-usage">
+    <div class="deva">अकाले वर्षा न शुभा</div>
+    <div class="usage-iast">akāle varṣā na śubhā</div>
+    <div class="usage-meaning lang-en">Untimely rain is not auspicious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अवेळीचा पाऊस शुभ नसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बत</span>
+    <span class="word-iast">bata</span>
+  </div>
+  <div><span class="word-grammar">indeclinable interjection (avyaya)</span></div>
+  <div class="word-form">In this verse: बत</div>
+  <p class="word-meaning lang-en">alas! (cry of distress)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरेरे</p>
+  <div class="word-usage">
+    <div class="deva">बत सः मृतः</div>
+    <div class="usage-iast">bata saḥ mṛtaḥ</div>
+    <div class="usage-meaning lang-en">Alas, he is dead.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरेरे, तो मेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मृत्युना</span>
+    <span class="word-iast">mṛtyunā</span>
+  </div>
+  <div><span class="word-grammar">instrumental singular masculine</span></div>
+  <div class="word-form">In this verse: मृत्युना</div>
+  <p class="word-meaning lang-en">by death</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मृत्यूने</p>
+  <div class="word-usage">
+    <div class="deva">मृत्युना सः गृहीतः</div>
+    <div class="usage-iast">mṛtyunā saḥ gṛhītaḥ</div>
+    <div class="usage-meaning lang-en">He was seized by death.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मृत्यूने त्याला पकडले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The irony is deliberate: the boys&#x27; lament is a perfect prayer. It names the Lord&#x27;s true titles (Bhṛgūttaṃsa, Vibho) and the devotee&#x27;s true posture (dīna, afflicted) — the words are exactly right while the heart is false. The poet shows that even hypocritical prayer carries the shape of truth; and this sets up the sarga&#x27;s moral engine: the Lord answers the cry, because He always does, but He sees the deceit behind it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विडंबन जाणीवपूर्वक आहे : मुलांचा आक्रोश ही परिपूर्ण प्रार्थनाच आहे. ती भगवंताची खरी बिरुदे (भृगूत्तंस, विभो) आणि भक्ताची खरी अवस्था (दीन, पीडित) सांगते — शब्द अगदी बरोबर आहेत, हृदय मात्र खोटे आहे. कपटी प्रार्थनेतही सत्याचा आकार असतो, असे कवी दाखवतो; आणि यातूनच सर्गाचे नैतिक चक्र उभे राहते — देव आक्रोशाला उत्तर देतो, कारण तो नेहमीच देतो, पण त्यामागचे कपट तो पाहतोच.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Bhṛgūttaṃsa&#x27; (crest-jewel of the Bhṛgus) is the standard Purāṇic epithet of Paraśurāma, the Bhārgava hero of the Bhāgavata&#x27;s ninth book; &#x27;mahābhāga&#x27; and &#x27;vibho&#x27; are the classic devotional vocatives addressed to an avatāra in distress. That the tricksters instinctively reach for the truest names of the Lord is the poet&#x27;s quiet theology: even in Kali&#x27;s age, the right words of prayer survive on the lips, though the heart has forgotten their meaning.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;भृगूत्तंस&#x27; (भृगुकुलाचा शिरोमणी) हे परशुरामाचे ठरलेले पुराणोक्त बिरुद आहे — भागवताच्या नवव्या स्कंधातील भार्गव वीराचे; &#x27;महाभाग&#x27; आणि &#x27;विभो&#x27; ही संकटात अवताराला संबोधण्याची ठरलेली भक्तिपर संबोधने आहेत. कपटी मुले सहजपणे देवाची खरीच नावे उच्चारतात, हे कवीचे शांत तत्त्वज्ञान आहे — कलीच्या युगातही प्रार्थनेचे बरोबर शब्द ओठांवर टिकून राहतात, जरी हृदय त्यांचा अर्थ विसरलेले असले तरी.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. The book&#x27;s Marathi reads &#x27;बा रामा&#x27; (corrected from the print&#x27;s &#x27;बाब रामा&#x27;), matching the vocative force of the Sanskrit. &#x27;Akāle mṛtyunā&#x27; — untimely death — is precisely the calamity Paraśurāma had promised (5.21–24) to avert for his devotees; the boys weaponize his own vow against him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुभ्. पुस्तकातील मराठी &#x27;बा रामा&#x27; असे वाचते (छापील &#x27;बाब रामा&#x27; वरून दुरुस्त), जे संस्कृत संबोधनाच्या जोराशी जुळते. &#x27;अकाले मृत्युना&#x27; — अवेळी मृत्यू — हीच ती आपत्ती आहे जी आपल्या भक्तांपासून परशुरामाने (५.२१–२४) टाळण्याचे वचन दिले होते; मुले त्याचेच वचन त्याच्याविरुद्ध शस्त्र म्हणून वापरतात.</p></div></div>
+
+<div class="pagenav"><a href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 4</div></a><a class="next" href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 6</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

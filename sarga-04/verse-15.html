@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 15 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 15</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 15</span><span class="bl-mr lang-mr">श्लोक 15</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vasantatilakā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">विश्वोद्भवस्थितिविनाशविधौ विभक्तै-<br>र्मायागुणैः परिगृहीतवपुः परेशः ।<br>मृग्याङ्घ्रिरच्युतविरिंचिमुखैर्मखाशै-<br>राशापटः प्रकटतामटतां पुरो मे ।।१५।।</div>
+  <div class="verse-iast">viśvodbhavasthitivināśavidhau vibhaktai- rmāyāguṇaiḥ parigṛhītavapuḥ pareśaḥ । mṛgyāṅghriracyutaviriṃcimukhairmakhāśai- rāśāpaṭaḥ prakaṭatāmaṭatāṃ puro me</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">विश्व-उद्भव-स्थिति-विनाश-विधौ । विभक्तैः । माया-गुणैः । परिगृहीत-वपुः । पर-ईशः । मृग्य-अङ्घ्रिः । अच्युत-विरिञ्चि-मुखैः । मख-अशैः । आशा-पटः । प्रकटताम् । अटताम् । पुरः । मे ।</div><div class="vig-iast">viśva-udbhava-sthiti-vināśa-vidhau । vibhaktaiḥ । māyā-guṇaiḥ । parigṛhīta-vapuḥ । para-īśaḥ । mṛgya-aṅghriḥ । acyuta-viriñci-mukhaiḥ । makha-aśaiḥ । āśā-paṭaḥ । prakaṭatām । aṭatām । puraḥ । me ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विश्व + उद्भव = विश्वोद्भव (गुण) · विभक्तैः + माया = विभक्तैर्माया · पर + ईशः = परेशः (गुण) · मृग्य + अङ्घ्रिः = मृग्याङ्घ्रिः · अङ्घ्रिः + अच्युत = अङ्घ्रिरच्युत · मख + अशैः = मखाशैः · मखाशैः + आशा = मखाशैराशा · प्रकटताम् + अटताम् = प्रकटतामटताम् · पुरः + मे = पुरो मे</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">विश्वोद्भवस्थितिविनाशविधौ विभक्तैः मायागुणैः परिगृहीतवपुः, अच्युतविरिञ्चिमुखैः मखाशैः मृग्याङ्घ्रिः, आशापटः परेशः मे अटतां (च) पुरः प्रकटताम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>He, the Supreme Lord, who in the work of the world&#x27;s creation, maintenance and dissolution has assumed bodies through the distinguished guṇas of māyā; whose feet are sought by the gods — led by Viṣṇu and Brahmā — who partake of the sacrifice; who wears the quarters as His garment — may He appear before me and before those who wander seeking Him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आपल्या मायेच्या सामर्थ्याने विश्वाचा उद्भव, स्थिती व विनाश या कार्यांनुसार निरनिराळी तीन रूपे धारण करणारा, अच्युत-ब्रह्मदेव-मुख देव ज्याच्या चरणांचा शोध घेतात, दिशा हेच वस्त्र असलेला (दिगंबर) तो परेश्वर माझ्यासमोर व (त्याला) शोधणाऱ्यांसमोर प्रगट होवो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विश्वोद्भवस्थितिविनाशविधौ</span>
+    <span class="word-iast">viśvodbhavasthitivināśavidhau</span>
+  </div>
+  <div><span class="word-grammar">locative singular, tatpuruṣa (विधिः = office, work)</span></div>
+  <div class="word-form">In this verse: विश्वोद्भवस्थितिविनाशविधौ</div>
+  <p class="word-meaning lang-en">in the work of the world&#x27;s creation, maintenance and dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वाच्या उत्पत्ती-स्थिती-लय कार्यात</p>
+  <div class="word-usage">
+    <div class="deva">विश्व-उद्भव-स्थिति-विनाश-विधौ देवः त्रिरूपः भवति ।</div>
+    <div class="usage-iast">viśva-udbhava-sthiti-vināśa-vidhau devaḥ trirūpaḥ bhavati ।</div>
+    <div class="usage-meaning lang-en">In the work of the world&#x27;s creation, maintenance and destruction, the Lord becomes three-formed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विश्वाच्या उत्पत्ती-स्थिती-लय या कार्यात देव त्रिरूप होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विभक्तैः मायागुणैः</span>
+    <span class="word-iast">vibhaktaiḥ māyāguṇaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural; विभक्त = क्तान्त of वि-√भज्</span></div>
+  <div class="word-form">In this verse: विभक्तैः मायागुणैः</div>
+  <p class="word-meaning lang-en">by the distinguished guṇas of māyā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विभागलेल्या तीन मायागुणांनी</p>
+  <div class="word-usage">
+    <div class="deva">विभक्तैः माया-गुणैः सृष्टिः प्रवर्तते ।</div>
+    <div class="usage-iast">vibhaktaiḥ māyā-guṇaiḥ sṛṣṭiḥ pravartate ।</div>
+    <div class="usage-meaning lang-en">Creation proceeds through the distinguished guṇas of māyā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायेच्या विभागलेल्या गुणांमुळे सृष्टी चालते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिगृहीतवपुः</span>
+    <span class="word-iast">parigṛhītavapuḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular, bahuvrīhi; परिगृहीत = क्तान्त of परि-√ग्रह्</span></div>
+  <div class="word-form">In this verse: परिगृहीतवपुः</div>
+  <p class="word-meaning lang-en">having assumed a body/form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(तीन) रूपे धारण केलेला</p>
+  <div class="word-usage">
+    <div class="deva">परिगृहीत-वपुः भगवान् भक्तान् अनुग्रहीतुम् आगच्छति ।</div>
+    <div class="usage-iast">parigṛhīta-vapuḥ bhagavān bhaktān anugrahītum āgacchati ।</div>
+    <div class="usage-meaning lang-en">The Lord, having assumed a form, comes to bless His devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रूप धारण केलेला भगवान भक्तांवर अनुग्रह करण्यासाठी येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मखाशैः</span>
+    <span class="word-iast">makhāśaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural of मखाश (मखम् अश्नाति इति — अश् + अण्, &#x27;partaker of the sacrifice&#x27;)</span></div>
+  <div class="word-form">In this verse: मखाशैः</div>
+  <p class="word-meaning lang-en">by the gods who partake of the sacrifice</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञभाग खाणाऱ्या (देवांनी)</p>
+  <div class="word-usage">
+    <div class="deva">मख-अशैः देवैः स्तुतः यज्ञः सफलः भवति ।</div>
+    <div class="usage-iast">makha-aśaiḥ devaiḥ stutaḥ yajñaḥ saphalaḥ bhavati ।</div>
+    <div class="usage-meaning lang-en">The sacrifice, praised by the gods who partake of it, becomes fruitful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञभाग भोगणाऱ्या देवांनी स्तवलेला यज्ञ सफल होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मृग्याङ्घ्रिः</span>
+    <span class="word-iast">mṛgyāṅghriḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular, bahuvrīhi; मृग्य = gerundive (यत्/ण्यत्) of √मृग् (to seek)</span></div>
+  <div class="word-form">In this verse: मृग्याङ्घ्रिः</div>
+  <p class="word-meaning lang-en">whose feet are to be sought</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे चरण शोधायचे आहेत असा</p>
+  <div class="word-usage">
+    <div class="deva">मृग्य-अङ्घ्रिः ईश्वरः सर्वैः ध्येयः ।</div>
+    <div class="usage-iast">mṛgya-aṅghriḥ īśvaraḥ sarvaiḥ dhyeyaḥ ।</div>
+    <div class="usage-meaning lang-en">The Lord, whose feet are to be sought, is to be meditated upon by all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे चरण शोधायचे आहेत असा ईश्वर सर्वांनी ध्यानी धरावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आशापटः</span>
+    <span class="word-iast">āśāpaṭaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular, bahuvrīhi (आशाः एव पटः यस्य — &#x27;whose garment is the quarters&#x27;)</span></div>
+  <div class="word-form">In this verse: आशापटः</div>
+  <p class="word-meaning lang-en">wearing the quarters as His garment (Digambara)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिशा हेच वस्त्र (दिगंबर), शिवाचे प्रसिद्ध विशेषण</p>
+  <div class="word-usage">
+    <div class="deva">आशा-पटः योगी वनम् विचरति ।</div>
+    <div class="usage-iast">āśā-paṭaḥ yogī vanam vicarati ।</div>
+    <div class="usage-meaning lang-en">The Digambara ascetic, clad in the directions, roams the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिशा हेच वस्त्र असलेला (दिगंबर) योगी वनात संचार करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अटताम्</span>
+    <span class="word-iast">aṭatām</span>
+  </div>
+  <div><span class="word-grammar">genitive plural of the present participle (शतृ) of √अट्</span></div>
+  <div class="word-form">In this verse: अटताम्</div>
+  <p class="word-meaning lang-en">of those who wander (seeking)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भटकणाऱ्यांच्या (शोधकांच्या; √अट्, शतृ षष्ठी बहु.)</p>
+  <div class="word-usage">
+    <div class="deva">सत्यम् अटताम् जनानाम् मार्गः प्रकाशते ।</div>
+    <div class="usage-iast">satyam aṭatām janānām mārgaḥ prakāśate ।</div>
+    <div class="usage-meaning lang-en">The path shines for people who wander seeking the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सत्य शोधत भटकणाऱ्या लोकांना मार्ग प्रकाशतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुरः प्रकटताम्</span>
+    <span class="word-iast">puraḥ prakaṭatām</span>
+  </div>
+  <div><span class="word-grammar">पुरस् (indeclinable) + प्रकटताम् = लोट्, प्रथमपुरुष एकवचन of the denominative (नामधातु) √प्रकटाय्</span></div>
+  <div class="word-form">In this verse: पुरः प्रकटताम्</div>
+  <p class="word-meaning lang-en">may He appear before (me)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समोर प्रगट होवो (नामधातु, लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">चन्द्रः मेघ-अन्तरात् पुरः प्रकटताम् ।</div>
+    <div class="usage-iast">candraḥ megha-antarāt puraḥ prakaṭatām ।</div>
+    <div class="usage-meaning lang-en">May the moon appear before (us) from behind the clouds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र मेघांआडून समोर प्रगट होवो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Verse 15 closes the hymn with Vedāntic depth — the one Supreme wears three bodies (Brahmā, Viṣṇu, Rudra) through māyā&#x27;s three guṇas, yet remains the Digambara beyond all vesture. Even the gods must seek His feet; and the petition widens beautifully — &#x27;before me and before those who wander&#x27; — the devotee&#x27;s prayer embraces all seekers. The Lord&#x27;s nakedness is the doctrine: beneath every form, the formless.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या श्लोकाने स्तोत्र वेदान्ताच्या खोलीने संपते — एकच परेश्वर मायेच्या तीन गुणांनी तीन शरीरे (ब्रह्मा, विष्णू, रुद्र) धारण करतो, तरीही सर्व वस्त्रांपलीकडचा दिगंबर राहतो. देवांनाही त्याच्या चरणांचा शोध घ्यावा लागतो; आणि याचना सुंदरपणे विस्तारते — &#x27;माझ्यासमोर व भटकणाऱ्यांसमोर&#x27; — भक्ताची प्रार्थना सर्व शोधकांना सामावून घेते. प्रभूचे नग्नत्व हेच तत्त्वज्ञान आहे — प्रत्येक रूपामागे निराकार आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The three guṇa-bodies (rajas-Brahmā, sattva-Viṣṇu, tamas-Rudra) is the Purāṇic trimūrti doctrine (cf. Viṣṇu Purāṇa 1.2, the guṇāvatāras); Āśāpaṭa/Digambara is Śiva&#x27;s classic iconographic epithet — the sky-clad One, beyond social vesture. &#x27;Led by Acyuta (Viṣṇu) and Viriñci (Brahmā), the partakers of the sacrifice&#x27; — the devas who receive the havis — even they seek His feet, affirming Śiva&#x27;s supremacy in this Śaiva sthala-kāvya.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीन गुणांची तीन शरीरे (रजो-ब्रह्मा, सत्त्व-विष्णू, तमो-रुद्र) ही पौराणिक त्रिमूर्ती सिद्धान्त आहे (विष्णुपुराण १.२, गुणावतार); आशापट/दिगंबर हे शंकराचे शास्त्रीय प्रतिमाशास्त्रीय विशेषण आहे — आकाशवस्त्रधारी, सामाजिक वेशापलीकडचा. अच्युतविरिञ्चिमुखैः मखाशैः — विष्णू (अच्युत) व ब्रह्मा (विरिञ्ची) प्रमुख असलेले यज्ञभाग भोगणारे देव — त्यांनाही त्याच्या चरणांचा शोध घ्यावा लागतो; या शैव स्थलकाव्यात शंकराचे सर्वोच्चत्व याने सिद्ध होते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre Vasantatilakā — the hymn&#x27;s fifth metre-shift. Textual notes: विभक्ते-र्मायागुणैः → विभक्तै-र्मायागुणैः (विभक्तैः agrees with मायागुणैः, instrumental plural; metre unchanged); मृग्यङ्घ्रि → मृग्याङ्घ्रि — मृग्य + अङ्घ्रि requires आ by savarṇadīrgha sandhi (&#x27;whose feet are to be sought&#x27;; Marathi: चरणकमलांचा शोध घेतात); the metre does not decide it (य stays heavy either way before the conjunct ङ्घ्र).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त वसन्ततिलका — स्तोत्रातील पाचवा वृत्तबदल. पाठ-चर्चा : विभक्ते-र्मायागुणैः → विभक्तै-र्मायागुणैः (विभक्तैः हे मायागुणैः याच्याशी जुळणारे तृतीया बहुवचन; वृत्तात बदल नाही); मृग्यङ्घ्रि → मृग्याङ्घ्रि — मृग्य + अङ्घ्रि येथे सवर्णदीर्घ संधीने आ यायलाच हवा (&#x27;ज्याचे चरण शोधायचे आहेत&#x27;; मराठी &#x27;चरणकमलांचा शोध घेतात&#x27;); वृत्त निर्णय देत नाही (ङ्घ्र या संयुक्ताक्षरापुढे य गुरूच राहतो).</p></div></div>
+
+<div class="pagenav"><a href="verse-14.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 14</div></a><a class="next" href="verse-16.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 16</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

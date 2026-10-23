@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 10 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 10</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 10</span><span class="bl-mr lang-mr">श्लोक 10</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अमुना च सामबलिना विहितं यदयं प्रधक्ष्यति जगद्रुषितः ।।<br>इति तेन सन्धिमभिकर्तुमनाः प्रमना विमानमधिरुह्य ययौ ।।१०।।</div>
+  <div class="verse-iast">amunā ca sāmabalinā vihitaṃ yadayaṃ pradhakṣyati jagadruṣitaḥ । । iti tena sandhimabhikartumanāḥ pramanā vimānamadhiruhya yayau</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अमुना । च । साम । बलिना । विहितम् । यत् । अयम् । प्रधक्ष्यति । जगत् । रुषितः । इति । तेन । सन्धिम् । अभिकर्तु-मनाः । प्रमनाः । विमानम् । अधिरुह्य । ययौ ।</div><div class="vig-iast">amunā । ca । sāma । balinā । vihitam । yat । ayam । pradhakṣyati । jagat । ruṣitaḥ । iti । tena । sandhim । abhikartu-manāḥ । pramanāḥ । vimānam । adhiruhya । yayau ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यत् + अयम् = यदयम् · जगत् + रुषितः = जगद्रुषितः (त् → द्) · सन्धिम् + अभिकर्तुमनाः = सन्धिमभिकर्तुमनाः · प्रमनाः + विमानम् = प्रमना विमानम् · विमानम् + अधिरुह्य = विमानमधिरुह्य</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">‘अमुना बलिना च साम विहितम्, यत् अयं रुषितः जगत् प्रधक्ष्यति’ इति (मत्वा) तेन (सह) सन्धिम् अभिकर्तुमनाः प्रमनाः (सः) विमानम् अधिरुह्य ययौ ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Conciliation is the course with this strong man — for if angered, he will burn the world to ashes.&#x27; So thinking, with his mind set on making peace with him, he boarded his aerial car and set out, his heart glad.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्रुद्ध झालेला हा जग जाळून टाकील म्हणून या बलिष्ठ पुरुषाशी सामोपचाराने वागणे योग्य हे ओळखून विमानात बसून त्याच्याशी संधी करण्यासाठी तो रावण आनंदित होऊन निघाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अमुना बलिना</span>
+    <span class="word-iast">amunā balinā</span>
+  </div>
+  <div><span class="word-grammar">masculine instrumental singular (adas) + masculine instrumental singular</span></div>
+  <div class="word-form">In this verse: अमुना बलिना</div>
+  <p class="word-meaning lang-en">with this strong man</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या बलवानाशी</p>
+  <div class="word-usage">
+    <div class="deva">अमुना बलिना सह सन्धिः क्रियताम् ।</div>
+    <div class="usage-iast">amunā balinā saha sandhiḥ kriyatām ।</div>
+    <div class="usage-meaning lang-en">Let peace be made with this strong man.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या बलवानाशी तह केला जावो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">साम विहितम्</span>
+    <span class="word-iast">sāma vihitam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular + past participle (vi + √dhā + kta)</span></div>
+  <div class="word-form">In this verse: साम विहितम्</div>
+  <p class="word-meaning lang-en">conciliation is the proper course</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सामोपचार (समेट) करणे योग्य</p>
+  <div class="word-usage">
+    <div class="deva">शत्रुषु साम विहितम् भवति ।</div>
+    <div class="usage-iast">śatruṣu sāma vihitam bhavati ।</div>
+    <div class="usage-meaning lang-en">Toward enemies, conciliation is the proper course.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रूंशी सामोपचार करणे योग्य असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रधक्ष्यति</span>
+    <span class="word-iast">pradhakṣyati</span>
+  </div>
+  <div><span class="word-grammar">3rd singular future (lṛṭ), pra + √dah</span></div>
+  <div class="word-form">In this verse: प्रधक्ष्यति</div>
+  <p class="word-meaning lang-en">will burn to ashes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जाळून टाकील (प्र + √दह्, लृट्)</p>
+  <div class="word-usage">
+    <div class="deva">अग्निः वनम् प्रधक्ष्यति ।</div>
+    <div class="usage-iast">agniḥ vanam pradhakṣyati ।</div>
+    <div class="usage-meaning lang-en">The fire will burn the forest to ashes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नी वन जाळून टाकील.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुषितः</span>
+    <span class="word-iast">ruṣitaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular past participle, √ruṣ + kta</span></div>
+  <div class="word-form">In this verse: रुषितः</div>
+  <p class="word-meaning lang-en">angered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रुद्ध झालेला</p>
+  <div class="word-usage">
+    <div class="deva">रुषितः राजा दण्डम् आदिशत् ।</div>
+    <div class="usage-iast">ruṣitaḥ rājā daṇḍam ādiśat ।</div>
+    <div class="usage-meaning lang-en">The angered king ordered punishment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रुद्ध झालेल्या राजाने शिक्षा फर्मावली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सन्धिम् अभिकर्तुमनाः</span>
+    <span class="word-iast">sandhim abhikartumanāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular + infinitive (tumun) + मनस् (desiderative compound)</span></div>
+  <div class="word-form">In this verse: सन्धिम् अभिकर्तुमनाः</div>
+  <p class="word-meaning lang-en">desirous of making peace</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तह करण्याच्या इच्छेने (तुमुन् + मनस्)</p>
+  <div class="word-usage">
+    <div class="deva">सन्धिम् अभिकर्तुमनाः दूतः गतः ।</div>
+    <div class="usage-iast">sandhim abhikartumanāḥ dūtaḥ gataḥ ।</div>
+    <div class="usage-meaning lang-en">The messenger, desirous of making peace, departed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तह करण्याच्या इच्छेने दूत निघाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रमनाः</span>
+    <span class="word-iast">pramanāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; प्र + मनस्</span></div>
+  <div class="word-form">In this verse: प्रमनाः</div>
+  <p class="word-meaning lang-en">glad-hearted, eager</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्सुक मनाचा</p>
+  <div class="word-usage">
+    <div class="deva">प्रमनाः शिष्यः गुरुम् उपगच्छति ।</div>
+    <div class="usage-iast">pramanāḥ śiṣyaḥ gurum upagacchati ।</div>
+    <div class="usage-meaning lang-en">The eager disciple approaches the teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्सुक मनाचा शिष्य गुरूंजवळ जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विमानम् अधिरुह्य ययौ</span>
+    <span class="word-iast">vimānam adhiruhya yayau</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular + absolutive (ktvā), adhi + √ruh + 3rd singular perfect (liṭ), √yā</span></div>
+  <div class="word-form">In this verse: विमानम् अधिरुह्य ययौ</div>
+  <p class="word-meaning lang-en">boarded the aerial car and went</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विमानात बसून गेला</p>
+  <div class="word-usage">
+    <div class="deva">विमानम् अधिरुह्य ययौ राजा ।</div>
+    <div class="usage-iast">vimānam adhiruhya yayau rājā ।</div>
+    <div class="usage-meaning lang-en">The king boarded the aerial car and went.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा विमानात बसून गेला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Ravana chooses sama — conciliation, the first of the four upayas (sama, dana, bheda, danda) of statecraft — over war with a tapasvin. The verse quietly teaches that even the proud recognise the limits of force before spiritual power; diplomacy born of reverence is wiser than battle born of pride. The glad heart (pramanah) shows he goes not in defeat but in hope.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रावण युद्धाऐवजी साम — राजनीतीच्या चार उपायांपैकी (साम, दान, भेद, दंड) पहिला — तपस्व्याशी निवडतो. हे श्लोक शांतपणे शिकवते की अभिमानीही आध्यात्मिक सामर्थ्यासमोर बळाच्या मर्यादा ओळखतात; अभिमानातून जन्मलेल्या युद्धापेक्षा सविनय मुत्सद्देगिरी शहाणी असते. आनंदी मन (प्रमनाः) दाखवते की तो पराभवात नव्हे तर आशेने जातो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Sama is the first of the chatur-upaya of Arthashastra statecraft; that Ravana — who never bowed even to the gods — resolves on treaty with Parashurama measures the avatara&#x27;s stature in the poet&#x27;s world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>साम हा अर्थशास्त्राच्या चतुरुपायांपैकी पहिला आहे; देवांनाही न वाकलेला रावण परशुरामाशी तह ठरवतो — हे कवीच्या जगात अवताराच्या थोरवीचे माप आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The textual note confirms pradhakshyati jagadrushitah as printed; &#x27;rushitah jagat pradhakshyati&#x27; — the burning of the world by the angered sage — is the stock kavyic image of tapas turned to wrath.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शुद्धिपत्रात प्रधक्ष्यति जगद्रुषितः हे छापील रूपच योग्य असल्याचे नोंदवले आहे; रुषितः जगत् प्रधक्ष्यति — क्रुद्ध मुनीकडून जगाचा दाह — ही तपाच्या क्रोधात रूपांतराची काव्यपरंपरागत प्रतिमा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 9</div></a><a class="next" href="verse-11.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 11</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

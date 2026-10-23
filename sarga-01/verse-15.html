@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 15 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 15</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 15</span><span class="bl-mr lang-mr">श्लोक 15</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">निहत्य सर्वान्क्षितिपान्समन्तात्तच्छोणितौघैरतिवृद्धरोषः ।<br>समन्तशब्दोत्तरपञ्चके यः क्षेत्रे ह्रदान्पञ्च चकार पूर्णान् ।।१५।।</div>
+  <div class="verse-iast">nihatya sarvānkṣitipānsamantāttacchoṇitaughairativṛddharoṣaḥ । samantaśabdottarapañcake yaḥ kṣetre hradānpañca cakāra pūrṇān</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">निहत्य । सर्वान् । क्षितिपान् । समन्तात् । तत्-शोणित-ओघैः । अति-वृद्ध-रोषः । समन्त-शब्द-उत्तर-पञ्चके । यः । क्षेत्रे । ह्रदान् । पञ्च । चकार । पूर्णान् ।</div><div class="vig-iast">nihatya । sarvān । kṣitipān । samantāt । tat-śoṇita-oghaiḥ । ati-vṛddha-roṣaḥ । samanta-śabda-uttara-pañcake । yaḥ । kṣetre । hradān । pañca । cakāra । pūrṇān ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्षितिपान् + समन्तात् = क्षितिपान्समन्तात् · समन्तात् + तत् = समन्तात्तत् · तत् + शोणित = तच्छोणित (त् + श = च्छ) · शोणित + ओघैः = शोणितौघैः (वृद्धि) · ओघैः + अति = ओघैरति (विसर्ग → र्) · शब्द + उत्तर = शब्दोत्तर (गुण) · ह्रदान् + पञ्च = ह्रदान्पञ्च</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अतिवृद्धरोषः यः सर्वान् क्षितिपान् समन्तात् निहत्य, तच्छोणितौघैः समन्तशब्दोत्तरपञ्चके क्षेत्रे पञ्च ह्रदान् पूर्णान् चकार ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>His fury grown boundless, he slew all the kings on every side and with the floods of their blood filled full the five lakes in the land called Samantapañcaka.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अतिशय रागावलेल्या ज्याने सर्व राजांना ठार मारून त्यांच्या रक्ताच्या प्रवाहांनी समन्तपञ्चक (ज्यात समन्त शब्दानंतर पञ्चक शब्द येतो त्या) क्षेत्रातील पाच डोह पूर्ण भरून टाकले.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 15, line 1: सर्वाक्षितिपान् → सर्वान्क्षितिपान्</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निहत्य</span>
+    <span class="word-iast">nihatya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (lyap) of नि + √हन्</span></div>
+  <div class="word-form">In this verse: निहत्य</div>
+  <p class="word-meaning lang-en">having slain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ठार मारून (नि + √हन्, ल्यप्)</p>
+  <div class="word-usage">
+    <div class="deva">शत्रून् निहत्य सः प्रत्यागच्छत् ।</div>
+    <div class="usage-iast">śatrūn nihatya saḥ pratyāgacchat ।</div>
+    <div class="usage-meaning lang-en">Having slain the enemies, he returned.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रूंना ठार मारून तो परत आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सर्वान् क्षितिपान्</span>
+    <span class="word-iast">sarvān kṣitipān</span>
+  </div>
+  <div><span class="word-grammar">both masculine accusative plural; क्षितिप = क्षिति-√पा (क)</span></div>
+  <div class="word-form">In this verse: सर्वान्, क्षितिपान्</div>
+  <p class="word-meaning lang-en">all the kings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व राजांना</p>
+  <div class="word-usage">
+    <div class="deva">सर्वान् क्षितिपान् सः अजयत् ।</div>
+    <div class="usage-iast">sarvān kṣitipān saḥ ajayat ।</div>
+    <div class="usage-meaning lang-en">He conquered all the kings.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने सर्व राजांचा पराभव केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समन्तात्</span>
+    <span class="word-iast">samantāt</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (समन्त + तसिल्)</span></div>
+  <div class="word-form">In this verse: समन्तात्</div>
+  <p class="word-meaning lang-en">on all sides, all around</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व बाजूंनी</p>
+  <div class="word-usage">
+    <div class="deva">समन्तात् शत्रवः आययुः ।</div>
+    <div class="usage-iast">samantāt śatravaḥ āyayuḥ ।</div>
+    <div class="usage-meaning lang-en">Enemies came from all sides.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व बाजूंनी शत्रू आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तच्छोणितौघैः</span>
+    <span class="word-iast">tacchoṇitaughaiḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine/neuter instrumental plural; tatpuruṣa (तत्-शोणित-ओघ)</span></div>
+  <div class="word-form">In this verse: तच्छोणितौघैः</div>
+  <p class="word-meaning lang-en">with the floods of their blood</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांच्या रक्ताच्या प्रवाहांनी</p>
+  <div class="word-usage">
+    <div class="deva">तच्छोणितौघैः नदी पूरिता अभवत् ।</div>
+    <div class="usage-iast">tacchoṇitaughaiḥ nadī pūritā abhavat ।</div>
+    <div class="usage-meaning lang-en">The river was filled with the floods of their blood.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांच्या रक्ताच्या प्रवाहांनी नदी भरून गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतिवृद्धरोषः</span>
+    <span class="word-iast">ativṛddharoṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (अति-वृद्ध-रोष)</span></div>
+  <div class="word-form">In this verse: अतिवृद्धरोषः</div>
+  <p class="word-meaning lang-en">whose anger had grown exceeding</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचा क्रोध अतिशय वाढला आहे असा</p>
+  <div class="word-usage">
+    <div class="deva">अतिवृद्धरोषः सः युद्धम् अकरोत् ।</div>
+    <div class="usage-iast">ativṛddharoṣaḥ saḥ yuddham akarot ।</div>
+    <div class="usage-meaning lang-en">He whose anger had grown exceeding waged war.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय क्रोधाविष्ट होऊन त्याने युद्ध केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समन्तशब्दोत्तरपञ्चके क्षेत्रे</span>
+    <span class="word-iast">samantaśabdottarapañcake kṣetre</span>
+  </div>
+  <div><span class="word-grammar">both neuter locative singular; tatpuruṣa</span></div>
+  <div class="word-form">In this verse: समन्तशब्दोत्तरपञ्चके, क्षेत्रे</div>
+  <p class="word-meaning lang-en">in the land of Samantapañcaka (Kurukṣetra)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘समन्त’ शब्दानंतर ‘पञ्चक’ येते त्या क्षेत्रात, म्हणजे समन्तपञ्चक (आजचे कुरुक्षेत्र, हरियाणा)</p>
+  <div class="word-usage">
+    <div class="deva">समन्तशब्दोत्तरपञ्चके क्षेत्रे तीर्थम् अस्ति ।</div>
+    <div class="usage-iast">samantaśabdottarapañcake kṣetre tīrtham asti ।</div>
+    <div class="usage-meaning lang-en">In the land of Samantapañcaka there is a holy place.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समन्तपञ्चक क्षेत्रात तीर्थ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ह्रदान् पञ्च</span>
+    <span class="word-iast">hradān pañca</span>
+  </div>
+  <div><span class="word-grammar">ह्रदान्: masculine accusative plural; पञ्च: numeral</span></div>
+  <div class="word-form">In this verse: ह्रदान्, पञ्च</div>
+  <p class="word-meaning lang-en">the five lakes, pools</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाच डोह</p>
+  <div class="word-usage">
+    <div class="deva">ह्रदान् पञ्च सः रक्तेन अपूरयत् ।</div>
+    <div class="usage-iast">hradān pañca saḥ raktena apūrayat ।</div>
+    <div class="usage-meaning lang-en">He filled the five lakes with blood.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने पाच डोह रक्ताने भरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चकार पूर्णान्</span>
+    <span class="word-iast">cakāra pūrṇān</span>
+  </div>
+  <div><span class="word-grammar">चकार: √कृ, liṭ 3rd singular; पूर्णान्: masculine accusative plural, क्त of √पृ</span></div>
+  <div class="word-form">In this verse: चकार, पूर्णान्</div>
+  <p class="word-meaning lang-en">made full, filled</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भरून टाकले (√कृ, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">घटान् सः जलेन पूर्णान् चकार ।</div>
+    <div class="usage-iast">ghaṭān saḥ jalena pūrṇān cakāra ।</div>
+    <div class="usage-meaning lang-en">He filled the pots with water.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने घडे पाण्याने भरले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The blood-filled lakes of Samantapañcaka are the verse&#x27;s terrible image of adharma&#x27;s price: the field that would one day host the Bhagavadgītā&#x27;s discourse was first consecrated by the avatāra&#x27;s wrath against corrupt kingship. Yet even in the horror the poet keeps measure — five lakes, no more: the violence is bounded, ritual, complete. For the devotee it is a warning as much as a wonder: when rulers turn against dharma, the reckoning, when it comes, is total.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समन्तपञ्चकाचे रक्ताने भरलेले डोह हे अधर्माच्या किमतीचे श्लोकातील भीषण बिंब आहे — ज्या भूमीवर एके दिवशी भगवद्गीतेचा उपदेश होणार होता तीच भूमी आधी भ्रष्ट राजवटीविरुद्धच्या अवताराच्या क्रोधाने पवित्र झाली. पण या भयंकरतेतही कवी मर्यादा पाळतो — पाचच डोह, अधिक नाही : हिंसा सीमित, विधियुक्त, पूर्ण आहे. भाविकासाठी हा चमत्काराइतकाच इशाराही आहे — जेव्हा राज्यकर्ते धर्माविरुद्ध वळतात, तेव्हा येणारा हिशेब पूर्ण असतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Mahābhārata (Ādiparvan, Tīrthayātrāparvan) and the Bhāgavata (9.16) tell that Paraśurāma made five lakes of blood at Samantapañcaka — the holy field of Kurukṣetra — and offered the blood as libation to his ancestors. The place-name itself comes from the deed: समन्त (&#x27;all around&#x27;) + पञ्चक (&#x27;the five&#x27;). The book&#x27;s gloss notes this etymology on the word समन्तशब्दोत्तरपञ्चके.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महाभारत (आदिपर्व, तीर्थयात्रापर्व) व भागवत (९.१६) सांगतात की परशुरामाने समन्तपञ्चक येथे — कुरुक्षेत्र या पवित्र भूमीत — रक्ताचे पाच डोह केले आणि ते रक्त पितरांना तर्पण म्हणून अर्पण केले. स्थलनामच या कृतीवरून आले आहे : समन्त (&#x27;सर्वत्र&#x27;) + पञ्चक (&#x27;पाच&#x27;). पुस्तकाची टीप समन्तशब्दोत्तरपञ्चके या शब्दावर ही व्युत्पत्ती देते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>समन्तशब्दोत्तरपञ्चके क्षेत्रे — &#x27;in the land where the word पञ्चक follows the word समन्त&#x27;, i.e. Samantapañcaka, the classical name of the Kurukṣetra tīrtha (in modern Haryana). अतिवृद्धरोषः — &#x27;whose anger had grown exceeding&#x27;: the verse admits the hero&#x27;s fury even while justifying its object. The printed सर्वाक्षितिपान् is corrected to सर्वान्क्षितिपान् for the metre.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समन्तशब्दोत्तरपञ्चके क्षेत्रे — &#x27;जेथे समन्त शब्दानंतर पञ्चक शब्द येतो त्या भूमीत&#x27;, म्हणजे समन्तपञ्चक, कुरुक्षेत्र तीर्थाचे शास्त्रीय नाव (आजच्या हरियाणात). अतिवृद्धरोषः — &#x27;ज्याचा क्रोध अतिशय वाढला&#x27; : श्लोक नायकाचा राग मान्य करतो, त्याचे लक्ष्य समर्थन करीत असतानाही. छापील सर्वाक्षितिपान् हे वृत्तासाठी सर्वान्क्षितिपान् असे दुरुस्त केले आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-14.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 14</div></a><a class="next" href="verse-16.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 16</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

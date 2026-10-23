@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 50 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 50</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 50</span><span class="bl-mr lang-mr">श्लोक 50</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ त्रातः स तरणिस्तेन दीनदयालुना ।<br>सांयात्रिको धनं सर्वं सद्मार्थं समकल्पयत् ।।५०।।</div>
+  <div class="verse-iast">atha trātaḥ sa taraṇistena dīnadayālunā । sāṃyātriko dhanaṃ sarvaṃ sadmārthaṃ samakalpayat</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । त्रातः । सः । तरणिः । तेन । दीन-दयालुना । सांयात्रिकः । धनम् । सर्वम् । सद्म-अर्थम् । समकल्पयत् ।</div><div class="vig-iast">atha । trātaḥ । saḥ । taraṇiḥ । tena । dīna-dayālunā । sāṃyātrikaḥ । dhanam । sarvam । sadma-artham । samakalpayat ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">त्रातः + सः = त्रातः सः · सः + तरणिः = स तरणिः · तरणिः + तेन = तरणिस्तेन · सांयात्रिकः + धनम् = सांयात्रिको धनम् · सद्म + अर्थम् = सद्मार्थम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ तेन दीनदयालुना सः तरणिः त्रातः; (ततः) सांयात्रिकः सर्वं धनं सद्मार्थं समकल्पयत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then, seeing his boat thus saved by that compassionate one, the merchant dedicated all his wealth, with solemn resolve, for the temple.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मग दीनांवर दया करणाऱ्या त्या कूटकेश्वराने ती नौका तारली हे बघून त्या व्यापाऱ्याने सर्व धन देवालय बांधण्यासाठी देऊन टाकले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रातः</span>
+    <span class="word-iast">trātaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular past passive participle of √trā (to protect)</span></div>
+  <div class="word-form">In this verse: त्रातः — nominative singular as printed (qualifying सः तरणिः)</div>
+  <p class="word-meaning lang-en">saved, protected</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाचवली गेली</p>
+  <div class="word-usage">
+    <div class="deva">देवेन त्रातः स जीवति</div>
+    <div class="usage-iast">devena trātaḥ sa jīvati</div>
+    <div class="usage-meaning lang-en">Saved by the god, he lives.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाने वाचवलेला तो जगतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तरणिः</span>
+    <span class="word-iast">taraṇiḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular of taraṇi (boat)</span></div>
+  <div class="word-form">In this verse: तरणिः — nominative singular as printed</div>
+  <p class="word-meaning lang-en">boat, ship</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नौका</p>
+  <div class="word-usage">
+    <div class="deva">तरणिः सागरे तरति</div>
+    <div class="usage-iast">taraṇiḥ sāgare tarati</div>
+    <div class="usage-meaning lang-en">The boat crosses the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नौका समुद्रात तरते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सद्मार्थम्</span>
+    <span class="word-iast">sadmārtham</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular (adverbial) of the tatpuruṣa sadma + artha</span></div>
+  <div class="word-form">In this verse: सद्मार्थम् — as printed</div>
+  <p class="word-meaning lang-en">for the sake of a (god&#x27;s) dwelling, for the temple</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(देवाच्या) घरासाठी, देवालयासाठी</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः सद्मार्थं धनं ददौ</div>
+    <div class="usage-iast">bhaktaḥ sadmārthaṃ dhanaṃ dadau</div>
+    <div class="usage-meaning lang-en">The devotee gave wealth for the temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्ताने देवालयासाठी धन दिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समकल्पयत्</span>
+    <span class="word-iast">samakalpayat</span>
+  </div>
+  <div><span class="word-grammar">third person singular imperfect (laṅ) of sam-√kḷp, in the dedicatory sense &#x27;to appoint, dedicate&#x27;</span></div>
+  <div class="word-form">In this verse: समकल्पयत् — as printed</div>
+  <p class="word-meaning lang-en">dedicated with resolve, appointed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकल्पपूर्वक अर्पण केले</p>
+  <div class="word-usage">
+    <div class="deva">राजा धनं देवपूजायै समकल्पयत्</div>
+    <div class="usage-iast">rājā dhanaṃ devapūjāyai samakalpayat</div>
+    <div class="usage-meaning lang-en">The king dedicated his wealth to the worship of the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने धन देवपूजेसाठी अर्पण केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Gratitude is the first fruit of rescue. The sāṃyātrika does not merely thank the Lord in words; he converts his entire fortune into a sadma — a dwelling for the deity — making his worldly wealth the very foundation of worship. The verse quietly teaches that wealth saved by grace finds its true use only when returned to the divine.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कृतज्ञता हे तारणाचे पहिले फळ आहे. व्यापारी केवळ शब्दांनी देवाचे आभार मानत नाही; तो आपले संपूर्ण धन सद्मात — देवाच्या निवासात — रूपांतरित करतो, म्हणजे लौकिक संपत्तीच पूजेचा पाया बनवतो. कृपेने वाचलेले धन देवाला परत केल्यानेच त्याचा खरा उपयोग होतो, हे हा श्लोक मौनाने शिकवतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The merchant&#x27;s act follows the classical purāṇic ideal of dhanaviniyoga: wealth is purified when spent on the deva, the vipra, or the needy. Temples raised by grateful merchants and sailors dot the Konkan coast, and the Māhātmya here gives such munificence a theological root — the temple stands as the devotee&#x27;s thanksgiving made permanent.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>व्यापाऱ्याचे कृत्य धनविनियोगाच्या पुराणिक आदर्शाशी जुळते : देव, ब्राह्मण किंवा गरजू यांच्यासाठी खर्च केलेले धन पवित्र होते. कोकण किनारपट्टीवर कृतज्ञ व्यापारी व खलाशांनी उभारलेली देवालये ठिकठिकाणी आहेत; महात्म्य या दानशीलतेला धर्मशास्त्रीय मूळ देते — देवालय हे भक्ताच्या कृतज्ञतेचे कायमस्वरूपी रूप आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The compound sadmārtham (&#x27;for the sake of a dwelling&#x27;) is rendered in the Marathi as &#x27;देवालय बांधण्यासाठी&#x27; — the sadma here is plainly a temple. The phrase tena dīnadayālunā echoes the dīnadayālu motif of the Kūṭakeśvara legend and closes the rescue episode; verse 51 turns to the merchant&#x27;s final act.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सद्मार्थम् (&#x27;निवासासाठी&#x27;) हे पद मराठीत &#x27;देवालय बांधण्यासाठी&#x27; असे घेतले आहे — येथील सद्म म्हणजे स्पष्टपणे देवालय. तेन दीनदयालुना हे पद कूटकेश्वर-कथेतील दीनदयाळू-संकल्पनेशी जुळते आणि बचावप्रसंगाची सांगता करते; श्लोक ५१ मध्ये व्यापाऱ्याचे शेवटचे कृत्य येते.</p></div></div>
+
+<div class="pagenav"><a href="verse-49.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 49</div></a><a class="next" href="verse-51.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 51</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

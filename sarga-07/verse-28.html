@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 7 — Kṛṣṇāvatāravarṇanaḥ 28 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 28</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 28</span><span class="bl-mr lang-mr">श्लोक 28</span></h1>
+<p class="meta">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ &middot; <span class="deva">सप्तमः सर्गः · कृष्णावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">उद्वर्णैः कर्णिकारैः श्रवणविवरयोरुल्लसन्तं लसन्तं<br>मायूरैः पिच्छभारैर्मृगमदतिलकं भालमूले दधानम् ।<br>धम्मिल्लं स्कन्धदेशे सुविमलतुलसीमञ्जरीदाम कण्ठे<br>स्वाङ्गे भङ्गित्रिकाङ्कं मधुरमुरलिकं गोपकं कञ्चिदीडे ।।२८।।</div>
+  <div class="verse-iast">udvarṇaiḥ karṇikāraiḥ śravaṇavivarayorullasantaṃ lasantaṃ māyūraiḥ picchabhārairmṛgamadatilakaṃ bhālamūle dadhānam । dhammillaṃ skandhadeśe suvimalatulasīmañjarīdāma kaṇṭhe svāṅge bhaṅgitrikāṅkaṃ madhuramuralikaṃ gopakaṃ kañcidīḍe</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">उद्वर्णैः । कर्णिकारैः । श्रवण-विवरयोः । उल्लसन्तम् । लसन्तम् । मायूरैः । पिच्छ-भारैः । मृगमद-तिलकम् । भाल-मूले । दधानम् । धम्मिल्लम् । स्कन्ध-देशे । सुविमल-तुलसी-मञ्जरी-दाम । कण्ठे । स्व-अङ्गे । भङ्गित्रिक-अङ्कम् । मधुर-मुरलिकम् । गोपकम् । कञ्चित् । ईडे ।</div><div class="vig-iast">udvarṇaiḥ । karṇikāraiḥ । śravaṇa-vivarayoḥ । ullasantam । lasantam । māyūraiḥ । piccha-bhāraiḥ । mṛgamada-tilakam । bhāla-mūle । dadhānam । dhammillam । skandha-deśe । suvimala-tulasī-mañjarī-dāma । kaṇṭhe । sva-aṅge । bhaṅgitrika-aṅkam । madhura-muralikam । gopakam । kañcit । īḍe ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विवरयोः + उल्लसन्तम् = विवरयोरुल्लसन्तम् · भारैः + मृगमद = भारैर्मृगमद · स्व + अङ्गे = स्वाङ्गे · त्रिक + अङ्कम् = त्रिकाङ्कम् · कञ्चित् + ईडे = कञ्चिदीडे</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">श्रवणविवरयोः उद्वर्णैः कर्णिकारैः उल्लसन्तं, मायूरैः पिच्छभारैः लसन्तं, भालमूले मृगमदतिलकं दधानं, स्कन्धदेशे धम्मिल्लं कण्ठे सुविमलतुलसीमञ्जरीदाम (दधानं), स्वाङ्गे भङ्गित्रिकाङ्कं मधुरमुरलिकं कञ्चित् गोपकम् ईडे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>I praise that certain indescribable cowherd boy — with bright karṇikāra blossoms gleaming in the hollows of His ears, resplendent in heavy peacock plumes, wearing a musk-mark at the base of His brow, His braided locks resting on His shoulders, a garland of pure tulasī buds at His throat, the mark of the triple bend upon His limbs, the sweet flute in His hands.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याच्या कानांच्या पाळी चमकणाऱ्या कर्णिका फुलांनी अधिकच शोभून दिसत आहेत, मोरपिसांच्या भाराने शोभणाऱ्या, भालमूली कस्तुरीचा तिलक धारण करणाऱ्या, ज्याच्या खांद्यावर केशकलाप रुळत आहे, ज्याच्या गळ्यात विमल तुळशीची माळ विराजत आहे, जो त्रिभंगी मुद्रेत (तीन ठिकाणी बाक घेऊन) उभा आहे अशा मधुर मुरली धारण करणाऱ्या त्या अवर्णनीय गोपालाची मी स्तुती करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उद्वर्णैः कर्णिकारैः</span>
+    <span class="word-iast">udvarṇaiḥ karṇikāraiḥ</span>
+  </div>
+  <div><span class="word-grammar">उद्वर्ण (adj., &#x27;of bright, radiant hue&#x27;; उत् + वर्ण) + कर्णिकार (m., &#x27;the karṇikāra tree / its golden blossom&#x27;), कर्मधारय; तृतीया बहुवचन (&#x27;with bright-hued karṇikāra blossoms&#x27;)</span></div>
+  <div class="word-form">In this verse: उद्वर्णैः कर्णिकारैः — instrumental plural phrase as printed</div>
+  <p class="word-meaning lang-en">with bright-hued karṇikāra blossoms</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उज्ज्वल रंगाच्या (पिवळ्या) कर्णिकार फुलांनी</p>
+  <div class="word-usage">
+    <div class="deva">उद्वर्णैः कर्णिकारैः कर्णौ शोभेते।</div>
+    <div class="usage-iast">udvarṇaiḥ karṇikāraiḥ karṇau śobhete</div>
+    <div class="usage-meaning lang-en">The ears glow with bright karṇikāra blossoms.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उज्ज्वल कर्णिकार फुलांनी कान शोभतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रवणविवरयोः</span>
+    <span class="word-iast">śravaṇavivarayoḥ</span>
+  </div>
+  <div><span class="word-grammar">श्रवण (n., &#x27;ear&#x27;) + विवर (n., &#x27;hollow, cavity&#x27;), षष्ठी-तत्पुरुष (&#x27;ear-hollow&#x27;); सप्तमी द्विवचन (locative dual; विवरयोः + उल्लसन्तम् → विवरयोरुल्लसन्तम्)</span></div>
+  <div class="word-form">In this verse: श्रवणविवरयोः — locative dual as printed</div>
+  <p class="word-meaning lang-en">in the hollows of the two ears</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही कानांच्या छिद्रांत</p>
+  <div class="word-usage">
+    <div class="deva">श्रवणविवरयोः कुसुमानि निहितानि।</div>
+    <div class="usage-iast">śravaṇavivarayoḥ kusumāni nihitāni</div>
+    <div class="usage-meaning lang-en">Blossoms are tucked in the hollows of the ears.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कानांच्या पाळीत फुले ठेवली आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उल्लसन्तं लसन्तम्</span>
+    <span class="word-iast">ullasantaṃ lasantam</span>
+  </div>
+  <div><span class="word-grammar">उत् + √लस् &#x27;to shine, gleam&#x27; + शतृ and √लस् + शतृ (present participles); द्वितीया एकवचन पुंल्लिङ्ग, agreeing with गोपकम् (&#x27;gleaming, resplendent&#x27;)</span></div>
+  <div class="word-form">In this verse: उल्लसन्तं लसन्तम् — accusative singular participles as printed</div>
+  <p class="word-meaning lang-en">gleaming, resplendent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झळकणारा, शोभणारा</p>
+  <div class="word-usage">
+    <div class="deva">उल्लसन्तम् लसन्तम् बालम् नमामि।</div>
+    <div class="usage-iast">ullasantam lasantam bālaṃ namāmi</div>
+    <div class="usage-meaning lang-en">I bow to the gleaming, resplendent boy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झळकणाऱ्या शोभिवंत बाळाला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मायूरैः पिच्छभारैः</span>
+    <span class="word-iast">māyūraiḥ picchabhāraiḥ</span>
+  </div>
+  <div><span class="word-grammar">मायूर (adj., &#x27;belonging to the peacock&#x27;; मयूर + अण्) + पिच्छभार (पिच्छ n. &#x27;feather&#x27; + भार m. &#x27;mass, load&#x27;, तत्पुरुष); तृतीया बहुवचन (&#x27;with masses of peacock feathers&#x27;; भारैः + मृगमद → भारैर्मृगमद)</span></div>
+  <div class="word-form">In this verse: मायूरैः पिच्छभारैः — instrumental plural phrase as printed</div>
+  <p class="word-meaning lang-en">with masses of peacock feathers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोरपिसांच्या समूहांनी</p>
+  <div class="word-usage">
+    <div class="deva">मायूरैः पिच्छभारैः शिरः अलङ्कृतम्।</div>
+    <div class="usage-iast">māyūraiḥ picchabhāraiḥ śiraḥ alaṅkṛtam</div>
+    <div class="usage-meaning lang-en">The head is adorned with masses of peacock feathers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोरपिसांच्या समूहांनी मस्तक सजवले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मृगमदतिलकम्</span>
+    <span class="word-iast">mṛgamadatilakam</span>
+  </div>
+  <div><span class="word-grammar">मृगमद (m., &#x27;musk&#x27;; lit. &#x27;deer-essence&#x27;) + तिलक (m./n., &#x27;forehead-mark&#x27;), षष्ठी-तत्पुरुष (&#x27;the musk-tilaka&#x27;); द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: मृगमदतिलकम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">the musk forehead-mark</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कस्तुरीचा टिळा</p>
+  <div class="word-usage">
+    <div class="deva">मृगमदतिलकम् ललाटे विराजते।</div>
+    <div class="usage-iast">mṛgamadatilakam lalāṭe virājate</div>
+    <div class="usage-meaning lang-en">The musk-mark shines on the forehead.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कपाळावर कस्तुरीचा टिळा विराजतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भालमूले</span>
+    <span class="word-iast">bhālamūle</span>
+  </div>
+  <div><span class="word-grammar">भाल (n., &#x27;forehead&#x27;) + मूल (n., &#x27;base, root&#x27;), षष्ठी-तत्पुरुष (&#x27;the brow&#x27;s base&#x27;); सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: भालमूले — locative singular as printed</div>
+  <p class="word-meaning lang-en">at the base of the brow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कपाळावर</p>
+  <div class="word-usage">
+    <div class="deva">भालमूले चन्दनम् अपि धार्यते।</div>
+    <div class="usage-iast">bhālamūle candanam api dhāryate</div>
+    <div class="usage-meaning lang-en">Sandal-paste too is worn at the brow&#x27;s base.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कपाळाच्या मुळाशी चंदनही लावतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धम्मिल्लम्</span>
+    <span class="word-iast">dhammillam</span>
+  </div>
+  <div><span class="word-grammar">धम्मिल्ल (m., &#x27;braided or coiled hair, topknot, crest&#x27;); द्वितीया एकवचन — स्कन्धदेशे धम्मिल्लम्: &#x27;the coiled locks (resting) on the shoulders&#x27;</span></div>
+  <div class="word-form">In this verse: धम्मिल्लम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">the braided/coiled locks</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केशकलाप (अंबाडा/वेणी)</p>
+  <div class="word-usage">
+    <div class="deva">धम्मिल्लम् स्कन्धयोः पतति।</div>
+    <div class="usage-iast">dhammillam skandhayoḥ patati</div>
+    <div class="usage-meaning lang-en">The coiled tresses fall upon the shoulders.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केशकलाप खांद्यावर पडतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुविमलतुलसीमञ्जरीदाम</span>
+    <span class="word-iast">suvimalatulasīmañjarīdāma</span>
+  </div>
+  <div><span class="word-grammar">सु + विमल (adj., &#x27;spotless, pure&#x27;) + तुलसी (f.) + मञ्जरी (f., &#x27;bud, blossom-cluster&#x27;) + दामन् (n., &#x27;garland&#x27; → दाम in compound-final), तत्पुरुष chain (&#x27;a garland of pure tulasī buds&#x27;); द्वितीया एकवचन नपुंसकलिङ्ग (कण्ठे understood)</span></div>
+  <div class="word-form">In this verse: सुविमलतुलसीमञ्जरीदाम — accusative singular as printed</div>
+  <p class="word-meaning lang-en">a garland of spotless tulasī buds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्मळ तुळशीमंजिऱ्यांची माळ</p>
+  <div class="word-usage">
+    <div class="deva">सुविमलतुलसीमञ्जरीदाम कण्ठे राजते।</div>
+    <div class="usage-iast">suvimalatulasīmañjarīdāma kaṇṭhe rājate</div>
+    <div class="usage-meaning lang-en">A garland of spotless tulasī buds shines at His throat.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्मळ तुळशीमंजिऱ्यांची माळ गळ्यात शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भङ्गित्रिकाङ्कम्</span>
+    <span class="word-iast">bhaṅgitrikāṅkam</span>
+  </div>
+  <div><span class="word-grammar">भङ्गि (f., &#x27;bend, curve&#x27;) + त्रिक (n., &#x27;triad&#x27;) + अङ्क (m., &#x27;mark&#x27;), तत्पुरुष (&#x27;bearing the mark of the triple bend&#x27; — tribhaṅga, the flute-player&#x27;s stance); द्वितीया एकवचन (त्रिक + अङ्कम् → त्रिकाङ्कम्)</span></div>
+  <div class="word-form">In this verse: भङ्गित्रिकाङ्कम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">bearing the mark of the triple bend (tribhaṅga)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रिभंगी मुद्रेचे चिन्ह असलेला</p>
+  <div class="word-usage">
+    <div class="deva">भङ्गित्रिकाङ्कम् वपुः मुरलीधरस्य।</div>
+    <div class="usage-iast">bhaṅgitrikāṅkam vapuḥ muralīdharasya</div>
+    <div class="usage-meaning lang-en">The thrice-bent form belongs to the flute-bearer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रिभंगी शरीर मुरलीधराचेच आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मधुरमुरलिकम्</span>
+    <span class="word-iast">madhuramuralikam</span>
+  </div>
+  <div><span class="word-grammar">मधुर (adj., &#x27;sweet&#x27;) + मुरलिका (f., &#x27;flute&#x27;), बहुव्रीहि (&#x27;he whose flute is sweet&#x27;); द्वितीया एकवचन पुंल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: मधुरमुरलिकम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">he of the sweet flute</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मधुर मुरली असलेला</p>
+  <div class="word-usage">
+    <div class="deva">मधुरमुरलिकम् कृष्णम् स्मरामि।</div>
+    <div class="usage-iast">madhuramuralikam kṛṣṇam smarāmi</div>
+    <div class="usage-meaning lang-en">I remember Kṛṣṇa of the sweet flute.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मधुर मुरली असलेल्या कृष्णाचे मी स्मरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गोपकं कञ्चित्</span>
+    <span class="word-iast">gopakaṃ kañcit</span>
+  </div>
+  <div><span class="word-grammar">गोपक (m., &#x27;cowherd boy&#x27;; गोप + क स्वार्थे), द्वितीया एकवचन; कञ्चित् = किम् (सर्वनाम) + चित् (indefinite particle), द्वितीया एकवचन पुंल्लिङ्ग — &#x27;a certain (indescribable) cowherd lad&#x27; (the book&#x27;s Marathi notes the affectionate litotes: अवर्णनीय — प्रेमळ न्यूनोक्ती); sandhi कञ्चित् + ईडे → कञ्चिदीडे</span></div>
+  <div class="word-form">In this verse: गोपकं कञ्चित् — accusative singular phrase as printed (कञ्चित् + ईडे → कञ्चिदीडे)</div>
+  <p class="word-meaning lang-en">a certain indescribable cowherd boy</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोणी एक गोपबाळ (अवर्णनीय — प्रेमळ न्यूनोक्ती)</p>
+  <div class="word-usage">
+    <div class="deva">गोपकं कञ्चित् हृदये ध्यायामि।</div>
+    <div class="usage-iast">gopakaṃ kañcid hṛdaye dhyāyāmi</div>
+    <div class="usage-meaning lang-en">I meditate in my heart on a certain cowherd boy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोण्या एका गोपबाळाचे मी हृदयात ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ईडे</span>
+    <span class="word-iast">īḍe</span>
+  </div>
+  <div><span class="word-grammar">√ईड् &#x27;to praise, laud&#x27; (अदादि), लट् आत्मनेपद उत्तमपुरुष एकवचन — &#x27;I praise&#x27;</span></div>
+  <div class="word-form">In this verse: ईडे — 1st person singular present (ātmanepada) as printed</div>
+  <p class="word-meaning lang-en">I praise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्तुती करतो</p>
+  <div class="word-usage">
+    <div class="deva">अहम् मुरलीधरम् ईडे।</div>
+    <div class="usage-iast">aham muralīdharam īḍe</div>
+    <div class="usage-meaning lang-en">I praise the flute-bearer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी मुरलीधराची स्तुती करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sarga&#x27;s hymn closes not with theology but with a vision: the tribhaṅga flute-player, ornament by ornament, exactly as the devotee beholds Him. The &#x27;kañcid gopakam&#x27; — &#x27;a certain cowherd boy,&#x27; as if the poet hardly dares name Him — is the bhakta&#x27;s humility before the vision; the indefinite pronoun says what praise cannot. Devotionally, this is dhyāna made verse: each ornament is a resting-place for the mind. For the sthala, the verse gathers the whole Kṛṣṇāvatāra into the one beloved form the Konkan devotee carries home — the Gopāla whose līlā the Gomantaka tīrtha (v. 5) still commemorates.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सर्गाचे स्तोत्र तत्त्वज्ञानाने नव्हे, तर दर्शनाने संपते : त्रिभंगी मुरलीधर, अलंकारामागून अलंकार, भक्त त्याला जसा पाहतो तसाच. &#x27;कञ्चित् गोपकम्&#x27; — &#x27;कोणी एक गोपबाळ&#x27;, जणू कवी त्याचे नाव घेण्यास धजत नाही — हे दर्शनापुढील भक्ताची नम्रता आहे; अनिश्चित सर्वनाम स्तुती जे सांगू शकत नाही ते सांगते. भक्तिभावात हे श्लोकरूप झालेले ध्यान आहे : प्रत्येक अलंकार मनाचे विश्रांतीस्थान आहे. स्थलमहात्म्याच्या दृष्टीने हा श्लोक संपूर्ण कृष्णावताराला त्या एका लाडक्या रूपात गोळा करतो जे कोंकणभक्त घरी घेऊन जातो — तो गोपाल ज्याची लीला गोमन्तक तीर्थ (श्लोक ५) आजही स्मरते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The tribhaṅga — the triple bend of neck, waist, and knee — is Kṛṣṇa&#x27;s signature flute-playing stance in sculpture and poetry alike (cf. the Bhāgavata&#x27;s veṇu-gīta, 10.21, where the gopīs behold Him &#x27;tribhaṅga-lalitam&#x27;). Each ornament named here is a canonical one: the karṇikāra blossom in the ear, the peacock feather (the Vraja crest), the musk tilaka, the tulasī garland — the śṛṅgāra of the Gopāla. &#x27;Kañcid&#x27; is the poet&#x27;s vinaya: even while described, the Lord remains the &#x27;indescribable.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्रिभंग — मान, कंबर व गुडघा यांचा तिहेरी बाक — हा शिल्पात व काव्यात दोन्हीत कृष्णाची मुरलीवादनाची सही आहे (भागवताच्या वेणुगीताची, १०.२१, आठवण करा, जेथे गोपी त्याला &#x27;त्रिभंगललित&#x27; वर्णितात). येथे सांगितलेला प्रत्येक अलंकार शास्त्रीय आहे : कानात कर्णिकारफूल, मोरपिस (व्रजमुकुट), कस्तुरीटिळा, तुळशीमाळ — गोपालाचा शृंगार. &#x27;कञ्चित्&#x27; ही कवीची विनयशीलता आहे : वर्णन करतानाही भगवंत सदा &#x27;अवर्णनीय&#x27;च.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is in Sragdharā (21 syllables per pāda: 7+7+7). The accusative participles — उल्लसन्तम्, लसन्तम्, दधानम् — and the whole chain of ornament-accusatives agree with गोपकं कञ्चित्, the single object of ईडे (&#x27;I praise&#x27;): the verse is one long adjectival garland hung upon the cowherd boy. Note भालमूले (&#x27;at the base of the brow&#x27;) for the tilaka&#x27;s place, and स्कन्धदेशे with धम्मिल्लम् — the book&#x27;s Marathi reads the coiled locks as resting on the shoulders. मधुरमुरलिकम् keeps the flute for the last epithet before the name: the music is the seal of the vision.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक स्रग्धरेत आहे (प्रत्येक चरण २१ अक्षरे : ७+७+७). द्वितीया कृदन्ते — उल्लसन्तम्, लसन्तम्, दधानम् — आणि अलंकार-द्वितीयांची माळ ही सर्व गोपकं कञ्चित् याच्याशी जुळतात, ईडे (&#x27;मी स्तुती करतो&#x27;) च्या एकाच कर्माची : संपूर्ण श्लोक ही गोपबाळावर टांगलेली एकच दीर्घ विशेषणमाळा आहे. टिळ्याच्या जागेसाठी भालमूले (&#x27;भालाच्या मुळाशी&#x27;) लक्षात घ्या, आणि धम्मिल्लम्‌बरोबर स्कन्धदेशे — पुस्तकाचे मराठी वेणी खांद्यावर रुळत असल्याचे वाचते. नावापूर्वीचा शेवटचा विशेषण म्हणून मधुरमुरलिकम् मुरलीला ठेवते : संगीत हे दर्शनाची मुद्रा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-27.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 27</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-08/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 8 — Rāmatirodhānaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

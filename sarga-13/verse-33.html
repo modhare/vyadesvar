@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 33 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 33</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 33</span><span class="bl-mr lang-mr">श्लोक 33</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यत्र रामेश्वरो देवो ग्राममध्येऽब्धिरोधसि ।<br>उभयोर्भागयोस्तत्र श्मशानं विदधे धिया ।।३३।।</div>
+  <div class="verse-iast">yatra rāmeśvaro devo grāmamadhye&#x27;bdhirodhasi । ubhayorbhāgayostatra śmaśānaṃ vidadhe dhiyā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यत्र रामेश्वरः देवः ग्राम-मध्ये अब्धि-रोधसि । उभयोः भागयोः तत्र श्मशानम् विदधे धिया ।</div><div class="vig-iast">yatra rāmeśvaraḥ devaḥ grāma-madhye abdhi-rodhasi । ubhayoḥ bhāgayoḥ tatra śmaśānam vidadhe dhiyā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">रामेश्वरः + देवः = रामेश्वरो देवः · देवः + ग्राम = देवो ग्राम · मध्ये + अब्धि = मध्येऽब्धि · उभयोः + भागयोः = उभयोर्भागयोः · भागयोः + तत्र = भागयोस्तत्र</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र ग्राममध्ये अब्धिरोधसि रामेश्वरः देवः (अस्ति), तत्र उभयोः भागयोः (सः) धिया श्मशानं विदधे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Where the god Rāmeśvara stands in the middle of the village, on the shore of the sea — there, across both its parts, he wisely laid out the cremation ground.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामेश्वर देव असलेल्या गावाच्या मध्यभागी समुद्रकिनाऱ्यावरील दोन्ही भागांत त्याने मोठ्या बुद्धिमत्तेने स्मशानभूमीची योजना केली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र</span>
+    <span class="word-iast">yatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यत्र</div>
+  <p class="word-meaning lang-en">where</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र धर्मः तत्र जयः।</div>
+    <div class="usage-iast">yatra dharmaḥ tatra jayaḥ.</div>
+    <div class="usage-meaning lang-en">Where there is dharma, there is victory.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे धर्म असतो तेथे विजय होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रामेश्वरः</span>
+    <span class="word-iast">rāmeśvaraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: रामेश्वरः</div>
+  <p class="word-meaning lang-en">Rāmeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामेश्वर</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः रामेश्वरं श्रद्धया नमन्ति।</div>
+    <div class="usage-iast">bhaktāḥ rāmeśvaraṃ śraddhayā namanti.</div>
+    <div class="usage-meaning lang-en">Devotees bow to Rāmeśvara with devotion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त रामेश्वराला श्रद्धेने नमन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देवः</span>
+    <span class="word-iast">devaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: देवः</div>
+  <p class="word-meaning lang-en">the god</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव</p>
+  <div class="word-usage">
+    <div class="deva">देवो दीनानां रक्षकः इति श्रूयते।</div>
+    <div class="usage-iast">devo dīnānāṃ rakṣakaḥ iti śrūyate.</div>
+    <div class="usage-meaning lang-en">It is said that God is the protector of the humble.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव हाच दीनांचा रक्षक असे म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ग्राम-मध्ये</span>
+    <span class="word-iast">grāma-madhye</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: ग्राममध्ये</div>
+  <p class="word-meaning lang-en">in the middle of the village</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या मध्यभागी</p>
+  <div class="word-usage">
+    <div class="deva">ग्राममध्ये प्राचीनो वटवृक्षः तिष्ठति।</div>
+    <div class="usage-iast">grāmamadhye prācīno vaṭavṛkṣaḥ tiṣṭhati.</div>
+    <div class="usage-meaning lang-en">An ancient banyan tree stands in the middle of the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या मध्यभागी प्राचीन वडाचे झाड उभे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अब्धि-रोधसि</span>
+    <span class="word-iast">abdhi-rodhasi</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: अब्धिरोधसि</div>
+  <p class="word-meaning lang-en">on the sea-shore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रकिनाऱ्यावर</p>
+  <div class="word-usage">
+    <div class="deva">अब्धिरोधसि सुन्दरं मन्दिरं दृश्यते।</div>
+    <div class="usage-iast">abdhi rodhasi sundaraṃ mandiraṃ dṛśyate.</div>
+    <div class="usage-meaning lang-en">A beautiful temple is seen on the sea-shore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रकिनारी सुंदर मंदिर दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उभयोः भागयोः</span>
+    <span class="word-iast">ubhayoḥ bhāgayoḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष./स. द्विव.</span></div>
+  <div class="word-form">In this verse: उभयोर्भागयोः</div>
+  <p class="word-meaning lang-en">of both halves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही भागांचे</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामस्य उभयोः भागयोः विद्यालयौ स्तः।</div>
+    <div class="usage-iast">grāmasya ubhayoḥ bhāgayoḥ vidyālayau staḥ.</div>
+    <div class="usage-meaning lang-en">There are schools in both halves of the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या दोन्ही भागांत शाळा आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्र</span>
+    <span class="word-iast">tatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तत्र</div>
+  <p class="word-meaning lang-en">there</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे</p>
+  <div class="word-usage">
+    <div class="deva">तत्र गत्वा स शान्तिम् अलभत।</div>
+    <div class="usage-iast">tatra gatvā sa śāntim alabhata.</div>
+    <div class="usage-meaning lang-en">Having gone there, he attained peace.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे जाऊन त्याला शांती मिळाली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्मशानम्</span>
+    <span class="word-iast">śmaśānam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: श्मशानम्</div>
+  <p class="word-meaning lang-en">cremation ground</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्मशान</p>
+  <div class="word-usage">
+    <div class="deva">श्मशानं ग्रामस्य बहिः स्थाप्यते।</div>
+    <div class="usage-iast">śmaśānaṃ grāmasya bahiḥ sthāpyate.</div>
+    <div class="usage-meaning lang-en">The cremation ground is laid out outside the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्मशानभूमी गावाबाहेर आखली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विदधे</span>
+    <span class="word-iast">vidadhe</span>
+  </div>
+  <div><span class="word-grammar">वि + धा, लिट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: विदधे</div>
+  <p class="word-meaning lang-en">laid out</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केले</p>
+  <div class="word-usage">
+    <div class="deva">राजा प्रजासुखाय नूतनं विधिं विदधे।</div>
+    <div class="usage-iast">rājā prajāsukhāya nūtanaṃ vidhiṃ vidadhe.</div>
+    <div class="usage-meaning lang-en">The king ordained a new law for the people&#x27;s welfare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने प्रजासुखासाठी नवा नियम घालून दिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धिया</span>
+    <span class="word-iast">dhiyā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. तृ. एव.; धी</span></div>
+  <div class="word-form">In this verse: धिया</div>
+  <p class="word-meaning lang-en">wisely</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुद्धिपूर्वक</p>
+  <div class="word-usage">
+    <div class="deva">धिया कार्यं कुरु, न तु बलेन।</div>
+    <div class="usage-iast">dhiyā kāryaṃ kuru, na tu balena.</div>
+    <div class="usage-meaning lang-en">Do the work with wisdom, not with force.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काम बुद्धीने कर, बळाने नव्हे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The cremation ground is not an afterthought in this sacred geography but part of the founder&#x27;s wise plan: death itself is given a place beside the shore-shrine of Rāmeśvara. By setting the śmaśāna within the tīrtha&#x27;s embrace, the text prepares the doctrine of the next verses — that to die and be cremated here is to cross over. The verse quietly teaches that a complete holy settlement provides for the soul&#x27;s last journey as carefully as for its daily worship.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्मशानभूमी ही या पवित्र भूगोलातील दुय्यम गोष्ट नसून संस्थापकाच्या सुज्ञ योजनेचाच भाग आहे — रामेश्वराच्या किनारी-मंदिराशेजारी मृत्यूलाही स्थान दिले आहे. स्मशानाला तीर्थाच्या कवेत बसवून हा ग्रंथ पुढील श्लोकांच्या सिद्धान्ताची पायाभरणी करतो — येथे मरणे व दहन होणे म्हणजे तरून जाणे. परिपूर्ण पवित्र वस्तीसाठी दैनंदिन पूजेइतकीच काळजी जीवाच्या अंतिम यात्रेचीही घेतली जाते, हा या श्लोकाचा मूक उपदेश आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>In the Purāṇic imagination the śmaśāna is Śiva&#x27;s own dwelling, and cremation at a tīrtha secures sadgati, a good afterlife. Placing the cremation ground on the sea-shore beside Rāmeśvara&#x27;s shrine follows the pattern of great tīrthas like Kāśī, where death within the sacred boundary is itself liberation. The verse thus grounds the extraordinary promises of the next two verses in the familiar geography of a well-ordered holy town.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणकल्पनेत स्मशान हे शिवाचेच निवासस्थान असून तीर्थावर दहन झाल्यास सद्गती मिळते. रामेश्वराच्या मंदिराशेजारी समुद्रकिनारी स्मशान ठेवणे हे काशीसारख्या महातीर्थांच्या पद्धतीचेच अनुकरण आहे — पवित्र सीमेत मरण येणे हीच मुक्ती. अशा रीतीने हा श्लोक पुढील दोन श्लोकांतील असामान्य आश्वासनांना सुव्यवस्थित पवित्र नगराच्या परिचित भूगोलात पायाभूत करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>विदधे is the perfect (liṭ, 3rd singular) of vi-√dhā, &#x27;he laid out, ordained&#x27;; धिया is the instrumental singular of dhī, &#x27;with wisdom&#x27;. The &#x27;he&#x27; who plans (विदधे) is Śrīdhara, continuing his laying-out of the new village (vv. 26–53). But the ground&#x27;s sanctity is Rāma&#x27;s doing: v34 will say this Rudra was installed at the tīrtha by Rāma himself (रामेणारोपितः — Śrī Rāma, Daśaratha&#x27;s son, per 11.2–4), and v35 calls it रामेशाधिकृतपद, the ground presided over by Rāmeśa — hence the śmaśāna&#x27;s liberating power, which verse 35 will proclaim.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विदधे हे वि-√धा धातूचे पूर्णभूतकाळी (लिट्, प्रथमपुरुषी एकवचन) रूप — &#x27;त्याने आखणी केली&#x27;; धिया हे धी शब्दाचे तृतीयान्त एकवचन — &#x27;बुद्धीने&#x27;. आखणी करणारा &#x27;तो&#x27; (विदधे) म्हणजे श्रीधर — नव्या गावाची आखणी पुढे नेणारा (श्लोक २६–५३). पण या भूमीचे पावित्र्य रामाचे देणे आहे : श्लोक ३४ सांगेल की या तीर्थावर प्रत्यक्ष श्रीरामाने (दशरथनंदनाने, ११.२–४ पहा) या रुद्राची स्थापना केली (रामेणारोपितः), आणि श्लोक ३५ याला रामेशाधिकृतपद — रामेशाच्या अधिष्ठानाखालील भूमी — म्हणतो; म्हणूनच या स्मशानाला मुक्तिदायी सामर्थ्य, ज्याचे वर्णन श्लोक ३५ करणार आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-32.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 32</div></a><a class="next" href="verse-34.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 34</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यद्यत्कर्म विगर्ह्यं सदावश्यकमपेक्षितम् ।<br>तत्प्रचारप्रसिद्ध्यर्थं क्षेत्राण्युदसृजत्सुवित् ।।३२।।</div>
+  <div class="verse-iast">yadyatkarma vigarhyaṃ sadāvaśyakamapekṣitam । tatpracāraprasiddhyarthaṃ kṣetrāṇyudasṛjatsuvit</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यत् यत् कर्म विगर्ह्यम् सत् आवश्यकम् अपेक्षितम् । तत्-प्रचार-प्रसिद्धि-अर्थम् क्षेत्राणि उदसृजत् सुवित् ।</div><div class="vig-iast">yat yat karma vigarhyam sat āvaśyakam apekṣitam । tat-pracāra-prasiddhi-artham kṣetrāṇi udasṛjat suvit ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यत् + यत् = यद्यत् · सत् + आवश्यकम् = सदावश्यकम् · आवश्यकम् + अपेक्षितम् = आवश्यकमपेक्षितम् · प्रसिद्धि + अर्थम् = प्रसिद्ध्यर्थम् (यण्) · क्षेत्राणि + उदसृजत् = क्षेत्राण्युदसृजत् · उदसृजत् + सुवित् = उदसृजत्सुवित्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत् यत् कर्म विगर्ह्यं सत् (अपि) आवश्यकम् अपेक्षितम्, तत्प्रचारप्रसिद्ध्यर्थं सुवित् (सः) क्षेत्राणि उदसृजत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Whatever work — though it be despised — is necessary and needed: for its spread and flourishing, the wise man granted fields.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जे जे काम निन्द्य परन्तु आवश्यक व अपेक्षित असेल त्याचा प्रसार व्हावा व ते चांगल्या रीतीने चालू रहावे यासाठी त्या जाणकार ब्राह्मणाने त्यांच्यासाठी शेतांची म्हणजे उत्पन्नाची व्यवस्था केली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत् यत्</span>
+    <span class="word-iast">yat yat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव. (वीप्सा)</span></div>
+  <div class="word-form">In this verse: यत् यत्</div>
+  <p class="word-meaning lang-en">whatever</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे जे</p>
+  <div class="word-usage">
+    <div class="deva">यत् यत् कर्म कुरु तत् श्रद्धया कुरु।</div>
+    <div class="usage-iast">yat yat karma kuru tat śraddhayā kuru.</div>
+    <div class="usage-meaning lang-en">Whatever work you do, do it with devotion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे जे काम करशील ते श्रद्धेने कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कर्म</span>
+    <span class="word-iast">karma</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: कर्म</div>
+  <p class="word-meaning lang-en">work</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काम</p>
+  <div class="word-usage">
+    <div class="deva">कर्म एव मनुष्यस्य भूषणम्।</div>
+    <div class="usage-iast">karma eva manuṣyasya bhūṣaṇam.</div>
+    <div class="usage-meaning lang-en">Work itself is man&#x27;s ornament.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काम हेच माणसाचे भूषण आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विगर्ह्यम्</span>
+    <span class="word-iast">vigarhyam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.; यत्</span></div>
+  <div class="word-form">In this verse: विगर्ह्यम्</div>
+  <p class="word-meaning lang-en">looked down on</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निंद्य मानलेले</p>
+  <div class="word-usage">
+    <div class="deva">विगर्ह्यं कर्म अपि आवश्यकं भवति।</div>
+    <div class="usage-iast">vigarhyaṃ karma api āvaśyakaṃ bhavati.</div>
+    <div class="usage-meaning lang-en">Even despised work can be necessary.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निंद्य मानलेले कामही आवश्यक असू शकते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्</span>
+    <span class="word-iast">sat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.; शतृ, अस्</span></div>
+  <div class="word-form">In this verse: सत्</div>
+  <p class="word-meaning lang-en">being</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असूनही</p>
+  <div class="word-usage">
+    <div class="deva">जगति सत् सर्वं नश्वरम्।</div>
+    <div class="usage-iast">jagati sat sarvaṃ naśvaram.</div>
+    <div class="usage-meaning lang-en">All that exists in the world is perishable.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगात असलेले सर्व नश्वर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आवश्यकम्</span>
+    <span class="word-iast">āvaśyakam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: आवश्यकम्</div>
+  <p class="word-meaning lang-en">necessary</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आवश्यक</p>
+  <div class="word-usage">
+    <div class="deva">आवश्यकं कार्यं प्रथमं कुरु।</div>
+    <div class="usage-iast">āvaśyakaṃ kāryaṃ prathamaṃ kuru.</div>
+    <div class="usage-meaning lang-en">Do the necessary work first.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आवश्यक काम प्रथम कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपेक्षितम्</span>
+    <span class="word-iast">apekṣitam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अपेक्षितम्</div>
+  <p class="word-meaning lang-en">needed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अपेक्षित</p>
+  <div class="word-usage">
+    <div class="deva">अपेक्षितं फलं सः लेभे।</div>
+    <div class="usage-iast">apekṣitaṃ phalaṃ saḥ lebhe.</div>
+    <div class="usage-meaning lang-en">He obtained the desired result.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याला अपेक्षित फळ मिळाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्-प्रचार-प्रसिद्धि-अर्थम्</span>
+    <span class="word-iast">tat-pracāra-prasiddhi-artham</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (अर्थम्)</span></div>
+  <div class="word-form">In this verse: तत्प्रचारप्रसिद्ध्यर्थम्</div>
+  <p class="word-meaning lang-en">so that it might continue and flourish</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते चालू राहावे व चांगले व्हावे म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">तत्प्रचारप्रसिद्ध्यर्थं सः धनं व्ययति।</div>
+    <div class="usage-iast">tatpracāraprasiddhyarthaṃ saḥ dhanaṃ vyayati.</div>
+    <div class="usage-meaning lang-en">He spends wealth for its spread and flourishing.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचा प्रसार व भरभराट व्हावी म्हणून तो धन खर्च करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षेत्राणि</span>
+    <span class="word-iast">kṣetrāṇi</span>
+  </div>
+  <div><span class="word-grammar">नपुं. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: क्षेत्राणि</div>
+  <p class="word-meaning lang-en">fields</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शेते</p>
+  <div class="word-usage">
+    <div class="deva">क्षेत्राणि सर्वेभ्यः शिल्पिभ्यः दत्तानि।</div>
+    <div class="usage-iast">kṣetrāṇi sarvebhyaḥ śilpibhyaḥ dattāni.</div>
+    <div class="usage-meaning lang-en">Fields were given to all the artisans.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व कारागिरांना शेते दिली गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उदसृजत्</span>
+    <span class="word-iast">udasṛjat</span>
+  </div>
+  <div><span class="word-grammar">उद् + सृज्, लङ्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: उदसृजत्</div>
+  <p class="word-meaning lang-en">granted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिली</p>
+  <div class="word-usage">
+    <div class="deva">सः ब्राह्मणेभ्यः धनम् उदसृजत्।</div>
+    <div class="usage-iast">saḥ brāhmaṇebhyaḥ dhanam udasṛjat.</div>
+    <div class="usage-meaning lang-en">He granted wealth to the brahmins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने ब्राह्मणांना धन दिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुवित्</span>
+    <span class="word-iast">suvit</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सुवित्</div>
+  <p class="word-meaning lang-en">the wise man</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जाणकार</p>
+  <div class="word-usage">
+    <div class="deva">सुवित् नरः सर्वान् समं पश्यति।</div>
+    <div class="usage-iast">suvit naraḥ sarvān samaṃ paśyati.</div>
+    <div class="usage-meaning lang-en">The wise man looks upon all equally.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जाणकार माणूस सर्वांकडे समदृष्टीने पाहतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the moral crown of the whole passage: whatever work is necessary and needed — even if despised — deserves support for its continuance. The &#x27;wise man&#x27; (suvit) measures worth by need, not by prestige. From gods to brahmins to herdsmen to artisans, Śrīdhara&#x27;s grants now cover every honest labor: no necessary work is unworthy, and no worker is forgotten.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा संपूर्ण भागाचा नैतिक कळस आहे : जे काम आवश्यक व अपेक्षित आहे — जरी ते निंद्य मानले जात असले तरी — त्याच्या चालूपणासाठी आधार मिळायलाच हवा. &#x27;जाणकार&#x27; (सुवित्) माणूस योग्यता प्रतिष्ठेने नव्हे तर गरजेने मोजतो. देवांपासून ब्राह्मणांपर्यंत, गुराख्यांपासून कारागिरांपर्यंत श्रीधराची देणगी आता प्रत्येक प्रामाणिक श्रमाला व्यापते : कोणतेही आवश्यक काम अयोग्य नाही, आणि कोणताही कामगार विसरला जात नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The thought echoes the Gītā&#x27;s teaching that one&#x27;s own duty, however humble, is better than another&#x27;s well performed (svadharme nidhanaṃ śreyaḥ, 3.35), and the Purāṇic praise of honest labor as itself a form of worship. By endowing even despised-but-necessary crafts with land, the founder makes their dignity material, not merely verbal.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा विचार गीतेच्या शिकवणीचा प्रतिध्वनी आहे — दुसऱ्याचा धर्म चांगला पाळण्यापेक्षा स्वतःचा धर्म, जरी हीन असला तरी, श्रेष्ठ (स्वधर्मे निधनं श्रेयः, ३.३५) — आणि प्रामाणिक श्रम हेच उपासनेचे रूप असल्याच्या पुराणप्रशंसेचा. निंद्य पण आवश्यक अशा व्यवसायांनाही जमीन देऊन संस्थापक त्यांच्या प्रतिष्ठेला केवळ शब्दांत नव्हे तर वस्तुतः आधार देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>यत् यत् is vīpsā — &#x27;whatever&#x27;. विगर्ह्यम् (&#x27;to be censured, despised&#x27;) = vi-√garh + yat. The verse generalizes the whole sequence 26–31: from temples and brahmins down to every necessary craft, the founder&#x27;s endowments cover the entire social order. Anuṣṭubh; no textual issues.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>यत् यत् ही वीप्सा आहे — &#x27;जे जे&#x27;. विगर्ह्यम् (&#x27;निंदनीय, तुच्छ मानलेले&#x27;) = वि-√गर्ह् + यत्. हा श्लोक २६–३१ या संपूर्ण मालिकेचे सामान्यीकरण करतो : मंदिरे व ब्राह्मण यांपासून प्रत्येक आवश्यक व्यवसायापर्यंत संस्थापकाच्या देणग्या संपूर्ण समाजरचनेला व्यापतात. अनुष्टुभ् वृत्त; पाठविषयक अडचण नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

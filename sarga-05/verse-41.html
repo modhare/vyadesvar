@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 41 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 41</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 41</span><span class="bl-mr lang-mr">श्लोक 41</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अनेहसाल्पकेनाथ महिमानं महात्मनः ।<br>शृण्वन्तः सर्वतो दिग्भ्यः समेता बहवो जनाः ।।४१।।</div>
+  <div class="verse-iast">anehasālpakenātha mahimānaṃ mahātmanaḥ । śṛṇvantaḥ sarvato digbhyaḥ sametā bahavo janāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अनेहसा । अल्पकेन । अथ । महिमानम् । महात्मनः । शृण्वन्तः । सर्वतः । दिग्भ्यः । समेताः । बहवः । जनाः ।</div><div class="vig-iast">anehasā । alpakena । atha । mahimānam । mahātmanaḥ । śṛṇvantaḥ । sarvataḥ । digbhyaḥ । sametāḥ । bahavaḥ । janāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">अनेहसा + अल्पकेन = अनेहसाल्पकेन · अल्पकेन + अथ = अल्पकेनाथ · महिमानम् + महात्मनः = महिमानं महात्मनः · सर्वतः + दिग्भ्यः = सर्वतो दिग्भ्यः · दिग्भ्यः + समेताः = दिग्भ्यः समेताः · समेताः + बहवः = समेता बहवो</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ अल्पकेन अनेहसा महात्मनः महिमानं शृण्वन्तः बहवः जनाः सर्वतः दिग्भ्यः समेताः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then, within a short time, many people, hearing of the glory of the great-souled Paraśurāma, gathered from all directions.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>थोड्याच काळात त्या महात्मा परशुरामाचा अतुलनीय महिमा ऐकून सर्व दिशांमधून अनेक लोक त्या क्षेत्रात गोळा झाले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनेहसा अल्पकेन</span>
+    <span class="word-iast">anehasā alpakena</span>
+  </div>
+  <div><span class="word-grammar">अनेहस् (नपुंसकलिङ्ग) व अल्पक — दोन्ही तृतीया एकवचन, क्रियाविशेषण; अनेहस् = काळ</span></div>
+  <div class="word-form">In this verse: अनेहसा अल्पकेन — &#x27;थोड्याच काळात&#x27;</div>
+  <p class="word-meaning lang-en">in a short time (anehas = time)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>थोड्याच काळात (अनेहस् = काळ)</p>
+  <div class="word-usage">
+    <div class="deva">सः अल्पकेन अनेहसा तत्र आगच्छत्</div>
+    <div class="usage-iast">saḥ alpakena anehasā tatra āgacchat</div>
+    <div class="usage-meaning lang-en">He arrived there within a short time.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>थोड्याच काळात तो तेथे आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शृण्वन्तः</span>
+    <span class="word-iast">śṛṇvantaḥ</span>
+  </div>
+  <div><span class="word-grammar">√श्रु (श्रवणे) + शतृ प्रत्यय — वर्तमानकालवाचक विशेषण; पुंलिङ्ग प्रथमा बहुवचन</span></div>
+  <div class="word-form">In this verse: शृण्वन्तः — &#x27;ऐकणारे&#x27;</div>
+  <p class="word-meaning lang-en">listening, hearing (present participle)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऐकत (शतृ)</p>
+  <div class="word-usage">
+    <div class="deva">कथाम् शृण्वन्तः जनाः प्रसन्नाः अभवन्</div>
+    <div class="usage-iast">kathām śṛṇvantaḥ janāḥ prasannāḥ abhavan</div>
+    <div class="usage-meaning lang-en">The people listening to the tale became delighted.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कथा ऐकणारे लोक प्रसन्न झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सर्वतः दिग्भ्यः</span>
+    <span class="word-iast">sarvataḥ digbhyaḥ</span>
+  </div>
+  <div><span class="word-grammar">सर्वतः (तसिल् प्रत्यय, अव्यय) + दिक् (स्त्रीलिङ्ग) पञ्चमी बहुवचन</span></div>
+  <div class="word-form">In this verse: सर्वतः दिग्भ्यः — &#x27;सर्व दिशांकडून&#x27;</div>
+  <p class="word-meaning lang-en">from all directions</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व दिशांकडून</p>
+  <div class="word-usage">
+    <div class="deva">सर्वतः दिग्भ्यः जनाः समागच्छन्</div>
+    <div class="usage-iast">sarvataḥ digbhyaḥ janāḥ samāgacchan</div>
+    <div class="usage-meaning lang-en">People came together from all directions.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व दिशांकडून लोक एकत्र आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समेताः</span>
+    <span class="word-iast">sametāḥ</span>
+  </div>
+  <div><span class="word-grammar">सम् + √इ (गतौ) + क्त प्रत्यय; पुंलिङ्ग प्रथमा बहुवचन</span></div>
+  <div class="word-form">In this verse: समेताः — &#x27;एकत्र आलेले&#x27;</div>
+  <p class="word-meaning lang-en">gathered, assembled</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकत्र आले</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामे समेताः जनाः मन्त्रम् अकुर्वन्</div>
+    <div class="usage-iast">grāme sametāḥ janāḥ mantram akurvan</div>
+    <div class="usage-meaning lang-en">The people gathered in the village took counsel.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावात जमलेल्या लोकांनी सल्लामसलत केली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Good fame draws the world: the poet shows that a dharmic, well-ordered kṣetra needs no invitation — people hear of its glory and come of their own accord. This is the old Indian ideal that a ruler&#x27;s dharma is his best proclamation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>चांगली कीर्ती जगाला आकर्षित करते : धार्मिक व सुव्यवस्थित क्षेत्राला निमंत्रणाची गरज नाही — लोक त्याचा महिमा ऐकून स्वतःहून येतात, हे कवी दाखवतो. राजाचा धर्म हीच त्याची सर्वोत्तम घोषणा असते, हा प्राचीन भारतीय आदर्श आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas often describe people flocking to a land ruled with dharma — compare the crowds that settle in Ayodhyā in the Rāmāyaṇa, or the brāhmaṇas who gather wherever a righteous king performs sacrifice. Paraśurāma&#x27;s kṣetra is being drawn in the same classical mould: a dharmic ruler&#x27;s fame is his capital.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे धर्माने राज्य चालवणाऱ्या भूमीकडे लोकांचा ओघ वारंवार वर्णन करतात — रामायणातील अयोध्येत जमणारे जनसमुदाय किंवा धर्मशील राजा जेथे यज्ञ करतो तेथे गोळा होणारे ब्राह्मण यांची तुलना करा. परशुरामाचे क्षेत्र त्याच शास्त्रीय साच्यात रंगवले आहे : धार्मिक राजाची कीर्ती हेच त्याचे भांडवल असते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>अनेहस् is a rare, Vedic-flavoured word for &#x27;time&#x27;; the instrumentals अनेहसा अल्पकेन form a neat temporal phrase, &#x27;in a short span of time&#x27;. Verses 41–43 make one narrative unit: the gathering (41), who they were (42), and how they settled (43). Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनेहस् हा &#x27;काळ&#x27; या अर्थाचा दुर्मीळ, वैदिक छटा असलेला शब्द आहे; अनेहसा अल्पकेन ही तृतीया विभक्ती &#x27;थोड्या काळात&#x27; असा नीट कालवाचक प्रयोग बनवते. श्लोक ४१–४३ ही एक कथानक-एकक आहे : जमणे (४१), ते कोण होते (४२), आणि ते कसे स्थिरावले (४३). वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-40.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 40</div></a><a class="next" href="verse-42.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 42</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

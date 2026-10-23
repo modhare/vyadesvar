@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 9 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 9</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 9</span><span class="bl-mr lang-mr">श्लोक 9</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पितुर्निर्योगातिथिरुग्रधन्वा सुशीलसम्पन्न उदारचेताः।।<br>आजानुबाहुः पृथुपीवरांसो विशालवक्षाः कमलायताक्षः।।९।।</div>
+  <div class="verse-iast">piturniryogātithirugradhanvā suśīlasampanna udāracetāḥ । । ājānubāhuḥ pṛthupīvarāṃso viśālavakṣāḥ kamalāyatākṣaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पितुः । नियोग-अतिथिः (?) । उग्र-धन्वा । सुशील-सम्पन्नः । उदार-चेताः । आजानु-बाहुः । पृथु-पीवर-अंसः । विशाल-वक्षाः । कमल-आयत-अक्षः ।</div><div class="vig-iast">pituḥ । niyoga-atithiḥ (?) । ugra-dhanvā । suśīla-sampannaḥ । udāra-cetāḥ । ājānu-bāhuḥ । pṛthu-pīvara-aṃsaḥ । viśāla-vakṣāḥ । kamala-āyata-akṣaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पितुः + नियोग = पितुर्नियोग (विसर्ग → र्) · नियोग + अतिथिः = नियोगातिथिः · अतिथिः + उग्र = अतिथिरुग्र · सम्पन्नः + उदार = सम्पन्न उदार (अ नंतर विसर्गलोप) · पीवर + अंसः = पीवरांसः · अंसः + विशाल = अंसो विशाल · आयत + अक्षः = आयताक्षः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(सः) पितुः नियोगातिथिः, उग्रधन्वा, सुशीलसम्पन्नः, उदारचेताः, आजानुबाहुः, पृथुपीवरांसः, विशालवक्षाः, कमलायताक्षः (आसीत्) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>He was one who received his father&#x27;s command as an honoured guest, a bearer of the fearsome bow, rich in good conduct, generous of mind, with arms reaching to his knees, broad and sturdy shoulders, a broad chest, and eyes long like lotuses.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>(तो) पित्याच्या आज्ञेचे पालन करणारा, उग्रधन्वा, सुशीलसंपन्न, उदार मनाचा, आजानुबाहू, रुंद व पुष्ट खांदे असलेला, विशाल छातीचा व कमलाप्रमाणे आयत नेत्र असलेला होता.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पितुः</span>
+    <span class="word-iast">pituḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular of पितृ</span></div>
+  <div class="word-form">In this verse: पितुः (gen. sg.)</div>
+  <p class="word-meaning lang-en">of the father</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पित्याच्या</p>
+  <div class="word-usage">
+    <div class="deva">पितुः वचनम् सः सदा पालयति ।</div>
+    <div class="usage-iast">pituḥ vacanam saḥ sadā pālayati ।</div>
+    <div class="usage-meaning lang-en">He always obeys his father&#x27;s word.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो नेहमी पित्याचे वचन पाळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नियोगातिथिः</span>
+    <span class="word-iast">niyogātithiḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (नियोग-अतिथि, &#x27;one to whom the command is a guest&#x27;)</span></div>
+  <div class="word-form">In this verse: नियोगातिथिः</div>
+  <p class="word-meaning lang-en">one who receives (his father&#x27;s) command as an honoured guest; devotedly obedient</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आज्ञेचे पालन करणारा.</p>
+  <div class="word-usage">
+    <div class="deva">नियोगातिथिः शिष्यः गुरोः आज्ञाम् पालयति ।</div>
+    <div class="usage-iast">niyogātithiḥ śiṣyaḥ guroḥ ājñām pālayati ।</div>
+    <div class="usage-meaning lang-en">The devotedly obedient disciple follows the guru&#x27;s command.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आज्ञाधारक शिष्य गुरूंची आज्ञा पाळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उग्रधन्वा</span>
+    <span class="word-iast">ugradhanvā</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (उग्र-धन्वन्, धन्वन् = bow)</span></div>
+  <div class="word-form">In this verse: उग्रधन्वा (stem उग्रधन्वन्)</div>
+  <p class="word-meaning lang-en">bearer of the fearsome bow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उग्र धनुष्य धारण करणारा</p>
+  <div class="word-usage">
+    <div class="deva">उग्रधन्वा वीरः युद्धे अजयत् ।</div>
+    <div class="usage-iast">ugradhanvā vīraḥ yuddhe ajayat ।</div>
+    <div class="usage-meaning lang-en">The hero bearing the fearsome bow conquered in battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उग्र धनुष्य धारण करणाऱ्या वीराने युद्धात विजय मिळवला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुशीलसम्पन्नः</span>
+    <span class="word-iast">suśīlasampannaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; tatpuruṣa (सुशील-सम्पन्न, सम्पन्न = endowed with)</span></div>
+  <div class="word-form">In this verse: सुशीलसम्पन्नः</div>
+  <p class="word-meaning lang-en">endowed with good character</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चांगल्या स्वभावाचा</p>
+  <div class="word-usage">
+    <div class="deva">सुशीलसम्पन्नः नरः सर्वैः पूज्यते ।</div>
+    <div class="usage-iast">suśīlasampannaḥ naraḥ sarvaiḥ pūjyate ।</div>
+    <div class="usage-meaning lang-en">The man of good character is honoured by all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुशील माणसाचा सर्वजण सन्मान करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उदारचेताः</span>
+    <span class="word-iast">udāracetāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (उदार-चेतस्)</span></div>
+  <div class="word-form">In this verse: उदारचेताः (stem उदारचेतस्)</div>
+  <p class="word-meaning lang-en">generous-minded, noble-hearted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उदार मनाचा</p>
+  <div class="word-usage">
+    <div class="deva">उदारचेताः राजा प्रजाः अपालयत् ।</div>
+    <div class="usage-iast">udāracetāḥ rājā prajāḥ apālayat ।</div>
+    <div class="usage-meaning lang-en">The noble-hearted king protected his subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उदार मनाचा राजा प्रजांचे रक्षण करीत असे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आजानुबाहुः</span>
+    <span class="word-iast">ājānubāhuḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (आ-जानु-बाहु)</span></div>
+  <div class="word-form">In this verse: आजानुबाहुः</div>
+  <p class="word-meaning lang-en">whose arms reach to the knees (a mark of greatness)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुडघ्यापर्यंत हात असलेला</p>
+  <div class="word-usage">
+    <div class="deva">आजानुबाहुः पुरुषः महापुरुषलक्षणैः युक्तः ।</div>
+    <div class="usage-iast">ājānubāhuḥ puruṣaḥ mahāpuruṣalakṣaṇaiḥ yuktaḥ ।</div>
+    <div class="usage-meaning lang-en">The man whose arms reach his knees bears the marks of greatness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे हात गुडघ्यापर्यंत पोचतात तो महापुरुषलक्षणांनी युक्त असतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पृथुपीवरांसः</span>
+    <span class="word-iast">pṛthupīvarāṃsaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (पृथु-पीवर-अंस)</span></div>
+  <div class="word-form">In this verse: पृथुपीवरांसः</div>
+  <p class="word-meaning lang-en">broad and stout-shouldered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुंद व पुष्ट खांद्यांचा</p>
+  <div class="word-usage">
+    <div class="deva">पृथुपीवरांसः मल्लः युद्धाय सज्जः अभवत् ।</div>
+    <div class="usage-iast">pṛthupīvarāṃsaḥ mallaḥ yuddhāya sajjaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">The broad-shouldered wrestler was ready for combat.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुंद खांद्यांचा मल्ल युद्धासाठी सज्ज झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विशालवक्षाः</span>
+    <span class="word-iast">viśālavakṣāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (विशाल-वक्षस्)</span></div>
+  <div class="word-form">In this verse: विशालवक्षाः (stem विशालवक्षस्)</div>
+  <p class="word-meaning lang-en">broad-chested</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुंद छातीचा</p>
+  <div class="word-usage">
+    <div class="deva">विशालवक्षाः वीरः शत्रून् अभ्यधावत् ।</div>
+    <div class="usage-iast">viśālavakṣāḥ vīraḥ śatrūn abhyadhāvat ।</div>
+    <div class="usage-meaning lang-en">The broad-chested hero charged at the enemies.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रुंद छातीचा वीर शत्रूंवर धावून गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कमलायताक्षः</span>
+    <span class="word-iast">kamalāyatākṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (कमल-आयत-अक्ष)</span></div>
+  <div class="word-form">In this verse: कमलायताक्षः</div>
+  <p class="word-meaning lang-en">lotus-eyed, with long eyes like lotuses</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळासारखे लांब डोळे असलेला</p>
+  <div class="word-usage">
+    <div class="deva">कमलायताक्षः देवः भक्तान् पश्यति ।</div>
+    <div class="usage-iast">kamalāyatākṣaḥ devaḥ bhaktān paśyati ।</div>
+    <div class="usage-meaning lang-en">The lotus-eyed Lord looks upon his devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळनेत्र देव भक्तांकडे पाहतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The poet paints Paraśurāma&#x27;s portrait from the inside out: first his obedience — the father&#x27;s word welcomed like a guest to be served — then his character, and only then his heroic body. The list follows the classical sāmudrika-lakṣaṇa of a great man (ājānubāhu, viśālavakṣas), but the verse keeps virtue ahead of physique. Devotionally it teaches that the avatāra&#x27;s might is legitimate because it is yoked to obedience and good conduct: the bow is fierce only because the mind behind it is generous.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कवी परशुरामाचे चित्र आतून बाहेर मांडतो — प्रथम त्याची आज्ञाधारकता — पित्याचे वचन सेवा कराव्या अशा पाहुण्याप्रमाणे स्वागत केलेले — नंतर त्याचे चारित्र्य, आणि शेवटी त्याचे वीर शरीर. ही यादी महापुरुषाच्या ठराविक सामुद्रिक लक्षणांची (आजानुबाहू, विशालवक्ष) आहे; पण श्लोक सद्गुणांना शारीरिक बलापेक्षा प्राधान्य देतो. भक्तिभावाने यात बोध आहे — अवताराचे सामर्थ्य वैध आहे, कारण ते आज्ञाधारकत्वाशी व सुशीलतेशी जोडलेले आहे : धनुष्य उग्र आहे, पण त्यामागचे मन उदार आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>In the Purāṇas Paraśurāma&#x27;s obedience to his father is absolute — he carried out even Jamadagni&#x27;s terrible command against his own mother, Reṇukā, and was rewarded for it (Bhāgavata 9.16). The &#x27;command received as a guest&#x27; here is the seed of that story: pitṛbhakti is the hero&#x27;s first virtue. The physical marks — arms to the knees, broad chest, lotus eyes — are the traditional lakṣaṇas of a cakravartin or an avatāra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणांत परशुरामाची पित्याप्रतीची आज्ञाधारकता निरपेक्ष आहे — जमदग्नींची आपल्याच माता रेणुकेविरुद्धची भीषण आज्ञाही त्याने पाळली आणि त्यासाठी त्याला वर मिळाला (भागवत ९.१६). येथील &#x27;पाहुण्याप्रमाणे स्वागत केलेली आज्ञा&#x27; हीच त्या कथेचे बीज आहे — पितृभक्ती हाच नायकाचा प्रथम गुण. गुडघ्यापर्यंतचे हात, रुंद छाती, कमळनेत्र — ही चक्रवर्ती किंवा अवताराची ठराविक लक्षणे आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>पाठ-चर्चा : the working gloss flags नियोगातिथिः — the printed निर्योगातिथिः would mean &#x27;a guest without commission&#x27;, which makes no sense; reading नियोग (&#x27;command&#x27;) gives both the correct Upajāti metre and the sense &#x27;one to whom his father&#x27;s command is as an honoured guest&#x27;. Verses 8–16 run in the sarga&#x27;s narrative metre, Indravajrā/Upajāti.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाठ-चर्चा : कार्यटीपेत नियोगातिथिः असा उल्लेख आहे — छापील निर्योगातिथिः याचा अर्थ &#x27;नेमणूक नसलेला पाहुणा&#x27; होईल, जो अर्थहीन आहे; नियोग (&#x27;आज्ञा&#x27;) असे वाचल्याने उपजाति वृत्तही बरोबर जुळते आणि &#x27;ज्याच्यासाठी पित्याची आज्ञा ही सन्माननीय पाहुणी आहे असा&#x27; हा अर्थही मिळतो. ८–१६ श्लोक सर्गाच्या कथनवृत्तात — इन्द्रवज्रा/उपजातित — चालतात.</p></div></div>
+
+<div class="pagenav"><a href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 8</div></a><a class="next" href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 10</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

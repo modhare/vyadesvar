@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 41 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 41</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 41</span><span class="bl-mr lang-mr">श्लोक 41</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">वरदो वरदानां त्वं वरं मे देहि वांछितम् ।<br>नाथ मन्निर्मिते क्षेत्रे त्वया स्थातव्यमालयम् ।।४१।।</div>
+  <div class="verse-iast">varado varadānāṃ tvaṃ varaṃ me dehi vāṃchitam । nātha mannirmite kṣetre tvayā sthātavyamālayam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">वरदः । वरदानाम् । त्वम् । वरम् । मे । देहि । वाञ्छितम् । नाथ । मत्-निर्मिते । क्षेत्रे । त्वया । स्थातव्यम् । आलयम् ।</div><div class="vig-iast">varadaḥ । varadānām । tvam । varam । me । dehi । vāñchitam । nātha । mat-nirmite । kṣetre । tvayā । sthātavyam । ālayam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वरदः + वरदानाम् = वरदो वरदानाम् · मत् + निर्मिते = मन्निर्मिते (त् → न्) · स्थातव्यम् + आलयम् = स्थातव्यमालयम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">वरदानां वरदः त्वं मे वाञ्छितं वरं देहि — हे नाथ, मन्निर्मिते क्षेत्रे आलयं (यावत्) त्वया स्थातव्यम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O giver of boons to the givers of boons, grant me my cherished boon. O Lord — in the sanctuary of the kṣetra I have built, may you abide until the very dissolution.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वरदांनाही वरदान करणाऱ्या तू मला वांछित वर दे. हे नाथ, तू प्रलयकालापर्यंत मी निर्माण केलेल्या क्षेत्रात निवास करावास हे योग्य.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वरदानां वरदः</span>
+    <span class="word-iast">varadānāṃ varadaḥ</span>
+  </div>
+  <div><span class="word-grammar">kṛdanta noun (वरान् ददाति, kartari ac-pratyaya), nominative singular masculine; वरदानाम् — genitive plural</span></div>
+  <div class="word-form">In this verse: वरदो वरदानां</div>
+  <p class="word-meaning lang-en">giver of boons even to the givers of boons</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर देणाऱ्यांनाही वर देणारा</p>
+  <div class="word-usage">
+    <div class="deva">वरदः वरदानाम् इति विशेषणम् देवस्य महिम्नः वर्णने प्रयुज्यते ।</div>
+    <div class="usage-iast">varadaḥ varadānām iti viśeṣaṇam devasya mahimnaḥ varṇane prayujyate ।</div>
+    <div class="usage-meaning lang-en">The epithet &#x27;giver of boons to givers of boons&#x27; is used in describing the glory of the Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘वरदांनाही वर देणारा’ हे विशेषण भगवंताच्या महिम्याचे वर्णन करताना वापरले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाञ्छितम्</span>
+    <span class="word-iast">vāñchitam</span>
+  </div>
+  <div><span class="word-grammar">past passive participle of √vāñch (class 1), accusative singular neuter, agreeing with वरम्</span></div>
+  <div class="word-form">In this verse: वाञ्छितम्</div>
+  <p class="word-meaning lang-en">desired, wished-for</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इच्छित</p>
+  <div class="word-usage">
+    <div class="deva">वाञ्छितम् वरम् लभते भक्तः प्रसन्नात् देवात् ।</div>
+    <div class="usage-iast">vāñchitam varam labhate bhaktaḥ prasannāt devāt ।</div>
+    <div class="usage-meaning lang-en">From the pleased Lord the devotee obtains the boon he desires.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसन्न झालेल्या देवाकडून भक्त आपल्याला हवा असलेला वर मिळवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देहि</span>
+    <span class="word-iast">dehi</span>
+  </div>
+  <div><span class="word-grammar">√dā (class 3, ubhayapadī), second person singular, imperative (loṭ), parasmaipada</span></div>
+  <div class="word-form">In this verse: देहि</div>
+  <p class="word-meaning lang-en">give! grant!</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दे (√दा, लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">मह्यम् वरम् देहि इति प्रार्थयते भक्तः ।</div>
+    <div class="usage-iast">mahyam varam dehi iti prārthayate bhaktaḥ ।</div>
+    <div class="usage-meaning lang-en">Grant me a boon — so prays the devotee.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘मला वर दे’ अशी भक्त प्रार्थना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्निर्मिते क्षेत्रे</span>
+    <span class="word-iast">mannirmite kṣetre</span>
+  </div>
+  <div><span class="word-grammar">locative singular neuter; निर्मित = नि + √mā (class 3), kta, &#x27;built&#x27;; मत् + निर्मिते by t → n sandhi</span></div>
+  <div class="word-form">In this verse: मन्निर्मिते क्षेत्रे</div>
+  <p class="word-meaning lang-en">in the kṣetra built by me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी निर्माण केलेल्या क्षेत्रात</p>
+  <div class="word-usage">
+    <div class="deva">मम निर्मिते क्षेत्रे शिवः वासम् करोति इति कविः वदति ।</div>
+    <div class="usage-iast">mama nirmite kṣetre śivaḥ vāsam karoti iti kaviḥ vadati ।</div>
+    <div class="usage-meaning lang-en">In the kṣetra built by me Śiva dwells — so says the poet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘मी निर्माण केलेल्या क्षेत्रात शिव वास करतो’ असे कवी म्हणतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आलयम्</span>
+    <span class="word-iast">ālayam</span>
+  </div>
+  <div><span class="word-grammar">1) ālaya, masculine accusative singular, &#x27;sanctuary, temple&#x27;; 2) avyayībhāva of ā + laya, adverbial, &#x27;till the dissolution&#x27;</span></div>
+  <div class="word-form">In this verse: स्थातव्यमालयम्</div>
+  <p class="word-meaning lang-en">the sanctuary; (as ā + laya) till the dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयापर्यंत (आ + लय; अव्ययीभाव)</p>
+  <div class="word-usage">
+    <div class="deva">आलयम् देवस्य भक्तैः पूज्यते प्रतिदिनम् ।</div>
+    <div class="usage-iast">ālayam devasya bhaktaiḥ pūjyate pratidinam ।</div>
+    <div class="usage-meaning lang-en">The temple of the Lord is worshipped by devotees every day.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाचे मंदिर भक्त दररोज पूजतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्थातव्यम्</span>
+    <span class="word-iast">sthātavyam</span>
+  </div>
+  <div><span class="word-grammar">gerundive (tavya) of √sthā (class 1), neuter nominative/accusative singular, bhāve-prayoga with the agent in the instrumental</span></div>
+  <div class="word-form">In this verse: स्थातव्यम्</div>
+  <p class="word-meaning lang-en">it must be dwelt / abided in</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राहिले पाहिजे (तव्य, भावे प्रयोग)</p>
+  <div class="word-usage">
+    <div class="deva">त्वया अत्र स्थातव्यम् इति ईश्वरम् प्रार्थयते भक्तः ।</div>
+    <div class="usage-iast">tvayā atra sthātavyam iti īśvaram prārthayate bhaktaḥ ।</div>
+    <div class="usage-meaning lang-en">You must dwell here — thus the devotee prays to the Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘तुम्ही येथे राहावे’ अशी भक्त भगवंताला प्रार्थना करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s prayer is the hinge on which the whole sthala-kāvya turns: his longing is not for victory or power but that the Lord stay — for all beings — in the land he raised from the sea. In this the poem sets the ideal of a devotee&#x27;s desire: not &#x27;grant me&#x27; but &#x27;be here&#x27;. Śiva&#x27;s acceptance is what makes Guhagar a tīrtha: a place is holy only because the Lord has agreed to dwell there.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाची ही प्रार्थना या स्थलकाव्याचा मुख्य दुवा आहे : त्याची इच्छा स्वतःसाठी विजय किंवा सामर्थ्य नसून समुद्रातून वर आणलेल्या भूमीत भगवंत सर्वांसाठी राहावा ही आहे. भक्ताची इच्छा कशी असावी याचे हे आदर्श उदाहरण — ‘मला दे’ नव्हे, तर ‘येथेच रहा’. शिवाने ही प्रार्थना मान्य केल्यामुळे गुहागर तीर्थक्षेत्र झाले : भगवंत तेथे वास करायला तयार झाला तरच ती जागा पवित्र होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The formula &#x27;varadānām api varadaḥ&#x27; — the giver of boons even to givers of boons — belongs to the devotional vocabulary of Śaiva stotras: the Lord is worshipped not only as the granter of requests but as the source of all granting power. Paraśurāma&#x27;s request follows the classic Puranic pattern of the devotee who, his deeds done, asks not for himself but that the deity take up permanent residence in the chosen kṣetra, as at Kāśī, Kedāra and the jyotirliṅga sites. The &#x27;till dissolution&#x27; (ālayam) fixes the Lord&#x27;s presence for the whole manvantara, the usual term of a tīrtha&#x27;s sanctity.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>‘वरदांनाही वर देणारा’ ही कल्पना शैव स्तोत्रांच्या भक्तिपर भाषेतील आहे : भगवंत केवळ इच्छा पूर्ण करणारा नसून सर्व वरदान-शक्तीचा उगम आहे. परशुरामाची मागणी पुराणांच्या प्रसिद्ध पद्धतीनुसार आहे : ज्याची कर्मे पूर्ण झाली तो भक्त स्वतःसाठी काही मागत नाही, तर देवताने निवडलेल्या क्षेत्रात कायम वास करावा असे मागतो — काशी, केदार आणि ज्योतिर्लिंगांच्या स्थानी जसे आहे. ‘प्रलयापर्यंत’ हे पद मन्वंतरभर भगवंताचे वास निश्चित करते; तीर्थक्षेत्राच्या पवित्रतेची हीच ठरलेली परंपरा आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Grammar note: आलयम् does double duty. As ālaya it is the sanctuary or temple (from ā + √lī, &#x27;to settle&#x27;) in the accusative governed by the bhāve gerundive स्थातव्यम् — &#x27;by you the sanctuary must be dwelt in&#x27;; as ā + laya (&#x27;till dissolution&#x27;) in avyayībhāva it is the adverbial limit of the residence, the book&#x27;s gloss adopted here. Note the wordplay वरदानां वरदः: the one who grants boons even to those who grant them — a Śaiva superlative on Viṣṇu&#x27;s title वरद in 4.36.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुप्. व्याकरण-टिप्पणी : आलयम् शब्दाला दुहेरी अर्थ आहे. आलय (आ + √ली, ‘वसणे’) या अर्थाने तो भावे प्रयोगातील स्थातव्यम् याच्या कर्मासारखा द्वितीयान्त आहे (‘तुझ्याकडून मंदिरात राहिले पाहिजे’); आणि आ + लय (‘प्रलयापर्यंत’) या अव्ययीभाव विग्रहाने तो वासाची काळमर्यादा सांगणारे क्रियाविशेषण आहे — पुस्तकातील याच अर्थाला येथे घेतले आहे. वरदानां वरदः ही शब्दक्रीडा पहा : जे वर देतात त्यांनाही वर देणारा — विष्णूच्या वरद (४.३६) या बिरुदावर शैव अतिशय.</p></div></div>
+
+<div class="pagenav"><a href="verse-40.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 40</div></a><a class="next" href="verse-42.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 42</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

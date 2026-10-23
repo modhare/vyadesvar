@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">शिरोधिनीलं करिचर्मचेलं पिनाकहेतिं भृतभूरिभूतिम् ।<br>समस्तहेतुं प्रलयान्तकेतुं वाडेश्वरं नौमि जगन्निवासम् ।।६।।</div>
+  <div class="verse-iast">śirodhinīlaṃ karicarmacelaṃ pinākahetiṃ bhṛtabhūribhūtim । samastahetuṃ pralayāntaketuṃ vāḍeśvaraṃ naumi jagannivāsam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">शिरोधि-नीलम् । करि-चर्म-चेलम् । पिनाक-हेतिम् । भृत-भूरि-भूतिम् । समस्त-हेतुम् । प्रलय-अन्त-केतुम् । वाडेश्वरम् । नौमि । जगत्-निवासम् ।</div><div class="vig-iast">śirodhi-nīlam । kari-carma-celam । pināka-hetim । bhṛta-bhūri-bhūtim । samasta-hetum । pralaya-anta-ketum । vāḍeśvaram । naumi । jagat-nivāsam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रलय + अन्त = प्रलयान्त (सवर्णदीर्घ) · जगत् + निवासम् = जगन्निवासम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(अहम्) शिरोधिनीलं करिचर्मचेलं पिनाकहेतिं भृतभूरिभूतिं समस्तहेतुं प्रलयान्तकेतुं जगन्निवासं वाडेश्वरं नौमि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The blue-necked one, clad in elephant hide, armed with the Pināka bow, bearing abundant ash, the cause of all, the banner that stands at dissolution&#x27;s end — Vāḍeśvara, the abode of the world, I bow to in praise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गजाजिन पांघरणाऱ्या पिनाक नावाचे शस्त्र (धनुष्य) व अंगावर विपुल भस्म धारण करणाऱ्या त्या नीलकंठाचे, समस्त जगताचे कारण असलेल्या व प्रलयाची धुरा धारण करणाऱ्या त्या जगन्निवास वाडेश्वराचे मी स्तवन करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिरोधि-नीलम्</span>
+    <span class="word-iast">śirodhi-nīlam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; शिरोधि = मान</span></div>
+  <div class="word-form">In this verse: शिरोधिनीलम्</div>
+  <p class="word-meaning lang-en">blue-necked</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचा कंठ निळा आहे अशाला (नीलकंठ)</p>
+  <div class="word-usage">
+    <div class="deva">शिरोधिनीलं नीलकण्ठं वन्दे।</div>
+    <div class="usage-iast">śirodhinīlaṃ nīlakaṇṭhaṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute the blue-necked Nīlakaṇṭha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचा कंठ निळा आहे अशा नीलकंठाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">करि-चर्म-चेलम्</span>
+    <span class="word-iast">kari-carma-celam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: करिचर्मचेलम्</div>
+  <p class="word-meaning lang-en">clad in elephant hide</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तीचे कातडे हे वस्त्र असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">करिचर्मचेलं रुद्रं नमामि।</div>
+    <div class="usage-iast">karicarmacelaṃ rudraṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to Rudra clad in elephant hide.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तीचे कातडे हे वस्त्र असलेल्या रुद्राला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पिनाक-हेतिम्</span>
+    <span class="word-iast">pināka-hetim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; हेति = शस्त्र</span></div>
+  <div class="word-form">In this verse: पिनाकहेतिम्</div>
+  <p class="word-meaning lang-en">armed with the Pināka bow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिनाक हे शस्त्र असणाऱ्याला</p>
+  <div class="word-usage">
+    <div class="deva">पिनाकहेतिं शिवं ध्यायामि।</div>
+    <div class="usage-iast">pinākahetiṃ śivaṃ dhyāyāmi.</div>
+    <div class="usage-meaning lang-en">I meditate on Śiva armed with the Pināka.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिनाक हे शस्त्र असलेल्या शिवाचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृत-भूरि-भूतिम्</span>
+    <span class="word-iast">bhṛta-bhūri-bhūtim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.; भूति = भस्म</span></div>
+  <div class="word-form">In this verse: भृतभूरिभूतिम्</div>
+  <p class="word-meaning lang-en">bearing abundant ash</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विपुल भस्म धारण केलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">भृतभूरिभूतिं योगिनं वन्दे।</div>
+    <div class="usage-iast">bhṛtabhūribhūtiṃ yoginaṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute the yogin bearing abundant ash.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विपुल भस्म धारण केलेल्या योगियाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समस्त-हेतुम्</span>
+    <span class="word-iast">samasta-hetum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: समस्तहेतुम्</div>
+  <p class="word-meaning lang-en">cause of all</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वांचे कारण</p>
+  <div class="word-usage">
+    <div class="deva">समस्तहेतुं परमात्मानं भजामि।</div>
+    <div class="usage-iast">samastahetuṃ paramātmānaṃ bhajāmi.</div>
+    <div class="usage-meaning lang-en">I worship the supreme Self, the cause of all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वांचे कारण असलेल्या परमात्म्याची मी भक्ती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रलय-अन्त-केतुम्</span>
+    <span class="word-iast">pralaya-anta-ketum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: प्रलयान्तकेतुम्</div>
+  <p class="word-meaning lang-en">the banner at the end of dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाच्या शेवटी उभा राहणारा ध्वज</p>
+  <div class="word-usage">
+    <div class="deva">प्रलयान्तकेतुं हरं स्मरामि।</div>
+    <div class="usage-iast">pralayāntaketuṃ haraṃ smarāmi.</div>
+    <div class="usage-meaning lang-en">I remember Hara, the banner at the end of dissolution.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाच्या शेवटी उभा राहणारा ध्वज असलेल्या हराचे मी स्मरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश्वरम्</span>
+    <span class="word-iast">vāḍeśvaram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वाडेश्वरम्</div>
+  <p class="word-meaning lang-en">Vāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वराला</p>
+  <div class="word-usage">
+    <div class="deva">वाडेश्वरं नौमि जगन्निवासम्।</div>
+    <div class="usage-iast">vāḍeśvaraṃ naumi jagannivāsam.</div>
+    <div class="usage-meaning lang-en">I praise Vāḍeśvara, the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान असलेल्या वाडेश्वराला मी स्तवन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नौमि</span>
+    <span class="word-iast">naumi</span>
+  </div>
+  <div><span class="word-grammar">नु, लट्, उ.पु. एव.</span></div>
+  <div class="word-form">In this verse: नौमि</div>
+  <p class="word-meaning lang-en">I praise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी स्तवन करतो</p>
+  <div class="word-usage">
+    <div class="deva">अहं हरं नौमि।</div>
+    <div class="usage-iast">ahaṃ haraṃ naumi.</div>
+    <div class="usage-meaning lang-en">I praise Hara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी हराचे स्तवन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगत्-निवासम्</span>
+    <span class="word-iast">jagat-nivāsam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: जगन्निवासम्</div>
+  <p class="word-meaning lang-en">the abode of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगन्निवासाला</p>
+  <div class="word-usage">
+    <div class="deva">जगन्निवासं भजामि।</div>
+    <div class="usage-iast">jagannivāsaṃ bhajāmi.</div>
+    <div class="usage-meaning lang-en">I worship the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाच्या निवासस्थानाची मी भक्ती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिरोधिनीलम्</span>
+    <span class="word-iast">śirodhinīlam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: शिरोधिनीलम्</div>
+  <p class="word-meaning lang-en">blue-necked</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची मान (शिरोधि) निळी आहे, नीलकंठ</p>
+  <div class="word-usage">
+    <div class="deva">शिरोधिनीलं स्तौमि।</div>
+    <div class="usage-iast">śirodhinīlaṃ staumi.</div>
+    <div class="usage-meaning lang-en">I praise the blue-necked one.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची मान निळी आहे त्याची मी स्तुती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">करिचर्मचेलम्</span>
+    <span class="word-iast">karicarmacelam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: करिचर्मचेलम्</div>
+  <p class="word-meaning lang-en">clad in elephant hide</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तीचे कातडे (गजाजिन) हेच ज्याचे वस्त्र (चेल)</p>
+  <div class="word-usage">
+    <div class="deva">करिचर्मचेलं नमामि।</div>
+    <div class="usage-iast">karicarmacelaṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to him clad in elephant hide.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तीचे कातडे वस्त्र असणाऱ्याला मी नमन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पिनाकहेतिम्</span>
+    <span class="word-iast">pinākahetim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: पिनाकहेतिम्</div>
+  <p class="word-meaning lang-en">armed with the Pināka bow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिनाक धनुष्य हे ज्याचे शस्त्र (हेति)</p>
+  <div class="word-usage">
+    <div class="deva">पिनाकहेतिं भजामि।</div>
+    <div class="usage-iast">pinākahetiṃ bhajāmi.</div>
+    <div class="usage-meaning lang-en">I worship him armed with the Pināka bow.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिनाक धनुष्य हे शस्त्र असणाऱ्याची मी भक्ती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृतभूरिभूतिम्</span>
+    <span class="word-iast">bhṛtabhūribhūtim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: भृतभूरिभूतिम्</div>
+  <p class="word-meaning lang-en">bearing abundant ash</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याने विपुल (भूरि) भस्म (भूति) धारण केले आहे</p>
+  <div class="word-usage">
+    <div class="deva">भृतभूरिभूतिं ध्यायामि।</div>
+    <div class="usage-iast">bhṛtabhūribhūtiṃ dhyāyāmi.</div>
+    <div class="usage-meaning lang-en">I meditate on him bearing abundant ash.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विपुल भस्म धारण केलेल्याचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समस्तहेतुम्</span>
+    <span class="word-iast">samastahetum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: समस्तहेतुम्</div>
+  <p class="word-meaning lang-en">cause of all</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समस्त जगाचे कारण</p>
+  <div class="word-usage">
+    <div class="deva">समस्तहेतुं वन्दे।</div>
+    <div class="usage-iast">samastahetuṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute the cause of all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समस्त जगाच्या कारणाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रलयान्तकेतुम्</span>
+    <span class="word-iast">pralayāntaketum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: प्रलयान्तकेतुम्</div>
+  <p class="word-meaning lang-en">the banner at the end of dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाच्या अंतीही फडकणारा ध्वज (केतु), म्हणजे प्रलयानंतरही उरणारा</p>
+  <div class="word-usage">
+    <div class="deva">प्रलयान्तकेतुं प्रणमामि।</div>
+    <div class="usage-iast">pralayāntaketuṃ praṇamāmi.</div>
+    <div class="usage-meaning lang-en">I salute the banner at the end of dissolution.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाच्या अंतीही फडकणाऱ्या ध्वजाला मी प्रणाम करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगन्निवासम्</span>
+    <span class="word-iast">jagannivāsam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: जगन्निवासम्</div>
+  <p class="word-meaning lang-en">the abode of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचे निवासस्थान</p>
+  <div class="word-usage">
+    <div class="deva">जगन्निवासं शरणं व्रज।</div>
+    <div class="usage-iast">jagannivāsaṃ śaraṇaṃ vraja.</div>
+    <div class="usage-meaning lang-en">Take refuge in the abode of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाच्या निवासस्थानाचा आश्रय घे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The blue throat remembers the poison Śiva drank for the world — the Lord of Guhagar literally carries the world&#x27;s suffering in his own body. Yet he is the cause of all, and at pralaya, when everything dissolves, he alone remains as the standing banner — the one permanence. For the pilgrim this is the metaphysics of the sthala in a single stanza: everything perishes, Vyadeshwar abides.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>निळा कंठ त्या विषाची आठवण देतो जे शिवाने जगासाठी प्याले — गुहागरचा स्वामी जगाचे दुःख खरोखर आपल्या शरीरात धारण करतो. तरीही तो सर्वांचे कारण आहे, आणि प्रलयात जेव्हा सर्व विरघळते, तेव्हा एकटाच फडकणारा ध्वज म्हणून उरतो — एकमेव शाश्वतता. यात्रेकरूसाठी हे एकाच कडव्यातील स्थानाचे अध्यात्म आहे: सर्व नाश पावते, वाडेश्वर राहतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The blue neck is the nīlakaṇṭha legend of the Purāṇas — Śiva drank the kālakūṭa poison churned from the ocean and held it in his throat so the worlds might live. The Pināka is his famous bow, the one broken by Rāma in the Rāmāyaṇa&#x27;s telling, and the elephant hide is the spoil of his slaying of the demon Gajāsura.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>निळा कंठ ही पुराणांतील नीलकंठ कथा आहे — समुद्रमंथनातून निघालेले कालकूट विष शिवाने प्याले आणि जग जगावे म्हणून कंठातच ठेवले. पिनाक हे त्याचे प्रसिद्ध धनुष्य आहे, रामायणकथेत रामाने ज्याचे खंडन केले, आणि हत्तीचे कातडे हे गजासुर दैत्याच्या वधात मिळालेले लूट आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>शिरोधि is the neck or throat; हेति is weapon; केतु is a banner or standard — here the banner that still stands at the end of dissolution, i.e. he who remains after pralaya, as the source meaning_mr glosses: प्रलयाच्या अंतीही फडकणारा ध्वज, म्हणजे प्रलयानंतरही उरणारा. Upajāti continues with the refrain.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शिरोधि म्हणजे मान किंवा कंठ; हेति म्हणजे शस्त्र; केतु म्हणजे ध्वज — येथे प्रलयाच्या शेवटीही उभा राहणारा ध्वज, म्हणजे प्रलयानंतरही उरणारा, जसे स्रोताच्या अर्थनोंदीत म्हटले आहे: प्रलयाच्या अंतीही फडकणारा ध्वज, म्हणजे प्रलयानंतरही उरणारा. उपजाति आणि ध्रुवपद चालू आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

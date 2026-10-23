@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 11 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 11</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">साङ्गं धनुर्वेदमशेषतन्त्रं रहस्यमात्यन्तिकमेकशिष्यः ।।<br>अवाप्य भर्गात्किल भार्गवोऽसौ शेषामधीतिं पितुरेव कृत्स्नाम् ।।११।।</div>
+  <div class="verse-iast">sāṅgaṃ dhanurvedamaśeṣatantraṃ rahasyamātyantikamekaśiṣyaḥ । । avāpya bhargātkila bhārgavo&#x27;sau śeṣāmadhītiṃ pitureva kṛtsnām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">स-अङ्गम् । धनुः-वेदम् । अशेष-तन्त्रम् । रहस्यम् । आत्यन्तिकम् । एक-शिष्यः । अवाप्य । भर्गात् । किल । भार्गवः । असौ । शेषाम् । अधीतिम् । पितुः । एव । कृत्स्नाम् ।</div><div class="vig-iast">sa-aṅgam । dhanuḥ-vedam । aśeṣa-tantram । rahasyam । ātyantikam । eka-śiṣyaḥ । avāpya । bhargāt । kila । bhārgavaḥ । asau । śeṣām । adhītim । pituḥ । eva । kṛtsnām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">स + अङ्गम् = साङ्गम् · धनुः + वेदम् = धनुर्वेदम् (विसर्ग → र्) · वेदम् + अशेष = वेदमशेष · रहस्यम् + आत्यन्तिकम् = रहस्यमात्यन्तिकम् · आत्यन्तिकम् + एक = आत्यन्तिकमेक · भार्गवः + असौ = भार्गवोऽसौ (विसर्ग → ओ, पूर्वरूप) · शेषाम् + अधीतिम् = शेषामधीतिम् · पितुः + एव = पितुरेव</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">असौ भार्गवः एकशिष्यः (सन्) भर्गात् साङ्गम् अशेषतन्त्रं धनुर्वेदम् आत्यन्तिकं रहस्यं (च) अवाप्य, शेषां कृत्स्नाम् अधीतिं पितुः एव (अवाप) किल ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>This Bhārgava, as Śiva&#x27;s sole foremost disciple, truly received the science of the bow complete with its auxiliaries, its entire system of techniques, and its ultimate mysteries; the rest of his learning, whole and complete, he received from his father.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या भार्गवाने खरोखर भर्गापासून पट्टशिष्य म्हणून साङ्ग धनुर्वेद पूर्ण तंत्रांसह व आत्यन्तिक रहस्यासह प्राप्त करून घेऊन उरलेली संपूर्ण विद्या आपल्या पित्यापासून मिळविली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">साङ्गं धनुर्वेदम्</span>
+    <span class="word-iast">sāṅgaṃ dhanurvedam</span>
+  </div>
+  <div><span class="word-grammar">साङ्गम्: neuter accusative singular (स + अङ्ग); धनुर्वेदम्: masculine accusative singular, tatpuruṣa (धनुस्-वेद)</span></div>
+  <div class="word-form">In this verse: साङ्गम्, धनुर्वेदम्</div>
+  <p class="word-meaning lang-en">the science of archery, with its auxiliaries</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अंगांसह धनुर्विद्या</p>
+  <div class="word-usage">
+    <div class="deva">साङ्गम् धनुर्वेदम् सः गुरोः अलभत ।</div>
+    <div class="usage-iast">sāṅgam dhanurvedam saḥ guroḥ alabhata ।</div>
+    <div class="usage-meaning lang-en">He learnt the science of archery with its auxiliaries from his teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने गुरूंकडून अंगांसहित धनुर्विद्या मिळवली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अशेषतन्त्रम्</span>
+    <span class="word-iast">aśeṣatantram</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular; bahuvrīhi (अशेष-तन्त्र)</span></div>
+  <div class="word-form">In this verse: अशेषतन्त्रम्</div>
+  <p class="word-meaning lang-en">with its entire system of techniques</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व तंत्रांसह</p>
+  <div class="word-usage">
+    <div class="deva">अशेषतन्त्रम् शास्त्रम् अधीतम् ।</div>
+    <div class="usage-iast">aśeṣatantram śāstram adhītam ।</div>
+    <div class="usage-meaning lang-en">The science was studied with its entire system.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपूर्ण तंत्रांसहित शास्त्राचे अध्ययन केले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आत्यन्तिकं रहस्यम्</span>
+    <span class="word-iast">ātyantikaṃ rahasyam</span>
+  </div>
+  <div><span class="word-grammar">both neuter accusative singular</span></div>
+  <div class="word-form">In this verse: आत्यन्तिकम्, रहस्यम्</div>
+  <p class="word-meaning lang-en">the ultimate mystery, the supreme secret</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परम रहस्य</p>
+  <div class="word-usage">
+    <div class="deva">आत्यन्तिकम् रहस्यम् गुरुः शिष्याय अददात् ।</div>
+    <div class="usage-iast">ātyantikam rahasyam guruḥ śiṣyāya adadāt ।</div>
+    <div class="usage-meaning lang-en">The teacher imparted the ultimate secret to the disciple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूंनी शिष्याला परम रहस्य दिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकशिष्यः</span>
+    <span class="word-iast">ekaśiṣyaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (एक-शिष्य)</span></div>
+  <div class="word-form">In this verse: एकशिष्यः</div>
+  <p class="word-meaning lang-en">the sole (foremost) disciple</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकमेव (पट्ट)शिष्य</p>
+  <div class="word-usage">
+    <div class="deva">एकशिष्यः सन् सः विद्याम् अलभत ।</div>
+    <div class="usage-iast">ekaśiṣyaḥ san saḥ vidyām alabhata ।</div>
+    <div class="usage-meaning lang-en">As the sole disciple, he obtained the lore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकमेव शिष्य म्हणून त्याने विद्या मिळवली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवाप्य</span>
+    <span class="word-iast">avāpya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (lyap) of अव + √आप्</span></div>
+  <div class="word-form">In this verse: अवाप्य</div>
+  <p class="word-meaning lang-en">having obtained</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मिळवून (अव + √आप्, ल्यप्)</p>
+  <div class="word-usage">
+    <div class="deva">विद्याम् अवाप्य सः कृतार्थः अभवत् ।</div>
+    <div class="usage-iast">vidyām avāpya saḥ kṛtārthaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">Having obtained the lore, he was fulfilled.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्या मिळवून तो कृतार्थ झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भर्गात्</span>
+    <span class="word-iast">bhargāt</span>
+  </div>
+  <div><span class="word-grammar">masculine ablative singular of भर्ग (&#x27;the radiant one&#x27;, Śiva)</span></div>
+  <div class="word-form">In this verse: भर्गात्</div>
+  <p class="word-meaning lang-en">from Bharga — from Śiva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भर्गापासून, शंकराकडून (पञ्चमी)</p>
+  <div class="word-usage">
+    <div class="deva">भर्गात् सः दिव्यास्त्राणि अलभत ।</div>
+    <div class="usage-iast">bhargāt saḥ divyāstrāṇi alabhata ।</div>
+    <div class="usage-meaning lang-en">He obtained the divine weapons from Śiva.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने शंकराकडून दिव्यास्त्रे मिळवली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किल</span>
+    <span class="word-iast">kila</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (particle of hearsay)</span></div>
+  <div class="word-form">In this verse: किल</div>
+  <p class="word-meaning lang-en">indeed, as they say</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर (असे सांगतात)</p>
+  <div class="word-usage">
+    <div class="deva">किल पुरा राजा आसीत् ।</div>
+    <div class="usage-iast">kila purā rājā āsīt ।</div>
+    <div class="usage-meaning lang-en">Indeed, long ago there was a king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर, पूर्वी एक राजा होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भार्गवः असौ</span>
+    <span class="word-iast">bhārgavaḥ asau</span>
+  </div>
+  <div><span class="word-grammar">भार्गवः: masculine nominative singular (भृगु + अण्); असौ: demonstrative pronoun, masculine nominative singular of अदस्</span></div>
+  <div class="word-form">In this verse: भार्गवः, असौ</div>
+  <p class="word-meaning lang-en">this Bhārgava (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हा भृगुवंशी (परशुराम)</p>
+  <div class="word-usage">
+    <div class="deva">भार्गवः असौ शूरः आसीत् ।</div>
+    <div class="usage-iast">bhārgavaḥ asau śūraḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">This Bhārgava was a hero.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हा भार्गव शूर होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शेषाम्</span>
+    <span class="word-iast">śeṣām</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular</span></div>
+  <div class="word-form">In this verse: शेषाम्</div>
+  <p class="word-meaning lang-en">the remaining</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उरलेली</p>
+  <div class="word-usage">
+    <div class="deva">शेषाम् विद्याम् सः पितुः अलभत ।</div>
+    <div class="usage-iast">śeṣām vidyām saḥ pituḥ alabhata ।</div>
+    <div class="usage-meaning lang-en">He learnt the remaining lore from his father.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने उरलेली विद्या पित्याकडून शिकली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अधीतिम्</span>
+    <span class="word-iast">adhītim</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular of अधीति (अधि + √इ, क्तिन्)</span></div>
+  <div class="word-form">In this verse: अधीतिम्</div>
+  <p class="word-meaning lang-en">learning, study</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्या, अध्ययन</p>
+  <div class="word-usage">
+    <div class="deva">अधीतिम् विना ज्ञानम् न लभ्यते ।</div>
+    <div class="usage-iast">adhītim vinā jñānam na labhyate ।</div>
+    <div class="usage-meaning lang-en">Without study, knowledge is not attained.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अध्ययनाशिवाय ज्ञान मिळत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पितुः एव</span>
+    <span class="word-iast">pituḥ eva</span>
+  </div>
+  <div><span class="word-grammar">पितुः: masculine genitive/ablative singular; एव: indeclinable</span></div>
+  <div class="word-form">In this verse: पितुः, एव</div>
+  <p class="word-meaning lang-en">from his father alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पित्याकडूनच</p>
+  <div class="word-usage">
+    <div class="deva">पितुः एव सः वेदान् अशृणोत् ।</div>
+    <div class="usage-iast">pituḥ eva saḥ vedān aśṛṇot ।</div>
+    <div class="usage-meaning lang-en">He heard the Vedas from his father alone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने वेद पित्याकडूनच ऐकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृत्स्नाम्</span>
+    <span class="word-iast">kṛtsnām</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular</span></div>
+  <div class="word-form">In this verse: कृत्स्नाम्</div>
+  <p class="word-meaning lang-en">whole, entire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपूर्ण</p>
+  <div class="word-usage">
+    <div class="deva">कृत्स्नाम् विद्याम् सः अधीतवान् ।</div>
+    <div class="usage-iast">kṛtsnām vidyām saḥ adhītavān ।</div>
+    <div class="usage-meaning lang-en">He studied the entire lore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने संपूर्ण विद्येचे अध्ययन केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The hero&#x27;s education mirrors his double inheritance: the science of arms from Śiva, the god of destruction and of yogic mastery, and the rest of learning from his father Jamadagni, the ṛṣi. Dhanurveda is received &#x27;with its mysteries&#x27; — the verse insists that warfare, in the dharmic order, is a sacred science, not mere violence. For the sthala this Śaiva discipleship matters: it is Śiva&#x27;s own student who will raise the land of Śiva&#x27;s liṅga.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नायकाचे शिक्षण त्याच्या दुहेरी वारशाचे प्रतिबिंब आहे — शस्त्रविद्या शंकराकडून, संहाराच्या व योगसामर्थ्याच्या देवाकडून, आणि उरलेली विद्या पित्या जमदग्नींकडून, ऋषींकडून. धनुर्वेद &#x27;रहस्यांसह&#x27; मिळतो — धर्मव्यवस्थेत युद्ध ही पवित्र विद्या आहे, केवळ हिंसा नव्हे, असा श्लोकाचा आग्रह आहे. स्थलदृष्ट्या ही शैव शिष्यपरंपरा महत्त्वाची आहे — शंकराचाच शिष्य शिवलिंगाची भूमी वर आणणार आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic tradition makes Śiva the giver of the science of arms to Paraśurāma — the Mahābhārata (Ādiparvan, Śāntiparvan) tells how the Bhārgava propitiated Śiva on the Himālaya and received from him the divine weapons and the axe (paraśu) itself, and even duelled with his teacher. Hence भर्गात् — &#x27;from Bharga, the radiant one&#x27;, i.e. Śiva. The rest of his lore — the Vedas and the śāstras — he learnt at his father Jamadagni&#x27;s feet, as befits a brāhmaṇa.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाला शस्त्रविद्या देणारा शंकर ही पुराणपरंपरा आहे — महाभारत (आदिपर्व, शांतिपर्व) सांगते की भार्गवाने हिमालयात शंकराची आराधना केली आणि त्यांच्याकडून दिव्यास्त्रे व स्वतः परशू मिळवला, एवढेच नव्हे तर गुरूंशी द्वंद्वही केले. म्हणून भर्गात् — &#x27;भर्गापासून, तेजस्वी अशा&#x27;, म्हणजे शंकराकडून. उरलेली विद्या — वेद व शास्त्रे — त्याने ब्राह्मणाला शोभेल असे पित्या जमदग्नींच्या चरणी शिकली.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>एकशिष्यः — &#x27;the sole (or foremost) disciple&#x27;: the working gloss renders पट्टशिष्य. किल marks the statement as received tradition (&#x27;so they say&#x27;). The verse keeps the sarga&#x27;s narrative metre — Indravajrā/Upajāti throughout vv. 8–16.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकशिष्यः — &#x27;एकमेव (पट्ट)शिष्य&#x27; : कार्यटीपेत पट्टशिष्य असा अर्थ दिला आहे. किल हे विधान श्रुतपरंपरेने आलेले असल्याचे दर्शवते (&#x27;असे सांगतात&#x27;). श्लोक सर्गाचे कथनवृत्त — ८–१६ श्लोकांत सर्वत्र इन्द्रवज्रा/उपजाति — पाळतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 10</div></a><a class="next" href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 12</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

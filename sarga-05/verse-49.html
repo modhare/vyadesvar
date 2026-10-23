@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 49 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 49</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 49</span><span class="bl-mr lang-mr">श्लोक 49</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">वातो वाति स्म सौम्यस्तपति दिनकरो न स्म तीक्ष्णैर्मयूखै-<br>रिन्द्रः कामं ववर्ष क्षितिरधिकफला धेनवः कामदोग्ध्र्यः ।<br>काष्ठाः शश्वत्प्रसेदुः शिवगगनचरा द्यौरनुत्पातविद्यु-<br>त्सर्वेशे त्राणशीले जयति भृगुपतेः क्षेत्रमुच्चैः स्म तस्मिन् ।।४९।।</div>
+  <div class="verse-iast">vāto vāti sma saumyastapati dinakaro na sma tīkṣṇairmayūkhai- rindraḥ kāmaṃ vavarṣa kṣitiradhikaphalā dhenavaḥ kāmadogdhryaḥ । kāṣṭhāḥ śaśvatpraseduḥ śivagaganacarā dyauranutpātavidyu- tsarveśe trāṇaśīle jayati bhṛgupateḥ kṣetramuccaiḥ sma tasmin</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">वातः । वाति । स्म । सौम्यः । तपति । दिनकरः । न । स्म । तीक्ष्णैः । मयूखैः । इन्द्रः । कामम् । ववर्ष । क्षितिः । अधिक-फला । धेनवः । काम-दोग्ध्र्यः । काष्ठाः । शश्वत् । प्रसेदुः । शिव-गगनचराः । द्यौः । अनुत्पात-विद्युत् । सर्व-ईशे । त्राण-शीले । जयति । भृगुपतेः । क्षेत्रम् । उच्चैः । स्म । तस्मिन् ।</div><div class="vig-iast">vātaḥ । vāti । sma । saumyaḥ । tapati । dinakaraḥ । na । sma । tīkṣṇaiḥ । mayūkhaiḥ । indraḥ । kāmam । vavarṣa । kṣitiḥ । adhika-phalā । dhenavaḥ । kāma-dogdhryaḥ । kāṣṭhāḥ । śaśvat । praseduḥ । śiva-gaganacarāḥ । dyauḥ । anutpāta-vidyut । sarva-īśe । trāṇa-śīle । jayati । bhṛgupateḥ । kṣetram । uccaiḥ । sma । tasmin ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वातः + वाति = वातो वाति · सौम्यः + तपति = सौम्यस्तपति · दिनकरः + न = दिनकरो न · मयूखैः + इन्द्रः = मयूखैरिन्द्रः · क्षितिः + अधिक = क्षितिरधिक · दोग्ध्र्यः + काष्ठाः = दोग्ध्र्यः काष्ठाः · द्यौः + अनुत्पात = द्यौरनुत्पात · विद्युत् + सर्वेशे = विद्युत्सर्वेशे · क्षेत्रम् + उच्चैः = क्षेत्रमुच्चैः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तस्मिन् सर्वेशे त्राणशीले (सति) — वातः सौम्यः वाति स्म, दिनकरः तीक्ष्णैः मयूखैः न तपति स्म, इन्द्रः कामं ववर्ष, क्षितिः अधिकफला, धेनवः कामदोग्ध्र्यः, काष्ठाः शश्वत् प्रसेदुः, गगनचराः शिवाः, द्यौः अनुत्पातविद्युत् — भृगुपतेः क्षेत्रम् उच्चैः जयति स्म ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The breeze blew gentle; the sun did not burn with fierce rays; Indra rained at will; the earth bore abundant fruit; the cows yielded milk to the heart&#x27;s desire; the quarters were ever serene; the birds of the sky were auspicious; the sky showed lightning but no calamity — for while the Lord of all stood as its guardian, the kṣetra of the lord of the Bhṛgus triumphed on high.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या क्षेत्रात वायू सतत वहात असे, सूर्य आपल्या तीक्ष्ण किरणांनी ताप न देता सौम्यपणाने प्रकाश देत असे. इन्द्र भरपूर वृष्टी करीत असे व पृथ्वी अधिक धान्य आणि गाई यथेच्छ दूध देत असत. तेथील दिशा नेहमी प्रसन्न असत, पक्षीही कल्याणकारक ठरत. आकाशातून वीज चमके पण उत्पात न करता! प्रत्यक्ष परशुरामच रक्षणशील असल्यामुळे भृगुपती परशुरामाचे ते क्षेत्र सर्व बाबतीत जयशाली व वर्धमान ठरले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सौम्यः वातः</span>
+    <span class="word-iast">saumyaḥ vātaḥ</span>
+  </div>
+  <div><span class="word-grammar">सौम्य (विशेषण) + वात (पुंलिङ्ग); प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: सौम्यः वातः — &#x27;मंद वारा&#x27;</div>
+  <p class="word-meaning lang-en">a gentle breeze</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंद वारा</p>
+  <div class="word-usage">
+    <div class="deva">सौम्यः वातः वाति</div>
+    <div class="usage-iast">saumyaḥ vātaḥ vāti</div>
+    <div class="usage-meaning lang-en">A gentle breeze blows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंद वारा वाहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तीक्ष्णैः मयूखैः</span>
+    <span class="word-iast">tīkṣṇaiḥ mayūkhaiḥ</span>
+  </div>
+  <div><span class="word-grammar">तीक्ष्ण (विशेषण) + मयूख (पुंलिङ्ग &#x27;किरण&#x27;); तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: तीक्ष्णैः मयूखैः — &#x27;तीक्ष्ण किरणांनी&#x27;</div>
+  <p class="word-meaning lang-en">with fierce rays</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीक्ष्ण किरणांनी</p>
+  <div class="word-usage">
+    <div class="deva">सूर्यः तीक्ष्णैः मयूखैः तपति</div>
+    <div class="usage-iast">sūryaḥ tīkṣṇaiḥ mayūkhaiḥ tapati</div>
+    <div class="usage-meaning lang-en">The sun burns with fierce rays.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्य तीक्ष्ण किरणांनी तापतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कामं ववर्ष</span>
+    <span class="word-iast">kāmaṃ vavarṣa</span>
+  </div>
+  <div><span class="word-grammar">कामम् (अव्यय, &#x27;यथेच्छ, भरपूर&#x27;) + √वृष् (वर्षणे) लिट् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: कामं ववर्ष — &#x27;हवा तसा पाऊस पाडला&#x27;</div>
+  <p class="word-meaning lang-en">rained bountifully, at will</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हवा तसा पाऊस पाडला</p>
+  <div class="word-usage">
+    <div class="deva">इन्द्रः कामम् ववर्ष</div>
+    <div class="usage-iast">indraḥ kāmam vavarṣa</div>
+    <div class="usage-meaning lang-en">Indra rained bountifully.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इन्द्राने भरपूर वृष्टी केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अधिकफला क्षितिः</span>
+    <span class="word-iast">adhikaphalā kṣitiḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि (अधिकम् फलम् यस्याः); क्षिति स्त्रीलिङ्ग प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: अधिकफला क्षितिः — &#x27;अधिक पीक देणारी भूमी&#x27;</div>
+  <p class="word-meaning lang-en">the abundantly fruitful earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधिक पीक देणारी भूमी</p>
+  <div class="word-usage">
+    <div class="deva">अधिकफला क्षितिः कृषकान् तोषयति</div>
+    <div class="usage-iast">adhikaphalā kṣitiḥ kṛṣakān toṣayati</div>
+    <div class="usage-meaning lang-en">The abundantly fruitful earth delights the farmers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधिक पीक देणारी भूमी शेतकऱ्यांना संतोष देते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कामदोग्ध्र्यः</span>
+    <span class="word-iast">kāmadogdhryaḥ</span>
+  </div>
+  <div><span class="word-grammar">काम-दोग्ध्री (√दुह् + तृच्, स्त्रीलिङ्ग); धेनवः प्रथमा बहुवचनाचे विशेषण</span></div>
+  <div class="word-form">In this verse: कामदोग्ध्र्यः — &#x27;हवे तेवढे दूध देणाऱ्या&#x27;</div>
+  <p class="word-meaning lang-en">yielding milk to the heart&#x27;s desire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हवे तेवढे दूध देणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">धेनवः कामदोग्ध्र्यः अभवन्</div>
+    <div class="usage-iast">dhenavaḥ kāmadogdhryaḥ abhavan</div>
+    <div class="usage-meaning lang-en">The cows yielded milk to the heart&#x27;s desire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाई हवे तेवढे दूध देणाऱ्या झाल्या.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काष्ठाः प्रसेदुः</span>
+    <span class="word-iast">kāṣṭhāḥ praseduḥ</span>
+  </div>
+  <div><span class="word-grammar">काष्ठा (स्त्रीलिङ्ग &#x27;दिशा&#x27;); प्र + √सद् लिट् प्रथमपुरुष बहुवचन</span></div>
+  <div class="word-form">In this verse: काष्ठाः प्रसेदुः — &#x27;दिशा प्रसन्न राहिल्या&#x27;</div>
+  <p class="word-meaning lang-en">the quarters were serene</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिशा प्रसन्न (निर्मळ) राहिल्या</p>
+  <div class="word-usage">
+    <div class="deva">काष्ठाः सर्वाः प्रसेदुः</div>
+    <div class="usage-iast">kāṣṭhāḥ sarvāḥ praseduḥ</div>
+    <div class="usage-meaning lang-en">All the quarters were serene.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व दिशा प्रसन्न झाल्या.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिवगगनचराः</span>
+    <span class="word-iast">śivagaganacarāḥ</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुष/बहुव्रीहि (शिवाः गगनचराः); पुंलिङ्ग प्रथमा बहुवचन</span></div>
+  <div class="word-form">In this verse: शिवगगनचराः — &#x27;शुभसूचक आकाशचारी (पक्षी)&#x27;</div>
+  <p class="word-meaning lang-en">the auspicious sky-goers (birds)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशचारी (पक्षी) शुभसूचक</p>
+  <div class="word-usage">
+    <div class="deva">शिवगगनचराः वृक्षेषु कूजन्ति</div>
+    <div class="usage-iast">śivagaganacarāḥ vṛkṣeṣu kūjanti</div>
+    <div class="usage-meaning lang-en">The auspicious birds sing in the trees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुभसूचक पक्षी झाडांवर कूजतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्यौरनुत्पातविद्युत्</span>
+    <span class="word-iast">dyauranutpātavidyut</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि (अनुत्पाता विद्युत् यस्याः); द्यौ (स्त्रीलिङ्ग) प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: द्यौरनुत्पातविद्युत् — &#x27;उत्पात नसलेली वीज असलेले आकाश&#x27;</div>
+  <p class="word-meaning lang-en">the sky whose lightning carried no calamity</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशात वीज असूनही उत्पात नाही</p>
+  <div class="word-usage">
+    <div class="deva">द्यौः अनुत्पातविद्युत् आसीत्</div>
+    <div class="usage-iast">dyauḥ anutpātavidyut āsīt</div>
+    <div class="usage-meaning lang-en">The sky had lightning without calamity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशात उत्पात नसलेली वीज होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सर्वेशे त्राणशीले</span>
+    <span class="word-iast">sarveśe trāṇaśīle</span>
+  </div>
+  <div><span class="word-grammar">सर्व-ईश (पुंलिङ्ग) + त्राणशील (शील प्रत्यय); सप्तमी एकवचन — सति सप्तमी</span></div>
+  <div class="word-form">In this verse: सर्वेशे त्राणशीले — &#x27;सर्वेश्वर रक्षणशील असताना&#x27;</div>
+  <p class="word-meaning lang-en">while the Lord of all is of protective nature (locative absolute)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वेश्वर (शिव/परशुराम) रक्षणशील असताना (सति सप्तमी)</p>
+  <div class="word-usage">
+    <div class="deva">सर्वेशे त्राणशीले सति न भयम्</div>
+    <div class="usage-iast">sarveśe trāṇaśīle sati na bhayam</div>
+    <div class="usage-meaning lang-en">While the Lord of all protects, there is no fear.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वेश्वर रक्षण करत असताना भय नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उच्चैः जयति स्म</span>
+    <span class="word-iast">uccaiḥ jayati sma</span>
+  </div>
+  <div><span class="word-grammar">उच्चैः (अव्यय) + √जि लट् + स्म (भूतकालद्योतक निपात)</span></div>
+  <div class="word-form">In this verse: उच्चैः जयति स्म — &#x27;अत्यंत उत्कर्ष पावत होते&#x27;</div>
+  <p class="word-meaning lang-en">triumphed greatly (sma marks past narration)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत उत्कर्ष पावत होते</p>
+  <div class="word-usage">
+    <div class="deva">धर्मः उच्चैः जयति स्म</div>
+    <div class="usage-iast">dharmaḥ uccaiḥ jayati sma</div>
+    <div class="usage-meaning lang-en">Dharma triumphed greatly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्म अत्यंत जयशाली झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The whole of nature keeps festival when dharma rules: wind, sun, rain, earth, cows, directions, birds and sky all fall into harmony. The verse teaches that a protected kṣetra is not only spiritually but cosmically ordered — even lightning loses its power to harm.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>धर्म राज्य करतो तेव्हा संपूर्ण निसर्ग उत्सव साजरा करतो : वारा, सूर्य, पाऊस, पृथ्वी, गाई, दिशा, पक्षी व आकाश सर्व सुसंवादात येतात. रक्षित क्षेत्र केवळ आध्यात्मिक नव्हे, तर वैश्विक व्यवस्थेत असते — विजेलाही हानी करण्याची शक्ती उरत नाही, हे श्लोक शिकवतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>This is the classical rājya-lakṣaṇa, the &#x27;marks of an ideal reign&#x27;: timely rain, fruitful earth, milch cows, serene quarters — the same catalogue with which the Rāmāyaṇa praises Rāma&#x27;s rule and the Mahābhārata praises Yudhiṣṭhira&#x27;s. कामदोग्ध्री (&#x27;milking at will&#x27;) recalls the Kāmadhenu, the wish-yielding cow; the poet transfers her plenty to every cow of the kṣetra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे शास्त्रीय राज्यलक्षण आहे, &#x27;आदर्श राज्याची चिन्हे&#x27; : वेळेवर पाऊस, फलदायी पृथ्वी, दुभत्या गाई, प्रसन्न दिशा — रामायण रामाच्या राज्याची व महाभारत युधिष्ठिराच्या राज्याची स्तुती त्याच सूच्याने करतात. कामदोग्ध्री (&#x27;इच्छेप्रमाणे दूध देणारी&#x27;) कामधेनूची आठवण करून देते; कवी तिची विपुलता क्षेत्राच्या प्रत्येक गाईला देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Verse 49 is in Sragdharā metre (21 syllables per pāda) — the grand metre reserved in this sarga for the climactic praise of the kṣetra. सर्वेशे त्राणशीले is a locative absolute (sati saptamī): &#x27;while the Lord of all is of protective nature&#x27;. स्म with the present tense (वाति स्म, जयति स्म) marks past narration. The paradox द्यौरनुत्पातविद्युत् — &#x27;lightning without portent&#x27; — is the poet&#x27;s way of saying that even nature&#x27;s terrors are disarmed in the kṣetra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक ४९ स्रग्धरा वृत्तात आहे (प्रत्येक पादात २१ अक्षरे) — या सर्गात क्षेत्राच्या चरम स्तुतीसाठी राखलेले भव्य वृत्त. सर्वेशे त्राणशीले हे सति सप्तमी आहे : &#x27;सर्वेश्वर रक्षणशील असताना&#x27;. वर्तमानकाळासोबत स्म (वाति स्म, जयति स्म) भूतकाळाचे कथन दर्शवते. द्यौरनुत्पातविद्युत् हा विरोधाभास — &#x27;उत्पात नसलेली वीज&#x27; — हा कवीचा &#x27;क्षेत्रात निसर्गाची भयेसुद्धा निःशस्त्र होतात&#x27; असे म्हणण्याचा मार्ग आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-48.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 48</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-06/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 6 — Rāmāvatāravarṇanaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

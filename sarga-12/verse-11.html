@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 11 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 11</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">त्वामाहुर्भगवति विष्णुपादपद्म-संभूतामिति मुनयो महानुभावाः ।<br>तद्धूतेन्धकपरिमर्दनः कपर्दे श्रीगंगे सनति गृहाण सन्ममार्घ्यम् ।।११।।</div>
+  <div class="verse-iast">tvāmāhurbhagavati viṣṇupādapadma-saṃbhūtāmiti munayo mahānubhāvāḥ । taddhūtendhakaparimardanaḥ kaparde śrīgaṃge sanati gṛhāṇa sanmamārghyam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">त्वाम् आहुः भगवति विष्णु-पाद-पद्म-संभूताम् इति मुनयः महा-अनुभावाः । तत्-धूता (?) अन्धक-परिमर्दनः कपर्दे श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम् ।</div><div class="vig-iast">tvām āhuḥ bhagavati viṣṇu-pāda-padma-saṃbhūtām iti munayaḥ mahā-anubhāvāḥ । tat-dhūtā (?) andhaka-parimardanaḥ kaparde śrīgaṅge sa-nati gṛhāṇa sat mama arghyam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">त्वाम् + आहुः = त्वामाहुः · आहुः + भगवति = आहुर्भगवति · संभूताम् + इति = संभूतामिति · मुनयः + महा = मुनयो महा · महा + अनुभावाः = महानुभावाः · तत् + धूता = तद्धूता · धूता + अन्धक = धूतान्धक (छापील: तद्धूतेन्धक — ?) · ध्रुवपद: सन्मम, ममार्घ्यम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भगवति, महानुभावाः मुनयः त्वां विष्णुपादपद्मसंभूताम् इति आहुः; तत् (त्वम्) अन्धकपरिमर्दनः कपर्दे धूता (?) । श्रीगङ्गे, मम सत् अर्घ्यं सनति गृहाण ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O blessed one, the great-souled sages call you the one born from the lotus feet of Viṣṇu; and then you were borne in the matted locks of Śiva, the crusher of Andhaka. O Śrī Gaṅgā, here I praise you — accept the auspicious arghya I offer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भगवती, महानुभाव मुनी तू विष्णूच्या पदकमलातून निर्माण झालीस असे म्हणतात व नंतर तू अंधकासुराचा नाश करणाऱ्या शंकराच्या जटाजूटांत स्थान मिळवलेस. श्रीगंगे, हा मी तुझे स्तवन करीत आहे. मी दिलेल्या शुभ अर्घ्यांचा तू स्वीकार कर.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वाम्</span>
+    <span class="word-iast">tvām</span>
+  </div>
+  <div><span class="word-grammar">द्वि. एव.</span></div>
+  <div class="word-form">In this verse: त्वाम्</div>
+  <p class="word-meaning lang-en">you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुला</p>
+  <div class="word-usage">
+    <div class="deva">अहं त्वाम् एव शरणं गच्छामि।</div>
+    <div class="usage-iast">ahaṃ tvām eva śaraṇaṃ gacchāmi।</div>
+    <div class="usage-meaning lang-en">I take refuge in you alone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी तुझाच आश्रय घेतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आहुः</span>
+    <span class="word-iast">āhuḥ</span>
+  </div>
+  <div><span class="word-grammar">लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: आहुः</div>
+  <p class="word-meaning lang-en">they call</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणतात</p>
+  <div class="word-usage">
+    <div class="deva">पण्डिताः सत्यम् एव आहुः।</div>
+    <div class="usage-iast">paṇḍitāḥ satyam eva āhuḥ।</div>
+    <div class="usage-meaning lang-en">Scholars speak only the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पंडित सत्यच बोलतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भगवति</span>
+    <span class="word-iast">bhagavati</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: भगवति</div>
+  <p class="word-meaning lang-en">O blessed one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे भगवती</p>
+  <div class="word-usage">
+    <div class="deva">हे भगवति, तव दर्शनं देहि।</div>
+    <div class="usage-iast">he bhagavati, tava darśanaṃ dehi।</div>
+    <div class="usage-meaning lang-en">O blessed one, grant me your sight.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे भगवती, मला तुझे दर्शन दे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विष्णु-पाद-पद्म-संभूताम्</span>
+    <span class="word-iast">viṣṇu-pāda-padma-saṃbhūtām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: विष्णुपादपद्मसंभूताम्</div>
+  <p class="word-meaning lang-en">born of Viṣṇu&#x27;s lotus feet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णूच्या चरणकमलांतून निर्माण झालेली</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गां विष्णुपादपद्मसंभूतां वन्दे।</div>
+    <div class="usage-iast">gaṅgāṃ viṣṇupādapadmasaṃbhūtāṃ vande।</div>
+    <div class="usage-meaning lang-en">I bow to Gaṅgā, born of Viṣṇu&#x27;s lotus feet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विष्णूच्या चरणकमलांतून जन्मलेल्या गंगेला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इति</span>
+    <span class="word-iast">iti</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: इति</div>
+  <p class="word-meaning lang-en">thus</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे</p>
+  <div class="word-usage">
+    <div class="deva">धर्मं चर इति गुरुः अवदत्।</div>
+    <div class="usage-iast">dharmaṃ cara iti guruḥ avadat।</div>
+    <div class="usage-meaning lang-en">Practise dharma — so said the teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्माचरण कर — असे गुरू म्हणाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुनयः</span>
+    <span class="word-iast">munayaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: मुनयो</div>
+  <p class="word-meaning lang-en">sages</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनी</p>
+  <div class="word-usage">
+    <div class="deva">मुनयः वने तपः चरन्ति।</div>
+    <div class="usage-iast">munayaḥ vane tapaḥ caranti।</div>
+    <div class="usage-meaning lang-en">Sages practise austerities in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनी वनात तप करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महा-अनुभावाः</span>
+    <span class="word-iast">mahā-anubhāvāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: महानुभावाः</div>
+  <p class="word-meaning lang-en">great-souled</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महानुभाव</p>
+  <div class="word-usage">
+    <div class="deva">महानुभावाः मुनयः जगतः हितं चिन्तयन्ति।</div>
+    <div class="usage-iast">mahānubhāvāḥ munayaḥ jagataḥ hitaṃ cintayanti।</div>
+    <div class="usage-meaning lang-en">The great-souled sages think of the world&#x27;s welfare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महानुभाव मुनी जगाच्या हिताचा विचार करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्-धूता (?)</span>
+    <span class="word-iast">tat-dhūtā (?)</span>
+  </div>
+  <div><span class="word-grammar">—</span></div>
+  <div class="word-form">In this verse: तद्धूता (छापील तद्धूतेन्धक- मध्ये; मूळ अस्पष्ट)</div>
+  <p class="word-meaning lang-en">then borne (text obscure)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मग धारण केलेली (मूळ अस्पष्ट)</p>
+  <div class="word-usage">
+    <div class="deva">तद्धूता गङ्गा शम्भुना धृता आसीत्।</div>
+    <div class="usage-iast">taddhūtā gaṅgā śambhunā dhṛtā āsīt।</div>
+    <div class="usage-meaning lang-en">The borne Gaṅgā was held by Śambhu.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धारण केलेली गंगा शंभूने धरली होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्धक-परिमर्दनः</span>
+    <span class="word-iast">andhaka-parimardanaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अन्धकपरिमर्दनः</div>
+  <p class="word-meaning lang-en">crusher of Andhaka (Śiva)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अंधकासुराचा नाश करणारा (शिव)</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः अन्धकपरिमर्दनं शिवं नमन्ति।</div>
+    <div class="usage-iast">bhaktāḥ andhakaparimardanaṃ śivaṃ namanti।</div>
+    <div class="usage-meaning lang-en">Devotees bow to Śiva, the crusher of Andhaka.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त अंधकासुराचा नाश करणाऱ्या शिवाला नमन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कपर्दे</span>
+    <span class="word-iast">kaparde</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: कपर्दे</div>
+  <p class="word-meaning lang-en">in his matted hair</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जटाजूटात</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गा शम्भोः कपर्दे वसति।</div>
+    <div class="usage-iast">gaṅgā śambhoḥ kaparde vasati।</div>
+    <div class="usage-meaning lang-en">Gaṅgā dwells in Śambhu&#x27;s matted locks.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगा शंभूच्या जटांत वास करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम्</span>
+    <span class="word-iast">śrīgaṅge sa-nati gṛhāṇa sat mama arghyam</span>
+  </div>
+  <div><span class="word-grammar">ध्रुवपद</span></div>
+  <div class="word-form">In this verse: श्रीगंगे सनति गृहाण सन्ममार्घ्यम्</div>
+  <p class="word-meaning lang-en">refrain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार</p>
+  <div class="word-usage">
+    <div class="deva">कविः प्रत्येकं श्लोकं ध्रुवपदेन समापयति — श्रीगङ्गे सनति गृहाण सन्ममार्घ्यम्।</div>
+    <div class="usage-iast">kaviḥ pratyekaṃ ślokaṃ dhruvapadena samāpayati — śrīgaṅge sanati gṛhāṇa sanmamārghyam।</div>
+    <div class="usage-meaning lang-en">The poet closes every verse with the refrain — O Śrī Gaṅgā, accept my good arghya with obeisance.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कवी प्रत्येक श्लोक ध्रुवपदाने संपवतो — हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Gaṅgā belongs to both great gods: born from Viṣṇu&#x27;s feet, she dwells in Śiva&#x27;s locks — she is the living link between the Vaiṣṇava and Śaiva worlds. The verse thus quietly assures every pilgrim, whatever his chosen deity, that the tīrtha is his. Her journey through Brahmā&#x27;s pot, Viṣṇu&#x27;s feet and Śiva&#x27;s hair traces the whole cosmic descent of grace from heaven to earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गंगा दोन्ही महादेवांची आहे : विष्णूच्या चरणांतून जन्मलेली ती शिवाच्या जटांत वास करते — ती वैष्णव आणि शैव जगांमधील जिवंत दुवा आहे. त्यामुळे श्लोक प्रत्येक यात्रेकरूला — त्याचा इष्टदेव कोणताही असो — शांतपणे आश्वस्त करतो की हे तीर्थ त्याचे आहे. ब्रह्मदेवाच्या कलशातून, विष्णूच्या चरणांतून आणि शिवाच्या केशांतून तिचा अवतरणक्रम स्वर्गातून पृथ्वीवर येणाऱ्या कृपेचा संपूर्ण वैश्विक प्रवास रेखाटतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Gaṅgā&#x27;s two births are both purāṇic commonplaces: as Viṣṇupadī she springs from Viṣṇu&#x27;s foot in the Vāmana story, and when Bhagīratha leads her to earth she rests in Śiva&#x27;s matted locks so that her fall will not crush the world. Andhaka, the demon Śiva slew, is a stock epithet-partner here — the crusher of Andhaka simply means Śiva, whose hair is her second home.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गंगेचे दोन्ही जन्म पुराणांतील रूढ कथा आहेत : विष्णुपदी म्हणून ती वामनकथेत विष्णूच्या चरणांतून उगम पावते, आणि भगीरथ तिला पृथ्वीवर आणतो तेव्हा तिचा पात जगाला चिरडू नये म्हणून ती शिवाच्या जटांत विसावते. अंधक — शिवाने वधलेला दानव — इथे रूढ विशेषणसहचर आहे; अंधकपरिमर्दन म्हणजे निव्वळ शिव, ज्याचे केश तिचे दुसरे घर आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>12.11 carries a genuine textual doubt: the print reads तद्धूतेन्धकपरिमर्दनः, which the transcription tentatively splits as तत्-धूता (then borne) + अन्धक-परिमर्दन, but the junction is uncertain and the sense is reconstructed. The book&#x27;s Marathi reads the line as तू शंकराच्या जटाजूटांत स्थान मिळवलेस, and the enrichment follows that reading. The text is kept exactly as printed and flagged here rather than emended.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>१२.११ मध्ये खरा पाठशंकेचा मुद्दा आहे : छापील पाठ तद्धूतेन्धकपरिमर्दनः असा असून प्रतिलेखनात त्याचे तत्-धूता (मग धारण केलेली) + अन्धक-परिमर्दन असे तात्पुरते विभाजन केले आहे, पण संधीस्थळ अनिश्चित असून अर्थ पुनर्रचित आहे. पुस्तकाचे मराठी तू शंकराच्या जटाजूटांत स्थान मिळवलेस असे वाचते, आणि संवर्धन त्याच वाचनाला अनुसरते. पाठ छापीलप्रमाणेच ठेवून इथे नोंदवला आहे, दुरुस्त केलेला नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 10</div></a><a class="next" href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 12</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

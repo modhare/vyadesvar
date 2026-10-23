@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">न मया कापिलं स्वामिन्न वान्यदपि कर्हिचित् ।<br>स्तन्यं स्तैन्येन धयितं तुल्यं तच्छोणितेन मे ।।३२।।</div>
+  <div class="verse-iast">na mayā kāpilaṃ svāminna vānyadapi karhicit । stanyaṃ stainyena dhayitaṃ tulyaṃ tacchoṇitena me</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">न । मया । कापिलम् । स्वामिन् । न । वा । अन्यत् । अपि । कर्हिचित् । स्तन्यम् । स्तैन्येन । धयितम् । तुल्यम् । तत् । शोणितेन । मे ।</div><div class="vig-iast">na । mayā । kāpilam । svāmin । na । vā । anyat । api । karhicit । stanyam । stainyena । dhayitam । tulyam । tat । śoṇitena । me ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वा + अन्यत् = वान्यत् · अन्यत् + अपि = अन्यदपि (जश्त्व) · तत् + शोणितेन = तच्छोणितेन (त् + श → च्छ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे स्वामिन्, मया कापिलं न, अन्यत् वा अपि स्तन्यं कर्हिचित् स्तैन्येन न धयितम्; तत् मे शोणितेन तुल्यम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;O master, I have never drunk the Kapila&#x27;s milk, nor any other milk, by stealth, at any time; such stolen milk would be to me as blood itself.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;स्वामिन्, मी कपिलेचच काय कुठलेही दूध चोरलेले नाही.&#x27;&#x27; असं हडपलेले दूध हे माझ्या दृष्टीने त्या गाईच्या रक्तासारखेच आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कापिलम्</span>
+    <span class="word-iast">kāpilam</span>
+  </div>
+  <div><span class="word-grammar">कपिला + अण् — neuter acc. sg. adjective</span></div>
+  <div class="word-form">In this verse: कापिलं (स्तन्यम्)</div>
+  <p class="word-meaning lang-en">the Kapila&#x27;s (milk)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कपिलेचे (दूध)</p>
+  <div class="word-usage">
+    <div class="deva">सः कापिलं स्तन्यं न अपिबत् ।</div>
+    <div class="usage-iast">saḥ kāpilaṃ stanyaṃ na apibat ।</div>
+    <div class="usage-meaning lang-en">He did not drink the Kapila&#x27;s milk.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने कपिलेचे दूध प्यायले नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कर्हिचित्</span>
+    <span class="word-iast">karhicit</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (time adverb)</span></div>
+  <div class="word-form">In this verse: कर्हिचित् (न … कर्हिचित् = never)</div>
+  <p class="word-meaning lang-en">ever, at any time (with न: never)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कधीही</p>
+  <div class="word-usage">
+    <div class="deva">सः कर्हिचित् असत्यं न वदति ।</div>
+    <div class="usage-iast">saḥ karhicit asatyaṃ na vadati ।</div>
+    <div class="usage-meaning lang-en">He never speaks untruth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो कधीही खोटे बोलत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्तन्यम्</span>
+    <span class="word-iast">stanyam</span>
+  </div>
+  <div><span class="word-grammar">स्तन्य neuter 2nd decl. — nom. sg.</span></div>
+  <div class="word-form">In this verse: स्तन्यं स्तैन्येन</div>
+  <p class="word-meaning lang-en">breast-milk, milk from the udder</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्तनातील दूध</p>
+  <div class="word-usage">
+    <div class="deva">वत्सः स्तन्यं पिबति ।</div>
+    <div class="usage-iast">vatsaḥ stanyaṃ pibati ।</div>
+    <div class="usage-meaning lang-en">The calf drinks the breast-milk.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वासरू स्तनातील दूध पिते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्तैन्येन</span>
+    <span class="word-iast">stainyena</span>
+  </div>
+  <div><span class="word-grammar">स्तैन्य (स्तेन + ष्यञ्) neuter — instr. sg.</span></div>
+  <div class="word-form">In this verse: स्तैन्येन (धयितम्)</div>
+  <p class="word-meaning lang-en">by theft, stealthily</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोरीने</p>
+  <div class="word-usage">
+    <div class="deva">सः स्तैन्येन न गच्छति ।</div>
+    <div class="usage-iast">saḥ stainyena na gacchati ।</div>
+    <div class="usage-meaning lang-en">He does not go stealthily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो चोरून जात नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धयितम्</span>
+    <span class="word-iast">dhayitam</span>
+  </div>
+  <div><span class="word-grammar">√धे (to drink, to suck) + क्त — neuter nom. sg. past participle (regular form धीतम्; धयितम् kept for the metre)</span></div>
+  <div class="word-form">In this verse: धयितम् (तुल्यम्)</div>
+  <p class="word-meaning lang-en">has been drunk, sucked</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्यायलेले (√धे; नियमित रूप ‘धीतम्’, वृत्तासाठी)</p>
+  <div class="word-usage">
+    <div class="deva">तया स्तन्यं न धयितम् ।</div>
+    <div class="usage-iast">tayā stanyaṃ na dhayitam ।</div>
+    <div class="usage-meaning lang-en">The milk was not drunk by her.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिने दूध प्यायलेले नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तुल्यं तच्छोणितेन मे</span>
+    <span class="word-iast">tulyaṃ tacchoṇitena me</span>
+  </div>
+  <div><span class="word-grammar">तुल्य adj. neuter nom. sg.; तत् neuter; शोणित neuter instr. sg.; मे enclitic gen.</span></div>
+  <div class="word-form">In this verse: तत् + शोणितेन → तच्छोणितेन</div>
+  <p class="word-meaning lang-en">that would be to me like (drinking) her blood</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते (दूध) माझ्या रक्तासमान आहे (शपथ)</p>
+  <div class="word-usage">
+    <div class="deva">तत् मे शोणितेन तुल्यम् अस्ति ।</div>
+    <div class="usage-iast">tat me śoṇitena tulyam asti ।</div>
+    <div class="usage-meaning lang-en">That is to me like blood.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते मला रक्तासमान आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The cowherd&#x27;s oath is absolute: never, by stealth, at any time — and stolen milk would be to him as blood. In the Indian tradition milk is the cow&#x27;s transformed lifeblood, so to steal it is to drink blood; the oath thus binds him at the level of life itself. Such an oath, uttered by the innocent, compels heaven to answer — and it will, in the verses to come.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गुराख्याची शपथ निरपेक्ष आहे — कधीही, चोरून, कसलेच दूध नाही; आणि हडपलेले दूध त्याला रक्तासमान आहे. भारतीय परंपरेत दूध हे गायीचे रूपांतरित जीवनरक्त आहे, म्हणून त्याची चोरी म्हणजे रक्तपान; ही शपथ त्याला जीवनाच्या पातळीवर बांधते. निरपराध्याने उच्चारलेली अशी शपथ स्वर्गाला उत्तर देण्यास भाग पाडते — आणि पुढील श्लोकांत तसे होणारच आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>In Ayurveda, milk is the refined essence of the body&#x27;s dhatus, transformed from rasa through rakta — the cow&#x27;s milk is, in a real sense, her lifeblood made nourishment. Hence the cowherd&#x27;s oath: stolen milk would be blood to him, a self-curse of the most solemn kind, since to drink blood is abhorrent to dharma. Such an oath by an innocent man cannot go unanswered; the gods themselves must vindicate him — as the sequel shows.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आयुर्वेदात दूध हे शरीराच्या धातूंचे परिष्कृत सार आहे — रसापासून रक्तामार्गे रूपांतरित झालेले; गायीचे दूध हे खऱ्या अर्थाने तिचे पोषण बनलेले जीवनरक्त आहे. म्हणूनच गुराख्याची शपथ — हडपलेले दूध त्याला रक्तासमान; रक्तपान धर्माला घृणास्पद असल्याने ही अत्यंत गंभीर आत्मशापवजा प्रतिज्ञा आहे. निरपराध माणसाची अशी शपथ अनुत्तरित राहू शकत नाही; देवांनाच त्याची निर्दोषता सिद्ध करावी लागते — जसे पुढे दिसतेच.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>कापिलम् — कपिला + अण्, &#x27;the milk of Kapila&#x27;. धयितम् (√धे, &#x27;to drink, to suck&#x27;, + क्त): the regular past participle would be धीतम्, but the book&#x27;s धयितम् is kept as printed — the extra syllable serves the metre (noted in the sarga&#x27;s textual notes). तुल्यं तच्छोणितेन मे — &#x27;that would be equal to blood, for me&#x27;: the oath&#x27;s self-imprecation. Anustubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कापिलम् — कपिला + अण्, ‘कपिलेचे (दूध)’. धयितम् (√धे, ‘पिणे, चोखणे’, + क्त) — नियमित भूतकृदन्त धीतम् असे होईल, पण पुस्तकातील धयितम् छापीलप्रमाणेच ठेवले आहे — जादा अक्षर वृत्तासाठी उपयुक्त आहे (सर्गाच्या पाठ-चर्चा नोंदींत नमूद). तुल्यं तच्छोणितेन मे — ‘ते मला रक्तासमान होईल’ : शपथेतील आत्मशाप. अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

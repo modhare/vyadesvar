@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Sarga 3 — Devatāsthāpanaḥ</span>
+</div>
+<h1><span class="bl-en lang-en">Sarga 3 — Devatāsthāpanaḥ</span><span class="bl-mr lang-mr">तृतीयः सर्गः · देवतास्थापनः — नव्या भूमीत देवतांची प्रतिष्ठापना</span></h1>
+<div class="deva" style="font-size:1.4rem;color:var(--muted)">तृतीयः सर्गः · देवतास्थापनः</div>
+<p class="meta"><span class="bl-en lang-en">The installation of deities in the new land</span><span class="bl-mr lang-mr">नव्या भूमीत देवतांची प्रतिष्ठापना</span> &middot; <span class="bl-en lang-en">59 verses</span><span class="bl-mr lang-mr">59 श्लोक</span></p>
+<p>Rāvaṇa&#x27;s spies Śuka and Sāraṇa, posted to gather news of the world, see the sea driven back and a new coastal land with a radiant ascetic-warrior on it, and report to Rāvaṇa (3.1–7). From their description he recognizes Paraśurāma (3.8). He fears that if the whole ocean is pushed back, Laṅkā will lose its sea-moat (3.9), so he sets out in the Puṣpaka to make peace (3.10). Flying over the exposed seabed, he searches for Paraśurāma and sees his light on a mountaintop (3.11–14). He lands at a distance, walks up humbly and finds the sage in meditation on a rock, ash-smeared, with rudrākṣa beads and matted hair (3.15–17). Rāvaṇa first meditates on Śiva himself, then bows, and Paraśurāma offers him a seat (3.18–19). Rāvaṇa praises him, claims friendship through their shared deity Śiva, and asks what has happened to the sea (3.20–22). Paraśurāma explains that, having given the whole earth to a brahmin, he took this land from the sea with his arrow, and asks why Rāvaṇa has come (3.23–24). Rāvaṇa explains that Laṅkā is safe only because of its sea-fortress; if the sea retreats that far, mighty kings could march on it by land. He asks Paraśurāma to be content with the land he has (3.25–27). Paraśurāma says तथास्तु and Rāvaṇa flies home satisfied (3.28). The divine women held captive in Laṅkā hear of Paraśurāma&#x27;s greatness and rejoice (3.29). They decide he is the eternal Being born in Jamadagni&#x27;s house to destroy oppressive kings, that even Rāvaṇa has sought his protection, and that he will not ignore them (3.30–33). At night they escape by a secret path to Iṣupāta and play freely on the shore, safe under his protection (3.34–35). Stung by Rāvaṇa&#x27;s harsh words, bands of rākṣasas roam about to recapture them (3.36). They find the women resting at Paraśurāma&#x27;s feet and drag them off with clubs and blows, and the women&#x27;s cries reach the sage (3.37–38). Paraśurāma takes up bow, quiver and axe, raises one hand in अभय, and charges (3.39). His bowstring and lion-roar stun the rākṣasas; a fierce battle follows, his arrows never stop, and the rākṣasas fall like mountains whose wings have been cut (3.40–43). He offers the slain to the new land as a bali, consecrating it with their blood and their lotus-like heads (3.44). One man carries the news to Rāvaṇa (3.45). Having protected the goddesses, Paraśurāma decides the rākṣasas&#x27; crime must be punished and sets out in anger (3.46). He resolves to drown Laṅkā on Trikūṭa, with Rāvaṇa and all his allies, and grind it to dust (3.47). Brahmā, afraid for his creation, warns Rāvaṇa (3.48), while Laṅkā already spins like Kārtavīrya&#x27;s weapon in a whirlwind (3.49). Brahmā brings Rāvaṇa humbly to the angry sage, lays him at Paraśurāma&#x27;s feet and pleads for him: Rāvaṇa did not knowingly order the goddesses seized, his men have already been punished, and since Paraśurāma once gave him अभय, he should now forgive him (3.50–54). Paraśurāma&#x27;s anger subsides; he bows to Brahmā and takes leave (3.55). He installs the rescued goddesses in his land with boons and a share of authority, and foretells that its towns, villages, forests and cattle-settlements will soon be his domain, where people will settle and worship those deities (3.56–57). People will name places after the goddesses and hold great festivals in season, and the goddesses, guarding their shrines, will fulfil their worshippers&#x27; wishes (3.58). Delighted with his boons and with their share of his peerless land, the goddesses settle there happily (3.59). The sarga&#x27;s title, देवतास्थापनः (&quot;the installation of the deities&quot;), names this closing episode.</p>
+
+
+<h2><span class="bl-en lang-en">Verses</span><span class="bl-mr lang-mr">श्लोक</span></h2>
+
+<a class="verse-link" href="verse-1.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></span>
+  <span><span class="deva verse-first">अभिवेदितुं जगदुदन्तमथोऽधिकृतौ निशाचरपतेर्दयितौ ।।</span></span>
+</a>
+<a class="verse-link" href="verse-2.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 2</span><span class="bl-mr lang-mr">श्लोक 2</span></span>
+  <span><span class="deva verse-first">समुपेत्य रावणमतित्वरया विहितानती जगदतुस्तमिति ।।</span></span>
+</a>
+<a class="verse-link" href="verse-3.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 3</span><span class="bl-mr lang-mr">श्लोक 3</span></span>
+  <span><span class="deva verse-first">लवणाब्धिरास ननु सह्यगतश्चलतुंगभंगपरिरुग्णतटः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-4.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 4</span><span class="bl-mr lang-mr">श्लोक 4</span></span>
+  <span><span class="deva verse-first">महसा जितार्कदहनः सुमहापुरुषश्च तत्र युगदीर्घभुजः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-5.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></span>
+  <span><span class="deva verse-first">स बिभर्ति घोरपरशुं निशितं फणिभोगभीममहदिष्वसनम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-6.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></span>
+  <span><span class="deva verse-first">स पवित्रपाणियुगलोऽक्षगुणी भसिताङ्कितः सितविविक्ततनुः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-7.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 7</span><span class="bl-mr lang-mr">श्लोक 7</span></span>
+  <span><span class="deva verse-first">अनुमीयते ननु महापुरुषे जगदन्यथाकृतिविधावुचिते ।।</span></span>
+</a>
+<a class="verse-link" href="verse-8.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 8</span><span class="bl-mr lang-mr">श्लोक 8</span></span>
+  <span><span class="deva verse-first">इति दूतवाक्यमवधार्य धिया दशकन्धरः कथितलक्षणतः ।</span></span>
+</a>
+<a class="verse-link" href="verse-9.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 9</span><span class="bl-mr lang-mr">श्लोक 9</span></span>
+  <span><span class="deva verse-first">इति शङ्कितश्च स बभूव भृशं विमृशन्किमेष सकलाम्बुनिधिम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-10.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 10</span><span class="bl-mr lang-mr">श्लोक 10</span></span>
+  <span><span class="deva verse-first">अमुना च सामबलिना विहितं यदयं प्रधक्ष्यति जगद्रुषितः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-11.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></span>
+  <span><span class="deva verse-first">मुमुदे समुद्रजठरस्थमहीं स समीक्ष्य कामगमपुष्पकगः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-12.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 12</span><span class="bl-mr lang-mr">श्लोक 12</span></span>
+  <span><span class="deva verse-first">स ददर्श भानुकिरणग्लपितं तनुनीरनीचधरणीनिचितम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-13.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 13</span><span class="bl-mr lang-mr">श्लोक 13</span></span>
+  <span><span class="deva verse-first">अधिभूमि विद्रुमलताः पतिताश्चरतश्च शंखनिवहान्बहुशः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-14.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 14</span><span class="bl-mr lang-mr">श्लोक 14</span></span>
+  <span><span class="deva verse-first">मृगयंश्चचार रजनीचरपः पुरुषं तमद्भुतपराक्रमिणम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-15.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 15</span><span class="bl-mr lang-mr">श्लोक 15</span></span>
+  <span><span class="deva verse-first">अवरुह्य दूरमथ यानवरान्मृदुपादपद्मपरिलंघितभूः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-16.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 16</span><span class="bl-mr lang-mr">श्लोक 16</span></span>
+  <span><span class="deva verse-first">सुविशालशीतलशिलातलसद्वृसिकोत्तराजिनकृतासनकम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-17.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 17</span><span class="bl-mr lang-mr">श्लोक 17</span></span>
+  <span><span class="deva verse-first">उपनाभिबद्धकरसंपुटकं प्रणिमीलिताक्षकमलं विमलम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-18.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 18</span><span class="bl-mr lang-mr">श्लोक 18</span></span>
+  <span><span class="deva verse-first">समुपास्य चेतसि मुहूर्तमथो शिवमेकमुन्मिलितनेत्रयुगम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-19.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></span>
+  <span><span class="deva verse-first">तदुपाहितासनगतो जगदे मुनिमाशराधिपतिरीश मम ।।</span></span>
+</a>
+<a class="verse-link" href="verse-20.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 20</span><span class="bl-mr lang-mr">श्लोक 20</span></span>
+  <span><span class="deva verse-first">तव पौरुषस्य गणनाकरणे प्रभुरस्ति कोऽपि न जगत्त्रितये</span></span>
+</a>
+<a class="verse-link" href="verse-21.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 21</span><span class="bl-mr lang-mr">श्लोक 21</span></span>
+  <span><span class="deva verse-first">मम बंधुता च भवतार्हति नौ यदुपास्य एक उडुराजधरः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-22.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 22</span><span class="bl-mr lang-mr">श्लोक 22</span></span>
+  <span><span class="deva verse-first">किमिदं प्रवृत्तमुदधेरिति मे कथयस्व विस्मयवते भगवन् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-23.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 23</span><span class="bl-mr lang-mr">श्लोक 23</span></span>
+  <span><span class="deva verse-first">अवनी निहत्य नृपतीनखिलानखिलार्पिता द्विजनुषे यदतः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-24.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 24</span><span class="bl-mr lang-mr">श्लोक 24</span></span>
+  <span><span class="deva verse-first">वद किं प्रयोजनमिहागमने करवाणि वा हितकरं तव किम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-25.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></span>
+  <span><span class="deva verse-first">भगवन्सरस्वदुदरे नगरी ङ्किमस्तके सति लकेति मम ।।</span></span>
+</a>
+<a class="verse-link" href="verse-26.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 26</span><span class="bl-mr lang-mr">श्लोक 26</span></span>
+  <span><span class="deva verse-first">भवतोज्झितः सलिलराशिरसौ पुनरेवमेव तदवध्यपि चेत् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-27.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 27</span><span class="bl-mr lang-mr">श्लोक 27</span></span>
+  <span><span class="deva verse-first">तदलं तवेयमवनिः क्षितये प्रविरम्यतामपहतेरुदधेः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-28.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 28</span><span class="bl-mr lang-mr">श्लोक 28</span></span>
+  <span><span class="deva verse-first">अथ तं तथेति समुदीर्य गिरं विससर्ज निर्जररिपुं भृगुजः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-29.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 29</span><span class="bl-mr lang-mr">श्लोक 29</span></span>
+  <span><span class="deva verse-first">अथ तत्र यातुनिगृहीतदितितनयवैरिदासिकाः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-30.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 30</span><span class="bl-mr lang-mr">श्लोक 30</span></span>
+  <span><span class="deva verse-first">धरणीसुराधिकरराजसमुदयनिधनाय भूतले ।।</span></span>
+</a>
+<a class="verse-link" href="verse-31.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 31</span><span class="bl-mr lang-mr">श्लोक 31</span></span>
+  <span><span class="deva verse-first">रजनीचरोऽप्ययमुदग्रसुपुरुषपराक्रमः खलः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-32.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></span>
+  <span><span class="deva verse-first">चरमप्रदेशकमियाम भुवि भगवतो महामुनेः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-33.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 33</span><span class="bl-mr lang-mr">श्लोक 33</span></span>
+  <span><span class="deva verse-first">स तु दीनबंधुरभिपन्नशरणगतदेवबंदिकाः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-34.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 34</span><span class="bl-mr lang-mr">श्लोक 34</span></span>
+  <span><span class="deva verse-first">निशि मंत्रमित्थमुपपद्य रहसि सकलाः समूहिताः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-35.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 35</span><span class="bl-mr lang-mr">श्लोक 35</span></span>
+  <span><span class="deva verse-first">मुनिना कृताभयविधानमुदितमनसः सुरानुगाः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-36.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 36</span><span class="bl-mr lang-mr">श्लोक 36</span></span>
+  <span><span class="deva verse-first">अथ पंक्तिकंधरकठोरवचनरचितांगविक्रियाः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-37.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 37</span><span class="bl-mr lang-mr">श्लोक 37</span></span>
+  <span><span class="deva verse-first">जमदग्निनंदनपदस्थसुरपरिचरीकदंबकम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-38.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 38</span><span class="bl-mr lang-mr">श्लोक 38</span></span>
+  <span><span class="deva verse-first">उपनह्यमानपरिरुग्णमखभुगभिसारिकाकृतम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-39.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 39</span><span class="bl-mr lang-mr">श्लोक 39</span></span>
+  <span><span class="deva verse-first">धनुराततज्यमिषुधिं च परशुमतितीक्ष्णरोचिषम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-40.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 40</span><span class="bl-mr lang-mr">श्लोक 40</span></span>
+  <span><span class="deva verse-first">अथ तस्य चापगुणघोषनिभृतबधिरा ध्वनिग्रहाः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-41.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 41</span><span class="bl-mr lang-mr">श्लोक 41</span></span>
+  <span><span class="deva verse-first">प्रवरैश्च तेष्वभिबभूव तुमुलसमरोऽमरंजयैः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-42.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 42</span><span class="bl-mr lang-mr">श्लोक 42</span></span>
+  <span><span class="deva verse-first">युधि भार्गवस्य शरपंक्तिरिषुधिकरखेषु संतता ।।</span></span>
+</a>
+<a class="verse-link" href="verse-43.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 43</span><span class="bl-mr lang-mr">श्लोक 43</span></span>
+  <span><span class="deva verse-first">निहता निपेतुरधिभूमि गिरय इव कर्तितच्छदाः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-44.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 44</span><span class="bl-mr lang-mr">श्लोक 44</span></span>
+  <span><span class="deva verse-first">विनिपात्य राक्षसबलानि विहितबलिदानसत्क्रियाम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-45.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 45</span><span class="bl-mr lang-mr">श्लोक 45</span></span>
+  <span><span class="deva verse-first">दुरुदन्तहृत्परिबभूव रजनिचरनायकं प्रति ।।</span></span>
+</a>
+<a class="verse-link" href="verse-46.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 46</span><span class="bl-mr lang-mr">श्लोक 46</span></span>
+  <span><span class="deva verse-first">इति देवताः समभिरक्ष्य विहितखलशासनो मुनिः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-47.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 47</span><span class="bl-mr lang-mr">श्लोक 47</span></span>
+  <span><span class="deva verse-first">सपुरस्त्रिकूटकुभृतोऽद्य परुषतमशस्त्रशक्तितः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-48.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 48</span><span class="bl-mr lang-mr">श्लोक 48</span></span>
+  <span><span class="deva verse-first">इति निश्चयं मुनिभटस्य लयसमयवह्निवर्चसः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-49.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 49</span><span class="bl-mr lang-mr">श्लोक 49</span></span>
+  <span><span class="deva verse-first">समये तदा कलयति स्म मखहरवरस्य सर्वतः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-50.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 50</span><span class="bl-mr lang-mr">श्लोक 50</span></span>
+  <span><span class="deva verse-first">रजनीचरेशमुपगृह्य विधिरधिगतः शनैः शनैः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-51.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 51</span><span class="bl-mr lang-mr">श्लोक 51</span></span>
+  <span><span class="deva verse-first">पदयोर्निपात्य दशकंठमृषिवरमुवाच विश्वसृट् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-52.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 52</span><span class="bl-mr lang-mr">श्लोक 52</span></span>
+  <span><span class="deva verse-first">न धिया दिदेश भवदंतिगतसुरवधूविनिग्रहम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-53.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 53</span><span class="bl-mr lang-mr">श्लोक 53</span></span>
+  <span><span class="deva verse-first">इषुपातनाम भवदीयपदपरिगतो निशाचरः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-54.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 54</span><span class="bl-mr lang-mr">श्लोक 54</span></span>
+  <span><span class="deva verse-first">भवता भयं च कृतमस्य न तदितरथोचितं यतः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-55.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 55</span><span class="bl-mr lang-mr">श्लोक 55</span></span>
+  <span><span class="deva verse-first">इति लोकनाथसरलोक्तिशमितहृदयो विदां वरः ।।</span></span>
+</a>
+<a class="verse-link" href="verse-56.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 56</span><span class="bl-mr lang-mr">श्लोक 56</span></span>
+  <span><span class="deva verse-first">अथावितास्ताः सुरबंदिदेवताः समेत्य रामः स्वपदे यथायथम् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-57.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 57</span><span class="bl-mr lang-mr">श्लोक 57</span></span>
+  <span><span class="deva verse-first">अस्मिन्पुरग्रामवनव्रजाकराः पदे भविष्यंत्यचिरेण मामके ।।</span></span>
+</a>
+<a class="verse-link" href="verse-58.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 58</span><span class="bl-mr lang-mr">श्लोक 58</span></span>
+  <span><span class="deva verse-first">उदाहरिष्यन्ति विधाय वोऽभिधाः काले करिष्यन्ति च सन्महोत्सवान् ।।</span></span>
+</a>
+<a class="verse-link" href="verse-59.html">
+  <span class="verse-num"><span class="bl-en lang-en">Verse 59</span><span class="bl-mr lang-mr">श्लोक 59</span></span>
+  <span><span class="deva verse-first">भृगुपतिवरदानैरेवमालोभितास्ता-</span></span>
+</a>
+<div class="pagenav"><a href="../sarga-02/index.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 2 — Kṣetranirmāṇaḥ</div></a><a class="next" href="../sarga-04/index.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 4 — Śambhuprasādaḥ</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

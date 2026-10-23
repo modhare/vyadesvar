@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 27 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 27</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 27</span><span class="bl-mr lang-mr">श्लोक 27</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">देहलीतोरणद्वारतुलास्तम्भसमृद्धिमत् ।<br>विशिष्टशिल्पिकौशल्यं नानाचित्रमनोरमम् ।।२७।।</div>
+  <div class="verse-iast">dehalītoraṇadvāratulāstambhasamṛddhimat । viśiṣṭaśilpikauśalyaṃ nānācitramanoramam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">देहली-तोरण-द्वार-तुला-स्तम्भ-समृद्धिमत् । विशिष्ट-शिल्पि-कौशल्यम् । नाना-चित्र-मनोरमम् ।</div><div class="vig-iast">dehalī-toraṇa-dvāra-tulā-stambha-samṛddhimat । viśiṣṭa-śilpi-kauśalyam । nānā-citra-manoramam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">(समासांतर्गत संधी नाही — द्वन्द्व + बहुव्रीहि समास)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(सः प्रासादं) देहलीतोरणद्वारतुलास्तम्भसमृद्धिमत् विशिष्टशिल्पिकौशल्यं नानाचित्रमनोरमं (चक्रे); सुविशालैः शिलापट्टैः गर्भागारं व्यचीक्लपत्; मुखतः च विशालाम् अद्भुतां मुखशालां विदधे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>It was rich in thresholds, festooned arches, doors, beams and pillars; it charmed the eye with its many paintings and bore the mark of distinguished craftsmen&#x27;s skill.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते मंदिर देवड्या, तोरणद्वारे, तुळया व खांब यांच्या विपुलतेने युक्त, नाना चित्रांनी आकर्षक वाटणारे व विशिष्ट कारागीरांच्या कौशल्याने नटलेले होते. त्याचा गाभारा अत्यंत विशाल अशा शिलाखण्डांनी बनवलेला होता व त्याच्यासमोरच विस्तीर्ण आणि अद्भुत अशी मुखशाळा बांधली होती.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देहली</span>
+    <span class="word-iast">dehalī</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular (compound member)</span></div>
+  <div class="word-form">In this verse: देहली</div>
+  <p class="word-meaning lang-en">threshold, portico</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उंबरठा/देवडी</p>
+  <div class="word-usage">
+    <div class="deva">गृहस्य देहली पुष्पैः शोभिता।</div>
+    <div class="usage-iast">gṛhasya dehalī puṣpaiḥ śobhitā.</div>
+    <div class="usage-meaning lang-en">The threshold of the house was adorned with flowers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घराचा उंबरठा फुलांनी सुशोभित होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तोरण</span>
+    <span class="word-iast">toraṇa</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular (compound member)</span></div>
+  <div class="word-form">In this verse: तोरण</div>
+  <p class="word-meaning lang-en">arch, festooned gateway</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमान</p>
+  <div class="word-usage">
+    <div class="deva">मन्दिरद्वारे सुन्दरं तोरणं बद्धम्।</div>
+    <div class="usage-iast">mandiradvāre sundaraṃ toraṇaṃ baddham.</div>
+    <div class="usage-meaning lang-en">A beautiful arch was erected at the temple door.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिराच्या दारावर सुंदर तोरण बांधले होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्वार</span>
+    <span class="word-iast">dvāra</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular (compound member)</span></div>
+  <div class="word-form">In this verse: द्वार</div>
+  <p class="word-meaning lang-en">door, gate</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दार</p>
+  <div class="word-usage">
+    <div class="deva">प्रासादस्य द्वारं महत् आसीत्।</div>
+    <div class="usage-iast">prāsādasya dvāraṃ mahat āsīt.</div>
+    <div class="usage-meaning lang-en">The gate of the palace was grand.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महालाचे दार भव्य होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तुला</span>
+    <span class="word-iast">tulā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular (compound member)</span></div>
+  <div class="word-form">In this verse: तुला</div>
+  <p class="word-meaning lang-en">beam, rafter</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुळई</p>
+  <div class="word-usage">
+    <div class="deva">गृहस्य तुला दृढा अस्ति।</div>
+    <div class="usage-iast">gṛhasya tulā dṛḍhā asti.</div>
+    <div class="usage-meaning lang-en">The beam of the house is strong.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घराची तुळई बळकट आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्तम्भ</span>
+    <span class="word-iast">stambha</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular (compound member)</span></div>
+  <div class="word-form">In this verse: स्तम्भ</div>
+  <p class="word-meaning lang-en">pillar</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खांब</p>
+  <div class="word-usage">
+    <div class="deva">सभायां स्तम्भाः शिल्पिताः सन्ति।</div>
+    <div class="usage-iast">sabhāyāṃ stambhāḥ śilpitāḥ santi.</div>
+    <div class="usage-meaning lang-en">In the hall there are sculpted pillars.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सभामंडपात कोरीव खांब आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">…समृद्धिमत्</span>
+    <span class="word-iast">…samṛddhimat</span>
+  </div>
+  <div><span class="word-grammar">adjective, neuter nominative/accusative singular; samṛddhi + matup (tail of the long compound)</span></div>
+  <div class="word-form">In this verse: समृद्धिमत्</div>
+  <p class="word-meaning lang-en">rich in, abundant with (all the above)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यांनी समृद्ध</p>
+  <div class="word-usage">
+    <div class="deva">समृद्धिमन् नगरं सर्वान् आकर्षति।</div>
+    <div class="usage-iast">samṛddhiman nagaraṃ sarvān ākarṣati.</div>
+    <div class="usage-meaning lang-en">The prosperous city attracts everyone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समृद्ध नगर सर्वांना आकर्षित करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विशिष्टशिल्पिकौशल्यम्</span>
+    <span class="word-iast">viśiṣṭaśilpikauśalyam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative singular (bahuvrīhi: viśiṣṭa-śilpi-kauśalya)</span></div>
+  <div class="word-form">In this verse: विशिष्टशिल्पिकौशल्यम्</div>
+  <p class="word-meaning lang-en">distinguished by the skill of master craftsmen</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विशेष कारागिरांचे कौशल्य असलेले</p>
+  <div class="word-usage">
+    <div class="deva">अस्य मन्दिरस्य विशिष्टशिल्पिकौशल्यं सर्वान् विस्मापयति।</div>
+    <div class="usage-iast">asya mandirasya viśiṣṭaśilpikauśalyaṃ sarvān vismāpayati.</div>
+    <div class="usage-meaning lang-en">This temple&#x27;s excellence of craftsmanship astonishes everyone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या मंदिराची उत्तम कारागिरी सर्वांना आश्चर्यचकित करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नानाचित्रमनोरमम्</span>
+    <span class="word-iast">nānācitramanoramam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative singular (bahuvrīhi)</span></div>
+  <div class="word-form">In this verse: नानाचित्रमनोरमम्</div>
+  <p class="word-meaning lang-en">delightful with many paintings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक चित्रांनी मनोहर</p>
+  <div class="word-usage">
+    <div class="deva">कवेर्गृहं नानाचित्रमनोरमम् आसीत्।</div>
+    <div class="usage-iast">kaver gṛhaṃ nānācitramanoramam āsīt.</div>
+    <div class="usage-meaning lang-en">The poet&#x27;s house was charming with many paintings.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कवीचे घर अनेक चित्रांनी मोहक होते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The māhātmya lingers over architectural detail to declare that this is no ordinary shrine but a divine palace worthy of Vyadeshwar. Craftsmanship is itself an offering — śilpa as sevā: every carved pillar and painted panel is a prayer fixed in stone. The &#x27;many pictures&#x27; delight the devotee&#x27;s eye and prepare the mind for darśana, turning the approach to the sanctum into a gradual ascent from beauty to the Beautiful One.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>माहात्म्य वास्तुकलेच्या तपशिलात रेंगाळते ते हे सांगण्यासाठी की हे कोणतेही साधारण देवळ नव्हे, तर व्याडेश्वराला शोभणारा दिव्य महाल आहे. कारागिरी ही स्वतः अर्पणच आहे — सेवा म्हणून शिल्प: प्रत्येक कोरलेला खांब व चित्रित फलक ही दगडात स्थिर केलेली प्रार्थनाच. &#x27;अनेक चित्रे&#x27; भक्ताच्या डोळ्यांना आनंद देतात आणि दर्शनासाठी मन तयार करतात, गाभाऱ्याकडचा प्रवास सौंदर्यापासून सौंदर्यमूर्तीपर्यंतच्या क्रमिक आरोहणात बदलतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The āgamas and śilpa-śāstras treat every member of the temple — threshold (dehalī), arch (toraṇa), door, beam (tulā) and pillar (stambha) — as a limb of the divine body of the shrine, each to be fashioned with prescribed care. When the text praises the skill of distinguished craftsmen, it records the traditional understanding that the śilpin&#x27;s art is a consecrated craft: the temple is a prayer built by many hands over many months.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आगम व शिल्पशास्त्रे मंदिराच्या प्रत्येक अंगाला — उंबरठा (देहली), कमान (तोरण), दार, तुळई व खांब — देवळाच्या दिव्य देहाचे अवयव मानतात, प्रत्येकाला विहित काळजीने घडवावे असे सांगतात. ग्रंथ जेव्हा विशेष कारागिरांच्या कौशल्याची प्रशंसा करतो, तेव्हा तो परंपरागत समज नोंदवतो की शिल्प्याची कला ही पवित्र केलेली कला आहे: मंदिर ही अनेक हातांनी अनेक महिने बांधलेली प्रार्थनाच.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The whole verse is descriptive: three long neuter adjectives (समृद्धिमत्, कौशल्यम्, मनोरमम्) characterizing the temple built in 10.26. The first pāda is a single dvandva-style enumeration (dehalī-toraṇa-dvāra-tulā-stambha) capped by समृद्धिमत्, &#x27;rich in.&#x27; The book&#x27;s Marathi rendering folds in the sense of the following verse as well; the Sanskrit of 10.27 itself covers only the ornamentation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>संपूर्ण श्लोक वर्णनात्मक आहे: १०.२६ मध्ये बांधलेल्या मंदिराचे वैशिष्ट्य सांगणारी तीन दीर्घ नपुंसकलिंगी विशेषणे (समृद्धिमत्, कौशल्यम्, मनोरमम्). प्रथम चरण ही एकच द्वंद्व-शैलीची मोजदाद आहे (देहली-तोरण-द्वार-तुला-स्तम्भ) जिचा शेवट समृद्धिमत्, &#x27;यांनी समृद्ध,&#x27; ने होतो. पुस्तकाच्या मराठी अर्थात पुढील श्लोकाचाही आशय मिसळलेला आहे; १०.२७ च्या संस्कृतात केवळ अलंकरणाचेच वर्णन आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 26</div></a><a class="next" href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 28</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

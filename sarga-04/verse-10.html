@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 10 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 10</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 10</span><span class="bl-mr lang-mr">श्लोक 10</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Bhujaṅgaprayāta</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">नमः शुद्धकर्पूरगौराय तस्मै परस्मात्पराय त्रिलोकीश्वराय ।<br>कृपासागरायेभचर्माम्बराय धरानिर्जराधीशसच्छेखराय ।।१०।।</div>
+  <div class="verse-iast">namaḥ śuddhakarpūragaurāya tasmai parasmātparāya trilokīśvarāya । kṛpāsāgarāyebhacarmāmbarāya dharānirjarādhīśasacchekharāya</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">नमः । शुद्ध-कर्पूर-गौराय । तस्मै । परस्मात् । पराय । त्रिलोकी-ईश्वराय । कृपा-सागराय । इभ-चर्म-अम्बराय । धरा-निर्जर-अधीश-सत्-शेखराय ।</div><div class="vig-iast">namaḥ । śuddha-karpūra-gaurāya । tasmai । parasmāt । parāya । trilokī-īśvarāya । kṛpā-sāgarāya । ibha-carma-ambarāya । dharā-nirjara-adhīśa-sat-śekharāya ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">परस्मात् + पराय = परस्मात्पराय · त्रिलोकी + ईश्वराय = त्रिलोकीश्वराय (सवर्णदीर्घ) · सागराय + इभ = सागरायेभ (गुण) · चर्म + अम्बराय = चर्माम्बराय · निर्जर + अधीश = निर्जराधीश · सत् + शेखराय = सच्छेखराय (त् + श् → च्छ्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">शुद्धकर्पूरगौराय परस्मात् पराय त्रिलोकीश्वराय कृपासागराय इभचर्माम्बराय धरानिर्जराधीशसच्छेखराय तस्मै नमः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Salutation to Him — white as pure camphor, beyond the beyond, Lord of the three worlds; to that ocean of mercy, clad in the elephant&#x27;s hide, the true crown among the lords of the earth and of the immortals.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या पराकाष्ठेच्या गौरवर्ण परात्पर अशा त्रैलोक्येश्वराला, त्या कृपासागराला, गजाजिनरूपी वस्त्र धारण करणाऱ्या व पृथ्वी आणि देवता यांच्या अधिपतीत श्रेष्ठ असलेल्या शंकराला माझा प्रणाम असो.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> (ड्छे अक्षर स असावे)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुद्धकर्पूरगौराय</span>
+    <span class="word-iast">śuddhakarpūragaurāya</span>
+  </div>
+  <div><span class="word-grammar">dative singular of the tatpuruṣa adjective कर्पूरगौर (शुद्ध qualifies कर्पूर)</span></div>
+  <div class="word-form">In this verse: शुद्धकर्पूरगौराय</div>
+  <p class="word-meaning lang-en">to Him white as pure camphor</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुद्ध कापरासारख्या गौरवर्णाच्या</p>
+  <div class="word-usage">
+    <div class="deva">शुद्ध-कर्पूर-गौराय महादेवाय नमः ।</div>
+    <div class="usage-iast">śuddha-karpūra-gaurāya mahādevāya namaḥ ।</div>
+    <div class="usage-meaning lang-en">Salutation to Mahādeva, white as pure camphor.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुद्ध कापरासारख्या गौरवर्ण महादेवाला नमस्कार.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परस्मात् पराय</span>
+    <span class="word-iast">parasmāt parāya</span>
+  </div>
+  <div><span class="word-grammar">ablative singular of पर (in comparison) + dative singular of पर — &#x27;beyond the beyond&#x27;</span></div>
+  <div class="word-form">In this verse: परस्मात् पराय</div>
+  <p class="word-meaning lang-en">to Him beyond the beyond</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परात्पर</p>
+  <div class="word-usage">
+    <div class="deva">श्रुतिः ब्रह्म परस्मात् परम् इति वदति ।</div>
+    <div class="usage-iast">śrutiḥ brahma parasmāt param iti vadati ।</div>
+    <div class="usage-meaning lang-en">The śruti declares Brahman to be beyond the beyond.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रुती ब्रह्म परात्पर आहे असे सांगते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इभचर्माम्बराय</span>
+    <span class="word-iast">ibhacarmāmbarāya</span>
+  </div>
+  <div><span class="word-grammar">dative singular, bahuvrīhi (इभचर्म एव अम्बरं यस्य — &#x27;whose garment is the elephant-hide&#x27;)</span></div>
+  <div class="word-form">In this verse: इभचर्माम्बराय</div>
+  <p class="word-meaning lang-en">to Him clad in the elephant&#x27;s hide</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गजचर्म हेच वस्त्र असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">इभ-चर्म-अम्बराय शम्भवे नमः ।</div>
+    <div class="usage-iast">ibha-carma-ambarāya śambhave namaḥ ।</div>
+    <div class="usage-meaning lang-en">Salutation to Śambhu, clad in the elephant&#x27;s hide.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गजचर्म वस्त्र असलेल्या शंभूला नमस्कार.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धरानिर्जराधीशसच्छेखराय</span>
+    <span class="word-iast">dharānirjarādhīśasacchekharāya</span>
+  </div>
+  <div><span class="word-grammar">dative singular, bahuvrīhi (emended from -मड्छेखराय; सत्-शेखर = &#x27;true crown&#x27;)</span></div>
+  <div class="word-form">In this verse: धरानिर्जराधीशसच्छेखराय</div>
+  <p class="word-meaning lang-en">to Him the true crown among the lords of earth and of the immortals</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भूदेवांच्या (ब्राह्मणांच्या, धरानिर्जर) अधिपतींचा श्रेष्ठ मुकुटमणी असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">धरा-निर्जर-अधीश-सत्-शेखराय ईशाय नमः ।</div>
+    <div class="usage-iast">dharā-nirjara-adhīśa-sat-śekharāya īśāya namaḥ ।</div>
+    <div class="usage-meaning lang-en">Salutation to the Lord, the true crown of the lords of earth and of the immortals.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवरील व स्वर्गातील देवांच्या अधिपतींचा खरा मुकुटमणी असलेल्या ईशाला नमस्कार.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The hymn opens with prostration built from Śiva&#x27;s reconciled opposites — dazzling white yet terrible, beyond all yet an ocean of mercy, wearing death itself (the flayed elephant&#x27;s hide) as His garment. Each epithet is a rung of a ladder: the visible form (gaura, gajacarma) leads upward to the transcendent (parasmāt-para). To bow before such a Lord is itself the teaching — through praise the mind climbs from the formed to the formless.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्तोत्राची सुरुवात शंकराच्या परस्परविरोधी गुणांच्या सलोख्याने होते — तो झगझगीत गौरवर्णी असूनही भयंकर आहे, सर्वांच्या पलीकडे असूनही कृपेचा सागर आहे, मृत्यूचेच (गजाचे) चर्म वस्त्र म्हणून नेसतो. प्रत्येक विशेषण एक पायरी आहे — रूपातून (गौर, गजचर्म) निराकाराकडे (परात्पर) वाटचाल होते. अशा प्रभूला केलेला नमस्कार हेच शिकवण आहे — स्तुतीतून मन सगुणातून निर्गुणाकडे जाते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Karpūragaura is the classical dhyāna-image of Śiva (cf. the well-known &#x27;karpūragauraṃ karuṇāvatāram&#x27;); the elephant-hide points to the Gajāsura-vadha legend — Śiva flayed the elephant-demon and wore its hide (Liṅga Purāṇa). Dharanirjara — &#x27;gods of the earth&#x27; — means the brāhmaṇas, of whom Śiva is the crown; the epithet thus links the sthala&#x27;s brāhmaṇa-settler theme with the Lord&#x27;s grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कर्पूरगौर हे शंकराचे शास्त्रीय ध्यानरूप आहे (&#x27;कर्पूरगौरं करुणावतारम्&#x27; हे प्रसिद्ध ध्यानश्लोक); गजचर्म हे गजासुरवधाच्या आख्यायिकेकडे निर्देश करते — शंकराने गजासुराचे चर्म काढून ते नेसले (लिंगपुराण). धरानिर्जर म्हणजे &#x27;पृथ्वीचे देव&#x27; = ब्राह्मण; त्यांचा शंकर मुकुटमणी आहे — या स्थलाच्या ब्राह्मणवसाहत विषयाशी प्रभूच्या कृपेचा दुवा साधला आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The metre shifts here from Upajāti to Bhujaṅgaprayāta — the serpentine gait (ya-ya-ya-gaṇa pattern), apt for Śiva&#x27;s praise. Textual note: धरानिर्जराधीशमड्छेखराय → धरानिर्जराधीशसच्छेखराय, following the book&#x27;s own note (the ड्छे syllable should read स): सत् + शेखर, with त् + श् → च्छ् — &#x27;the true crown&#x27; (Marathi: अधिपतीत श्रेष्ठ). It scans.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे वृत्त उपजातीतून भुजंगप्रयातात बदलते (य-य-य-गणांची सर्पिल चाल — शंकराच्या स्तुतीला साजेशी). पाठ-चर्चा : धरानिर्जराधीशमड्छेखराय → धरानिर्जराधीशसच्छेखराय — पुस्तकाच्या स्वतःच्या नोंदीनुसार (ड्छे हे अक्षर स असावे) : सत् + शेखर, त् + श् → च्छ्; &#x27;खरा मुकुटमणी&#x27; (मराठी &#x27;अधिपतीत श्रेष्ठ&#x27;); वृत्त जुळते.</p></div></div>
+
+<div class="pagenav"><a href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 9</div></a><a class="next" href="verse-11.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 11</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 20 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 20</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 20</span><span class="bl-mr lang-mr">श्लोक 20</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">प्रपन्नान् तारत्येष रुग्दारिद्र्यमपमृत्युतः ।<br>तारकेश्वर इत्याख्या यथार्था सा ततोऽभवत् ।।२०।।</div>
+  <div class="verse-iast">prapannān tāratyeṣa rugdāridryamapamṛtyutaḥ । tārakeśvara ityākhyā yathārthā sā tato&#x27;bhavat</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">प्रपन्नान् । तारति । एषः । रुक्-दारिद्र्यम् (?) । अपमृत्युतः । तारकेश्वरः । इति । आख्या । यथार्था । सा । ततः । अभवत् ।</div><div class="vig-iast">prapannān । tārati । eṣaḥ । ruk-dāridryam (?) । apamṛtyutaḥ । tārakeśvaraḥ । iti । ākhyā । yathārthā । sā । tataḥ । abhavat ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तारति + एषः = तारत्येषः (यण्) · एषः + रुक् = एष रुक् · रुक् + दारिद्र्य = रुग्दारिद्र्य (जश्त्व) · दारिद्र्यम् + अपमृत्युतः = दारिद्र्यमपमृत्युतः · तारकेश्वरः + इति = तारकेश्वर इति · इति + आख्या = इत्याख्या · ततः + अभवत् = ततोऽभवत्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">एषः प्रपन्नान् रुग्दारिद्र्यम् अपमृत्युतः (च) तारति; ततः सा ‘तारकेश्वरः’ इति आख्या यथार्था अभवत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>He carries the surrendered across — beyond disease and poverty, beyond untimely death; hence the name &#x27;Tārakeśvara&#x27; became truly apt.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शरण आलेल्या व्यक्तींना रोग दारिद्र्य व अपमृत्यू यांपासून हा वाचविणारा आहे म्हणूनच याला तारकेश्वर असे सार्थ नाव पडले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तारति</span>
+    <span class="word-iast">tārati</span>
+  </div>
+  <div><span class="word-grammar">3rd person singular present of तारि (the causal/denominative stem of √तृ॒, &#x27;to cross&#x27;), used here for the regular तारयति, &#x27;causes to cross, carries across, saves&#x27;</span></div>
+  <div class="word-form">In this verse: तारति — present as printed; stem तारि</div>
+  <p class="word-meaning lang-en">carries across, delivers, saves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तारतो (= तारयति; नावाची व्युत्पत्ती)</p>
+  <div class="word-usage">
+    <div class="deva">भक्तं दुःखात् सः तारति</div>
+    <div class="usage-iast">bhaktaṃ duḥkhāt saḥ tārati</div>
+    <div class="usage-meaning lang-en">He carries the devotee across, out of suffering.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो भक्ताला दुःखातून तारतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुग्दारिद्र्यम् (?)</span>
+    <span class="word-iast">rugdāridryam (?)</span>
+  </div>
+  <div><span class="word-grammar">compound रुक्/रुज् f. (&#x27;disease&#x27;) + दारिद्र्य n. (&#x27;poverty&#x27;) as printed, with an anomalous final -म् (see Editor&#x27;s note); the form is retained exactly as in the source</span></div>
+  <div class="word-form">In this verse: रुग्दारिद्र्यम् (?) — as printed, anomalous final -म्</div>
+  <p class="word-meaning lang-en">disease and poverty</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रोग व दारिद्र्य (‘म्’ असामान्य; अपेक्षित ‘रुग्दारिद्र्यापमृत्युतः’)</p>
+  <div class="word-usage">
+    <div class="deva">रोगं दारिद्र्यं च सः नाशयति</div>
+    <div class="usage-iast">rogaṃ dāridryaṃ ca saḥ nāśayati</div>
+    <div class="usage-meaning lang-en">He destroys disease and poverty.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो रोग व दारिद्र्य यांचा नाश करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपमृत्युतः</span>
+    <span class="word-iast">apamṛtyutaḥ</span>
+  </div>
+  <div><span class="word-grammar">अपमृत्यु m. (&#x27;untimely death&#x27;) + तस् (tasil) suffix forming an ablative adverb, &#x27;from untimely death&#x27;</span></div>
+  <div class="word-form">In this verse: अपमृत्युतः — adverb as printed</div>
+  <p class="word-meaning lang-en">from premature, untimely death</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अकालमृत्यूपासून</p>
+  <div class="word-usage">
+    <div class="deva">धर्मात् अपमृत्युतः रक्षा भवति</div>
+    <div class="usage-iast">dharmāt apamṛtyutaḥ rakṣā bhavati</div>
+    <div class="usage-meaning lang-en">Through righteousness comes protection from untimely death.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्मामुळे अकालमृत्यूपासून रक्षण होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आख्या</span>
+    <span class="word-iast">ākhyā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; आ-√ख्यā + अङ्</span></div>
+  <div class="word-form">In this verse: आख्या — nominative singular as printed</div>
+  <p class="word-meaning lang-en">name, appellation</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाव</p>
+  <div class="word-usage">
+    <div class="deva">तस्य आख्या सर्वत्र प्रसिद्धा</div>
+    <div class="usage-iast">tasya ākhyā sarvatra prasiddhā</div>
+    <div class="usage-meaning lang-en">His name is famous everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे नाव सर्वत्र प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथार्था</span>
+    <span class="word-iast">yathārthā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular of the adjective यथार्थ (यथा + अर्थ), agreeing with आख्या</span></div>
+  <div class="word-form">In this verse: यथार्था — nominative singular as printed</div>
+  <p class="word-meaning lang-en">true to its meaning, apt, well-named</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अर्थानुरूप, सार्थ</p>
+  <div class="word-usage">
+    <div class="deva">इयं आख्या यथार्था वर्तते</div>
+    <div class="usage-iast">iyaṃ ākhyā yathārthā vartate</div>
+    <div class="usage-meaning lang-en">This name is truly apt.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे नाव खरोखर सार्थ आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The name is the teaching: Tārakeśvara is &#x27;the Lord who carries across,&#x27; and the verse makes the etymology the doctrine — the surrendered (prapanna) are ferried beyond disease, poverty, and untimely death, the three cliffs on which a human life can wreck. Śaraṇāgati needs no other qualification: to come for refuge is itself the whole sādhana. The aptness of the name (yathārthā ākhyā) assures the devotee that the promise is built into the very syllables he chants.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नाव हीच शिकवण आहे: तारकेश्वर म्हणजे &#x27;तरून नेणारा ईश्वर&#x27;, आणि श्लोक ही व्युत्पत्तीच सिद्धान्त बनवतो — शरण आलेले (प्रपन्न) रोग, दारिद्र्य व अकालमृत्यू या मानवी जीवन उद्ध्वस्त करणाऱ्या तीन खडकांपलीकडे नेले जातात. शरणागतीला अन्य कोणत्याही पात्रतेची गरज नाही: आश्रयासाठी येणे हीच संपूर्ण साधना आहे. नावाची यथार्थता (यथार्था आख्या) भक्ताला खात्री देते की आश्वासन त्याच्या जपाच्या अक्षरांतच बांधलेले आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Stotra and purāṇa literature delights in nirukta — deriving a deity&#x27;s name from his function, the &#x27;name proved by its meaning.&#x27; Tārakeśvara, &#x27;the Lord who carries across,&#x27; matches the classical Tāraka epithet (as in Tāraka-brahma, the mantra that ferries the chanter across saṃsāra). And the prapanna — the surrendered — needs no other qualification: the Bhagavadgītā&#x27;s &#x27;śaraṇaṃ vraja&#x27; (18.66) and the whole śaraṇāgati tradition proclaim that refuge itself is the sufficient cause of grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्तोत्रे व पुराणे देवाच्या नावाची व्युत्पत्ती त्याच्या कार्यावरून काढण्यात आनंद मानतात — &#x27;अर्थानेच सिद्ध झालेले नाव&#x27;. तारकेश्वर — &#x27;तरून नेणारा ईश्वर&#x27; — हे तारक या प्रसिद्ध विशेषणाशी जुळते (तारकब्रह्माप्रमाणे, जो मंत्र जपणाऱ्याला संसारापलीकडे नेतो). आणि प्रपन्नाला — शरण आलेल्याला — अन्य कोणत्याही पात्रतेची गरज नाही: भगवद्गीतेचे &#x27;शरणं व्रज&#x27; (१८.६६) आणि संपूर्ण शरणागतीपरंपरा घोषित करते की आश्रय हेच कृपेचे पुरेसे कारण आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The printed &#x27;rugdāridryam&#x27; ends in an anomalous -m; the source gloss itself expects the reading &#x27;rugdāridryāpamṛtyutaḥ&#x27; — disease, poverty, and untimely death in a single compound governed by one ablative. The text is retained exactly as printed, with the anomaly recorded here rather than silently emended. Note also &#x27;tārati&#x27; used for the regular tārayati: the poet bends the verb so that the etymology of the name rings out in the very line that explains it — nirukta performed, not merely stated.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>छापील &#x27;रुग्दारिद्र्यम्&#x27; चा शेवटचा &#x27;-म्&#x27; असामान्य आहे; स्रोतटीप स्वतःच &#x27;रुग्दारिद्र्यापमृत्युतः&#x27; — रोग, दारिद्र्य व अकालमृत्यू एकाच सामासिक शब्दात, एकाच पंचमीने नियंत्रित — अशी अपेक्षित पाठ मानते. पाठ जसाच्या तसा ठेवला आहे; विसंगती इथे नोंदवली आहे, नकळत दुरुस्त केलेली नाही. &#x27;तारति&#x27; हे नियमित तारयति ऐवजी वापरले आहे हेही लक्षात घ्या: नाव स्पष्ट करणाऱ्या ओळीतच व्युत्पत्ती निनादावी म्हणून कवी क्रियापद वाकवतो — निरुक्त केवळ सांगितलेले नव्हे, तर साकार केलेले.</p></div></div>
+
+<div class="pagenav"><a href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 19</div></a><a class="next" href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 21</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

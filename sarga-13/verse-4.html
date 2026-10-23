@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 4 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 4</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 4</span><span class="bl-mr lang-mr">श्लोक 4</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">राजन् ग्राममहं स्रष्टुमिच्छामि विषये तव ।<br>वाडेशस्याश्रयेणेह क्षारसागररोधसि ।।४।।</div>
+  <div class="verse-iast">rājan grāmamahaṃ sraṣṭumicchāmi viṣaye tava । vāḍeśasyāśrayeṇeha kṣārasāgararodhasi</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">राजन् ग्रामम् अहम् स्रष्टुम् इच्छामि विषये तव । वाडेशस्य आश्रयेण इह क्षार-सागर-रोधसि ।</div><div class="vig-iast">rājan grāmam aham sraṣṭum icchāmi viṣaye tava । vāḍeśasya āśrayeṇa iha kṣāra-sāgara-rodhasi ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ग्रामम् + अहम् = ग्राममहम् · स्रष्टुम् + इच्छामि = स्रष्टुमिच्छामि · वाडेशस्य + आश्रयेण = वाडेशस्याश्रयेण · आश्रयेण + इह = आश्रयेणेह (गुण)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">‘राजन्, अहं तव विषये इह क्षारसागररोधसि वाडेशस्य आश्रयेण ग्रामं स्रष्टुम् इच्छामि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O king, I wish to found a village in your realm, here on the shore of the salt sea, under the shelter of Vāḍeśa.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राजा, तुझ्या राज्यात वाडेशाच्या आश्रयाने या सागराच्या तीरावर मी एक गाव (बहुधा आजचे गुहागर) स्थापन करू इच्छितो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राजन्</span>
+    <span class="word-iast">rājan</span>
+  </div>
+  <div><span class="word-grammar">पुं. सं. एव.</span></div>
+  <div class="word-form">In this verse: राजन्</div>
+  <p class="word-meaning lang-en">O king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे राजा</p>
+  <div class="word-usage">
+    <div class="deva">राजन् प्रजाः पाहि ।</div>
+    <div class="usage-iast">rājan prajāḥ pāhi ।</div>
+    <div class="usage-meaning lang-en">O king, protect the people!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे राजा, प्रजेचे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ग्रामम्</span>
+    <span class="word-iast">grāmam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: ग्रामम्</div>
+  <p class="word-meaning lang-en">a village</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाव</p>
+  <div class="word-usage">
+    <div class="deva">सः ग्रामम् अपश्यत् ।</div>
+    <div class="usage-iast">saḥ grāmam apaśyat ।</div>
+    <div class="usage-meaning lang-en">He saw the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने गाव पाहिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अहम्</span>
+    <span class="word-iast">aham</span>
+  </div>
+  <div><span class="word-grammar">प्र. एव.</span></div>
+  <div class="word-form">In this verse: अहम्</div>
+  <p class="word-meaning lang-en">I</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी</p>
+  <div class="word-usage">
+    <div class="deva">अहम् गच्छामि ।</div>
+    <div class="usage-iast">aham gacchāmi ।</div>
+    <div class="usage-meaning lang-en">I go.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्रष्टुम्</span>
+    <span class="word-iast">sraṣṭum</span>
+  </div>
+  <div><span class="word-grammar">तुमुन्, सृज्</span></div>
+  <div class="word-form">In this verse: स्रष्टुम्</div>
+  <p class="word-meaning lang-en">to found</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्माण करायला</p>
+  <div class="word-usage">
+    <div class="deva">नगरम् स्रष्टुम् सः उद्यतः ।</div>
+    <div class="usage-iast">nagaram sraṣṭum saḥ udyataḥ ।</div>
+    <div class="usage-meaning lang-en">He is ready to found a city.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नगर स्थापायला तो सिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इच्छामि</span>
+    <span class="word-iast">icchāmi</span>
+  </div>
+  <div><span class="word-grammar">इष्, लट्, उ.पु. एव.</span></div>
+  <div class="word-form">In this verse: इच्छामि</div>
+  <p class="word-meaning lang-en">wish</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इच्छितो</p>
+  <div class="word-usage">
+    <div class="deva">अहम् ज्ञातुम् इच्छामि ।</div>
+    <div class="usage-iast">aham jñātum icchāmi ।</div>
+    <div class="usage-meaning lang-en">I wish to know.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला जाणून घ्यायचे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विषये</span>
+    <span class="word-iast">viṣaye</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: विषये</div>
+  <p class="word-meaning lang-en">in the realm</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राज्यात</p>
+  <div class="word-usage">
+    <div class="deva">तस्य विषये शान्तिः आसीत् ।</div>
+    <div class="usage-iast">tasya viṣaye śāntiḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">There was peace in his realm.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या राज्यात शांती होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तव</span>
+    <span class="word-iast">tava</span>
+  </div>
+  <div><span class="word-grammar">ष. एव. (युष्मद्)</span></div>
+  <div class="word-form">In this verse: तव</div>
+  <p class="word-meaning lang-en">your</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझ्या</p>
+  <div class="word-usage">
+    <div class="deva">तव गृहम् कुत्र अस्ति ।</div>
+    <div class="usage-iast">tava gṛham kutra asti ।</div>
+    <div class="usage-meaning lang-en">Where is your house?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझे घर कोठे आहे?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेशस्य</span>
+    <span class="word-iast">vāḍeśasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: वाडेशस्य</div>
+  <p class="word-meaning lang-en">of Vāḍeśa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेशाच्या</p>
+  <div class="word-usage">
+    <div class="deva">वाडेशस्य कृपया सर्वम् सिद्धम् ।</div>
+    <div class="usage-iast">vāḍeśasya kṛpayā sarvam siddham ।</div>
+    <div class="usage-meaning lang-en">By Vāḍeśa&#x27;s grace all is accomplished.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेशाच्या कृपेने सर्व सिद्ध झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आश्रयेण</span>
+    <span class="word-iast">āśrayeṇa</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.</span></div>
+  <div class="word-form">In this verse: आश्रयेण</div>
+  <p class="word-meaning lang-en">under the protection</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आश्रयाने</p>
+  <div class="word-usage">
+    <div class="deva">गुरोः आश्रयेण सः अवर्धत ।</div>
+    <div class="usage-iast">guroḥ āśrayeṇa saḥ avardhata ।</div>
+    <div class="usage-meaning lang-en">Under the teacher&#x27;s shelter he prospered.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूच्या आश्रयाने तो वाढला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इह</span>
+    <span class="word-iast">iha</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: इह</div>
+  <p class="word-meaning lang-en">here</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथे</p>
+  <div class="word-usage">
+    <div class="deva">इह एव तिष्ठ ।</div>
+    <div class="usage-iast">iha eva tiṣṭha ।</div>
+    <div class="usage-meaning lang-en">Stay right here.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथेच थांब.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षार-सागर-रोधसि</span>
+    <span class="word-iast">kṣāra-sāgara-rodhasi</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.; रोधस्</span></div>
+  <div class="word-form">In this verse: क्षारसागररोधसि</div>
+  <p class="word-meaning lang-en">on the shore of the salt sea</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खाऱ्या समुद्राच्या तीरावर</p>
+  <div class="word-usage">
+    <div class="deva">क्षारसागररोधसि मन्दिरम् अस्ति ।</div>
+    <div class="usage-iast">kṣārasāgararodhasi mandiram asti ।</div>
+    <div class="usage-meaning lang-en">There is a temple on the shore of the salt sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खाऱ्या समुद्राच्या तीरावर मंदिर आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Śrīdhara&#x27;s proposal is laid at the confluence of three authorities: the king&#x27;s realm, the sea-shore, and above all the āśraya — the sheltering grace — of Vāḍeśa. A sthala-māhātmya understands every foundation as an act of devotion before it is an act of administration: the village is to rise not by human will alone but under the Lord&#x27;s protection. The sea-shore setting quietly recalls Paraśurāma&#x27;s reclamation of the Aparānta coast from the ocean, the founding myth that runs through the whole kāvya.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्रीधराचा प्रस्ताव तीन अधिकारांच्या संगमावर मांडला आहे: राजाचे राज्य, समुद्रतीर, आणि सर्वांत वर वाडेशाचा आश्रय — त्याची संरक्षक कृपा. स्थलमाहात्म्य प्रत्येक स्थापनेला प्रशासनापूर्वी भक्तीचे कृत्य मानते: गाव केवळ मानवी इच्छेने नव्हे, तर ईश्वराच्या संरक्षणाखाली उभे राहणार आहे. समुद्रतीराची पार्श्वभूमी परशुरामाने समुद्रापासून अपरान्त किनारा परत मिळवल्याची आठवण मौनाने करून देते — हा संपूर्ण काव्यात भिनलेला स्थापनामिथक आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The kṣārasāgara (salt sea) is the puranic name for the ocean as one of the seven seas (sapta-sāgara); &#x27;on the shore of the salt sea&#x27; is the standard way sthala-texts locate Konkan settlements. Founding a grāma &#x27;under the āśraya&#x27; of the deity mirrors the agrahāra foundations of the Dharmaśāstra — villages granted to brāhmaṇas under divine and royal sanction together.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्षारसागर (खारा समुद्र) हे सप्तसागरांपैकी समुद्राचे पौराणिक नाव आहे; &#x27;खाऱ्या समुद्राच्या तीरावर&#x27; हा स्थलग्रंथ कोकणातील वस्त्यांचे स्थान सांगण्याचा नेहमीचा प्रकार आहे. देवतेच्या &#x27;आश्रयाखाली&#x27; ग्राम स्थापणे हे धर्मशास्त्रातील अग्रहार-स्थापनांना जुळते — दैवी व राजकीय अशा दुहेरी संमतीने ब्राह्मणांना दिलेली गावे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The book&#x27;s Marathi rendering identifies this proposed village as &#x27;probably today&#x27;s Guhagar&#x27; — the editor keeps that identification as the book&#x27;s own, flagged here rather than asserted as fact. Metre: Anuṣṭubh. स्रष्टुम् is the tumun infinitive of √सृज् (&#x27;to create, found&#x27;); with इच्छामि it forms the desiderative construction &#x27;I wish to found&#x27;. Note the sandhi chains: ग्राममहं = ग्रामम् + अहम्; स्रष्टुमिच्छामि = स्रष्टुम् + इच्छामि; वाडेशस्याश्रयेणेह = वाडेशस्य + आश्रयेण + इह.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुस्तकाचा मराठी अर्थ या प्रस्तावित गावाला &#x27;बहुधा आजचे गुहागर&#x27; म्हणून ओळखतो — संपादकाने ही ओळख पुस्तकाची स्वतःची म्हणून, तथ्य म्हणून ठाम न सांगता येथे नोंदवली आहे. वृत्त: अनुष्टुभ्. स्रष्टुम् हे √सृज् (&#x27;निर्माण करणे, स्थापणे&#x27;) धातूचे तुमुन् रूप आहे; इच्छामि बरोबर &#x27;मला स्थापायचे आहे&#x27; हा इच्छार्थक प्रयोग बनतो. संधिमाला लक्षात घ्या: ग्राममहं = ग्रामम् + अहम्; स्रष्टुमिच्छामि = स्रष्टुम् + इच्छामि; वाडेशस्याश्रयेणेह = वाडेशस्य + आश्रयेण + इह.</p></div></div>
+
+<div class="pagenav"><a href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 3</div></a><a class="next" href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 5</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

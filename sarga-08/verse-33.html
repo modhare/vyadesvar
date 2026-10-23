@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 33 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 33</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 33</span><span class="bl-mr lang-mr">श्लोक 33</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">देवानां दर्शनं नास्मिन्धर्मश्चास्मिन्बतैकपात् ।<br>अतः स्थास्यामि गूढोऽहं ज्ञात्वा कालविपर्ययम् ।।३३।।</div>
+  <div class="verse-iast">devānāṃ darśanaṃ nāsmindharmaścāsminbataikapāt । ataḥ sthāsyāmi gūḍho&#x27;haṃ jñātvā kālaviparyayam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">देवानाम् । दर्शनम् । न । अस्मिन् । धर्मः । च । अस्मिन् । बत । एकपात् । अतः । स्थास्यामि । गूढः । अहम् । ज्ञात्वा । काल-विपर्ययम् ।</div><div class="vig-iast">devānām । darśanam । na । asmin । dharmaḥ । ca । asmin । bata । ekapāt । ataḥ । sthāsyāmi । gūḍhaḥ । aham । jñātvā । kāla-viparyayam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">न + अस्मिन् = नास्मिन् · धर्मः + च = धर्मश्च · च + अस्मिन् = चास्मिन् · बत + एकपात् = बतैकपात् (वृद्धि) · गूढः + अहम् = गूढोऽहम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अस्मिन् (युगे) देवानां दर्शनं न (भविष्यति); बत, अस्मिन् धर्मः च एकपात् । अतः कालविपर्ययं ज्ञात्वा अहं गूढः स्थास्यामि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In this age there will be no sight of the gods, and — alas — dharma here will stand upon a single foot. Knowing this reversal of the times, I shall therefore remain hidden.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या युगात देवांचे दर्शन घडणार नाही व धर्म केवळ एकचतुर्थांश (शब्दशः एकच पाय रोवून) च शिल्लक राहील. म्हणून काळाचा विपर्यास लक्षात घेऊन मी गुप्त स्वरूपात राहीन.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देवानां दर्शनम्</span>
+    <span class="word-iast">devānāṃ darśanam</span>
+  </div>
+  <div><span class="word-grammar">देवानाम् — देव (अकारान्त पुं.) षष्ठी बहुवचन; दर्शनम् — √दृश् + ल्युट्, नपुंसकलिङ्ग, प्रथमा एकवचन</span></div>
+  <div class="word-form">In this verse: देवानां दर्शनम्</div>
+  <p class="word-meaning lang-en">the gods&#x27; darśana, the sight of the gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांचे दर्शन</p>
+  <div class="word-usage">
+    <div class="deva">कलौ देवानाम् दर्शनम् दुर्लभम् भवति ।</div>
+    <div class="usage-iast">kalau devānām darśanam durlabham bhavati .</div>
+    <div class="usage-meaning lang-en">In Kali, the sight of the gods is rare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कलीत देवांचे दर्शन दुर्मिळ होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बत</span>
+    <span class="word-iast">bata</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (खेदोद्गारवाची)</span></div>
+  <div class="word-form">In this verse: बत</div>
+  <p class="word-meaning lang-en">alas! (exclamation of dismay)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरेरे</p>
+  <div class="word-usage">
+    <div class="deva">बत, अधुना धर्मः एकपात् एव ।</div>
+    <div class="usage-iast">bata, adhunā dharmaḥ ekapāt eva .</div>
+    <div class="usage-meaning lang-en">Alas, now dharma stands on a single foot only.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हाय, आता धर्म एकाच पायावर उभा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकपात्</span>
+    <span class="word-iast">ekapāt</span>
+  </div>
+  <div><span class="word-grammar">एकपाद (दकारान्त पुं.) प्रथमा एकवचन (पाद् → पात्)</span></div>
+  <div class="word-form">In this verse: एकपात्</div>
+  <p class="word-meaning lang-en">standing on a single foot</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकाच पायावर उभा (धर्मवृषभाचे चार पाय — कृतयुगात ४, कलियुगात १)</p>
+  <div class="word-usage">
+    <div class="deva">धर्मवृषभः कलौ एकपात् तिष्ठति ।</div>
+    <div class="usage-iast">dharmavṛṣabhaḥ kalau ekapāt tiṣṭhati .</div>
+    <div class="usage-meaning lang-en">The dharma-bull stands on one foot in Kali.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कलीत धर्मवृषभ एकाच पायावर उभा असतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कालविपर्ययम्</span>
+    <span class="word-iast">kālaviparyayam</span>
+  </div>
+  <div><span class="word-grammar">कालविपर्यय (अकारान्त पुं.) द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: कालविपर्ययम्</div>
+  <p class="word-meaning lang-en">the reversal of the times, the turning upside-down of the age</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळाचे उलटे फिरणे</p>
+  <div class="word-usage">
+    <div class="deva">ज्ञानी कालविपर्ययम् ज्ञात्वा शान्तः भवति ।</div>
+    <div class="usage-iast">jñānī kālaviparyayam jñātvā śāntaḥ bhavati .</div>
+    <div class="usage-meaning lang-en">The wise one, knowing the reversal of the times, remains calm.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्ञानी काळाचे उलटे फिरणे जाणून शांत राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गूढः स्थास्यामि</span>
+    <span class="word-iast">gūḍhaḥ sthāsyāmi</span>
+  </div>
+  <div><span class="word-grammar">गूढः — √गुह् + क्त, पुं. प्रथमा एकवचन; स्थास्यामि — √स्था, लृट्, उत्तमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: गूढः स्थास्यामि</div>
+  <p class="word-meaning lang-en">I shall remain hidden</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुप्त राहीन</p>
+  <div class="word-usage">
+    <div class="deva">अहम् कलौ गूढः स्थास्यामि ।</div>
+    <div class="usage-iast">aham kalau gūḍhaḥ sthāsyāmi .</div>
+    <div class="usage-meaning lang-en">I shall remain hidden in the Kali age.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी कलीत गुप्त राहीन.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s withdrawal is not abandonment but a response to the Kali-yuga condition: with dharma reduced to a single foot — only satya, truth, surviving of the dharma-bull&#x27;s four legs — direct vision of the gods ceases. The age of visible divine intervention gives way to the age of the hidden God, whose presence must be sought inwardly and through the consecrated image. For the pilgrim, this verse teaches the devotional economy of Kali: grace does not vanish; it becomes subtle.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाचा तिरोधान हा त्याग नसून कलियुगाच्या अवस्थेला अनुसरून केलेली व्यवस्था आहे. धर्मवृषभाचे तप, शौच, दया हे तीन पाय गेले आणि केवळ सत्य हा एकच पाय उरला, तेव्हा देवांचे प्रत्यक्ष दर्शन थांबते. दृश्य दैवी हस्तक्षेपाचे युग संपून गुप्त देवाचे युग सुरू होते; त्याची उपस्थिती अंतर्मुखतेने आणि प्रतिष्ठित मूर्तीतून शोधावी लागते. भाविकासाठी हा श्लोक कलीतील भक्तीचे तत्त्व सांगतो — कृपा नाहीशी होत नाही, ती सूक्ष्म होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The four-legged dharma-bull — tapas, śauca, dayā and satya — is the classic Puranic image of dharma&#x27;s decline through the yugas: standing on four feet in Kṛta, three in Tretā, two in Dvāpara, and on truth alone in Kali (Bhāgavata Purāṇa 1.16–17, 12.2; Viṣṇu Purāṇa 4.24, paraphrased). With dharma so reduced, the Purāṇas teach that the gods cease to appear in person, and the age turns to worship through the Lord&#x27;s name and image. Paraśurāma&#x27;s words here are this kāvya&#x27;s local statement of that pan-Puranic doctrine.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>धर्मवृषभाचे चार पाय — तप, शौच, दया आणि सत्य — ही युगांतील धर्माच्या ऱ्हासाची प्रसिद्ध पौराणिक प्रतिमा आहे : कृतयुगात चार पायांवर, त्रेतायुगात तीन, द्वापारात दोन आणि कलीत केवळ सत्यावर उभा (भागवत १.१६–१७, १२.२; विष्णुपुराण ४.२४). धर्म एवढा क्षीण झाला की देव प्रत्यक्ष दिसेनासे होतात आणि युग भगवंताच्या नामाकडे व मूर्तीकडे वळते, असे पुराणे सांगतात. परशुरामाचे हे वचन याच सर्वपौराणिक सिद्धान्ताचे या काव्यातील स्थानिक रूप आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The key word ekapāt (&#x27;on a single foot&#x27;) is printed एकपात्, nominative singular of ekapāda (pād becoming pāt before the pause) — dharma standing on one leg. This verse is the doctrinal pivot of the sarga Rāmatirodhānaḥ (&#x27;the concealment of Rāma&#x27;): it supplies the theological reason for the withdrawal explained in vv. 33–34 and the remedy prescribed in vv. 38–40. Cross-ref: Bhāgavata 12.2 on dharma standing on one foot in Kali.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मुख्य शब्द एकपात् (&#x27;एकाच पायावर&#x27;) हा एकपाद या शब्दाचे प्रथमा एकवचन आहे (विरामापूर्वी पाद्‌चा पात् होतो) — एका पायावर उभा असलेला धर्म. हा श्लोक रामतिरोधानः या सर्गाचा सैद्धान्तिक केंद्रबिंदू आहे : ३३–३४ मधील तिरोधानाचे तात्त्विक कारण आणि ३८–४० मधील उपाय यांना तो आधार देतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-32.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 32</div></a><a class="next" href="verse-34.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 34</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

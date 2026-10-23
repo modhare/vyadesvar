@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 58 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 58</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 58</span><span class="bl-mr lang-mr">श्लोक 58</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vaṃśastha/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">उदाहरिष्यन्ति विधाय वोऽभिधाः काले करिष्यन्ति च सन्महोत्सवान् ।।<br>निजालयत्राणविधानतत्परास्तदिष्टकामान्परिपूरयिष्यथ ।।५८।।</div>
+  <div class="verse-iast">udāhariṣyanti vidhāya vo&#x27;bhidhāḥ kāle kariṣyanti ca sanmahotsavān । । nijālayatrāṇavidhānatatparāstadiṣṭakāmānparipūrayiṣyatha</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">उदाहरिष्यन्ति । विधाय । वः । अभिधाः । काले । करिष्यन्ति । च । सत्-महोत्सवान् । निज-आलय-त्राण-विधान-तत्पराः । तत् । इष्ट-कामान् । परिपूरयिष्यथ ।</div><div class="vig-iast">udāhariṣyanti । vidhāya । vaḥ । abhidhāḥ । kāle । kariṣyanti । ca । sat-mahotsavān । nija-ālaya-trāṇa-vidhāna-tatparāḥ । tat । iṣṭa-kāmān । paripūrayiṣyatha ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वः + अभिधाः = वोऽभिधाः (विसर्ग → ओ, पूर्वरूप) · सत् + महोत्सवान् = सन्महोत्सवान् (त् → न्, अनुनासिक) · महा + उत्सव = महोत्सव (गुण) · निज + आलय = निजालय · तत्पराः + तत् = तत्परास्तत् (विसर्ग → स्) · तत् + इष्ट = तदिष्ट (त् → द्) · कामान् + परिपूरयिष्यथ = कामान्परिपूरयिष्यथ</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(ते जनाः) वः अभिधाः विधाय उदाहरिष्यन्ति, काले च सन्महोत्सवान् करिष्यन्ति; (यूयं) निजालयत्राणविधानतत्पराः (सत्यः) तदिष्टकामान् परिपूरयिष्यथ ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>They will give you names and utter them, and in due season they will hold splendid festivals; and you, ever attentive to the protection of your own temples, shall fulfil their cherished desires.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते (लोक) तुमची नावे ठेवून त्यांचा उच्चार करतील व योग्य काळी उत्तम महोत्सव करतील. (तुम्ही देवता) आपल्या देवालयांच्या रक्षणासाठी तत्पर राहून त्यांच्या इष्ट इच्छा पूर्ण कराल.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वः अभिधाः विधाय उदाहरिष्यन्ति</span>
+    <span class="word-iast">vaḥ abhidhāḥ vidhāya udāhariṣyanti</span>
+  </div>
+  <div><span class="word-grammar">accusative plural feminine (abhidha) + gerund (lyap), vi + √dha + future 3rd plural, ud + a + √hri</span></div>
+  <div class="word-form">In this verse: वोऽभिधाः</div>
+  <p class="word-meaning lang-en">having given names to you, they will utter (them)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुमची नावे ठेवून ती उच्चारतील (ग्रामदेवतांची नावे)</p>
+  <div class="word-usage">
+    <div class="deva">जनाः देवतायाः अभिधाः विधाय उदाहरिष्यन्ति ।</div>
+    <div class="usage-iast">janah devatayah abhidhah vidhaya udaharishyanti ।</div>
+    <div class="usage-meaning lang-en">People will give the goddess names and utter them.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोक देवतेची नावे ठेवून त्यांचा उच्चार करतील.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काले</span>
+    <span class="word-iast">kāle</span>
+  </div>
+  <div><span class="word-grammar">locative singular masculine (temporal use)</span></div>
+  <div class="word-form">In this verse: काले</div>
+  <p class="word-meaning lang-en">in due season, at the right time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य वेळी</p>
+  <div class="word-usage">
+    <div class="deva">काले वर्षा भवति ।</div>
+    <div class="usage-iast">kale varsha bhavati ।</div>
+    <div class="usage-meaning lang-en">Rain comes in due season.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य काळी पाऊस पडतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सन्महोत्सवान्</span>
+    <span class="word-iast">sanmahotsavān</span>
+  </div>
+  <div><span class="word-grammar">karmadharaya compound (santah mahotsavah), accusative plural masculine</span></div>
+  <div class="word-form">In this verse: सन्महोत्सवान्</div>
+  <p class="word-meaning lang-en">splendid great festivals</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चांगले मोठे उत्सव (जत्रा)</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामे सन्महोत्सवान् जनाः कुर्वन्ति ।</div>
+    <div class="usage-iast">grame sanmahotsavan janah kurvanti ।</div>
+    <div class="usage-meaning lang-en">In the village people hold splendid festivals.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावात लोक चांगले मोठे उत्सव करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निजालयत्राणविधानतत्पराः</span>
+    <span class="word-iast">nijālayatrāṇavidhānatatparāḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrihi compound (tatparanta), nominative plural</span></div>
+  <div class="word-form">In this verse: निजालयत्राणविधानतत्पराः</div>
+  <p class="word-meaning lang-en">ever attentive to the protection of one&#x27;s own temples</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या (भक्तांच्या) घरांचे रक्षण करण्यात तत्पर</p>
+  <div class="word-usage">
+    <div class="deva">देवताः निजालयत्राणविधानतत्पराः सन्ति ।</div>
+    <div class="usage-iast">devatah nijalayatrana vidhanatatparah santi ।</div>
+    <div class="usage-meaning lang-en">The goddesses are ever attentive to protecting their temples.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवता आपल्या देवालयांच्या रक्षणासाठी तत्पर असतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तदिष्टकामान्</span>
+    <span class="word-iast">tadiṣṭakāmān</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha compound, accusative plural masculine</span></div>
+  <div class="word-form">In this verse: तदिष्टकामान्</div>
+  <p class="word-meaning lang-en">their cherished desires, their wishes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांच्या इष्ट इच्छा</p>
+  <div class="word-usage">
+    <div class="deva">देवः भक्तानां तदिष्टकामान् पूरयति ।</div>
+    <div class="usage-iast">devah bhaktanam tadishtakaman purayati ।</div>
+    <div class="usage-meaning lang-en">God fulfils the cherished desires of devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव भक्तांच्या इष्ट इच्छा पूर्ण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिपूरयिष्यथ</span>
+    <span class="word-iast">paripūrayiṣyatha</span>
+  </div>
+  <div><span class="word-grammar">future 2nd plural (lrit), causal of pari + √pur</span></div>
+  <div class="word-form">In this verse: परिपूरयिष्यथ</div>
+  <p class="word-meaning lang-en">you (all) will fully fulfil</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्ण कराल (लृट्, मध्यम पुरुष बहुवचन)</p>
+  <div class="word-usage">
+    <div class="deva">यूयं भक्तानां कामान् परिपूरयिष्यथ ।</div>
+    <div class="usage-iast">yuyam bhaktanam kaman paripurayishyatha ।</div>
+    <div class="usage-meaning lang-en">You will fully fulfil the devotees&#x27; wishes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुम्ही भक्तांच्या इच्छा पूर्ण कराल.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Name, festival, and answered prayer — the verse maps the complete life of popular Hindu worship. The deity is not distant: she dwells in her temple, guards it, and answers. The bond is mutual and sealed — worship offered in season, grace returned in fulfilment. For the devotee, it is a reminder that the village festival (jatra) is not mere custom but the living enactment of Parashurama&#x27;s own ordinance.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नाव, उत्सव आणि पूर्ण झालेली इच्छा — हे श्लोक लोकधर्मीय पूजेचे संपूर्ण जीवन रेखाटते. देवता दूर नसते: ती आपल्या देवळात राहते, त्याचे रक्षण करते आणि इच्छा पूर्ण करते. बंध परस्पर आणि दृढ आहे — योग्य काळी केलेली पूजा, पूर्ततेने परतलेली कृपा. भक्तासाठी ही आठवण आहे की गावची जत्रा हा केवळ रिवाज नसून प्रत्यक्ष परशुरामाच्या आज्ञेचे जिवंत पालन आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The threefold pattern — naming (abhidha), seasonal festival (sanmahotsava), and fulfilment of desires (ishtakamapurana) — is the classic description of gramadevata worship in the Deccan, where annual jatras remain the center of village religious life. That the goddesses themselves guard their temples (nijalayatrana-vidhanatatparah) reflects the belief that the deity actively protects her own shrine and her devotees. The verse thus roots living Konkan practice in Parashurama&#x27;s founding word.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्रिविध पद्धती — नामकरण (अभिधा), योग्य काळचा उत्सव (सन्महोत्सव) आणि इच्छापूर्ती (इष्टकामपूरण) — हे दख्खनमधील ग्रामदेवता-पूजेचे अभिजात वर्णन आहे, जिथे वार्षिक जत्रा गावच्या धार्मिक जीवनाचे केंद्र राहिल्या आहेत. देवता स्वतःच आपल्या देवळांचे रक्षण करतात (निजालयत्राणविधानतत्पराः), हे देवता स्वतःच्या देवळाचे आणि भक्तांचे सक्रियपणे रक्षण करते या श्रद्धेचे प्रतिबिंब आहे. अशा रीतीने हे श्लोक कोकणातील जिवंत प्रथेला परशुरामाच्या मूळ वचनात रुजवते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The second-person plural future paripurayishyatha (pari + √pur, causal, lrit) directly addresses the goddesses — Rama&#x27;s speech to them continues from verse 57. Note the sandhi sat + mahotsavan = sanmahotsavan (t to n) and tatparah + tat = tatparastat. Metre: Vamshastha/Upajati.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परिपूरयिष्यथ (परि + √पूर्, प्रयोजक, लृट्) हे मध्यमपुरुष बहुवचन भविष्यकाळी रूप देवतांना प्रत्यक्ष उद्देशून आहे — श्लोक ५७ पासून त्यांना उद्देशून रामाचे भाषण चालू आहे. सत् + महोत्सवान् = सन्महोत्सवान् (त् → न्) आणि तत्पराः + तत् = तत्परास्तत् या संधी लक्षात घ्या. वृत्त: वंशस्थ/उपजाती.</p></div></div>
+
+<div class="pagenav"><a href="verse-57.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 57</div></a><a class="next" href="verse-59.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 59</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

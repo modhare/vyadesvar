@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 7 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 7</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 7</span><span class="bl-mr lang-mr">श्लोक 7</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śārdūlavikrīḍitam</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">नानादेशविदेशभूतिभिरभूत्क्षेत्रं समृद्धं मुने-<br>र्नानानीपकसेवितैर्नृपतिभिर्नानाविधैः पत्तनैः ।<br>नानासप्तिभिरूर्जितैः कृतसुधैर्नानाविधैर्देवता-<br>गारैर्ग्रामवरैर्व्रजैर्द्रुमवनैः खेटैस्तथा खर्वटैः ।।७।।</div>
+  <div class="verse-iast">nānādeśavideśabhūtibhirabhūtkṣetraṃ samṛddhaṃ mune- rnānānīpakasevitairnṛpatibhirnānāvidhaiḥ pattanaiḥ । nānāsaptibhirūrjitaiḥ kṛtasudhairnānāvidhairdevatā- gārairgrāmavarairvrajairdrumavanaiḥ kheṭaistathā kharvaṭaiḥ । ।  । ।</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">नाना-देश-विदेश-भूतिभिः । अभूत् । क्षेत्रम् । समृद्धम् । मुनेः । नाना-नीपक-सेवितैः । नृपतिभिः । नानाविधैः । पत्तनैः । नाना-सप्तिभिः । ऊर्जितैः । कृत-सुधैः । नानाविधैः । देवता-आगारैः । ग्राम-वरैः । व्रजैः । द्रुम-वनैः । खेटैः । तथा । खर्वटैः ।</div><div class="vig-iast">nānā-deśa-videśa-bhūtibhiḥ । abhūt । kṣetram । samṛddham । muneḥ । nānā-nīpaka-sevitaiḥ । nṛpatibhiḥ । nānāvidhaiḥ । pattanaiḥ । nānā-saptibhiḥ । ūrjitaiḥ । kṛta-sudhaiḥ । nānāvidhaiḥ । devatā-āgāraiḥ । grāma-varaiḥ । vrajaiḥ । druma-vanaiḥ । kheṭaiḥ । tathā । kharvaṭaiḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भूतिभिः + अभूत् = भूतिभिरभूत् · मुनेः + नाना = मुनेर्नाना · नृपतिभिः + नाना = नृपतिभिर्नाना · सप्तिभिः + ऊर्जितैः = सप्तिभिरूर्जितैः · सुधैः + नाना = सुधैर्नाना · देवता + आगारैः = देवतागारैः · आगारैः + ग्राम = आगारैर्ग्राम · वरैः + व्रजैः = वरैर्व्रजैः · व्रजैः + द्रुम = व्रजैर्द्रुम · खेटैः + तथा = खेटैस्तथा</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">मुनेः क्षेत्रं नानादेशविदेशभूतिभिः, नानानीपकसेवितैः नृपतिभिः, नानाविधैः पत्तनैः, ऊर्जितैः नानासप्तिभिः, कृतसुधैः नानाविधैः देवतागारैः, ग्रामवरैः व्रजैः द्रुमवनैः खेटैः तथा खर्वटैः (च) समृद्धम् अभूत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The sage&#x27;s (Parashurama&#x27;s) land grew prosperous — with the riches of many lands near and far; with kings waited upon by many chieftains; with cities of many kinds furnished with strong horses; with temples of many kinds bright with fresh plaster; with fine villages, cowherd-settlements, tree-thick forests, hamlets, and market-towns.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मुनिवर परशुरामाचे क्षेत्र निरनिराळ्या देश-विदेशांतील वैभवांनी, विविध राजांनी सेवित अशा नृपतींनी अलंकृत व विविध अश्वांनी समन्वित अशा शहरांनी, रंग दिलेल्या अनेक शोभिवंत देवालयांनी, गावे, गौळीवाडे व झाडीने युक्त अरण्यांनी तसेच खेडी व बाजार असलेल्या गावांनी गजबजले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नानादेशविदेशभूतिभिः</span>
+    <span class="word-iast">nānādeśavideśabhūtibhiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural feminine (tritiya bahuvachana) of the tatpurusha nana + desha-videsha + bhuti</span></div>
+  <div class="word-form">In this verse: नानादेशविदेशभूतिभिः — in भूतिभिरभूत्</div>
+  <p class="word-meaning lang-en">with the riches and prosperity of various lands, home and foreign</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक देश-विदेशांच्या वैभवांनी</p>
+  <div class="word-usage">
+    <div class="deva">नानादेशविदेशभूतिभिः नगरम् शोभते</div>
+    <div class="usage-iast">nanadeshavideshabhutibhih nagaram shobhate</div>
+    <div class="usage-meaning lang-en">The city shines with the riches of various lands, home and foreign.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक देश-विदेशांच्या वैभवांनी नगर शोभून दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नानानीपकसेवितैः</span>
+    <span class="word-iast">nānānīpakasevitaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural masculine of the tatpurusha nana + nipaka + sevita (past participle of sev)</span></div>
+  <div class="word-form">In this verse: नानानीपकसेवितैः — in नानानीपकसेवितैर्नृपतिभिः</div>
+  <p class="word-meaning lang-en">waited upon by many nipakas (minor chiefs or vassals — the word is obscure)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक नीपकांनी (नीपवंशीय राजे? / मांडलिक) सेविलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">नानानीपकसेवितैः नृपतिभिः सभा अलंकृता</div>
+    <div class="usage-iast">nananipakasevitaih nripatibhih sabha alankrita</div>
+    <div class="usage-meaning lang-en">The assembly was graced by kings waited upon by many chieftains.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक मांडलिकांनी सेविलेल्या नृपतींनी सभा अलंकृत झाली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पत्तनैः</span>
+    <span class="word-iast">pattanaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural neuter of pattana</span></div>
+  <div class="word-form">In this verse: पत्तनैः — as printed</div>
+  <p class="word-meaning lang-en">with cities, with towns</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहरांनी</p>
+  <div class="word-usage">
+    <div class="deva">पत्तनैः ग्रामैः च देशः समृद्धः</div>
+    <div class="usage-iast">pattanaih gramaih cha deshah samriddhah</div>
+    <div class="usage-meaning lang-en">The country is prosperous with towns and villages.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहरे व गावे यांनी देश समृद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सप्तिभिः ऊर्जितैः</span>
+    <span class="word-iast">saptibhiḥ ūrjitaiḥ</span>
+  </div>
+  <div><span class="word-grammar">sapti-bhih instrumental plural masculine of sapti (&#x27;horse&#x27;) + urjitaih past participle of urj (&#x27;strengthened, strong&#x27;)</span></div>
+  <div class="word-form">In this verse: सप्तिभिः ऊर्जितैः — in सप्तिभिरूर्जितैः</div>
+  <p class="word-meaning lang-en">with strong horses</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बलवान घोड्यांनी</p>
+  <div class="word-usage">
+    <div class="deva">सप्तिभिः ऊर्जितैः सेना बलेन युक्ता</div>
+    <div class="usage-iast">saptibhih urjitaih sena balena yukta</div>
+    <div class="usage-meaning lang-en">The army, with its strong horses, is full of might.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बलवान घोड्यांनी सेना सामर्थ्याने युक्त आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृतसुधैः देवतागारैः</span>
+    <span class="word-iast">kṛtasudhaiḥ devatāgāraiḥ</span>
+  </div>
+  <div><span class="word-grammar">krita-sudhaih instrumental plural neuter of the bahuvrihi krita + sudha (&#x27;plaster&#x27;) + devatagaraih instrumental plural neuter of the tatpurusha devata + agara</span></div>
+  <div class="word-form">In this verse: कृतसुधैः देवतागारैः — in कृतसुधैर्नानाविधैर्देवतागारैः</div>
+  <p class="word-meaning lang-en">with temples brightened with fresh plaster</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चुनाने शुभ्र केलेल्या देवालयांनी</p>
+  <div class="word-usage">
+    <div class="deva">कृतसुधैः देवतागारैः ग्रामः शोभते</div>
+    <div class="usage-iast">kritasudhaih devatagaraih gramah shobhate</div>
+    <div class="usage-meaning lang-en">The village shines with temples brightened with fresh plaster.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चुन्याने शुभ्र केलेल्या देवालयांनी गाव शोभून दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्रजैः</span>
+    <span class="word-iast">vrajaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural masculine of vraja (&#x27;cow-pen, herdsmen&#x27;s settlement&#x27;)</span></div>
+  <div class="word-form">In this verse: व्रजैः — in व्रजैर्द्रुमवनैः</div>
+  <p class="word-meaning lang-en">with cowherd-settlements, with cattle-stations</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गोठ्यांनी</p>
+  <div class="word-usage">
+    <div class="deva">व्रजैः गोभिः च प्रदेशः समृद्धः</div>
+    <div class="usage-iast">vrajaih gobhih cha pradeshah samriddhah</div>
+    <div class="usage-meaning lang-en">The region is rich with cowherd-settlements and cattle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गोठे व गायी यांनी प्रदेश समृद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्रुमवनैः</span>
+    <span class="word-iast">drumavanaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural neuter of the tatpurusha druma + vana</span></div>
+  <div class="word-form">In this verse: द्रुमवनैः — as printed</div>
+  <p class="word-meaning lang-en">with forests of trees</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वृक्षवनांनी</p>
+  <div class="word-usage">
+    <div class="deva">द्रुमवनैः पर्वतः आच्छादितः</div>
+    <div class="usage-iast">drumavanaih parvatah achchhaditah</div>
+    <div class="usage-meaning lang-en">The mountain is covered with forests of trees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वृक्षवनांनी पर्वत आच्छादलेला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खेटैः</span>
+    <span class="word-iast">kheṭaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural masculine of kheta (&#x27;hamlet, small village&#x27;)</span></div>
+  <div class="word-form">In this verse: खेटैः — in खेटैस्तथा</div>
+  <p class="word-meaning lang-en">with hamlets</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खेड्यांनी</p>
+  <div class="word-usage">
+    <div class="deva">खेटैः ग्रामैः च जनपदः व्याप्तः</div>
+    <div class="usage-iast">khetaih gramaih cha janapadah vyaptah</div>
+    <div class="usage-meaning lang-en">The countryside is dotted with hamlets and villages.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खेडी व गावे यांनी जनपद व्यापलेला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खर्वटैः</span>
+    <span class="word-iast">kharvaṭaiḥ</span>
+  </div>
+  <div><span class="word-grammar">instrumental plural masculine of kharvata (&#x27;market-town&#x27;)</span></div>
+  <div class="word-form">In this verse: खर्वटैः — as printed</div>
+  <p class="word-meaning lang-en">with market-towns</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाजारपेठांनी</p>
+  <div class="word-usage">
+    <div class="deva">खर्वटैः वणिजः समागताः</div>
+    <div class="usage-iast">kharvataih vanijah samagatah</div>
+    <div class="usage-meaning lang-en">Merchants gathered in the market-towns.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाजारपेठांत व्यापारी जमले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Prosperity itself becomes a form of worship here: cities, temples, forests, and markets are all listed as the kshetra&#x27;s ornaments, because a land where dharma thrives naturally overflows with wealth. The verse teaches that material flourishing and spiritual flourishing are not enemies when both are rooted in the sage&#x27;s grace — Parashurama&#x27;s land is rich precisely because it is holy. The pilgrim sees in Guhagar&#x27;s coconut groves and bazaars the same logic: the sacred and the everyday sustain each other.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे समृद्धी स्वतः उपासनेचे रूप धारण करते : शहरे, मंदिरे, अरण्ये आणि बाजार या सर्वांची गणना क्षेत्राच्या अलंकारांत केली आहे, कारण जेथे धर्म फुलतो तेथे संपत्ती साहजिकच ओसंडून वाहते. हा श्लोक शिकवतो की भौतिक भरभराट आणि आध्यात्मिक भरभराट दोन्ही मुनींच्या कृपेत रुजलेली असतील तर त्या शत्रू नसतात — परशुरामाची भूमी पवित्र आहे म्हणूनच समृद्ध आहे. यात्रेकरू गुहागरच्या नारळीच्या बागा व बाजारांत हाच तर्क पाहतो : पवित्र आणि दैनंदिन एकमेकांना पोसतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The shastras describe the ideal janapada as furnished with precisely these elements — pura (city), grama (village), kheta and kharvata (hamlets and market-towns), vraja (cattle-stations), and devatagriha (temples); Arthashastra 2.1 lists them as the limbs of a settled country. Fresh-plastered (kritasudha) temples are a stock image of festivity — whitewashed shrines gleaming like the moon. The verse thus certifies the kshetra as a complete, dharmic civilization, not a wilderness hermitage.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शास्त्रे आदर्श जनपदाचे वर्णन नेमक्या याच घटकांनी करतात — पुर (शहर), ग्राम, खेट आणि खर्वट (खेडी व बाजारपेठा), व्रज (गोठे) आणि देवतागार (मंदिरे); अर्थशास्त्र २.१ त्यांना वसलेल्या देशाची अंगे म्हणते. चुन्याने शुभ्र केलेली (कृतसुध) मंदिरे ही उत्सवाची ठरलेली प्रतिमा आहेत — चंद्रासारखी चमकणारी धवल मंदिरे. हा श्लोक अशा रीतीने क्षेत्राला संपूर्ण धार्मिक सभ्यता म्हणून प्रमाणित करतो, निर्जन तपोवन म्हणून नव्हे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Shardulavikriditam (19 syllables). This is the sarga&#x27;s great &#x27;catalogue&#x27; verse, typical of mahakavya desha-varnana (cf. Raghuvamsha&#x27;s Ayodhya). &#x27;Nipaka&#x27; is obscure — possibly a local title for minor chiefs; the Marathi keeps it as nipaka with a query, and no emendation is proposed. The settlement hierarchy pura-pattana-grama-kheta-kharvata-vraja mirrors real Konkan geography: port towns, market villages, and cattle hamlets along the coast.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शार्दूलविक्रीडितम् (१९ अक्षरे). हा सर्गाचा महान &#x27;सूची&#x27; श्लोक आहे, महाकाव्याच्या देशवर्णनाचा ठरलेला प्रकार (तुलना रघुवंशातील अयोध्या). &#x27;नीपक&#x27; हा शब्द अस्पष्ट आहे — कदाचित लहान नायकांसाठी स्थानिक उपाधी; मराठीत नीपक तसेच ठेवले असून प्रश्नचिन्ह आहे, कोणतीही दुरुस्ती सुचवलेली नाही. पुर–पत्तन–ग्राम–खेट–खर्वट–व्रज ही वसाहत-श्रेणी वास्तविक कोकण भूगोलाचे प्रतिबिंब आहे : किनाऱ्यालगत बंदरशहरे, बाजारगावे आणि गुरांची खेडी.</p></div></div>
+
+<div class="pagenav"><a href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 6</div></a><a class="next" href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 8</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

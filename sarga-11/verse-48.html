@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 48 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 48</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 48</span><span class="bl-mr lang-mr">श्लोक 48</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यः कश्चिदत्र देवः स्याद्यदि दीनदयाकरः ।<br>स उद्दधातु मामार्तं मज्जन्तं सागरोदरे ।।४८।।</div>
+  <div class="verse-iast">yaḥ kaścidatra devaḥ syādyadi dīnadayākaraḥ । sa uddadhātu māmārtaṃ majjantaṃ sāgarodare</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यः । कश्चित् । अत्र । देवः । स्यात् । यदि । दीन-दया-आकरः । सः । उद्दधातु । माम् । आर्तम् । मज्जन्तम् । सागर-उदरे ।</div><div class="vig-iast">yaḥ । kaścit । atra । devaḥ । syāt । yadi । dīna-dayā-ākaraḥ । saḥ । uddadhātu । mām । ārtam । majjantam । sāgara-udare ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यः + कश्चित् = यः कश्चित् · कश्चित् + अत्र = कश्चिदत्र · देवः + स्यात् = देवः स्यात् · स्यात् + यदि = स्याद्यदि · दया + आकरः = दयाकरः · सः + उद्दधातु = स उद्दधातु · माम् + आर्तम् = मामार्तम् · सागर + उदरे = सागरोदरे (गुण)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अत्र यः कश्चित् देवः स्यात्, (सः) यदि दीनदयाकरः, सः सागरोदरे मज्जन्तम् आर्तं माम् उद्दधातु ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;If there be any god here, and if he be a mine of compassion for the afflicted, let him lift me up — me, the distressed one, sinking in the belly of the ocean.&#x27; So he prayed.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;येथे जर कोणी देव असेल व तो दीनांवर दया करणारा असेल तर त्याने सागरात बुडणाऱ्या व आर्त अशा मला वर काढावे.&#x27;&#x27; (अशी प्रार्थना केली.)</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Line 2: the book&#x27;s उद्धधातु → उद्दधातु (उद् + धा, &quot;let him lift up&quot;).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्यात्</span>
+    <span class="word-iast">syāt</span>
+  </div>
+  <div><span class="word-grammar">optative (vidhiliṅ) 3rd singular of √अस् (class 2)</span></div>
+  <div class="word-form">In this verse: स्यात्</div>
+  <p class="word-meaning lang-en">may be; should be</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असेल</p>
+  <div class="word-usage">
+    <div class="deva">यो धर्मज्ञः स्यात्स पूज्यः।</div>
+    <div class="usage-iast">yo dharmajñaḥ syātsa pūjyaḥ।</div>
+    <div class="usage-meaning lang-en">He who is learned in dharma is to be honoured.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो धर्मज्ञ असेल तो पूज्य होय.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दीनदयाकरः</span>
+    <span class="word-iast">dīnadayākaraḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; compound (दीन + दया + आकर, &#x27;mine&#x27;)</span></div>
+  <div class="word-form">In this verse: दीनदयाकरः</div>
+  <p class="word-meaning lang-en">a mine of compassion for the afflicted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दीनांवर दया करणारा (आकर = खाण)</p>
+  <div class="word-usage">
+    <div class="deva">दीनदयाकरः प्रभुः सर्वान्रक्षति।</div>
+    <div class="usage-iast">dīnadayākaraḥ prabhuḥ sarvānrakṣati।</div>
+    <div class="usage-meaning lang-en">The Lord, a mine of compassion for the afflicted, protects all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दीनांवर दया करणारा प्रभू सर्वांचे रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उद्दधातु</span>
+    <span class="word-iast">uddadhātu</span>
+  </div>
+  <div><span class="word-grammar">imperative (loṭ) 3rd singular of उद् + √धा (class 3)</span></div>
+  <div class="word-form">In this verse: उद्दधातु</div>
+  <p class="word-meaning lang-en">let him lift up, raise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर काढो (उद् + √धा, लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">देवो मां संकटादुद्दधातु।</div>
+    <div class="usage-iast">devo māṃ saṃkaṭāduddadhātu।</div>
+    <div class="usage-meaning lang-en">Let the god lift me up from calamity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाने मला संकटातून वर काढावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आर्तम्</span>
+    <span class="word-iast">ārtam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular (masculine/neuter); kta-participle of आ + √ऋ</span></div>
+  <div class="word-form">In this verse: आर्तम्</div>
+  <p class="word-meaning lang-en">afflicted, distressed (me)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पीडित</p>
+  <div class="word-usage">
+    <div class="deva">आर्तं जनं रक्षतु देवः।</div>
+    <div class="usage-iast">ārtaṃ janaṃ rakṣatu devaḥ।</div>
+    <div class="usage-meaning lang-en">Let the god protect the afflicted person.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाने पीडित माणसाचे रक्षण करावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मज्जन्तम्</span>
+    <span class="word-iast">majjantam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular; present participle of √मज्ज् (class 6)</span></div>
+  <div class="word-form">In this verse: मज्जन्तम्</div>
+  <p class="word-meaning lang-en">sinking (me)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुडणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">मज्जन्तं मां त्राहि।</div>
+    <div class="usage-iast">majjantaṃ māṃ trāhi।</div>
+    <div class="usage-meaning lang-en">Save me, who am sinking.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुडणाऱ्या माझा तू उद्धार कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सागरोदरे</span>
+    <span class="word-iast">sāgarodare</span>
+  </div>
+  <div><span class="word-grammar">neuter locative singular; compound (सागर + उदर)</span></div>
+  <div class="word-form">In this verse: सागरोदरे</div>
+  <p class="word-meaning lang-en">in the belly of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या पोटात</p>
+  <div class="word-usage">
+    <div class="deva">सागरोदरे मत्स्याः सन्ति।</div>
+    <div class="usage-iast">sāgarodare matsyāḥ santi।</div>
+    <div class="usage-meaning lang-en">There are fish in the belly of the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या पोटात मासे आहेत.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The merchant&#x27;s prayer is a model of honest supplication: he does not presume the god exists or will answer — &#x27;if there be any god here, and if he be compassionate...&#x27; — he simply lays his helplessness bare. The epithet दीनदयाकर, &#x27;a mine of compassion for the afflicted,&#x27; captures the theology of grace at its simplest: God&#x27;s nature is to lift the drowning. In the māhātmya economy, such a cry never goes unanswered.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>व्यापाऱ्याची प्रार्थना ही प्रामाणिक विनंतीचा आदर्श आहे — देव आहे किंवा उत्तर देईल असे तो गृहीत धरत नाही — &#x27;येथे जर कोणी देव असेल आणि तो दयाळू असेल तर...&#x27; — तो फक्त आपली असहायता उघडी ठेवतो. &#x27;दीनदयाकर&#x27; ही पदवी कृपेच्या तत्त्वज्ञानाचे सोपे सार सांगते : बुडणाऱ्याला वर काढणे हाच देवाचा स्वभाव आहे. महात्म्याच्या व्यवस्थेत अशी हाक कधीच अनुत्तरित राहत नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>दीनदयाकर — &#x27;a mine of compassion for the afflicted&#x27; — is one of the great epithets of grace in the bhakti vocabulary: God is by nature the refuge of the helpless, as the Bhagavad Gītā promises, &#x27;न मे भक्तः प्रणश्यति&#x27; — my devotee never perishes. The merchant&#x27;s cry, addressed to whatever god may be listening, is the purest form of prayer: need itself as the liturgy.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;दीनदयाकर&#x27; — दीनांवर दयेची खाण — हा भक्तिशब्दसंग्रहातील कृपेच्या महान विशेषणांपैकी एक आहे : भगवद्गीता आश्वासन देते त्याप्रमाणे देव स्वभावतःच असहायांचा आश्रय असतो — &#x27;न मे भक्तः प्रणश्यति&#x27; — माझा भक्त कधी नाश पावत नाही. ऐकत असलेल्या कोणत्याही देवाला उद्देशलेली व्यापाऱ्याची हाक ही प्रार्थनेचे शुद्धतम रूप आहे : गरजच पूजा.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Textual note 11.48: the book prints उद्धधातु in line 2; the transcription reads उद्दधातु — उद् + √धा, loṭ 3rd singular, &#x27;let him lift up&#x27; — which both the grammar and the Marathi (&#x27;वर काढावे&#x27;) require. The verse, with the merchant&#x27;s direct speech, opens the miracle narrative that v. 49 completes.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाठ-चर्चा ११.४८ : पुस्तकात दुसऱ्या ओळीत &#x27;उद्धधातु&#x27; छापले आहे; प्रतिलेखनात &#x27;उद्दधातु&#x27; — उद् + √धा, लोट् तृतीयपुरुष एकवचन, &#x27;वर काढो&#x27; — वाचले असून व्याकरण व मराठी (&#x27;वर काढावे&#x27;) दोन्ही तेच मागतात. व्यापाऱ्याच्या प्रत्यक्ष भाषणासह हा श्लोक चमत्कारकथा उघडतो, जी ४९वा श्लोक पूर्ण करतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-47.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 47</div></a><a class="next" href="verse-49.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 49</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

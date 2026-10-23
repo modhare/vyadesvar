@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 21 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 21</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 21</span><span class="bl-mr lang-mr">श्लोक 21</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">परनिन्दापरा नन्दा मन्दाः संदिग्धबुद्धयः ।<br>देहात्ममतयो मूढास्तत्त्वज्ञानपराङ्मुखाः ।।२१।।</div>
+  <div class="verse-iast">paranindāparā nandā mandāḥ saṃdigdhabuddhayaḥ । dehātmamatayo mūḍhāstattvajñānaparāṅmukhāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पर-निन्दा-पराः । नन्दाः । मन्दाः । संदिग्ध-बुद्धयः । देह-आत्म-मतयः । मूढाः । तत्त्वज्ञान-पराङ्मुखाः ।</div><div class="vig-iast">para-nindā-parāḥ । nandāḥ । mandāḥ । saṃdigdha-buddhayaḥ । deha-ātma-matayaḥ । mūḍhāḥ । tattvajñāna-parāṅmukhāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पराः + नन्दाः = परा नन्दाः · नन्दाः + मन्दाः = नन्दा मन्दाः · देह + आत्म = देहात्म · मतयः + मूढाः = मतयो मूढाः · मूढाः + तत्त्व = मूढास्तत्त्व</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(मानुषाः) परनिन्दापराः नन्दाः मन्दाः संदिग्धबुद्धयः देहात्ममतयः मूढाः तत्त्वज्ञानपराङ्मुखाः (भविष्यन्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>They shall be devoted to slandering others, delighting in it — dull, of doubtful intellect, holding the body to be the self, deluded, their faces turned away from the knowledge of truth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे लोक परनिन्दापर, त्यात रमणारे, मंद परंतु संशयात्मक बुद्धीचे, देहालाच आत्मा मानणारे, मूर्ख व तत्त्वज्ञानपराङ्मुख असतात.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परनिन्दापराः</span>
+    <span class="word-iast">paranindāparāḥ</span>
+  </div>
+  <div><span class="word-grammar">पर-निन्दा-पर (तत्पुरुष समासमाला) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">devoted to slandering others</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परनिंदेत गुंतलेले</p>
+  <div class="word-usage">
+    <div class="deva">परनिन्दापराः जनाः स्वदोषं न पश्यन्ति</div>
+    <div class="usage-iast">paranindāparāḥ janāḥ svadoṣaṃ na paśyanti</div>
+    <div class="usage-meaning lang-en">People devoted to slandering others do not see their own faults.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परनिंदेत गुंतलेले लोक स्वतःचे दोष पाहत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नन्दाः</span>
+    <span class="word-iast">nandāḥ</span>
+  </div>
+  <div><span class="word-grammar">√नन्द् (भ्वादिगण) + अच् (कर्तृवाचक) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">delighting in, rejoicing in (slander)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(त्यात) आनंद मानणारे (नन्द = आनंदित; पुस्तक: ‘त्यात रमणारे’)</p>
+  <div class="word-usage">
+    <div class="deva">ते परदोषेषु नन्दाः भवन्ति</div>
+    <div class="usage-iast">te paradoṣeṣu nandāḥ bhavanti</div>
+    <div class="usage-meaning lang-en">They delight in the faults of others.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते इतरांच्या दोषांत आनंद मानतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्दाः</span>
+    <span class="word-iast">mandāḥ</span>
+  </div>
+  <div><span class="word-grammar">मन्द (विशेषण) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">dull, sluggish</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंद, आळशी</p>
+  <div class="word-usage">
+    <div class="deva">मन्दाः शिष्याः गुरोः उपदेशं न गृह्णन्ति</div>
+    <div class="usage-iast">mandāḥ śiṣyāḥ guroḥ upadeśaṃ na gṛhṇanti</div>
+    <div class="usage-meaning lang-en">Dull disciples do not grasp the teacher&#x27;s instruction.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदबुद्धी शिष्य गुरूंचा उपदेश ग्रहण करत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संदिग्धबुद्धयः</span>
+    <span class="word-iast">saṃdigdhabuddhayaḥ</span>
+  </div>
+  <div><span class="word-grammar">सम्-दिग्ध (√दिह् + क्त) + बुद्धि (बहुव्रीहि समास) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m. (bahuvrīhi)</div>
+  <p class="word-meaning lang-en">of doubtful, wavering intellect</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संशयखोर बुद्धीचे</p>
+  <div class="word-usage">
+    <div class="deva">संदिग्धबुद्धयः नराः निर्णयं कर्तुं न शक्नुवन्ति</div>
+    <div class="usage-iast">saṃdigdhabuddhayaḥ narāḥ nirṇayaṃ kartuṃ na śaknuvanti</div>
+    <div class="usage-meaning lang-en">Men of wavering intellect cannot make a decision.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संशयखोर बुद्धीचे लोक निर्णय घेऊ शकत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देहात्ममतयः</span>
+    <span class="word-iast">dehātmamatayaḥ</span>
+  </div>
+  <div><span class="word-grammar">देह-आत्म-मति (तत्पुरुष समासमाला) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">holding the body to be the self</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देहालाच आत्मा मानणारे</p>
+  <div class="word-usage">
+    <div class="deva">देहात्ममतयः जनाः मोक्षं न इच्छन्ति</div>
+    <div class="usage-iast">dehātmamatayaḥ janāḥ mokṣaṃ na icchanti</div>
+    <div class="usage-meaning lang-en">People who hold the body to be the self do not seek liberation.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देहालाच आत्मा मानणारे लोक मोक्षाची इच्छा करत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्त्वज्ञानपराङ्मुखाः</span>
+    <span class="word-iast">tattvajñānaparāṅmukhāḥ</span>
+  </div>
+  <div><span class="word-grammar">तत्त्व-ज्ञान-पराङ्मुख (पराच् + मुख, तत्पुरुष) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">with faces turned away from the knowledge of truth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तत्त्वज्ञानाला पाठ फिरवणारे</p>
+  <div class="word-usage">
+    <div class="deva">तत्त्वज्ञानपराङ्मुखाः संसारे भ्रमन्ति</div>
+    <div class="usage-iast">tattvajñānaparāṅmukhāḥ saṃsāre bhramanti</div>
+    <div class="usage-meaning lang-en">Those turned away from the knowledge of truth wander in saṃsāra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तत्त्वज्ञानाकडे पाठ फिरवणारे संसारात भटकतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s catalogue moves from outer conduct to inner error: dehātma-mati — mistaking the body for the self — is named as the root delusion, and turning away from tattva-jñāna as its consequence. The mahātmya&#x27;s whole purpose is the reverse movement: from body-identification toward Śiva-jñāna at the sthala.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामांची यादी बाह्य वर्तनापासून आंतरिक भ्रमाकडे वळते : देहालाच आत्मा मानणे हा मुळातील भ्रम असून तत्त्वज्ञानाकडे पाठ फिरवणे ही त्याची परिणती आहे. क्षेत्रमहात्म्याचे प्रयोजन याच्या उलट दिशेने आहे — देहबुद्धीकडून क्षेत्रातील शिवज्ञानाकडे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Dehātma-mati is the fundamental avidyā of Vedānta — mistaking the anātman, the body, for the ātman; every darśana begins its cure from this diagnosis. Tattvajñāna-parāṅmukhāḥ recalls Gītā 18.67&#x27;s warning against teaching the unwilling, and the Puranic kalivarṇana lists likewise name paranimdā and mūḍhatā among Kali&#x27;s marks.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>देहात्ममती ही वेदान्ताची मुळातील अविद्या आहे — अनात्मा असलेल्या देहाला आत्मा मानणे; प्रत्येक दर्शन आपली चिकित्सा याच निदानापासून सुरू करते. तत्त्वज्ञानपराङ्मुखता गीता १८.६७ च्या — अनिच्छुकाला उपदेश न करण्याच्या — इशाऱ्याची आठवण करून देते, आणि पुराणांतील कलिवर्णनांतही परनिंदा व मूढता कलीची लक्षणे म्हणून सांगितली आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. Every adjective here is nominative plural masculine, agreeing with mānuṣāḥ of v. 20 — the sentence runs on from the previous verse. Nandāḥ means &#x27;delighting in (slander)&#x27;; the book&#x27;s gloss on this word is partly obscured in print, and the standard sense of √nand as &#x27;rejoicing in&#x27; is followed here. Dehātmamatayaḥ chains three tatpuruṣas: deha-ātman-mati.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. येथील प्रत्येक विशेषण प्रथमा बहुवचन पुंलिंग असून २० व्या श्लोकातील मानुषाः यांच्याशी अन्वित आहे — वाक्य मागील श्लोकापासून पुढे चालते. नन्दाः म्हणजे &#x27;(निंदेत) आनंद मानणारे&#x27;; या शब्दावरील पुस्तकातील टीप छपाईत अंशतः अस्पष्ट असून √नन्द् चा &#x27;आनंद मानणे&#x27; हा प्रमाण अर्थ येथे घेतला आहे. देहात्ममतयः यात देह-आत्म-मति अशी तीन तत्पुरुषांची साखळी आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 20</div></a><a class="next" href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 22</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

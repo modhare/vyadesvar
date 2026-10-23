@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ततो नृपतिचूडोऽसौ गतः सायं स्वमन्दिरम् ।<br>कृतसायंतनविधिः सुप्तोऽपश्यदिदं किल ।।६।।</div>
+  <div class="verse-iast">tato nṛpaticūḍo&#x27;sau gataḥ sāyaṃ svamandiram । kṛtasāyaṃtanavidhiḥ supto&#x27;paśyadidaṃ kila</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ततः । नृपति-चूडः । असौ । गतः । सायम् । स्व-मन्दिरम् । कृत-सायंतन-विधिः । सुप्तः । अपश्यत् । इदम् । किल ।</div><div class="vig-iast">tataḥ । nṛpati-cūḍaḥ । asau । gataḥ । sāyam । sva-mandiram । kṛta-sāyaṃtana-vidhiḥ । suptaḥ । apaśyat । idam । kila ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ततः + नृपति = ततो नृपति · चूडः + असौ = चूडोऽसौ · सुप्तः + अपश्यत् = सुप्तोऽपश्यत् · अपश्यत् + इदम् = अपश्यदिदम् (जश्त्व)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति आदिश्य, अथ वास्तुमेदिनीं दैर्घ्यव्यायाममानाभ्यां ‘इयत्पदमिताम्’ इति मनसा निश्चित्य, ततः असौ नृपतिचूडः सायं स्वमन्दिरं गतः, कृतसायंतनविधिः सुप्तः (सन्) इदं किल अपश्यत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then that crest-jewel of kings went to his own palace in the evening; having completed the evening rites and fallen asleep, he indeed saw this (vision).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>असा आदेश देऊन व संकल्पित वास्तूची योजना इतकी लांब, इतकी रुंद व इतकी पावले व्यापणारी वगैरे मनोमन निश्चित करून तो नृपश्रेष्ठ सायंकाळी स्वतःच्या महालात गेला. संध्याकाळचे आह्निक उरकल्यानंतर निद्रा घेत असलेल्या त्याने स्वप्नात खरोखर हे (दृश्य) पाहिले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नृपतिचूडः</span>
+    <span class="word-iast">nṛpaticūḍaḥ</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुषः — नृपतीनाम् चूडः (शिखा); पुंलिङ्ग, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: प्रथमा एकवचन (चूडः + असौ → चूडोऽसौ)</div>
+  <p class="word-meaning lang-en">crest-jewel among kings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजांचा मुकुटमणी</p>
+  <div class="word-usage">
+    <div class="deva">नृपतिचूडः सभायाम् उपविष्टः ।</div>
+    <div class="usage-iast">nṛpaticūḍaḥ sabhāyām upaviṣṭaḥ ।</div>
+    <div class="usage-meaning lang-en">The crest-jewel of kings sat in the assembly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजांचा मुकुटमणी सभेत बसला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वमन्दिरम्</span>
+    <span class="word-iast">svamandiram</span>
+  </div>
+  <div><span class="word-grammar">तत्पुरुषः — स्व + मन्दिर; नपुंसकलिङ्ग, द्वितीया एकवचनम्</span></div>
+  <div class="word-form">In this verse: द्वितीया एकवचन</div>
+  <p class="word-meaning lang-en">to his own palace</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या महालात</p>
+  <div class="word-usage">
+    <div class="deva">सः सायम् स्वमन्दिरम् गतः ।</div>
+    <div class="usage-iast">saḥ sāyam svamandiram gataḥ ।</div>
+    <div class="usage-meaning lang-en">He went to his own palace in the evening.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सायंकाळी आपल्या महालात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृतसायंतनविधिः</span>
+    <span class="word-iast">kṛtasāyaṃtanavidhiḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहिः — कृतः सायंतनः विधिः येन सः; पुंलिङ्ग, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: प्रथमा एकवचन (बहुव्रीहि)</div>
+  <p class="word-meaning lang-en">one who has performed the evening rites</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सायंसंध्यादि विधी केलेला</p>
+  <div class="word-usage">
+    <div class="deva">कृतसायंतनविधिः ब्राह्मणः गृहम् आगच्छत् ।</div>
+    <div class="usage-iast">kṛtasāyaṃtanavidhiḥ brāhmaṇaḥ gṛham āgacchat ।</div>
+    <div class="usage-meaning lang-en">The brahmin, his evening rites done, came home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सायंविधी आटोपलेला ब्राह्मण घरी आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुप्तः</span>
+    <span class="word-iast">suptaḥ</span>
+  </div>
+  <div><span class="word-grammar">√स्वप् (अदादिः) + क्त; पुंलिङ्ग, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: क्तान्त प्रथमा एकवचन</div>
+  <p class="word-meaning lang-en">asleep, fallen asleep</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झोपलेला</p>
+  <div class="word-usage">
+    <div class="deva">बालकः सुप्तः आसीत् ।</div>
+    <div class="usage-iast">bālakaḥ suptaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">The child was asleep.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूल झोपले होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपश्यत्</span>
+    <span class="word-iast">apaśyat</span>
+  </div>
+  <div><span class="word-grammar">√दृश् (भ्वादिः, पश्यादेशः); लङ्, प्रथमपुरुष, एकवचनम्</span></div>
+  <div class="word-form">In this verse: लङ् प्रथमपुरुष एकवचन</div>
+  <p class="word-meaning lang-en">he saw</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाहिले</p>
+  <div class="word-usage">
+    <div class="deva">सः स्वप्ने देवम् अपश्यत् ।</div>
+    <div class="usage-iast">saḥ svapne devam apaśyat ।</div>
+    <div class="usage-meaning lang-en">He saw the god in a dream.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने स्वप्नात देवाला पाहिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किल</span>
+    <span class="word-iast">kila</span>
+  </div>
+  <div><span class="word-grammar">निपातः; अव्ययम्</span></div>
+  <div class="word-form">In this verse: अव्यय</div>
+  <p class="word-meaning lang-en">indeed, as is well known, we are told</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर</p>
+  <div class="word-usage">
+    <div class="deva">सः किल महात्मा आसीत् ।</div>
+    <div class="usage-iast">saḥ kila mahātmā āsīt ।</div>
+    <div class="usage-meaning lang-en">He was, indeed, a great soul.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो खरोखरच महात्मा होता.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Even amid a great undertaking the king keeps his evening worship (sāyaṃtana-vidhi) — duty to God is not postponed for God&#x27;s own work. The dream that follows is the fruit of that discipline: a mind purified by daily rite becomes a fit vessel for divine instruction, which comes in sleep when the senses are stilled.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मोठ्या उपक्रमातही राजा सायंसंध्यादि विधी पाळतो — देवाच्याच कार्यासाठी देवाची उपासना पुढे ढकलली जात नाही. पुढे येणारे स्वप्न हे त्या शिस्तीचे फळ आहे: नित्यविधीने शुद्ध झालेले मन दैवी उपदेशाचे योग्य पात्र बनते; इंद्रिये शांत झालेल्या निद्रेत तो उपदेश येतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Dreams received after the evening rites and in a state of purity are treated in the tradition as potential vehicles of divine communication — the literature on omens (svapna-śāstra) distinguishes such significant dreams from mere restless fancies. The particle किल (&#x27;indeed, as is well known&#x27;) marks this as an event of established report in the sthala tradition, not the poet&#x27;s invention — the royal dream that fixed the temple&#x27;s measure is part of Vyadeshwar&#x27;s living lore.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सायंविधींनंतर व शुद्ध अवस्थेत पडलेली स्वप्ने ही दैवी संवादाची संभाव्य वाहने मानली जातात — स्वप्नशास्त्र अशा अर्थपूर्ण स्वप्नांना नुसत्या चंचल कल्पनांपासून वेगळे करते. किल (&#x27;खरोखर, प्रसिद्धच आहे&#x27;) हा निपात हा प्रसंग कवीची कल्पना नसून स्थलपरंपरेतील प्रस्थापित वार्ता असल्याचे दर्शवतो — मंदिराचे माप निश्चित करणारे राजाचे स्वप्न हे व्याडेश्वराच्या जिवंत आख्यायिकेचा भाग आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>नृपतिचूडः (&#x27;crest-jewel among kings&#x27;, from चूडा &#x27;crest, topknot&#x27;) is a standard royal epithet; the sandhi नृपतिचूडः + असौ → नृपतिचूडोऽसौ. कृतसायंतनविधिः is a बहुव्रीहि: &#x27;one by whom the evening rite has been performed&#x27; (सायंतन from सायम् + तनट्). सुप्तः is the past participle of √स्वप् (&#x27;to sleep&#x27;); अपश्यत् the imperfect of √दृश्. किल here = &#x27;indeed, we are told&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नृपतिचूडः (&#x27;राजांचा मुकुटमणी&#x27;, चूडा = &#x27;शिखा, जटा&#x27; यापासून) हे प्रमाण राजोपाधी आहे; नृपतिचूडः + असौ यांची संधी नृपतिचूडोऽसौ. कृतसायंतनविधिः हे बहुव्रीही आहे: &#x27;ज्याने सायंविधी केला आहे असा&#x27; (सायंतन = सायम् + तनट्). सुप्तः हे √स्वप् (&#x27;झोपणे&#x27;) याचे भूतकाळवाचक धातुसाधित असून अपश्यत् हे √दृश् याचे लङ् रूप आहे. येथे किल = &#x27;खरोखर, असे सांगतात&#x27;.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

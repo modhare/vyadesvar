@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 46 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 46</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 46</span><span class="bl-mr lang-mr">श्लोक 46</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यदन्यद्ग्रामकर्मोच्चैर्विहितं शास्त्रमार्गतः ।<br>तत्सर्वं विदधे धीमान् वाडेश्वरशिवालये ।।४६।।</div>
+  <div class="verse-iast">yadanyadgrāmakarmoccairvihitaṃ śāstramārgataḥ । tatsarvaṃ vidadhe dhīmān vāḍeśvaraśivālaye</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यत् अन्यत् ग्राम-कर्म उच्चैः विहितम् शास्त्र-मार्गतः । तत् सर्वम् विदधे धीमान् वाडेश्वर-शिव-आलये ।</div><div class="vig-iast">yat anyat grāma-karma uccaiḥ vihitam śāstra-mārgataḥ । tat sarvam vidadhe dhīmān vāḍeśvara-śiva-ālaye ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यत् + अन्यत् = यदन्यत् · अन्यत् + ग्राम = अन्यद्ग्राम · कर्म + उच्चैः = कर्मोच्चैः (गुण) · उच्चैः + विहितम् = उच्चैर्विहितम् · शिव + आलये = शिवालये</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">शास्त्रमार्गतः उच्चैः विहितं यत् अन्यत् ग्रामकर्म, तत् सर्वं धीमान् (सः) वाडेश्वरशिवालये विदधे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Whatever else is reckoned a foremost village-rite according to the śāstric path, that entire set the wise man had carried out in the Śiva temple of Vāḍeśvara.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शास्त्रांत सांगितलेल्या पद्धतीनुसार जे जे श्रेष्ठ असे गावातील कृत्य मानले जाते ते ते त्या बुद्धिमंताने वाडेश्वरशिवमंदिरात सर्व काही करून ठेवले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्</span>
+    <span class="word-iast">yat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यत्</div>
+  <p class="word-meaning lang-en">whatever</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे</p>
+  <div class="word-usage">
+    <div class="deva">यत् सत्यं तत् वद ।</div>
+    <div class="usage-iast">yat satyaṃ tat vada.</div>
+    <div class="usage-meaning lang-en">Speak whatever is true.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे सत्य आहे ते बोल.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्यत्</span>
+    <span class="word-iast">anyat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अन्यत्</div>
+  <p class="word-meaning lang-en">other</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इतर</p>
+  <div class="word-usage">
+    <div class="deva">अन्यत् किं अपेक्षसे ।</div>
+    <div class="usage-iast">anyat kiṃ apekṣase.</div>
+    <div class="usage-meaning lang-en">What else do you expect?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इतर काय अपेक्षा करतोस?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ग्राम-कर्म</span>
+    <span class="word-iast">grāma-karma</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: ग्रामकर्म</div>
+  <p class="word-meaning lang-en">village rite</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाचे कृत्य</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामकर्म यथाशास्त्रं क्रियताम् ।</div>
+    <div class="usage-iast">grāmakarma yathāśāstraṃ kriyatām.</div>
+    <div class="usage-meaning lang-en">Let the village rite be performed according to the śāstra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाचे कृत्य शास्त्राप्रमाणे व्हावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उच्चैः</span>
+    <span class="word-iast">uccaiḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: उच्चैः</div>
+  <p class="word-meaning lang-en">important</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ, मोठे</p>
+  <div class="word-usage">
+    <div class="deva">उच्चैः पदं सः प्राप्तवान् ।</div>
+    <div class="usage-iast">uccaiḥ padaṃ saḥ prāptavān.</div>
+    <div class="usage-meaning lang-en">He attained a high position.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने मोठे पद प्राप्त केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विहितम्</span>
+    <span class="word-iast">vihitam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.; क्त, वि + धा</span></div>
+  <div class="word-form">In this verse: विहितम्</div>
+  <p class="word-meaning lang-en">prescribed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सांगितलेले</p>
+  <div class="word-usage">
+    <div class="deva">शास्त्रे विहितम् आचर ।</div>
+    <div class="usage-iast">śāstre vihitam ācara.</div>
+    <div class="usage-meaning lang-en">Practise what is prescribed in the śāstra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शास्त्रात सांगितलेले आचर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शास्त्र-मार्गतः</span>
+    <span class="word-iast">śāstra-mārgataḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: शास्त्रमार्गतः</div>
+  <p class="word-meaning lang-en">by the way of the śāstras</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शास्त्राच्या मार्गाने</p>
+  <div class="word-usage">
+    <div class="deva">शास्त्रमार्गतः निर्णयः क्रियताम् ।</div>
+    <div class="usage-iast">śāstramārgataḥ nirṇayaḥ kriyatām.</div>
+    <div class="usage-meaning lang-en">Let the decision be made by the way of the śāstras.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शास्त्राच्या मार्गाने निर्णय व्हावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत् सर्वम्</span>
+    <span class="word-iast">tat sarvam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: तत्सर्वम्</div>
+  <p class="word-meaning lang-en">all that</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते सर्व</p>
+  <div class="word-usage">
+    <div class="deva">तत् सर्वम् सः जानाति ।</div>
+    <div class="usage-iast">tat sarvam saḥ jānāti.</div>
+    <div class="usage-meaning lang-en">He knows all that.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते सर्व त्याला माहीत आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विदधे</span>
+    <span class="word-iast">vidadhe</span>
+  </div>
+  <div><span class="word-grammar">लिट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: विदधे</div>
+  <p class="word-meaning lang-en">arranged</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केले</p>
+  <div class="word-usage">
+    <div class="deva">सः यज्ञं विदधे ।</div>
+    <div class="usage-iast">saḥ yajñaṃ vidadhe.</div>
+    <div class="usage-meaning lang-en">He arranged the sacrifice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने यज्ञाची व्यवस्था केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धीमान्</span>
+    <span class="word-iast">dhīmān</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: धीमान्</div>
+  <p class="word-meaning lang-en">the wise man</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुद्धिमान</p>
+  <div class="word-usage">
+    <div class="deva">धीमान् पुरुषः सुखी भवति ।</div>
+    <div class="usage-iast">dhīmān puruṣaḥ sukhī bhavati.</div>
+    <div class="usage-meaning lang-en">The wise man is happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुद्धिमान पुरुष सुखी होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश्वर-शिव-आलये</span>
+    <span class="word-iast">vāḍeśvara-śiva-ālaye</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: वाडेश्वरशिवालये</div>
+  <p class="word-meaning lang-en">in the Śiva temple of Vāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वर शिवमंदिरात</p>
+  <div class="word-usage">
+    <div class="deva">वाडेश्वरशिवालये दीपोत्सवः भवति ।</div>
+    <div class="usage-iast">vāḍeśvaraśivālaye dīpotsavaḥ bhavati.</div>
+    <div class="usage-meaning lang-en">There is a lamp-festival in the Śiva temple of Vāḍeśvara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वर शिवमंदिरात दीपोत्सव होतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the sarga&#x27;s summary verse for Śrīdhara&#x27;s restoration: after the named installations (Bhāvukā, Gaṇeśa, dharmastambha), &#x27;yat anyat&#x27; gathers everything else — every customary rite the śāstras prescribe for a village — into one act of completeness. The moral is that restoration is not piecemeal: when the temple is renewed, the whole ritual life of the place must be renewed with it, &#x27;śāstramārgataḥ&#x27;, by the book. Vāḍeśvara is thus re-established not as a shrine but as a living śāsana.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्रीधराच्या पुनरुज्जीवनाचा हा सर्गातील सारांशश्लोक आहे — नामनिर्दिष्ट स्थापनांनंतर (भावुका, गणपती, धर्मस्तंभ) &#x27;यत् अन्यत्&#x27; हे गावासाठी शास्त्रे सांगतात त्या प्रत्येक रूढ विधीला एकाच पूर्णतेच्या कृत्यात गोळा करते. नैतिक बोध असा की पुनरुज्जीवन हे तुकड्यातुकड्यांचे नसते — मंदिर नूतन होताना त्या स्थानाचे संपूर्ण विधिजीवनही त्यासोबत नूतन व्हायला हवे, &#x27;शास्त्रमार्गतः&#x27;, म्हणजे शास्त्रानुसार. अशा प्रकारे वाडेश्वर हे केवळ मंदिर म्हणून नव्हे, तर जिवंत शासन म्हणून पुन्हा प्रस्थापित होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The grāma-karma of the śāstras includes the daily nitya-pūjā, the annual utsavas, the brāhmaṇa-bhojana, the vratas of the seasons, and the rites for the village&#x27;s protection (kṣetra-pāla pūjā). The traditional reader understands &#x27;uccaiḥ vihitam&#x27; as &#x27;held in highest esteem&#x27; — whatever the learned count as the crown of village duty. By lodging all of it at the Vyāḍeśvara temple, the kāvya makes the Śiva shrine the axis of the whole village&#x27;s religious year.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शास्त्रांचे ग्रामकर्म म्हणजे नित्यपूजा, वार्षिक उत्सव, ब्राह्मणभोजन, ऋतूंची व्रते आणि गावरक्षणाचे विधी (क्षेत्रपालपूजा). परंपरागत वाचक &#x27;उच्चैः विहितम्&#x27; याचा अर्थ &#x27;अत्यंत मान्य&#x27; असा घेतो — विद्वान जे जे गावकर्तव्याचे शिखर मानतात ते ते. या सर्वांना व्याडेश्वर मंदिरात स्थान देऊन काव्य शिवमंदिराला संपूर्ण गावाच्या धार्मिक वर्षाचा कणा बनवते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>An editorial flag (inherited from the transcription) marked a textual point at &#x27;तत्सर्वं&#x27; during review; it is not part of the verse and is not printed here. Note the spelling &#x27;वाडेश्वर&#x27; (with ड) here versus the title-form &#x27;व्याडेश्वर&#x27; — the sarga vacillates between वाडेश्वर and व्याडेश्वर, recorded as a standing textual note for the volume (the वाडेश्वर/व्याडेश्वर spelling question is still open with the user).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुनरावलोकनात &#x27;तत्सर्वं&#x27; येथील पाठबिंदूसाठी संपादकीय खूण (प्रतिलेखनातून आलेली) लावली होती; ती श्लोकाचा भाग नाही आणि येथे छापलेली नाही. येथील &#x27;वाडेश्वर&#x27; (ड सहित) ही वर्तनी आणि शीर्षकातील &#x27;व्याडेश्वर&#x27; यांच्यातील फरक लक्षात घ्या — सर्गात वाडेश्वर आणि व्याडेश्वर यांच्यात हलचाल आहे, जी संपूर्ण ग्रंथासाठी स्थायी पाठनोंद म्हणून ठेवली आहे (वाडेश्वर/व्याडेश्वर वर्तनीचा प्रश्न अजून वापरकर्त्याकडे प्रलंबित आहे).</p></div></div>
+
+<div class="pagenav"><a href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 45</div></a><a class="next" href="verse-47.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 47</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

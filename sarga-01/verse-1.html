@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śārdūlavikrīḍitam</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ॐ विद्युद्वृन्दपरीतविद्रुमगिरिप्रस्थोपमेयाकृतिं<br>कृत्वाङ्केऽम्बिकया निपीतमुखया संश्लिष्टशुण्डं मुदा।<br>विघ्नानीकनिवारणं प्रणमतां सद्वारणेशाननम्<br>वन्दे वन्दितमिन्दुमौलितनयं तं तुन्दिलं सुन्दरम् ।।१।।</div>
+  <div class="verse-iast">ॐ vidyudvṛndaparītavidrumagiriprasthopameyākṛtiṃ kṛtvāṅke&#x27;mbikayā nipītamukhayā saṃśliṣṭaśuṇḍaṃ mudā । vighnānīkanivāraṇaṃ praṇamatāṃ sadvāraṇeśānanam vande vanditamindumaulitanayaṃ taṃ tundilaṃ sundaram</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ॐ । विद्युत्-वृन्द-परीत-विद्रुम-गिरि-प्रस्थ-उपमेय-आकृतिम् । कृत्वा । अङ्के । अम्बिकया । निपीत-मुखया । संश्लिष्ट-शुण्डम् । मुदा । विघ्न-अनीक-निवारणम् । प्रणमताम् । सत्-वारण-ईश-आननम् । वन्दे । वन्दितम् । इन्दु-मौलि-तनयम् । तम् । तुन्दिलम् । सुन्दरम् ।</div><div class="vig-iast">ॐ । vidyut-vṛnda-parīta-vidruma-giri-prastha-upameya-ākṛtim । kṛtvā । aṅke । ambikayā । nipīta-mukhayā । saṃśliṣṭa-śuṇḍam । mudā । vighna-anīka-nivāraṇam । praṇamatām । sat-vāraṇa-īśa-ānanam । vande । vanditam । indu-mauli-tanayam । tam । tundilam । sundaram ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विद्युत् + वृन्द = विद्युद्वृन्द (त् → द्) · प्रस्थ + उपमेय = प्रस्थोपमेय (गुण) · उपमेय + आकृतिम् = उपमेयाकृतिम् (सवर्णदीर्घ) · कृत्वा + अङ्के = कृत्वाङ्के · अङ्के + अम्बिकया = अङ्केऽम्बिकया (पूर्वरूप) · विघ्न + अनीक = विघ्नानीक · सत् + वारण = सद्वारण · वारण + ईश = वारणेश (गुण) · ईश + आननम् = ईशाननम् · वन्दितम् + इन्दु = वन्दितमिन्दु</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(अहं) विद्युद्वृन्दपरीतविद्रुमगिरिप्रस्थोपमेयाकृतिम्, अम्बिकया अङ्के कृत्वा निपीतमुखया (सह) मुदा संश्लिष्टशुण्डम्, प्रणमतां विघ्नानीकनिवारणम्, सद्वारणेशाननम्, वन्दितं तुन्दिलं सुन्दरं तम् इन्दुमौलितनयं वन्दे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>I salute him whose form may be likened to the peak of a coral mountain ringed by a mass of lightning; whom Ambikā, having taken upon her lap and drunk deeply of his face with kisses, he joyfully clasped round with his trunk; the elephant-faced lord of the noble tuskers who drives away the whole army of obstacles from those who bow to him — the plump and beautiful son of the moon-crested Śiva, honoured by devotees.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विजांच्या समूहाने वेढलेल्या पोवळ्यांच्या पर्वताच्या शिखराप्रमाणे ज्याची आकृती (चमकदार आणि तांबूस रंगाची) आहे, पार्वतीने मांडीवर घेऊन प्रदीर्घ चुंबन घेतल्यानंतर ज्याने आनंदाने आपल्या सोंडेने तिला आलिङ्गन दिले, ज्याचे मुख उत्कृष्ट गजराजाप्रमाणे आहे व जो (श्रद्धायुक्त अंतःकरणाने) नमस्कार करणाऱ्यांच्या संकटपरंपरेचे निवारण करतो त्या गुबगुबीत शरीराच्या सुंदर आणि (भक्तांकडून) वंदित अशा शंकराच्या पुत्राला मी वंदन करतो.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 1, line 3: सद्धारणेशाननम् → सद्वारणेशाननम् (सत् + वारण + ईश + आननम्)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विद्युद्वृन्दपरीत</span>
+    <span class="word-iast">vidyudvṛndaparīta</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound (विद्युत् + वृन्द + परीत), accusative singular neuter agreeing with आकृतिम्</span></div>
+  <div class="word-form">In this verse: विद्युद्वृन्दपरीत</div>
+  <p class="word-meaning lang-en">girt about by a mass of lightning</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विजांच्या समूहाने वेढलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">विद्युत्-वृन्द-परीतम् गगनम् दृष्ट्वा जनाः विस्मिताः अभवन् ।</div>
+    <div class="usage-iast">vidyut-vṛnda-parītam gaganam dṛṣṭvā janāḥ vismitāḥ abhavan ।</div>
+    <div class="usage-meaning lang-en">Seeing the sky girt with a mass of lightning, the people were amazed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विजांच्या समूहाने वेढलेले आकाश पाहून लोक चकित झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विद्रुमगिरिप्रस्थ</span>
+    <span class="word-iast">vidrumagiriprastha</span>
+  </div>
+  <div><span class="word-grammar">ṣaṣṭhī-tatpuruṣa compound (विद्रुमगिरेः प्रस्थम्), stem form used adjectivally</span></div>
+  <div class="word-form">In this verse: विद्रुमगिरिप्रस्थ</div>
+  <p class="word-meaning lang-en">the summit of the coral mountain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पोवळ्यांच्या पर्वताचे शिखर</p>
+  <div class="word-usage">
+    <div class="deva">विद्रुम-गिरि-प्रस्थम् इव रक्तम् अस्य वदनम् शोभते ।</div>
+    <div class="usage-iast">vidruma-giri-prastham iva raktam asya vadanam śobhate ।</div>
+    <div class="usage-meaning lang-en">His face shines red like the summit of a coral mountain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पोवळ्याच्या पर्वताच्या शिखराप्रमाणे त्याचे मुख तांबूस शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपमेयाकृतिम्</span>
+    <span class="word-iast">upameyākṛtim</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound, feminine accusative singular (उपमेया आकृतिः यस्य सः, here agreeing with the implied Gaṇeśa)</span></div>
+  <div class="word-form">In this verse: उपमेयाकृतिम्</div>
+  <p class="word-meaning lang-en">him whose form may be likened (to it)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याच्या आकृतीला (त्याची) उपमा द्यावी असा (द्वितीया)</p>
+  <div class="word-usage">
+    <div class="deva">उपमेय-आकृतिम् देवम् कविः स्तौति ।</div>
+    <div class="usage-iast">upameya-ākṛtim devam kaviḥ stauti ।</div>
+    <div class="usage-meaning lang-en">The poet praises the god whose form invites comparison.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याच्या आकृतीला उपमा देता येईल अशा देवाची कवी स्तुती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अङ्के कृत्वा</span>
+    <span class="word-iast">aṅke kṛtvā</span>
+  </div>
+  <div><span class="word-grammar">अङ्के = locative singular of अङ्क (masculine); कृत्वा = ktvā absolutive of √कृ (8th class)</span></div>
+  <div class="word-form">In this verse: कृत्वाङ्के</div>
+  <p class="word-meaning lang-en">having taken into the lap</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मांडीवर घेऊन</p>
+  <div class="word-usage">
+    <div class="deva">माता बालकम् अङ्के कृत्वा चुम्बति ।</div>
+    <div class="usage-iast">mātā bālakam aṅke kṛtvā cumbati ।</div>
+    <div class="usage-meaning lang-en">The mother, taking the child into her lap, kisses him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आई बाळाला मांडीवर घेऊन त्याचे चुंबन घेते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अम्बिकया</span>
+    <span class="word-iast">ambikayā</span>
+  </div>
+  <div><span class="word-grammar">feminine instrumental singular of अम्बिका</span></div>
+  <div class="word-form">In this verse: ऽम्बिकया</div>
+  <p class="word-meaning lang-en">by Ambikā (Pārvatī)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पार्वतीने</p>
+  <div class="word-usage">
+    <div class="deva">अम्बिकया सह देवः कैलासे वसति ।</div>
+    <div class="usage-iast">ambikayā saha devaḥ kailāse vasati ।</div>
+    <div class="usage-meaning lang-en">The god dwells on Kailāsa together with Ambikā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव पार्वतीसह कैलासावर राहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निपीतमुखया</span>
+    <span class="word-iast">nipītamukhayā</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (निपीतं मुखं यस्याः सा), feminine instrumental singular, agreeing with अम्बिकया</span></div>
+  <div class="word-form">In this verse: निपीतमुखया</div>
+  <p class="word-meaning lang-en">by her whose face was deeply kissed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जिने (त्याचे) मुख चुंबिले अशा (बहुव्रीहि, अम्बिकया शी जुळते)</p>
+  <div class="word-usage">
+    <div class="deva">निपीत-मुखया मात्रा सह शिशुः हसति ।</div>
+    <div class="usage-iast">nipīta-mukhayā mātrā saha śiśuḥ hasati ।</div>
+    <div class="usage-meaning lang-en">The child laughs with the mother whose face he has showered with kisses.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जिच्या मुखाचे त्याने चुंबन घेतले अशा मातेसह बाळ हसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संश्लिष्टशुण्डम्</span>
+    <span class="word-iast">saṃśliṣṭaśuṇḍam</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (संश्लिष्टा शुण्डा येन सः), masculine accusative singular, agreeing with तम्</span></div>
+  <div class="word-form">In this verse: संश्लिष्टशुण्डं</div>
+  <p class="word-meaning lang-en">him whose trunk is closely entwined (about her)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जिच्याभोवती सोंड गुंफली आहे असा</p>
+  <div class="word-usage">
+    <div class="deva">संश्लिष्ट-शुण्डम् गजम् दृष्ट्वा बालाः हृष्यन्ति ।</div>
+    <div class="usage-iast">saṃśliṣṭa-śuṇḍam gajam dṛṣṭvā bālāḥ hṛṣyanti ।</div>
+    <div class="usage-meaning lang-en">Seeing the elephant with its trunk curled close, the children rejoice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोंड जवळ गुंडाळलेला हत्ती पाहून मुले आनंदित होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुदा</span>
+    <span class="word-iast">mudā</span>
+  </div>
+  <div><span class="word-grammar">feminine instrumental singular of मुद् (used adverbially)</span></div>
+  <div class="word-form">In this verse: मुदा</div>
+  <p class="word-meaning lang-en">with joy, gladly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आनंदाने</p>
+  <div class="word-usage">
+    <div class="deva">सः मुदा गृहम् आगच्छति ।</div>
+    <div class="usage-iast">saḥ mudā gṛham āgacchati ।</div>
+    <div class="usage-meaning lang-en">He comes home joyfully.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो आनंदाने घरी येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विघ्नानीकनिवारणम्</span>
+    <span class="word-iast">vighnānīkanivāraṇam</span>
+  </div>
+  <div><span class="word-grammar">ṣaṣṭhī-tatpuruṣa (विघ्नानाम् अनीकं निवारयति), masculine accusative singular</span></div>
+  <div class="word-form">In this verse: विघ्नानीकनिवारणं</div>
+  <p class="word-meaning lang-en">the dispeller of the host of obstacles</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विघ्नांच्या सैन्याचे (परंपरेचे) निवारण करणारा</p>
+  <div class="word-usage">
+    <div class="deva">विघ्न-अनीक-निवारणम् गणेशम् भक्ताः नमन्ति ।</div>
+    <div class="usage-iast">vighna-anīka-nivāraṇam gaṇeśam bhaktāḥ namanti ।</div>
+    <div class="usage-meaning lang-en">Devotees bow to Gaṇeśa, the dispeller of the host of obstacles.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विघ्नांच्या सैन्याचा नाश करणाऱ्या गणेशाला भक्त नमन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रणमताम्</span>
+    <span class="word-iast">praṇamatām</span>
+  </div>
+  <div><span class="word-grammar">present active participle (śatṛ) of प्र + √नम्, masculine genitive plural</span></div>
+  <div class="word-form">In this verse: प्रणमतां</div>
+  <p class="word-meaning lang-en">of those who bow down</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमस्कार करणाऱ्यांच्या (शतृ, षष्ठी बहुवचन)</p>
+  <div class="word-usage">
+    <div class="deva">प्रणमताम् जनानाम् विघ्नानि नश्यन्ति ।</div>
+    <div class="usage-iast">praṇamatām janānām vighnāni naśyanti ।</div>
+    <div class="usage-meaning lang-en">The obstacles of those who bow down are destroyed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमस्कार करणाऱ्या लोकांची विघ्ने नष्ट होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सद्वारणेशाननम्</span>
+    <span class="word-iast">sadvāraṇeśānanam</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (सतां वारणानाम् ईशस्य आननम् इव आननं यस्य), masculine accusative singular</span></div>
+  <div class="word-form">In this verse: सद्वारणेशाननम्</div>
+  <p class="word-meaning lang-en">him whose face is like that of the lord of noble elephants</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम गजराजाचे मुख असलेला</p>
+  <div class="word-usage">
+    <div class="deva">सत्-वारण-ईश-आननम् देवम् वन्दे ।</div>
+    <div class="usage-iast">sat-vāraṇa-īśa-ānanam devam vande ।</div>
+    <div class="usage-meaning lang-en">I salute the god whose face is like the lord of noble elephants.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम गजराजाच्या मुखासारखे मुख असलेल्या देवाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वन्दितम्</span>
+    <span class="word-iast">vanditam</span>
+  </div>
+  <div><span class="word-grammar">past passive participle of √वन्द् (1st class, ātmanepada), masculine accusative singular</span></div>
+  <div class="word-form">In this verse: वन्दितम्</div>
+  <p class="word-meaning lang-en">honoured, adored (by devotees)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(भक्तांनी) वंदिलेला</p>
+  <div class="word-usage">
+    <div class="deva">वन्दितम् गुरुम् शिष्यः प्रणमति ।</div>
+    <div class="usage-iast">vanditam gurum śiṣyaḥ praṇamati ।</div>
+    <div class="usage-meaning lang-en">The disciple bows to the honoured teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वंदिलेल्या गुरूंना शिष्य नमस्कार करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इन्दुमौलितनयम्</span>
+    <span class="word-iast">indumaulitanayam</span>
+  </div>
+  <div><span class="word-grammar">ṣaṣṭhī-tatpuruṣa (इन्दुमौलेः तनयः), masculine accusative singular</span></div>
+  <div class="word-form">In this verse: इन्दुमौलितनयं</div>
+  <p class="word-meaning lang-en">the son of the moon-crested one (Śiva)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र मस्तकी धारण करणाऱ्या शंकराचा पुत्र</p>
+  <div class="word-usage">
+    <div class="deva">इन्दु-मौलि-तनयम् गणेशम् सर्वे पूजयन्ति ।</div>
+    <div class="usage-iast">indu-mauli-tanayam gaṇeśam sarve pūjayanti ।</div>
+    <div class="usage-meaning lang-en">All worship Gaṇeśa, the son of the moon-crested Śiva.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र मस्तकी धारण करणाऱ्या शंकराचा पुत्र गणेश याची सर्व पूजा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तुन्दिलम्</span>
+    <span class="word-iast">tundilam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular of तुन्दिल (तुन्द + इलच्, &#x27;pot-bellied&#x27;)</span></div>
+  <div class="word-form">In this verse: तुन्दिलं</div>
+  <p class="word-meaning lang-en">the plump, pot-bellied one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठ्या पोटाचा, गुबगुबीत</p>
+  <div class="word-usage">
+    <div class="deva">तुन्दिलम् बालकम् दृष्ट्वा माता स्मयते ।</div>
+    <div class="usage-iast">tundilam bālakam dṛṣṭvā mātā smayate ।</div>
+    <div class="usage-meaning lang-en">Seeing the chubby child, the mother smiles.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुबगुबीत बाळाला पाहून आई हसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वन्दे</span>
+    <span class="word-iast">vande</span>
+  </div>
+  <div><span class="word-grammar">√वन्द् (1st class, ātmanepada), present indicative, first person singular</span></div>
+  <div class="word-form">In this verse: वन्दे</div>
+  <p class="word-meaning lang-en">I salute, I adore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी वंदन करतो (√वन्द्, लट्, उत्तम पुरुष)</p>
+  <div class="word-usage">
+    <div class="deva">अहम् देवम् भक्त्या वन्दे ।</div>
+    <div class="usage-iast">aham devam bhaktyā vande ।</div>
+    <div class="usage-meaning lang-en">I salute the god with devotion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी भक्तीने देवाला वंदन करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Gaṇeśa is invoked first, as in every sacred undertaking, because no work begins well until its obstacles are removed. The verse holds his two aspects together: the majestic deity, radiant as a lightning-girt coral peak, and the tender child on Pārvatī&#x27;s lap — teaching the reader to approach both the kāvya and the holy place it celebrates with reverence and affection together. Devotionally, the poet&#x27;s own humility is the real maṅgala: before praising the sthala, he places himself among the &#x27;pranamatām&#x27;, those who bow.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कोणत्याही मंगल कार्याच्या आरंभी गणेशाचे स्मरण केले जाते, कारण विघ्ने दूर झाल्याशिवाय कार्याची सिद्धी होत नाही. या श्लोकात त्याची दोन रूपे एकत्र आहेत — विजांनी वेढलेल्या पोवळ्याच्या शिखराप्रमाणे तेजस्वी देवता आणि पार्वतीच्या मांडीवरील कोमल बाळ. काव्याकडे आणि ते ज्या पवित्र स्थळाचे वर्णन करते त्याच्याकडे भक्तीने व प्रेमाने पाहावे, असा संदेश यातून मिळतो. नमस्कार करणाऱ्यांमध्ये स्वतःला सामील करून कवीने आपली नम्रता हेच खरे मंगल मानले आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas know Gaṇeśa as Vighneśvara, the remover of obstacles, and as Pārvatī-putra, the beloved son of Ambikā — the verse gathers both titles in one salutation. His elephant face recalls the familiar narrative of Śiva&#x27;s wrath and Pārvatī&#x27;s grief, resolved when the boy was restored to life with the head of the noblest of elephants; hence he is &#x27;lord of the noble tuskers&#x27; and the first to be worshipped in every rite. The epithet &#x27;son of the moon-crested one&#x27; places the whole maṅgala under Śiva&#x27;s own grace, fitting for a sthala-kāvya of a Śiva temple.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे गणेशाला विघ्नेश्वर — संकटे दूर करणारा — आणि पार्वतीपुत्र मानतात; या श्लोकात दोन्ही विशेषणे एकाच वंदनेत आली आहेत. त्याचे गजमुख शंकराच्या क्रोधाची व पार्वतीच्या शोकाची प्रसिद्ध कथा स्मरणात आणते — जिचा शेवट उत्तम गजाचे मस्तक लावून बाळाला पुनरुज्जीवित करण्यात झाला; म्हणून तो &#x27;उत्तम गजराजांचा स्वामी&#x27; असून प्रत्येक विधीत प्रथम पूजिला जातो. &#x27;चंद्रमौलीचा पुत्र&#x27; हे विशेषण संपूर्ण मंगल शंकराच्या कृपेखाली ठेवते — शिवमंदिराच्या स्थलकाव्याला हे उचितच आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is in śārdūlavikrīḍitam (19 syllables per pāda), the grand mahākāvya metre conventionally chosen for maṅgala-ślokas. The poet follows kavi-samaya: a deity (Gaṇeśa), the goddess of speech (v. 2), and then the iṣṭa-devatā Kṛṣṇa (v. 3) are invoked in sequence before the narrative begins at v. 4. The lightning-girt coral peak is a rūpaka on Gaṇeśa&#x27;s ruddy radiance; &#x27;sat-vāraṇeśa&#x27; — the &#x27;good lord of elephants&#x27; — is Airāvata in the old commentarial reading.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक शार्दूलविक्रीडित वृत्तात आहे (प्रति चरण १९ अक्षरे) — मंगलश्लोकांसाठी महाकाव्यांत रूढ असलेले भव्य वृत्त. कवी कविसमय पाळतो : आधी देवता (गणेश), नंतर वाग्देवता (श्लोक २) आणि मग इष्टदेवता कृष्ण (श्लोक ३) यांचे आवाहन करून श्लोक ४ पासून कथानक सुरू होते. विजांनी वेढलेले पोवळ्याचे शिखर हे गणेशाच्या तांबूस तेजाचे रूपक आहे; &#x27;सद्वारणेश&#x27; म्हणजे जुन्या टीकापरंपरेनुसार ऐरावत.</p></div></div>
+
+<div class="pagenav"><a href="index.html"><div class="lbl"><span class="bl-en lang-en">← Back</span><span class="bl-mr lang-mr">← मागे</span></div><div><span class="bl-en lang-en">Work index</span><span class="bl-mr lang-mr">अध्याय सूची</span></div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

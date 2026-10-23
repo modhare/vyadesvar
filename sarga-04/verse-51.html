@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 51 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 51</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 51</span><span class="bl-mr lang-mr">श्लोक 51</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">मुमुदे मुनिशार्दूलः शार्दूलाजिनवाससम् ।<br>समासीनं समालोक्य प्रसादसुमुखं सुखम् ।।५१।।</div>
+  <div class="verse-iast">mumude muniśārdūlaḥ śārdūlājinavāsasam । samāsīnaṃ samālokya prasādasumukhaṃ sukham</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">मुमुदे । मुनि-शार्दूलः । शार्दूल-अजिन-वाससम् । समासीनम् । समालोक्य । प्रसाद-सुमुखम् । सुखम् ।</div><div class="vig-iast">mumude । muni-śārdūlaḥ । śārdūla-ajina-vāsasam । samāsīnam । samālokya । prasāda-sumukham । sukham ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">शार्दूलः + शार्दूल = शार्दूलः शार्दूल (विसर्ग कायम) · शार्दूल + अजिन = शार्दूलाजिन (सवर्णदीर्घ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">मुनिशार्दूलः शार्दूलाजिनवाससं प्रसादसुमुखं सुखं समासीनं (शिवं) समालोक्य मुमुदे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The tiger among sages rejoiced, beholding Him seated at ease — clad in a tiger&#x27;s skin, His lovely face turned toward granting grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>व्याघ्रचर्म धारण करणाऱ्या व प्रसाद देण्यास उत्सुक असलेल्या त्या शंकराला आसनावर सुखाने बसलेला पाहून तो मुनिश्रेष्ठ आनंदित झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुनिशार्दूलः</span>
+    <span class="word-iast">muniśārdūlaḥ</span>
+  </div>
+  <div><span class="word-grammar">उपमित-तत्पुरुष: मुनि + शार्दूल, &#x27;tiger among sages&#x27; (शार्दूल used as a suffix meaning &#x27;foremost&#x27;); nominative singular masculine</span></div>
+  <div class="word-form">In this verse: muniśārdūlaḥ (nom. sg. masc.)</div>
+  <p class="word-meaning lang-en">the tiger among sages, the foremost ascetic (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनिश्रेष्ठ (शार्दूल = वाघ → श्रेष्ठ)</p>
+  <div class="word-usage">
+    <div class="deva">मुनिशार्दूलः तपः करोति ।</div>
+    <div class="usage-iast">muniśārdūlaḥ tapaḥ karoti ।</div>
+    <div class="usage-meaning lang-en">The tiger among sages practises austerity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनिश्रेष्ठ तप करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शार्दूलाजिनवाससम्</span>
+    <span class="word-iast">śārdūlājinavāsasam</span>
+  </div>
+  <div><span class="word-grammar">Bahuvrīhi: शार्दूल (tiger) + अजिन (skin) + वासस् (garment), &#x27;he whose garment is a tiger&#x27;s skin&#x27;; accusative singular masculine, agreeing with the understood शिवम्</span></div>
+  <div class="word-form">In this verse: śārdūlājinavāsasam (acc. sg. masc.)</div>
+  <p class="word-meaning lang-en">clad in a tiger&#x27;s skin (Śiva)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>व्याघ्रचर्म वस्त्र असलेल्याला</p>
+  <div class="word-usage">
+    <div class="deva">शार्दूलाजिनवाससं हरं वन्दे ।</div>
+    <div class="usage-iast">śārdūlājinavāsasaṃ haraṃ vande ।</div>
+    <div class="usage-meaning lang-en">I salute Hara, clad in a tiger&#x27;s skin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>व्याघ्रचर्मधारी हराला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समासीनम्</span>
+    <span class="word-iast">samāsīnam</span>
+  </div>
+  <div><span class="word-grammar">Present participle, ātmanepada, of सम् + √आस्, &#x27;to sit&#x27;; accusative singular masculine</span></div>
+  <div class="word-form">In this verse: samāsīnam (acc. sg. masc.)</div>
+  <p class="word-meaning lang-en">seated</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बसलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">मुनिः समासीनः ध्यायति ।</div>
+    <div class="usage-iast">muniḥ samāsīnaḥ dhyāyati ।</div>
+    <div class="usage-meaning lang-en">The sage, seated, meditates.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनी बसून ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रसादसुमुखम्</span>
+    <span class="word-iast">prasādasumukham</span>
+  </div>
+  <div><span class="word-grammar">Bahuvrīhi: प्रसाद (favour, grace) + सु (good, lovely) + मुख (face), &#x27;whose face is lovely with grace&#x27;; accusative singular</span></div>
+  <div class="word-form">In this verse: prasādasumukham (acc. sg.)</div>
+  <p class="word-meaning lang-en">with a face gracious and ready to bestow favour</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसाद देण्यास उत्सुक</p>
+  <div class="word-usage">
+    <div class="deva">प्रसादसुमुखं देवं पश्यामि ।</div>
+    <div class="usage-iast">prasādasumukhaṃ devaṃ paśyāmi ।</div>
+    <div class="usage-meaning lang-en">I behold the god whose face is gracious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृपामय मुख असलेल्या देवाचे मी दर्शन घेतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुखम्</span>
+    <span class="word-iast">sukham</span>
+  </div>
+  <div><span class="word-grammar">Neuter noun सुख used adverbially in the accusative, &#x27;at ease, comfortably&#x27;</span></div>
+  <div class="word-form">In this verse: sukham (adv.)</div>
+  <p class="word-meaning lang-en">at ease, happily</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुखकर / सुखाने</p>
+  <div class="word-usage">
+    <div class="deva">सः सुखम् उपविशति ।</div>
+    <div class="usage-iast">saḥ sukham upaviśati ।</div>
+    <div class="usage-meaning lang-en">He sits down at ease.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सुखाने बसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुमुदे</span>
+    <span class="word-iast">mumude</span>
+  </div>
+  <div><span class="word-grammar">Perfect (लिट्), 3rd singular ātmanepada of √मुद्, &#x27;to rejoice&#x27;</span></div>
+  <div class="word-form">In this verse: mumude (lit 3sg ātm.)</div>
+  <p class="word-meaning lang-en">he rejoiced, was gladdened</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आनंदित झाला (√मुद्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः दर्शनात् मुमुदे ।</div>
+    <div class="usage-iast">bhaktaḥ darśanāt mumude ।</div>
+    <div class="usage-meaning lang-en">The devotee rejoiced at the vision.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त दर्शनाने आनंदित झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse teaches the devotee what to look for in darśana: not marvels, but the Lord&#x27;s face turned in grace — प्रसादसुमुख. Paraśurāma sees Śiva seated सुखम्, at ease; God&#x27;s ease becomes the devotee&#x27;s joy (मुमुदे). The tiger-skin reminds that the ascetic&#x27;s fierceness and the devotee&#x27;s tenderness meet in one Person: the same Lord who wears the wild skin smiles the gracious smile.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दर्शनात काय पाहावे हे श्लोक भक्ताला शिकवतो — चमत्कार नव्हे, तर कृपेकडे वळलेले भगवंताचे मुख — प्रसादसुमुख. परशुरामाला शिव सुखम्, सुखाने बसलेला दिसतो; देवाचे सुख हाच भक्ताचा आनंद (मुमुदे) होतो. व्याघ्रचर्म आठवण करून देते की तपस्व्याचे रौद्रत्व आणि भक्ताची कोमलता एकाच व्यक्तीत भेटतात — वन्य कातडे धारण करणारा तोच भगवान कृपेचे हास्य करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic iconography of Śiva is gathered in one glimpse: the tiger-skin (व्याघ्राजिन), the seat of ease, and above all the face — प्रसादसुमुख, turned toward granting grace. Darśana literature insists that the Lord&#x27;s face, seen प्रसन्न, is itself the blessing; the devotee&#x27;s joy (मुमुदे) is the proof that the sight was real. मुनिशार्दूल, &#x27;tiger among sages&#x27;, is the stock epithet for a foremost ascetic.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकाच दृष्टिक्षेपात शिवाची पौराणिक मूर्ती उभी राहते — व्याघ्रचर्म (व्याघ्राजिन), सुखासन आणि सर्वांत महत्त्वाचे मुख — प्रसादसुमुख, कृपा देण्याकडे वळलेले. दर्शन-साहित्य आग्रहाने सांगते की प्रसन्न दिसलेले भगवंताचे मुख हेच वरदान आहे; भक्ताचा आनंद (मुमुदे) हाच दर्शन खरे झाल्याचा पुरावा आहे. मुनिशार्दूल, &#x27;मुनींमधील वाघ&#x27;, हे श्रेष्ठ तपस्व्याचे ठरलेले विशेषण आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. The grammar notes catch the poet&#x27;s echo: मुनिशार्दूलः (&#x27;tiger among sages&#x27;) answered by शार्दूलाजिनवाससम् (&#x27;clad in a tiger&#x27;s skin&#x27;) — a यमक-like play on शार्दूल. प्रसादसुमुखम् is a bahuvrīhi: प्रसाद (grace/favour) + सु (good) + मुख (face), &#x27;whose face is lovely with grace&#x27;. सुखम् here is adverbial, &#x27;at ease&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: अनुष्टुभ्. व्याकरणटीपेत कवीची प्रतिध्वनी पकडली आहे — मुनिशार्दूलः (&#x27;मुनींमधील वाघ&#x27;) याला शार्दूलाजिनवाससम् (&#x27;वाघाच्या कातड्यातील&#x27;) हे उत्तर — शार्दूलवर यमकासारखा खेळ. प्रसादसुमुखम् हा बहुव्रीही आहे — प्रसाद (कृपा) + सु + मुख, &#x27;ज्याचे मुख कृपेने सुंदर आहे&#x27;. येथे सुखम् क्रियाविशेषण आहे, &#x27;सुखाने&#x27;.</p></div></div>
+
+<div class="pagenav"><a href="verse-50.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 50</div></a><a class="next" href="verse-52.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 52</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

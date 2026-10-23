@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यत्र मुक्तिः पिशाचानां यत्र पापामयक्षयः ।<br>अप्रजानां प्रजा यत्र पृथिव्यां प्रथितं ततः ।।२५।।</div>
+  <div class="verse-iast">yatra muktiḥ piśācānāṃ yatra pāpāmayakṣayaḥ । aprajānāṃ prajā yatra pṛthivyāṃ prathitaṃ tataḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यत्र मुक्तिः पिशाचानाम् यत्र पाप-आमय-क्षयः । अप्रजानाम् प्रजा यत्र पृथिव्याम् प्रथितम् ततः ।</div><div class="vig-iast">yatra muktiḥ piśācānām yatra pāpa-āmaya-kṣayaḥ । aprajānām prajā yatra pṛthivyām prathitam tataḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पाप + आमय = पापामय</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र पिशाचानां मुक्तिः, यत्र पापामयक्षयः, यत्र अप्रजानां प्रजा (भवति), ततः (तत्) पृथिव्यां प्रथितम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Where the troubled spirits (pishachas) attain release, where sin and disease perish, and where the childless gain offspring — it is from this that this place has become famous upon the earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या ठिकाणी पिशाचांना मुक्ती लाभते, पाप व रोग यांचा क्षय होतो व निपुत्रिकांना सन्तती प्राप्त होते - म्हणूनच हे क्षेत्र पृथ्वीवर प्रसिद्ध झाले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र</span>
+    <span class="word-iast">yatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यत्र</div>
+  <p class="word-meaning lang-en">where</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र धर्मः तत्र जयः।</div>
+    <div class="usage-iast">yatra dharmaḥ tatra jayaḥ.</div>
+    <div class="usage-meaning lang-en">Where there is dharma, there is victory.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे धर्म असतो तेथे विजय होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुक्तिः</span>
+    <span class="word-iast">muktiḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: मुक्तिः</div>
+  <p class="word-meaning lang-en">release</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुक्ती</p>
+  <div class="word-usage">
+    <div class="deva">साधनया मुक्तिः लभ्यते।</div>
+    <div class="usage-iast">sādhanayā muktiḥ labhyate.</div>
+    <div class="usage-meaning lang-en">Liberation is attained through spiritual practice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधनेने मुक्ती प्राप्त होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पिशाचानाम्</span>
+    <span class="word-iast">piśācānām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.</span></div>
+  <div class="word-form">In this verse: पिशाचानाम्</div>
+  <p class="word-meaning lang-en">for spirits</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पिशाचांना</p>
+  <div class="word-usage">
+    <div class="deva">पिशाचानां बाधा क्षेत्रदर्शनात् नश्यति।</div>
+    <div class="usage-iast">piśācānāṃ bādhā kṣetradarśanāt naśyati.</div>
+    <div class="usage-meaning lang-en">The torment of spirits perishes by visiting the sacred place.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्षेत्रदर्शनाने पिशाचबाधा नष्ट होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र</span>
+    <span class="word-iast">yatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यत्र</div>
+  <p class="word-meaning lang-en">where</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र धर्मः तत्र जयः।</div>
+    <div class="usage-iast">yatra dharmaḥ tatra jayaḥ.</div>
+    <div class="usage-meaning lang-en">Where there is dharma, there is victory.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे धर्म असतो तेथे विजय होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पाप-आमय-क्षयः</span>
+    <span class="word-iast">pāpa-āmaya-kṣayaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: पापामयक्षयः</div>
+  <p class="word-meaning lang-en">destruction of sin and disease</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाप व रोग यांचा नाश</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गास्नानेन पापामयक्षयः भवति।</div>
+    <div class="usage-iast">gaṅgāsnānena pāpāmayakṣayaḥ bhavati.</div>
+    <div class="usage-meaning lang-en">By bathing in the Ganges there is destruction of sin and disease.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगास्नानाने पाप व रोग यांचा नाश होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अप्रजानाम्</span>
+    <span class="word-iast">aprajānām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.</span></div>
+  <div class="word-form">In this verse: अप्रजानाम्</div>
+  <p class="word-meaning lang-en">for the childless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निपुत्रिकांना</p>
+  <div class="word-usage">
+    <div class="deva">अप्रजानां कृते ईश्वरः प्रजां ददाति।</div>
+    <div class="usage-iast">aprajānāṃ kṛte īśvaraḥ prajāṃ dadāti.</div>
+    <div class="usage-meaning lang-en">For the childless, the Lord grants offspring.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निपुत्रिकांसाठी ईश्वर संतती देतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रजा</span>
+    <span class="word-iast">prajā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: प्रजा</div>
+  <p class="word-meaning lang-en">offspring</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संतती</p>
+  <div class="word-usage">
+    <div class="deva">धर्मात्मा पुत्रः एव उत्तमा प्रजा।</div>
+    <div class="usage-iast">dharmātmā putraḥ eva uttamā prajā.</div>
+    <div class="usage-meaning lang-en">A virtuous son is indeed the finest offspring.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्मात्मा पुत्र हीच उत्तम संतती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र</span>
+    <span class="word-iast">yatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यत्र</div>
+  <p class="word-meaning lang-en">where</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र धर्मः तत्र जयः।</div>
+    <div class="usage-iast">yatra dharmaḥ tatra jayaḥ.</div>
+    <div class="usage-meaning lang-en">Where there is dharma, there is victory.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे धर्म असतो तेथे विजय होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पृथिव्याम्</span>
+    <span class="word-iast">pṛthivyām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. स. एव.</span></div>
+  <div class="word-form">In this verse: पृथिव्याम्</div>
+  <p class="word-meaning lang-en">on earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर</p>
+  <div class="word-usage">
+    <div class="deva">पृथिव्यां सर्वे प्राणिनः सुखं वाञ्छन्ति।</div>
+    <div class="usage-iast">pṛthivyāṃ sarve prāṇinaḥ sukhaṃ vāñchanti.</div>
+    <div class="usage-meaning lang-en">All beings on earth desire happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर सर्व प्राणी सुखाची इच्छा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रथितम्</span>
+    <span class="word-iast">prathitam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: प्रथितम्</div>
+  <p class="word-meaning lang-en">famous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्ध</p>
+  <div class="word-usage">
+    <div class="deva">कवेः नाम सर्वत्र प्रथितम् अस्ति।</div>
+    <div class="usage-iast">kaveḥ nāma sarvatra prathitam asti.</div>
+    <div class="usage-meaning lang-en">The poet&#x27;s name is famous everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कवीचे नाव सर्वत्र प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ततः</span>
+    <span class="word-iast">tataḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: ततः</div>
+  <p class="word-meaning lang-en">therefore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">सः परिश्रमं कृतवान् ततः सफलः अभवत्।</div>
+    <div class="usage-iast">saḥ pariśramaṃ kṛtavān tataḥ saphalaḥ abhavat.</div>
+    <div class="usage-meaning lang-en">He worked hard; therefore he succeeded.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने परिश्रम केले; म्हणून तो यशस्वी झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse lists the three graces that made the Vyadeshwar kshetra renowned: liberation from preta-pishacha bondage (the theme echoed in v.26 with Bhairava the pishacha-parimochaka), the removal of sin and bodily ailment, and the granting of children to the childless. These are the classic kshetra-mahatmya boons — spiritual rescue, bodily healing, and worldly fulfilment — and the verse presents the shrine&#x27;s fame as their natural result.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या श्लोकात व्याडेश्वर क्षेत्राला जी प्रसिद्धी लाभली तिची तीन कारणे सांगितली आहेत — पिशाचबाधेतून मुक्ती (जिचे प्रतीक म्हणजे श्लोक २६ मधील पिशाचपरिमोचक भैरव), पाप व रोग यांचा नाश आणि निपुत्रिकांना संततीची प्राप्ती. हे त्रिविध वरदानच क्षेत्रमाहात्म्याचे सार आहे — अध्यात्मिक उद्धार, शारीरिक आरोग्य आणि ऐहिक फलसिद्धी — आणि याचमुळे हे क्षेत्र पृथ्वीभर प्रसिद्ध झाले आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Puranic tradition holds that Shiva-kshetras are famed precisely for such boons: mukti for the afflicted, arogya for the diseased, and praja for the childless (compare the fame of shrines like Kashi or Tryambakeshvara). The verse&#x27;s triplet mirrors the three realms of human need — the unseen world (pishacha), the moral-physical (papa-amaya), and the familial (praja) — showing the kshetra&#x27;s grace reaching every level of existence.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणपरंपरेनुसार शिवक्षेत्रे याच प्रकारच्या वरदानांसाठी प्रसिद्ध असतात — पीडितांना मुक्ती, रोग्यांना आरोग्य आणि निपुत्रिकांना संतती (काशी, त्र्यंबकेश्वर इत्यादींची प्रसिद्धीही अशीच). या श्लोकातील त्रिवर्ग मानवी गरजांच्या तीन स्तरांना स्पर्श करतो — अदृश्य लोक (पिशाच), नैतिक-शारीरिक (पाप-आमय) आणि कौटुंबिक (प्रजा) — म्हणजे क्षेत्राची कृपा अस्तित्वाच्या प्रत्येक पातळीवर पोहोचते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The meter is Anushtubh. The triple &quot;yatra ... yatra ... yatra&quot; (where... where... where...) is a poetic accumulation device leading to &quot;tatah&quot; (therefore) — the kshetra&#x27;s fame is the logical conclusion of its boons. The pada &quot;aprajanam praja yatra&quot; is terse: praja here means offspring granted to the childless; the book&#x27;s Marathi gloss captures the sense exactly.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>छंद अनुष्टुभ आहे. &quot;यत्र ... यत्र ... यत्र&quot; हा त्रिवार उच्चार काव्यात्मक संचयाचा प्रकार असून &quot;ततः&quot; (म्हणून) हा त्याचा निष्कर्ष आहे — क्षेत्राच्या वरदानांतूनच त्याची प्रसिद्धी सिद्ध होते. &quot;अप्रजानां प्रजा यत्र&quot; हे पद संक्षिप्त आहे; प्रजा म्हणजे निपुत्रिकांना मिळणारी संतती, आणि ग्रंथाची मराठी अर्थप्रक्रिया यथार्थ आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 5 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 5</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स्रक्ष्यमाणे च तद्ग्रामे पञ्चविंशतिवार्षिकः ।<br>जन्मतो न बलिर्देयो भूपायाथ तदूर्ध्वतः ।।५।।</div>
+  <div class="verse-iast">srakṣyamāṇe ca tadgrāme pañcaviṃśativārṣikaḥ । janmato na balirdeyo bhūpāyātha tadūrdhvataḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">स्रक्ष्यमाणे च तत्-ग्रामे पञ्चविंशति-वार्षिकः । जन्मतः न बलिः देयः भूपाय अथ तत्-ऊर्ध्वतः ।</div><div class="vig-iast">srakṣyamāṇe ca tat-grāme pañcaviṃśati-vārṣikaḥ । janmataḥ na baliḥ deyaḥ bhūpāya atha tat-ūrdhvataḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत् + ग्रामे = तद्ग्रामे · जन्मतः + न = जन्मतो न · बलिः + देयः = बलिर्देयः · भूपाय + अथ = भूपायाथ · तत् + ऊर्ध्वतः = तदूर्ध्वतः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तद्ग्रामे स्रक्ष्यमाणे च जन्मतः पञ्चविंशतिवार्षिकः (कालः) भूपाय बलिः न देयः; अथ तदूर्ध्वतः उत्पन्नदशमः भागः केवलं प्रजानाम् एव (स्यात्); शिष्टस्य (च) षष्ठः भागः प्रजापालस्य ते सद्बलिः (स्यात्) । *(अटींचे तपशील अस्पष्ट — पुस्तकाचा मराठी अर्थ पाहावा.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>And while that village is coming into being, for five-and-twenty years from its birth no tax shall be due to the king; but after that...</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते गाव स्थापन झाल्यानंतर २५ वर्षे जाईपर्यंत त्या गावातून राजाला कुठलाही कर दिला जाऊ नये व नंतर त्या गावाच्या उत्पन्नाचा दहावा अंश निव्वळ प्रजेसाठीच रहावा. उरलेल्याचा सहावा अंश मात्र प्रजेचे पालन करणाऱ्या तुझ्यासाठी कर म्हणून देण्यात यावा.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्रक्ष्यमाणे</span>
+    <span class="word-iast">srakṣyamāṇe</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.; लृट्-शानच्, सृज् (सति-सप्तमी)</span></div>
+  <div class="word-form">In this verse: स्रक्ष्यमाणे</div>
+  <p class="word-meaning lang-en">when being founded</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्माण होणाऱ्या (असता)</p>
+  <div class="word-usage">
+    <div class="deva">नगरे स्रक्ष्यमाणे जनाः उत्सुकाः आसन् ।</div>
+    <div class="usage-iast">nagare srakṣyamāṇe janāḥ utsukāḥ āsan ।</div>
+    <div class="usage-meaning lang-en">While the city was being founded, the people were eager.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नगर स्थापले जात असता लोक उत्सुक होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">रामः च कृष्णः च आगच्छताम् ।</div>
+    <div class="usage-iast">rāmaḥ ca kṛṣṇaḥ ca āgacchatām ।</div>
+    <div class="usage-meaning lang-en">Both Rāma and Kṛṣṇa came.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम आणि कृष्ण दोघे आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्-ग्रामे</span>
+    <span class="word-iast">tat-grāme</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: तद्ग्रामे</div>
+  <p class="word-meaning lang-en">that village</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या गावात</p>
+  <div class="word-usage">
+    <div class="deva">तद्ग्रामे उत्सवः अभवत् ।</div>
+    <div class="usage-iast">tadgrāme utsavaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">There was a festival in that village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या गावात उत्सव झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पञ्चविंशति-वार्षिकः</span>
+    <span class="word-iast">pañcaviṃśati-vārṣikaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: पञ्चविंशतिवार्षिकः</div>
+  <p class="word-meaning lang-en">for twenty-five years</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पंचवीस वर्षांचा (कालावधी)</p>
+  <div class="word-usage">
+    <div class="deva">पञ्चविंशतिवार्षिकः कालः अत्यक्रामत् ।</div>
+    <div class="usage-iast">pañcaviṃśativārṣikaḥ kālaḥ atyakrāmat ।</div>
+    <div class="usage-meaning lang-en">A period of twenty-five years passed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पंचवीस वर्षांचा काळ निघून गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जन्मतः</span>
+    <span class="word-iast">janmataḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (तसिल्)</span></div>
+  <div class="word-form">In this verse: जन्मतः</div>
+  <p class="word-meaning lang-en">from its founding</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थापनेपासून</p>
+  <div class="word-usage">
+    <div class="deva">जन्मतः सः धार्मिकः आसीत् ।</div>
+    <div class="usage-iast">janmataḥ saḥ dhārmikaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">From birth he was pious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जन्मापासून तो धार्मिक होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न</span>
+    <span class="word-iast">na</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: न</div>
+  <p class="word-meaning lang-en">not</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाही</p>
+  <div class="word-usage">
+    <div class="deva">सः न अगच्छत् ।</div>
+    <div class="usage-iast">saḥ na agacchat ।</div>
+    <div class="usage-meaning lang-en">He did not go.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो गेला नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बलिः</span>
+    <span class="word-iast">baliḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: बलिः</div>
+  <p class="word-meaning lang-en">tax</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कर</p>
+  <div class="word-usage">
+    <div class="deva">प्रजाः राज्ञे बलिम् ददति ।</div>
+    <div class="usage-iast">prajāḥ rājñe balim dadati ।</div>
+    <div class="usage-meaning lang-en">The people pay tax to the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजा राजाला कर देतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देयः</span>
+    <span class="word-iast">deyaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; यत्</span></div>
+  <div class="word-form">In this verse: देयः</div>
+  <p class="word-meaning lang-en">to be paid</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>द्यावा</p>
+  <div class="word-usage">
+    <div class="deva">ऋणम् देयम् एव ।</div>
+    <div class="usage-iast">ṛṇam deyam eva ।</div>
+    <div class="usage-meaning lang-en">The debt must indeed be paid.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऋण दिलेच पाहिजे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूपाय</span>
+    <span class="word-iast">bhūpāya</span>
+  </div>
+  <div><span class="word-grammar">पुं. च. एव.</span></div>
+  <div class="word-form">In this verse: भूपाय</div>
+  <p class="word-meaning lang-en">to the king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाला</p>
+  <div class="word-usage">
+    <div class="deva">भूपाय नमः ।</div>
+    <div class="usage-iast">bhūpāya namaḥ ।</div>
+    <div class="usage-meaning lang-en">Salutation to the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाला नमस्कार.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अथ</span>
+    <span class="word-iast">atha</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अथ</div>
+  <p class="word-meaning lang-en">then</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मग</p>
+  <div class="word-usage">
+    <div class="deva">अथ सः गृहम् अगच्छत् ।</div>
+    <div class="usage-iast">atha saḥ gṛham agacchat ।</div>
+    <div class="usage-meaning lang-en">Then he went home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मग तो घरी गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्-ऊर्ध्वतः</span>
+    <span class="word-iast">tat-ūrdhvataḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तदूर्ध्वतः</div>
+  <p class="word-meaning lang-en">after that</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यानंतर</p>
+  <div class="word-usage">
+    <div class="deva">तदूर्ध्वतः सः मौनम् अभजत् ।</div>
+    <div class="usage-iast">tadūrdhvataḥ saḥ maunam abhajat ।</div>
+    <div class="usage-meaning lang-en">After that he kept silence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यानंतर तो मौन धरून राहिला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The twenty-five-year tax holiday is the māhātmya&#x27;s economics of dharma: a new settlement, like a young tree, must be sheltered before it can bear fruit for the kingdom. The king&#x27;s restraint — asking nothing while the village takes root — mirrors the divine patience with which a kṣetra nurtures its people. Artha here serves dharma: revenue follows righteousness, never precedes it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पंचवीस वर्षांची करसवलत ही माहात्म्याची धर्म-अर्थशास्त्र आहे: नवी वस्ती, कोवळ्या झाडाप्रमाणे, राज्याला फळ देण्यापूर्वी संरक्षित केली पाहिजे. गाव रुजत असताना काहीही न मागणारा राजाचा संयम — क्षेत्र आपल्या लोकांचे ज्या दैवी धीराने पोषण करते त्याचे प्रतिबिंब आहे. येथे अर्थ धर्माची सेवा करतो: महसूल नीतीचे अनुसरण करतो, तिच्यापुढे कधीही जात नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>A tax-free founding period for new settlements is attested in Dharmaśāstra and Arthaśāstra alike — Kauṭilya advises remissions (parihāra) to attract settlers to new or depopulated villages. The twenty-five-year span is generous even by those standards, marking Śrīdhara&#x27;s charter as an act of dharma rather than mere statecraft.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नव्या वस्त्यांसाठी करमुक्त स्थापना-काल धर्मशास्त्र व अर्थशास्त्र दोन्हींत प्रमाणित आहे — कौटिल्य नव्या किंवा उजाड गावांत वसाहतकार आकर्षित करण्यासाठी सवलतींचा (परिहार) सल्ला देतो. पंचवीस वर्षांचा कालावधी त्या मानकांनाही उदार आहे; यावरून श्रीधराचे शासनपत्र केवळ राज्यकारभार नव्हे, तर धर्मकृत्य आहे हे दिसते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Verses 5–6 are a single fiscal sentence, and the book&#x27;s Marathi rendering treats them together: twenty-five tax-free years, then a tenth of the produce reserved for the people and a sixth of the remainder as the king&#x27;s due. The anvaya notes the arithmetic is obscure in the Sanskrit — the editor follows the book&#x27;s Marathi reading rather than emending. स्रक्ष्यमाणे is the future passive participle (śānac) of √सृज् in the locative absolute (&#x27;when it is about to be founded&#x27;).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाचवा व सहावा श्लोक एकच वित्तीय वाक्य आहेत, आणि पुस्तकाचा मराठी अर्थ त्यांना एकत्रच घेतो: पंचवीस करमुक्त वर्षे, नंतर उत्पन्नाचा दहावा अंश प्रजेसाठी राखीव आणि उरलेल्याचा सहावा अंश राजाचा हक्क. अन्वयात गणित संस्कृतात अस्पष्ट असल्याचे नोंदवले आहे — संपादकाने स्वतः दुरुस्ती न करता पुस्तकाच्या मराठी वाचनाचे अनुसरण केले आहे. स्रक्ष्यमाणे हे √सृज् धातूचे भविष्यकाळी कर्मणि कृदन्त (शानच्) सप्तमीत आहे (&#x27;ते स्थापले जात असता&#x27; — सति सप्तमी).</p></div></div>
+
+<div class="pagenav"><a href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 4</div></a><a class="next" href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 6</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

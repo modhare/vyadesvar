@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 15 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 15</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 15</span><span class="bl-mr lang-mr">श्लोक 15</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यस्य कारागृहे वासं कृतवान् दशकन्धरः ।<br>स हतो हैहयो येन स एनं नावधीत्कथम् ।।१५।।</div>
+  <div class="verse-iast">yasya kārāgṛhe vāsaṃ kṛtavān daśakandharaḥ । sa hato haihayo yena sa enaṃ nāvadhītkatham</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यस्य । कारागृहे । वासम् । कृतवान् । दशकन्धरः । सः । हतः । हैहयः । येन । सः । एनम् । न । अवधीत् । कथम् ।</div><div class="vig-iast">yasya । kārāgṛhe । vāsam । kṛtavān । daśakandharaḥ । saḥ । hataḥ । haihayaḥ । yena । saḥ । enam । na । avadhīt । katham ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">कृतवान् + दश = कृतवान् दश · हतः + हैहयः = हतो हैहयो · हैहयः + येन = हैहयो येन · सः + एनम् = स एनम् · न + अवधीत् = नावधीत् · अवधीत् + कथम् = अवधीत्कथम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्य कारागृहे दशकन्धरः वासं कृतवान्, सः हैहयः येन हतः, सः एनं कथं न अवधीत् ?</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;The ten-necked Rāvaṇa once had to dwell in his (Kārtavīrya&#x27;s) prison — and that Haihaya king was slain by him (Paraśurāma) — how then did he not slay this fellow?&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;ज्याच्या कारागृहात दशकण्ठ रावणाला राहावे लागले तो हैहय कार्तवीर्य ज्याने मारला त्या परशुरामाने याचा वध कसा केला नाही?&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कारागृहे वासं कृतवान्</span>
+    <span class="word-iast">kārāgṛhe vāsaṃ kṛtavān</span>
+  </div>
+  <div><span class="word-grammar">phrase: कारागृह (neuter locative singular) + वास (masculine accusative singular) + कृतवत् (√कृ + क्तवतु, perfect active participle, masculine nominative singular)</span></div>
+  <div class="word-form">In this verse: कारागृहे वासं कृतवान् (participial phrase)</div>
+  <p class="word-meaning lang-en">had dwelt in prison</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुरुंगात राहिला (क्तवतु)</p>
+  <div class="word-usage">
+    <div class="deva">सः बहूनि वर्षाणि कारागृहे वासं कृतवान् ।</div>
+    <div class="usage-iast">saḥ bahūni varṣāṇi kārāgṛhe vāsaṃ kṛtavān ।</div>
+    <div class="usage-meaning lang-en">He had dwelt in prison for many years.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो अनेक वर्षे तुरुंगात राहिला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हैहयः</span>
+    <span class="word-iast">haihayaḥ</span>
+  </div>
+  <div><span class="word-grammar">taddhita patronymic of the Haihaya clan; masculine nominative singular (= Kārtavīrya Arjuna)</span></div>
+  <div class="word-form">In this verse: हैहयः (m. nom. sg.)</div>
+  <p class="word-meaning lang-en">the Haihaya king (Kārtavīrya)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हैहयराज कार्तवीर्य (सहस्रार्जुन)</p>
+  <div class="word-usage">
+    <div class="deva">हैहयः कार्तवीर्यः माहिष्मतीम् अपालयत् ।</div>
+    <div class="usage-iast">haihayaḥ kārtavīryaḥ māhiṣmatīm apālayat ।</div>
+    <div class="usage-meaning lang-en">Kārtavīrya the Haihaya ruled Māhiṣmatī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हैहय कार्तवीर्य माहिष्मतीवर राज्य करीत होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">येन हतः</span>
+    <span class="word-iast">yena hataḥ</span>
+  </div>
+  <div><span class="word-grammar">phrase: यद् (masculine instrumental singular) + हत (√हन् + क्त, masculine nominative singular)</span></div>
+  <div class="word-form">In this verse: येन हतः (relative phrase)</div>
+  <p class="word-meaning lang-en">slain by whom</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याने मारला (परशुरामाने)</p>
+  <div class="word-usage">
+    <div class="deva">येन हतः सः वीरः स्वर्गम् अगच्छत् ।</div>
+    <div class="usage-iast">yena hataḥ saḥ vīraḥ svargam agacchat ।</div>
+    <div class="usage-meaning lang-en">The hero, slain by whomsoever, went to heaven.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याच्याकडून मारला गेला तो वीर स्वर्गाला गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कथं न अवधीत्</span>
+    <span class="word-iast">kathaṃ na avadhīt</span>
+  </div>
+  <div><span class="word-grammar">phrase: कथम् (interrogative avyaya) + न + अवधीत् (√हन् with the वध् substitute, लुङ्, 3rd singular)</span></div>
+  <div class="word-form">In this verse: कथं नावधीत् (interrogative phrase)</div>
+  <p class="word-meaning lang-en">how did he not slay?</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>का मारले नाही</p>
+  <div class="word-usage">
+    <div class="deva">कथं न अवधीत् सः रिपुम् इति सर्वे अपृच्छन् ।</div>
+    <div class="usage-iast">kathaṃ na avadhīt saḥ ripum iti sarve apṛcchan ।</div>
+    <div class="usage-meaning lang-en">All asked, &#x27;How did he not slay the foe?&#x27;</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वांनी विचारले, &#x27;त्याने शत्रूला का मारले नाही?&#x27;</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāma argues a fortiori: the Haihaya king Kārtavīrya was mighty enough to drag even Rāvaṇa into captivity, and Paraśurāma slew that Kārtavīrya — so Rāvaṇa should have fallen all the more surely. The logic is airtight on the plane of mere power, which is why the answer must lie on a higher plane: the avatāras do not compete in feats, they fulfil portions. Devotionally the verse teaches that God&#x27;s instruments are not interchangeable — each nimitta has its appointed work — and that apparent inaction by the mighty is never impotence but obedience to the larger design.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राम &#x27;अधिकाधिक&#x27; युक्तिवाद मांडतो — हैहयराज कार्तवीर्य एवढा बलवान होता की त्याने खुद्द रावणालाही कैदेत टाकले, आणि त्या कार्तवीर्याला परशुरामाने मारले — मग रावण तर अधिक निश्चितपणे पडायला हवा होता. केवळ सामर्थ्याच्या पातळीवर हा तर्क अभेद्य आहे, म्हणूनच उत्तर उच्च पातळीवर असले पाहिजे — अवतार पराक्रमांत स्पर्धा करीत नाहीत, तर वाट्याचे कार्य पूर्ण करतात. भक्तिभावाने श्लोक शिकवतो — ईश्वराची निमित्ते परस्परबदली नाहीत — प्रत्येक निमित्ताला नेमलेले कार्य असते — आणि समर्थांची दिसणारी निष्क्रियता कधीही असमर्थता नसते, तर बृहत्तर योजनेला अनुसरण असते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas (Harivaṃśa-parvan 33, Viṣṇu Purāṇa 4.11) tell how Kārtavīrya Arjuna — the thousand-armed Haihaya king of Māhiṣmatī — sporting in the Narmadā, dammed the river with his thousand arms; Rāvaṇa, camped downstream for his sandhyā, found his offerings scattered by the sudden flood, attacked in fury, and was seized like a child and thrown into prison — till Pulastya himself came to beg his release. This library&#x27;s companion volume, the Parashuram library (Bhāgavata 9.15–16), narrates the sequel: Paraśurāma&#x27;s slaying of Kārtavīrya and the twenty-one-fold cleansing. Rāma&#x27;s point stands: the slayer of Rāvaṇa&#x27;s captor spared Rāvaṇa.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे (हरिवंशपर्व ३३, विष्णुपुराण ४.११) सांगतात — नर्मदेत खेळताना सहस्रबाहू हैहयराज कार्तवीर्य अर्जुनाने (माहिष्मतीचा राजा) आपल्या हजार बाहूंनी नदी अडवली; खालच्या काठावर संध्येसाठी थांबलेला रावण — त्याची पूजा अचानक पुराने वाहून गेल्याने — क्रोधाने हल्ला चढवून आला, आणि बाळाप्रमाणे पकडला जाऊन तुरुंगात टाकला गेला — शेवटी स्वतः पुलस्त्य त्याच्या सुटकेसाठी विनवणी करायला आले. या ग्रंथालयाचा जोडी-ग्रंथ — परशुराम ग्रंथालय (भागवत ९.१५–१६) — पुढील कथा सांगतो — परशुरामाने कार्तवीर्याचा वध आणि एकवीस वेळा केलेले शुद्धीकरण. रामाचा मुद्दा ठाम आहे — रावणाच्या कैदकर्त्याच्या वधकर्त्याने रावणाला सोडले.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>दशकन्धरः — &#x27;ten-necked&#x27; — the standard kāvya epithet for Rāvaṇa (cf. daśagrīva, daśānana). कृतवान् is √कृ + क्तवतु, the perfect active participle: &#x27;had dwelt.&#x27; Metre Anuṣṭubh. The verse&#x27;s three clauses form a syllogism — (1) Kārtavīrya &gt; Rāvaṇa (captured him), (2) Paraśurāma &gt; Kārtavīrya (slew him), therefore (3) Paraśurāma &gt; Rāvaṇa — making the question &#x27;why not?&#x27; logically inescapable on power&#x27;s own terms.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;दशकन्धरः&#x27; — &#x27;दहा मानांचा&#x27; — रावणाचे ठरलेले काव्यविशेषण (दशग्रीव, दशानन यांप्रमाणे). &#x27;कृतवान्&#x27; हे √कृ + क्तवतु — पूर्णवर्तमान कृदन्त — &#x27;राहिला होता.&#x27; छंद अनुष्टुभ्. श्लोकाची तीन वाक्ये एक तर्कमाला रचतात — (१) कार्तवीर्य &gt; रावण (त्याला पकडले), (२) परशुराम &gt; कार्तवीर्य (त्याला मारले), म्हणून (३) परशुराम &gt; रावण — त्यामुळे सामर्थ्याच्या भाषेत &#x27;का नाही?&#x27; हा प्रश्न तर्काने अपरिहार्य बनतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-14.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 14</div></a><a class="next" href="verse-16.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 16</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

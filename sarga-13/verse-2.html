@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 2 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 2</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 2</span><span class="bl-mr lang-mr">श्लोक 2</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">धनी बहुजनो विद्वान् वदान्यो राजसंमतः ।<br>वाडेश्वरमुपस्थाय राजानं समुपस्थितः ।।२।।</div>
+  <div class="verse-iast">dhanī bahujano vidvān vadānyo rājasaṃmataḥ । vāḍeśvaramupasthāya rājānaṃ samupasthitaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">धनी बहु-जनः विद्वान् वदान्यः राज-संमतः । वाडेश्वरम् उपस्थाय राजानम् समुपस्थितः ।</div><div class="vig-iast">dhanī bahu-janaḥ vidvān vadānyaḥ rāja-saṃmataḥ । vāḍeśvaram upasthāya rājānam samupasthitaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">बहुजनः + विद्वान् = बहुजनो विद्वान् · वदान्यः + राज = वदान्यो राज · वाडेश्वरम् + उपस्थाय = वाडेश्वरमुपस्थाय</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ सर्वशास्त्रवित् वशीकृतपिशाचेशः योगसिद्धिमान् साधकः धनी बहुजनः विद्वान् वदान्यः राजसंमतः श्रीधरः नाम एकः ब्राह्मणः वाडेश्वरम् उपस्थाय राजानं समुपस्थितः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Wealthy, beloved of many, learned, generous, and honoured by the king — having worshipped Vāḍeśvara, he presented himself before the king.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकदा सर्वशास्त्रवेत्ता, योगसिद्धिमान्, पिशाचेशाला साध्य करून घेतलेला साधक श्रीधर नावाचा धनाढ्य, विद्वान्, जनप्रिय, राजसंमत व दानशूर असा ब्राह्मण वाडेश्वराची उपासना करून राजासमोर हजर झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धनी</span>
+    <span class="word-iast">dhanī</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; धनिन्</span></div>
+  <div class="word-form">In this verse: धनी</div>
+  <p class="word-meaning lang-en">wealthy</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनवान्</p>
+  <div class="word-usage">
+    <div class="deva">धनी जनः दानम् ददाति ।</div>
+    <div class="usage-iast">dhanī janaḥ dānam dadāti ।</div>
+    <div class="usage-meaning lang-en">A wealthy man gives charity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनवान् माणूस दान देतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बहु-जनः</span>
+    <span class="word-iast">bahu-janaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: बहुजनः</div>
+  <p class="word-meaning lang-en">popular, surrounded by many</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुष्कळ लोकांचा (आवडता)</p>
+  <div class="word-usage">
+    <div class="deva">सः बहुजनः नेता अभवत् ।</div>
+    <div class="usage-iast">saḥ bahujanaḥ netā abhavat ।</div>
+    <div class="usage-meaning lang-en">He became a leader dear to many.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो पुष्कळ लोकांचा आवडता नेता झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विद्वान्</span>
+    <span class="word-iast">vidvān</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: विद्वान्</div>
+  <p class="word-meaning lang-en">learned</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्वान</p>
+  <div class="word-usage">
+    <div class="deva">विद्वान् सभायाम् पूज्यते ।</div>
+    <div class="usage-iast">vidvān sabhāyām pūjyate ।</div>
+    <div class="usage-meaning lang-en">The learned man is honoured in the assembly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्वान् सभेत पूजिला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वदान्यः</span>
+    <span class="word-iast">vadānyaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वदान्यः</div>
+  <p class="word-meaning lang-en">generous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानशूर</p>
+  <div class="word-usage">
+    <div class="deva">वदान्यः याचकेभ्यः धनम् ददाति ।</div>
+    <div class="usage-iast">vadānyaḥ yācakebhyaḥ dhanam dadāti ।</div>
+    <div class="usage-meaning lang-en">The generous man gives wealth to supplicants.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानशूर माणूस याचकांना धन देतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राज-संमतः</span>
+    <span class="word-iast">rāja-saṃmataḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: राजसंमतः</div>
+  <p class="word-meaning lang-en">esteemed by the king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाला मान्य</p>
+  <div class="word-usage">
+    <div class="deva">राजसंमतः मन्त्री सभाम् आगच्छत् ।</div>
+    <div class="usage-iast">rājasaṃmataḥ mantrī sabhām āgacchat ।</div>
+    <div class="usage-meaning lang-en">The minister esteemed by the king came to the assembly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाला मान्य असलेला मंत्री सभेत आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश्वरम्</span>
+    <span class="word-iast">vāḍeśvaram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वाडेश्वरम्</div>
+  <p class="word-meaning lang-en">Vāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वराची</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः वाडेश्वरम् नमन्ति ।</div>
+    <div class="usage-iast">bhaktāḥ vāḍeśvaram namanti ।</div>
+    <div class="usage-meaning lang-en">The devotees bow to Vāḍeśvara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त वाडेश्वराला नमन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपस्थाय</span>
+    <span class="word-iast">upasthāya</span>
+  </div>
+  <div><span class="word-grammar">ल्यप्, उप + स्था</span></div>
+  <div class="word-form">In this verse: उपस्थाय</div>
+  <p class="word-meaning lang-en">having worshipped</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपासना करून</p>
+  <div class="word-usage">
+    <div class="deva">देवम् उपस्थाय सः गृहम् अगच्छत् ।</div>
+    <div class="usage-iast">devam upasthāya saḥ gṛham agacchat ।</div>
+    <div class="usage-meaning lang-en">Having worshipped the god, he went home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाची उपासना करून तो घरी गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राजानम्</span>
+    <span class="word-iast">rājānam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: राजानम्</div>
+  <p class="word-meaning lang-en">to the king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाकडे</p>
+  <div class="word-usage">
+    <div class="deva">दूतः राजानम् अपश्यत् ।</div>
+    <div class="usage-iast">dūtaḥ rājānam apaśyat ।</div>
+    <div class="usage-meaning lang-en">The messenger saw the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दूताने राजाला पाहिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुपस्थितः</span>
+    <span class="word-iast">samupasthitaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; क्त, सम् + उप + स्था</span></div>
+  <div class="word-form">In this verse: समुपस्थितः</div>
+  <p class="word-meaning lang-en">came before</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपस्थित झाला</p>
+  <div class="word-usage">
+    <div class="deva">गुरोः समीपम् शिष्यः समुपस्थितः ।</div>
+    <div class="usage-iast">guroḥ samīpam śiṣyaḥ samupasthitaḥ ।</div>
+    <div class="usage-meaning lang-en">The disciple presented himself before the teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्य गुरूसमोर हजर झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The catalogue of Śrīdhara&#x27;s worldly virtues — wealth, popularity, learning, generosity, royal favour — shows the māhātmya&#x27;s ideal of the complete founder: spiritual power joined to social trust. A new sacred settlement needs a patron whom the people love and the king respects; the verse presents dharma as something built by whole persons, not by power or money alone. His first act is worship of Vāḍeśvara — every undertaking at this kṣetra begins at the Lord&#x27;s feet.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्रीधराच्या लौकिक गुणांची ही यादी — धन, लोकप्रियता, विद्वत्ता, दानशूरता, राजमान्यता — माहात्म्याचा आदर्श संस्थापक दाखवते: सामाजिक विश्वासाशी जोडलेले आध्यात्मिक सामर्थ्य. नव्या पवित्र वस्तीला लोकांचा लाडका व राजाचा मानकरी असा आश्रयदाता लागतो; धर्म ही केवळ सत्ता किंवा पैशाने नव्हे, तर परिपूर्ण व्यक्तींकडून उभारली जाणारी गोष्ट आहे, हे श्लोक सांगतो. त्याचे पहिले कृत्य वाडेश्वराची उपासना आहे — या क्षेत्रातील प्रत्येक उपक्रमाची सुरुवात ईश्वराच्या चरणी होते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The sequence upasthāya ... samupasthitaḥ (&#x27;having worshipped, he approached&#x27;) encodes the puranic etiquette of the supplicant: no request is laid before a king without first honouring the deity. Vāḍeśvara here is both the local Lord and the witness of the compact that follows — the whole sarga&#x27;s transactions unfold under His āśraya, as verse 4 states explicitly.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उपस्थाय ... समुपस्थितः (&#x27;उपासना करून हजर झाला&#x27;) हा क्रम याचकाच्या पौराणिक शिष्टाचाराचे प्रतीक आहे: देवतेचा सन्मान केल्याविना राजासमोर कोणतीही मागणी मांडली जात नाही. येथील वाडेश्वर हा स्थानिक ईश्वर आणि पुढे होणाऱ्या कराराचा साक्षीदार दोन्ही आहे — चौथ्या श्लोकात स्पष्ट म्हटल्याप्रमाणे या सर्गातील सर्व व्यवहार त्याच्या आश्रयाखाली घडतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Grammatically the two verses (1–2) are one long nominative chain: every epithet is masculine nominative singular agreeing with श्रीधरः, and the sentence resolves only at समुपस्थितः. वाडेश्वरम् is accusative as the object of उपस्थाय (the lyap absolutive of उप + √स्था, &#x27;having approached, worshipped&#x27;). राजानम् (accusative of राजन्) is the goal of समुपस्थितः.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>व्याकरणदृष्ट्या पहिले दोन श्लोक एक लांब प्रथमा-मालिका आहेत: प्रत्येक विशेषण श्रीधरः याच्याशी जुळणारे पुंल्लिंगी प्रथमा एकवचन आहे, आणि वाक्याची पूर्ती समुपस्थितः येथेच होते. उपस्थाय (उप + √स्था धातूचे ल्यप् रूप, &#x27;उपासना करून&#x27;) याचा कर्म वाडेश्वरम् हे द्वितीया रूप आहे. समुपस्थितः याचे लक्ष्य राजानम् (राजन् चे द्वितीया) आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-1.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 1</div></a><a class="next" href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 3</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

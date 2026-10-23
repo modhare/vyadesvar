@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अभिवेदितुं जगदुदन्तमथोऽधिकृतौ निशाचरपतेर्दयितौ ।।<br>शुकसारणावनुचरौ किल तन्महदद्भुतं ददृशतुर्धरणौ ।।१।।</div>
+  <div class="verse-iast">abhivedituṃ jagadudantamatho&#x27;dhikṛtau niśācarapaterdayitau । । śukasāraṇāvanucarau kila tanmahadadbhutaṃ dadṛśaturdharaṇau</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अभिवेदितुम् । जगत्-उदन्तम् । अथो । अधिकृतौ । निशाचर-पतेः । दयितौ । शुक-सारणौ । अनुचरौ । किल । तत् । महत् । अद्भुतम् । ददृशतुः । धरणौ ।</div><div class="vig-iast">abhiveditum । jagat-udantam । atho । adhikṛtau । niśācara-pateḥ । dayitau । śuka-sāraṇau । anucarau । kila । tat । mahat । adbhutam । dadṛśatuḥ । dharaṇau ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">जगत् + उदन्तम् = जगदुदन्तम् (त् → द्) · उदन्तम् + अथो = उदन्तमथो · अथो + अधिकृतौ = अथोऽधिकृतौ (पूर्वरूप) · पतेः + दयितौ = पतेर्दयितौ (विसर्ग → र्) · सारणौ + अनुचरौ = सारणावनुचरौ (औ → आव्) · तत् + महत् = तन्महत् (त् → न्) · महत् + अद्भुतम् = महदद्भुतम् · ददृशतुः + धरणौ = ददृशतुर्धरणौ</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथो जगदुदन्तम् अभिवेदितुम् अधिकृतौ निशाचरपतेः दयितौ अनुचरौ शुकसारणौ धरणौ तत् महत् अद्भुतं ददृशतुः किल ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Shuka and Sarana — the dear attendants of the lord of the night-wanderers (Ravana), appointed to learn the news of the world — indeed saw that great wonder upon the earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जगतातील वार्ता जाणण्यासाठी नेमलेल्या राक्षसाधिपती रावणाच्या शुक व सारण या प्रिय सेवकांनी पृथ्वीवरील तो खरोखर महान चमत्कार पाहिला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभिवेदितुम्</span>
+    <span class="word-iast">abhiveditum</span>
+  </div>
+  <div><span class="word-grammar">infinitive (tumun), √vid with abhi</span></div>
+  <div class="word-form">In this verse: अभिवेदितुम्</div>
+  <p class="word-meaning lang-en">to announce, to convey (to)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कळविण्यासाठी (तुमुन्)</p>
+  <div class="word-usage">
+    <div class="deva">वार्ताम् अभिवेदितुम् अहम् आगतवान् ।</div>
+    <div class="usage-iast">vārtām abhiveditum aham āgatavān ।</div>
+    <div class="usage-meaning lang-en">I have come to announce the news.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी वार्ता कळविण्यासाठी आलो आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगदुदन्तम्</span>
+    <span class="word-iast">jagadudantam</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular; जगत् + उदन्त</span></div>
+  <div class="word-form">In this verse: जगदुदन्तम्</div>
+  <p class="word-meaning lang-en">the news of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगातील वार्ता</p>
+  <div class="word-usage">
+    <div class="deva">राजा जगदुदन्तम् शृणोति ।</div>
+    <div class="usage-iast">rājā jagadudantam śṛṇoti ।</div>
+    <div class="usage-meaning lang-en">The king hears the news of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा जगाची वार्ता ऐकतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अधिकृतौ</span>
+    <span class="word-iast">adhikṛtau</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative dual; past passive participle of adhi + √kṛ</span></div>
+  <div class="word-form">In this verse: अधिकृतौ</div>
+  <p class="word-meaning lang-en">appointed (two)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नेमलेले (द्विवचन)</p>
+  <div class="word-usage">
+    <div class="deva">दूतौ कार्ये अधिकृतौ आसताम् ।</div>
+    <div class="usage-iast">dūtau kārye adhikṛtau āsatām ।</div>
+    <div class="usage-meaning lang-en">The two messengers were appointed to the task.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन दूत त्या कामावर नेमलेले होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निशाचरपतेः दयितौ अनुचरौ</span>
+    <span class="word-iast">niśācarapateḥ dayitau anucarau</span>
+  </div>
+  <div><span class="word-grammar">phrase: genitive singular + masculine nominative dual + masculine nominative dual</span></div>
+  <div class="word-form">In this verse: निशाचरपतेः दयितौ अनुचरौ</div>
+  <p class="word-meaning lang-en">the dear attendants of the lord of the night-wanderers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसराज रावणाचे लाडके सेवक</p>
+  <div class="word-usage">
+    <div class="deva">निशाचरपतेः दयितौ अनुचरौ स्वकार्यम् कुरुताम् ।</div>
+    <div class="usage-iast">niśācarapateḥ dayitau anucarau svakāryam kurutām ।</div>
+    <div class="usage-meaning lang-en">May the two dear attendants of the lord of the night-wanderers do their duty.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसाधिपतीचे दोन लाडके सेवक आपले काम करू देत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुकसारणौ</span>
+    <span class="word-iast">śukasāraṇau</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative dual; dvandva compound of Shuka and Sarana</span></div>
+  <div class="word-form">In this verse: शुकसारणौ</div>
+  <p class="word-meaning lang-en">Shuka and Sarana (Ravana&#x27;s spies in the Ramayana)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुक व सारण (रामायणातील रावणाचे हेर)</p>
+  <div class="word-usage">
+    <div class="deva">शुकसारणौ लङ्काम् गतवन्तौ ।</div>
+    <div class="usage-iast">śukasāraṇau laṅkām gatavantau ।</div>
+    <div class="usage-meaning lang-en">Shuka and Sarana went to Lanka.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुक आणि सारण लंकेला गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धरणौ</span>
+    <span class="word-iast">dharaṇau</span>
+  </div>
+  <div><span class="word-grammar">feminine locative singular (metrical form for धरण्याम्), धरणी f., √dhṛ</span></div>
+  <div class="word-form">In this verse: धरणौ</div>
+  <p class="word-meaning lang-en">on the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर</p>
+  <div class="word-usage">
+    <div class="deva">पुण्यभूमिः धरणौ विराजते ।</div>
+    <div class="usage-iast">puṇyabhūmiḥ dharaṇau virājate ।</div>
+    <div class="usage-meaning lang-en">The holy land shines upon the earth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुण्यभूमी पृथ्वीवर शोभून दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ददृशतुः</span>
+    <span class="word-iast">dadṛśatuḥ</span>
+  </div>
+  <div><span class="word-grammar">3rd dual perfect (liṭ), √dṛś</span></div>
+  <div class="word-form">In this verse: ददृशतुः</div>
+  <p class="word-meaning lang-en">the two saw</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाहिले (√दृश्, लिट्, द्विवचन)</p>
+  <div class="word-usage">
+    <div class="deva">तौ द्वौ नक्षत्रम् ददृशतुः ।</div>
+    <div class="usage-iast">tau dvau nakṣatram dadṛśatuḥ ।</div>
+    <div class="usage-meaning lang-en">The two of them saw the star.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या दोघांनी तो तारा पाहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तन्महदद्भुतम्</span>
+    <span class="word-iast">tanmahadadbhutam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular; तत् + महत् + अद्भुत</span></div>
+  <div class="word-form">In this verse: तन्महदद्भुतम्</div>
+  <p class="word-meaning lang-en">that great wonder</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते मोठे आश्चर्य</p>
+  <div class="word-usage">
+    <div class="deva">तन्महदद्भुतम् वयम् स्मरामः ।</div>
+    <div class="usage-iast">tanmahadadbhutam vayam smarāmaḥ ।</div>
+    <div class="usage-meaning lang-en">We remember that great wonder.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो महान चमत्कार आम्ही स्मरतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This opening verse follows the epic convention of tidings reaching a king&#x27;s court, and it establishes Parashurama&#x27;s deed as a wonder of world-historical stature. That even Ravana — the embodiment of pride and the demon king of Lanka — becomes its witness and fearful reporter shows the universality of the divine act. The verse invites the reader to look upon the reclaimed Konkan coast not merely as geography, but as divine grace made visible: land where the gods act for dharma.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक राजाच्या दरबारी वार्ता येण्याच्या महाकाव्यपरंपरागत संप्रदायाचे अनुसरण करतो आणि परशुरामाचे कृत्य जगप्रसिद्ध चमत्कार म्हणून प्रस्थापित करतो. अहंकाराचे प्रतीक व लंकेचा राक्षसराजा असलेला रावणसुद्धा त्या कृतीचा साक्षीदार व भीतीने नोंद करणारा होतो — हे त्या दिव्य कृतीची सार्वत्रिकता दाखवते. समुद्रातून वर आणलेला कोकणचा किनारा केवळ भूगोल नसून प्रत्यक्ष झालेली ईश्वरी कृपा म्हणून पाहायला हे श्लोक वाचकाला सांगते — जिथे देव धर्मासाठी कृती करतात अशी भूमी.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Shuka and Sarana are Ravana&#x27;s ministers and spies in the Ramayana (Yuddhakanda), sent to observe Rama&#x27;s army; the poet transfers their familiar role into the frame of the sthala-kavya. Ravana is called nishacharapati — lord of the night-wanderers (rakshasas) — the standard epic epithet for him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शुक आणि सारण हे रामायणात (युद्धकांड) रावणाचे मंत्री व हेर आहेत; कवीने त्यांची परिचित भूमिका या स्थलकाव्याच्या चौकटीत नेमली आहे. रावणाला निशाचरपति — राक्षसांचा अधिपती — असे म्हटले आहे; हे महाकाव्यातील त्याचे नेहमीचे विशेषण आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The metre of the sarga is Pramitakshara (twelve syllables per pada). The particle kila places the narration at the edge of legend — legendary time rendered as fact. The phrase jagadudanta (the news of the world) prepares the court scene of verse 2.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या सर्गाचे वृत्त प्रमिताक्षरा आहे (प्रत्येक चरणात बारा अक्षरे). किल हा निपात कथनाला आख्यायिकेच्या सीमेवर उभे करतो — आख्यायिकाकाल तथ्य म्हणून मांडला आहे. जगदुदन्तम् (जगाची वार्ता) ही शब्दावली पुढील श्लोकातील दरबारी प्रसंगाची तयारी करते.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-02/verse-60.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 2 — Kṣetranirmāṇaḥ 60</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

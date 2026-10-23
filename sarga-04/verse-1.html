@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथान्वियेषाश्रमपुण्यभूमिं भूमौ निजायां जितसर्वभूमिः ।।<br>पूर्वाश्रमीभूतमहेन्द्रभूमिभृता समां मानवतां वरेण्यः ।।१।।</div>
+  <div class="verse-iast">athānviyeṣāśramapuṇyabhūmiṃ bhūmau nijāyāṃ jitasarvabhūmiḥ । । pūrvāśramībhūtamahendrabhūmibhṛtā samāṃ mānavatāṃ vareṇyaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । अन्वियेष । आश्रम-पुण्य-भूमिम् । भूमौ । निजायाम् । जित-सर्व-भूमिः । पूर्व-आश्रमी-भूत-महेन्द्र-भूमिभृता । समाम् । मानवताम् । वरेण्यः ।</div><div class="vig-iast">atha । anviyeṣa । āśrama-puṇya-bhūmim । bhūmau । nijāyām । jita-sarva-bhūmiḥ । pūrva-āśramī-bhūta-mahendra-bhūmibhṛtā । samām । mānavatām । vareṇyaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">अथ + अन्वियेष = अथान्वियेष (सवर्णदीर्घ) · अन्वियेष + आश्रम = अन्वियेषाश्रम · पूर्व + आश्रमी = पूर्वाश्रमी · भूमिभृता + समाम् = भूमिभृता समाम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ जितसर्वभूमिः मानवतां वरेण्यः (मुनिः) निजायां भूमौ पूर्वाश्रमीभूतमहेन्द्रभूमिभृता समाम् आश्रमपुण्यभूमिम् अन्वियेष ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then Paraśurāma — who had conquered the entire earth and stood foremost among the honoured — began to seek, in the land of his own making, a sacred site for his hermitage, level like the Mahendra mountain on which his former hermitage had stood.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मग सर्वभूमीवर विजय मिळविलेल्या त्या मानवन्तांनाही वरेण्य असलेल्या परशुरामाने आपल्याच भूमीवर पूर्वी आश्रमाची जागा असलेल्या महेन्द्रपर्वतावरील भूमीप्रमाणे समतल अशा आश्रमाच्या पवित्र जागेचा शोध घेण्यास सुरुवात केली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्वियेष</span>
+    <span class="word-iast">anviyeṣa</span>
+  </div>
+  <div><span class="word-grammar">3rd sg. perfect (liṭ), parasmaipada, of √इष् (6th class) with upasarga अनु</span></div>
+  <div class="word-form">In this verse: अन्वियेष (अनु + इयेष)</div>
+  <p class="word-meaning lang-en">he sought; he began to search</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोधू लागला (अनु + √इष्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">मुनिः तपसे योग्यां भूमिम् अन्वियेष</div>
+    <div class="usage-iast">muniḥ tapase yogyāṃ bhūmim anviyeṣa</div>
+    <div class="usage-meaning lang-en">The sage sought a land fit for austerities.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनीने तपासाठी योग्य अशी भूमी शोधली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आश्रमपुण्यभूमिम्</span>
+    <span class="word-iast">āśramapuṇyabhūmim</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. f., tatpuruṣa compound (आश्रम-पुण्य-भूमि)</span></div>
+  <div class="word-form">In this verse: आश्रमपुण्यभूमिम्</div>
+  <p class="word-meaning lang-en">a sacred spot for a hermitage</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आश्रमासाठी पवित्र जागा</p>
+  <div class="word-usage">
+    <div class="deva">सः गङ्गातीरे आश्रमपुण्यभूमिम् अपश्यत्</div>
+    <div class="usage-iast">saḥ gaṅgātīre āśramapuṇyabhūmim apaśyat</div>
+    <div class="usage-meaning lang-en">He saw a sacred spot for a hermitage on the bank of the Ganga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने गंगाकाठी आश्रमासाठी पवित्र जागा पाहिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निजायां भूमौ</span>
+    <span class="word-iast">nijāyāṃ bhūmau</span>
+  </div>
+  <div><span class="word-grammar">loc. sg. f., adjective निजा agreeing with भूमि</span></div>
+  <div class="word-form">In this verse: निजायां भूमौ</div>
+  <p class="word-meaning lang-en">in his own land (the land he himself raised)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्याच (निर्मिलेल्या) भूमीत</p>
+  <div class="word-usage">
+    <div class="deva">कविः निजायां भूमौ एव सुखं लभते</div>
+    <div class="usage-iast">kaviḥ nijāyāṃ bhūmau eva sukhaṃ labhate</div>
+    <div class="usage-meaning lang-en">The poet finds happiness only in his own land.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कवीला आपल्याच भूमीत सुख मिळते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जितसर्वभूमिः</span>
+    <span class="word-iast">jitasarvabhūmiḥ</span>
+  </div>
+  <div><span class="word-grammar">nom. sg. m., bahuvrīhi compound</span></div>
+  <div class="word-form">In this verse: जितसर्वभूमिः</div>
+  <p class="word-meaning lang-en">he who has conquered the entire earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व पृथ्वी जिंकलेला</p>
+  <div class="word-usage">
+    <div class="deva">जितसर्वभूमिः राजा ब्राह्मणेभ्यः दानं ददौ</div>
+    <div class="usage-iast">jitasarvabhūmiḥ rājā brāhmaṇebhyaḥ dānaṃ dadau</div>
+    <div class="usage-meaning lang-en">The king who had conquered the entire earth gave a gift to the brahmins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व पृथ्वी जिंकलेल्या राजाने ब्राह्मणांना दान दिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मानवतां वरेण्यः</span>
+    <span class="word-iast">mānavatāṃ vareṇyaḥ</span>
+  </div>
+  <div><span class="word-grammar">मानवताम् gen. pl. m. of मानवत्; वरेण्यः nom. sg. m. adjective (from वर + ṇyat)</span></div>
+  <div class="word-form">In this verse: मानवतां वरेण्यः</div>
+  <p class="word-meaning lang-en">the most worthy among the honoured</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मानवंतांमध्ये (सन्माननीयांमध्ये) श्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">सः मानवतां वरेण्यः इति उच्यते</div>
+    <div class="usage-iast">saḥ mānavatāṃ vareṇyaḥ iti ucyate</div>
+    <div class="usage-meaning lang-en">He is called the most worthy among the honoured.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सन्माननीयांमध्ये श्रेष्ठ म्हणून ओळखला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूर्वाश्रमीभूतमहेन्द्रभूमिभृता समाम्</span>
+    <span class="word-iast">pūrvāśramībhūtamahendrabhūmibhṛtā samām</span>
+  </div>
+  <div><span class="word-grammar">समाम् acc. sg. f. of सम, agreeing with आश्रमपुण्यभूमिम्; governs the instrumental पूर्वाश्रमीभूतमहेन्द्रभूमिभृता (&#x27;equal/level to the Mahendra mountain that had formerly become his āśrama&#x27;)</span></div>
+  <div class="word-form">In this verse: पूर्वाश्रमीभूतमहेन्द्रभूमिभृता समाम्</div>
+  <p class="word-meaning lang-en">level with the Mahendra hill of his former hermitage</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्वी आश्रम झालेल्या महेन्द्र पर्वताशी तुल्य (भूमिभृत् = पर्वत; ‘समा’ + तृतीया)</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गासमां पुण्यां नदीं कः न वन्दते</div>
+    <div class="usage-iast">gaṅgāsamāṃ puṇyāṃ nadīṃ kaḥ na vandate</div>
+    <div class="usage-meaning lang-en">Who would not revere a holy river equal to the Ganga?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगेसारखी पवित्र नदी कोण वंदन करणार नाही?</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Victory over the world is completed only when the victor turns seeker again: Paraśurāma, the warrior who won the earth, reverts to the muni searching for ground fit for tapas. The new land is not sanctified by possession but by being made a place of worship — the hero names his new Mahendra after the old, carrying continuity of practice into a new land. For the sthala, this verse founds Guhagar&#x27;s sanctity: the place becomes holy because the Lord&#x27;s own chosen sage chose it for his āśrama.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जग जिंकणे तेव्हाच पूर्ण होते जेव्हा विजेता पुन्हा साधक बनतो — पृथ्वी जिंकलेला परशुराम तपासाठी योग्य भूमी शोधणारा मुनी बनतो. नवीन भूमी मालकीने पवित्र होत नाही, तर ती उपासनेचे स्थान बनवल्याने पवित्र होते — जुना महेन्द्र सोडून नव्या पर्वताला तोच महेन्द्र हे नाव देऊन साधनेची अखंड परंपरा नवी भूमीत आणतो. स्थलासाठी हा श्लोक गुहागरच्या पावित्र्याचा पाया घालतो — भगवंताच्या निवडलेल्या ऋषीनेच ही भूमी आश्रमासाठी निवडली, म्हणून हे स्थान पवित्र आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic frame behind this verse is Paraśurāma&#x27;s gift of the whole earth to Kaśyapa after his twenty-one campaigns against the kṣatriyas. Having given the earth away, he could not remain on donated ground (see 4.6), so he won new land from the sea — the Aparānta/Konkan — and sought there a place for his āśrama. Mahendra is the mountain of his older hermitage, traditionally Mahendragiri, where the Purāṇas say he retired to practise tapas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या श्लोकामागील पौराणिक पार्श्वभूमी अशी — क्षत्रियांविरुद्ध एकवीस वेळा युद्ध करून परशुरामाने संपूर्ण पृथ्वी कश्यपांना दान दिली. दान दिलेल्या भूमीवर तो राहू शकत नव्हता (पहा ४.६), म्हणून त्याने समुद्राकडून नवी भूमी — अपरान्त/कोंकण — मिळवली आणि तेथे आश्रमासाठी जागा शोधली. महेन्द्र हा त्याच्या जुन्या आश्रमाचा पर्वत — परंपरेने महेन्द्रगिरी — जेथे पुराणे सांगतात की तो तपासाठी निवृत्त झाला.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The sarga opens in Upajāti, the work&#x27;s default narrative metre. &#x27;His own land&#x27; (nijāyāṃ bhūmau) is the newly raised Aparānta of sarga 3. The comparison पूर्वाश्रमीभूतमहेन्द्रभूमिभृता समाम् uses the idiom samā + instrumental, &#x27;level with&#x27;. Anvaya and sandhi notes in the source JSON resolve the long compound; the verse scans cleanly with no emendation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उपजाती या ग्रंथाच्या कथनाच्या नेहमीच्या वृत्तात सर्ग सुरू होतो. &#x27;निजायां भूमौ&#x27; म्हणजे तिसऱ्या सर्गात समुद्रातून वर आणलेला अपरान्त. पूर्वाश्रमीभूतमहेन्द्रभूमिभृता समाम् यात समा + तृतीया हा &#x27;समतल&#x27; अर्थाचा प्रयोग आहे. मूळ JSON मधील अन्वय व संधिटिपा या दीर्घ समासाचे निराकरण करतात; श्लोक कोणत्याही दुरुस्तीशिवाय वृत्तात बसतो.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-03/verse-59.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 3 — Devatāsthāpanaḥ 59</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

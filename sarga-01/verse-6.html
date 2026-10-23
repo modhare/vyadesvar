@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vasantatilakā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अस्ति प्रशस्ततममन्दिरमध्यवर्ती पूर्तेष्टदत्तसुकृतैकसुलभ्यभक्तिः ।।<br>व्यक्तीकृतोरुमहिमाभिनिवेशमूर्तिर्व्याडेश्वराभिधसुरो जगदीड्यकीर्तिः ।।६।।</div>
+  <div class="verse-iast">asti praśastatamamandiramadhyavartī pūrteṣṭadattasukṛtaikasulabhyabhaktiḥ । । vyaktīkṛtorumahimābhiniveśamūrtirvyāḍeśvarābhidhasuro jagadīḍyakīrtiḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अस्ति । प्रशस्ततम-मन्दिर-मध्य-वर्ती । पूर्त-इष्ट-दत्त-सुकृत-एक-सुलभ्य-भक्तिः । व्यक्तीकृत-उरु-महिम-अभिनिवेश-मूर्तिः । व्याडेश्वर-अभिध-सुरः । जगत्-ईड्य-कीर्तिः ।</div><div class="vig-iast">asti । praśastatama-mandira-madhya-vartī । pūrta-iṣṭa-datta-sukṛta-eka-sulabhya-bhaktiḥ । vyaktīkṛta-uru-mahima-abhiniveśa-mūrtiḥ । vyāḍeśvara-abhidha-suraḥ । jagat-īḍya-kīrtiḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पूर्त + इष्ट = पूर्तेष्ट (गुण) · सुकृत + एक = सुकृतैक (वृद्धि) · व्यक्तीकृत + उरु = व्यक्तीकृतोरु (गुण) · महिम + अभिनिवेश = महिमाभिनिवेश (सवर्णदीर्घ) · मूर्तिः + व्याडेश्वर = मूर्तिर्व्याडेश्वर (विसर्ग → र्) · व्याडेश्वर + अभिध = व्याडेश्वराभिध · सुरः + जगत् = सुरो जगत् · जगत् + ईड्य = जगदीड्य (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तस्मिन् … महाग्रहारे प्रशस्ततममन्दिरमध्यवर्ती, पूर्तेष्टदत्तसुकृतैकसुलभ्यभक्तिः, व्यक्तीकृतोरुमहिमाभिनिवेशमूर्तिः, जगदीड्यकीर्तिः व्याडेश्वराभिधः सुरः अस्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>there stands the god named Vyāḍeśvara — dwelling in the midst of the grandest temple, he whose devotion is won easily through the sole merit of public works, sacrifices, and gifts, he whose abundant glory stands manifest in his image, the very embodiment of steadfast devotion, and whose fame is sung throughout the world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अत्यंत प्रशस्त अशा मंदिराच्या मध्यभागी सार्वजनिक हिताची कृत्ये व यज्ञ यांनी निर्माण झालेल्या विशेष पुण्यामुळे ज्याची भक्ती सहज प्राप्त होते, ज्याने आपल्या अभिनिवेशपूर्ण मूर्तीनेच अपार महिमा व्यक्त केलेला आहे व ज्याची कीर्ती जगात गाइली जाते तो व्याडेश्वर नावाचा देव प्रतिष्ठित आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्ति</span>
+    <span class="word-iast">asti</span>
+  </div>
+  <div><span class="word-grammar">√अस् (1st class, 2nd class) laṭ 3rd person singular</span></div>
+  <div class="word-form">In this verse: अस्ति (लट्, प्रथमपुरुष एकवचन)</div>
+  <p class="word-meaning lang-en">is, exists, dwells</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आहे</p>
+  <div class="word-usage">
+    <div class="deva">हृदये मम रामः अस्ति</div>
+    <div class="usage-iast">hṛdaye mama rāmaḥ asti</div>
+    <div class="usage-meaning lang-en">Rāma dwells in my heart.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझ्या हृदयात राम आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रशस्ततममन्दिरमध्यवर्ती</span>
+    <span class="word-iast">praśastatamamandiramadhyavartī</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (प्रशस्ततमस्य मन्दिरस्य मध्ये वर्तते इति वर्तिन्) — masculine nominative singular</span></div>
+  <div class="word-form">In this verse: प्रशस्ततममन्दिरमध्यवर्ती (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">dwelling in the midst of the grandest temple</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत प्रशस्त मंदिराच्या मध्यभागी असणारा</p>
+  <div class="word-usage">
+    <div class="deva">प्रशस्ततममन्दिरमध्यवर्ती देवः भक्तैः सेव्यते</div>
+    <div class="usage-iast">praśastatamamandiramadhyavartī devaḥ bhaktaiḥ sevyate</div>
+    <div class="usage-meaning lang-en">The god dwelling in the midst of the grandest temple is served by devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत प्रशस्त मंदिराच्या मध्यभागी असलेल्या देवाची भक्त सेवा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूर्त</span>
+    <span class="word-iast">pūrta</span>
+  </div>
+  <div><span class="word-grammar">√पॄ + kta (impersonal) — neuter, nominative singular</span></div>
+  <div class="word-form">In this verse: पूर्त (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">works of public welfare (wells, tanks, rest-houses)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सार्वजनिक हिताची कामे (विहिरी, तळी)</p>
+  <div class="word-usage">
+    <div class="deva">पूर्तेन तडागादिना जनाः सुखिनः भवन्ति</div>
+    <div class="usage-iast">pūrtena taḍāgādinā janāḥ sukhinaḥ bhavanti</div>
+    <div class="usage-meaning lang-en">Through public works such as tanks, people become happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तळी इत्यादी लोकोपयोगी कामांमुळे लोक सुखी होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इष्ट</span>
+    <span class="word-iast">iṣṭa</span>
+  </div>
+  <div><span class="word-grammar">√यज् + kta (passive) — neuter nominative singular</span></div>
+  <div class="word-form">In this verse: इष्ट (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">sacrifice (Vedic ritual)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञ</p>
+  <div class="word-usage">
+    <div class="deva">इष्टेन हविषा देवाः तुष्यन्ति</div>
+    <div class="usage-iast">iṣṭena haviṣā devāḥ tuṣyanti</div>
+    <div class="usage-meaning lang-en">Through sacrifice with oblations, the gods are pleased.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हविर्भागयुक्त यज्ञाने देव प्रसन्न होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दत्त</span>
+    <span class="word-iast">datta</span>
+  </div>
+  <div><span class="word-grammar">√दा + kta (passive) — neuter nominative singular</span></div>
+  <div class="word-form">In this verse: दत्त (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">gift, charitable donation</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दान</p>
+  <div class="word-usage">
+    <div class="deva">दत्तेन अन्नेन दरिद्राः तृप्यन्ति</div>
+    <div class="usage-iast">dattena annena daridrāḥ tṛpyanti</div>
+    <div class="usage-meaning lang-en">Through gifted food, the poor are satisfied.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दान दिलेल्या अन्नाने दरिद्री तृप्त होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुकृतैकसुलभ्यभक्तिः</span>
+    <span class="word-iast">sukṛtaikasulabhyabhaktiḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (पूर्तेष्टदत्तैः सुकृतैः एकेन एव सुलभ्या भktaिः यस्य) — masculine nominative singular</span></div>
+  <div class="word-form">In this verse: सुकृतैकसुलभ्यभक्तिः (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">he whose devotion is made easy through such meritorious deeds alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या पुण्यानेच ज्याची भक्ती सुलभ होते असा. *(मराठी अर्थात ‘दत्त’ = दान हा शब्द सुटला आहे.)*</p>
+  <div class="word-usage">
+    <div class="deva">सुकृतैकसुलभ्यभक्तिः ईश्वरः दीनान् अनुग्रह्णाति</div>
+    <div class="usage-iast">sukṛtaikasulabhyabhaktiḥ īśvaraḥ dīnān anugṛhṇāti</div>
+    <div class="usage-meaning lang-en">The Lord, whose devotion is made easy through meritorious deeds alone, blesses the humble.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची भक्ती केवळ सत्कर्मांनी सुलभ होते असा ईश्वर दीनांवर कृपा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्यक्तीकृतोरुमहिमा</span>
+    <span class="word-iast">vyaktīkṛtorumahimā</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (व्यktaीकृतः उरुः महिमा येन) — masculine nominative singular</span></div>
+  <div class="word-form">In this verse: व्यक्तीकृतोरुमहिमा (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">he whose abundant glory has been made manifest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याने मोठा महिमा प्रकट केला</p>
+  <div class="word-usage">
+    <div class="deva">व्यक्तीकृतोरुमहिमा देवः सर्वैः पूज्यते</div>
+    <div class="usage-iast">vyaktīkṛtorumahimā devaḥ sarvaiḥ pūjyate</div>
+    <div class="usage-meaning lang-en">The god whose abundant glory has been made manifest is worshipped by all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याने मोठा महिमा प्रकट केला आहे अशा देवाची सर्वजण पूजा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभिनिवेशमूर्तिः</span>
+    <span class="word-iast">abhiniveśamūrtiḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (अभिनिवेशस्य मूर्तिः यस्य) — masculine nominative singular</span></div>
+  <div class="word-form">In this verse: अभिनिवेशमूर्तिः (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">he whose image is the object of steadfast devotion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(भक्तांच्या) निष्ठेचा विषय असलेली मूर्ती</p>
+  <div class="word-usage">
+    <div class="deva">अभिनिवेशमूर्तिः व्याडेश्वरः गुहागरे विराजते</div>
+    <div class="usage-iast">abhiniveśamūrtiḥ vyāḍeśvaraḥ guhāgare virājate</div>
+    <div class="usage-meaning lang-en">Vyāḍeśvara, whose image is the object of steadfast devotion, shines at Guhagar.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची मूर्ती (भक्तांच्या) निष्ठेचा विषय आहे असा व्याडेश्वर गुहागरात विराजमान आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्याडेश्वराभिधः सुरः</span>
+    <span class="word-iast">vyāḍeśvarābhidhaḥ suraḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (व्याडेश्वरः अभिधा यस्य) adjective + सुरः substantive — masculine nominative singular</span></div>
+  <div class="word-form">In this verse: व्याडेश्वराभिधः सुरः (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">the god named Vyāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>व्याडेश्वर नावाचा देव (आजचे गुहागरचे श्रीव्याडेश्वर मंदिर)</p>
+  <div class="word-usage">
+    <div class="deva">व्याडेश्वराभिधः सुरः भक्तानां मनोरथान् पूरयति</div>
+    <div class="usage-iast">vyāḍeśvarābhidhaḥ suraḥ bhaktānāṃ manorathān pūrayati</div>
+    <div class="usage-meaning lang-en">The god named Vyāḍeśvara fulfils the wishes of devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>व्याडेश्वर नावाचा देव भक्तांचे मनोरथ पूर्ण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगदीड्यकीर्तिः</span>
+    <span class="word-iast">jagadīḍyakīrtiḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (जगता ईड्या कीर्तिः यस्य) — masculine nominative singular</span></div>
+  <div class="word-form">In this verse: जगदीड्यकीर्तिः (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">he whose fame is sung by the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची कीर्ती जगात गायली जाते</p>
+  <div class="word-usage">
+    <div class="deva">जगदीड्यकीर्तिः देवः सर्वत्र वन्द्यते</div>
+    <div class="usage-iast">jagadīḍyakīrtiḥ devaḥ sarvatra vandyate</div>
+    <div class="usage-meaning lang-en">The god whose fame is sung by the world is saluted everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची कीर्ती जगात गायली जाते अशा देवाला सर्वत्र वंदन केले जाते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the poet&#x27;s theology of grace in miniature: the Lord does not hide behind ritual expertise or learning — his devotion is sulabhyā, “easily won,” by the straightforward merit of good works, sacrifice, and generosity. And his greatness is not a matter of hearsay: it stands vyaktīkṛta, made manifest, in the consecrated image that draws the devotee&#x27;s whole heart (abhiniveśa). The verse invites the reader to approach Vyāḍeśvara with the same direct, trusting devotion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक कवीच्या कृपातत्त्वाचा सारांश आहे — परमेश्वर विधिविधानांच्या किंवा पांडित्याच्या आड लपलेला नाही; सत्कर्मे, यज्ञ आणि दान या सरळ पुण्याईने त्याची भक्ती सुलभ होते. त्याचा महिमा केवळ ऐकीव नाही — भक्तांच्या निष्ठेचे केंद्र असलेल्या मूर्तीतच तो प्रकट झालेला आहे. वाचकानेही याच सरळ, विश्वासपूर्ण भक्तीने व्याडेश्वरांकडे जावे, असे आवाहन यात आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Pūrta and iṣṭa are the classical pair from dharmaśāstra: iṣṭa — sacrifices and Vedic rites; pūrta — works of public benefit such as wells, tanks, gardens, and rest-houses — with datta (gifts) completing the triad of merit. The verse teaches that devotion to the Lord is not won by birth or wealth but becomes “easy” (sulabhyā) through such selfless meritorious deeds. The deity&#x27;s glory needs no argument: it stands manifest (vyaktīkṛta) in the mūrti itself, the living focus of the devotees&#x27; steadfast love (abhiniveśa).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पूर्त आणि इष्ट ही धर्मशास्त्रातील प्रसिद्ध जोडी आहे — इष्ट म्हणजे यज्ञयागादि वैदिक कर्मे; पूर्त म्हणजे विहिरी, तळी, बागा, धर्मशाळा यांसारखी लोकोपयोगी कामे — आणि दत्त (दान) या तिघांनी पुण्यत्रयी पूर्ण होते. या श्लोकाची शिकवण अशी की भगवंताची भक्ती जन्माने किंवा संपत्तीने मिळत नाही, तर अशा निःस्वार्थ सत्कर्मांनी ती &#x27;सुलभ&#x27; होते. देवाचा महिमा तर्काने सिद्ध करण्याची गरज नाही — भक्तांच्या दृढ प्रेमाचे (अभिनिवेशाचे) जिवंत केंद्र असलेल्या मूर्तीतच तो प्रकट झालेला आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Vasantatilakā; completes the yugmaka begun in v.5 (main verb अस्ति). The compound पूर्तेष्टदत्तसुकृतैकसुलभ्यभक्तिः parses as “he whose bhakti is made easy solely through the sukṛta of pūrta, iṣṭa, and datta” — but the book&#x27;s Marathi rendering silently drops दत्त (दान, “gift”); the English here restores it. Cross-links: व्याडेश्वराभिधः सुरः is the deity of today&#x27;s Śrī Vyāḍeśvara temple at Guhagar (Ratnagiri district), whose discovery and temple history the later sargas narrate. The display spelling follows the colophon form व्याडेश्वर (the verses use वाडेश्वर wherever the metre requires it).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त वसंततिलका; श्लोक ५ पासून सुरू झालेल्या युग्मकाची पूर्ती (मुख्य क्रियापद &#x27;अस्ति&#x27;). &#x27;पूर्तेष्टदत्तसुकृतैकसुलभ्यभक्तिः&#x27; या सामासिक शब्दाचा विग्रह — &#x27;पूर्त, इष्ट व दत्त या सुकृतांमुळेच ज्याची भक्ती सुलभ होते असा&#x27; — असा होतो; पण पुस्तकातील मराठी अर्थात &#x27;दत्त&#x27; (= दान) हा शब्द नकळत गळाला आहे; इंग्रजी भाषांतरात तो पूर्ववत ठेवला आहे. आंतरसंदर्भ : &#x27;व्याडेश्वराभिधः सुरः&#x27; — आजचे गुहागर (जि. रत्नागिरी) येथील श्रीव्याडेश्वर मंदिरातील देवता; तिच्या शोधाची व मंदिराची कथा पुढील सर्गांत येणार आहे. नावाचे रूप पुष्पिकेतील &#x27;व्याडेश्वर&#x27; यानुसार (वृत्तासाठी आवश्यक तेथे श्लोकांत &#x27;वाडेश्वर&#x27; येते).</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

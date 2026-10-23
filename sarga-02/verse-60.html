@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 60 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 60</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 60</span><span class="bl-mr lang-mr">श्लोक 60</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तस्मादिदं क्षेत्रमतीव पुण्यं धन्यं यशस्यं परमं प्रशस्तम् ।।<br>देवद्विजैः सेवितमात्मनोऽर्थे महात्मना निर्मितमादिपुंसा ।।६०।।</div>
+  <div class="verse-iast">tasmādidaṃ kṣetramatīva puṇyaṃ dhanyaṃ yaśasyaṃ paramaṃ praśastam । । devadvijaiḥ sevitamātmano&#x27;rthe mahātmanā nirmitamādipuṃsā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तस्मात् । इदम् । क्षेत्रम् । अतीव । पुण्यम् । धन्यम् । यशस्यम् । परमम् । प्रशस्तम् । देव-द्विजैः । सेवितम् । आत्मनः । अर्थे । महात्मना । निर्मितम् । आदि-पुंसा ।</div><div class="vig-iast">tasmāt । idam । kṣetram । atīva । puṇyam । dhanyam । yaśasyam । paramam । praśastam । deva-dvijaiḥ । sevitam । ātmanaḥ । arthe । mahātmanā । nirmitam । ādi-puṃsā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तस्मात् + इदम् = तस्मादिदम् (त् → द्) · क्षेत्रम् + अतीव = क्षेत्रमतीव · सेवितम् + आत्मनः = सेवितमात्मनः · आत्मनः + अर्थे = आत्मनोऽर्थे (पूर्वरूप) · निर्मितम् + आदि = निर्मितमादि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तस्मात् महात्मना आदिपुंसा आत्मनः अर्थे निर्मितं देवद्विजैः सेवितम् इदं क्षेत्रम् अतीव पुण्यं धन्यं यशस्यं परमं प्रशस्तम् (अस्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Therefore this kṣetra — made by the great-souled Primal Being for himself, frequented by gods and Brahmins — is exceedingly holy, blessed, fame-conferring, and supremely excellent.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>म्हणून महात्मा आदिपुरुषाने स्वतःसाठी निर्माण केलेले, देव-ब्राह्मणांनी सेवित हे क्षेत्र अत्यंत पुण्यकारक, धन्य, यशोदायक व परम प्रशस्त आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतीव पुण्यम्</span>
+    <span class="word-iast">atīva puṇyam</span>
+  </div>
+  <div><span class="word-grammar">अतीव — indeclinable intensifier; पुण्यम् — neuter nominative singular adjective</span></div>
+  <div class="word-form">In this verse: अतीव + पुण्यम्</div>
+  <p class="word-meaning lang-en">exceedingly meritorious / holy</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत पुण्यकारक</p>
+  <div class="word-usage">
+    <div class="deva">इदम् क्षेत्रम् अतीव पुण्यम् अस्ति</div>
+    <div class="usage-iast">idam kṣetram atīva puṇyam asti</div>
+    <div class="usage-meaning lang-en">This holy place is exceedingly meritorious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे क्षेत्र अत्यंत पुण्यकारक आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धन्यम्</span>
+    <span class="word-iast">dhanyam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular adjective</span></div>
+  <div class="word-form">In this verse: धन्यम्</div>
+  <p class="word-meaning lang-en">blessed, fortunate</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धन्य</p>
+  <div class="word-usage">
+    <div class="deva">धन्यम् जीवनम् तस्य यः धर्मम् आचरति</div>
+    <div class="usage-iast">dhanyam jīvanam tasya yaḥ dharmam ācarati</div>
+    <div class="usage-meaning lang-en">Blessed is the life of him who practises dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो धर्माचे आचरण करतो त्याचे जीवन धन्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यशस्यम्</span>
+    <span class="word-iast">yaśasyam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular adjective; यशस् + यत् suffix (&#x27;conferring fame&#x27;)</span></div>
+  <div class="word-form">In this verse: यशस्यम्</div>
+  <p class="word-meaning lang-en">conferring fame</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यश देणारे</p>
+  <div class="word-usage">
+    <div class="deva">विद्या यशस्यम् धनम् अस्ति</div>
+    <div class="usage-iast">vidyā yaśasyam dhanam asti</div>
+    <div class="usage-meaning lang-en">Learning is wealth that confers fame.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्या हे यश देणारे धन आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परमं प्रशस्तम्</span>
+    <span class="word-iast">paramaṃ praśastam</span>
+  </div>
+  <div><span class="word-grammar">परमम् — neuter nominative singular of परम; प्रशस्तम् — neuter nominative singular past passive participle of प्र-√शंस् (to praise)</span></div>
+  <div class="word-form">In this verse: परमम् + प्रशस्तम्</div>
+  <p class="word-meaning lang-en">supremely excellent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय श्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">तस्य कार्यम् परमम् प्रशस्तम् अस्ति</div>
+    <div class="usage-iast">tasya kāryam paramam praśastam asti</div>
+    <div class="usage-meaning lang-en">His work is supremely excellent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे कार्य अतिशय श्रेष्ठ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देवद्विजैः सेवितम्</span>
+    <span class="word-iast">devadvijaiḥ sevitam</span>
+  </div>
+  <div><span class="word-grammar">देवद्विजैः — masculine instrumental plural, dvandva: देवाः च द्विजाः च; सेवितम् — neuter nominative singular past passive participle of √सेव् (to serve, frequent)</span></div>
+  <div class="word-form">In this verse: देवद्विजैः + सेवितम्</div>
+  <p class="word-meaning lang-en">served / frequented by gods and Brahmins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव व ब्राह्मण ज्याचा आश्रय करतात ते</p>
+  <div class="word-usage">
+    <div class="deva">क्षेत्रम् देव-द्विजैः सेवितम् अस्ति</div>
+    <div class="usage-iast">kṣetram deva-dvijaiḥ sevitam asti</div>
+    <div class="usage-meaning lang-en">The holy place is frequented by gods and Brahmins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्षेत्र देव-ब्राह्मणांनी सेवित आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आत्मनोऽर्थे</span>
+    <span class="word-iast">ātmano&#x27;rthe</span>
+  </div>
+  <div><span class="word-grammar">आत्मनः — masculine genitive singular of आत्मन्; अर्थे — masculine locative singular of अर्थ, used adverbially (&#x27;for the sake of&#x27;); sandhi: आत्मनः + अर्थे → आत्मनोऽर्थे</span></div>
+  <div class="word-form">In this verse: आत्मनः + अर्थे</div>
+  <p class="word-meaning lang-en">for himself, for his own sake</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःसाठी; *आदिपुरुष परशुरामाने स्वतःच्या निवासासाठी (दान दिलेल्या पृथ्वीवर न राहण्यासाठी, १.१८–१९) निर्माण केले — असा अर्थ कथेशी सुसंगत; पुस्तकाच्या मराठीत हे पद ‘सेवितम्’ शी जोडले आहे.*</p>
+  <div class="word-usage">
+    <div class="deva">सः आत्मनः अर्थे गृहम् निर्मितवान्</div>
+    <div class="usage-iast">saḥ ātmanaḥ arthe gṛham nirmitavān</div>
+    <div class="usage-meaning lang-en">He built a house for himself.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने स्वतःसाठी घर बांधले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महात्मना आदिपुंसा</span>
+    <span class="word-iast">mahātmanā ādipuṃsā</span>
+  </div>
+  <div><span class="word-grammar">महात्मना — masculine instrumental singular of महात्मन्; आदिपुंसा — masculine instrumental singular of आदिपुंस् (the Primal Being)</span></div>
+  <div class="word-form">In this verse: महात्मना + आदिपुंसा</div>
+  <p class="word-meaning lang-en">by the great-souled Primal Being</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महात्मा आदिपुरुषाने (विष्णुरूप परशुराम)</p>
+  <div class="word-usage">
+    <div class="deva">महात्मना आदि-पुंसा जगत् सृष्टम्</div>
+    <div class="usage-iast">mahātmanā ādi-puṃsā jagat sṛṣṭam</div>
+    <div class="usage-meaning lang-en">The world was created by the great-souled Primal Being.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महात्मा आदिपुरुषाने जगताची निर्मिती केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निर्मितम्</span>
+    <span class="word-iast">nirmitam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular past passive participle of निर्-√मा (to fashion, create)</span></div>
+  <div class="word-form">In this verse: निर्मितम्</div>
+  <p class="word-meaning lang-en">made, created</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्माण केलेले</p>
+  <div class="word-usage">
+    <div class="deva">तेन सुन्दरम् मन्दिरम् निर्मितम्</div>
+    <div class="usage-iast">tena sundaram mandiram nirmitam</div>
+    <div class="usage-meaning lang-en">A beautiful temple was built by him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने सुंदर मंदिर बांधले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The naming section closes in a blaze of praise, and in the longer Indravajrā metre. Paraśurāma — the &#x27;great-souled Primal Being&#x27;, Viṣṇu himself — made this land for his own dwelling, since he had given away the whole earth and could not reside upon the gift (sarga 1, verses 18–19). Gods and Brahmins frequent it. The four epithets promise the pilgrim everything: merit (पुण्यं), fortune (धन्यं), fame (यशस्यं), and supreme excellence (परमं प्रशस्तम्).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नामकरण-विभागाचा समारोप स्तुतीच्या झळाळीत होतो — आणि दीर्घ इन्द्रवज्रा वृत्तात. परशुराम — &#x27;महात्मा आदिपुरुष&#x27;, स्वतः विष्णू — यांनी ही भूमी स्वतःच्या निवासासाठी निर्माण केली; कारण त्यांनी संपूर्ण पृथ्वी दान दिली होती आणि दान दिलेल्या वस्तूवर राहता येत नव्हते (सर्ग १, श्लोक १८–१९). देव व ब्राह्मण येथे वावरतात. चार विशेषणे यात्रेकरूला सर्व काही देण्याचे आश्वासन देतात: पुण्य (पुण्यं), सौभाग्य (धन्यं), यश (यशस्यं) आणि परम श्रेष्ठता (परमं प्रशस्तम्).</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>आत्मनोऽर्थे — &#x27;for himself&#x27; — recalls the famous sequel of the earth-gift: having given the earth to Kaśyapa, Paraśurāma could not dwell upon what he had donated, so he won a new land from the sea for his own residence (Bhāgavata Purāṇa 9.16; Mahābhārata). The &#x27;Primal Being&#x27; (आदिपुंस्) identifies the Bhārgava hero with Viṣṇu himself, the standard Vaiṣṇava reading of the avatāra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आत्मनोऽर्थे — &#x27;स्वतःसाठी&#x27; — पृथ्वीदानाच्या प्रसिद्ध उत्तरकथेची आठवण करून देते: पृथ्वी कश्यपाला दान दिल्यानंतर दान दिलेल्या वस्तूवर परशुरामाला राहता आले नाही; म्हणून त्यांनी स्वतःच्या निवासासाठी समुद्राकडून नवी भूमी मिळवली (भागवत पुराण ९.१६; महाभारत). &#x27;आदिपुरुष&#x27; (आदिपुंस्) हा भार्गव वीराला स्वतः विष्णूशी जोडतो — अवताराचे ठरावीक वैष्णव वाचन.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The metre shifts from Anuṣṭubh to Indravajrā (11 syllables per pāda, triṣṭubh family) to mark the section&#x27;s climax — a common kāvya technique for closural praise (praśasti). देवद्विजैः is a dvandva (देवाः च द्विजाः च) in the instrumental. महात्मना आदिपुंसा are instrumentals of the agent with निर्मितम्.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विभागाच्या कळसासाठी वृत्त अनुष्टुभ्‌वरून इन्द्रवज्रा (प्रति चरण ११ अक्षरे, त्रिष्टुभ् कुळ) कडे वळते — समारोप-स्तुतीसाठी (प्रशस्ती) काव्यातील ठरावीक युक्ती. देवद्विजैः हा द्वन्द्व समास आहे (देवाः च द्विजाः च), तृतीयेत. महात्मना आदिपुंसा हे निर्मितम् सोबत कर्त्याच्या तृतीयेतील रूपे आहेत.</p></div></div>
+
+<div class="pagenav"><a href="verse-59.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 59</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-03/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 3 — Devatāsthāpanaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

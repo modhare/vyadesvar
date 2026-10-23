@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 19 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 19</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vaitālīya</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">सचिवैः सह कार्यमंत्रणे युयुजे वैरिजयप्रयोगवित् ।<br>प्रकृतीः स कृती समैक्षत स्वयमन्यायहरश्चरैरपि ।।१९।।</div>
+  <div class="verse-iast">sacivaiḥ saha kāryamaṃtraṇe yuyuje vairijayaprayogavit । prakṛtīḥ sa kṛtī samaikṣata svayamanyāyaharaścarairapi</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">सचिवैः । सह । कार्य-मन्त्रणे । युयुजे । वैरि-जय-प्रयोग-वित् । प्रकृतीः । सः । कृती । समैक्षत । स्वयम् । अन्याय-हरः । चरैः । अपि ।</div><div class="vig-iast">sacivaiḥ । saha । kārya-mantraṇe । yuyuje । vairi-jaya-prayoga-vit । prakṛtīḥ । saḥ । kṛtī । samaikṣata । svayam । anyāya-haraḥ । caraiḥ । api ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सः + कृती = स कृती · सम् + ऐक्षत = समैक्षत · स्वयम् + अन्याय = स्वयमन्याय · हरः + चरैः = हरश्चरैः · चरैः + अपि = चरैरपि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">वैरिजयप्रयोगवित् (सः) सचिवैः सह कार्यमन्त्रणे युयुजे; अन्यायहरः कृती सः स्वयं चरैः अपि प्रकृतीः समैक्षत ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Skilled in the stratagems for conquering foes, he drew his ministers into counsel over the affairs of state; and that capable king, himself the remover of injustice, kept the constituent powers of the realm under his own watch — even through his spies.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वैऱ्यांवर विजय मिळविण्याच्या प्रयोगात प्रवीण अशा त्याने राजकार्याच्या सल्लामसलतीत सचिवांसह सर्वांचा उपयोग करून घेतला व त्या स्वतःच अन्याय निवारण करणाऱ्या निपुण राजाने आपल्या हेरांकरवीही प्रजेवर (प्रकृतींवर म्हणजे अमात्य, जनपद, दुर्ग, दण्ड, कोश व शत्रू) यांच्यावर सतत लक्ष ठेवले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कार्यमन्त्रणे युयुजे</span>
+    <span class="word-iast">kāryamantraṇe yuyuje</span>
+  </div>
+  <div><span class="word-grammar">कार्यमन्त्रण (कार्यस्य मन्त्रणम्, षष्ठीतत्पुरुषः; नपुंसकलिङ्गम्, सप्तमी एकवचनम्) + √युज् (युनक्ति, रुधादिगणः), लिट्, आत्मनेपदम्, प्रथमपुरुषः, एकवचनम्</span></div>
+  <div class="word-form">In this verse: कार्यमंत्रणे युयुजे</div>
+  <p class="word-meaning lang-en">he engaged (them) in counsel over affairs of state</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजकार्याच्या सल्लामसलतीत गुंतला (√युज्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">राजा सचिवान् कार्यमन्त्रणे युयुजे।</div>
+    <div class="usage-iast">rājā sacivān kāryamantraṇe yuyuje.</div>
+    <div class="usage-meaning lang-en">The king engaged his ministers in deliberation over affairs of state.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने सचिवांना राजकार्याच्या सल्लामसलतीत गुंतवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वैरिजयप्रयोगवित्</span>
+    <span class="word-iast">vairijayaprayogavit</span>
+  </div>
+  <div><span class="word-grammar">वैरिजयप्रयोगाणां वित् (√विद् + क्विप्, &#x27;वेत्ता&#x27;); तत्पुरुषसमासः, पुंलिङ्गम्, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: वैरिजयप्रयोगवित्</div>
+  <p class="word-meaning lang-en">knower of the stratagems for conquering foes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रुविजयाचे उपाय जाणणारा</p>
+  <div class="word-usage">
+    <div class="deva">सेनापतिः वैरिजयप्रयोगवित् आसीत्।</div>
+    <div class="usage-iast">senāpatiḥ vairijayaprayogavit āsīt.</div>
+    <div class="usage-meaning lang-en">The general was skilled in the stratagems of defeating enemies.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सेनापती शत्रूंवर विजय मिळवण्याच्या युक्त्यांत प्रवीण होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रकृतीः</span>
+    <span class="word-iast">prakṛtīḥ</span>
+  </div>
+  <div><span class="word-grammar">प्रकृति (स्त्रीलिङ्गम्), द्वितीया विभक्तिः, बहुवचनम्</span></div>
+  <div class="word-form">In this verse: प्रकृतीः</div>
+  <p class="word-meaning lang-en">the constituent elements of the polity (minister, territory, fort, treasury, army, ally)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजा/राज्याची अंगे</p>
+  <div class="word-usage">
+    <div class="deva">नृपः प्रकृतीः सततं रक्षति।</div>
+    <div class="usage-iast">nṛpaḥ prakṛtīḥ satataṃ rakṣati.</div>
+    <div class="usage-meaning lang-en">The king constantly protects the constituents of the state.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा राज्याच्या घटकांचे सतत रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समैक्षत</span>
+    <span class="word-iast">samaikṣata</span>
+  </div>
+  <div><span class="word-grammar">सम् उपसर्गः + √ईक्ष् (ईक्षते, भ्वादिगणः, &#x27;दर्शने&#x27;), लङ्, आत्मनेपदम्, प्रथमपुरुषः, एकवचनम्</span></div>
+  <div class="word-form">In this verse: समैक्षत</div>
+  <p class="word-meaning lang-en">he watched over, supervised</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नीट पाहत असे</p>
+  <div class="word-usage">
+    <div class="deva">आचार्यः शिष्यान् समैक्षत।</div>
+    <div class="usage-iast">ācāryaḥ śiṣyān samaikṣata.</div>
+    <div class="usage-meaning lang-en">The teacher kept watch over his pupils.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आचार्य शिष्यांवर लक्ष ठेवत असे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्यायहरः</span>
+    <span class="word-iast">anyāyaharaḥ</span>
+  </div>
+  <div><span class="word-grammar">अन्यायस्य हरः (√हृ + अच्), उपपदतत्पुरुषः; पुंलिङ्गम्, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: अन्यायहरः</div>
+  <p class="word-meaning lang-en">the remover of injustice</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अन्याय दूर करणारा</p>
+  <div class="word-usage">
+    <div class="deva">धर्मज्ञः राजा अन्यायहरः भवति।</div>
+    <div class="usage-iast">dharmajñaḥ rājā anyāyaharaḥ bhavati.</div>
+    <div class="usage-meaning lang-en">A king who knows dharma becomes a remover of injustice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्म जाणणारा राजा अन्याय दूर करणारा असतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चरैः</span>
+    <span class="word-iast">caraiḥ</span>
+  </div>
+  <div><span class="word-grammar">चर (पुंलिङ्गम्), तृतीया विभक्तिः, बहुवचनम्</span></div>
+  <div class="word-form">In this verse: चरैः</div>
+  <p class="word-meaning lang-en">by means of spies</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हेरांकडून</p>
+  <div class="word-usage">
+    <div class="deva">राजा चरैः वृत्तान्तं जानाति।</div>
+    <div class="usage-iast">rājā caraiḥ vṛttāntaṃ jānāti.</div>
+    <div class="usage-meaning lang-en">The king learns the news through spies.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा हेरांकरवी बातम्या जाणतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Here the Arthaśāstra&#x27;s rājadharma is distilled: counsel with ministers, personal removal of injustice, and vigilance over the realm&#x27;s constituents even through spies. The verse sketches the ideal polity in which the shrine&#x27;s legend unfolds. For any ruler — and for the inner ruler, the self — counsel, justice, and watchfulness are the true ornaments.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राजाने मंत्र्यांशी सल्लामसलत करावी, स्वतः अन्याय दूर करावा आणि हेरांकरवी राज्यावर लक्ष ठेवावे — हा कौटिलीय राजधर्माचा सारांश या श्लोकात आहे. देवालयाच्या कथाभूमीतील आदर्श राजकीय व्यवस्था येथे रेखाटली आहे. शासकासाठी — आणि अंतर्यामी शासक म्हणजे आत्म्यासाठीही — सल्ला, न्याय आणि दक्षता हेच खरे भूषण होय.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The &#x27;prakṛtis&#x27; are the classical seven constituents of the state taught by Kauṭilya and Manu — lord, minister, territory, fort, treasury, army, and ally — whose welfare is the king&#x27;s charge. The verse compresses the Arthaśāstra&#x27;s doctrine of counsel and espionage into royal portraiture.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रकृती म्हणजे कौटिल्य आणि मनू यांनी सांगितलेली राज्याची सात अंगे — स्वामी, अमात्य, जनपद, दुर्ग, कोश, दण्ड आणि मित्र — ज्यांच्या कल्याणाची जबाबदारी राजावर असते. सल्लामसलत आणि हेरगिरी यांबद्दलचे अर्थशास्त्राचे सिद्धांत या श्लोकात राजाच्या व्यक्तिचित्रात संक्षिप्त झाले आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Vaitālīya. Pāṭha-carcā on &#x27;prakṛtīḥ&#x27;: the Sanskrit does not enumerate the constituents — the list is the translator&#x27;s gloss. The book glosses: amātya, janapada, durga, daṇḍa, kośa and śatru (enemy). The classical saptaprakṛti, fixed since Kauṭilya (Arthaśāstra 6.1.1: svāmyamātyajanapadadurgakośadaṇḍamitrāṇi prakṛtayaḥ; cf. Manu 9.294), is: svāmin (lord), amātya, janapada, durga, kośa, daṇḍa, and mitra (ally) — never śatru. The enemy belongs to the separate dvādaśarājamaṇḍala doctrine, not to the prakṛtis, which are by definition the king&#x27;s own seven constituents. Why śatru here? Likely three converging causes: (1) the verse&#x27;s point is vigilance through spies (caraiḥ), and spies watch outward against the foe as well as inward; (2) this sarga&#x27;s frame is military — the king is vairijayaprayogavit, &#x27;skilled in conquering foes&#x27; (cf. 9.18); (3) the book silently drops the first prakṛti, svāmin (one does not spy on oneself), and śatru fills the slot where mitra should stand. The book&#x27;s reading is kept as the translator&#x27;s interpretation; the śāstric list is recorded here and not silently substituted.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: वैतालीय. &#x27;प्रकृतीः&#x27; यावर पाठ-चर्चा: संस्कृत मूळात घटकांची यादी दिलेली नाही — ती भाषांतरकाराची टीप आहे. ग्रंथाची यादी: अमात्य, जनपद, दुर्ग, दण्ड, कोश आणि शत्रू. कौटिल्यापासून स्थिर असलेली शास्त्रीय सप्तप्रकृतियादी (अर्थशास्त्र ६.१.१: स्वाम्यमात्यजनपददुर्गकोशदण्डमित्राणि प्रकृतयः; तु. मनु ९.२९४) अशी आहे: स्वामी, अमात्य, जनपद, दुर्ग, कोश, दण्ड आणि मित्र — शत्रू कधीही नव्हे. शत्रू हा वेगळ्याच द्वादशराजमण्डल सिद्धांतातील घटक आहे; प्रकृती म्हणजे व्याख्येनुसारच राजाचे स्वतःचे सात घटक. येथे शत्रू का आला असावा? तीन कारणे एकत्र आली असावीत: (१) श्लोकाचा विषय हेरांकरवी (चरैः) दक्षता आहे, आणि हेर आतल्यांवर तसेच बाहेर शत्रूवरही लक्ष ठेवतात; (२) या सर्गाची चौकटच युद्धविषयक आहे — राजा वैरिजयप्रयोगवित् आहे (तु. ९.१८); (३) ग्रंथाने पहिली प्रकृती, स्वामी, गाळली आहे (स्वतःवर हेरगिरी नसते), आणि मित्राच्या जागी शत्रू आला आहे. ग्रंथाचे वाचन भाषांतरकाराचे मत म्हणून ठेवले आहे; शास्त्रीय यादी येथे नमूद केली आहे, न सांगता बदललेली नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 18</div></a><a class="next" href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 20</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

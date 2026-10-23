@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 58 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 58</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 58</span><span class="bl-mr lang-mr">श्लोक 58</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">गोकर्णमालयं शंभोस्ततः पाथोधिरोधसि ।<br>जरीजृम्भत्कोटितीर्थं कोटितीर्थाधिकं महत् ।।५८।।</div>
+  <div class="verse-iast">gokarṇamālayaṃ śaṃbhostataḥ pāthodhirodhasi । jarījṛmbhatkoṭitīrthaṃ koṭitīrthādhikaṃ mahat</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">गोकर्णम् । आलयम् । शंभोः । ततः । पाथोधि-रोधसि । जरीजृम्भत् । कोटितीर्थम् । कोटि-तीर्थ-अधिकम् । महत् ।</div><div class="vig-iast">gokarṇam । ālayam । śaṃbhoḥ । tataḥ । pāthodhi-rodhasi । jarījṛmbhat । koṭitīrtham । koṭi-tīrtha-adhikam । mahat ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">गोकर्णम् + आलयम् = गोकर्णमालयम् · शंभोः + ततः = शंभोस्ततः · तीर्थ + अधिकम् = तीर्थाधिकम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">ततः पाथोधिरोधसि शंभोः आलयं गोकर्णम् (अस्ति); (तत्र) कोटितीर्थाधिकं महत् कोटितीर्थं जरीजृम्भत् (वर्तते) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then, on the seashore, stands Gokarṇa — the abode of Śambhu. There the great Koṭitīrtha, surpassing crores of tīrthas, stands in full glory.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नंतर सागरतीरावर शंकराचे गोकर्ण (कर्नाटकातील गोकर्ण) नावाचे निवासस्थान आहे. कोटितीर्थांहूनही अधिक कोटितीर्थ नावाचे विकसित क्षेत्रही येथेच आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आलयम्</span>
+    <span class="word-iast">ālayam</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular</span></div>
+  <div class="word-form">In this verse: आलयम्</div>
+  <p class="word-meaning lang-en">an abode, dwelling-place</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निवासस्थान</p>
+  <div class="word-usage">
+    <div class="deva">मन्दिरं पाथोधिरोधसि वर्तते।</div>
+    <div class="usage-iast">mandiraṃ pāthodhirodhasi vartate.</div>
+    <div class="usage-meaning lang-en">The temple stands on the seashore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिर समुद्रकिनारी उभे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पाथोधिरोधसि</span>
+    <span class="word-iast">pāthodhirodhasi</span>
+  </div>
+  <div><span class="word-grammar">neuter locative singular (पाथोधि-रोधस्, tatpuruṣa compound)</span></div>
+  <div class="word-form">In this verse: पाथोधिरोधसि</div>
+  <p class="word-meaning lang-en">on the shore of the ocean, on the seashore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या तीरावर</p>
+  <div class="word-usage">
+    <div class="deva">मुनिः पाथोधिरोधसि तपस्तेपे।</div>
+    <div class="usage-iast">muniḥ pāthodhirodhasi tapastepe.</div>
+    <div class="usage-meaning lang-en">The sage practised austerity on the seashore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनीने समुद्रकिनारी तपश्चर्या केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जरीजृम्भत्</span>
+    <span class="word-iast">jarījṛmbhat</span>
+  </div>
+  <div><span class="word-grammar">present participle, yaṅluk (intensive) of √जृम्भ्; neuter accusative singular, agreeing with कोटितीर्थम्</span></div>
+  <div class="word-form">In this verse: जरीजृम्भत्</div>
+  <p class="word-meaning lang-en">flourishing greatly, expanding in glory</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय विकसित/शोभणारे (यङ्लुगन्त)</p>
+  <div class="word-usage">
+    <div class="deva">उद्याने वसन्ते पुष्पाणि जरीजृम्भन्ति।</div>
+    <div class="usage-iast">udyāne vasante puṣpāṇi jarījṛmbhanti.</div>
+    <div class="usage-meaning lang-en">In the garden, the flowers bloom profusely in spring.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बागेत वसंत ऋतूत फुले भरभर फुलतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कोटितीर्थाधिकम्</span>
+    <span class="word-iast">koṭitīrthādhikam</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative singular (कोटि-तीर्थ-अधिक, tatpuruṣa compound; śleṣa on the proper name Koṭitīrtha)</span></div>
+  <div class="word-form">In this verse: कोटितीर्थाधिकम्</div>
+  <p class="word-meaning lang-en">surpassing crores of tīrthas; greater than the Koṭitīrtha among tīrthas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोटी तीर्थांहून अधिक (कोटितीर्थ नावावर श्लेष)</p>
+  <div class="word-usage">
+    <div class="deva">अस्य क्षेत्रस्य पुण्यं कोटितीर्थाधिकं विदुः।</div>
+    <div class="usage-iast">asya kṣetrasya puṇyaṃ koṭitīrthādhikaṃ viduḥ.</div>
+    <div class="usage-meaning lang-en">They know the holiness of this sacred place to be greater than crores of tīrthas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या क्षेत्राचे पुण्य कोटी तीर्थांहून अधिक आहे असे ते जाणतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Gokarṇa, with its ātmaliṅga of Mahābaleśvara, is the southern anchor of the Śaiva geography of the western coast, and the poet places it as the natural goal of the southward catalogue. The śleṣa in koṭitīrthādhikam — the tīrtha named Koṭitīrtha &#x27;exceeding crores of tīrthas&#x27; — carries the deeper teaching: a true tīrtha concentrates infinite merit in one visitable spot, so that one bath here is worth more than countless elsewhere.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महाबलेश्वराच्या आत्मलिंगासह गोकर्ण हे पश्चिम किनाऱ्याच्या शैव भूगोलाचे दक्षिणेकडील स्थळ असून कवीने त्याला दक्षिणेकडील यादीचे स्वाभाविक लक्ष्य म्हणून ठेवले आहे. &#x27;कोटितीर्थाधिकम्&#x27; यातील श्लेष — कोटितीर्थ नावाचे तीर्थ &#x27;कोटी तीर्थांहून अधिक&#x27; — हीच गंभीर शिकवण घेऊन येते : खरे तीर्थ एकाच भेट देण्याजोग्या ठिकाणी अनंत पुण्य केंद्रित करते; म्हणून येथील एक स्नान इतर ठिकाणच्या असंख्य स्नानांपेक्षा अधिक फळदायी ठरते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Gokarṇa&#x27;s glory rests on the ātmaliṅga that Rāvaṇa received from Śiva and that Gaṇapati, by a famous trick, caused to be set down there; ever since, it has been the great Śaiva kṣetra of the southern western coast. Koṭitīrtha is its celebrated tank, where pilgrims bathe before the darśana of Mahābaleśvara.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गोकर्णाचे वैभव रावणाला शिवाकडून मिळालेल्या आणि प्रसिद्ध युक्तीने गणपतीने तेथे ठेवायला लावलेल्या आत्मलिंगावर आधारलेले आहे; तेव्हापासून ते दक्षिण-पश्चिम किनाऱ्याचे महान शैव क्षेत्र राहिले आहे. कोटितीर्थ हे तेथील प्रसिद्ध तळे असून महाबलेश्वराच्या दर्शनापूर्वी यात्रेकरू तेथे स्नान करतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Note the wordplay (śleṣa): koṭitīrtha is both the proper name of Gokarṇa&#x27;s tīrtha and the common noun &#x27;a crore of tīrthas&#x27; — so koṭitīrthādhikam says the Koṭitīrtha outdoes crores of tīrthas. Jarijṛmbhat is the yaṅluk present participle of √jṛmbh (&#x27;to expand, yawn open&#x27;), here &#x27;flourishing again and again&#x27; — intensive by form. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथील श्लेष लक्षात घ्या : &#x27;कोटितीर्थ&#x27; हे गोकर्णाच्या तीर्थाचे नावही आहे आणि &#x27;कोटी तीर्थे&#x27; हा सामान्य अर्थही; म्हणून &#x27;कोटितीर्थाधिकम्&#x27; म्हणजे कोटितीर्थ हे कोटी तीर्थांहून अधिक श्रेष्ठ आहे. &#x27;जरीजृम्भत्&#x27; हे √जृम्भ् धातूचे यङ्लुगन्त वर्तमानकालीन धातुसाधित विशेषण असून &#x27;पुन्हा पुन्हा विकसित होणारे&#x27; असा तीव्र अर्थ देते. वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-57.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 57</div></a><a class="next" href="verse-59.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 59</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

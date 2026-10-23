@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 21 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 21</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 21</span><span class="bl-mr lang-mr">श्लोक 21</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यः प्रार्थयेतामयसंप्रहारं यश्चाभिवाञ्छेत्सुखमत्युदारम् ।<br>यो गन्तुकामश्च भवाब्धिपारं नमेत्स एनं नर एकवारम् ।।२१।।</div>
+  <div class="verse-iast">yaḥ prārthayetāmayasaṃprahāraṃ yaścābhivāñchetsukhamatyudāram । yo gantukāmaśca bhavābdhipāraṃ nametsa enaṃ nara ekavāram</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यः । प्रार्थयेत । आमय-संप्रहारम् । यः । च । अभिवाञ्छेत् । सुखम् । अति-उदारम् । यः । गन्तुकामः । च । भव-अब्धि-पारम् । नमेत् । सः । एनम् । नरः । एकवारम् ।</div><div class="vig-iast">yaḥ । prārthayeta । āmaya-saṃprahāram । yaḥ । ca । abhivāñchet । sukham । ati-udāram । yaḥ । gantukāmaḥ । ca । bhava-abdhi-pāram । namet । saḥ । enam । naraḥ । ekavāram ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रार्थयेत + आमय = प्रार्थयेतामय · यः + च = यश्च · च + अभिवाञ्छेत् = चाभिवाञ्छेत् · सुखम् + अति = सुखमति · अति + उदारम् = अत्युदारम् (यण्) · गन्तुकामः + च = गन्तुकामश्च · भव + अब्धि = भवाब्धि · सः + एनम् = स एनम् · नरः + एक = नर एक</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यः आमयसंप्रहारं प्रार्थयेत, यः च अत्युदारं सुखम् अभिवाञ्छेत्, यः च भवाब्धिपारं गन्तुकामः (भवेत्), सः नरः एनम् एकवारं नमेत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Let the man who seeks the defeat of disease, who longs for exceedingly abundant happiness, and who yearns to reach the far shore of the ocean of existence — let each such man bow once to him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याला रोगाच्या आक्रमणाचा प्रतिकार करावयाचा आहे, ज्याला अतिशय विपुल सुख आहे व जो हा भवसागर तरून जाण्याची आकांक्षा बाळगतो त्या प्रत्येकाने या तारकेश्वराला एकदा (श्रद्धेने) प्रणाम करावा.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Marathi: the book&#x27;s तरू न जाण्याची (&quot;not to cross&quot;) → तरून जाण्याची (&quot;to cross&quot;), following भवाब्धिपारं गन्तुकामः. Line 2: the book&#x27;s नरमेकवारम् → नर एकवारम् (nominative नरः, the one who bows; meter unchanged).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आमयसंप्रहारम्</span>
+    <span class="word-iast">āmayasaṃprahāram</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular of the compound आमयसंप्रहार (आमय m., &#x27;disease&#x27; + संप्रहार m., &#x27;striking down, destruction&#x27;)</span></div>
+  <div class="word-form">In this verse: आमयसंप्रहारम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">the destruction, the warding off, of disease</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रोगाचा नाश (प्रतिकार)</p>
+  <div class="word-usage">
+    <div class="deva">वैद्यः आमयसंप्रहारं करोति</div>
+    <div class="usage-iast">vaidyaḥ āmayasaṃprahāraṃ karoti</div>
+    <div class="usage-meaning lang-en">The physician brings about the destruction of disease.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वैद्य रोगाचा नाश करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अत्युदारं सुखम्</span>
+    <span class="word-iast">atyudāraṃ sukham</span>
+  </div>
+  <div><span class="word-grammar">अत्युदारम् — neuter accusative singular of अत्युदार (अति + उदार); सुखम् — neuter accusative singular</span></div>
+  <div class="word-form">In this verse: अत्युदारं सुखम् — phrase as printed</div>
+  <p class="word-meaning lang-en">exceedingly abundant, noble happiness</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय विपुल सुख</p>
+  <div class="word-usage">
+    <div class="deva">सः अत्युदारं सुखम् अनुभूतवान्</div>
+    <div class="usage-iast">saḥ atyudāraṃ sukham anubhūtavān</div>
+    <div class="usage-meaning lang-en">He experienced exceedingly abundant happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने अतिशय विपुल सुख अनुभवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवाब्धिपारं गन्तुकामः</span>
+    <span class="word-iast">bhavābdhipāraṃ gantukāmaḥ</span>
+  </div>
+  <div><span class="word-grammar">भवाब्धिपारम् — neuter accusative singular of the compound भवाब्धिपार (भव-अब्धि-पार, &#x27;the far shore of the ocean of existence&#x27;); गन्तुकामः — masculine nominative singular (गन्तुम् infinitive + काम, &#x27;desirous of going&#x27;)</span></div>
+  <div class="word-form">In this verse: भवाब्धिपारं गन्तुकामः — phrase as printed</div>
+  <p class="word-meaning lang-en">desirous of reaching the far shore of the ocean of existence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसारसागराच्या पलीकडे जाण्याची इच्छा असलेला</p>
+  <div class="word-usage">
+    <div class="deva">योगी भवाब्धिपारं गन्तुकामः तपः चरति</div>
+    <div class="usage-iast">yogī bhavābdhipāraṃ gantukāmaḥ tapaḥ carati</div>
+    <div class="usage-meaning lang-en">The yogin, desirous of crossing to the far shore of the ocean of existence, practises austerity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसारसागराच्या पलीकडे जाण्याची इच्छा असलेला योगी तप करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नमेत्</span>
+    <span class="word-iast">namet</span>
+  </div>
+  <div><span class="word-grammar">√नम् (class 1), vidhiliṅ (optative), 3rd person singular</span></div>
+  <div class="word-form">In this verse: नमेत् — optative as printed</div>
+  <p class="word-meaning lang-en">should bow down, let him bow (in reverence)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमस्कार करावा (विधिलिङ्)</p>
+  <div class="word-usage">
+    <div class="deva">गुरुं सः नमेत् आदरेण</div>
+    <div class="usage-iast">guruṃ saḥ namet ādareṇa</div>
+    <div class="usage-meaning lang-en">He should bow to the teacher with respect.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने आदराने गुरूंना नमस्कार करावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकवारम्</span>
+    <span class="word-iast">ekavāram</span>
+  </div>
+  <div><span class="word-grammar">indeclinable adverb; एक + वार m. in the accusative, &#x27;one time&#x27;</span></div>
+  <div class="word-form">In this verse: एकवारम् — adverb as printed</div>
+  <p class="word-meaning lang-en">once, a single time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकदा</p>
+  <div class="word-usage">
+    <div class="deva">एकवारम् एव तं ददर्श</div>
+    <div class="usage-iast">ekavāram eva taṃ dadarśa</div>
+    <div class="usage-meaning lang-en">He saw him just once.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने त्याला फक्त एकदाच पाहिले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Three longings — a body free of disease, a life full of happiness, a soul ferried across the ocean of existence — and one answer: a single bow to Tārakeśvara. The verse is an open invitation, especially to the hesitant: grace here is not rationed by ritual labour but given to the once-bowed head. In sthala terms, this is the doctrine of sulabhatā — the easy accessibility of the deity — stated as a direct injunction to every man.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीन आकांक्षा — रोगमुक्त शरीर, सुखाने भरलेले जीवन, भवसागर तरून गेलेला आत्मा — आणि एकच उत्तर: तारकेश्वराला एकच नमस्कार. हा श्लोक खुला निमंत्रण आहे, विशेषतः संकोच करणाऱ्यांसाठी: इथे कृपा कर्मकांडाच्या श्रमाने मोजून दिली जात नाही, तर एकदा नमलेल्या मस्तकाला दिली जाते. स्थलाच्या भाषेत ही सुलभतेची शिकवण आहे — देवाची सहज उपलब्धता — प्रत्येक माणसाला उद्देशून केलेल्या थेट विधीच्या रूपात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The three petitions — health, happiness, liberation — cover the whole arc of human longing: the body, worldly life, and mokṣa; and the verse&#x27;s answer is one, a single namaskāra. This is the bhakti doctrine of sulabhatā: grace is not proportioned to ritual effort but to the bowed head. The śāstras likewise promise that even one prostration at a holy place is never in vain.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीन याचना — आरोग्य, सुख, मोक्ष — मानवी आकांक्षेचा संपूर्ण पट व्यापतात: शरीर, सांसारिक जीवन आणि मोक्ष; आणि त्यांचे उत्तर एकच — एकच नमस्कार. ही भक्तीची सुलभता-शिकवण आहे: कृपा कर्मकांडाच्या प्रमाणात नव्हे, तर नम्र मस्तकाच्या प्रमाणात मिळते. पवित्र स्थळी केलेला एकही प्रणाम व्यर्थ जात नाही, असे शास्त्रेही सांगतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is a single extended vidhi (injunction) in the vidhiliṅ — &#x27;namet,&#x27; let him bow — with three parallel &#x27;yaḥ&#x27; clauses as its conditions. &#x27;Ekavāram&#x27; (just once) is the doctrinal punch of the line: accessibility, not austerity, is what the poet advertises. Structurally this verse closes the Tārakeśvara unit (verses 19–21): description, etymology, and now invitation — the pilgrim is ushered in.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक विधिलिङ्ङातील एकच विस्तारित विधी आहे — &#x27;नमेत्&#x27;, नमस्कार करावा — आणि त्याच्या तीन समांतर &#x27;यः&#x27; उपवाक्ये या त्याच्या अटी. &#x27;एकवारम्&#x27; (फक्त एकदा) हीच ओळीची सैद्धान्तिक ठिणगी आहे: कवी जाहिरात करतो ती सुलभतेची, तपश्चर्येची नव्हे. रचनेनुसार हा श्लोक तारकेश्वर-घटकाचा (१९–२१ श्लोक) समारोप करतो: वर्णन, व्युत्पत्ती आणि आता निमंत्रण — यात्रेकरूला आत बोलावले जाते.</p></div></div>
+
+<div class="pagenav"><a href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 20</div></a><a class="next" href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 22</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

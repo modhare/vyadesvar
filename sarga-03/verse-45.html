@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 45 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 45</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 45</span><span class="bl-mr lang-mr">श्लोक 45</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Udgatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">दुरुदन्तहृत्परिबभूव रजनिचरनायकं प्रति ।।<br>भार्गवखरविशिखाग्रशिखापरिदग्धकौणपबलस्य कोऽपि ना ।।४५।।</div>
+  <div class="verse-iast">durudantahṛtparibabhūva rajanicaranāyakaṃ prati । । bhārgavakharaviśikhāgraśikhāparidagdhakauṇapabalasya ko&#x27;pi nā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">दुरुदन्त-हृत् । परिबभूव । रजनिचर-नायकम् । प्रति । भार्गव-खर-विशिख-अग्र-शिखा-परिदग्ध-कौणप-बलस्य । कः । अपि । ना ।</div><div class="vig-iast">durudanta-hṛt । paribabhūva । rajanicara-nāyakam । prati । bhārgava-khara-viśikha-agra-śikhā-paridagdha-kauṇapa-balasya । kaḥ । api । nā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">दुरुदन्तहृत् + परिबभूव = दुरुदन्तहृत्परिबभूव · विशिख + अग्र = विशिखाग्र (सवर्णदीर्घ) · कः + अपि = कोऽपि (पूर्वरूप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भार्गवखरविशिखाग्रशिखापरिदग्धकौणपबलस्य (मध्यात्) कः अपि ना रजनिचरनायकं प्रति दुरुदन्तहृत् परिबभूव ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>One surviving man became the bearer of the evil tidings to the lord of the night-wanderers — tidings of the rakshasa host wholly consumed by the flame-tips of the Bhargava&#x27;s keen arrows.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भार्गवाच्या तीक्ष्ण बाणांच्या अग्निज्वाळांत पूर्णपणे भस्म होऊन गेलेल्या राक्षस सैन्याची ही अशुभ वार्ता कोणा एका माणसाने राक्षसेन्द्रापर्यंत नेऊन पोचविली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भार्गवखरविशिखाग्रशिखा</span>
+    <span class="word-iast">bhārgavakharaviśikhāgraśikhā</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha chain (bhargava + khara + vishikha + agra + shikha), feminine stem</span></div>
+  <div class="word-form">In this verse: भार्गवखरविशिखाग्रशिखा</div>
+  <p class="word-meaning lang-en">the flame-tips of the Bhargava&#x27;s keen arrows</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या तीक्ष्ण बाणांच्या टोकांवरील ज्वाळा</p>
+  <div class="word-usage">
+    <div class="deva">भार्गवखरविशिखाग्रशिखा रिपुबलम् अदहत् ।</div>
+    <div class="usage-iast">bhārgavakharaviśikhāgraśikhā ripubalam adahat ।</div>
+    <div class="usage-meaning lang-en">The flame-tips of the Bhargava&#x27;s keen arrows burnt the enemy host.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या तीक्ष्ण बाणांच्या टोकांच्या ज्वाळांनी शत्रुसैन्य जाळले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिदग्धकौणपबलस्य</span>
+    <span class="word-iast">paridagdhakauṇapabalasya</span>
+  </div>
+  <div><span class="word-grammar">bahuvrihi/tatpurusha chain (paridagdha + kaunapa + bala), genitive neuter singular</span></div>
+  <div class="word-form">In this verse: परिदग्धकौणपबलस्य</div>
+  <p class="word-meaning lang-en">of the wholly-burnt rakshasa host</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जळून गेलेल्या राक्षससैन्याचा (कौणप = राक्षस)</p>
+  <div class="word-usage">
+    <div class="deva">परिदग्धकौणपबलस्य वार्ता श्रुता ।</div>
+    <div class="usage-iast">paridagdhakauṇapabalasya vārtā śrutā ।</div>
+    <div class="usage-meaning lang-en">The tidings of the wholly-burnt rakshasa host were heard.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जळून गेलेल्या राक्षससैन्याची वार्ता ऐकली गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कः अपि ना</span>
+    <span class="word-iast">kaḥ api nā</span>
+  </div>
+  <div><span class="word-grammar">indefinite pronoun kah + emphatic api + na (shortened narah), nominative masculine singular</span></div>
+  <div class="word-form">In this verse: कः अपि ना</div>
+  <p class="word-meaning lang-en">some one man, a certain human survivor</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोणी एक माणूस (वाचलेला)</p>
+  <div class="word-usage">
+    <div class="deva">कः अपि ना तत्र अवशिष्टः आसीत् ।</div>
+    <div class="usage-iast">kaḥ api nā tatra avaśiṣṭaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">Some one man remained there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोणी एक माणूस तेथे शिल्लक राहिला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रजनिचरनायकं प्रति</span>
+    <span class="word-iast">rajanicaranāyakaṃ prati</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha (rajanicara + nayaka), accusative masculine singular + postposition prati</span></div>
+  <div class="word-form">In this verse: रजनिचरनायकं प्रति</div>
+  <p class="word-meaning lang-en">to the lord of the night-wanderers (Ravana)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसनायकाकडे (रावणाकडे)</p>
+  <div class="word-usage">
+    <div class="deva">दूतः रजनिचरनायकं प्रति अगच्छत् ।</div>
+    <div class="usage-iast">dūtaḥ rajanicaranāyakaṃ prati agacchat ।</div>
+    <div class="usage-meaning lang-en">The messenger went to the lord of the night-wanderers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दूत राक्षसनायकाकडे गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दुरुदन्तहृत्</span>
+    <span class="word-iast">durudantahṛt</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha (durudanta + √hri + kvip), masculine stem</span></div>
+  <div class="word-form">In this verse: दुरुदन्तहृत्</div>
+  <p class="word-meaning lang-en">bearer of evil tidings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाईट बातमी (दुरुदन्त) वाहून नेणारा</p>
+  <div class="word-usage">
+    <div class="deva">दुरुदन्तहृत् दूतः आगतः ।</div>
+    <div class="usage-iast">durudantahṛt dūtaḥ āgataḥ ।</div>
+    <div class="usage-meaning lang-en">The bearer of evil tidings, the messenger, arrived.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाईट बातमी आणणारा दूत आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिबभूव</span>
+    <span class="word-iast">paribabhūva</span>
+  </div>
+  <div><span class="word-grammar">perfect 3rd person singular, pari + √bhu</span></div>
+  <div class="word-form">In this verse: परिबभूव</div>
+  <p class="word-meaning lang-en">became</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाला</p>
+  <div class="word-usage">
+    <div class="deva">सः वार्ताहरः परिबभूव ।</div>
+    <div class="usage-iast">saḥ vārtāharaḥ paribabhūva ।</div>
+    <div class="usage-meaning lang-en">He became the news-bearer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो वार्ताहर झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The lone survivor is adharma&#x27;s unwilling witness: defeat must be reported, and the &#x27;evil tidings&#x27; (durudanta) are good tidings for dharma. The verse marks the turning point where Lanka&#x27;s pride first learns fear — even Ravana&#x27;s might cannot shield his own. For the sadhaka, it is a sober reminder: the news of our inner enemies&#x27; defeat must be carried honestly to the mind&#x27;s throne, so that pride too may learn its lesson.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकटा वाचलेला हा अधर्माचा अनिच्छुक साक्षीदार आहे — पराभवाची नोंद व्हायलाच हवी; आणि &#x27;दुरुदन्त&#x27; (वाईट बातमी) ही धर्मासाठी चांगली बातमी आहे. लंकेच्या अहंकाराने प्रथमच भीती शिकण्याचा हा निर्णायक टप्पा आहे — रावणाचे सामर्थ्यही त्याच्या स्वतःच्या लोकांचे रक्षण करू शकत नाही. साधकासाठी हा गंभीर इशारा आहे — आंतरिक शत्रूंच्या पराभवाची बातमी मनाच्या सिंहासनापर्यंत प्रामाणिकपणे पोचवायलाच हवी, जेणेकरून अहंकारही आपला धडा शिकेल.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The single-survivor messenger is an epic convention — Sanjaya&#x27;s battle reports in the Mahabharata, the surviving rakshasas reporting to Ravana in the Ramayana&#x27;s Yuddhakanda. Kaunapa — &#x27;son of Kunapa (a corpse)&#x27; — is the contemptuous kenning for rakshasas, marking them as creatures of death even before their fall.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकटा वाचलेला दूत ही महाकाव्यीन परंपरा आहे — महाभारतात संजयाचे युद्धवृत्तांत, रामायणाच्या युद्धकांडात वाचलेले राक्षस रावणाला देत असलेली वार्ता. कौणप — &#x27;कुणपाचा (मृतदेहाचा) पुत्र&#x27; — हे राक्षसांचे तुच्छतादर्शक पर्यायनाम आहे; पडण्याआधीच ते मृत्यूची प्राणी आहेत हे त्यातून सूचित होते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Udgata. Textual note (v. 3.45, line 1): the book reads durudantahrit — &#x27;bearer of the evil news.&#x27; Note kah api na — na standing for narah — &#x27;some one man&#x27;: strikingly, the bearer is a human survivor of the rakshasa host (Marathi manavadehadhari vyakti). The verse bridges the Konkan battle to the coming Lanka crisis (vv. 46–48).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : उद्गता. पाठ-चर्चा (३.४५, ओळ १) : पुस्तकात दुरुदन्तहृत् असा पाठ आहे — &#x27;वाईट बातमी वाहून नेणारा&#x27;. कः अपि ना — ना म्हणजे नरः — &#x27;कोणी एक माणूस&#x27; हे लक्षात घेण्यासारखे आहे — बातमी नेणारा हा राक्षससैन्यातील मानव वाचलेला आहे (मराठी मानवदेहधारी व्यक्ती). हा श्लोक कोकणातील युद्ध आणि येणारे लंकासंकट (श्लोक ४६–४८) यांमधील दुवा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-44.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 44</div></a><a class="next" href="verse-46.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 46</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

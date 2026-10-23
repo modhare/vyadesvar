@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 2 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 2</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 2</span><span class="bl-mr lang-mr">श्लोक 2</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">समुपेत्य रावणमतित्वरया विहितानती जगदतुस्तमिति ।।<br>शृणु नाथ चित्रमतुलं जलधौ प्रबभूव यन्न च भविष्यति नो ।।२।।</div>
+  <div class="verse-iast">samupetya rāvaṇamatitvarayā vihitānatī jagadatustamiti । । śṛṇu nātha citramatulaṃ jaladhau prababhūva yanna ca bhaviṣyati no</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">समुपेत्य । रावणम् । अति-त्वरया । विहित-आनती । जगदतुः । तम् । इति । शृणु । नाथ । चित्रम् । अतुलम् । जलधौ । प्रबभूव । यत् । न । च । भविष्यति । नो ।</div><div class="vig-iast">samupetya । rāvaṇam । ati-tvarayā । vihita-ānatī । jagadatuḥ । tam । iti । śṛṇu । nātha । citram । atulam । jaladhau । prababhūva । yat । na । ca । bhaviṣyati । no ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">विहित + आनती = विहितानती (सवर्णदीर्घ) · जगदतुः + तम् = जगदतुस्तम् (विसर्ग → स्) · यत् + न = यन्न (त् → न्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(तौ) अतित्वरया रावणं समुपेत्य विहितानती (सन्तौ) तम् इति जगदतुः — ‘नाथ, शृणु; जलधौ अतुलं चित्रं प्रबभूव, यत् (पूर्वं) न (अभवत्) न च भविष्यति उ ।’</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Hurrying to Ravana with great haste and bowing before him, they said to him: &#x27;Listen, my lord: in the ocean an unparalleled marvel has come to pass — one that never was before, and shall never be again.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अतिशय लगबगीने रावणाजवळ जाऊन वंदन केलेल्या त्यांनी त्याला सांगितले, &#x27;&#x27;महाराज, समुद्रात एक अतुलनीय आश्चर्य निर्माण झालेले आहे ते ऐका; असे पूर्वी कधी झाले नाही आणि पुढे कधी होणार(ही) नाही.&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुपेत्य</span>
+    <span class="word-iast">samupetya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (ktvā), sam + upa + √i</span></div>
+  <div class="word-form">In this verse: समुपेत्य</div>
+  <p class="word-meaning lang-en">having approached</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जवळ जाऊन</p>
+  <div class="word-usage">
+    <div class="deva">गुरुम् समुपेत्य शिष्यः वन्दते ।</div>
+    <div class="usage-iast">gurum samupetya śiṣyaḥ vandate ।</div>
+    <div class="usage-meaning lang-en">Having approached the teacher, the disciple bows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूंजवळ जाऊन शिष्य नमस्कार करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतित्वरया</span>
+    <span class="word-iast">atitvarayā</span>
+  </div>
+  <div><span class="word-grammar">feminine instrumental singular; अति + त्वरा</span></div>
+  <div class="word-form">In this verse: अतित्वरया</div>
+  <p class="word-meaning lang-en">with great haste</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घाईघाईने</p>
+  <div class="word-usage">
+    <div class="deva">सा अतित्वरया गृहम् अगच्छत् ।</div>
+    <div class="usage-iast">sā atitvarayā gṛham agacchat ।</div>
+    <div class="usage-meaning lang-en">She went home with great haste.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती घाईघाईने घरी गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विहितानती</span>
+    <span class="word-iast">vihitānatī</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative dual; विहित + आनति (f., obeisance)</span></div>
+  <div class="word-form">In this verse: विहितानती</div>
+  <p class="word-meaning lang-en">(two) who have made obeisance</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमस्कार केलेले (द्विवचन)</p>
+  <div class="word-usage">
+    <div class="deva">विहितानती शिष्यौ गुरोः पादयोः निपतताम् ।</div>
+    <div class="usage-iast">vihitānatī śiṣyau guroḥ pādayoḥ nipatatām ।</div>
+    <div class="usage-meaning lang-en">The two disciples, having bowed, fell at the teacher&#x27;s feet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमस्कार केलेले दोन शिष्य गुरुंच्या पायी पडले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगदतुः</span>
+    <span class="word-iast">jagadatuḥ</span>
+  </div>
+  <div><span class="word-grammar">3rd dual perfect (liṭ), √gad (to speak)</span></div>
+  <div class="word-form">In this verse: जगदतुः</div>
+  <p class="word-meaning lang-en">the two said</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणाले (√गद्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">तौ वार्ताम् जगदतुः ।</div>
+    <div class="usage-iast">tau vārtām jagadatuḥ ।</div>
+    <div class="usage-meaning lang-en">They two announced the news.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या दोघांनी वार्ता सांगितली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्रम् अतुलम्</span>
+    <span class="word-iast">citram atulam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative singular</span></div>
+  <div class="word-form">In this verse: चित्रम् अतुलम्</div>
+  <p class="word-meaning lang-en">an incomparable marvel</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतुलनीय आश्चर्य</p>
+  <div class="word-usage">
+    <div class="deva">चित्रम् अतुलम् ददर्श सः ।</div>
+    <div class="usage-iast">citram atulam dadarśa saḥ ।</div>
+    <div class="usage-meaning lang-en">He saw an incomparable marvel.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने अतुलनीय आश्चर्य पाहिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जलधौ प्रबभूव</span>
+    <span class="word-iast">jaladhau prababhūva</span>
+  </div>
+  <div><span class="word-grammar">locative singular + 3rd singular perfect (liṭ), pra + √bhū</span></div>
+  <div class="word-form">In this verse: जलधौ प्रबभूव</div>
+  <p class="word-meaning lang-en">came to pass in the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रात घडले</p>
+  <div class="word-usage">
+    <div class="deva">जलधौ अमृतम् प्रबभूव ।</div>
+    <div class="usage-iast">jaladhau amṛtam prababhūva ।</div>
+    <div class="usage-meaning lang-en">In the ocean, the nectar came forth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रात अमृत प्रकट झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत् न च भविष्यति नो</span>
+    <span class="word-iast">yat na ca bhaviṣyati no</span>
+  </div>
+  <div><span class="word-grammar">phrase: यत् + future with emphatic नो (= न + उ)</span></div>
+  <div class="word-form">In this verse: यत् न च भविष्यति नो</div>
+  <p class="word-meaning lang-en">which never was and shall never be</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे (पूर्वी झाले नाही आणि) पुढेही होणार नाही (नो = न + उ, जोरदार निषेध)</p>
+  <div class="word-usage">
+    <div class="deva">यत् न च भविष्यति नो तत् धन्यम् ।</div>
+    <div class="usage-iast">yat na ca bhaviṣyati no tat dhanyam ।</div>
+    <div class="usage-meaning lang-en">That which never was and never shall be again is blessed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे पूर्वी झाले नाही आणि पुढेही होणार नाही ते धन्य होय.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The spies&#x27; language — &#x27;never was, never will be&#x27; — is the language of avatara-karya: a divine act beyond the course of nature, witnessed by all beings yet unique in history. In the sthala-kavya&#x27;s world, the birth of new land is not a geological event but God&#x27;s grace upon the earth. The verse also models the ideal herald&#x27;s duty: to report truly, swiftly, and reverently — the duta as witness of the divine.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;असे पूर्वी झाले नाही, पुढेही होणार नाही&#x27; — ही भाषा अवतारकार्याची आहे; निसर्गाच्या चालीच्या पलीकडची ईश्वरी कृती, सर्व प्राण्यांनी पाहिलेली पण इतिहासात अद्वितीय. स्थलकाव्याच्या जगात नव्या भूमीचा उदय ही भूशास्त्रीय घटना नसून धरणीवरील ईश्वराची कृपा आहे. हे श्लोक आदर्श दूताचे कर्तव्यही दाखवते — खरेपणाने, शीघ्रतेने आणि सविनयपणे नोंद करणे; दूत हा ईश्वरकृतीचा साक्षीदार असतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The sea that once reached the Sahyadris belongs to the Puranic geography of the Aparanta coast: Parashurama&#x27;s reclamation of land from the sea appears in the Mahabharata (Shantiparvan) and is elaborated in the Sahyadri-khanda of the Skanda Purana, where he wins the land for the brahmanas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सह्याद्रीपर्यंत पसरलेला समुद्र हा पुराणांतील अपरान्त किनाऱ्याच्या भूगोलाचा भाग आहे; समुद्रातून भूमी परत मिळवणे महाभारताच्या शांतिपर्वात असून स्कन्दपुराणाच्या सह्याद्रिखंडात त्याचा विस्तार आहे — तिथे परशुराम ब्राह्मणांसाठी ही भूमी जिंकतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The pada &#x27;yat na cha bhavishyati no&#x27; — with no = na + u for emphasis — is a formula of uniqueness borrowed from epic praise. The double negation stresses that no age before or after will see its like.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>यत् न च भविष्यति नो — येथे नो = न + उ हा निषेध अधिक जोरदार करण्यासाठी वापरला आहे; ही महाकाव्यपरंपरागत स्तुतीतील अतुलनीयतेची शैली आहे. दुहेरी निषेध यावर भर देतो की यापूर्वीच्या किंवा पुढील कोणत्याही युगाला असे दिसणार नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-1.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 1</div></a><a class="next" href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 3</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

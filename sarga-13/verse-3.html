@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 3 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 3</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 3</span><span class="bl-mr lang-mr">श्लोक 3</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स राज्ञा पूजितो हृष्ट उपविष्टः शुभासने ।<br>पृष्टागमनहेतुस्तमवदद्वदतां वरः ।।३।।</div>
+  <div class="verse-iast">sa rājñā pūjito hṛṣṭa upaviṣṭaḥ śubhāsane । pṛṣṭāgamanahetustamavadadvadatāṃ varaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">सः राज्ञा पूजितः हृष्टः उपविष्टः शुभ-आसने । पृष्ट-आगमन-हेतुः तम् अवदत् वदताम् वरः ।</div><div class="vig-iast">saḥ rājñā pūjitaḥ hṛṣṭaḥ upaviṣṭaḥ śubha-āsane । pṛṣṭa-āgamana-hetuḥ tam avadat vadatām varaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सः + राज्ञा = स राज्ञा · पूजितः + हृष्टः = पूजितो हृष्टः · हृष्टः + उपविष्टः = हृष्ट उपविष्टः (विसर्ग-लोप) · शुभ + आसने = शुभासने · पृष्ट + आगमन = पृष्टागमन · हेतुः + तम् = हेतुस्तम् · तम् + अवदत् = तमवदत् · अवदत् + वदताम् = अवदद्वदताम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">राज्ञा पूजितः हृष्टः शुभासने उपविष्टः पृष्टागमनहेतुः वदतां वरः सः तम् अवदत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Honoured by the king, delighted, and seated upon a fine seat, he — the best of speakers, asked the reason for his coming — spoke to him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राजाकडून पूजित झाल्यानंतर शुभासनावर विराजमान झाल्यानंतर व आगमनाचे कारण विचारल्यावर आनंदित झालेला तो वाग्मी ब्राह्मण राजाला म्हणाला,</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सः</span>
+    <span class="word-iast">saḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सः</div>
+  <p class="word-meaning lang-en">he</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो</p>
+  <div class="word-usage">
+    <div class="deva">सः ग्रामम् अगच्छत् ।</div>
+    <div class="usage-iast">saḥ grāmam agacchat ।</div>
+    <div class="usage-meaning lang-en">He went to the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो गावाला गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राज्ञा</span>
+    <span class="word-iast">rājñā</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.; राजन्</span></div>
+  <div class="word-form">In this verse: राज्ञा</div>
+  <p class="word-meaning lang-en">by the king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाकडून</p>
+  <div class="word-usage">
+    <div class="deva">राज्ञा दूतः प्रेषितः ।</div>
+    <div class="usage-iast">rājñā dūtaḥ preṣitaḥ ।</div>
+    <div class="usage-meaning lang-en">The envoy was sent by the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाकडून दूत पाठविला गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूजितः</span>
+    <span class="word-iast">pūjitaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; क्त</span></div>
+  <div class="word-form">In this verse: पूजितः</div>
+  <p class="word-meaning lang-en">honoured</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूजिलेला</p>
+  <div class="word-usage">
+    <div class="deva">पूजितः अतिथिः सन्तुष्टः अभवत् ।</div>
+    <div class="usage-iast">pūjitaḥ atithiḥ santuṣṭaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">The honoured guest was pleased.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सन्मानित अतिथी संतुष्ट झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हृष्टः</span>
+    <span class="word-iast">hṛṣṭaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; क्त, हृष्</span></div>
+  <div class="word-form">In this verse: हृष्टः</div>
+  <p class="word-meaning lang-en">glad</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आनंदित</p>
+  <div class="word-usage">
+    <div class="deva">हृष्टः बालकः हसति ।</div>
+    <div class="usage-iast">hṛṣṭaḥ bālakaḥ hasati ।</div>
+    <div class="usage-meaning lang-en">The delighted boy laughs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आनंदित मुलगा हसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपविष्टः</span>
+    <span class="word-iast">upaviṣṭaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; क्त, उप + विश्</span></div>
+  <div class="word-form">In this verse: उपविष्टः</div>
+  <p class="word-meaning lang-en">seated</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बसलेला</p>
+  <div class="word-usage">
+    <div class="deva">आसने उपविष्टः गुरुः उपादिशत् ।</div>
+    <div class="usage-iast">āsane upaviṣṭaḥ guruḥ upādiśat ।</div>
+    <div class="usage-meaning lang-en">The teacher, seated on the seat, instructed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आसनावर बसलेला गुरू उपदेश करू लागला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुभ-आसने</span>
+    <span class="word-iast">śubha-āsane</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: शुभासने</div>
+  <p class="word-meaning lang-en">on a fine seat</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम आसनावर</p>
+  <div class="word-usage">
+    <div class="deva">शुभासने उपविष्टः सः ध्यानम् अकरोत् ।</div>
+    <div class="usage-iast">śubhāsane upaviṣṭaḥ saḥ dhyānam akarot ।</div>
+    <div class="usage-meaning lang-en">Seated on the fine seat, he meditated.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम आसनावर बसून त्याने ध्यान केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पृष्ट-आगमन-हेतुः</span>
+    <span class="word-iast">pṛṣṭa-āgamana-hetuḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; बहुव्रीहि</span></div>
+  <div class="word-form">In this verse: पृष्टागमनहेतुः</div>
+  <p class="word-meaning lang-en">asked the reason for his coming</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येण्याचे कारण विचारलेला</p>
+  <div class="word-usage">
+    <div class="deva">पृष्टागमनहेतुः दूतः अवदत् ।</div>
+    <div class="usage-iast">pṛṣṭāgamanahetuḥ dūtaḥ avadat ।</div>
+    <div class="usage-meaning lang-en">The envoy, asked the reason for his coming, spoke.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येण्याचे कारण विचारलेला दूत बोलला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तम्</span>
+    <span class="word-iast">tam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: तम्</div>
+  <p class="word-meaning lang-en">to him</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याला (राजाला)</p>
+  <div class="word-usage">
+    <div class="deva">गुरुः तम् अपृच्छत् ।</div>
+    <div class="usage-iast">guruḥ tam apṛcchat ।</div>
+    <div class="usage-meaning lang-en">The teacher asked him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूने त्याला विचारले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवदत्</span>
+    <span class="word-iast">avadat</span>
+  </div>
+  <div><span class="word-grammar">वद्, लङ्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: अवदत्</div>
+  <p class="word-meaning lang-en">said</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणाला</p>
+  <div class="word-usage">
+    <div class="deva">सः राजानम् अवदत् ।</div>
+    <div class="usage-iast">saḥ rājānam avadat ।</div>
+    <div class="usage-meaning lang-en">He spoke to the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो राजाला म्हणाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वदताम्</span>
+    <span class="word-iast">vadatām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.; शतृ</span></div>
+  <div class="word-form">In this verse: वदताम्</div>
+  <p class="word-meaning lang-en">among speakers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बोलणाऱ्यांत</p>
+  <div class="word-usage">
+    <div class="deva">वदताम् वरः सः मौनम् अभजत् ।</div>
+    <div class="usage-iast">vadatām varaḥ saḥ maunam abhajat ।</div>
+    <div class="usage-meaning lang-en">He, the best of speakers, kept silence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वक्त्यांत श्रेष्ठ असलेला तो मौन धरून राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वरः</span>
+    <span class="word-iast">varaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वरः</div>
+  <p class="word-meaning lang-en">the best</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">सः वरः धनुर्धरः ।</div>
+    <div class="usage-iast">saḥ varaḥ dhanurdharaḥ ।</div>
+    <div class="usage-meaning lang-en">He is the best archer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो श्रेष्ठ धनुर्धर आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The courtly courtesy of verse 3 is itself a teaching: the king honours the brāhmaṇa before hearing his errand, and the brāhmaṇa speaks only when asked. Dharma-śāstra places the respectful reception of a guest above the business of the visit; power listens before it decides. The epithet &#x27;best of speakers&#x27; (vadatāṃ varaḥ) hints that what follows — Śrīdhara&#x27;s charter of the new village — will be a model of measured, righteous speech.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तिसऱ्या श्लोकातील दरबारी शिष्टाचार हाच एक उपदेश आहे: राजा ब्राह्मणाचे काम ऐकण्यापूर्वी त्याचा सन्मान करतो, आणि ब्राह्मण विचारल्यावरच बोलतो. धर्मशास्त्र अतिथीच्या सन्मानपूर्वक स्वागताला भेटीच्या कामापेक्षा वरचे स्थान देते; सत्ता निर्णयापूर्वी ऐकते. &#x27;वदतां वरः&#x27; (वक्त्यांत श्रेष्ठ) हे विशेषण सुचवते की पुढे येणारे — श्रीधराचे नव्या गावाचे शासनपत्र — हे संयत, न्याय्य भाषणाचा आदर्श ठरेल.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Pūjita by the king and seated on a śubhāsana: the formula mirrors countless puranic court scenes — from Nārada&#x27;s reception to embassies in the Mahābhārata — where the honoured seat precedes the honoured speech. Being &#x27;asked the reason for coming&#x27; (pṛṣṭāgamanahetu) marks Śrīdhara as an envoy with a formal proposal rather than a casual visitor.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राजाकडून पूजित आणि शुभासनावर बसलेला: हा क्रम पुराणांतील असंख्य दरबारी प्रसंगांना जुळतो — नारदाच्या स्वागतापासून महाभारतातील दूतांपर्यंत — जेथे मानाच्या भाषणापूर्वी मानाचे आसन दिले जाते. &#x27;येण्याचे कारण विचारलेला&#x27; (पृष्टागमनहेतुः) हे श्रीधराला औपचारिक प्रस्ताव घेऊन आलेला दूत ठरवते, सहज भेटणारा नव्हे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is a compact chain of past participles: pūjitaḥ, hṛṣṭaḥ, upaviṣṭaḥ, (pṛṣṭa-...) — each masculine nominative singular, all describing सः (Śrīdhara). तम् अवदत्: &#x27;he spoke to him&#x27; (tam = the king). Note the sandhi: पृष्टागमनहेतुस्तमवदत् = पृष्ट-आगमन-हेतुः + तम् + अवदत्, the visarga of हेतुः becoming स् before त.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक भूतकृदन्तांची संक्षिप्त मालिका आहे: पूजितः, हृष्टः, उपविष्टः, (पृष्ट-...) — सर्व पुंल्लिंगी प्रथमा एकवचन, सः (श्रीधर) याचे वर्णन करणारे. तम् अवदत्: &#x27;तो त्याला (राजाला) म्हणाला&#x27;. संधी लक्षात घ्या: पृष्टागमनहेतुस्तमवदत् = पृष्ट-आगमन-हेतुः + तम् + अवदत्; तकारापूर्वी हेतुः चा विसर्ग स् होतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 2</div></a><a class="next" href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 4</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 52 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 52</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 52</span><span class="bl-mr lang-mr">श्लोक 52</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पूजयित्वा यथान्यायं स्तुत्वा नत्वा तदाज्ञया ।<br>याति स्म स्वगिरिं चैवमकरोत्प्रतिवासरम् ।।५२।।</div>
+  <div class="verse-iast">pūjayitvā yathānyāyaṃ stutvā natvā tadājñayā । yāti sma svagiriṃ caivamakarotprativāsaram</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पूजयित्वा । यथान्यायम् । स्तुत्वा । नत्वा । तत्-आज्ञया । याति । स्म । स्व-गिरिम् । च । एवम् । अकरोत् । प्रतिवासरम् ।</div><div class="vig-iast">pūjayitvā । yathānyāyam । stutvā । natvā । tat-ājñayā । yāti । sma । sva-girim । ca । evam । akarot । prativāsaram ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत् + आज्ञया = तदाज्ञया (त् → द्) · च + एवम् = चैवम् (वृद्धि) · एवम् + अकरोत् = एवमकरोत् · अकरोत् + प्रति = अकरोत्प्रति</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(सः) यथान्यायं पूजयित्वा स्तुत्वा नत्वा तदाज्ञया स्वगिरिं याति स्म; एवं च प्रतिवासरम् अकरोत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Having worshipped Him duly, praised and bowed to Him, he would return to his own mountain by His permission; and this he did every day.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>(मग) विधिपूर्वक त्याची पूजा व स्तुती करून, त्याला प्रणाम करून, त्याच्या अनुज्ञेने तो स्वतःच्या पर्वतावर जात असे. प्रत्येक दिवशी त्याने हाच क्रम चालू ठेवला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथान्यायम्</span>
+    <span class="word-iast">yathānyāyam</span>
+  </div>
+  <div><span class="word-grammar">Avyayībhāva: यथा + न्याय, &#x27;according to rule&#x27;; indeclinable adverb</span></div>
+  <div class="word-form">In this verse: yathānyāyam (indecl.)</div>
+  <p class="word-meaning lang-en">duly, according to prescribed rule</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विधिपूर्वक</p>
+  <div class="word-usage">
+    <div class="deva">सः यथान्यायं पूजयति ।</div>
+    <div class="usage-iast">saḥ yathānyāyaṃ pūjayati ।</div>
+    <div class="usage-meaning lang-en">He worships according to rule.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो विधिपूर्वक पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तदाज्ञया</span>
+    <span class="word-iast">tadājñayā</span>
+  </div>
+  <div><span class="word-grammar">तत् + आज्ञा (tatpuruṣa); instrumental singular feminine</span></div>
+  <div class="word-form">In this verse: tadājñayā (inst. sg. fem.)</div>
+  <p class="word-meaning lang-en">by His (Śiva&#x27;s) permission</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या (शिवाच्या) आज्ञेने</p>
+  <div class="word-usage">
+    <div class="deva">तदाज्ञया सः अगच्छत् ।</div>
+    <div class="usage-iast">tadājñayā saḥ agacchat ।</div>
+    <div class="usage-meaning lang-en">He departed by His permission.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो त्याच्या अनुज्ञेने गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">याति स्म</span>
+    <span class="word-iast">yāti sma</span>
+  </div>
+  <div><span class="word-grammar">Present of √या with स्म marking habitual past: &#x27;he used to go&#x27;</span></div>
+  <div class="word-form">In this verse: yāti sma (habitual past)</div>
+  <p class="word-meaning lang-en">he used to go</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जात असे</p>
+  <div class="word-usage">
+    <div class="deva">सः स्वगिरिं याति स्म ।</div>
+    <div class="usage-iast">saḥ svagiriṃ yāti sma ।</div>
+    <div class="usage-meaning lang-en">He used to go to his own mountain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो आपल्या पर्वतावर जात असे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एवम्</span>
+    <span class="word-iast">evam</span>
+  </div>
+  <div><span class="word-grammar">Indeclinable demonstrative adverb, &#x27;thus, so&#x27;</span></div>
+  <div class="word-form">In this verse: evam (indecl.)</div>
+  <p class="word-meaning lang-en">thus, in this way</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे</p>
+  <div class="word-usage">
+    <div class="deva">एवं सः अकरोत् ।</div>
+    <div class="usage-iast">evaṃ saḥ akarot ।</div>
+    <div class="usage-meaning lang-en">Thus he did.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे त्याने केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतिवासरम्</span>
+    <span class="word-iast">prativāsaram</span>
+  </div>
+  <div><span class="word-grammar">Avyayībhāva: प्रति + वासर, &#x27;every day&#x27;; indeclinable</span></div>
+  <div class="word-form">In this verse: prativāsaram (indecl.)</div>
+  <p class="word-meaning lang-en">every day, daily</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दररोज</p>
+  <div class="word-usage">
+    <div class="deva">सः प्रतिवासरं पूजयति ।</div>
+    <div class="usage-iast">saḥ prativāsaraṃ pūjayati ।</div>
+    <div class="usage-meaning lang-en">He worships every day.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो दररोज पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अकरोत्</span>
+    <span class="word-iast">akarot</span>
+  </div>
+  <div><span class="word-grammar">Imperfect (लङ्), 3rd singular parasmaipada of √कृ, &#x27;to do&#x27;</span></div>
+  <div class="word-form">In this verse: akarot (laṅ 3sg)</div>
+  <p class="word-meaning lang-en">he did, he used to do</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करीत असे (लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">सः एवम् अकरोत् ।</div>
+    <div class="usage-iast">saḥ evam akarot ।</div>
+    <div class="usage-meaning lang-en">He did thus.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे त्याने केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Devotion here is shown as order, not ecstasy: worship duly done (यथान्यायम्), praise, obeisance, and then departure only by the Lord&#x27;s leave — even the great sage does not linger uninvited. And he does it every day. The verse quietly teaches that the highest bhakti is unglamorous: the same acts, rightly done, day after day, until they become the devotee&#x27;s nature.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे भक्ती भावावेश म्हणून नव्हे, तर क्रम म्हणून दाखवली आहे — विधिपूर्वक (यथान्यायम्) पूजा, स्तुती, प्रणाम आणि मग केवळ भगवंताच्या अनुज्ञेने निरोप — थोर मुनीही आमंत्रणाशिवाय थांबत नाही. आणि तो हे दररोज करतो. श्लोक शांतपणे शिकवतो की सर्वोच्च भक्ती दिखाऊ नसते — तेच कृत्य, योग्य रीतीने, दिवसेंदिवस, जोपर्यंत ते भक्ताचा स्वभाव होत नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The fourfold sequence — pūjā, stuti, praṇāma, and departure only with permission (तदाज्ञया) — is the classical etiquette of leaving a deity&#x27;s presence after worship, observed in temple and pilgrimage manuals alike. That Paraśurāma repeats it प्रतिवासरम्, every single day, makes devotion a discipline rather than an occasion. The Purāṇas praise nitya-naimittika worship precisely because repetition, not intensity alone, steadies the mind.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पूजा, स्तुती, प्रणाम आणि केवळ अनुज्ञेने (तदाज्ञया) निरोप — हा चार पदांचा क्रम पूजेनंतर देवाच्या सान्निध्यातून निघण्याची शास्त्रीय शिष्टाचारपद्धती आहे, मंदिर-विधी आणि तीर्थ-विधींत सारखीच पाळली जाणारी. परशुराम हा क्रम प्रतिवासरम्, दररोज करतो — त्यामुळे भक्ती प्रसंग न राहता शिस्त बनते. पुराणे नित्यनैमित्तिक पूजेचे कौतुक याचसाठी करतात — केवळ तीव्रता नव्हे, तर पुनरावृत्ती मन स्थिर करते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. The grammar notes read याति स्म as the habitual past (&#x27;he used to go&#x27;), a present with स्म marking repeated action, and प्रतिवासरम् as an avyayībhāva, &#x27;every day&#x27;. पूजयित्वा, स्तुत्वा, नत्वा are absolutives (क्त्वा/ल्यप्) sequencing the acts. This verse closes the daily-rout passage (4.50–52) before the narrative turns to Śiva&#x27;s permanent settling in 4.53.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: अनुष्टुभ्. व्याकरणटीपेत याति स्म हा नित्य भूतकाळ (&#x27;जात असे&#x27;) म्हणून — पुनरावृत्ती दाखवणारा स्मसहित वर्तमानकाळ — आणि प्रतिवासरम् हा अव्ययीभाव (&#x27;दररोज&#x27;) म्हणून घेतला आहे. पूजयित्वा, स्तुत्वा, नत्वा ही क्रियापदे क्रम दाखवणारी धातुसाधिते (क्त्वा/ल्यप्) आहेत. ४.५३ मध्ये शिवाच्या कायमच्या निवासाकडे वळण्यापूर्वी हा श्लोक दैनंदिन-क्रमाचा भाग (४.५०–५२) संपवतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-51.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 51</div></a><a class="next" href="verse-53.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 53</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

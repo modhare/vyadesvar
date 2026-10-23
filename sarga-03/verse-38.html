@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 38 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 38</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 38</span><span class="bl-mr lang-mr">श्लोक 38</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Udgatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">उपनह्यमानपरिरुग्णमखभुगभिसारिकाकृतम् ।।<br>हा बत तत हकटेऽतिपटुं श्रवसोः कटुं रवमुपाशृणोन्मुनिः ।।३८।।</div>
+  <div class="verse-iast">upanahyamānaparirugṇamakhabhugabhisārikākṛtam । । hā bata tata hakaṭe&#x27;tipaṭuṃ śravasoḥ kaṭuṃ ravamupāśṛṇonmuniḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">उपनह्यमान-परिरुग्ण-मखभुक्-अभिसारिका-कृतम् । हा । बत । तत । हकटे । अतिपटुम् । श्रवसोः । कटुम् । रवम् । उपाशृणोत् । मुनिः ।</div><div class="vig-iast">upanahyamāna-parirugṇa-makhabhuk-abhisārikā-kṛtam । hā । bata । tata । hakaṭe । atipaṭum । śravasoḥ । kaṭum । ravam । upāśṛṇot । muniḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">मखभुक् + अभिसारिका = मखभुगभिसारिका (क् → ग्) · हकटे + अतिपटुम् = हकटेऽतिपटुम् (पूर्वरूप) · रवम् + उपाशृणोत् = रवमुपाशृणोत् · उपाशृणोत् + मुनिः = उपाशृणोन्मुनिः (त् → न्, अनुनासिक)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">मुनिः उपनह्यमानपरिरुग्णमखभुगभिसारिकाकृतम् ‘हा बत तत हकटे’ (इति) अतिपटुं श्रवसोः कटुं रवम् उपाशृणोत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The muni heard the shrill, ear-piercing cry — &#x27;Alas! Alack! O father, we are undone, we are slain!&#x27; — raised by the beloved ones of the gods, the abhisarikas, who were being bound and wounded.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;अय्याई! अरेरे! ताता! आम्ही मेलो, मारल्या गेलो!&#x27; असा त्या पकडल्या जाणाऱ्या व जखमी झालेल्या देवांच्या अभिसारिकांनी केलेला कर्णकटू व तीव्र आक्रोश त्या मुनीने ऐकला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपनह्यमान</span>
+    <span class="word-iast">upanahyamāna</span>
+  </div>
+  <div><span class="word-grammar">present passive participle, √nah with upa, masculine/feminine stem</span></div>
+  <div class="word-form">In this verse: उपनह्यमान</div>
+  <p class="word-meaning lang-en">being bound, being tied up</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बांधल्या जाणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">उपनह्यमानः चोरः आक्रोशत् ।</div>
+    <div class="usage-iast">upanahyamānaḥ coraḥ ākrośat ।</div>
+    <div class="usage-meaning lang-en">The thief, being bound, cried out.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बांधला जाणारा चोर ओरडत होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिरुग्ण</span>
+    <span class="word-iast">parirugṇa</span>
+  </div>
+  <div><span class="word-grammar">past passive participle, √ruj with pari, masculine/neuter stem</span></div>
+  <div class="word-form">In this verse: परिरुग्ण</div>
+  <p class="word-meaning lang-en">wounded, afflicted, injured</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घायाळ, पीडित</p>
+  <div class="word-usage">
+    <div class="deva">परिरुग्णः सैनिकः पतितः आसीत् ।</div>
+    <div class="usage-iast">parirugṇaḥ sainikaḥ patitaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">The wounded soldier had fallen.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घायाळ सैनिक पडलेला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मखभुक्</span>
+    <span class="word-iast">makhabhuk</span>
+  </div>
+  <div><span class="word-grammar">root noun (kvip), √bhuj with makha, masculine stem</span></div>
+  <div class="word-form">In this verse: मखभुक्</div>
+  <p class="word-meaning lang-en">enjoyer of the sacrificial offering, a god</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञभाग खाणारे देव</p>
+  <div class="word-usage">
+    <div class="deva">मखभुजः स्वर्गे वसन्ति ।</div>
+    <div class="usage-iast">makhabhujaḥ svarge vasanti ।</div>
+    <div class="usage-meaning lang-en">The enjoyers of sacrifice dwell in heaven.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञभाग भोगणारे देव स्वर्गात राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभिसारिका</span>
+    <span class="word-iast">abhisārikā</span>
+  </div>
+  <div><span class="word-grammar">feminine noun (abhi + √sri + nvul + tap)</span></div>
+  <div class="word-form">In this verse: अभिसारिका</div>
+  <p class="word-meaning lang-en">a woman who goes forth to meet her lover; here, the apsarases, beloveds of the gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(देवांच्या) प्रेयसी, अप्सरा</p>
+  <div class="word-usage">
+    <div class="deva">अभिसारिका सङ्केतस्थलम् अगच्छत् ।</div>
+    <div class="usage-iast">abhisārikā saṅketasthalam agacchat ।</div>
+    <div class="usage-meaning lang-en">The abhisarika went to the trysting place.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अभिसारिका संकेतस्थळी गेली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृतम्</span>
+    <span class="word-iast">kṛtam</span>
+  </div>
+  <div><span class="word-grammar">past passive participle, √kri, accusative neuter singular</span></div>
+  <div class="word-form">In this verse: कृतम्</div>
+  <p class="word-meaning lang-en">made, raised (the cry)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केलेला</p>
+  <div class="word-usage">
+    <div class="deva">तेन कृतम् कार्यम् उत्तमम् आसीत् ।</div>
+    <div class="usage-iast">tena kṛtam kāryam uttamam āsīt ।</div>
+    <div class="usage-meaning lang-en">The deed done by him was excellent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने केलेले कार्य उत्तम होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हा बत तत हकटे</span>
+    <span class="word-iast">hā bata tata hakaṭe</span>
+  </div>
+  <div><span class="word-grammar">indeclinable interjections of lament</span></div>
+  <div class="word-form">In this verse: हा बत तत हकटे</div>
+  <p class="word-meaning lang-en">&#x27;Alas! Alack! O father! We are undone!&#x27; — cries of distress</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘अय्याई! अरेरे! बाबा रे! मेलो!’ असे आक्रोशाचे उद्गार</p>
+  <div class="word-usage">
+    <div class="deva">हा बत क्व गतः असि भ्रातः ।</div>
+    <div class="usage-iast">hā bata kva gataḥ asi bhrātaḥ ।</div>
+    <div class="usage-meaning lang-en">Alas, alack! Where have you gone, brother?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अय्याई! अरेरे! बंधो, तू कोठे गेलास?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतिपटुम्</span>
+    <span class="word-iast">atipaṭum</span>
+  </div>
+  <div><span class="word-grammar">adjective (ati + patu), accusative masculine singular</span></div>
+  <div class="word-form">In this verse: अतिपटुम्</div>
+  <p class="word-meaning lang-en">exceedingly shrill, intense</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय तीव्र</p>
+  <div class="word-usage">
+    <div class="deva">अतिपटुम् रवम् अशृणोत् ।</div>
+    <div class="usage-iast">atipaṭum ravam aśṛṇot ।</div>
+    <div class="usage-meaning lang-en">He heard an exceedingly shrill cry.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने अतिशय तीव्र ओरड ऐकली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रवसोः कटुम्</span>
+    <span class="word-iast">śravasoḥ kaṭum</span>
+  </div>
+  <div><span class="word-grammar">genitive dual of shravas + adjective (katu), accusative masculine singular</span></div>
+  <div class="word-form">In this verse: श्रवसोः कटुम्</div>
+  <p class="word-meaning lang-en">harsh to the ears, ear-piercing</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कानांना कटु</p>
+  <div class="word-usage">
+    <div class="deva">श्रवसोः कटुम् शब्दम् न सहे ।</div>
+    <div class="usage-iast">śravasoḥ kaṭum śabdam na sahe ।</div>
+    <div class="usage-meaning lang-en">I cannot bear a sound harsh to the ears.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कानांना कटु असा शब्द मी सहन करू शकत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपाशृणोत्</span>
+    <span class="word-iast">upāśṛṇot</span>
+  </div>
+  <div><span class="word-grammar">imperfect 3rd person singular, √shru with upa + a</span></div>
+  <div class="word-form">In this verse: उपाशृणोत्</div>
+  <p class="word-meaning lang-en">heard fully, took to heart</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऐकला (उप + आ + √श्रु, लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">मुनिः तासाम् आक्रोशम् उपाशृणोत् ।</div>
+    <div class="usage-iast">muniḥ tāsām ākrośam upāśṛṇot ।</div>
+    <div class="usage-meaning lang-en">The sage heard their cry of distress.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनीने त्यांचा आक्रोश ऐकला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The cry of the oppressed reaching the saint&#x27;s ears is the classic trigger of divine intervention — Draupadi&#x27;s cry, Gajendra&#x27;s cry, the same artanada. The Lord hears the arta, the distressed; no cry of the helpless goes unheard in this kavya&#x27;s theology. Upashrinot — &#x27;he heard fully, he took to heart&#x27; — is the hearing that compels action: the next verse shows what a saint does with such hearing.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पीडितांचा आक्रोश संताच्या कानी पडणे हे ईश्वरी हस्तक्षेपाचे शास्त्रीय निमित्त आहे — द्रौपदीचा आक्रोश, गजेन्द्राचा आक्रोश, तोच आर्तनाद. भगवान आर्ताचे — दुःखिताचे — ऐकतो; या काव्याच्या तत्त्वज्ञानात असहाय्यांचा एकही आक्रोश न ऐकलेला राहत नाही. उपाशृणोत् — &#x27;त्याने पूर्णपणे ऐकले, मनावर घेतले&#x27; — हे कृतीला भाग पाडणारे ऐकणे आहे; अशा ऐकण्याचे संत काय करतात हे पुढील श्लोक दाखवतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Makhabhuk — &#x27;enjoyer of the sacrificial share&#x27; — is the standard epithet of the gods, who are nourished by yajna (cf. Bhagavadgita 3.12). Abhisarika, a woman who goes forth to meet her lover, here denotes the apsarases as the beloveds of the gods. The artanada, the cry of distress that summons rescue, is among the oldest narrative engines of the Puranas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मखभुक् — &#x27;यज्ञभाग भोगणारा&#x27; — हे देवांचे ठरलेले विशेषण आहे; यज्ञाने देव पोसले जातात (भगवद्गीता ३.१२ पहा). अभिसारिका — प्रियकराला भेटायला जाणारी स्त्री — येथे देवांच्या प्रेयसी अप्सरा यांचा निर्देश करते. आर्तनाद — सुटकेला बोलावणारा दुःखाचा आक्रोश — हे पुराणांच्या सर्वांत जुन्या कथाचक्रांपैकी एक आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Udgata. The cries ha, bata, tata, hakate are interjections of lament — hakate a Prakritic cry of pain (&#x27;we are undone!&#x27;). Upashrinot (upa + a + √shru, imperfect) intensifies mere hearing into hearkening: he took the cry to heart. The verse is the hinge between the captives&#x27; suffering and the muni&#x27;s armed response.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : उद्गता. हा, बत, तत, हकटे हे शोकाचे उद्गार आहेत — हकटे हा वेदनेचा प्राकृतीक आक्रोश (&#x27;आम्ही मेलो!&#x27;). उपाशृणोत् (उप + आ + √श्रु, लङ्) हे केवळ ऐकण्याचे मनावर घेण्यात रूपांतर करते — त्याने आक्रोश मनावर घेतला. हा श्लोक बंदिनींच्या दुःख आणि मुनीच्या सशस्त्र प्रतिसाद यांमधील सांधा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-37.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 37</div></a><a class="next" href="verse-39.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 39</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

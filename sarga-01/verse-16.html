@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 16 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 16</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 16</span><span class="bl-mr lang-mr">श्लोक 16</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">एकाधिकं विंशतिवारमेवं निःक्षत्रियामेकचरो विधाय ।।<br>गोपायति स्माखिलभूतधात्रीं निशातमुग्रं परशुं दधानः।।१६।।</div>
+  <div class="verse-iast">ekādhikaṃ viṃśativāramevaṃ niḥkṣatriyāmekacaro vidhāya । । gopāyati smākhilabhūtadhātrīṃ niśātamugraṃ paraśuṃ dadhānaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">एक-अधिकम् । विंशति-वारम् । एवम् । निःक्षत्रियाम् । एकचरः । विधाय । गोपायति । स्म । अखिल-भूत-धात्रीम् । निशातम् । उग्रम् । परशुम् । दधानः ।</div><div class="vig-iast">eka-adhikam । viṃśati-vāram । evam । niḥkṣatriyām । ekacaraḥ । vidhāya । gopāyati । sma । akhila-bhūta-dhātrīm । niśātam । ugram । paraśum । dadhānaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">एक + अधिकम् = एकाधिकम् (सवर्णदीर्घ) · विंशतिवारम् + एवम् = विंशतिवारमेवम् · निःक्षत्रियाम् + एकचरः = निःक्षत्रियामेकचरः · एकचरः + विधाय = एकचरो विधाय (विसर्ग → ओ) · स्म + अखिल = स्माखिल · निशातम् + उग्रम् = निशातमुग्रम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">निशातम् उग्रं परशुं दधानः एकचरः (सः) अखिलभूतधात्रीम् एवम् एकाधिकं विंशतिवारं निःक्षत्रियां विधाय गोपायति स्म ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Bearing his sharpened, fearsome axe, that lone wanderer thus rendered the earth — the nurse of all beings — free of kṣatriyas twenty-one times over, and then guarded her.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीक्ष्ण व उग्र परशू धारण करणाऱ्या, एकट्याने संचार करणाऱ्या (परशुरामाने) अशा रीतीने अखिल भूतांना धारण करणाऱ्या पृथ्वीला एकवीस वेळा निःक्षत्रिय करून तिचे रक्षण केले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकाधिकं विंशतिवारम्</span>
+    <span class="word-iast">ekādhikaṃ viṃśativāram</span>
+  </div>
+  <div><span class="word-grammar">एकाधिकम्: neuter accusative singular (एक-अधिक); विंशतिवारम्: neuter accusative singular (accusative of time)</span></div>
+  <div class="word-form">In this verse: एकाधिकम्, विंशतिवारम्</div>
+  <p class="word-meaning lang-en">twenty-one times</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकवीस वेळा</p>
+  <div class="word-usage">
+    <div class="deva">एकाधिकम् विंशतिवारम् सः पृथ्वीम् अशोधयत् ।</div>
+    <div class="usage-iast">ekādhikam viṃśativāram saḥ pṛthvīm aśodhayat ।</div>
+    <div class="usage-meaning lang-en">Twenty-one times he cleansed the earth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने एकवीस वेळा पृथ्वी शुद्ध केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एवम्</span>
+    <span class="word-iast">evam</span>
+  </div>
+  <div><span class="word-grammar">indeclinable</span></div>
+  <div class="word-form">In this verse: एवम्</div>
+  <p class="word-meaning lang-en">thus, in this way</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशा रीतीने</p>
+  <div class="word-usage">
+    <div class="deva">एवम् उक्त्वा सः तूष्णीम् अभवत् ।</div>
+    <div class="usage-iast">evam uktvā saḥ tūṣṇīm abhavat ।</div>
+    <div class="usage-meaning lang-en">Having spoken thus, he fell silent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे बोलून तो शांत झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निःक्षत्रियाम्</span>
+    <span class="word-iast">niḥkṣatriyām</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular; bahuvrīhi (निस्-क्षत्रिय)</span></div>
+  <div class="word-form">In this verse: निःक्षत्रियाम्</div>
+  <p class="word-meaning lang-en">devoid of kṣatriyas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्षत्रियरहित</p>
+  <div class="word-usage">
+    <div class="deva">निःक्षत्रियाम् पृथ्वीम् सः विधाय अरक्षत् ।</div>
+    <div class="usage-iast">niḥkṣatriyām pṛthvīm saḥ vidhāya arakṣat ।</div>
+    <div class="usage-meaning lang-en">Having made the earth devoid of kṣatriyas, he protected it.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी क्षत्रियरहित करून त्याने तिचे रक्षण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकचरः</span>
+    <span class="word-iast">ekacaraḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; tatpuruṣa (एक-चर)</span></div>
+  <div class="word-form">In this verse: एकचरः</div>
+  <p class="word-meaning lang-en">a lone wanderer, one who moves alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकट्याने संचार करणारा</p>
+  <div class="word-usage">
+    <div class="deva">एकचरः मुनिः वने अतिष्ठत् ।</div>
+    <div class="usage-iast">ekacaraḥ muniḥ vane atiṣṭhat ।</div>
+    <div class="usage-meaning lang-en">The lone-wandering sage stayed in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकट्याने संचार करणारा मुनी वनात राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विधाय</span>
+    <span class="word-iast">vidhāya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (lyap) of वि + √धा</span></div>
+  <div class="word-form">In this verse: विधाय</div>
+  <p class="word-meaning lang-en">having made, having done</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करून (वि + √धा, ल्यप्)</p>
+  <div class="word-usage">
+    <div class="deva">कार्यम् विधाय सः गृहम् अगच्छत् ।</div>
+    <div class="usage-iast">kāryam vidhāya saḥ gṛham agacchat ।</div>
+    <div class="usage-meaning lang-en">Having done the work, he went home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काम करून तो घरी गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गोपायति स्म</span>
+    <span class="word-iast">gopāyati sma</span>
+  </div>
+  <div><span class="word-grammar">√गुप्, denominative present 3rd singular + स्म (past sense)</span></div>
+  <div class="word-form">In this verse: गोपायति, स्म</div>
+  <p class="word-meaning lang-en">guarded, protected</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षण केले (√गुप्, लट् + स्म = भूतकाळ)</p>
+  <div class="word-usage">
+    <div class="deva">राजा प्रजाः गोपायति स्म ।</div>
+    <div class="usage-iast">rājā prajāḥ gopāyati sma ।</div>
+    <div class="usage-meaning lang-en">The king protected his subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा प्रजांचे रक्षण करीत असे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अखिलभूतधात्रीम्</span>
+    <span class="word-iast">akhilabhūtadhātrīm</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular; tatpuruṣa (अखिल-भूत-धात्री)</span></div>
+  <div class="word-form">In this verse: अखिलभूतधात्रीम्</div>
+  <p class="word-meaning lang-en">the nurse, sustainer, of all beings (the earth)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व प्राण्यांना धारण करणाऱ्या (पृथ्वीचे)</p>
+  <div class="word-usage">
+    <div class="deva">अखिलभूतधात्रीम् पृथ्वीम् सः अपालयत् ।</div>
+    <div class="usage-iast">akhilabhūtadhātrīm pṛthvīm saḥ apālayat ।</div>
+    <div class="usage-meaning lang-en">He protected the earth, the nurse of all beings.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने सर्व प्राण्यांना धारण करणाऱ्या पृथ्वीचे रक्षण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निशातम्</span>
+    <span class="word-iast">niśātam</span>
+  </div>
+  <div><span class="word-grammar">masculine/neuter accusative singular; क्त of नि + √शो (&#x27;sharpened&#x27;)</span></div>
+  <div class="word-form">In this verse: निशातम्</div>
+  <p class="word-meaning lang-en">sharpened, whetted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धार लावलेला, तीक्ष्ण</p>
+  <div class="word-usage">
+    <div class="deva">निशातम् खड्गम् सः आददे ।</div>
+    <div class="usage-iast">niśātam khaḍgam saḥ ādade ।</div>
+    <div class="usage-meaning lang-en">He took up the sharpened sword.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने धार लावलेली तलवार उचलली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परशुम् दधानः</span>
+    <span class="word-iast">paraśum dadhānaḥ</span>
+  </div>
+  <div><span class="word-grammar">परशुम्: masculine accusative singular; दधानः: masculine nominative singular, present participle (शानच्) of reduplicated √धा</span></div>
+  <div class="word-form">In this verse: परशुम्, दधानः</div>
+  <p class="word-meaning lang-en">bearing the axe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशू धारण करणारा (शानच्)</p>
+  <div class="word-usage">
+    <div class="deva">परशुम् दधानः वीरः रणम् अगच्छत् ।</div>
+    <div class="usage-iast">paraśum dadhānaḥ vīraḥ raṇam agacchat ।</div>
+    <div class="usage-meaning lang-en">The hero, bearing his axe, went to battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशू धारण करणारा वीर युद्धाला गेला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Twenty-one times the earth was cleansed and twenty-one times the cleansing ended in protection: गोपायति स्म — &#x27;he guarded&#x27;. The verse&#x27;s last word is its theology — the avatāra destroys only to protect. एकचरः, &#x27;the lone wanderer&#x27;, underlines that dharma&#x27;s hardest work is often one man&#x27;s burden. For the sthala-kathā this is the hinge: the earth, guarded but ownerless, must now be given away — and a new land raised for the giver.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकवीस वेळा पृथ्वी शुद्ध केली गेली आणि एकवीस वेळा ती शुद्धी रक्षणात परिणत झाली : गोपायति स्म — &#x27;त्याने रक्षण केले&#x27;. श्लोकाचा शेवटचा शब्दच त्याचे तत्त्वज्ञान आहे — अवतार नाश करतो तो रक्षणासाठीच. एकचरः, &#x27;एकट्याने संचार करणारा&#x27;, हे अधोरेखित करतो की धर्माचे कठीणतम कार्य अनेकदा एकाच माणसाचे ओझे असते. स्थलकथेसाठी हा निर्णायक टप्पा आहे — रक्षित पण स्वामीहीन झालेली पृथ्वी आता देऊन टाकावी लागेल — आणि दात्यासाठी नवी भूमी वर आणावी लागेल.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The twenty-one exterminations are the Purāṇic number — the Bhāgavata (9.16.19) says त्रिःसप्तकृत्वः, &#x27;thrice seven times&#x27;, the earth was made niḥkṣatriyā. Paraśurāma is called ekacara because he performed the whole feat alone, with no army. The axe (paraśu) — Śiva&#x27;s gift — gives him his name; निशातम्, &#x27;sharpened&#x27;, keeps it ever ready.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकवीस संहार ही पुराणसंख्या आहे — भागवत (९.१६.१९) म्हणते त्रिःसप्तकृत्वः, &#x27;तीनदा सात वेळा&#x27;, पृथ्वी निःक्षत्रिया केली गेली. परशुरामाला एकचर म्हटले आहे, कारण त्याने हे संपूर्ण कार्य सैन्याविना एकट्याने केले. परशू (कुऱ्हाड) — शंकराची देणगी — त्याला त्याचे नाव देते; निशातम्, &#x27;धार लावलेला&#x27;, तो नेहमी तयार ठेवतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>विंशतिवारम् is the accusative of time — &#x27;for twenty-one times&#x27;; एकाधिकं विंशतिवारम् = एकविंशतिवारम्. गोपायति स्म — √गुप् in its denominative present (गोपायति) with स्म gives the past: &#x27;he used to guard / he guarded&#x27;. निःक्षत्रियाम् agrees with the implied पृथ्वीम् (अखिलभूतधात्रीम्). The verse closes the sarga&#x27;s opening arc: from the hero&#x27;s portrait (vv. 9–13) through his vow (14) and its execution (15) to its completion here.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विंशतिवारम् ही कालवाचक द्वितीया आहे — &#x27;एकवीस वेळा&#x27;; एकाधिकं विंशतिवारम् = एकविंशतिवारम्. गोपायति स्म — √गुप् धातूचे नामधातु-वर्तमान (गोपायति) स्म सह भूतकाळ देते : &#x27;त्याने रक्षण केले&#x27;. निःक्षत्रियाम् हे अध्याहृत पृथ्वीम् शी (अखिलभूतधात्रीम्) जुळते. हा श्लोक सर्गाच्या प्रारंभिक वळणाचा समारोप करतो — नायकाचे चित्र (श्लोक ९–१३), त्याचा संकल्प (१४) व त्याची अंमलबजावणी (१५) येथे पूर्णत्वास येते.</p></div></div>
+
+<div class="pagenav"><a href="verse-15.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 15</div></a><a class="next" href="verse-17.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 17</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 20 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 20</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 20</span><span class="bl-mr lang-mr">श्लोक 20</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तस्मिन्वसुमयं वर्षं पपात नृपसत्तमात् ।<br>व्योम्नः पुष्पमयं सोऽपि पपात पृथिवीतले ।।२०।।</div>
+  <div class="verse-iast">tasminvasumayaṃ varṣaṃ papāta nṛpasattamāt । vyomnaḥ puṣpamayaṃ so&#x27;pi papāta pṛthivītale</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तस्मिन् । वसु-मयम् । वर्षम् । पपात । नृप-सत्तमात् । व्योम्नः । पुष्प-मयम् । सः । अपि । पपात । पृथिवी-तले ।</div><div class="vig-iast">tasmin । vasu-mayam । varṣam । papāta । nṛpa-sattamāt । vyomnaḥ । puṣpa-mayam । saḥ । api । papāta । pṛthivī-tale ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तस्मिन् + वसुमयम् = तस्मिन्वसुमयम् · सः + अपि = सोऽपि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तस्मिन् नृपसत्तमात् वसुमयं वर्षं पपात, व्योम्नः पुष्पमयं (वर्षं पपात); सः अपि पृथिवीतले पपात ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>From that noblest of kings a rain of wealth fell upon him; from the sky a rain of flowers fell; and he too fell upon the face of the earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मग त्याच्यावर त्या नृपश्रेष्ठाने संपत्तीचा (धनाचा) वर्षाव केला, आकाशातून त्याच्यावर पुष्पवृष्टी झाली आणि तो पृथ्वीवर पडला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वसुमयं वर्षम्</span>
+    <span class="word-iast">vasumayaṃ varṣam</span>
+  </div>
+  <div><span class="word-grammar">वसुमय (with मयट् suffix, &#x27;consisting of wealth&#x27;), neuter nominative singular; वर्षम् neuter nominative singular</span></div>
+  <div class="word-form">In this verse: वसुमयं वर्षम्</div>
+  <p class="word-meaning lang-en">a rain of wealth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनाचा वर्षाव</p>
+  <div class="word-usage">
+    <div class="deva">यज्ञे ब्राह्मणेभ्यो वसुमयं वर्षं पपात।</div>
+    <div class="usage-iast">yajñe brāhmaṇebhyo vasumayaṃ varṣaṃ papāta।</div>
+    <div class="usage-meaning lang-en">At the sacrifice a rain of wealth fell upon the brahmins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञात ब्राह्मणांवर धनाचा वर्षाव झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नृपसत्तमात्</span>
+    <span class="word-iast">nṛpasattamāt</span>
+  </div>
+  <div><span class="word-grammar">नृपसत्तम (superlative compound, &#x27;best of kings&#x27;), masculine ablative singular</span></div>
+  <div class="word-form">In this verse: नृपसत्तमात्</div>
+  <p class="word-meaning lang-en">from the best of kings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ राजाकडून</p>
+  <div class="word-usage">
+    <div class="deva">नृपसत्तमात् सर्वे प्रजाः सुखं लभन्ते।</div>
+    <div class="usage-iast">nṛpasattamāt sarve prajāḥ sukhaṃ labhante।</div>
+    <div class="usage-meaning lang-en">From the best of kings all subjects obtain happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ राजाकडून सर्व प्रजेंना सुख मिळते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्योम्नः</span>
+    <span class="word-iast">vyomnaḥ</span>
+  </div>
+  <div><span class="word-grammar">व्योमन्, neuter ablative singular</span></div>
+  <div class="word-form">In this verse: व्योम्नः</div>
+  <p class="word-meaning lang-en">from the sky</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशातून</p>
+  <div class="word-usage">
+    <div class="deva">व्योम्नः मेघाः वर्षन्ति।</div>
+    <div class="usage-iast">vyomnaḥ meghāḥ varṣanti।</div>
+    <div class="usage-meaning lang-en">From the sky the clouds rain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आकाशातून ढग पाऊस पाडतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुष्पमयम्</span>
+    <span class="word-iast">puṣpamayam</span>
+  </div>
+  <div><span class="word-grammar">पुष्पमय (with मयट् suffix), neuter accusative/nominative singular</span></div>
+  <div class="word-form">In this verse: पुष्पमयम्</div>
+  <p class="word-meaning lang-en">consisting of flowers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फुलांचा (वर्षाव)</p>
+  <div class="word-usage">
+    <div class="deva">देवाय पुष्पमयं हारं समर्पयति।</div>
+    <div class="usage-iast">devāya puṣpamayaṃ hāraṃ samarpayati।</div>
+    <div class="usage-meaning lang-en">He offers the god a garland made of flowers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो देवाला फुलांचा हार अर्पण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पपात</span>
+    <span class="word-iast">papāta</span>
+  </div>
+  <div><span class="word-grammar">√पत् (to fall), लिट् third person singular, परस्मैपद</span></div>
+  <div class="word-form">In this verse: पपात</div>
+  <p class="word-meaning lang-en">fell</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पडला (तिन्ही ठिकाणी एकच क्रियापद — दीपक)</p>
+  <div class="word-usage">
+    <div class="deva">वृक्षात् फलं पपात।</div>
+    <div class="usage-iast">vṛkṣāt phalaṃ papāta।</div>
+    <div class="usage-meaning lang-en">The fruit fell from the tree.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाडावरून फळ पडले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Three &#x27;fallings&#x27; close the miracle — wealth from the king, flowers from heaven, and the dwarf himself collapsing — the last being the seal of his self-offering. The legend makes the royal gift and the heavenly shower the community&#x27;s witness to sanctity; only then can the temple-building begin in earnest. Grace answers sacrifice in the same breath.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीन &#x27;पडणे&#x27; चमत्काराची सांगता करतात — राजाकडून धन, आकाशातून पुष्पे आणि स्वतः बुटकाच पडणे — शेवटचे त्याच्या आत्मार्पणावरील मोहोर आहे. राजाचे दान आणि दैवी पुष्पवृष्टी ही पवित्रतेची लोकसाक्ष बनते; त्यानंतरच मंदिरबांधणी मनःपूर्वक सुरू होऊ शकते. त्यागाला त्याच क्षणी कृपा उत्तर देते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Flower-showers (puṣpavṛṣṭi) in Purāṇic idiom mark divine approval — the gods shower flowers on Rāma&#x27;s coronation, on a dharma-victory, on a saint&#x27;s ascent. Here heaven itself witnesses the dwarf&#x27;s offering, and the king&#x27;s shower of wealth is the earthly echo of that approval.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणिक भाषेत पुष्पवृष्टी दैवी मान्यता दाखवते — रामाच्या राज्याभिषेकावर, धर्मविजयावर, संताच्या आरोहणावर देव पुष्पे वर्षवतात. येथे स्वर्गही बुटक्याच्या अर्पणाचे साक्षीदार बनते आणि राजाचा धनवर्षाव हा त्या मान्यतेचा भूलोकीय प्रतिध्वनी आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The single verb पपात lighting up all three clauses (wealth-rain, flower-rain, the dwarf&#x27;s fall) is a dīpaka, as the Marathi gloss notes. Note the threefold source — king, sky, earth — gathering round one small figure: the sarga&#x27;s way of saying the whole cosmos ratifies the act.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तिन्ही वाक्यांना प्रकाशित करणारे एकच पपात हे दीपक अलंकाराचे उदाहरण आहे, जसे मराठी टीपेत नमूद केले आहे. तिनी उगम — राजा, आकाश, पृथ्वी — एका लहान व्यक्तीभोवती जमतात : संपूर्ण ब्रह्मांड त्या कृतीला मान्यता देते असे सर्गाचे म्हणणे आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 19</div></a><a class="next" href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 21</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

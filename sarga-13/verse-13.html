@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 13 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 13</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 13</span><span class="bl-mr lang-mr">श्लोक 13</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">रोपयामास कदलीस्ताम्बूलीश्च सहस्रशः ।<br>क्रमुकान्नारिकेलांश्च रसालान्पनसांस्तथा ।।१३।।</div>
+  <div class="verse-iast">ropayāmāsa kadalīstāmbūlīśca sahasraśaḥ । kramukānnārikelāṃśca rasālānpanasāṃstathā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">रोपयामास कदलीः ताम्बूलीः च सहस्रशः । क्रमुकान् नारिकेलान् च रसालान् पनसान् तथा ।</div><div class="vig-iast">ropayāmāsa kadalīḥ tāmbūlīḥ ca sahasraśaḥ । kramukān nārikelān ca rasālān panasān tathā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">कदलीः + ताम्बूलीः = कदलीस्ताम्बूलीः · ताम्बूलीः + च = ताम्बूलीश्च · क्रमुकान् + नारिकेलान् = क्रमुकान्नारिकेलान् · नारिकेलान् + च = नारिकेलांश्च · रसालान् + पनसान् = रसालान्पनसान् · पनसान् + तथा = पनसांस्तथा (न् + त → ंस्त)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(सः) सहस्रशः कदलीः ताम्बूलीः च, क्रमुकान् नारिकेलान् च, रसालान् पनसान् तथा रोपयामास; इङ्गुदीप्रमुखान् अन्यान् च बहून् आजीव्यपादपान्, दाडिमीमातुलिङ्गीः निम्बून् च प्रत्यरोपयत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>By the thousand he planted plantains and betel creepers, areca palms and coconut palms, and likewise the mango and the jackfruit.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हजारो केळी, पानवेली, पोफळी, नारळ, आंबे व फणस लावले, तसेच हिंगणबेट (इंगुदी) इत्यादी उपजीविकेस उपयोगी अशी इतर अनेक झाडे आणि डाळिंब, महाळुंग व लिंबू यांचीही लागवड केली.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Textual decisions for sarga 13 — all applied to the verse texts above; recorded here against double-application at print-confirmation. 13.12: वीरुगुल्म- → वीरुद्गुल्म- (वीरुध्, &quot;creeper&quot;); Marathi completed from p.114. 13.13–14 Marathi: the book adds लोंध्र/पिंपळ (absent from Sanskrit) and omits डाळिंब (दाडिमी) → reworded per Sanskrit. 13.16: स्रघ्नानियतकाष्ठान्या (print, meaningless) → स्याच्चानियतकाष्ठान्या (conjecture: स्यात् च अनियतकाष्ठा अन्या); same syllable count, matches Marathi. 13.17: वनस्पतिप्राणन कृन्न (spaced) → वनस्पतिप्राणनकृन्न (joined). 13.19: सिषेच वापिकाः → वाटिकाः (Marathi वाटिका, &quot;gardens&quot;; watering &quot;wells&quot; makes no sense). 13.23: यस्या → यस्याः (visarga kept before श्री). 13.24: चास्मै (masc.) → चास्यै (fem. dative, for Durgā). 13.25 Marathi: on p.116. 13.26 Marathi: stray इतर dropped → &quot;रामेश्वर, क्षेत्रपाल&quot;. 13.31 Marathi: reworded per Sanskrit — fields to the śūdra artisans (potters etc.) serving the twice-born, not to vaiśyas. 13.34 Marathi: &quot;प्रत्यक्ष परशुरामाने स्थापलेला&quot; → &quot;प्रत्यक्ष श्रीरामाने स्थापलेला&quot; (per 11.2–4, Daśaratha&#x27;s son). 13.35: पापिष्ठाश्चरममखेन या विहीनाः → ये विहीनाः (ये = the same men). 13.37 Marathi: continues on p.118. 13.42: यथाविधी → यथाविधि (short इ; pāda-final, meter unaffected). 13.46: यदन्यद् ग्राम- → यदन्यद्ग्राम- (joined). 13.48: निहंता → निहताः (&quot;slain&quot;; also repairs the heavy 5th syllable). 13.49: पूज्यते → पूज्यन्ते (plural subject). 13.51–52 Marathi: &quot;(अशा शिळांना गद्धेगळ म्हणतात)&quot; added per the place-and-object convention. 13.57: the print numbers this verse ५६ again; the Marathi&#x27;s ५७ is followed (cf. editor&#x27;s note at 13.46). 13.61: पितरावव्रतः → पितराववतः (&quot;as parents protect&quot;); दुर्गावाडेश्वरी → दुर्गावाडेश्वरौ (dual with पालयताम्). 13.62: अस्या ग्रामस्य → अस्य ग्रामस्य (ग्राम masculine). 13.63: वीरुधद्रुमौषधिफलैरलमासीदनेहसौ (17 syll.) → वीरुद्द्रुमौषधिफलैः … अनेहसा (&quot;in time&quot;; 16 syll., scans). 13.65: closing ।। supplied after ६५. 13.68 Marathi: &quot;(बहुधा आजचे मुरुड)&quot; / &quot;(बहुधा आजचे दिवेआगर)&quot; added per the place-name convention. 13.74: पञ्चनारायण → पञ्चनारायणाः (plural; 6th syllable heavy as the śloka prefers). 13.75: नृणां वासे → वासः (the dwelling itself is the subject). 13.76 Marathi: on p.124. 13.78 Marathi: &quot;(गुहागरचा परिसर)&quot; added after गूढदेश per the place-name convention. OPEN (not yet applied): 13.78, line 2 — अधिकगुणवद् भारतं → अधिकगुणवद्भारतं (join in sandhi; spelling only).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रोपयामास</span>
+    <span class="word-iast">ropayāmāsa</span>
+  </div>
+  <div><span class="word-grammar">रुह् (णिच्), लिट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: रोपयामास</div>
+  <p class="word-meaning lang-en">planted</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लावले</p>
+  <div class="word-usage">
+    <div class="deva">सः उद्याने वृक्षान् रोपयामास।</div>
+    <div class="usage-iast">saḥ udyāne vṛkṣān ropayāmāsa</div>
+    <div class="usage-meaning lang-en">He planted trees in the garden.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने बागेत झाडे लावली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कदलीः</span>
+    <span class="word-iast">kadalīḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: कदलीः</div>
+  <p class="word-meaning lang-en">plantains</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केळी</p>
+  <div class="word-usage">
+    <div class="deva">कदलीः ग्रीष्मे फलन्ति।</div>
+    <div class="usage-iast">kadalīḥ grīṣme phalanti</div>
+    <div class="usage-meaning lang-en">Plantains bear fruit in summer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केळी उन्हाळ्यात फळतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ताम्बूलीः</span>
+    <span class="word-iast">tāmbūlīḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: ताम्बूलीः</div>
+  <p class="word-meaning lang-en">betel vines</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पानवेली</p>
+  <div class="word-usage">
+    <div class="deva">ताम्बूलीः वृक्षान् आरोहन्ति।</div>
+    <div class="usage-iast">tāmbūlīḥ vṛkṣān ārohanti</div>
+    <div class="usage-meaning lang-en">Betel vines climb up trees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पानवेली झाडांवर चढतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">सीता च रामः च वनं गतौ।</div>
+    <div class="usage-iast">sītā ca rāmaḥ ca vanaṃ gatau</div>
+    <div class="usage-meaning lang-en">Sītā and Rāma went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सीता आणि राम वनात गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सहस्रशः</span>
+    <span class="word-iast">sahasraśaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: सहस्रशः</div>
+  <p class="word-meaning lang-en">by thousands</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हजारोंनी</p>
+  <div class="word-usage">
+    <div class="deva">सहस्रशः जनाः समागताः।</div>
+    <div class="usage-iast">sahasraśaḥ janāḥ samāgatāḥ</div>
+    <div class="usage-meaning lang-en">People gathered by the thousand.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हजारोंनी लोक जमले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रमुकान्</span>
+    <span class="word-iast">kramukān</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: क्रमुकान्</div>
+  <p class="word-meaning lang-en">areca palms</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पोफळी (सुपारी)</p>
+  <div class="word-usage">
+    <div class="deva">क्रमुकानां फलानि सुपारी इति उच्यन्ते।</div>
+    <div class="usage-iast">kramukānāṃ phalāni supārī iti ucyante</div>
+    <div class="usage-meaning lang-en">Areca fruits are called supārī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पोफळीच्या फळांना सुपारी म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नारिकेलान्</span>
+    <span class="word-iast">nārikelān</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: नारिकेलान्</div>
+  <p class="word-meaning lang-en">coconuts</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नारळ</p>
+  <div class="word-usage">
+    <div class="deva">नारिकेलानां जलं मधुरं भवति।</div>
+    <div class="usage-iast">nārikelānāṃ jalaṃ madhuraṃ bhavati</div>
+    <div class="usage-meaning lang-en">Coconut water is sweet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नारळाचे पाणी गोड असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">धनं च धान्यं च आवश्यकम्।</div>
+    <div class="usage-iast">dhanaṃ ca dhānyaṃ ca āvaśyakam</div>
+    <div class="usage-meaning lang-en">Wealth and grain are both needed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धन आणि धान्य दोन्ही आवश्यक आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रसालान्</span>
+    <span class="word-iast">rasālān</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: रसालान्</div>
+  <p class="word-meaning lang-en">mango trees</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आंबे</p>
+  <div class="word-usage">
+    <div class="deva">रसालानां फलानि आम्राणि इति प्रसिद्धानि।</div>
+    <div class="usage-iast">rasālānāṃ phalāni āmrāṇi iti prasiddhāni</div>
+    <div class="usage-meaning lang-en">The fruits of mango trees are famous as mangoes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आंब्याची फळे प्रसिद्ध आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पनसान्</span>
+    <span class="word-iast">panasān</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: पनसान्</div>
+  <p class="word-meaning lang-en">jackfruit trees</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फणस</p>
+  <div class="word-usage">
+    <div class="deva">पनसानां फलानि महन्ति भवन्ति।</div>
+    <div class="usage-iast">panasānāṃ phalāni mahanti bhavanti</div>
+    <div class="usage-meaning lang-en">Jackfruits are large.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फणस मोठे असतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तथा</span>
+    <span class="word-iast">tathā</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तथा</div>
+  <p class="word-meaning lang-en">likewise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तसेच</p>
+  <div class="word-usage">
+    <div class="deva">यथा गुरुः तथा शिष्यः।</div>
+    <div class="usage-iast">yathā guruḥ tathā śiṣyaḥ</div>
+    <div class="usage-meaning lang-en">As the teacher, so the pupil.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जसा गुरू तसा शिष्य.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Planting orchards is a gift to generations the planter may never see — the quietest form of selflessness, and the true root of a settlement&#x27;s prosperity. In a sthala-māhātmya these groves are more than agriculture: they will shade pilgrims for centuries, and Guhagar&#x27;s famed orchards trace their blessing to this first planting.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>फळबागा लावणे हे लावणाऱ्याला कदाचित कधीही न दिसणाऱ्या पिढ्यांना दिलेले दान आहे — निःस्वार्थतेचे सर्वांत शांत रूप आणि वसाहतीच्या समृद्धीचे खरे मूळ. स्थलमाहात्म्यात या बागा केवळ शेती नाहीत : त्या शतकानुशतके यात्रेकरूंना सावली देतील, आणि गुहागरच्या प्रसिद्ध बागा आपला आशीर्वाद या पहिल्या लागवडीतूनच घेतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas sing the merit of planting trees — one who plants a grove earns heaven&#x27;s reward, and fruit trees feed the traveller, the ascetic and the poor alike. Kadalī, kramuka (the areca of supārī), nārikela, rasāla and panasa are the classic auspicious plantation of the coast.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे वृक्षारोपणाचे पुण्य गातात — बाग लावणारा स्वर्गाचे फळ मिळवतो, आणि फळझाडे प्रवाशाला, तपस्व्याला व गरिबाला सारखेच पोसतात. कदली, क्रमुक (सुपारीची पोफळी), नारिकेल, रसाल आणि पनस ही किनारपट्टीची ठरलेली शुभ लागवड आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>रोपयामास is the periphrastic perfect (lit with √as + ām) of the causative of √ruh — &#x27;he caused to be planted&#x27;, the classical form. सहस्रशः uses the distributive suffix -śas, &#x27;by the thousand&#x27;. The tāmbūlī is the betel vine whose leaf is chewed as pān.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;रोपयामास&#x27; हे √रुह् धातूच्या णिजन्ताचे परस्मैपदी लिट् (√अस् + आम्) रूप आहे — &#x27;त्याने लाववले&#x27;, हा शास्त्रीय रूपप्रकार आहे. &#x27;सहस्रशः&#x27; मध्ये -शस् हा विभागवाचक प्रत्यय आहे — &#x27;हजारोंनी&#x27;. ताम्बूली ही पानाची वेल आहे, जिचे पान खाल्ले जाते.</p></div></div>
+
+<div class="pagenav"><a href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 12</div></a><a class="next" href="verse-14.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 14</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

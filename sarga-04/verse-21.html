@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 21 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 21</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 21</span><span class="bl-mr lang-mr">श्लोक 21</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ब्रह्माण्डकोटयः काद्या यस्य तिष्ठन्ति भूरिशः ।<br>ईदृक्षा लक्षशस्तत्र यथात्र त्वन्मदादयः ।।२१।।</div>
+  <div class="verse-iast">brahmāṇḍakoṭayaḥ kādyā yasya tiṣṭhanti bhūriśaḥ । īdṛkṣā lakṣaśastatra yathātra tvanmadādayaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ब्रह्माण्ड-कोटयः । क-आद्याः । यस्य । तिष्ठन्ति । भूरिशः । ईदृक्षाः । लक्षशः । तत्र । यथा । अत्र । त्वत्-मत्-आदयः ।</div><div class="vig-iast">brahmāṇḍa-koṭayaḥ । ka-ādyāḥ । yasya । tiṣṭhanti । bhūriśaḥ । īdṛkṣāḥ । lakṣaśaḥ । tatra । yathā । atra । tvat-mat-ādayaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">कोटयः + काद्याः = कोटयः काद्याः · क + आद्याः = काद्याः (सवर्णदीर्घ) · ईदृक्षाः + लक्षशः = ईदृक्षा लक्षशः (विसर्गलोप) · लक्षशः + तत्र = लक्षशस्तत्र · यथा + अत्र = यथात्र · त्वत् + मत् = त्वन्मत् (त् → न्) · मत् + आदयः = मदादयः (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्य (अंशे) काद्याः ब्रह्माण्डकोटयः भूरिशः तिष्ठन्ति, यथा अत्र त्वन्मदादयः (तथा) तत्र ईदृक्षाः लक्षशः (सन्ति), सः त्वं जगद्व्यापी जगन्मयः पुराणपुरुषः (असि); मायाजवन्या संछन्नः तु चर्मचक्षुषाम् अलक्ष्यः (असि) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Crores of world-eggs, formed of water and the other elements, rest abundantly within a mere portion of him — and such as these stand there by the hundred thousand, just as you, I and the rest dwell here (in this one)…</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याप्रमाणे येथे (या ब्रह्माण्डात) तू, मी आदिकरून समाविष्ट आहोत त्याप्रमाणे जलादि कोटिकोटी विस्तीर्ण अशी लाखो ब्रह्माण्डे ज्याच्या एका भागात सामावली आहेत असा जगद्व्यापी, जगन्मय असा तू पुराणपुरुष असून मायेच्या आवरणाने वेष्टित व म्हणूनच चर्मचक्षूंना अगोचर आहेस.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्माण्डकोटयः</span>
+    <span class="word-iast">brahmāṇḍakoṭayaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural (feminine) of ब्रह्माण्डकोटि — ṣaṣṭhī-tatpuruṣa: ब्रह्माण्डानां कोटिः, &#x27;crores of world-eggs&#x27;</span></div>
+  <div class="word-form">In this verse: ब्रह्माण्डकोटयः (ब्रह्माण्ड + कोटयः)</div>
+  <p class="word-meaning lang-en">crores of cosmic eggs/universes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोट्यवधी ब्रह्मांडे</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्माण्डकोटयः परमात्मनि लीनाः भवन्ति</div>
+    <div class="usage-iast">brahmāṇḍakoṭayaḥ paramātmani līnāḥ bhavanti</div>
+    <div class="usage-meaning lang-en">Crores of universes dissolve into the Supreme Self.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोट्यवधी ब्रह्मांडे परमात्म्यात विलीन होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काद्याः</span>
+    <span class="word-iast">kādyāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural (feminine) of the bahuvrīhi कादि — क (&#x27;water&#x27;) + आदि (&#x27;beginning&#x27;), &#x27;beginning with water&#x27;</span></div>
+  <div class="word-form">In this verse: काद्याः (क + आद्याः)</div>
+  <p class="word-meaning lang-en">(universes) formed of water and the other elements</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जल (क) इत्यादी तत्त्वांनी युक्त</p>
+  <div class="word-usage">
+    <div class="deva">काद्यैः पञ्चभूतैः जगत् निर्मितम् अस्ति</div>
+    <div class="usage-iast">kādyaiḥ pañcabhūtaiḥ jagat nirmitam asti</div>
+    <div class="usage-meaning lang-en">The world is made of the five elements beginning with water.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जलादी पंचभूतांनी जग निर्माण झाले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यस्य … तिष्ठन्ति</span>
+    <span class="word-iast">yasya … tiṣṭhanti</span>
+  </div>
+  <div><span class="word-grammar">यस्य: genitive singular of यद् (relative pronoun); तिष्ठन्ति: 3rd person plural, present (laṭ), parasmaipada, of √स्था (1st class, भ्वादि)</span></div>
+  <div class="word-form">In this verse: यस्य … तिष्ठन्ति</div>
+  <p class="word-meaning lang-en">abide/rest in whom</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याच्या (ठायी) राहतात</p>
+  <div class="word-usage">
+    <div class="deva">सर्वे लोकाः यस्य तिष्ठन्ति सः ईश्वरः</div>
+    <div class="usage-iast">sarve lokāḥ yasya tiṣṭhanti saḥ īśvaraḥ</div>
+    <div class="usage-meaning lang-en">He in whom all worlds abide is the Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व लोक ज्याच्यात राहतात तो ईश्वर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूरिशः</span>
+    <span class="word-iast">bhūriśaḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable adverb — भूरि + शस् (Pāṇini 5.4.42)</span></div>
+  <div class="word-form">In this verse: भूरिशः</div>
+  <p class="word-meaning lang-en">in abundance, manifoldly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक</p>
+  <div class="word-usage">
+    <div class="deva">भूरिशः दानम् दत्त्वा सः यशः अलभत</div>
+    <div class="usage-iast">bhūriśaḥ dānam dattvā saḥ yaśaḥ alabhata</div>
+    <div class="usage-meaning lang-en">Having given generously, he won fame.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भरपूर दान देऊन त्याने यश मिळवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ईदृक्षाः लक्षशः</span>
+    <span class="word-iast">īdṛkṣāḥ lakṣaśaḥ</span>
+  </div>
+  <div><span class="word-grammar">ईदृक्षाः: nominative plural (feminine) of ईदृक्ष (&#x27;such&#x27;, from इदम् + √दृश्); लक्षशः: indeclinable adverb (लक्ष + शस्), &#x27;by the lakh&#x27;</span></div>
+  <div class="word-form">In this verse: ईदृक्षाः लक्षशः</div>
+  <p class="word-meaning lang-en">such (universes) by the hundred thousand</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशी लाखो (रूपे)</p>
+  <div class="word-usage">
+    <div class="deva">ईदृक्षाः लोकाः लक्षशः सन्ति</div>
+    <div class="usage-iast">īdṛkṣāḥ lokāḥ lakṣaśaḥ santi</div>
+    <div class="usage-meaning lang-en">Such worlds exist by the hundred thousand.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशी ब्रह्मांडे लाखोंनी आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथा अत्र त्वन्मदादयः</span>
+    <span class="word-iast">yathā atra tvanmadādayaḥ</span>
+  </div>
+  <div><span class="word-grammar">यथा, अत्र: indeclinables; त्वन्मदादयः: nominative plural (masc.) of त्वन्मदादि — त्वत् + मत् + आदि (dvandva within a tatpuruṣa), &#x27;you, I and the rest&#x27;</span></div>
+  <div class="word-form">In this verse: यथा अत्र त्वन्मदादयः (यथा + अत्र + त्वत् + मत् + आदयः)</div>
+  <p class="word-meaning lang-en">just as here you, I and the rest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जसे येथे तू, मी इत्यादी</p>
+  <div class="word-usage">
+    <div class="deva">यथा अत्र त्वन्मदादयः वसामः तथा तत्र अपि</div>
+    <div class="usage-iast">yathā atra tvanmadādayaḥ vasāmaḥ tathā tatra api</div>
+    <div class="usage-meaning lang-en">Just as you, I and the rest dwell here, so also there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जसे येथे तू, मी इत्यादी राहतो तसेच तेथेही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Cosmology as humility-training: our entire universe, with all its gods and histories, is one bubble among lakhs in a corner of the Lord. The devotee who grasps this scale stops bargaining with God over trifles; worship becomes wonder, and wonder becomes surrender. Yet the same verse keeps intimacy — &#x27;you, I and the rest&#x27; — the infinite is also the near.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ब्रह्मांडशास्त्र हे नम्रतेचे प्रशिक्षण आहे — आपले संपूर्ण विश्व, त्यातील सर्व देव व इतिहासांसह, भगवंताच्या एका कोपऱ्यातील लाखोंपैकी एक बुडबुडा आहे. ही व्याप्ती ज्याच्या लक्षात येते तो क्षुल्लक गोष्टींसाठी देवाशी सौदा करणे थांबवतो; उपासना आश्चर्य बनते आणि आश्चर्य शरणागती. तरीही हाच श्लोक जवळीक टिकवतो — &#x27;तू, मी आणि इतर&#x27; — अनंत तेच जवळचेही आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic vision of innumerable universes (brahmāṇḍas), each with its own Brahmā, Viṣṇu and Śiva, floating like bubbles in the causal waters — the Bhāgavata and other Purāṇas delight in this image of divine plenitude. &#x27;Beginning with water&#x27; (k-ādi) names the elements from which each world-egg is compounded. The point is not astronomy but majesty: the Lord addressed here contains them all, and this world, with its Paraśurāma and its Śiva, is one instance among lakhs.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>असंख्य ब्रह्मांडांची पौराणिक दृष्टी — प्रत्येकात आपापले ब्रह्मा, विष्णू व शिव — कारणजलात बुडबुड्यांसारखी तरंगणारी; भागवतादी पुराणे या दैवी परिपूर्णतेच्या प्रतिमेत रममान होतात. &#x27;जलादी&#x27; (क-आदि) म्हणजे प्रत्येक ब्रह्मांड ज्या तत्त्वांनी घडलेले आहे ती. मुद्दा खगोलशास्त्राचा नसून महिमेचा आहे — येथे संबोधिलेला ईश्वर त्या सर्वांना सामावून घेतो; आणि परशुराम व शिव असलेले हे जग लाखोंपैकी एक उदाहरण आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh; the sentence runs on into verse 22. The printed ईहक्षा has been emended to ईदृक्षाः (&#x27;such&#x27;, feminine plural agreeing with ब्रह्माण्डकोटयः) — ईहक्षा is not a Sanskrit word — as recorded in the sarga&#x27;s textual notes; the metre is unaffected.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्; वाक्य २२ व्या श्लोकात पुढे चालते. छापील ईहक्षा चे ईदृक्षाः (&#x27;अशी&#x27;, ब्रह्माण्डकोटयः शी अन्वित स्त्रीलिंगी बहुवचन) असे शोधन केले आहे — ईहक्षा हा संस्कृत शब्दच नाही — सर्गाच्या पाठ-चर्चा नोंदीत नमूद केल्याप्रमाणे; वृत्तावर परिणाम नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 20</div></a><a class="next" href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 22</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पूजादीनां प्रवाहार्थं क्षेत्राणि विपुलान्यथ ।<br>उत्ससर्ज प्रजापाल आजीव्यांश्च महीरुहान् ।।३२।।</div>
+  <div class="verse-iast">pūjādīnāṃ pravāhārthaṃ kṣetrāṇi vipulānyatha । utsasarja prajāpāla ājīvyāṃśca mahīruhān</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पूजा-आदीनाम् । प्रवाह-अर्थम् । क्षेत्राणि । विपुलानि । अथ । उत्ससर्ज । प्रजापालः । आजीव्यान् । च । महीरुहान् ।</div><div class="vig-iast">pūjā-ādīnām । pravāha-artham । kṣetrāṇi । vipulāni । atha । utsasarja । prajāpālaḥ । ājīvyān । ca । mahīruhān ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पूजा + आदीनाम् = पूजादीनाम् · प्रवाह + अर्थम् = प्रवाहार्थम् · विपुलानि + अथ = विपुलान्यथ (यण्) · प्रजापालः + आजीव्यान् = प्रजापाल आजीव्यान् (विसर्ग-लोप) · आजीव्यान् + च = आजीव्यांश्च</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ प्रजापालः पूजादीनां प्रवाहार्थं विपुलानि क्षेत्राणि आजीव्यान् महीरुहान् च उत्ससर्ज ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then the protector of the people granted extensive fields — and fruit-bearing trees as a means of livelihood — so that the worship might continue in an unbroken stream.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पूजा वगैरे अखंड चालू राहाव्यात यासाठी प्रजापालक राजाने विपुल क्षेत्रे व उपजीविकेची साधने असलेले वृक्ष अर्पण केले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रवाहार्थम्</span>
+    <span class="word-iast">pravāhārtham</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; avyayībhāva (pravāha-artham)</span></div>
+  <div class="word-form">In this verse: प्रवाहार्थम्</div>
+  <p class="word-meaning lang-en">for the unbroken continuance (of worship)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(पूजा) अखंड चालू राहावी म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">यज्ञस्य प्रवाहार्थं धनं दत्तम्।</div>
+    <div class="usage-iast">yajñasya pravāhārthaṃ dhanaṃ dattam.</div>
+    <div class="usage-meaning lang-en">Wealth was given for the continued performance of the sacrifice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञ अखंड चालावा यासाठी धन दिले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षेत्राणि</span>
+    <span class="word-iast">kṣetrāṇi</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative plural</span></div>
+  <div class="word-form">In this verse: क्षेत्राणि</div>
+  <p class="word-meaning lang-en">fields (as endowment)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शेते (इनाम)</p>
+  <div class="word-usage">
+    <div class="deva">राजा देवालयाय क्षेत्राणि अददात्।</div>
+    <div class="usage-iast">rājā devālayāya kṣetrāṇi adadāt.</div>
+    <div class="usage-meaning lang-en">The king gave fields to the temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने मंदिराला शेते दिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उत्ससर्ज</span>
+    <span class="word-iast">utsasarja</span>
+  </div>
+  <div><span class="word-grammar">verb, 3rd singular parasmaipada perfect (lit); ud + √sṛj</span></div>
+  <div class="word-form">In this verse: उत्ससर्ज</div>
+  <p class="word-meaning lang-en">he granted, bestowed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अर्पण केली (उद् + √सृज्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">नृपः ब्राह्मणेभ्यो ग्रामान् उत्ससर्ज।</div>
+    <div class="usage-iast">nṛpaḥ brāhmaṇebhyo grāmān utsasarja.</div>
+    <div class="usage-meaning lang-en">The king bestowed villages on the brāhmaṇas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने ब्राह्मणांना गावे अर्पण केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आजीव्यान् महीरुहान्</span>
+    <span class="word-iast">ājīvyān mahīruhān</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative plural (both adjectives); ājīvya, mahī-ruha</span></div>
+  <div class="word-form">In this verse: आजीव्यान् महीरुहान्</div>
+  <p class="word-meaning lang-en">trees that serve as a means of livelihood</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्पन्नाचे साधन ठरणारे वृक्ष</p>
+  <div class="word-usage">
+    <div class="deva">ते आजीव्यान् महीरुहान् रोपयन्ति।</div>
+    <div class="usage-iast">te ājīvyān mahīruhān ropayanti.</div>
+    <div class="usage-meaning lang-en">They plant trees that yield a livelihood.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते उपजीविकेचे साधन ठरणारी झाडे लावतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रजापालः</span>
+    <span class="word-iast">prajāpālaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; prajā-pāla</span></div>
+  <div class="word-form">In this verse: प्रजापालः</div>
+  <p class="word-meaning lang-en">the protector of the subjects, the king</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा</p>
+  <div class="word-usage">
+    <div class="deva">प्रजापालः प्रजाः पुत्रवत् पालयति।</div>
+    <div class="usage-iast">prajāpālaḥ prajāḥ putravat pālayati.</div>
+    <div class="usage-meaning lang-en">The king guards his subjects as his own children.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा प्रजेचे स्वतःच्या मुलांप्रमाणे रक्षण करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the crown of the temple-founding: a permanent endowment (inām) so that pūjā flows without interruption — pravāha, like a river that never runs dry. The māhātmya teaches that the highest dāna is not the grand building alone but the provision that keeps the Lord&#x27;s service alive forever; it is why temples of the Konkan still hold inām lands centuries later. The king, called here prajāpāla — &#x27;protector of the people&#x27; — protects his subjects most truly by securing their access to the divine.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मंदिरप्रतिष्ठेचा हा मुकुटमणी आहे: पूजा अखंड प्रवाहात चालावी यासाठी कायमस्वरूपी देणगी (इनाम) — प्रवाह, कधीही न आटणाऱ्या नदीसारखा. केवळ भव्य इमारत नव्हे, तर देवाची सेवा कायम जिवंत ठेवणारी तरतूद हेच सर्वश्रेष्ठ दान आहे, हे माहात्म्य शिकवते; म्हणूनच कोकणातील मंदिरांकडे शतकांनंतरही इनाम जमिनी आहेत. येथे राजाला प्रजापाल — &#x27;प्रजेचा रक्षक&#x27; — म्हटले आहे — प्रजेला दैवी सान्निध्याची उपलब्धता सुरक्षित करूनच तो खऱ्या अर्थाने त्यांचे रक्षण करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The gift of land to a temple (devadāna, bhūmidāna) is counted among the greatest of gifts in dharmaśāstra and the Purāṇas, precisely because its yield sustains worship in perpetuity — the &#x27;unbroken stream&#x27; (pravāha) of pūjā. Fruit-bearing trees as ājīvya, a means of livelihood, extend the same logic: every harvest becomes, year after year, an offering that keeps the lamps lit and the priests sustained.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मंदिराला जमिनीचे दान (देवदान, भूमिदान) हे धर्मशास्त्रे व पुराणांमध्ये सर्वश्रेष्ठ दानांपैकी एक मानले आहे, ते याच कारणाने की त्याचे उत्पन्न पूजेला चिरकाल टिकवते — पूजेचा &#x27;अखंड प्रवाह&#x27;. आजीव्य म्हणून फळझाडे हाच न्याय पुढे नेतात: प्रत्येक हंगामातील पीक वर्षानुवर्षे अर्पण बनते, ज्यामुळे दिवे तेवत राहतात व पुजारी पोसले जातात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>उत्ससर्ज is the parasmaipada perfect (lit) of ud + √sṛj, &#x27;he let go, granted, bestowed.&#x27; प्रवाहार्थम् (pravāha-artham, avyayībhāva) — &#x27;for the sake of the flow/continuance&#x27; — is the stated purpose of the grant. आजीव्यान् महीरुहान्, &#x27;livelihood-yielding trees,&#x27; are accusative plural adjectives with the granted object; प्रजापालः is the subject, naming the king by his dharma-title. This verse closes the consecration narrative of sarga 10&#x27;s temple account.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उत्ससर्ज हे उद् + √सृज् चे परस्मैपदी पूर्णभूत (लिट्) रूप आहे, &#x27;त्याने सोडले, अर्पण केले.&#x27; प्रवाहार्थम् (प्रवाह-अर्थम्, अव्ययीभाव) — &#x27;प्रवाहाच्या/सातत्याच्या हेतूने&#x27; — हे दानाचे उद्दिष्ट सांगते. आजीव्यान् महीरुहान्, &#x27;उपजीविका देणारी झाडे,&#x27; ही अर्पिलेल्या वस्तूसोबतची द्वितीया बहुवचनी विशेषणे आहेत; प्रजापालः हे कर्ता आहे, राजाला त्याच्या धर्मपदवीने संबोधणारे. हा श्लोक सर्ग १० च्या मंदिरवृत्तातील प्रतिष्ठापनाकथा संपवतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

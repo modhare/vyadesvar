@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 48 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 48</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 48</span><span class="bl-mr lang-mr">श्लोक 48</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">वेशन्तैः सरसीभिश्च नानासिंधुभिरंधुभिः ।<br>नानाप्रस्रवणैः खातैः सर्वतोऽलमलङ्कृतम् ।।४८।।</div>
+  <div class="verse-iast">veśantaiḥ sarasībhiśca nānāsiṃdhubhiraṃdhubhiḥ । nānāprasravaṇaiḥ khātaiḥ sarvato&#x27;lamalaṅkṛtam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">वेशन्तैः । सरसीभिः । च । नाना-सिन्धुभिः । अन्धुभिः । नाना-प्रस्रवणैः । खातैः । सर्वतः । अलम् । अलङ्कृतम् ।</div><div class="vig-iast">veśantaiḥ । sarasībhiḥ । ca । nānā-sindhubhiḥ । andhubhiḥ । nānā-prasravaṇaiḥ । khātaiḥ । sarvataḥ । alam । alaṅkṛtam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सरसीभिः + च = सरसीभिश्च · सिन्धुभिः + अन्धुभिः = सिन्धुभिरन्धुभिः · प्रस्रवणैः + खातैः = प्रस्रवणैः खातैः · सर्वतः + अलम् = सर्वतोऽलम् · अलम् + अलङ्कृतम् = अलमलङ्कृतम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तद्रक्षितजनर्द्धिभिः, मुनीनां पुण्यैः आश्रमैः, अनेकशः पुण्यतीर्थैः, नानाद्रुमलतागुल्मैः … वेशन्तैः सरसीभिः च नानासिन्धुभिः अन्धुभिः खातैः नानाप्रस्रवणैः (च) सर्वतः अलम् अलङ्कृतं भार्गवक्षेत्रं शुशुभे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>…with ponds and lakes, with many rivers and wells, with many springs and excavated tanks — richly adorned on every side.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते परशुरामाचे क्षेत्र त्याने रक्षण केलेल्या लोकांची समृद्धी, मुनींचे पुण्यकारक आश्रम व निरनिराळी पावन तीर्थे यांनी सुशोभित व विविध प्रकारचे वृक्ष व लता यांचे समूह, निरनिराळे प्राणी व पक्षी, अनेक टेकड्या, निरनिराळी कमनीय वने, आकर्षक सरोवरे, नद्या व विहिरी, व खोदलेले अनेक झरे यांच्या अस्तित्वामुळे सर्वार्थाने नटलेले होते.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वेशन्तैः</span>
+    <span class="word-iast">veśantaiḥ</span>
+  </div>
+  <div><span class="word-grammar">वेशन्त (पुंलिङ्ग &#x27;लहान तळे, डोह&#x27;), तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: वेशन्तैः — &#x27;लहान तळ्यांनी&#x27;</div>
+  <p class="word-meaning lang-en">with ponds, pools</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लहान तळ्यांनी/डोहांनी</p>
+  <div class="word-usage">
+    <div class="deva">वेशन्तैः क्षेत्रम् शोभते</div>
+    <div class="usage-iast">veśantaiḥ kṣetram śobhate</div>
+    <div class="usage-meaning lang-en">The land is beautiful with its ponds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लहान तळ्यांनी क्षेत्र शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरसीभिः</span>
+    <span class="word-iast">sarasībhiḥ</span>
+  </div>
+  <div><span class="word-grammar">सरस् (स्त्रीलिङ्ग), तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: सरसीभिः — &#x27;सरोवरांनी&#x27;</div>
+  <p class="word-meaning lang-en">with lakes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सरोवरांनी</p>
+  <div class="word-usage">
+    <div class="deva">सरसीभिः वनम् रम्यम्</div>
+    <div class="usage-iast">sarasībhiḥ vanam ramyam</div>
+    <div class="usage-meaning lang-en">The forest is lovely with its lakes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सरोवरांनी वन रम्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सिन्धुभिः</span>
+    <span class="word-iast">sindhubhiḥ</span>
+  </div>
+  <div><span class="word-grammar">सिन्धु (&#x27;नदी&#x27;), तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: सिन्धुभिः — &#x27;नद्यांनी&#x27;</div>
+  <p class="word-meaning lang-en">with rivers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्यांनी</p>
+  <div class="word-usage">
+    <div class="deva">सिन्धुभिः देशः सस्यपूर्णः</div>
+    <div class="usage-iast">sindhubhiḥ deśaḥ sasyapūrṇaḥ</div>
+    <div class="usage-meaning lang-en">The land is full of crops with its rivers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्यांनी देश सस्यपूर्ण आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्धुभिः</span>
+    <span class="word-iast">andhubhiḥ</span>
+  </div>
+  <div><span class="word-grammar">अन्धु (पुंलिङ्ग &#x27;विहीर, कूप&#x27;), तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: अन्धुभिः — &#x27;विहिरींनी&#x27;</div>
+  <p class="word-meaning lang-en">with wells</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विहिरींनी (अन्धु = कूप)</p>
+  <div class="word-usage">
+    <div class="deva">अन्धुभिः ग्रामः जलसमृद्धः</div>
+    <div class="usage-iast">andhubhiḥ grāmaḥ jalasamṛddhaḥ</div>
+    <div class="usage-meaning lang-en">The village is rich in water with its wells.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विहिरींनी गाव जलसमृद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रस्रवणैः</span>
+    <span class="word-iast">prasravaṇaiḥ</span>
+  </div>
+  <div><span class="word-grammar">प्रस्रवण (नपुंसकलिङ्ग &#x27;झरा&#x27;), तृतीया बहुवचन</span></div>
+  <div class="word-form">In this verse: प्रस्रवणैः — &#x27;झऱ्यांनी&#x27;</div>
+  <p class="word-meaning lang-en">with springs, fountains</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झऱ्यांनी</p>
+  <div class="word-usage">
+    <div class="deva">प्रस्रवणैः गिरिः शोभते</div>
+    <div class="usage-iast">prasravaṇaiḥ giriḥ śobhate</div>
+    <div class="usage-meaning lang-en">The mountain shines with its springs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झऱ्यांनी पर्वत शोभतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खातैः</span>
+    <span class="word-iast">khātaiḥ</span>
+  </div>
+  <div><span class="word-grammar">√खन् + क्त प्रत्यय; नपुंसकलिङ्ग तृतीया बहुवचन — &#x27;खोदलेले&#x27;</span></div>
+  <div class="word-form">In this verse: खातैः — &#x27;खोदलेल्या (तलावांनी)&#x27;</div>
+  <p class="word-meaning lang-en">with excavated (tanks)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खोदलेल्या (तलाव/खंदक)</p>
+  <div class="word-usage">
+    <div class="deva">खातैः जलाशयैः क्षेत्रम् अलंकृतम्</div>
+    <div class="usage-iast">khātaiḥ jalāśayaiḥ kṣetram alaṃkṛtam</div>
+    <div class="usage-meaning lang-en">The land is adorned with excavated reservoirs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खोदलेल्या जलाशयांनी क्षेत्र अलंकृत आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अलमलङ्कृतम्</span>
+    <span class="word-iast">alamalaṅkṛtam</span>
+  </div>
+  <div><span class="word-grammar">अलम् (अव्यय, &#x27;पूर्णपणे&#x27;) + अलंकृत (अलम् + √कृ + क्त); नपुंसकलिङ्ग द्वितीया एकवचन — क्षेत्रम्‌चे विशेषण</span></div>
+  <div class="word-form">In this verse: अलमलङ्कृतम् — &#x27;पूर्णपणे सजलेले&#x27;</div>
+  <p class="word-meaning lang-en">richly adorned</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्णपणे सजलेले</p>
+  <div class="word-usage">
+    <div class="deva">मन्दिरम् पुष्पैः अलमलंकृतम् आसीत्</div>
+    <div class="usage-iast">mandiram puṣpaiḥ alamalaṃkṛtam āsīt</div>
+    <div class="usage-meaning lang-en">The temple was richly adorned with flowers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिर फुलांनी पूर्णपणे सजलेले होते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Water is the kṣetra&#x27;s lifeblood: ponds, lakes, rivers, wells, springs and tanks are named one by one, as if counting them were itself an act of devotion. In Konkan&#x27;s rainy land, abundant sweet water is both the practical and the spiritual foundation of settlement.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाणी हे क्षेत्राचे जीवनरक्त आहे : तळी, सरोवरे, नद्या, विहिरी, झरे व तलाव एकेक करून नामनिर्देशिले आहेत, जणू त्यांची गणनाच भक्तीचे कृत्य आहे. कोकणच्या पावसाळी भूमीत विपुल गोडे पाणी हे वसाहतीचा व्यावहारिक व आध्यात्मिक दोन्ही पाया आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Water-bodies are the first requirement of a tīrtha in dharma-śāstra — a kṣetra without water cannot sustain either ritual or life. The Purāṇic kṣetra-catalogues (e.g. in the Skanda-purāṇa) always enumerate waters with the same loving thoroughness; the list here — from वेशन्त (pond) to खात (excavated tank) — covers both natural and man-made sources.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>धर्मशास्त्रात तीर्थाची पहिली गरज जलाशय आहेत — पाण्याविना क्षेत्र ना विधी ना जीवन पोसू शकते. पुराणांतील क्षेत्रसूच्या (उदा. स्कन्दपुराणात) पाण्याची गणना तितक्याच प्रेमळ सविस्तरपणे करतात; येथील यादी — वेशन्त (तळे) पासून खात (खोदलेला तलाव) पर्यंत — नैसर्गिक व मानवनिर्मित दोन्ही स्रोत व्यापते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>अलम् here is the indeclinable meaning &#x27;fully, amply&#x27; — अलमलङ्कृतम्, &#x27;richly adorned&#x27;. वेशन्त is a small pond or pool; अन्धु is an older word for a well (kūpa). This verse closes the great instrumental catalogue that began at 46a with शुशुभे. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे अलम् हे &#x27;पूर्णपणे, विपुलपणे&#x27; अर्थाचे अव्यय आहे — अलमलङ्कृतम्, &#x27;समृद्धपणे सजलेले&#x27;. वेशन्त म्हणजे लहान तळे किंवा डोह; अन्धु हा विहिरीसाठी (कूप) जुना शब्द आहे. हा श्लोक ४६अ मधील शुशुभे पासून सुरू झालेल्या महा-तृतीया-सूचीचा समारोप करतो. वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-47.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 47</div></a><a class="next" href="verse-49.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 49</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

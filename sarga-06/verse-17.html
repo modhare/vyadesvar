@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 17 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 17</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 17</span><span class="bl-mr lang-mr">श्लोक 17</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">मैत्रावरुणिरित्युक्तो राघवेणानुपूर्वशः ।<br>वर्णयामास वृत्तान्तं तयोः सन्धानकारणम् ।।१७।।</div>
+  <div class="verse-iast">maitrāvaruṇirityukto rāghaveṇānupūrvaśaḥ । varṇayāmāsa vṛttāntaṃ tayoḥ sandhānakāraṇam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">मैत्रावरुणिः । इति । उक्तः । राघवेण । अनुपूर्वशः । वर्णयामास । वृत्तान्तम् । तयोः । सन्धान-कारणम् ।</div><div class="vig-iast">maitrāvaruṇiḥ । iti । uktaḥ । rāghaveṇa । anupūrvaśaḥ । varṇayāmāsa । vṛttāntam । tayoḥ । sandhāna-kāraṇam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">मैत्रावरुणिः + इति = मैत्रावरुणिरिति · इति + उक्तः = इत्युक्तः · उक्तः + राघवेण = उक्तो राघवेण · राघवेण + अनुपूर्वशः = राघवेणानुपूर्वशः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">राघवेण इति उक्तः मैत्रावरुणिः अनुपूर्वशः वृत्तान्तं तयोः सन्धानकारणं (च) वर्णयामास ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Agastya — the son of Mitra and Varuṇa — being thus questioned by Rāghava, narrated in due order the whole account, and the cause of the treaty concluded between the two.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राघवाने अगस्त्य मुनीला असे विचारल्यानंतर त्या ऋषीने योग्य क्रमाने सर्व वृत्तान्त व त्या दोघांत झालेल्या संधीचे कारण सांगितले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मैत्रावरुणिः</span>
+    <span class="word-iast">maitrāvaruṇiḥ</span>
+  </div>
+  <div><span class="word-grammar">मित्रावरुणयोः अपत्यम् — इञ् प्रत्यय; षष्ठी-तत्पुरुषगर्भ तद्धित; प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: मैत्रावरुणिरित्युक्तो</div>
+  <p class="word-meaning lang-en">son of Mitra and Varuṇa (Agastya)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मित्र-वरुणांचा पुत्र (अगस्त्य)</p>
+  <div class="word-usage">
+    <div class="deva">मैत्रावरुणिः अगस्त्यः कुम्भात् जातः</div>
+    <div class="usage-iast">maitrāvaruṇir agastyaḥ kumbhāt jātaḥ</div>
+    <div class="usage-meaning lang-en">Agastya, the son of Mitra and Varuṇa, was born from the jar.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मित्रावरुणपुत्र अगस्त्य कुंभातून जन्मला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इत्युक्तः</span>
+    <span class="word-iast">ityuktaḥ</span>
+  </div>
+  <div><span class="word-grammar">इति (अव्यय) + उक्त (√वच्, क्त प्रत्यय); प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: इत्युक्तो</div>
+  <p class="word-meaning lang-en">thus addressed, thus questioned</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे विचारले गेलेला</p>
+  <div class="word-usage">
+    <div class="deva">रामेण इति उक्तः मुनिः कथाम् अवदत्</div>
+    <div class="usage-iast">rāmeṇa iti uktaḥ muniḥ kathām avadat</div>
+    <div class="usage-meaning lang-en">The sage, thus questioned by Rāma, told the story.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने असे विचारलेल्या मुनीने कथा सांगितली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनुपूर्वशः</span>
+    <span class="word-iast">anupūrvaśaḥ</span>
+  </div>
+  <div><span class="word-grammar">अनु + पूर्व + शस् प्रत्यय; क्रियाविशेषण, अव्यय</span></div>
+  <div class="word-form">In this verse: राघवेणानुपूर्वशः</div>
+  <p class="word-meaning lang-en">in due order, successively</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रमाने</p>
+  <div class="word-usage">
+    <div class="deva">मुनिः वृत्तान्तम् अनुपूर्वशः वर्णयामास</div>
+    <div class="usage-iast">muniḥ vṛttāntam anupūrvaśaḥ varṇayāmāsa</div>
+    <div class="usage-meaning lang-en">The sage narrated the account in due order.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनीने वृत्तान्त क्रमाने सांगितला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तयोः सन्धानकारणम्</span>
+    <span class="word-iast">tayoḥ sandhānakāraṇam</span>
+  </div>
+  <div><span class="word-grammar">तयोः (तद्, षष्ठी द्विवचन) + सन्धान-कारण (षष्ठी-तत्पुरुष); द्वितीया एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: तयोः सन्धानकारणम्</div>
+  <p class="word-meaning lang-en">the cause of the treaty between those two</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या दोघांतील (परशुराम-रावण) संधीचे कारण (३.५१–५५ पहा)</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्मा तयोः सन्धानकारणम् अभवत्</div>
+    <div class="usage-iast">brahmā tayoḥ sandhānakāraṇam abhavat</div>
+    <div class="usage-meaning lang-en">Brahmā became the cause of the treaty between the two.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या दोघांतील संधीचे कारण ब्रह्मदेव ठरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वर्णयामास</span>
+    <span class="word-iast">varṇayāmāsa</span>
+  </div>
+  <div><span class="word-grammar">√वर्ण् (चुरादि); लिट् प्रथमपुरुष एकवचन (आम् + √अस्)</span></div>
+  <div class="word-form">In this verse: वर्णयामास</div>
+  <p class="word-meaning lang-en">narrated, described</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर्णिले</p>
+  <div class="word-usage">
+    <div class="deva">व्यासः भारतम् वर्णयामास</div>
+    <div class="usage-iast">vyāsaḥ bhāratam varṇayāmāsa</div>
+    <div class="usage-meaning lang-en">Vyāsa narrated the Bhārata.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>व्यासांनी भारताचे वर्णन केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The disciple asks, the teacher answers in order — this is how sacred history is handed down: question by question, in its proper sequence. Agastya&#x27;s narration binds Paraśurāma&#x27;s story to Rāma&#x27;s, showing the avatāras as one continuous work of dharma rather than separate episodes. The &#x27;cause of the treaty&#x27; recalls that even Paraśurāma&#x27;s blazing wrath yielded to Brahmā&#x27;s mediation — a quiet lesson that righteous anger, too, must know when to lay down its arms.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शिष्य विचारतो, गुरु क्रमाने उत्तर देतो — अशा रीतीने पवित्र इतिहास पुढे जातो : प्रश्नामागून प्रश्न, योग्य क्रमाने. अगस्त्यांचे कथन परशुरामाची कथा रामाच्या कथेशी जोडते; अवतार हे वेगवेगळे प्रसंग नसून धर्माचे एकच अखंड कार्य आहे, हे दाखवते. &#x27;संधीचे कारण&#x27; आठवते की परशुरामाचा प्रखर क्रोधही ब्रह्मदेवाच्या मध्यस्थीसमोर नमला — न्याय्य क्रोधालाही शस्त्रे केव्हा खाली ठेवावीत हे कळले पाहिजे, हा मूक उपदेश.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Agastya is &#x27;Maitrāvaruṇi&#x27; — born of Mitra and Varuṇa from the sacrificial jar (kumbha), whence his names Kumbhayoni and Kalaśodbhava (cf. v6, &#x27;कलशसंभवम्&#x27;). The &#x27;treaty of the two&#x27; is the pact between Paraśurāma and Rāvaṇa narrated in sarga 3.51–55: Brahmā himself brought the ten-faced king to the sage&#x27;s feet after Rāvaṇa&#x27;s followers molested the celestial women, and the sage&#x27;s wrath was pacified. The frame is consistent: Paraśurāma lays down his kṣatriya-slaying mission once he recognizes the Ādipurūṣa in Rāma (v4), and the avatāra&#x27;s work passes to its next bearer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अगस्त्य &#x27;मैत्रावरुणि&#x27; — मित्रावरुणांपासून यज्ञकुंभात जन्मलेले; म्हणूनच त्यांची कुंभयोनी व कलशोद्भव ही नावे (श्लोक ६ मधील &#x27;कलशसंभवम्&#x27; पहा). &#x27;त्या दोघांतील संधी&#x27; म्हणजे सर्ग ३.५१–५५ मध्ये सांगितलेला परशुराम-रावण करार : रावणाच्या अनुचरांनी देवस्त्रियांना त्रास दिल्यानंतर ब्रह्मदेवांनी स्वतः दशमुखाला मुनींच्या चरणांशी आणले आणि मुनींचा क्रोध शांत झाला. संदर्भ सुसंगत आहे : रामातील आदिपुरुषाला ओळखताच परशुराम क्षत्रियसंहाराचे कार्य खाली ठेवतात (श्लोक ४), आणि अवताराचे कार्य पुढच्या वाहकाकडे जाते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;अनुपूर्वशः&#x27; carries the śas suffix — &#x27;in due order, successively&#x27; — the mark of a proper kathā telling. The book cross-refers to 3.51–55 for the sandhāna episode; the reference is exact. Metre: Anuṣṭubh. Note the poet&#x27;s economy: a single verse hands the entire remaining Rāma narrative to Agastya&#x27;s mouth, and the kāvya never returns to the narrator&#x27;s voice until the closing benediction (v24).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;अनुपूर्वशः&#x27; मध्ये शस् प्रत्यय आहे — &#x27;क्रमाक्रमाने&#x27; — योग्य कथाकथनाचे लक्षण. संधीच्या प्रसंगासाठी पुस्तकाने दिलेला ३.५१–५५ हा संदर्भ अचूक आहे. वृत्त : अनुष्टुभ्. कवीची काटकसर लक्षात घ्या : एकाच श्लोकात संपूर्ण उरलेली रामकथा अगस्त्यांच्या तोंडी सोपवली आहे, आणि समारोपाच्या आशीर्वादापर्यंत (श्लोक २४) काव्य निवेदकाच्या स्वराकडे परतत नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-16.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 16</div></a><a class="next" href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 18</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

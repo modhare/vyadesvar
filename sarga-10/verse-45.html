@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 45 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 45</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 45</span><span class="bl-mr lang-mr">श्लोक 45</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यः पापारण्यवह्निर्भवसलिलनिधौ मज्जतां पोतरूपः<br>शोकध्वान्तप्रदीपः समभिहितफलप्रार्थनाकल्पवृक्षः ।<br>नानारोगद्रुदात्रं निरवधिकरुणारूपपीयूषपात्रं<br>रामक्षेत्रेऽब्धितीरे निवसति भगवानेष वाडेशदेवः ।।४५।।</div>
+  <div class="verse-iast">yaḥ pāpāraṇyavahnirbhavasalilanidhau majjatāṃ potarūpaḥ śokadhvāntapradīpaḥ samabhihitaphalaprārthanākalpavṛkṣaḥ । nānārogadrudātraṃ niravadhikaruṇārūpapīyūṣapātraṃ rāmakṣetre&#x27;bdhitīre nivasati bhagavāneṣa vāḍeśadevaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यः । पाप-अरण्य-वह्निः । भव-सलिल-निधौ । मज्जताम् । पोत-रूपः । शोक-ध्वान्त-प्रदीपः । समभिहित-फल-प्रार्थना-कल्पवृक्षः । नाना-रोग-द्रु-दात्रम् । निरवधि-करुणा-रूप-पीयूष-पात्रम् । राम-क्षेत्रे । अब्धि-तीरे । निवसति । भगवान् । एषः । वाडेश-देवः ।</div><div class="vig-iast">yaḥ । pāpa-araṇya-vahniḥ । bhava-salila-nidhau । majjatām । pota-rūpaḥ । śoka-dhvānta-pradīpaḥ । samabhihita-phala-prārthanā-kalpavṛkṣaḥ । nānā-roga-dru-dātram । niravadhi-karuṇā-rūpa-pīyūṣa-pātram । rāma-kṣetre । abdhi-tīre । nivasati । bhagavān । eṣaḥ । vāḍeśa-devaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पाप + अरण्य = पापारण्य · वह्निः + भव = वह्निर्भव · क्षेत्रे + अब्धि = क्षेत्रेऽब्धि · भगवान् + एषः = भगवानेषः · एषः + वाडेश = एष वाडेश</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यः पापारण्यवह्निः, भवसलिलनिधौ मज्जतां पोतरूपः, शोकध्वान्तप्रदीपः, समभिहितफलप्रार्थनाकल्पवृक्षः, नानारोगद्रुदात्रं, निरवधिकरुणारूपपीयूषपात्रं (च), एषः भगवान् वाडेशदेवः रामक्षेत्रे अब्धितीरे निवसति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>A fire to the forest of sins; to those sinking in the ocean of existence, a boat; a lamp in the darkness of grief; a wish-granting tree to the prayer for the fruit it names; a sickle to the trees of manifold ills; a vessel of the nectar that is boundless compassion — this Lord, the divine Vāḍeśa, dwells in Rāmakṣetra on the shore of the sea.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पापरूपी अरण्याचा अग्नी, भवसागरांत बुडणाऱ्यांना नौकारूप असणारा शोकान्धकाराचा प्रदीप व ईप्सितफलांच्या प्रार्थनेसाठी कल्पवृक्षच, नाना रोगरूपी वृक्षांसाठी कोयता व अमर्याद करुणारूपी अमृताचे पात्र असलेला हा भगवान् वाडेश्वर या परशुरामक्षेत्रांत सागरतीरावर निवास करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पापारण्यवह्निः</span>
+    <span class="word-iast">pāpāraṇyavahniḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound, masculine nominative singular; पाप + अरण्य + वह्नि</span></div>
+  <div class="word-form">In this verse: पापारण्यवह्निः</div>
+  <p class="word-meaning lang-en">a fire to the forest of sins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापरूपी अरण्याला अग्नी</p>
+  <div class="word-usage">
+    <div class="deva">ज्ञानं पापारण्यवह्निरिति शास्त्रे उक्तम्।</div>
+    <div class="usage-iast">jñānaṃ pāpāraṇyavahniriti śāstre uktam.</div>
+    <div class="usage-meaning lang-en">Knowledge is declared in the śāstra to be a fire to the forest of sins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्ञान हाच पापरूपी अरण्याचा अग्नी, असे शास्त्रांत सांगितले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवसलिलनिधौ मज्जताम्</span>
+    <span class="word-iast">bhavasalilanidhau majjatām</span>
+  </div>
+  <div><span class="word-grammar">locative singular of भवसलिलनिधि (ocean of existence) + genitive plural of the present participle मज्जत् (√मस्ज्, sinking)</span></div>
+  <div class="word-form">In this verse: भवसलिलनिधौ मज्जताम्</div>
+  <p class="word-meaning lang-en">for those sinking in the ocean of worldly existence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भवसागरात बुडणाऱ्यांसाठी</p>
+  <div class="word-usage">
+    <div class="deva">भवसलिलनिधौ मज्जतां जनानां गुरुरेव गतिः।</div>
+    <div class="usage-iast">bhavasalilanidhau majjatāṃ janānāṃ gurureva gatiḥ.</div>
+    <div class="usage-meaning lang-en">For people sinking in the ocean of existence, the guru alone is the refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भवसागरात बुडणाऱ्या जनांसाठी गुरू हाच आधार आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पोतरूपः</span>
+    <span class="word-iast">potarūpaḥ</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound, masculine nominative singular; पोत + रूप</span></div>
+  <div class="word-form">In this verse: पोतरूपः</div>
+  <p class="word-meaning lang-en">boat-formed, in the form of a boat</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नौकारूप</p>
+  <div class="word-usage">
+    <div class="deva">धर्मः पोतरूपो भवसागरे।</div>
+    <div class="usage-iast">dharmaḥ potarūpo bhavasāgare.</div>
+    <div class="usage-meaning lang-en">Dharma is boat-like in the ocean of existence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भवसागरात धर्म हाच नौकारूप आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शोकध्वान्तप्रदीपः</span>
+    <span class="word-iast">śokadhvāntapradīpaḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound, masculine nominative singular; शोक + ध्वान्त + प्रदीप</span></div>
+  <div class="word-form">In this verse: शोकध्वान्तप्रदीपः</div>
+  <p class="word-meaning lang-en">a lamp in the darkness of grief</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोकांधकारातील दिवा</p>
+  <div class="word-usage">
+    <div class="deva">साधुसंगः शोकध्वान्तप्रदीपो भवति।</div>
+    <div class="usage-iast">sādhusaṅgaḥ śokadhvāntapradīpo bhavati.</div>
+    <div class="usage-meaning lang-en">The company of the virtuous is a lamp in the darkness of grief.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांची संगत ही शोकांधकारातील दिवा असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समभिहितफलप्रार्थनाकल्पवृक्षः</span>
+    <span class="word-iast">samabhihitaphalaprārthanākalpavṛkṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound, masculine nominative singular; समभिहित + फल + प्रार्थना + कल्पवृक्ष</span></div>
+  <div class="word-form">In this verse: समभिहितफलप्रार्थनाकल्पवृक्षः</div>
+  <p class="word-meaning lang-en">a wish-granting tree for the prayer for the stated fruit</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मागितलेल्या फळांच्या प्रार्थनेसाठी कल्पवृक्ष</p>
+  <div class="word-usage">
+    <div class="deva">गुरुः समभिहितफलप्रार्थनाकल्पवृक्ष इव शिष्याणाम्।</div>
+    <div class="usage-iast">guruḥ samabhihitaphalaprārthanākalpavṛkṣa iva śiṣyāṇām.</div>
+    <div class="usage-meaning lang-en">The guru is like a wish-granting tree for his disciples&#x27; prayer for the stated fruit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्यांच्या इच्छित फलांच्या प्रार्थनेसाठी गुरू हा कल्पवृक्षासारखा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नानारोगद्रुदात्रम्</span>
+    <span class="word-iast">nānārogadrudātram</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound, neuter nominative/accusative singular; नाना + रोग + द्रु + दात्रम् (sickle)</span></div>
+  <div class="word-form">In this verse: नानारोगद्रुदात्रम्</div>
+  <p class="word-meaning lang-en">a sickle for the trees of manifold diseases</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाना रोगरूपी वृक्षांसाठी कोयता (दात्र)</p>
+  <div class="word-usage">
+    <div class="deva">वैद्यस्य ज्ञानं नानारोगद्रुदात्रम्।</div>
+    <div class="usage-iast">vaidyasya jñānaṃ nānārogadrudātram.</div>
+    <div class="usage-meaning lang-en">The physician&#x27;s knowledge is a sickle for the trees of manifold diseases.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वैद्याचे ज्ञान हे नाना रोगरूपी वृक्षांसाठी कोयत्यासारखे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निरवधिकरुणारूपपीयूषपात्रम्</span>
+    <span class="word-iast">niravadhikaruṇārūpapīyūṣapātram</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound, neuter nominative/accusative singular; निरवधि + करुणा + रूप + पीयूष + पात्रम्</span></div>
+  <div class="word-form">In this verse: निरवधिकरुणारूपपीयूषपात्रम्</div>
+  <p class="word-meaning lang-en">a vessel of the nectar that is boundless compassion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अमर्याद करुणारूपी अमृताचे पात्र</p>
+  <div class="word-usage">
+    <div class="deva">साधुर्निरवधिकरुणारूपपीयूषपात्रम्।</div>
+    <div class="usage-iast">sādhurniravadhikaruṇārūpapīyūṣapātram.</div>
+    <div class="usage-meaning lang-en">The saint is a vessel of the nectar that is boundless compassion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधू हा अमर्याद करुणारूपी अमृताचे पात्र असतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रामक्षेत्रे अब्धितीरे</span>
+    <span class="word-iast">rāmakṣetre abdhitīre</span>
+  </div>
+  <div><span class="word-grammar">both neuter locative singular; राम + क्षेत्र, अब्धि + तीर</span></div>
+  <div class="word-form">In this verse: रामक्षेत्रे अब्धितीरे</div>
+  <p class="word-meaning lang-en">in Rāmakṣetra (Paraśurāma&#x27;s land), on the shore of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामक्षेत्रात समुद्रकिनारी</p>
+  <div class="word-usage">
+    <div class="deva">रामक्षेत्रेऽब्धितीरे मन्दिरं शोभते।</div>
+    <div class="usage-iast">rāmakṣetre&#x27;bdhitīre mandiraṃ śobhate.</div>
+    <div class="usage-meaning lang-en">The temple shines on the shore of the ocean in Rāmakṣetra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामक्षेत्रात समुद्रकिनारी मंदिर शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निवसति</span>
+    <span class="word-iast">nivasati</span>
+  </div>
+  <div><span class="word-grammar">present 3rd singular; √vas (to dwell) with नि, laṭ</span></div>
+  <div class="word-form">In this verse: निवसति</div>
+  <p class="word-meaning lang-en">dwells, resides</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राहतो</p>
+  <div class="word-usage">
+    <div class="deva">योगी हिमालये निवसति।</div>
+    <div class="usage-iast">yogī himālaye nivasati.</div>
+    <div class="usage-meaning lang-en">The yogi dwells in the Himalaya.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योगी हिमालयात राहतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sarga&#x27;s closing verse is a garland of six metaphors that sum up what the sthala offers: a fire for the forest of sins, a boat across the ocean of existence, a lamp in the darkness of grief, a wish-tree for prayed-for fruits, a sickle for the trees of disease, and a vessel of boundless compassionate nectar. Every human need — guilt, fear, sorrow, longing, sickness, and the thirst for grace — finds its answer at the seashore shrine in Rāmakṣetra. The verse is both benediction and invitation: the Lord dwells there, and He dwells there for the devotee.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सर्गाचा समारोप करणारा हा श्लोक सहा रूपकांची माळ आहे — हे स्थल काय देते याचा सारांश. पापरूपी अरण्यासाठी अग्नी, भवसागर पार करण्यासाठी नौका, शोकांधकारात दिवा, प्रार्थिलेल्या फळांसाठी कल्पवृक्ष, रोगरूपी वृक्षांसाठी कोयता आणि अमर्याद करुणारूपी अमृताचे पात्र. मानवी गरजांपैकी प्रत्येक गरज — अपराधभाव, भय, शोक, आकांक्षा, रोग आणि कृपेची तहान — यांना रामक्षेत्रातील सागरतीरीच्या या मंदिरात उत्तर मिळते. हा श्लोक आशीर्वादही आहे आणि निमंत्रणही — भगवान् तेथे निवास करतो, आणि तो तेथे भक्तासाठीच निवास करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The closing verse is a sixfold garland, and each flower answers a human need: sins are a forest, and He is the fire; saṃsāra is an ocean, and He is the boat; grief is darkness, and He is the lamp; desire names its fruit, and He is the wish-tree; diseases are trees, and He is the sickle; and over all, His compassion is an unending nectar, of which He is the vessel. The Purāṇic imagination loves such catalogues because they leave no sufferer out — the guilty, the drowning, the grieving, the longing, the sick, and the thirsty for grace each find their metaphor. That all six meet in one Lord, dwelling on the seashore of Rāmakṣetra, is the sthala&#x27;s whole promise: come as you are; the remedy is already waiting.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समारोपाचा श्लोक सहापदरी माळ आहे, आणि प्रत्येक फूल एका मानवी गरजेला उत्तर देते — पापे हे अरण्य आहेत, आणि तो अग्नी आहे; संसार हा सागर आहे, आणि तो नौका आहे; शोक हा अंधकार आहे, आणि तो दिवा आहे; इच्छा आपले फळ सांगते, आणि तो कल्पवृक्ष आहे; रोग हे वृक्ष आहेत, आणि तो कोयता आहे; आणि या सर्वांवर त्याची करुणा हा अंतहीन अमृत आहे, ज्याचे तो पात्र आहे. पौराणिक कल्पनाशक्तीला अशा याद्या आवडतात, कारण त्या कोणत्याही दुःखिताला वगळत नाहीत — अपराधी, बुडणारा, शोकाकुल, आकांक्षी, रोगी आणि कृपेचा तहानलेला प्रत्येकाला आपले रूपक सापडते. ही सहाही एकाच भगवंतात, रामक्षेत्राच्या सागरतीरी निवास करणाऱ्यात, मिळतात — हेच या स्थलाचे संपूर्ण वचन आहे — जसा आहेस तसा ये; उपाय आधीच वाट पाहत आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is in Sragdharā — 21 syllables to the pāda — the grand metre reserved for perorations, a fitting close to the sarga. रामक्षेत्र is Paraśurāma&#x27;s land, the Konkan/Aparānta coast he is said to have reclaimed from the sea; अब्धितीरे fixes the shrine&#x27;s geography — the temple stands on the seashore at Guhagar. The verse works as the sarga&#x27;s benediction: instead of a formal phala-śruti, the poet describes the resident Lord entirely by His benefits to devotees — each epithet a promise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक स्रग्धरा छंदात आहे — प्रत्येक चरणात २१ अक्षरे, समारोपासाठी राखलेला भव्य छंद — सर्गाच्या शेवटाला योग्य. रामक्षेत्र म्हणजे परशुरामाची भूमी — समुद्रातून त्याने जिंकली असे म्हणतात ती कोकण/अपरान्त किनारपट्टी; अब्धितीरे मंदिराचे भूगोल निश्चित करते — मंदिर गुहागर येथे सागरतीरी उभे आहे. श्लोक सर्गाचा आशीर्वाद म्हणून काम करतो — औपचारिक फलश्रुतीऐवजी कवी निवासी भगवंताचे वर्णन पूर्णपणे भक्तांना होणाऱ्या लाभांनी करतो — प्रत्येक विशेषण एक वचन आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-44.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 44</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-11/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

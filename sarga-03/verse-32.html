@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Udgatā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">चरमप्रदेशकमियाम भुवि भगवतो महामुनेः ।।<br>तस्य विदितविभवस्य यतः प्रभवन्ति तत्र मथितुं न नैर्ऋताः ।।३२।।</div>
+  <div class="verse-iast">caramapradeśakamiyāma bhuvi bhagavato mahāmuneḥ । । tasya viditavibhavasya yataḥ prabhavanti tatra mathituṃ na nairṛtāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">चरम-प्रदेशकम् । इयाम । भुवि । भगवतः । महा-मुनेः । तस्य । विदित-विभवस्य । यतः । प्रभवन्ति । तत्र । मथितुम् । न । नैर्ऋताः ।</div><div class="vig-iast">carama-pradeśakam । iyāma । bhuvi । bhagavataḥ । mahā-muneḥ । tasya । vidita-vibhavasya । yataḥ । prabhavanti । tatra । mathitum । na । nairṛtāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रदेशकम् + इयाम = प्रदेशकमियाम · भगवतः + महा = भगवतो महा (विसर्ग → ओ) · यतः + प्रभवन्ति = यतः प्रभवन्ति</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(वयं) भुवि विदितविभवस्य तस्य भगवतः महामुनेः चरमप्रदेशकम् इयाम, यतः तत्र नैर्ऋताः मथितुं न प्रभवन्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Let us go to the western region, on earth, of the Lord, the great sage, whose glory is well known — for there the demons have no power to torment (us).&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आपण पृथ्वीवर वैभव ज्ञात असलेल्या त्या भगवान् महामुनीच्या पश्चिमेकडील प्रदेशातच जाऊ या. कारण तेथे राक्षस आपणांस मारू शकणार नाहीत.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चरमप्रदेशकम्</span>
+    <span class="word-iast">caramapradeśakam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular; तत्पुरुष चरम-प्रदेशक (&#x27;western region&#x27;; चरम = &#x27;western, last&#x27;)</span></div>
+  <div class="word-form">In this verse: चरमप्रदेशकम् (द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">the western region (the Konkan)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पश्चिमेकडील प्रदेश (इषुपात / कोकण)</p>
+  <div class="word-usage">
+    <div class="deva">ते चरम प्रदेशकम् अगच्छन् ।</div>
+    <div class="usage-iast">te carama pradeśakam agacchan ।</div>
+    <div class="usage-meaning lang-en">They went to the western region.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते पश्चिमेकडील प्रदेशात गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इयाम</span>
+    <span class="word-iast">iyāma</span>
+  </div>
+  <div><span class="word-grammar">√इ (&#x27;to go&#x27;), parasmaipada, optative (vidhiliṅ), first person plural</span></div>
+  <div class="word-form">In this verse: इयाम (√इ, विधिलिङ्)</div>
+  <p class="word-meaning lang-en">let us go</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण जाऊ (√इ, विधिलिङ्, उत्तम पुरुष बहुवचन)</p>
+  <div class="word-usage">
+    <div class="deva">वयम् मुनेः आश्रमम् इयाम ।</div>
+    <div class="usage-iast">vayam muneḥ āśramam iyāma ।</div>
+    <div class="usage-meaning lang-en">Let us go to the sage&#x27;s hermitage.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण मुनीच्या आश्रमात जाऊ या.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विदितविभवस्य</span>
+    <span class="word-iast">viditavibhavasya</span>
+  </div>
+  <div><span class="word-grammar">masculine/neuter genitive singular; बहुव्रीहि विदित-विभव (&#x27;whose glory is known&#x27;)</span></div>
+  <div class="word-form">In this verse: विदितविभवस्य (षष्ठी एकवचन)</div>
+  <p class="word-meaning lang-en">whose power / glory is well known</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे सामर्थ्य सर्वज्ञात आहे अशा</p>
+  <div class="word-usage">
+    <div class="deva">ते विदित विभवस्य गुरोः शिष्याः अभवन् ।</div>
+    <div class="usage-iast">te vidita vibhavasya guroḥ śiṣyāḥ abhavan ।</div>
+    <div class="usage-meaning lang-en">They became disciples of the guru whose glory was well known.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते ज्याचे सामर्थ्य सर्वज्ञात अशा गुरूचे शिष्य झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नैर्ऋताः</span>
+    <span class="word-iast">nairṛtāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; तद्धित from निर्ऋति (deity of the south-west)</span></div>
+  <div class="word-form">In this verse: नैर्ऋताः (प्रथमा बहुवचन)</div>
+  <p class="word-meaning lang-en">demons, rākṣasas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षस</p>
+  <div class="word-usage">
+    <div class="deva">नैर्ऋताः तपोवनम् न प्रविशन्ति ।</div>
+    <div class="usage-iast">nairṛtāḥ tapovanam na praviśanti ।</div>
+    <div class="usage-meaning lang-en">Demons do not enter the grove of austerities.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षस तपोवनात प्रवेश करीत नाहीत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मथितुं न प्रभवन्ति</span>
+    <span class="word-iast">mathituṃ na prabhavanti</span>
+  </div>
+  <div><span class="word-grammar">मथितुम् — infinitive (तुमुन्) of √मथ् (&#x27;to torment, churn&#x27;); न प्रभवन्ति — प्र + √भू, parasmaipada, present, third person plural, negated</span></div>
+  <div class="word-form">In this verse: मथितुम् (तुमुन्) + न प्रभवन्ति</div>
+  <p class="word-meaning lang-en">are not able to torment</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रास देण्यास समर्थ नाहीत</p>
+  <div class="word-usage">
+    <div class="deva">दुष्टाः सज्जनान् मथितुम् न प्रभवन्ति ।</div>
+    <div class="usage-iast">duṣṭāḥ sajjanān mathituṃ na prabhavanti ।</div>
+    <div class="usage-meaning lang-en">The wicked are not able to torment good people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुष्ट सज्जनांना त्रास देण्यास समर्थ नाहीत.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The maidens&#x27; resolve — &#x27;let us go to the muni&#x27;s region&#x27; — is the sthala-māhātmya&#x27;s founding act: the holy land becomes a refuge where evil cannot reach. चरमप्रदेश, the &#x27;western region,&#x27; is the Konkan itself, Paraśurāma&#x27;s new land. The verse teaches the devotee the oldest lesson of sacred geography: there are places on earth where dharma&#x27;s protection is tangible, and the wise go and dwell there.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दासींचा निर्धार — &#x27;मुनीच्या प्रदेशात जाऊ या&#x27; — हा स्थल-माहात्म्याचा पायाभरणी-प्रसंग आहे : पवित्र भूमी असे आश्रयस्थान बनते जेथे दुष्ट पोचू शकत नाही. चरमप्रदेश — &#x27;पश्चिमेकडील प्रदेश&#x27; — हाच कोकण, परशुरामाची नवी भूमी. पवित्र भूगोलाचा प्राचीनतम धडा श्लोक भाविकाला शिकवतो : पृथ्वीवर अशी स्थाने आहेत जेथे धर्माचे संरक्षण स्पर्शनीय असते आणि शहाणे तेथे जाऊन राहतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The &#x27;western region&#x27; (caramapradeśa) is the Konkan coast itself — the land Paraśurāma raised from the sea in sarga 2. The promise that rākṣasas &#x27;have no power to torment&#x27; there echoes the Purāṇic assurance that consecrated ground (puṇyakṣetra) is closed to evil beings, as at Kāśī or Prayāga.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;पश्चिमेकडील प्रदेश&#x27; (चरमप्रदेश) हा कोकण किनाराच आहे — सर्ग २ मध्ये परशुरामाने समुद्रातून वर आणलेली भूमी. तेथे राक्षसांना त्रास देण्याचे सामर्थ्य नाही, हे आश्वासन पुराणांतील आश्वासनाची आठवण करून देतो — प्रतिष्ठित भूमी (पुण्यक्षेत्र) दुष्ट प्राण्यांना बंद असते, काशी वा प्रयाग येथे जसे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The OCR-notes correct विदितवैभवस्य to विदितविभवस्य (same meaning, &#x27;of well-known glory&#x27;); the metre is unchanged. इयाम is √इ, optative (vidhiliṅ), first person plural — &#x27;let us go,&#x27; the maidens speaking. नैर्ऋताः (&#x27;demons&#x27;) is from निर्ऋति, the deity of the south-west, whose children the rākṣasas are held to be. The verse is in Udgatā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शुद्धिपत्रात विदितवैभवस्य हे विदितविभवस्य (समान अर्थ — &#x27;ज्ञात वैभवाचा&#x27;) असे शुद्ध केले आहे; वृत्त बदलत नाही. इयाम हे √इ‌चे विधिलिङ्-रूप, उत्तमपुरुष बहुवचन — &#x27;आपण जाऊ&#x27;, दासी बोलत आहेत. नैर्ऋताः (&#x27;राक्षस&#x27;) हे निर्ऋति (नैर्ऋत्य दिशेची देवता) यापासून — राक्षस तिचीच मुले मानली जातात. वृत्त उद्गता.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

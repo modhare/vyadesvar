@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 14 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 14</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 14</span><span class="bl-mr lang-mr">श्लोक 14</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कृष्णः स्वामी सोऽवतान्मां य एको यत्किञ्चेदं दृश्यते श्रूयते वा ।<br>एकांशेन व्याप्य सर्वं समन्ता-दोतःप्रोतश्चात्यतिष्ठद्वितस्ति ।।१४।।</div>
+  <div class="verse-iast">kṛṣṇaḥ svāmī so&#x27;vatānmāṃ ya eko yatkiñcedaṃ dṛśyate śrūyate vā । ekāṃśena vyāpya sarvaṃ samantā-dotaḥprotaścātyatiṣṭhadvitasti</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कृष्णः । स्वामी । सः । अवतात् । माम् । यः । एकः । यत् । किञ्च । इदम् । दृश्यते । श्रूयते । वा । एक-अंशेन । व्याप्य । सर्वम् । समन्तात् । ओतः-प्रोतः । च । अति-अतिष्ठत् । वितस्ति ।</div><div class="vig-iast">kṛṣṇaḥ । svāmī । saḥ । avatāt । mām । yaḥ । ekaḥ । yat । kiñca । idam । dṛśyate । śrūyate । vā । eka-aṃśena । vyāpya । sarvam । samantāt । otaḥ-protaḥ । ca । ati-atiṣṭhat । vitasti ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सः + अवतात् = सोऽवतात् · अवतात् + माम् = अवतान्माम् (त् → न्) · यः + एकः = य एकः (विसर्गलोप) · किञ्च + इदम् = किञ्चेदम् (गुण) · एक + अंशेन = एकांशेन · समन्तात् + ओतः = समन्तादोतः · अति + अतिष्ठत् = अत्यतिष्ठत् (यण्) · अतिष्ठत् + वितस्ति = अतिष्ठद्वितस्ति (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्किञ्च इदं दृश्यते श्रूयते वा (तत्) यः एकः (अस्ति), (यः) एकांशेन सर्वं समन्तात् व्याप्य ओतःप्रोतः (सन्) वितस्ति च अत्यतिष्ठत्, सः स्वामी कृष्णः माम् अवतात् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>May my lord Kṛṣṇa protect me — he who alone is whatever in this world is seen or heard; who, having pervaded all of it on every side with a single portion of himself, woven through it like warp and weft, yet stands beyond it by a span.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या जगात जे काही दृष्टीला पडते किंवा ऐकू येते ते सर्व म्हणजे वस्तुतः जो एकटाच आहे, ज्याने आपल्या एका अंशाने हे सर्व जग चारी बाजूंनी व्यापलेले असून जो त्यांत ओतप्रोत व जो यांना व्यापून (काही अंगुळे) उरलेला आहे तो माझा स्वामी कृष्ण माझे रक्षण करो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृष्णः</span>
+    <span class="word-iast">kṛṣṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (प्रथमा-श्लोक)</span></div>
+  <div class="word-form">In this verse: कृष्णः</div>
+  <p class="word-meaning lang-en">Kṛṣṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृष्ण</p>
+  <div class="word-usage">
+    <div class="deva">कृष्णः गोकुले वसति ।</div>
+    <div class="usage-iast">kṛṣṇaḥ gokule vasati.</div>
+    <div class="usage-meaning lang-en">Kṛṣṇa dwells in Gokula.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृष्ण गोकुळात वास करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वामी</span>
+    <span class="word-iast">svāmī</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: स्वामी</div>
+  <p class="word-meaning lang-en">the Lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वामी</p>
+  <div class="word-usage">
+    <div class="deva">स्वामी भक्तान् पालयति ।</div>
+    <div class="usage-iast">svāmī bhaktān pālayati.</div>
+    <div class="usage-meaning lang-en">The Lord protects his devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वामी भक्तांचे पालन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सः</span>
+    <span class="word-iast">saḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सः</div>
+  <p class="word-meaning lang-en">he</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो</p>
+  <div class="word-usage">
+    <div class="deva">सः मम पिता अस्ति ।</div>
+    <div class="usage-iast">saḥ mama pitā asti.</div>
+    <div class="usage-meaning lang-en">He is my father.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो माझा पिता आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवतात्</span>
+    <span class="word-iast">avatāt</span>
+  </div>
+  <div><span class="word-grammar">अव्, लोट्, प्र.पु. एव. (तातङ्)</span></div>
+  <div class="word-form">In this verse: अवतात्</div>
+  <p class="word-meaning lang-en">may he protect</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षण करो</p>
+  <div class="word-usage">
+    <div class="deva">देवो मामवतात् ।</div>
+    <div class="usage-iast">devo māmavatāt.</div>
+    <div class="usage-meaning lang-en">May the god protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव माझे रक्षण करो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">माम्</span>
+    <span class="word-iast">mām</span>
+  </div>
+  <div><span class="word-grammar">द्वि. एव. (अस्मद्)</span></div>
+  <div class="word-form">In this verse: माम्</div>
+  <p class="word-meaning lang-en">me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला</p>
+  <div class="word-usage">
+    <div class="deva">मां पाहि प्रभो ।</div>
+    <div class="usage-iast">māṃ pāhi prabho.</div>
+    <div class="usage-meaning lang-en">Protect me, O Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझे रक्षण कर, हे प्रभो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यः</span>
+    <span class="word-iast">yaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यः</div>
+  <p class="word-meaning lang-en">who</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो</p>
+  <div class="word-usage">
+    <div class="deva">यः पठति सः लभते ।</div>
+    <div class="usage-iast">yaḥ paṭhati saḥ labhate.</div>
+    <div class="usage-meaning lang-en">Who recites, obtains.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो पठण करतो तो प्राप्त करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकः</span>
+    <span class="word-iast">ekaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: एकः</div>
+  <p class="word-meaning lang-en">alone (is)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकटाच (आहे)</p>
+  <div class="word-usage">
+    <div class="deva">एकः एव सत्यम् ।</div>
+    <div class="usage-iast">ekaḥ eva satyam.</div>
+    <div class="usage-meaning lang-en">The One alone is truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकटाच सत्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत् किञ्च</span>
+    <span class="word-iast">yat kiñca</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव. + अव्यय</span></div>
+  <div class="word-form">In this verse: यत्किञ्च</div>
+  <p class="word-meaning lang-en">whatever</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे काही</p>
+  <div class="word-usage">
+    <div class="deva">यत्किञ्च दृश्यते तत् ब्रह्म ।</div>
+    <div class="usage-iast">yat kiñca dṛśyate tat brahma.</div>
+    <div class="usage-meaning lang-en">Whatever is seen, that is Brahman.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे काही दिसते ते ब्रह्म आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इदम्</span>
+    <span class="word-iast">idam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: इदम्</div>
+  <p class="word-meaning lang-en">this</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे</p>
+  <div class="word-usage">
+    <div class="deva">इदं जगत् मिथ्या ।</div>
+    <div class="usage-iast">idaṃ jagat mithyā.</div>
+    <div class="usage-meaning lang-en">This world is unreal.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे जग मिथ्या आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृश्यते</span>
+    <span class="word-iast">dṛśyate</span>
+  </div>
+  <div><span class="word-grammar">दृश्, कर्मणि लट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: दृश्यते</div>
+  <p class="word-meaning lang-en">is seen</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिसते</p>
+  <div class="word-usage">
+    <div class="deva">चन्द्रः नभसि दृश्यते ।</div>
+    <div class="usage-iast">candraḥ nabhasi dṛśyate.</div>
+    <div class="usage-meaning lang-en">The moon is seen in the sky.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र आकाशात दिसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रूयते</span>
+    <span class="word-iast">śrūyate</span>
+  </div>
+  <div><span class="word-grammar">श्रु, कर्मणि लट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: श्रूयते</div>
+  <p class="word-meaning lang-en">is heard</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऐकू येते</p>
+  <div class="word-usage">
+    <div class="deva">वेदः गुरोः श्रूयते ।</div>
+    <div class="usage-iast">vedaḥ guroḥ śrūyate.</div>
+    <div class="usage-meaning lang-en">The Veda is heard from the teacher.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेद गुरूंकडून ऐकू येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वा</span>
+    <span class="word-iast">vā</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: वा</div>
+  <p class="word-meaning lang-en">or</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>किंवा</p>
+  <div class="word-usage">
+    <div class="deva">रामो वा कृष्णो वा आगच्छतु ।</div>
+    <div class="usage-iast">rāmo vā kṛṣṇo vā āgacchatu.</div>
+    <div class="usage-meaning lang-en">Let Rāma or Kṛṣṇa come.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम किंवा कृष्ण येवो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एक-अंशेन</span>
+    <span class="word-iast">eka-aṃśena</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव.</span></div>
+  <div class="word-form">In this verse: एकांशेन</div>
+  <p class="word-meaning lang-en">with one portion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एका अंशाने</p>
+  <div class="word-usage">
+    <div class="deva">एकांशेन जगद् व्याप्नोति ।</div>
+    <div class="usage-iast">ekāṃśena jagad vyāpnoti.</div>
+    <div class="usage-meaning lang-en">He pervades the world with one portion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो एका अंशाने जग व्यापतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्याप्य</span>
+    <span class="word-iast">vyāpya</span>
+  </div>
+  <div><span class="word-grammar">ल्यप्, वि + आप्</span></div>
+  <div class="word-form">In this verse: व्याप्य</div>
+  <p class="word-meaning lang-en">having pervaded</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>व्यापून</p>
+  <div class="word-usage">
+    <div class="deva">सर्वं व्याप्य स्थितः हरिः ।</div>
+    <div class="usage-iast">sarvaṃ vyāpya sthitaḥ hariḥ.</div>
+    <div class="usage-meaning lang-en">Hari stands, having pervaded all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व व्यापून हरी उभा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सर्वम्</span>
+    <span class="word-iast">sarvam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: सर्वम्</div>
+  <p class="word-meaning lang-en">all</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व</p>
+  <div class="word-usage">
+    <div class="deva">सर्वं खल्विदं ब्रह्म ।</div>
+    <div class="usage-iast">sarvaṃ khalvidaṃ brahma.</div>
+    <div class="usage-meaning lang-en">All this is indeed Brahman.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे सर्व खरोखर ब्रह्म आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समन्तात्</span>
+    <span class="word-iast">samantāt</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: समन्तात्</div>
+  <p class="word-meaning lang-en">on all sides</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व बाजूंनी</p>
+  <div class="word-usage">
+    <div class="deva">समन्तात् पर्वताः सन्ति ।</div>
+    <div class="usage-iast">samantāt parvatāḥ santi.</div>
+    <div class="usage-meaning lang-en">On all sides there are mountains.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्व बाजूंनी पर्वत आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ओतः प्रोतः</span>
+    <span class="word-iast">otaḥ protaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (दोन्ही)</span></div>
+  <div class="word-form">In this verse: ओतःप्रोतः</div>
+  <p class="word-meaning lang-en">woven through, warp and weft</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उभा-आडवा विणलेला (ओतप्रोत)</p>
+  <div class="word-usage">
+    <div class="deva">ओतःप्रोतः पटः दृढः ।</div>
+    <div class="usage-iast">otaḥprotaḥ paṭaḥ dṛḍhaḥ.</div>
+    <div class="usage-meaning lang-en">A cloth woven through, warp and weft, is strong.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उभा-आडवा विणलेले वस्त्र बळकट असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">रामश्च कृष्णश्च ।</div>
+    <div class="usage-iast">rāmaśca kṛṣṇaśca.</div>
+    <div class="usage-meaning lang-en">Both Rāma and Kṛṣṇa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम आणि कृष्ण दोघेही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अत्यतिष्ठत्</span>
+    <span class="word-iast">atyatiṣṭhat</span>
+  </div>
+  <div><span class="word-grammar">अति + स्था, लङ्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: अत्यतिष्ठत्</div>
+  <p class="word-meaning lang-en">stood beyond</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(त्याच्या) पलीकडे उरला</p>
+  <div class="word-usage">
+    <div class="deva">सः सर्वमत्यतिष्ठत् ।</div>
+    <div class="usage-iast">saḥ sarvamatyatiṣṭhat.</div>
+    <div class="usage-meaning lang-en">He stood beyond all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सर्वांच्या पलीकडे उरला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वितस्ति</span>
+    <span class="word-iast">vitasti</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव. (कालाध्वनोः)</span></div>
+  <div class="word-form">In this verse: वितस्ति</div>
+  <p class="word-meaning lang-en">by a span</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वीतभर (अंतराने)</p>
+  <div class="word-usage">
+    <div class="deva">वितस्तिमानेन मापय ।</div>
+    <div class="usage-iast">vitastimānena māpaya.</div>
+    <div class="usage-meaning lang-en">Measure by the span measure.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वितीच्या मापाने मोज.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृष्णः स्वामी</span>
+    <span class="word-iast">kṛṣṇaḥ svāmī</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (उभयपद)</span></div>
+  <div class="word-form">In this verse: कृष्णः स्वामी</div>
+  <p class="word-meaning lang-en">Kṛṣṇa, the Lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वामी कृष्ण (**प्रथमा** — या श्लोकाची विभक्ती)</p>
+  <div class="word-usage">
+    <div class="deva">कृष्णः स्वामी मम शरणम् ।</div>
+    <div class="usage-iast">kṛṣṇaḥ svāmī mama śaraṇam.</div>
+    <div class="usage-meaning lang-en">Kṛṣṇa the Lord is my refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वामी कृष्ण माझे शरण आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सः माम् अवतात्</span>
+    <span class="word-iast">saḥ mām avatāt</span>
+  </div>
+  <div><span class="word-grammar">सर्वनाम + द्वि. + क्रियापद (√अव्, लोट्)</span></div>
+  <div class="word-form">In this verse: सोऽवतान्मां</div>
+  <p class="word-meaning lang-en">may he protect me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो माझे रक्षण करो (√अव्, आज्ञार्थ)</p>
+  <div class="word-usage">
+    <div class="deva">सोऽवतान्मां सदा हरिः ।</div>
+    <div class="usage-iast">so&#x27;vatānmāṃ sadā hariḥ.</div>
+    <div class="usage-meaning lang-en">May Hari always protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीने माझे सदा रक्षण करावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यः एकः</span>
+    <span class="word-iast">yaḥ ekaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (उभयपद)</span></div>
+  <div class="word-form">In this verse: य एकः</div>
+  <p class="word-meaning lang-en">who alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो एकटाच</p>
+  <div class="word-usage">
+    <div class="deva">य एकः सः पूज्यः ।</div>
+    <div class="usage-iast">ya ekaḥ saḥ pūjyaḥ.</div>
+    <div class="usage-meaning lang-en">He who is alone is worthy of worship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो एकटाच आहे तो पूजनीय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्किञ्च इदम्</span>
+    <span class="word-iast">yatkiñca idam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव. + अव्यय + सर्वनाम</span></div>
+  <div class="word-form">In this verse: यत्किञ्चेदम्</div>
+  <p class="word-meaning lang-en">whatever this</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे काही हे</p>
+  <div class="word-usage">
+    <div class="deva">यत्किञ्चेदं दृश्यते तत् नित्यं न ।</div>
+    <div class="usage-iast">yat kiñcedaṃ dṛśyate tat nityaṃ na.</div>
+    <div class="usage-meaning lang-en">Whatever is seen here is not eternal.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे काही येथे दिसते ते नित्य नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृश्यते श्रूयते वा</span>
+    <span class="word-iast">dṛśyate śrūyate vā</span>
+  </div>
+  <div><span class="word-grammar">कर्मणि प्रयोगौ + अव्यय</span></div>
+  <div class="word-form">In this verse: दृश्यते श्रूयते वा</div>
+  <p class="word-meaning lang-en">is seen or heard</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिसते किंवा ऐकू येते</p>
+  <div class="word-usage">
+    <div class="deva">यद् दृश्यते श्रूयते वा तत् ज्ञेयम् ।</div>
+    <div class="usage-iast">yad dṛśyate śrūyate vā tat jñeyam.</div>
+    <div class="usage-meaning lang-en">What is seen or heard is to be known.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे दिसते किंवा ऐकू येते ते जाणण्याजोगे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकांशेन</span>
+    <span class="word-iast">ekāṃśena</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: एकांशेन</div>
+  <p class="word-meaning lang-en">with one portion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एका अंशाने</p>
+  <div class="word-usage">
+    <div class="deva">एकांशेनैव विश्वं धत्ते ।</div>
+    <div class="usage-iast">ekāṃśenaiva viśvaṃ dhatte.</div>
+    <div class="usage-meaning lang-en">He supports the world with but one portion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो केवळ एका अंशानेच विश्व धारण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ओतःप्रोतः</span>
+    <span class="word-iast">otaḥprotaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (समस्तपद)</span></div>
+  <div class="word-form">In this verse: ओतःप्रोतः</div>
+  <p class="word-meaning lang-en">woven through, warp and weft</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओतप्रोत, सर्वत्र विणलेला</p>
+  <div class="word-usage">
+    <div class="deva">ओतःप्रोतः सन् सर्वं व्याप्नोति ।</div>
+    <div class="usage-iast">otaḥprotaḥ san sarvaṃ vyāpnoti.</div>
+    <div class="usage-meaning lang-en">Being woven through it, he pervades all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओतप्रोत होऊन तो सर्व व्यापतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अत्यतिष्ठत् वितस्ति</span>
+    <span class="word-iast">atyatiṣṭhat vitasti</span>
+  </div>
+  <div><span class="word-grammar">क्रियापद (अति + √स्था, लङ्) + द्वि. (कालाध्वनोः)</span></div>
+  <div class="word-form">In this verse: अत्यतिष्ठद्वितस्ति</div>
+  <p class="word-meaning lang-en">stood beyond by a span</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एक वीतभर पलीकडे उरला (अति + √स्था; पुरुषसूक्त: अत्यतिष्ठद्दशाङ्गुलम्)</p>
+  <div class="word-usage">
+    <div class="deva">अत्यतिष्ठद्वितस्ति सः परमात्मा ।</div>
+    <div class="usage-iast">atyatiṣṭhadvitasti saḥ paramātmā.</div>
+    <div class="usage-meaning lang-en">That Supreme Self stood beyond by a span.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो परमात्मा एक वीतभर पलीकडे उरला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the prathamā verse — Kṛṣṇa in the nominative, the grammatical subject, who is also the cosmic subject of all that is. The verse is a deliberate echo of the Puruṣa-sūkta (Ṛgveda 10.90), where the cosmic Person pervades the worlds with one quarter of himself and stands beyond by ten fingers; here it is one portion and a span (vitasti). The poet thus anchors the Kṛṣṇa of Guhagar in the oldest Vedic vision of God — at once immanent (otaḥprotaḥ, &#x27;woven through&#x27;) and transcendent (atyatiṣṭhat, &#x27;stood beyond&#x27;).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा प्रथमा-श्लोक आहे — कर्तरि प्रयोगांतील कृष्ण हाच सर्व विश्वाचा कर्ता आहे. हा श्लोक पुरुषसूक्ताचा (ऋग्वेद १०.९०) जाणीवपूर्वक प्रतिध्वनी आहे : तेथे विश्वपुरुष आपल्या एका पादाने लोक व्यापून दहा अंगुळे पलीकडे उरतो; येथे एका अंशाने व्यापून एक वीतभर पलीकडे उरतो. अशा रीतीने कवी गुहागरच्या कृष्णाला ईश्वराच्या प्राचीनतम वैदिक दर्शनातच रुजवतो — तो एकाच वेळी अंतर्यामी (ओतप्रोत, &#x27;विणलेला&#x27;) आणि पलीकडचा (अत्यतिष्ठत्, &#x27;उरलेला&#x27;) आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse paraphrases the Puruṣa-sūkta (Ṛgveda 10.90.3–4): &#x27;with one foot he pervaded all beings... and stood beyond by ten fingers&#x27; — the classic statement of God&#x27;s simultaneous immanence and transcendence. The Bhagavadgītā (10.42) says the same of Kṛṣṇa: &#x27;having pervaded this whole universe with a single portion, I remain.&#x27; The poet applies this supreme Vedic-Upaniṣadic theology directly to Kṛṣṇa, identifying him with the cosmic Puruṣa.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक पुरुषसूक्ताचा (ऋग्वेद १०.९०.३–४) भावानुवाद आहे : &#x27;एका पादाने त्याने सर्व भूतांना व्यापले... आणि दहा अंगुळे पलीकडे उरला&#x27; — ईश्वराच्या एकाच वेळच्या अंतर्यामित्व व पलीकडेपणाचे शास्त्रीय विधान. भगवद्गीता (१०.४२) हेच कृष्णाबद्दल सांगते : &#x27;एका अंशाने हे संपूर्ण विश्व व्यापून मी उरतो.&#x27; कवी हे श्रेष्ठ वैदिक-औपनिषदिक तत्त्वज्ञान थेट कृष्णाला लावतो — त्याची विश्वपुरुषाशी ओळख करून देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Śālinī (11 syllables per pāda), the metre of all seven case-verses. This is the prathamā-śloka, marked as such in the word list (&#x27;प्रथमा-श्लोक&#x27;). Note वितस्ति, &#x27;by a span&#x27; (the distance from thumb-tip to little-finger-tip, about nine inches), in the accusative of measure: the sūkta&#x27;s &#x27;ten fingers&#x27; (दशाङ्गुलम्) becomes here &#x27;a span&#x27; — a free local adaptation, not a quotation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : शालिनी (प्रत्येक चरणांत ११ अक्षरे), सातही विभक्तिश्लोकांचे वृत्त. हा प्रथमा-श्लोक असून शब्दसूचींत तसे नोंदवले आहे (&#x27;प्रथमा-श्लोक&#x27;). वितस्ति (&#x27;एका वीतभर&#x27;, अंगठ्याच्या टोकापासून करंगळीच्या टोकापर्यंतचे अंतर, सुमारे नऊ इंच) हे मापदर्शक द्वितीया लक्षात घ्या : सूक्तातील &#x27;दहा अंगुळे&#x27; (दशाङ्गुलम्) येथे &#x27;एक वीत&#x27; झाले आहे — ही मुक्त स्थानिक रूपांतरे आहे, उद्धरण नव्हे.</p></div></div>
+
+<div class="pagenav"><a href="verse-13.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 13</div></a><a class="next" href="verse-15.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 15</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

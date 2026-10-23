@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 7 — Kṛṣṇāvatāravarṇanaḥ 26 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 26</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 26</span><span class="bl-mr lang-mr">श्लोक 26</span></h1>
+<p class="meta">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ &middot; <span class="deva">सप्तमः सर्गः · कृष्णावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sama-vṛtta (na-bha-ja-ya; name unconfirmed)</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">नलिनचारुनयने घननीले पुरटपिङ्गटपटे सुकिरीटे ।<br>धृतकलापि सुकलापकलापे मम गती रतिमती यदुनाथे ।।२६।।</div>
+  <div class="verse-iast">nalinacārunayane ghananīle puraṭapiṅgaṭapaṭe sukirīṭe । dhṛtakalāpi sukalāpakalāpe mama gatī ratimatī yadunāthe</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">नलिन-चारु-नयने । घन-नीले । पुरट-पिङ्गट-पटे । सुकिरीटे । धृत-कलापि (धृतकलापिनि?) । सुकलाप-कलापे । मम । गतिः । रतिमती । यदुनाथे ।</div><div class="vig-iast">nalina-cāru-nayane । ghana-nīle । puraṭa-piṅgaṭa-paṭe । sukirīṭe । dhṛta-kalāpi (dhṛtakalāpini?) । sukalāpa-kalāpe । mama । gatiḥ । ratimatī । yadunāthe ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">गतिः + रतिमती = गती रतिमती (विसर्ग → र्; र् पुढे र असल्याने लोप व पूर्वस्वर दीर्घ — ढ्रलोपे पूर्वस्य दीर्घोऽणः)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">नलिनचारुनयने घननीले पुरटपिङ्गटपटे सुकिरीटे धृतकलापि सुकलापकलापे यदुनाथे मम गतिः रतिमती (च अस्तु) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>May my refuge — tender with loving devotion — rest in the Lord of the Yadus: He whose eyes are lovely as the lotus, dark as the rain-cloud, clad in the gold-tawny garment, fair-crowned, wearing the peacock&#x27;s plumes, decked with a beauteous cluster of jewels.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कमलांप्रमाणे सुंदर नेत्र असलेल्या, मेघाप्रमाणे नीलवर्ण असणाऱ्या, सोन्यासारखे पिङ्गट पीतांबर, शोभिवंत किरीट व मोरपिसे धारण करणाऱ्या व उत्तम अलंकार घातलेल्या यदुनाथ कृष्णावरच माझी संपूर्ण मदार आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नलिनचारुनयने</span>
+    <span class="word-iast">nalinacārunayane</span>
+  </div>
+  <div><span class="word-grammar">नलिन (n., &#x27;lotus&#x27;) + चारु (adj., &#x27;lovely&#x27;) + नयन (n., &#x27;eye&#x27;), बहुव्रीहि (&#x27;he whose eyes are lovely as lotuses&#x27;); सप्तमी एकवचन (locative singular, agreeing with यदुनाथे)</span></div>
+  <div class="word-form">In this verse: नलिनचारुनयने — locative singular as printed (agreeing with यदुनाथे)</div>
+  <p class="word-meaning lang-en">in Him whose eyes are lovely as lotuses</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळासारखे सुंदर डोळे असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">नलिनचारुनयने मुखे मम दृष्टिः लीयते।</div>
+    <div class="usage-iast">nalinacārunayane mukhe mama dṛṣṭiḥ līyate</div>
+    <div class="usage-meaning lang-en">My gaze dissolves in that lotus-lovely-eyed face.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमलासारखे सुंदर डोळे असलेल्या मुखावर माझी दृष्टी खिळते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">घननीले</span>
+    <span class="word-iast">ghananīle</span>
+  </div>
+  <div><span class="word-grammar">घन (m., &#x27;cloud&#x27;) + नील (adj., &#x27;dark blue&#x27;), बहुव्रीहि (&#x27;he whose hue is dark like a cloud&#x27;); सप्तमी एकवचन (locative singular)</span></div>
+  <div class="word-form">In this verse: घननीले — locative singular as printed</div>
+  <p class="word-meaning lang-en">in the cloud-dark One</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मेघासारख्या निळ्या</p>
+  <div class="word-usage">
+    <div class="deva">घननीले अङ्गे पीताम्बरम् राजते।</div>
+    <div class="usage-iast">ghananīle aṅge pītāmbaraṃ rājate</div>
+    <div class="usage-meaning lang-en">The yellow silk shines upon His cloud-dark limbs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मेघासारख्या निळ्या अंगावर पीतांबर शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुरटपिङ्गटपटे</span>
+    <span class="word-iast">puraṭapiṅgaṭapaṭe</span>
+  </div>
+  <div><span class="word-grammar">पुरट (n., &#x27;gold&#x27;) + पिङ्गट (adj., &#x27;tawny, yellowish-brown&#x27;) + पट (m., &#x27;garment&#x27;), बहुव्रीहि (&#x27;he whose garment is tawny like gold&#x27; = पीताम्बर); सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: पुरटपिङ्गटपटे — locative singular as printed</div>
+  <p class="word-meaning lang-en">in Him clad in the gold-tawny garment (the pītāmbara)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोन्यासारखे पिवळे वस्त्र (पीतांबर) असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">पुरटपिङ्गटपटे वपुषि तेजः स्फुरति।</div>
+    <div class="usage-iast">puraṭapiṅgaṭapaṭe vapuṣi tejaḥ sphurati</div>
+    <div class="usage-meaning lang-en">Radiance plays on His form clad in the gold-tawny cloth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोन्यासारखे पिवळे वस्त्र नेसलेल्या शरीरावर तेज झळकते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुकिरीटे</span>
+    <span class="word-iast">sukirīṭe</span>
+  </div>
+  <div><span class="word-grammar">सु (prefix, &#x27;fair, good&#x27;) + किरीट (m./n., &#x27;diadem, crown&#x27;), बहुव्रीहि (&#x27;fair-crowned&#x27;); सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: सुकिरीटे — locative singular as printed</div>
+  <p class="word-meaning lang-en">in the fair-crowned One</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर मुकुटधारी</p>
+  <div class="word-usage">
+    <div class="deva">सुकिरीटे शिरसि पिच्छम् अपि शोभते।</div>
+    <div class="usage-iast">sukirīṭe śirasi piccham api śobhate</div>
+    <div class="usage-meaning lang-en">A peacock feather too adorns His beautifully crowned head.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर मुकुट असलेल्या मस्तकावर मोरपिसही शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धृतकलापि</span>
+    <span class="word-iast">dhṛtakalāpi</span>
+  </div>
+  <div><span class="word-grammar">धृत (√धृ &#x27;to hold, wear&#x27; + क्त) + कलापिन् (m., &#x27;peacock&#x27;, from कलाप &#x27;tail-plumes&#x27;), उपपद/बहुव्रीहि (&#x27;he by whom the peacock&#x27;s plumes are worn&#x27;); सप्तमी एकवचन as printed — the regular form would be धृतकलापिनि (flagged with (?) in the विग्रह)</span></div>
+  <div class="word-form">In this verse: धृतकलापि — locative singular as printed (regular: धृतकलापिनि; see note)</div>
+  <p class="word-meaning lang-en">in Him wearing the peacock&#x27;s plumes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोरपिसे (कलापिन् = मोर) धारण केलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">धृतकलापि बालः वने विहरति।</div>
+    <div class="usage-iast">dhṛtakalāpi bālaḥ vane viharati</div>
+    <div class="usage-meaning lang-en">The plume-wearing boy roams the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोरपिसे धारण केलेला बाळ वनात विहार करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुकलापकलापे</span>
+    <span class="word-iast">sukalāpakalāpe</span>
+  </div>
+  <div><span class="word-grammar">सु + कलाप (&#x27;jewelled ornament, girdle&#x27;) + कलाप (&#x27;multitude, cluster&#x27;) — यमक (paronomasia); बहुव्रीहि (&#x27;he who has a lovely cluster of ornaments&#x27;); सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: सुकलापकलापे — locative singular as printed</div>
+  <p class="word-meaning lang-en">in Him decked with a lovely cluster of jewels (a yamaka)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर अलंकारसमूह असलेल्या (यमक)</p>
+  <div class="word-usage">
+    <div class="deva">सुकलापकलापे ग्रीवायाम् हाराः स्फुरन्ति।</div>
+    <div class="usage-iast">sukalāpakalāpe grīvāyām hārāḥ sphuranti</div>
+    <div class="usage-meaning lang-en">Necklaces gleam on His neck decked with lovely jewels.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर अलंकारसमूह असलेल्या गळ्यात हार झळकतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मम गतिः रतिमती</span>
+    <span class="word-iast">mama gatiḥ ratimatī</span>
+  </div>
+  <div><span class="word-grammar">मम = षष्ठी एकवचन of अहम् (अस्मद् सर्वनाम); गतिः = प्रथमा एकवचन स्त्रीलिङ्ग of गति (f., &#x27;refuge, resort, goal&#x27;); रतिमती = प्रथमा एकवचन स्त्रीलिङ्ग of रतिमत् (रति f. &#x27;love, devotion&#x27; + मतुप् &#x27;possessing&#x27;); sandhi गतिः + रतिमती → गती रतिमती (विसर्ग → र्, then र्-लोप with compensatory lengthening: ढ्रलोपे पूर्वस्य दीर्घोऽणः)</span></div>
+  <div class="word-form">In this verse: मम गतिः रतिमती — as printed (गतिः + रतिमती → गती रतिमती by विसर्ग-sandhi)</div>
+  <p class="word-meaning lang-en">may my refuge, full of loving devotion, be (in Him)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझी गती (आधार) व प्रेमवती (भक्ती) त्याच्याठायीच</p>
+  <div class="word-usage">
+    <div class="deva">मम गतिः रतिमती हरौ एव तिष्ठतु।</div>
+    <div class="usage-iast">mama gatiḥ ratimatī harau eva tiṣṭhatu</div>
+    <div class="usage-meaning lang-en">May my loving refuge rest in Hari alone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझी प्रेमभरली गती हरीतच राहो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The hymn turns personal: after the public nāmāvalī, the poet declares his own śaraṇāgati — &#x27;my gati is in Yadunātha.&#x27; The long chain of locatives paints the Lord exactly as the devotee beholds Him in dhyāna; each epithet is a resting-place for meditation, in the dhyāna-śloka manner. &#x27;Ratimatī gatiḥ&#x27; joins refuge and love: surrender without love is dry, love without surrender is rootless. For the sthala, this is the pivot where the kṛṣṇāvatāra narrative becomes the poet&#x27;s own prayer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्तोत्र वैयक्तिक होते : सार्वजनिक नामावलीनंतर कवी आपली शरणागती जाहीर करतो — &#x27;माझी गती यदुनाथात आहे.&#x27; सप्तम्यांची दीर्घ माळ भगवंताला भक्त ध्यानात जसा पाहतो तसाच रंगवते; प्रत्येक विशेषण ध्यानाचे विश्रांतीस्थान आहे, ध्यानश्लोकपद्धतीने. &#x27;रतिमती गतिः&#x27; आश्रय व प्रेम यांना जोडते : प्रेमाशिवाय शरणागती कोरडी, शरणागतीशिवाय प्रेम मुळाविना. स्थलमहात्म्याच्या दृष्टीने येथे कृष्णावतार-कथन कवीच्या स्वतःच्या प्रार्थनेत बदलते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Gati&#x27; is the classic word for the ultimate refuge — the Gītā&#x27;s &#x27;mām ekaṁ śaraṇaṁ vraja&#x27; (18.66) is its charter: the devotee&#x27;s gati is the Lord Himself, not heaven or merit. Describing the Lord&#x27;s form for meditation follows the pāñcarātra dhyāna-śloka convention — lotus eyes, cloud-dark limbs, pītāmbara, crown, peacock feather: the Vraja form of Kṛṣṇa, the object of the bhakta&#x27;s inner eye. &#x27;Ratimati&#x27; — full of rati, loving devotion — names the bhakti that makes refuge living rather than formal.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;गति&#x27; हा अंतिम आश्रयाचा शास्त्रीय शब्द आहे — गीतेचे &#x27;मामेकं शरणं व्रज&#x27; (१८.६६) हे त्याचे घोषवाक्य : भक्ताची गती स्वर्ग किंवा पुण्य नव्हे, तर स्वतः भगवंत. ध्यानासाठी भगवंतांच्या रूपाचे वर्णन ही पांचरात्र ध्यानश्लोक-परंपरा आहे — कमलनेत्र, मेघश्याम अंग, पीतांबर, किरीट, मोरपिस : व्रजातील कृष्णरूप, भक्ताच्या अंतर्दृष्टीचे ध्येय. &#x27;रतिमती&#x27; — रतीने, प्रेमभक्तीने, भरलेली — ही त्या भक्तीचे नाव आहे जी आश्रयाला औपचारिक न ठेवता जिवंत करते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Every epithet stands in the locative, agreeing with यदुनाथे — the verse is one long &#x27;in whom&#x27; clause resolving in the prayer &#x27;may my refuge be (in Him).&#x27; The metre is a sama-vṛtta the source could not name with confidence; it is kept as printed. Note धृतकलापि: the regular locative of कलापिन् would be धृतकलापिनि; the print&#x27;s short form fits the line&#x27;s syllable count and is flagged with (?) in the विग्रह. सुकलापकलापे is a deliberate yamaka — कलाप as &#x27;jewelled ornament&#x27; and कलाप as &#x27;multitude&#x27; in a single breath.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सर्व विशेषणे सप्तमीत आहेत, यदुनाथे याच्याशी जुळणारी — श्लोक हा एकच दीर्घ &#x27;ज्याच्यात&#x27; उपवाक्य असून &#x27;माझी गती (त्याच्यात) असो&#x27; या प्रार्थनेत संपतो. वृत्त हे समवृत्त असून मूळ प्रतीत त्याचे नाव खात्रीने सांगता आले नाही; छापील पाठ तसाच ठेवला आहे. धृतकलापि लक्षात घ्या : कलापिन्‌ची नियमित सप्तमी धृतकलापिनि होईल; छापील ह्रस्व रूप ओळीच्या अक्षरसंख्येला बसते आणि विग्रहात (?) ने चिन्हांकित आहे. सुकलापकलापे हे जाणूनबुजून केलेले यमक आहे — कलाप म्हणजे &#x27;रत्नालंकार&#x27; आणि कलाप म्हणजे &#x27;समूह&#x27;, एकाच श्वासात.</p></div></div>
+
+<div class="pagenav"><a href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 25</div></a><a class="next" href="verse-27.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 27</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

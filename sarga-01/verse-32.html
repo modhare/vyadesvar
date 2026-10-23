@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 32 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 32</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 32</span><span class="bl-mr lang-mr">श्लोक 32</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ततः प्रवृद्धप्रलयाग्निरोषः स्विन्नाङ्गयष्टिः स्फुरिताधरोष्ठः ।।<br>खेभ्यो वमन्वह्निशिखास्फुलिङ्गांश्चुकोप शूलीव युगान्तकाले ।।३२।।</div>
+  <div class="verse-iast">tataḥ pravṛddhapralayāgniroṣaḥ svinnāṅgayaṣṭiḥ sphuritādharoṣṭhaḥ । । khebhyo vamanvahniśikhāsphuliṅgāṃścukopa śūlīva yugāntakāle</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ततः । प्रवृद्ध-प्रलय-अग्नि-रोषः । स्विन्न-अङ्ग-यष्टिः । स्फुरित-अधर-ओष्ठः । खेभ्यः । वमन् । वह्नि-शिखा-स्फुलिङ्गान् । चुकोप । शूली । इव । युग-अन्त-काले ।</div><div class="vig-iast">tataḥ । pravṛddha-pralaya-agni-roṣaḥ । svinna-aṅga-yaṣṭiḥ । sphurita-adhara-oṣṭhaḥ । khebhyaḥ । vaman । vahni-śikhā-sphuliṅgān । cukopa । śūlī । iva । yuga-anta-kāle ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रलय + अग्नि = प्रलयाग्नि (सवर्णदीर्घ) · स्विन्न + अङ्ग = स्विन्नाङ्ग · अधर + ओष्ठः = अधरोष्ठः (ओष्ठ शब्दापुढे वैकल्पिक पररूप) · खेभ्यः + वमन् = खेभ्यो वमन् (विसर्ग → ओ) · स्फुलिङ्गान् + चुकोप = स्फुलिङ्गांश्चुकोप (न् + च = ंश्च) · शूली + इव = शूलीव (सवर्णदीर्घ) · युग + अन्त = युगान्त</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">ततः प्रवृद्धप्रलयाग्निरोषः स्विन्नाङ्गयष्टिः स्फुरिताधरोष्ठः (रामः) खेभ्यः वह्निशिखास्फुलिङ्गान् वमन्, युगान्तकाले शूली इव चुकोप ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then his wrath, swollen like the fire of universal dissolution, his frame wet with sweat, his lower lip quivering, vomiting sparks of flame from his orifices, he blazed with anger like the trident-bearer at the end of the age.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्यामुळे ज्याचा प्रलयकाळच्या अग्नीप्रमाणे असणारा क्रोध प्रज्वलित झालेला आहे, ज्याची अङ्गयष्टी स्वेदनाने आर्द्र झालेली व ज्याचा अधरोष्ठ स्फुरण पावू लागलेला आहे असा तो (परशुराम) (डोळे-नाकपुड्यांतून) क्रोधाच्या ठिणग्या ओकणारा, युगान्तकाळच्या शूलधारी (शंकरा)प्रमाणे क्रुद्ध झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रवृद्धप्रलयाग्निरोषः</span>
+    <span class="word-iast">pravṛddhapralayāgniroṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (प्रवृद्ध-प्रलय-अग्नि-रोष)</span></div>
+  <div class="word-form">In this verse: प्रवृद्धप्रलयाग्निरोषः</div>
+  <p class="word-meaning lang-en">whose wrath blazed like the fire of dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाग्नीसारखा क्रोध भडकलेला</p>
+  <div class="word-usage">
+    <div class="deva">प्रवृद्धप्रलयाग्निरोषः सः अकुप्यत् ।</div>
+    <div class="usage-iast">pravṛddhapralayāgniroṣaḥ saḥ akupyat ।</div>
+    <div class="usage-meaning lang-en">He grew angry, his wrath like the fire of dissolution.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाग्नीसारखा क्रोध भडकलेला तो क्रुद्ध झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्विन्नाङ्गयष्टिः</span>
+    <span class="word-iast">svinnāṅgayaṣṭiḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (स्विन्न-अङ्ग-यष्टि)</span></div>
+  <div class="word-form">In this verse: स्विन्नाङ्गयष्टिः</div>
+  <p class="word-meaning lang-en">whose frame was wet with sweat</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घामाने भिजलेल्या शरीराचा</p>
+  <div class="word-usage">
+    <div class="deva">स्विन्नाङ्गयष्टिः श्रमिकः उपाविशत् ।</div>
+    <div class="usage-iast">svinnāṅgayaṣṭiḥ śramikaḥ upāviśat ।</div>
+    <div class="usage-meaning lang-en">The labourer, his body wet with sweat, sat down.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घामाने भिजलेल्या शरीराचा कामगार बसला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्फुरिताधरोष्ठः</span>
+    <span class="word-iast">sphuritādharoṣṭhaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (स्फुरित-अधर-ओष्ठ)</span></div>
+  <div class="word-form">In this verse: स्फुरिताधरोष्ठः</div>
+  <p class="word-meaning lang-en">whose lower lip quivered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खालचा ओठ थरथरणारा</p>
+  <div class="word-usage">
+    <div class="deva">स्फुरिताधरोष्ठः सः क्रोधम् अदर्शयत् ।</div>
+    <div class="usage-iast">sphuritādharoṣṭhaḥ saḥ krodham adarśayat ।</div>
+    <div class="usage-meaning lang-en">His lower lip quivering, he showed his anger.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खालचा ओठ थरथरत त्याने क्रोध दाखवला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खेभ्यः</span>
+    <span class="word-iast">khebhyaḥ</span>
+  </div>
+  <div><span class="word-grammar">neuter ablative plural of ख (&#x27;aperture&#x27;)</span></div>
+  <div class="word-form">In this verse: खेभ्यः</div>
+  <p class="word-meaning lang-en">from the (sense-)orifices</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>छिद्रांतून, म्हणजे डोळे, नाकपुड्या इत्यादी इंद्रियद्वारांतून (ख = छिद्र); पुस्तकाच्या मराठीत ‘आकाशातून’ असे घेतले आहे</p>
+  <div class="word-usage">
+    <div class="deva">खेभ्यः प्राणः निर्गच्छति ।</div>
+    <div class="usage-iast">khebhyaḥ prāṇaḥ nirgacchati ।</div>
+    <div class="usage-meaning lang-en">Breath issues from the orifices.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>छिद्रांतून प्राण बाहेर पडतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वमन्</span>
+    <span class="word-iast">vaman</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; present participle (śatṛ) of √वम्</span></div>
+  <div class="word-form">In this verse: वमन्</div>
+  <p class="word-meaning lang-en">vomiting, belching forth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओकत (शतृ)</p>
+  <div class="word-usage">
+    <div class="deva">धूमम् वमन् पर्वतः ज्वलति ।</div>
+    <div class="usage-iast">dhūmam vaman parvataḥ jvalati ।</div>
+    <div class="usage-meaning lang-en">The mountain blazes, vomiting smoke.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धूर ओकत पर्वत जळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वह्निशिखास्फुलिङ्गान्</span>
+    <span class="word-iast">vahniśikhāsphuliṅgān</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative plural; tatpuruṣa (वह्नि-शिखा-स्फुलिङ्ग)</span></div>
+  <div class="word-form">In this verse: वह्निशिखास्फुलिङ्गान्</div>
+  <p class="word-meaning lang-en">sparks of flame</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्निज्वाळांच्या ठिणग्या</p>
+  <div class="word-usage">
+    <div class="deva">वह्निशिखास्फुलिङ्गान् वायुः विकिरति ।</div>
+    <div class="usage-iast">vahniśikhāsphuliṅgān vāyuḥ vikirati ।</div>
+    <div class="usage-meaning lang-en">The wind scatters sparks of flame.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वारा अग्निज्वाळांच्या ठिणग्या विखुरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चुकोप</span>
+    <span class="word-iast">cukopa</span>
+  </div>
+  <div><span class="word-grammar">√कुप्, liṭ, 3rd person singular, parasmaipada</span></div>
+  <div class="word-form">In this verse: चुकोप</div>
+  <p class="word-meaning lang-en">became furious</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रुद्ध झाला (√कुप्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">सः वचनम् श्रुत्वा चुकोप ।</div>
+    <div class="usage-iast">saḥ vacanam śrutvā cukopa ।</div>
+    <div class="usage-meaning lang-en">Hearing those words, he became furious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते वचन ऐकून तो क्रुद्ध झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शूली इव</span>
+    <span class="word-iast">śūlī iva</span>
+  </div>
+  <div><span class="word-grammar">शूली: masculine nominative singular; इव indeclinable</span></div>
+  <div class="word-form">In this verse: शूली, इव</div>
+  <p class="word-meaning lang-en">like the trident-bearer (Śiva)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रिशूलधारी शंकराप्रमाणे</p>
+  <div class="word-usage">
+    <div class="deva">शूली इव सः क्रुद्धः अभवत् ।</div>
+    <div class="usage-iast">śūlī iva saḥ kruddhaḥ abhavat ।</div>
+    <div class="usage-meaning lang-en">He became angry like the trident-bearer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रिशूलधारी शंकराप्रमाणे तो क्रुद्ध झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">युगान्तकाले</span>
+    <span class="word-iast">yugāntakāle</span>
+  </div>
+  <div><span class="word-grammar">masculine locative singular; tatpuruṣa (युग-अन्त-काल)</span></div>
+  <div class="word-form">In this verse: युगान्तकाले</div>
+  <p class="word-meaning lang-en">at the end of the age (dissolution)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयकाळी</p>
+  <div class="word-usage">
+    <div class="deva">युगान्तकाले जगत् प्रलीयते ।</div>
+    <div class="usage-iast">yugāntakāle jagat pralīyate ।</div>
+    <div class="usage-meaning lang-en">At the end of the age the world dissolves.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयकाळी जगत् लय पावते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāma&#x27;s wrath blazes like the fire of dissolution — sweat, trembling lip, sparks from his very orifices — and the poet dares to compare him to Śiva himself at the world&#x27;s end. This is not petty anger but the cosmic anger of dharma denied, the prelude to the great deed: the ocean will now be forced to yield the land. For the devotee, it shows that the Lord&#x27;s anger, too, serves creation — it clears the way for the Konkan.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामाचा क्रोध प्रलयाग्नीप्रमाणे भडकतो — घाम, थरथरणारा ओठ, इंद्रियद्वारांतून ठिणग्या — आणि कवी त्याची तुलना साक्षात प्रलयकाळच्या शंकराशी करण्याचे धाडस करतो. हा क्षुल्लक राग नसून धर्म नाकारल्याचा वैश्विक क्रोध आहे, महान कार्याची पूर्वपीठिका — समुद्राला आता भूमी देण्यास भाग पाडले जाईल. भाविकासाठी यातून दिसते की भगवंताचा क्रोधही सृष्टीसाठीच असतो — तो कोकणचा मार्ग मोकळा करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The comparison of the wrathful hero to Śiva at pralaya is the standard mahākāvya upamā for divine anger; sparks issuing from the eyes and nostrils of the enraged is a familiar epic image. This is not petty anger but the cosmic wrath of dharma denied — the prelude to the great deed.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्रुद्ध नायकाची प्रलयकाळच्या शंकराशी तुलना ही दिव्य क्रोधाची ठराविक महाकाव्यउपमा आहे; क्रुद्ध झालेल्याच्या डोळे-नाकपुड्यांतून ठिणग्या निघणे ही परिचित महाकाव्यकल्पना आहे. हा क्षुल्लक राग नसून धर्म नाकारल्याचा वैश्विक क्रोध आहे — महान कार्याची पूर्वपीठिका.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>खेभ्यः — ablative plural of ख, &#x27;aperture&#x27;: the sense-orifices (eyes, nostrils), whence the sparks of anger issue. The book&#x27;s Marathi takes &#x27;from the sky&#x27; (ख = ether), but the sparks are the hero&#x27;s own and must come from his body.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>खेभ्यः — ख, &#x27;छिद्र&#x27; याचे पंचमी बहुवचन : इंद्रियद्वारे (डोळे, नाकपुड्या), जेथून क्रोधाच्या ठिणग्या निघतात. पुस्तकाचे मराठी &#x27;आकाशातून&#x27; (ख = आकाश) घेते, पण ठिणग्या नायकाच्याच आहेत, त्याच्या शरीरातूनच यायला हव्यात.</p></div></div>
+
+<div class="pagenav"><a href="verse-31.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 31</div></a><a class="next" href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 33</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

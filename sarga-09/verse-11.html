@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 11 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 11</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यस्मिन्व्यूढं पत्तनं चित्तपाख्यं<br>यस्मिन् रूढं प्रौढवाडेशलिङ्गम् ।<br>यस्मिन् गूढो जामदग्न्यः सदास्ति<br>तस्माद्देशो गूढनाम्ना प्रसिद्धः ।।११।।</div>
+  <div class="verse-iast">yasminvyūḍhaṃ pattanaṃ cittapākhyaṃ yasmin rūḍhaṃ prauḍhavāḍeśaliṅgam । yasmin gūḍho jāmadagnyaḥ sadāsti tasmāddeśo gūḍhanāmnā prasiddhaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यस्मिन् । व्यूढम् । पत्तनम् । चित्तप-आख्यम् । यस्मिन् । रूढम् । प्रौढ-वाडेश-लिङ्गम् । यस्मिन् । गूढः । जामदग्न्यः । सदा । अस्ति । तस्मात् । देशः । गूढ-नाम्ना । प्रसिद्धः ।</div><div class="vig-iast">yasmin । vyūḍham । pattanam । cittapa-ākhyam । yasmin । rūḍham । prauḍha-vāḍeśa-liṅgam । yasmin । gūḍhaḥ । jāmadagnyaḥ । sadā । asti । tasmāt । deśaḥ । gūḍha-nāmnā । prasiddhaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">चित्तप + आख्यम् = चित्तपाख्यम् · गूढः + जामदग्न्यः = गूढो जामदग्न्यः · सदा + अस्ति = सदास्ति · तस्मात् + देशः = तस्माद्देशः · देशः + गूढ = देशो गूढ</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्मिन् चित्तपाख्यं पत्तनं व्यूढम्, यस्मिन् प्रौढवाडेशलिङ्गं रूढम्, यस्मिन् जामदग्न्यः सदा गूढः अस्ति, तस्मात् देशः गूढनाम्ना प्रसिद्धः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In this land spread the town named Chittapa; in it was established the liṅga of the great Vyāḍeśa; in it the son of Jamadagni (Paraśurāma) ever abides in hidden form — therefore the land became famous by the name Gūḍha.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्या देशात चित्तपा (चित्तपावन) नावाच्या शहराचा विस्तार झाला, ज्यात प्रौढ वाडेशाचे लिङ्ग रूढ झाले व ज्या क्षेत्रांत जमदग्निपुत्र परशुराम सदैव गूढ (लपलेला, गुप्त) रूपात असतो तो देशच गूढ नावाने प्रसिद्ध झाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्यूढम्</span>
+    <span class="word-iast">vyūḍham</span>
+  </div>
+  <div><span class="word-grammar">वि + √वह् (to carry, spread) + क्त; past passive participle, nominative/accusative neuter singular, agreeing with पत्तनम्.</span></div>
+  <div class="word-form">In this verse: nominative/accusative neuter singular</div>
+  <p class="word-meaning lang-en">spread out, extended, established over a wide area</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विस्तारलेले</p>
+  <div class="word-usage">
+    <div class="deva">व्यूढं पत्तनं सर्वतः दृश्यते ।</div>
+    <div class="usage-iast">vyūḍhaṃ pattanaṃ sarvataḥ dṛśyate.</div>
+    <div class="usage-meaning lang-en">The spread-out town is seen on every side.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विस्तारलेले शहर सर्वत्र दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्तपाख्यम्</span>
+    <span class="word-iast">cittapākhyam</span>
+  </div>
+  <div><span class="word-grammar">चित्तप (short for चित्तपावन, the Chitpavan community) + आख्य (√ख्यā + अ, &#x27;named&#x27;); bahuvrīhi used adjectivally, nominative/accusative neuter singular.</span></div>
+  <div class="word-form">In this verse: nominative/accusative neuter singular</div>
+  <p class="word-meaning lang-en">named Chittapa, called by the name Chittapa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘चित्तप’ नावाचे</p>
+  <div class="word-usage">
+    <div class="deva">चित्तपाख्यं पत्तनं ब्राह्मणैः अधिष्ठितम् ।</div>
+    <div class="usage-iast">cittapākhyaṃ pattanaṃ brāhmaṇaiḥ adhiṣṭhitam.</div>
+    <div class="usage-meaning lang-en">The town named Chittapa is inhabited by Brāhmaṇas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;चित्तपा&#x27; नावाचे शहर ब्राह्मणांनी वसवले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रूढम्</span>
+    <span class="word-iast">rūḍham</span>
+  </div>
+  <div><span class="word-grammar">√रुह् (to grow, take root) + क्त; past passive participle, nominative/accusative neuter singular, agreeing with लिङ्गम्.</span></div>
+  <div class="word-form">In this verse: nominative/accusative neuter singular</div>
+  <p class="word-meaning lang-en">firmly established, rooted, become traditional</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थिरावलेले, रुजलेले</p>
+  <div class="word-usage">
+    <div class="deva">रूढं लिङ्गं भक्तैः नित्यं पूज्यते ।</div>
+    <div class="usage-iast">rūḍhaṃ liṅgaṃ bhaktaiḥ nityaṃ pūjyate.</div>
+    <div class="usage-meaning lang-en">The firmly established liṅga is worshipped daily by devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थिरावलेले लिंग भक्तांकडून नित्य पूजले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रौढवाडेशलिङ्गम्</span>
+    <span class="word-iast">prauḍhavāḍeśaliṅgam</span>
+  </div>
+  <div><span class="word-grammar">प्रौढ (√प्र + वह् + क्त, &#x27;great, ancient&#x27;) + वाडेश (Vyāḍeśa, the local form of the deity&#x27;s name) + लिङ्गम्; tatpuruṣa, nominative/accusative neuter singular.</span></div>
+  <div class="word-form">In this verse: nominative/accusative neuter singular</div>
+  <p class="word-meaning lang-en">the liṅga of the great (ancient) Vyāḍeśa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महान (प्राचीन) वाडेश्वरलिंग</p>
+  <div class="word-usage">
+    <div class="deva">प्रौढवाडेशलिङ्गं गुहागरे विराजते ।</div>
+    <div class="usage-iast">prauḍhavāḍeśaliṅgaṃ guhāgare virājate.</div>
+    <div class="usage-meaning lang-en">The liṅga of the great Vyāḍeśa shines at Guhagar.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>महान वाडेश्वराचे लिंग गुहागर येथे विराजमान आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गूढः जामदग्न्यः</span>
+    <span class="word-iast">gūḍhaḥ jāmadagnyaḥ</span>
+  </div>
+  <div><span class="word-grammar">गूढः = √गुह् + क्त, nominative masculine singular; जामदग्न्यः = जमदग्नि + ष्यञ् (apatyārthe, &#x27;descendant of&#x27;), nominative masculine singular.</span></div>
+  <div class="word-form">In this verse: nominative masculine singular (appositional phrase)</div>
+  <p class="word-meaning lang-en">the hidden Jāmadagnya — Paraśurāma in concealed form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुप्त रूपातील परशुराम (८.१२, ४२)</p>
+  <div class="word-usage">
+    <div class="deva">गूढः जामदग्न्यः क्षेत्रं रक्षति ।</div>
+    <div class="usage-iast">gūḍhaḥ jāmadagnyaḥ kṣetraṃ rakṣati.</div>
+    <div class="usage-meaning lang-en">The hidden Jāmadagnya guards the kṣetra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुप्त रूपातील परशुराम क्षेत्राचे रक्षण करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गूढनाम्ना प्रसिद्धः</span>
+    <span class="word-iast">gūḍhanāmnā prasiddhaḥ</span>
+  </div>
+  <div><span class="word-grammar">गूढ-नामन् (instrumental singular, &#x27;by the name Gūḍha&#x27;) + प्रसिद्धः (प्र + √सिध् + क्त), nominative masculine singular, agreeing with देशः.</span></div>
+  <div class="word-form">In this verse: instrumental phrase + nominative masculine singular</div>
+  <p class="word-meaning lang-en">famous by the name Gūḍha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘गूढ’ नावाने प्रसिद्ध</p>
+  <div class="word-usage">
+    <div class="deva">देशः गूढनाम्ना प्रसिद्धः अभवत् ।</div>
+    <div class="usage-iast">deśaḥ gūḍhanāmnā prasiddhaḥ abhavat.</div>
+    <div class="usage-meaning lang-en">The land became famous by the name Gūḍha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देश &#x27;गूढ&#x27; नावाने प्रसिद्ध झाला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Here the poet gives the true threefold charter of the name Gūḍha: a living Brahmin settlement, an ancient Śiva-liṅga, and Paraśurāma&#x27;s own concealed presence. A holy place, the verse teaches, is made by three things together — the community that serves (Chittapa), the mūrti that anchors (Vyāḍeśa-liṅga), and the unseen grace that guards (the hidden Jāmadagnya). Devotion needs all three: people, deity, and the faith that the Lord is near though unseen.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे कवी &#x27;गूढ&#x27; नावाचा खरा तिहेरी आधार देतो — जिवंत ब्राह्मण वस्ती, प्राचीन शिवलिंग, आणि परशुरामांचे स्वतःचे गुप्त सान्निध्य. पवित्र स्थल तीन गोष्टींनी मिळून बनते, हे श्लोक शिकवतो — सेवा करणारा समाज (चित्तपा), आधार देणारी मूर्ती (व्याडेशलिंग), आणि रक्षण करणारी अदृश्य कृपा (गुप्त जामदग्न्य). भक्तीला तिन्हींची गरज असते — लोक, देवता, आणि प्रभू जवळच आहेत, दिसत नसले तरी, अशी श्रद्धा.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Chittapa is the Chitpavan (Konkanastha) Brāhmaṇa community of the Konkan coast, traditionally brought there by Paraśurāma himself; their presence marks the land as Paraśurāma-kṣetra in living memory. The &#x27;great Vyāḍeśa-liṅga&#x27; is the presiding deity of this very kāvya — the Vyāḍeśvara of Guhagar. That Paraśurāma abides there &#x27;in hidden form&#x27; (gūḍha) echoes the Purāṇic belief that the chiranjīvī avatāra still walks the earth unseen, guarding his reclaimed land.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>चित्तपा म्हणजे कोकण किनाऱ्याचा चित्तपावन (कोकणस्थ) ब्राह्मण समाज, ज्यांना परंपरेनुसार स्वतः परशुरामांनी तेथे आणले; त्यांचे अस्तित्व ही भूमी परशुरामक्षेत्र असल्याची जिवंत साक्ष आहे. &#x27;महान व्याडेशलिंग&#x27; हेच या काव्याचे आराध्य दैवत — गुहागरचा व्याडेश्वर. परशुराम तेथे &#x27;गुप्त रूपात&#x27; वास्तव्य करतात, ही पुराणिक श्रद्धेचीच प्रतिध्वनी आहे की चिरंजीवी अवतार अद्याप पृथ्वीवर अदृश्यपणे वावरतात आणि त्यांनी जिंकलेली भूमी रक्षतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Upajāti metre (triṣṭubh family). The triple यस्मिन् … यस्मिन् … यस्मिन् anaphora builds to the concluding तस्मात् — a classic kāvya etymology (nirvacana). &#x27;Chittapa&#x27; is the book&#x27;s short form of चित्तपावन. The Marathi glosses गूढ as लपलेला, गुप्त. Jāmadagnya = Jamadagni + ṣyañ (apatya), &#x27;son of Jamadagni&#x27; = Paraśurāma. The reading प्रौढवाडेशलिङ्गम् keeps the book&#x27;s वाडेश spelling, as the reader requested; the meter allows either form here.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उपजाती वृत्त (त्रिष्टुभ् कुळ). तिहेरी यस्मिन् … यस्मिन् … यस्मिन् ही आवृत्ती शेवटच्या तस्मात् कडे नेते — ही अभिजात काव्य-व्युत्पत्ती (निर्वचन) आहे. &#x27;चित्तपा&#x27; हे चित्तपावनचे ग्रंथातील संक्षिप्त रूप. मराठीत गूढचा अर्थ लपलेला, गुप्त असा दिला आहे. जामदग्न्य = जमदग्नि + ष्यञ् (अपत्यार्थी), &#x27;जमदग्नीचा पुत्र&#x27; = परशुराम. प्रौढवाडेशलिङ्गम् या पाठात ग्रंथाचे वाडेश हे रूप वाचकाच्या इच्छेनुसार ठेवले आहे; येथे वृत्ताला दोन्ही रूपे चालतात.</p></div></div>
+
+<div class="pagenav"><a href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 10</div></a><a class="next" href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 12</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 78 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 78</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 78</span><span class="bl-mr lang-mr">श्लोक 78</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Mandākrāntā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">ब्रह्माण्डेऽस्मिन्क्षितिरतिवरा कीर्त्यतेऽस्यां च जम्बु-<br>द्वीपं चास्मिन्नधिकगुणवद् भारतं वर्षमेव ।<br>रामक्षेत्रं त्विह च परमो गूढदेशो गुहाख्यो<br>ग्रामश्चास्मिन् जयति जलधौ यत्र वाडेशदेवः ।।७८।।</div>
+  <div class="verse-iast">brahmāṇḍe&#x27;sminkṣitirativarā kīrtyate&#x27;syāṃ ca jambu- dvīpaṃ cāsminnadhikaguṇavad bhārataṃ varṣameva । rāmakṣetraṃ tviha ca paramo gūḍhadeśo guhākhyo grāmaścāsmin jayati jaladhau yatra vāḍeśadevaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">ब्रह्माण्डे अस्मिन् क्षितिः अतिवरा कीर्त्यते अस्याम् च जम्बु-द्वीपम् च अस्मिन् अधिक-गुणवत् भारतम् वर्षम् एव । राम-क्षेत्रम् तु इह च परमः गूढ-देशः गुह-आख्यः ग्रामः च अस्मिन् जयति जलधौ यत्र वाडेश-देवः ।</div><div class="vig-iast">brahmāṇḍe asmin kṣitiḥ ativarā kīrtyate asyām ca jambu-dvīpam ca asmin adhika-guṇavat bhāratam varṣam eva । rāma-kṣetram tu iha ca paramaḥ gūḍha-deśaḥ guha-ākhyaḥ grāmaḥ ca asmin jayati jaladhau yatra vāḍeśa-devaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ब्रह्माण्डे + अस्मिन् = ब्रह्माण्डेऽस्मिन् · अस्मिन् + क्षितिः = अस्मिन्क्षितिः · क्षितिः + अतिवरा = क्षितिरतिवरा · कीर्त्यते + अस्याम् = कीर्त्यतेऽस्याम् · च + अस्मिन् = चास्मिन् · अस्मिन् + अधिक = अस्मिन्नधिक (ङमुट्) · वर्षम् + एव = वर्षमेव · तु + इह = त्विह (यण्) · परमः + गूढ = परमो गूढ · गूढदेशः + गुह = गूढदेशो गुह · गुह + आख्यः = गुहाख्यः · गुहाख्यः + ग्रामः = गुहाख्यो ग्रामः · ग्रामः + च = ग्रामश्च</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अस्मिन् ब्रह्माण्डे क्षितिः अतिवरा कीर्त्यते; अस्यां च जम्बुद्वीपम्; अस्मिन् च अधिकगुणवत् भारतं वर्षम् एव; इह च रामक्षेत्रम्; (तत्र) परमः गूढदेशः; अस्मिन् च गुहाख्यः ग्रामः — यत्र जलधौ वाडेशदेवः (आस्ते) — जयति । (वृत्त: मन्दाक्रान्ता)</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In this universe the earth is extolled as most excellent; upon her, Jambudvīpa; and within it, Bhāratavarṣa itself, the most richly endowed with virtues. Here too is Rāmakṣetra; therein the supreme Gūḍhadeśa; and within it the village named Guha — where the god Vāḍeśa dwells upon the shore of the sea. May it ever triumph!</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या ब्रह्माण्डात पृथ्वी श्रेष्ठ समजली जाते, पृथ्वीवरील भागांत जम्बुद्वीप, जम्बुद्वीपांत भारतवर्ष हेच सर्वाधिक गुणांनी युक्त मानले जाते. या भारतवर्षात रामक्षेत्र (परशुरामाचे क्षेत्र), त्यात गूढदेश (गुहागरचा परिसर) श्रेष्ठ व त्यातही ज्या गावाच्या समुद्रकिनारी भगवान वाडेश विद्यमान आहे त्या गुहागर गावाचा जयजयकार असो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्माण्डे अस्मिन्</span>
+    <span class="word-iast">brahmāṇḍe asmin</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: ब्रह्माण्डेऽस्मिन्</div>
+  <p class="word-meaning lang-en">in this universe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या ब्रह्मांडात</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्माण्डेऽस्मिन् बहवः लोकाः सन्ति ।</div>
+    <div class="usage-iast">brahmāṇḍe&#x27;smin bahavaḥ lokāḥ santi.</div>
+    <div class="usage-meaning lang-en">In this universe there are many worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या ब्रह्मांडात अनेक लोक आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षितिः</span>
+    <span class="word-iast">kṣitiḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: क्षितिः</div>
+  <p class="word-meaning lang-en">the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी</p>
+  <div class="word-usage">
+    <div class="deva">क्षितिः सर्वान् धारयति ।</div>
+    <div class="usage-iast">kṣitiḥ sarvān dhārayati.</div>
+    <div class="usage-meaning lang-en">The earth bears all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी सर्वांना धारण करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतिवरा</span>
+    <span class="word-iast">ativarā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अतिवरा</div>
+  <p class="word-meaning lang-en">most excellent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत श्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">अतिवरा बुद्धिः दुर्लभा ।</div>
+    <div class="usage-iast">ativarā buddhiḥ durlabhā.</div>
+    <div class="usage-meaning lang-en">Most excellent intellect is rare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अत्यंत श्रेष्ठ बुद्धी दुर्लभ असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कीर्त्यते</span>
+    <span class="word-iast">kīrtyate</span>
+  </div>
+  <div><span class="word-grammar">कॄत्, कर्मणि लट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: कीर्त्यते</div>
+  <p class="word-meaning lang-en">is praised</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर्णिली जाते</p>
+  <div class="word-usage">
+    <div class="deva">साधोः गुणाः सर्वत्र कीर्त्यन्ते ।</div>
+    <div class="usage-iast">sādhoḥ guṇāḥ sarvatra kīrtyante.</div>
+    <div class="usage-meaning lang-en">The virtues of the good are praised everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांचे गुण सर्वत्र वर्णिले जातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्याम्</span>
+    <span class="word-iast">asyām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. स. एव.</span></div>
+  <div class="word-form">In this verse: अस्याम्</div>
+  <p class="word-meaning lang-en">on it</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिच्यावर</p>
+  <div class="word-usage">
+    <div class="deva">अस्यां भूमौ धान्यं रोहति ।</div>
+    <div class="usage-iast">asyāṃ bhūmau dhānyaṃ rohati.</div>
+    <div class="usage-meaning lang-en">Grain grows on this land.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या भूमीत धान्य उगवते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">रामः च कृष्णः च मित्रे स्तः ।</div>
+    <div class="usage-iast">rāmaḥ ca kṛṣṇaḥ ca mitre staḥ.</div>
+    <div class="usage-meaning lang-en">Rāma and Kṛṣṇa are friends.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम आणि कृष्ण मित्र आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जम्बु-द्वीपम्</span>
+    <span class="word-iast">jambu-dvīpam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: जम्बुद्वीपम्</div>
+  <p class="word-meaning lang-en">Jambudvīpa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जंबुद्वीप</p>
+  <div class="word-usage">
+    <div class="deva">जम्बुद्वीपं मध्ये भारतं वर्तते ।</div>
+    <div class="usage-iast">jambudvīpaṃ madhye bhārataṃ vartate.</div>
+    <div class="usage-meaning lang-en">Bhārata lies at the centre of Jambudvīpa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जंबुद्वीपाच्या मध्यभागी भारत आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">विद्या च विनयः च शोभेते ।</div>
+    <div class="usage-iast">vidyā ca vinayaḥ ca śobhete.</div>
+    <div class="usage-meaning lang-en">Learning and humility both shine.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्या आणि विनय दोन्ही शोभतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्मिन्</span>
+    <span class="word-iast">asmin</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: अस्मिन्</div>
+  <p class="word-meaning lang-en">in it</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यात</p>
+  <div class="word-usage">
+    <div class="deva">अस्मिन् ग्रन्थे बहवः श्लोकाः सन्ति ।</div>
+    <div class="usage-iast">asmin granthe bahavaḥ ślokāḥ santi.</div>
+    <div class="usage-meaning lang-en">In this book there are many verses.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या ग्रंथात अनेक श्लोक आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अधिक-गुणवत्</span>
+    <span class="word-iast">adhika-guṇavat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अधिकगुणवत्</div>
+  <p class="word-meaning lang-en">richest in virtues</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधिक गुणांनी युक्त</p>
+  <div class="word-usage">
+    <div class="deva">अधिकगुणवत् क्षेत्रं दुर्लभम् ।</div>
+    <div class="usage-iast">adhikaguṇavat kṣetraṃ durlabham.</div>
+    <div class="usage-meaning lang-en">A kṣetra richest in virtues is rare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधिक गुणांनी युक्त क्षेत्र दुर्लभ असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भारतम् वर्षम् एव</span>
+    <span class="word-iast">bhāratam varṣam eva</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: भारतं वर्षमेव</div>
+  <p class="word-meaning lang-en">Bhāratavarṣa itself</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भारतवर्षच</p>
+  <div class="word-usage">
+    <div class="deva">भारतं वर्षमेव कर्मभूमिः उच्यते ।</div>
+    <div class="usage-iast">bhārataṃ varṣameva karmabhūmiḥ ucyate.</div>
+    <div class="usage-meaning lang-en">Bhāratavarṣa itself is called the land of action.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भारतवर्षच कर्मभूमी मानली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राम-क्षेत्रम्</span>
+    <span class="word-iast">rāma-kṣetram</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: रामक्षेत्रम्</div>
+  <p class="word-meaning lang-en">Rāma&#x27;s kṣetra</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामक्षेत्र</p>
+  <div class="word-usage">
+    <div class="deva">रामक्षेत्रं परशुरामेण निर्मितम् ।</div>
+    <div class="usage-iast">rāmakṣetraṃ paraśurāmeṇa nirmitam.</div>
+    <div class="usage-meaning lang-en">Rāmakṣetra was created by Paraśurāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामक्षेत्र परशुरामाने निर्माण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तु इह च</span>
+    <span class="word-iast">tu iha ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: त्विह च</div>
+  <p class="word-meaning lang-en">and here</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि येथे (भारतात)</p>
+  <div class="word-usage">
+    <div class="deva">त्विह च सत्यं वदामि ।</div>
+    <div class="usage-iast">tviha ca satyaṃ vadāmi.</div>
+    <div class="usage-meaning lang-en">And here I speak the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि येथे मी सत्य सांगतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परमः</span>
+    <span class="word-iast">paramaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: परमः</div>
+  <p class="word-meaning lang-en">supreme</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">परमः धर्मः अहिंसा उच्यते ।</div>
+    <div class="usage-iast">paramaḥ dharmaḥ ahiṃsā ucyate.</div>
+    <div class="usage-meaning lang-en">Non-violence is called the supreme dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अहिंसा हा परम धर्म मानला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गूढ-देशः</span>
+    <span class="word-iast">gūḍha-deśaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: गूढदेशः</div>
+  <p class="word-meaning lang-en">the Gūḍha region</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गूढदेश</p>
+  <div class="word-usage">
+    <div class="deva">गूढदेशः गुहागरस्य समीपे अस्ति ।</div>
+    <div class="usage-iast">gūḍhadeśaḥ guhāgarasya samīpe asti.</div>
+    <div class="usage-meaning lang-en">The Gūḍha region is near Guhāgāra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गूढदेश गुहागराजवळ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गुह-आख्यः</span>
+    <span class="word-iast">guha-ākhyaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: गुहाख्यः</div>
+  <p class="word-meaning lang-en">called Guha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुह नावाचे</p>
+  <div class="word-usage">
+    <div class="deva">गुहाख्यः ग्रामः प्रसिद्धः ।</div>
+    <div class="usage-iast">guhākhyaḥ grāmaḥ prasiddhaḥ.</div>
+    <div class="usage-meaning lang-en">The village called Guha is famous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुह नावाचे गाव प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ग्रामः</span>
+    <span class="word-iast">grāmaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: ग्रामः</div>
+  <p class="word-meaning lang-en">village</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाव</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामः नद्याः तीरे अस्ति ।</div>
+    <div class="usage-iast">grāmaḥ nadyāḥ tīre asti.</div>
+    <div class="usage-meaning lang-en">The village is on the river-bank.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाव नदीकिनारी आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च अस्मिन्</span>
+    <span class="word-iast">ca asmin</span>
+  </div>
+  <div><span class="word-grammar">—</span></div>
+  <div class="word-form">In this verse: चास्मिन्</div>
+  <p class="word-meaning lang-en">and in it</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि यात</p>
+  <div class="word-usage">
+    <div class="deva">चास्मिन् विषये मम मतं शृणु ।</div>
+    <div class="usage-iast">cāsmin viṣaye mama mataṃ śṛṇu.</div>
+    <div class="usage-meaning lang-en">And on this matter hear my opinion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि या विषयावर माझे मत ऐक.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जयति</span>
+    <span class="word-iast">jayati</span>
+  </div>
+  <div><span class="word-grammar">जि, लट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: जयति</div>
+  <p class="word-meaning lang-en">is victorious</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जयजयकार असो, विजयी आहे</p>
+  <div class="word-usage">
+    <div class="deva">सत्यमेव जयति इति श्रूयते ।</div>
+    <div class="usage-iast">satyameva jayati iti śrūyate.</div>
+    <div class="usage-meaning lang-en">&#x27;Truth alone triumphs&#x27; — so it is said.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सत्याचाच जय होतो असे म्हटले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जलधौ</span>
+    <span class="word-iast">jaladhau</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: जलधौ</div>
+  <p class="word-meaning lang-en">by the sea</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राजवळ</p>
+  <div class="word-usage">
+    <div class="deva">जलधौ नौकाः तरन्ति ।</div>
+    <div class="usage-iast">jaladhau naukāḥ taranti.</div>
+    <div class="usage-meaning lang-en">Boats float on the sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रावर नावा तरंगतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र</span>
+    <span class="word-iast">yatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यत्र</div>
+  <p class="word-meaning lang-en">where</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र उत्साहः तत्र कार्यसिद्धिः ।</div>
+    <div class="usage-iast">yatra utsāhaḥ tatra kāryasiddhiḥ.</div>
+    <div class="usage-meaning lang-en">Where there is zeal, there is success in the task.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे उत्साह असतो तेथे कार्यसिद्धी होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश-देवः</span>
+    <span class="word-iast">vāḍeśa-devaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वाडेशदेवः</div>
+  <p class="word-meaning lang-en">the god Vāḍeśa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश देव</p>
+  <div class="word-usage">
+    <div class="deva">वाडेशदेवः भक्तैः सेव्यते ।</div>
+    <div class="usage-iast">vāḍeśadevaḥ bhaktaiḥ sevyate.</div>
+    <div class="usage-meaning lang-en">The god Vāḍeśa is served by devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेशदेवाची भक्त सेवा करतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The closing verse is the kāvya&#x27;s benediction: a ladder of ever-narrowing glory descending from the universe to a single village, placing Guhāgara at the very centre of the sacred cosmos. Each rung — earth, Jambudvīpa, Bhāratavarṣa, Rāmakṣetra, Gūḍhadeśa, the village — is &#x27;most excellent&#x27; in its own sphere, yet each exists to lead the eye to the next, until the gaze rests on the shore where Vāḍeśa dwells. The final &#x27;jayati&#x27; — may it triumph — seals the whole sarga as an act of worship, not merely description.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समारोपाचा श्लोक हा काव्याचा आशीर्वाद आहे — ब्रह्मांडापासून एकाच गावापर्यंत उतरत जाणारी कीर्तीची शिडी, जी गुहागराला पवित्र ब्रह्मांडाच्या केंद्रस्थानी ठेवते. प्रत्येक पायरी — पृथ्वी, जंबुद्वीप, भारतवर्ष, रामक्षेत्र, गूढदेश, गाव — आपापल्या क्षेत्रात &#x27;अत्यंत श्रेष्ठ&#x27; आहे; पण प्रत्येक पायरी दृष्टीला पुढच्या पायरीकडे नेण्यासाठीच आहे, जोवर दृष्टी वाडेश जेथे वास करतो त्या किनाऱ्यावर स्थिर होत नाही. शेवटचे &#x27;जयति&#x27; — त्याचा जयजयकार असो — संपूर्ण सर्गाला केवळ वर्णन न मानता उपासनाकर्म म्हणून मुद्रांकित करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic world-picture places Jambudvīpa at the centre of the seven dvīpas and Bhāratavarṣa within it as the karma-bhūmi — the one land where liberation can be earned through action, hence &#x27;richest in virtues&#x27; (adhikaguṇavat). Māhātmyas love this descending ladder from the cosmic to the local: it lets a village shrine claim a place in the universal order without arrogance, since each step is granted by the one above it. The final jayati is the traditional maṅgala with which sthala-texts dismiss their audience — glory to the place, and through it to its god.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणोक्त जगच्चित्रात जंबुद्वीप सात द्वीपांच्या केंद्रस्थानी आहे आणि त्यातील भारतवर्ष ही कर्मभूमी आहे — कृतीने मोक्ष मिळवता येणारी एकमेव भूमी; म्हणून &#x27;अधिकगुणवत्&#x27; (गुणांनी सर्वाधिक युक्त). वैश्विकापासून स्थानिकापर्यंत उतरणारी ही शिडी माहात्म्यांना प्रिय आहे — गावच्या देवस्थानाला अहंकार न बाळगता वैश्विक क्रमात स्थान मिळवता येते, कारण प्रत्येक पायरी वरील पायरीकडूनच प्राप्त होते. शेवटचे &#x27;जयति&#x27; हे स्थलग्रंथ श्रोत्यांना निरोप देताना म्हणतात तो पारंपरिक मंगलश्लोक आहे — स्थानाचा जयजयकार आणि त्याद्वारे त्याच्या देवाचा.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The sarga closes, as classical convention prescribes, with a change of metre: the 17-syllable mandākrāntā, whose slow gait suits a benediction. The verse&#x27;s zoom-ladder — brahmāṇḍa, kṣiti, jambudvīpa, bhāratavarṣa, rāmakṣetra, gūḍhadeśa, the village — gathers the narrowing circles of vv. 73–77 into one cosmic frame, and the final jayati (&#x27;may it triumph&#x27;) is the maṅgala that dismisses the sarga. &#x27;By the sea&#x27; (jaladhau) is literal geography: Guhāgara stands on the Arabian Sea coast of the Konkan.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शास्त्रीय संकेताप्रमाणे सर्गाचा समारोप वृत्तबदलाने होतो — १७ अक्षरांची मंदाक्रान्ता, जिची मंद गती आशीर्वादाला शोभते. श्लोकाची सूक्ष्मदर्शन-शिडी — ब्रह्मांड, पृथ्वी, जंबुद्वीप, भारतवर्ष, रामक्षेत्र, गूढदेश, गाव — ७३–७७ श्लोकांची संकुचित वर्तुळे एका ब्रह्मांडीय चौकटीत एकत्र आणते; शेवटचे &#x27;जयति&#x27; (त्याचा जयजयकार असो) हे सर्गाला निरोप देणारे मंगल आहे. &#x27;जलधौ&#x27; (समुद्राजवळ) हे शब्दशः भूगोल आहे — गुहागर कोकणच्या अरबी समुद्रकिनारी वसले आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-77.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 77</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-14/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 14 — Devastavanaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 59 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 59</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 59</span><span class="bl-mr lang-mr">श्लोक 59</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यदा जनं जनोऽपृच्छद्रामक्षेत्रं क्व तत्तदा।।<br>कुंकणस्य तलेऽब्धौ तदित्यदस्तलकुंकणम् ।।५९।।</div>
+  <div class="verse-iast">yadā janaṃ jano&#x27;pṛcchadrāmakṣetraṃ kva tattadā । । kuṃkaṇasya tale&#x27;bdhau tadityadastalakuṃkaṇam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यदा । जनम् । जनः । अपृच्छत् । रामक्षेत्रम् । क्व । तत् । तदा । कुंकणस्य । तले । अब्धौ । तत् । इति । अदः । तलकुंकणम् ।</div><div class="vig-iast">yadā । janam । janaḥ । apṛcchat । rāmakṣetram । kva । tat । tadā । kuṃkaṇasya । tale । abdhau । tat । iti । adaḥ । talakuṃkaṇam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">जनः + अपृच्छत् = जनोऽपृच्छत् (पूर्वरूप) · अपृच्छत् + रामक्षेत्रम् = अपृच्छद्रामक्षेत्रम् (त् → द्) · तत् + तदा = तत्तदा · तले + अब्धौ = तलेऽब्धौ · तत् + इति = तदिति · इति + अदः = इत्यदः (यण्) · अदः + तल = अदस्तल (विसर्ग → स्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यदा जनः जनं ‘तत् रामक्षेत्रं क्व?’ (इति) अपृच्छत्, तदा ‘तत् कुंकणस्य तले अब्धौ’ इति (उत्तरात्) अदः ‘तलकुंकणम्’ (अभवत्) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>When one man asked another, &#x27;Where is that Rāmakṣetra?&#x27; — then, &#x27;It lies at the foot of Kuṅkaṇa, in the sea&#x27; — from that (answer) it became &#x27;Talakuṅkaṇa&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामक्षेत्र कुठे आहे असा एकाने दुसऱ्याला प्रश्न विचारला तेव्हा ते क्षेत्र कोकणाच्या तळाशी सागरात आहे (असे उत्तर मिळाले) म्हणून हे तळकोकण (झाले).</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जनः जनम् अपृच्छत्</span>
+    <span class="word-iast">janaḥ janam apṛcchat</span>
+  </div>
+  <div><span class="word-grammar">जनः — masculine nominative singular of जन; जनम् — masculine accusative singular; अपृच्छत् — √प्रच्छ् (to ask), laṅ (imperfect), 3rd singular, parasmaipada</span></div>
+  <div class="word-form">In this verse: जनः + जनम् + अपृच्छत्</div>
+  <p class="word-meaning lang-en">one man asked another</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एका माणसाने दुसऱ्याला विचारले (√प्रच्छ्, लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">शिष्यः गुरुम् प्रश्नम् अपृच्छत्</div>
+    <div class="usage-iast">śiṣyaḥ gurum praśnam apṛcchat</div>
+    <div class="usage-meaning lang-en">The pupil asked the teacher a question.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिष्याने गुरुला प्रश्न विचारला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्व</span>
+    <span class="word-iast">kva</span>
+  </div>
+  <div><span class="word-grammar">indeclinable interrogative adverb</span></div>
+  <div class="word-form">In this verse: क्व</div>
+  <p class="word-meaning lang-en">where?</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुठे?</p>
+  <div class="word-usage">
+    <div class="deva">क्व गच्छसि त्वम्</div>
+    <div class="usage-iast">kva gacchasi tvam</div>
+    <div class="usage-meaning lang-en">Where are you going?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू कुठे जातोस?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कुंकणस्य तले अब्धौ</span>
+    <span class="word-iast">kuṃkaṇasya tale abdhau</span>
+  </div>
+  <div><span class="word-grammar">कुंकणस्य — neuter genitive singular; तले — neuter locative singular of तल; अब्धौ — masculine locative singular of अब्धि (ocean)</span></div>
+  <div class="word-form">In this verse: कुंकणस्य + तले + अब्धौ</div>
+  <p class="word-meaning lang-en">at the foot of Kuṅkaṇa, in the sea</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुंकणाच्या तळाशी, समुद्रात</p>
+  <div class="word-usage">
+    <div class="deva">तत् क्षेत्रम् कुंकणस्य तले अब्धौ अस्ति</div>
+    <div class="usage-iast">tat kṣetram kuṅkaṇasya tale abdhau asti</div>
+    <div class="usage-meaning lang-en">That holy place lies at the foot of Kuṅkaṇa, in the sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते क्षेत्र कुंकणाच्या तळाशी समुद्रात आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अदः</span>
+    <span class="word-iast">adaḥ</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular distal demonstrative pronoun</span></div>
+  <div class="word-form">In this verse: अदः</div>
+  <p class="word-meaning lang-en">this (place), yonder</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे (क्षेत्र)</p>
+  <div class="word-usage">
+    <div class="deva">अदः क्षेत्रम् पुण्यम् अस्ति</div>
+    <div class="usage-iast">adaḥ kṣetram puṇyam asti</div>
+    <div class="usage-meaning lang-en">This holy place is meritorious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे क्षेत्र पुण्यकारक आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>A charming folk-etymology closes the naming section: the name &#x27;Talakuṅkaṇa&#x27; was born from a traveller&#x27;s question and a local&#x27;s answer, locating the kṣetra &#x27;at Kuṅkaṇa&#x27;s foot, in the sea&#x27;. The verse reminds devotees that sacred names carry living memory — each name is a small story of how people found, described, and loved the holy land.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नामकरण-विभागाचा समारोप एका मोहक लोक-व्युत्पत्तीने होतो: &#x27;तळकोकण&#x27; हे नाव एका प्रवाशाच्या प्रश्नातून आणि स्थानिकाच्या उत्तरातून जन्माला आले — क्षेत्र &#x27;कुंकणाच्या तळाशी, समुद्रात&#x27; आहे असे सांगणारे. पवित्र नावे जिवंत स्मृती वाहून नेतात याची आठवण हा श्लोक भाविकांना करून देतो — प्रत्येक नाव ही लोकांनी पवित्र भूमी कशी शोधली, तिचे वर्णन कसे केले आणि तिच्यावर प्रेम कसे केले याची एक छोटी कथा आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Nirukta-style popular etymologies — deriving a name from a supposed incident or dialogue — are a beloved device of māhātmya literature, which prefers a memorable story to a philological derivation. The dialogue form (प्रश्न–उत्तर) also dramatizes the verse, letting the reader overhear the very conversation that fixed the name.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>निरुक्त-पद्धतीच्या लोक-व्युत्पत्ती — एखाद्या कल्पित प्रसंगावरून किंवा संवादावरून नाव काढणे — हे माहात्म्य-वाङ्मयाचे आवडते साधन आहे; भाषाशास्त्रीय व्युत्पत्तीपेक्षा संस्मरणीय कथा त्याला अधिक प्रिय असते. संवाद-रूप (प्रश्न–उत्तर) श्लोकाला नाट्यमयही बनवते — नाव निश्चित करणारा संवाद वाचकाला प्रत्यक्ष ऐकू येतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>अपृच्छत् is laṅ (imperfect), 3rd singular parasmaipada of √प्रच्छ् (to ask). The quoted question रामक्षेत्रं क्व (&#x27;where is Rāmakṣetra?&#x27;) and the answer कुंकणस्य तले अब्धौ तत् are embedded directly in the verse. अदः (&#x27;this, yonder&#x27;) picks up the kṣetra as the subject of अभवत् (understood). The verse is in Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अपृच्छत् हे √प्रच्छ् (विचारणे) धातूचे लङ् (अनद्यतन भूत) रूप आहे, प्रथमपुरुषी एकवचन, परस्मैपदी. रामक्षेत्रं क्व (&#x27;रामक्षेत्र कुठे आहे?&#x27;) हा उद्धृत प्रश्न आणि कुंकणस्य तले अब्धौ तत् हे उत्तर श्लोकातच विणले आहे. अदः (&#x27;हे, ते&#x27;) हे क्षेत्राला अभवत् (अध्याहृत) क्रियापदाचे कर्ता म्हणून घेते. वृत्त अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-58.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 58</div></a><a class="next" href="verse-60.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 60</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

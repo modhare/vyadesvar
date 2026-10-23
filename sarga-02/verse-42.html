@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 42 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 42</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 42</span><span class="bl-mr lang-mr">श्लोक 42</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अस्त्रशक्तिसमुद्धूतपारावारसमुज्झिता ।।<br>क्षरद्वारिमहापूरपूर्णनिम्नप्रदेशिका ।।४२।।</div>
+  <div class="verse-iast">(śastra) astraśaktisamuddhūtapārāvārasamujjhitā । । kṣaradvārimahāpūrapūrṇanimnapradeśikā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अस्त्र-शक्ति-समुद्धूत-पारावार-समुज्झिता । क्षरत्-वारि-महा-पूर-पूर्ण-निम्न-प्रदेशिका ।</div><div class="vig-iast">astra-śakti-samuddhūta-pārāvāra-samujjhitā । kṣarat-vāri-mahā-pūra-pūrṇa-nimna-pradeśikā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्षरत् + वारि = क्षरद्वारि (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(सा वसुन्धरा) अस्त्रशक्तिसमुद्धूतपारावारसमुज्झिता क्षरद्वारिमहापूरपूर्णनिम्नप्रदेशिका (आसीत्) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>(That earth was) abandoned by the ocean, driven back by the missile&#x27;s power, and its low-lying tracts were filled by the great flood of draining waters.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>(ती पृथ्वी) अस्त्राच्या (शस्त्राच्या) शक्तीमुळे हटविलेल्या समुद्राने सोडून दिलेली व ओसरून जाणाऱ्या पाण्याच्या महापुराने खोलगट भाग भरून गेलेली होती.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 2.42, line 1: the print gives (शस्त्र) as an alternative reading for अस्त्र; अस्त्र kept</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्त्रशक्ति</span>
+    <span class="word-iast">astraśakti</span>
+  </div>
+  <div><span class="word-grammar">feminine stem (शक्तिः); तत्पुरुष अस्त्रस्य शक्तिः, used as prior member of the larger compound</span></div>
+  <div class="word-form">In this verse: अस्त्रशक्तिः (पूर्वपद; स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">the power of the missile</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अस्त्राचे बळ</p>
+  <div class="word-usage">
+    <div class="deva">अस्त्रशक्त्या शत्रुः जितः ।</div>
+    <div class="usage-iast">astraśaktyā śatruḥ jitaḥ ।</div>
+    <div class="usage-meaning lang-en">The enemy was conquered by the power of the missile.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अस्त्राच्या बळाने शत्रू जिंकला गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुद्धूतपारावार</span>
+    <span class="word-iast">samuddhūtapārāvāra</span>
+  </div>
+  <div><span class="word-grammar">masculine stem; तत्पुरुष समुद्धूतः पारावारः, prior member of the compound</span></div>
+  <div class="word-form">In this verse: समुद्धूतपारावार (पूर्वपद; पुल्लिंग)</div>
+  <p class="word-meaning lang-en">the driven-back ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हटवलेला समुद्र</p>
+  <div class="word-usage">
+    <div class="deva">रामेण समुद्धूतः पारावारः अपससार ।</div>
+    <div class="usage-iast">rāmeṇa samuddhūtaḥ pārāvāraḥ apasasāra ।</div>
+    <div class="usage-meaning lang-en">The ocean, driven back by Rāma, receded.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने हटवलेला समुद्र मागे सरला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुज्झिता</span>
+    <span class="word-iast">samujjhitā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; सम् + √उज्झ् + क्त</span></div>
+  <div class="word-form">In this verse: समुज्झिता (क्त, सम् + √उज्झ्, स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">abandoned, given up</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(त्याने) सोडून दिलेली</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामः जनेन समुज्झितः आसीत् ।</div>
+    <div class="usage-iast">grāmaḥ janena samujjhitaḥ āsīt ।</div>
+    <div class="usage-meaning lang-en">The village had been abandoned by the people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाव लोकांनी सोडून दिला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षरद्वारि</span>
+    <span class="word-iast">kṣaradvāri</span>
+  </div>
+  <div><span class="word-grammar">neuter stem; तत्पुरुष क्षरत् (शतृ of √क्षर्) + वारि, prior member of the compound</span></div>
+  <div class="word-form">In this verse: क्षरद्वारि (पूर्वपद; नपुंसकलिंग)</div>
+  <p class="word-meaning lang-en">the flowing-off, draining water</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओसरणारे पाणी</p>
+  <div class="word-usage">
+    <div class="deva">क्षरद्वारि निम्नं पूरयति ।</div>
+    <div class="usage-iast">kṣaradvāri nimnaṃ pūrayati ।</div>
+    <div class="usage-meaning lang-en">The draining water fills the lowland.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओसरणारे पाणी सखल भाग भरते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महापूर</span>
+    <span class="word-iast">mahāpūra</span>
+  </div>
+  <div><span class="word-grammar">masculine stem; कर्मधारय महान् + पूरः, prior member of the compound</span></div>
+  <div class="word-form">In this verse: महापूर (पूर्वपद; पुल्लिंग)</div>
+  <p class="word-meaning lang-en">the great flood</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठा लोंढा</p>
+  <div class="word-usage">
+    <div class="deva">वर्षासु महापूरः आगच्छति ।</div>
+    <div class="usage-iast">varṣāsu mahāpūraḥ āgacchati ।</div>
+    <div class="usage-meaning lang-en">In the rains the great flood comes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पावसाळ्यात मोठा पूर येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूर्णनिम्नप्रदेशिका</span>
+    <span class="word-iast">pūrṇanimnapradeśikā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; बहुव्रीहि पूर्णानि निम्नप्रदेशानि यस्याः</span></div>
+  <div class="word-form">In this verse: पूर्णनिम्नप्रदेशिका (stem पूर्णनिम्नप्रदेशिक, स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">whose low-lying regions are filled</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्यामुळे सखल भाग भरले आहेत अशी</p>
+  <div class="word-usage">
+    <div class="deva">वृष्ट्या पूर्णनिम्नप्रदेशिका भूमिः शोभते ।</div>
+    <div class="usage-iast">vṛṣṭyā pūrṇanimnapradeśikā bhūmiḥ śobhate ।</div>
+    <div class="usage-meaning lang-en">The land whose low regions are filled by rain looks splendid.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पावसाने सखल भाग भरलेली भूमी शोभते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The new land is born in struggle — the sea resists, the waters drain, the lowlands fill. The poet does not hide the labour of creation: holiness is not handed over, it is won. So too the inner kṣetra, the heart&#x27;s holy land, emerges only when the floodwaters of old habits drain away.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नवी भूमी संघर्षात जन्मते — समुद्र विरोध करतो, पाणी ओसरते, सखल भाग भरतात. कवी निर्मितीचे श्रम लपवत नाही : पावित्र्य हाती दिले जात नाही, ते जिंकावे लागते. तसेच अंतःक्षेत्र — हृदयाची पवित्र भूमी — जुन्या सवयींच्या पुराचे पाणी ओसरल्यावरच वर येते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse describes the classic aftermath of the sea&#x27;s recession: the ocean, struck by the divine missile, withdraws, and the draining waters pool in the lowlands. Purāṇic accounts of Paraśurāma&#x27;s reclamation agree that the recovered Aparānta needed settling — sages and settlers came only after the waters subsided.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक समुद्र मागे सरल्यानंतरच्या ठरलेला परिणामाचे वर्णन करतो : दिव्यास्त्राने ताडला गेलेला समुद्र मागे हटतो आणि ओसरणारे पाणी सखल भागांत साचते. परशुरामाने परत मिळवलेल्या अपरान्ताबद्दलच्या पौराणिक कथा सहमत आहेत की तो स्थिरावणे आवश्यक होते — पाणी ओसरल्यावरच ऋषी आणि वसाहतकार आले.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The print gives (शस्त्र) as an alternative reading for अस्त्र in line 1; अस्त्र is kept, since the &#x27;missile&#x27; is Paraśurāma&#x27;s divyāstra arrow of 2.35–40, not a hand-weapon. The whole verse is one long bahuvrīhi describing vasundharā, continued from 2.41 — the sentence spans both ślokas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पहिल्या चरणात छापील प्रतीत अस्त्र साठी (शस्त्र) हा पर्यायी पाठ दिला आहे; अस्त्रच ठेवले आहे, कारण हे &#x27;अस्त्र&#x27; २.३५–४० मधील परशुरामाचा दिव्यास्त्र-बाण आहे, हातशस्त्र नव्हे. संपूर्ण श्लोक हा वसुन्धरेचे वर्णन करणारा एक दीर्घ बहुव्रीही आहे, २.४१ पासून पुढे चाललेला — वाक्य दोन्ही श्लोकांत पसरलेले आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-41.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 41</div></a><a class="next" href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 43</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

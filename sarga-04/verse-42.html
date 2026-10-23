@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 42 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 42</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 42</span><span class="bl-mr lang-mr">श्लोक 42</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">महिम्ना महता चैतत्त्रिलोक्यां प्रथय प्रभो ।<br>अहं हि पूजितं तत्र द्रक्ष्यामि त्वां त्रिलोचन ।।४२।।</div>
+  <div class="verse-iast">mahimnā mahatā caitattrilokyāṃ prathaya prabho । ahaṃ hi pūjitaṃ tatra drakṣyāmi tvāṃ trilocana</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">महिम्ना । महता । च । एतत् । त्रिलोक्याम् । प्रथय । प्रभो । अहम् । हि । पूजितम् । तत्र । द्रक्ष्यामि । त्वाम् । त्रिलोचन ।</div><div class="vig-iast">mahimnā । mahatā । ca । etat । trilokyām । prathaya । prabho । aham । hi । pūjitam । tatra । drakṣyāmi । tvām । trilocana ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">च + एतत् = चैतत् (वृद्धि) · एतत् + त्रिलोक्याम् = एतत्त्रिलोक्याम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे प्रभो, महता महिम्ना च एतत् (क्षेत्रं) त्रिलोक्यां प्रथय; हे त्रिलोचन, अहं हि तत्र पूजितं त्वां द्रक्ष्यामि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O Lord, by your great glory proclaim this kṣetra through the three worlds; for I, O three-eyed one, shall behold you here, worshipped.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे प्रभो, या महान महिम्यामुळे त्रैलोक्यात या क्षेत्राला तू प्रसिद्धी दे; व हे त्रिलोचना, मी पूजित अशा तुला त्या ठिकाणी पाहीन.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महता महिम्ना</span>
+    <span class="word-iast">mahatā mahimnā</span>
+  </div>
+  <div><span class="word-grammar">instrumental singular; महिमन्, masculine, irregular stem (महिम्ना)</span></div>
+  <div class="word-form">In this verse: महिम्ना महता</div>
+  <p class="word-meaning lang-en">by the great glory</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मोठ्या महिम्याने</p>
+  <div class="word-usage">
+    <div class="deva">महता महिम्ना क्षेत्रम् त्रिलोक्याम् प्रसिद्धम् अभवत् ।</div>
+    <div class="usage-iast">mahatā mahimnā kṣetram trilokyām prasiddham abhavat ।</div>
+    <div class="usage-meaning lang-en">By its great glory the kṣetra became famous through the three worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या महान महिम्यामुळे क्षेत्र तिन्ही लोकांत प्रसिद्ध झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रिलोक्याम्</span>
+    <span class="word-iast">trilokyām</span>
+  </div>
+  <div><span class="word-grammar">locative singular feminine of त्रिलोकी</span></div>
+  <div class="word-form">In this verse: त्रिलोक्याम्</div>
+  <p class="word-meaning lang-en">in the three worlds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिन्ही लोकांत</p>
+  <div class="word-usage">
+    <div class="deva">त्रिलोक्याम् देवस्य कीर्तिः व्याप्ता अस्ति ।</div>
+    <div class="usage-iast">trilokyām devasya kīrtiḥ vyāptā asti ।</div>
+    <div class="usage-meaning lang-en">The Lord&#x27;s fame is spread through the three worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भगवंताची कीर्ती तिन्ही लोकांत पसरलेली आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रथय</span>
+    <span class="word-iast">prathaya</span>
+  </div>
+  <div><span class="word-grammar">causative (ṇic) of √prath (class 1), second person singular, imperative (loṭ), parasmaipada</span></div>
+  <div class="word-form">In this verse: प्रथय</div>
+  <p class="word-meaning lang-en">make famous, proclaim</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्ध कर (√प्रथ्, णिच्, लोट्)</p>
+  <div class="word-usage">
+    <div class="deva">क्षेत्रस्य महिमानम् त्रिलोक्याम् प्रथय इति प्रार्थना ।</div>
+    <div class="usage-iast">kṣetrasya mahimānam trilokyām prathaya iti prārthanā ।</div>
+    <div class="usage-meaning lang-en">Spread the glory of the kṣetra through the three worlds — thus the prayer.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘क्षेत्राचा महिमा तिन्ही लोकांत पसरव’ अशी प्रार्थना.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूजितं त्वां द्रक्ष्यामि</span>
+    <span class="word-iast">pūjitaṃ tvāṃ drakṣyāmi</span>
+  </div>
+  <div><span class="word-grammar">द्रक्ष्यामि — √dṛś (class 1), first person singular, future (lṛṭ), parasmaipada; पूजितम् — past passive participle, accusative singular masculine agreeing with त्वाम्</span></div>
+  <div class="word-form">In this verse: पूजितं त्वां द्रक्ष्यामि</div>
+  <p class="word-meaning lang-en">I shall behold you, worshipped</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूजलेल्या तुझे दर्शन घेईन (√दृश्, लृट्)</p>
+  <div class="word-usage">
+    <div class="deva">अहम् देवम् पूजितम् द्रक्ष्यामि इति आशा भक्तस्य ।</div>
+    <div class="usage-iast">aham devam pūjitam drakṣyāmi iti āśā bhaktasya ।</div>
+    <div class="usage-meaning lang-en">I shall behold the Lord worshipped — this is the devotee&#x27;s hope.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘मी पूजलेल्या देवाचे दर्शन घेईन’ ही भक्ताची आशा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रिलोचन</span>
+    <span class="word-iast">trilocana</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound (trīṇi locanāni yasya), vocative singular masculine</span></div>
+  <div class="word-form">In this verse: त्रिलोचन</div>
+  <p class="word-meaning lang-en">O three-eyed one (Śiva)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे त्रिनेत्रा</p>
+  <div class="word-usage">
+    <div class="deva">हे त्रिलोचन मम रक्षाम् कुरु इति स्तुतिः ।</div>
+    <div class="usage-iast">he trilocana mama rakṣām kuru iti stutiḥ ।</div>
+    <div class="usage-meaning lang-en">O three-eyed one, protect me — thus the praise.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘हे त्रिनेत्रा, माझे रक्षण कर’ अशी स्तुती.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma adds two further asks that complete the sthala: fame for the place, and a vision for himself. The first shows the devotional logic of a tīrtha — a holy place must be known, because its holiness is meant for all who come. The second shows the bhakta&#x27;s reward: daily darśana of the Lord worshipped, the sight that sustains a life of tapas. The verse thus binds the sacred geography of Guhagar to personal devotion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुराम आणखी दोन गोष्टी मागतो आणि त्यामुळे क्षेत्र पूर्ण होते : स्थानाला प्रसिद्धी आणि स्वतःला दर्शन. पहिल्यात तीर्थक्षेत्राचा भक्तिपर तर्क आहे — पवित्र स्थान माहीत असले पाहिजे, कारण त्याचे पावित्र्य येणाऱ्या सर्वांसाठी आहे. दुसऱ्यात भक्ताचे फळ आहे : पूजिलेल्या भगवंताचे नित्य दर्शन, हेच तपस्येच्या जीवनाचा आधार. अशा रीतीने हा श्लोक गुहागरच्या पवित्र भूगोलाला वैयक्तिक भक्तीशी जोडतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The pairing of &#x27;prathaya&#x27; (spread its fame) with &#x27;drakṣyāmi&#x27; (I shall see) mirrors the twofold fruit of a tīrtha in the Purāṇas: loka-prasiddhi, the place becoming known in the world, and darśana-phala, the vision granted to the seeker. The Trilocana epithet here is apposite: Śiva&#x27;s third eye, the eye of knowledge and of fire, is what the devotee hopes to stand before. Puranic māhātmyas commonly promise that the Lord&#x27;s darśana in a kṣetra is daily (nitya), not rare — the same promise Śiva makes in 4.48.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रथय (‘प्रसिद्ध कर’) आणि द्रक्ष्यामि (‘मी पाहीन’) या जोडीत पुराणांतील तीर्थाचे दुहेरी फळ आहे : लोकप्रसिद्धी — स्थान जगात प्रसिद्ध होणे — आणि दर्शनफळ — साधकाला मिळणारे दर्शन. येथे त्रिलोचन हे विशेषण योग्य आहे : ज्ञान आणि अग्नी यांचा शिवाचा तिसरा डोळा, तोच डोळा भक्तासमोर उभा राहण्याची आशा. पुराणांतील माहात्म्ये सामान्यतः सांगतात की क्षेत्रातील भगवंताचे दर्शन नित्य असते, दुर्मीळ नव्हे — तेच आश्वासन ४.४८ मध्ये शिव देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Cross-link: महिम्ना महता answers 4.41&#x27;s वरदानां वरदः — the &#x27;great glory&#x27; by which the place is famed is the Lord&#x27;s own presence, granted as the boon. The second pāda&#x27;s पूजितं त्वां द्रक्ष्यामि — &#x27;I shall see you worshipped&#x27; — foreshadows the daily pūjā at the Vyāḍeśvara temple itself: the poet&#x27;s present-day temple worship is thus anchored in Paraśurāma&#x27;s prayer.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुप्. परस्पर-संदर्भ : महिम्ना महता हे ४.४१ च्या वरदानां वरदः ला उत्तर आहे — ज्या ‘महान महिम्या’ने स्थान प्रसिद्ध होणार तो महिमा वरदान म्हणून मिळालेल्या भगवंताच्या स्वतःच्या उपस्थितीचाच आहे. दुसऱ्या चरणातील पूजितं त्वां द्रक्ष्यामि — ‘मी पूजलेल्या तुला पाहीन’ — व्याडेश्वर मंदिरातील नित्य पूजेचे भाकित आहे : आजच्या मंदिरातील पूजा अशी परशुरामाच्या प्रार्थनेत रुजलेली आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-41.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 41</div></a><a class="next" href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 43</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

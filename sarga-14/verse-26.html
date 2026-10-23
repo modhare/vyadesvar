@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 26 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 26</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 26</span><span class="bl-mr lang-mr">श्लोक 26</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Āryā-family mātrā meter (irregular as printed)</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यस्यान्नदानकीर्तिर्लोकैरुद्ग्राह्यतेऽद्यापि ।<br>जगतीविततप्रतिमानोमाथाङ्घ्रिपद्मसेवी यः ।।२६।।</div>
+  <div class="verse-iast">yasyānnadānakīrtirlokairudgrāhyate&#x27;dyāpi । jagatīvitatapratimānomāthāṅghripadmasevī yaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यस्य । अन्न-दान-कीर्तिः । लोकैः । उद्ग्राह्यते । अद्य । अपि । जगती-वितत-प्रतिम… (?) । …उमानाथ-अङ्घ्रि-पद्म-सेवी (?) । यः ।</div><div class="vig-iast">yasya । anna-dāna-kīrtiḥ । lokaiḥ । udgrāhyate । adya । api । jagatī-vitata-pratima… (?) । …umānātha-aṅghri-padma-sevī (?) । yaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यस्य + अन्न = यस्यान्न · कीर्तिः + लोकैः = कीर्तिर्लोकैः · लोकैः + उद्ग्राह्यते = लोकैरुद्ग्राह्यते (विसर्ग → र्) · उद्ग्राह्यते + अद्य = उद्ग्राह्यतेऽद्य (पूर्वरूप) · अद्य + अपि = अद्यापि · नाथ + अङ्घ्रि = नाथाङ्घ्रि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्य अन्नदानकीर्तिः अद्य अपि लोकैः उद्ग्राह्यते, यः (च) जगतीवितत… उमानाथाङ्घ्रिपद्मसेवी (आसीत्) । *(उत्तरार्धाचा मूळ पाठ भ्रष्ट आहे — संपादकाची टीप: ‘मुळातील मो चुकीचा असावा’; अर्थ मराठीनुसार दिला आहे.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The fame of his feeding the hungry (annadāna) is recalled by people even today; and as a servant of the lotus feet of Umānātha (Śiva), his good name stands firm-rooted throughout the world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ह्याच्या अन्नदानाच्या कीर्तीची (अन्नसंतर्पणाची) आठवण लोक अद्यापि काढीत असतात. उमानाथ शंकराच्या चरण कमलांचा सेवक म्हणून जगात याची प्रतिष्ठा दृढमूल आहे.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> (मुळातील मो चुकीचा असावा.)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यस्य</span>
+    <span class="word-iast">yasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: यस्यान्न</div>
+  <p class="word-meaning lang-en">whose</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची</p>
+  <div class="word-usage">
+    <div class="deva">यस्य कीर्तिः सः धन्यः ।</div>
+    <div class="usage-iast">yasya kīrtiḥ saḥ dhanyaḥ.</div>
+    <div class="usage-meaning lang-en">He whose fame (endures) is blessed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याची कीर्ती (टिकते) तो धन्य होय.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्न-दान-कीर्तिः</span>
+    <span class="word-iast">anna-dāna-kīrtiḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अन्नदानकीर्तिर्</div>
+  <p class="word-meaning lang-en">fame for feeding people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अन्नदानाची कीर्ती</p>
+  <div class="word-usage">
+    <div class="deva">तस्य अन्नदानकीर्तिः अद्यापि श्रूयते ।</div>
+    <div class="usage-iast">tasya annadānakīrtiḥ adyāpi śrūyate.</div>
+    <div class="usage-meaning lang-en">The fame of his feeding is heard even today.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या अन्नदानाची कीर्ती आजही ऐकू येते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकैः</span>
+    <span class="word-iast">lokaiḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. तृ. बव.</span></div>
+  <div class="word-form">In this verse: लोकैर्</div>
+  <p class="word-meaning lang-en">by people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांकडून</p>
+  <div class="word-usage">
+    <div class="deva">लोकैः एषा कथा उद्ग्राह्यते ।</div>
+    <div class="usage-iast">lokaiḥ eṣā kathā udgrāhyate.</div>
+    <div class="usage-meaning lang-en">This story is proclaimed by people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ही कथा लोकांकडून गाइली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उद्ग्राह्यते</span>
+    <span class="word-iast">udgrāhyate</span>
+  </div>
+  <div><span class="word-grammar">उद् + ग्रह्, णिच्, कर्मणि लट्</span></div>
+  <div class="word-form">In this verse: उद्ग्राह्यतेऽद्य</div>
+  <p class="word-meaning lang-en">is proclaimed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाइली जाते, काढली जाते</p>
+  <div class="word-usage">
+    <div class="deva">तस्य यशः सर्वैः उद्ग्राह्यते ।</div>
+    <div class="usage-iast">tasya yaśaḥ sarvaiḥ udgrāhyate.</div>
+    <div class="usage-meaning lang-en">His glory is proclaimed by all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे यश सर्वांकडून गाइले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अद्य अपि</span>
+    <span class="word-iast">adya api</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अद्यापि</div>
+  <p class="word-meaning lang-en">even today</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आजही</p>
+  <div class="word-usage">
+    <div class="deva">अद्यापि सः स्मर्यते ।</div>
+    <div class="usage-iast">adyāpi saḥ smaryate.</div>
+    <div class="usage-meaning lang-en">He is remembered even today.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याची आठवण आजही काढली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगती-वितत-प्रतिमानः</span>
+    <span class="word-iast">jagatī-vitata-pratimānaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (?)</span></div>
+  <div class="word-form">In this verse: जगतीविततप्रतिमानो</div>
+  <p class="word-meaning lang-en">(of world-wide renown; text corrupt)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(जगात पसरलेली प्रतिष्ठा असलेला; मूळ अशुद्ध)</p>
+  <div class="word-usage">
+    <div class="deva">जगती तस्य प्रतिमा वितता आसीत् ।</div>
+    <div class="usage-iast">jagatī tasya pratimā vitatā āsīt.</div>
+    <div class="usage-meaning lang-en">His renown was spread over the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याची प्रतिष्ठा जगभर पसरलेली होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उमानाथ-अङ्घ्रि-पद्म-सेवी</span>
+    <span class="word-iast">umānātha-aṅghri-padma-sevī</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (print: -नोमाथ-)</span></div>
+  <div class="word-form">In this verse: उमानाथाङ्घ्रिपद्मसेवी</div>
+  <p class="word-meaning lang-en">devoted to the lotus feet of Umā&#x27;s lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उमानाथाच्या (शिवाच्या) चरणकमलांचा सेवक</p>
+  <div class="word-usage">
+    <div class="deva">सः उमानाथाङ्घ्रिपद्मसेवी आसीत् ।</div>
+    <div class="usage-iast">saḥ umānāthāṅghripadmasevī āsīt.</div>
+    <div class="usage-meaning lang-en">He was devoted to the lotus feet of Umā&#x27;s lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो उमानाथाच्या चरणकमलांचा सेवक होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यः</span>
+    <span class="word-iast">yaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यः</div>
+  <p class="word-meaning lang-en">who</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो</p>
+  <div class="word-usage">
+    <div class="deva">यः शिवभक्तः सः पूज्यः ।</div>
+    <div class="usage-iast">yaḥ śivabhaktaḥ saḥ pūjyaḥ.</div>
+    <div class="usage-meaning lang-en">He who is a devotee of Śiva is worthy of worship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो शिवभक्त असतो तो पूज्य होय.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्नदानकीर्तिः</span>
+    <span class="word-iast">annadānakīrtiḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: अन्नदानकीर्तिर्</div>
+  <p class="word-meaning lang-en">the fame of feeding people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अन्नदानाची (अन्नसंतर्पणाची) कीर्ती</p>
+  <div class="word-usage">
+    <div class="deva">तस्य अन्नदानकीर्तिः चिरं तिष्ठति ।</div>
+    <div class="usage-iast">tasya annadānakīrtiḥ ciraṃ tiṣṭhati.</div>
+    <div class="usage-meaning lang-en">The fame of his feeding endures long.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या अन्नदानाची कीर्ती दीर्घकाळ टिकते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अद्यापि</span>
+    <span class="word-iast">adyāpi</span>
+  </div>
+  <div><span class="word-grammar">अव्यय; समासार्थः</span></div>
+  <div class="word-form">In this verse: अद्यापि</div>
+  <p class="word-meaning lang-en">even today</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आजसुद्धा</p>
+  <div class="word-usage">
+    <div class="deva">अद्यापि जनाः तं स्मरन्ति ।</div>
+    <div class="usage-iast">adyāpi janāḥ taṃ smaranti.</div>
+    <div class="usage-meaning lang-en">Even today people remember him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आजसुद्धा लोक त्याची आठवण काढतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगतीवितत…</span>
+    <span class="word-iast">jagatīvitata…</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (?); समासार्थः</span></div>
+  <div class="word-form">In this verse: जगतीविततप्रतिमानो</div>
+  <p class="word-meaning lang-en">(of world-wide renown; text corrupt)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगात पसरलेली (प्रतिष्ठा) (पाठ साशंक)</p>
+  <div class="word-usage">
+    <div class="deva">जगती तस्य कीर्तिः वितता ।</div>
+    <div class="usage-iast">jagatī tasya kīrtiḥ vitatā.</div>
+    <div class="usage-meaning lang-en">His fame was spread over the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याची कीर्ती जगभर पसरलेली होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उमानाथाङ्घ्रिपद्मसेवी</span>
+    <span class="word-iast">umānāthāṅghripadmasevī</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; समासार्थः</span></div>
+  <div class="word-form">In this verse: उमानाथाङ्घ्रिपद्मसेवी</div>
+  <p class="word-meaning lang-en">servant of the lotus feet of Umā&#x27;s lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उमानाथ शंकराच्या चरणकमलांचा (अङ्घ्रिपद्म) सेवक</p>
+  <div class="word-usage">
+    <div class="deva">उमानाथाङ्घ्रिपद्मसेवी भक्तः धन्यः ।</div>
+    <div class="usage-iast">umānāthāṅghripadmasevī bhaktaḥ dhanyaḥ.</div>
+    <div class="usage-meaning lang-en">The devotee who serves Umānātha&#x27;s lotus feet is blessed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उमानाथाच्या चरणकमलांचा सेवक असलेला भक्त धन्य होय.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse teaches that annadāna is the householder&#x27;s imperishable wealth: riches decay, but the fame of feeding the hungry is &#x27;recalled even today&#x27;. Kīrti here is not vanity but the afterlife of a good act in the memory of the community. And the verse roots that worldly fame in bhakti — it is as Umānātha&#x27;s servant, not as a rich man, that Mahādeva is remembered — so charity and devotion are shown as one seamless life, not two separate virtues.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक शिकवतो की अन्नदान हे गृहस्थाचे अविनाशी धन आहे — संपत्ती नाश पावते, पण भुकेल्यांना जेवू घालण्याची कीर्ती &#x27;आजही आठवली जाते&#x27;. येथील कीर्ती म्हणजे अहंकार नव्हे, तर सत्कर्माचे समाजाच्या स्मरणातले चिरंजीवन. आणि ती ऐहिक कीर्ती भक्तीत रुजलेली आहे — श्रीमंत म्हणून नव्हे, तर उमानाथाचा सेवक म्हणून महादेवाची आठवण काढली जाते. दान आणि भक्ती हे दोन वेगळे गुण नसून एकच अखंड जीवन आहे, हे या श्लोकातून दिसते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>In dharma-śāstra, annadāna is the foremost of gifts — the gift of food sustains life itself, and feeding guests is one of the five great daily sacrifices (pañca-mahāyajña) of the householder. Māhātmyas regularly pair such charity with devotion to the local deity: the donor&#x27;s fame (kīrti) is the proper, blameless fruit of dāna, distinct from the pride of wealth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>धर्मशास्त्रांत अन्नदान हे दानांत श्रेष्ठ मानले आहे — अन्न हेच जीवनाचे पोषण करते, आणि अतिथीस जेवू घालणे हे गृहस्थाच्या पाच महायज्ञांपैकी एक आहे. माहात्म्यग्रंथांत अशा दानाची सांगड स्थानिक देवतेच्या भक्तीशी घातलेली असते — दात्याची कीर्ती हे दानाचे योग्य, निर्दोष फळ आहे; संपत्तीच्या गर्वापासून ते वेगळे आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Text-critical caution: the second half of this verse is corrupt as printed — the file&#x27;s anvaya marks the vigraha with &#x27;(?)&#x27; and notes &#x27;the print&#x27;s मो seems wrong&#x27; (मुळातील मो चुकीचा असावा). The rendering therefore follows the book&#x27;s Marathi, which reconstructs the sense (his renown as Umānātha&#x27;s servant, firm-rooted in the world) rather than the broken Sanskrit. The metre is noted as Āryā-family, irregular as printed — consistent with the editor&#x27;s remark that the original has frequent vṛtta-doṣa. Do not quote this half-verse as authentic text.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाठ-चर्चा : या श्लोकाचा उत्तरार्ध छापील पाठात भ्रष्ट आहे — फाइलच्या अन्वयात विग्रहावर &#x27;(?)&#x27; चिन्ह असून &#x27;मुळातील मो चुकीचा असावा&#x27; अशी नोंद आहे. त्यामुळे भाषांतर पुस्तकाच्या मराठी अर्थानुसार दिले आहे (उमानाथाचा सेवक म्हणून जगात दृढमूल प्रतिष्ठा), तुटलेल्या संस्कृताचा शब्दशः अनुवाद नव्हे. वृत्त आर्या-कुलातील असून छापील पाठात अनियमित आहे — मूळात वारंवार वृत्तदोष असल्याच्या संपादकांच्या म्हणण्याशी हे सुसंगत आहे. हा अर्धश्लोक प्रामाणिक पाठ म्हणून उद्धृत करू नये.</p></div></div>
+
+<div class="pagenav"><a href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 25</div></a><a class="next" href="verse-27.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 27</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

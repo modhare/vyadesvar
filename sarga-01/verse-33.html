@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 33 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 33</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 33</span><span class="bl-mr lang-mr">श्लोक 33</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">समुच्छ्वसन्पादहतो यथाहिः पञ्चाननः सिन्धुरहेलितो वा ।।<br>निरीक्ष्य दृष्ट्या खरशोणयैनं जगाद भूयः पुरुषप्रवीरः ।।३३।।</div>
+  <div class="verse-iast">samucchvasanpādahato yathāhiḥ pañcānanaḥ sindhurahelito vā । । nirīkṣya dṛṣṭyā kharaśoṇayainaṃ jagāda bhūyaḥ puruṣapravīraḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">समुच्छ्वसन् । पाद-हतः । यथा । अहिः । पञ्च-आननः । सिन्धुर-हेलितः । वा । निरीक्ष्य । दृष्ट्या । खर-शोणया । एनम् । जगाद । भूयः । पुरुष-प्रवीरः ।</div><div class="vig-iast">samucchvasan । pāda-hataḥ । yathā । ahiḥ । pañca-ānanaḥ । sindhura-helitaḥ । vā । nirīkṣya । dṛṣṭyā । khara-śoṇayā । enam । jagāda । bhūyaḥ । puruṣa-pravīraḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सम् + उत् + श्वसन् = समुच्छ्वसन् (त् + श = च्छ) · पादहतः + यथा = पादहतो यथा (विसर्ग → ओ) · यथा + अहिः = यथाहिः (सवर्णदीर्घ) · सिन्धुरहेलितः + वा = सिन्धुरहेलितो वा · खरशोणया + एनम् = खरशोणयैनम् (वृद्धि)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">पादहतः अहिः यथा, सिन्धुरहेलितः पञ्चाननः वा (यथा), समुच्छ्वसन् पुरुषप्रवीरः खरशोणया दृष्ट्या एनं निरीक्ष्य भूयः जगाद ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Breathing hard — like a serpent trodden underfoot, or like a lion, the five-faced one, slighted by an elephant — the foremost of men cast a sharp, blood-reddened gaze upon the Ocean and spoke once more.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पायाने तुडवलेल्या सर्पाप्रमाणे किंवा हत्तीकडून अपमानित झालेल्या सिंहाप्रमाणे जोराने श्वास टाकीत या समुद्राकडे तीक्ष्ण व लाल झालेल्या डोळ्यांनी बघून तो पुरुषश्रेष्ठ पुन्हा म्हणाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समुच्छ्वसन्</span>
+    <span class="word-iast">samucchvasan</span>
+  </div>
+  <div><span class="word-grammar">सम् + उत् + √श्वस् (2nd class, parasmaipada) + śatṛ; masculine, nominative singular</span></div>
+  <div class="word-form">In this verse: समुच्छ्वसन्</div>
+  <p class="word-meaning lang-en">breathing hard; hissing with anger</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जोराने फुसफुसत श्वास टाकत</p>
+  <div class="word-usage">
+    <div class="deva">क्रुद्धः पुरुषः समुच्छ्वसन् वदति।</div>
+    <div class="usage-iast">kruddhaḥ puruṣaḥ samucchvasan vadati.</div>
+    <div class="usage-meaning lang-en">The angry man speaks while breathing hard.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रागावलेला पुरुष जोरजोरात श्वास घेत बोलतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पादहतः अहिः</span>
+    <span class="word-iast">pādahataḥ ahiḥ</span>
+  </div>
+  <div><span class="word-grammar">पाद (instrumental) + हत (√हन् + kta, passive); &#x27;पादेन हतः&#x27; — tṛtīyā-tatpuruṣa; nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: पादहतो यथाहिः</div>
+  <p class="word-meaning lang-en">a serpent trodden by the foot</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पायाने तुडवलेला सर्प</p>
+  <div class="word-usage">
+    <div class="deva">पादहतः अहिः शीघ्रं प्रहरति।</div>
+    <div class="usage-iast">pādahataḥ ahiḥ śīghraṃ praharati.</div>
+    <div class="usage-meaning lang-en">A trodden serpent strikes swiftly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पायाने तुडवलेला साप लगेच चावतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पञ्चाननः</span>
+    <span class="word-iast">pañcānanaḥ</span>
+  </div>
+  <div><span class="word-grammar">पञ्चन् + आनन; &#x27;पञ्च आननानि यस्य&#x27; — bahuvrīhi; nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: पञ्चाननः</div>
+  <p class="word-meaning lang-en">the five-faced one; the lion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सिंह</p>
+  <div class="word-usage">
+    <div class="deva">पञ्चाननः वनस्य राजा भवति।</div>
+    <div class="usage-iast">pañcānanaḥ vanasya rājā bhavati.</div>
+    <div class="usage-meaning lang-en">The lion is the king of the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सिंह हा वनाचा राजा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सिन्धुरहेलितः</span>
+    <span class="word-iast">sindhurahelitaḥ</span>
+  </div>
+  <div><span class="word-grammar">सिन्धुर + हेलित (√हेल् &#x27;अवहेलना करणे&#x27; + kta); &#x27;सिन्धुरेण हेलितः&#x27; — tṛtīyā-tatpuruṣa; nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: सिन्धुरहेलितो वा</div>
+  <p class="word-meaning lang-en">slighted, insulted by an elephant</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तीने (सिन्धुर) अवहेलना केलेला</p>
+  <div class="word-usage">
+    <div class="deva">सिन्धुरहेलितः केसरी क्रुध्यति।</div>
+    <div class="usage-iast">sindhurahelitaḥ kesarī krudhyati.</div>
+    <div class="usage-meaning lang-en">The lion, slighted by an elephant, grows angry.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हत्तीने अवहेलना केलेला सिंह क्रोधित होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वा</span>
+    <span class="word-iast">vā</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; marking an alternative</span></div>
+  <div class="word-form">In this verse: वा</div>
+  <p class="word-meaning lang-en">or</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>किंवा</p>
+  <div class="word-usage">
+    <div class="deva">गच्छ वा तिष्ठ वा।</div>
+    <div class="usage-iast">gaccha vā tiṣṭha vā.</div>
+    <div class="usage-meaning lang-en">Go or stay.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जा किंवा थांब.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निरीक्ष्य</span>
+    <span class="word-iast">nirīkṣya</span>
+  </div>
+  <div><span class="word-grammar">निस् + √ईक्ष् (1st class) + lyap; indeclinable</span></div>
+  <div class="word-form">In this verse: निरीक्ष्य</div>
+  <p class="word-meaning lang-en">having seen; after looking at</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाहून</p>
+  <div class="word-usage">
+    <div class="deva">सूर्यं निरीक्ष्य वन्दते।</div>
+    <div class="usage-iast">sūryaṃ nirīkṣya vandate.</div>
+    <div class="usage-meaning lang-en">Having looked at the sun, he bows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्याकडे पाहून तो वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खरशोणया दृष्ट्या</span>
+    <span class="word-iast">kharaśoṇayā dṛṣṭyā</span>
+  </div>
+  <div><span class="word-grammar">खर (adjective) + शोणा (&#x27;लालिमा&#x27;); दृष्टि-शब्द, instrumental singular, feminine</span></div>
+  <div class="word-form">In this verse: खरशोणयैनम्</div>
+  <p class="word-meaning lang-en">with a sharp and blood-red gaze</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीक्ष्ण, लालबुंद नजरेने</p>
+  <div class="word-usage">
+    <div class="deva">खरशोणया दृष्ट्या शत्रुम् अपश्यत्।</div>
+    <div class="usage-iast">kharaśoṇayā dṛṣṭyā śatrum apaśyat.</div>
+    <div class="usage-meaning lang-en">He looked at the foe with a sharp, reddened gaze.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने तीक्ष्ण लाल नजरेने शत्रूकडे पाहिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एनम्</span>
+    <span class="word-iast">enam</span>
+  </div>
+  <div><span class="word-grammar">इदम्-शब्द (pronoun), accusative singular, masculine; येथे समुद्राचा निर्देश</span></div>
+  <div class="word-form">In this verse: शोणयैनम्</div>
+  <p class="word-meaning lang-en">him; this one (the Ocean)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या (समुद्रा)ला</p>
+  <div class="word-usage">
+    <div class="deva">एनं दृष्ट्वा सः हसति।</div>
+    <div class="usage-iast">enaṃ dṛṣṭvā saḥ hasati.</div>
+    <div class="usage-meaning lang-en">Seeing him, he laughs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>याला पाहून तो हसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगाद</span>
+    <span class="word-iast">jagāda</span>
+  </div>
+  <div><span class="word-grammar">√गद् (1st class, parasmaipada), liṭ, 3rd person singular</span></div>
+  <div class="word-form">In this verse: जगाद</div>
+  <p class="word-meaning lang-en">he said; he spoke</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणाला (√गद्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">गुरुः शिष्यं जगाद।</div>
+    <div class="usage-iast">guruḥ śiṣyaṃ jagāda.</div>
+    <div class="usage-meaning lang-en">The teacher spoke to the pupil.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरू शिष्याला म्हणाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूयः</span>
+    <span class="word-iast">bhūyaḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable; marking repetition</span></div>
+  <div class="word-form">In this verse: भूयः</div>
+  <p class="word-meaning lang-en">again; once more</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुन्हा</p>
+  <div class="word-usage">
+    <div class="deva">भूयः आगच्छ।</div>
+    <div class="usage-iast">bhūyaḥ āgaccha.</div>
+    <div class="usage-meaning lang-en">Come again.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुन्हा ये.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुरुषप्रवीरः</span>
+    <span class="word-iast">puruṣapravīraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुरुष + प्रवीर (&#x27;पुरुषेषु प्रवीरः&#x27; — saptamī-tatpuruṣa); nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: पुरुषप्रवीरः</div>
+  <p class="word-meaning lang-en">the foremost of men; the best among men</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुरुषश्रेष्ठ</p>
+  <div class="word-usage">
+    <div class="deva">पुरुषप्रवीरः धर्मं रक्षति।</div>
+    <div class="usage-iast">puruṣapravīraḥ dharmaṃ rakṣati.</div>
+    <div class="usage-meaning lang-en">The foremost of men protects dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुरुषश्रेष्ठ धर्माचे रक्षण करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s fury is likened to a trodden serpent and a slighted lion — not the anger of wounded pride but the holy impatience of one whose sacred work is blocked. For the devotee this is a model: when an obstacle stands in the way of dharma, calmness is not always the virtue; righteous force, rightly directed, is itself devotion. The similes also warn the reader: even the serene sage burns when the work of God is hindered, and nature itself will feel that heat.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामाचा क्रोध पायाने तुडवलेल्या सर्पाशी आणि अपमानित सिंहाशी तुलिला आहे — हा दुखावलेल्या अहंकाराचा क्रोध नसून, पवित्र कार्य अडल्यामुळे झालेली पवित्र अधीरता आहे. भक्तासाठी हा आदर्श आहे : धर्माच्या आड अडथळा आला तर शांतता हाच नेहमी गुण नसतो; योग्य दिशेने वळवलेले न्याय्य बळ हीच भक्ती असते. या उपमा वाचकालाही इशारा देतात : शांत मुनीही देवाचे कार्य अडले की जळतो, आणि ती उष्णता निसर्गालाही जाणवते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The similes of the trodden serpent and the slighted lion belong to the stock imagery of heroic anger in kāvya. The scene echoes the Rāmāyaṇa&#x27;s Yuddhakāṇḍa, where Rāma too strings his bow against the Ocean before Sāgara submits. Here the Ocean&#x27;s refusal to yield land blocks Paraśurāma&#x27;s vow to create a dwelling-place for brāhmaṇas — the land that will become Aparānta, the Konkan, and in it Guhagar. Divine wrath here is never personal spite; it is the pressure of dharma against an obstacle.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पायाने तुडवलेला सर्प आणि अपमानित सिंह ही वीररसातील क्रोधाची पारंपरिक उपमा आहेत. रामायणाच्या युद्धकांडात रामानेही समुद्रावर धनुष्य चढवले होते आणि तेव्हा सागर शरण आला होता — येथे तोच प्रसंग परशुरामाच्या रूपात घडतो. समुद्र जमीन देण्यास नकार देतो, त्यामुळे ब्राह्मणांसाठी निवासस्थान निर्माण करण्याचा परशुरामाचा संकल्प अडतो — हीच भूमी पुढे अपरांत, कोकण आणि त्यातील गुहागर होणार आहे. दैवी क्रोध हा वैयक्तिक द्वेष नसून धर्माच्या आड येणाऱ्या अडथळ्यावरील दबाव आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Indravajrā/Upajāti, the running metre of the sarga&#x27;s dialogue section. Note the poet&#x27;s economy: a single upamā in each pāda (ahiḥ / pañcānanaḥ) sets the temperature of the whole confrontation that follows (verses 34–39). The verse is the hinge between narration and Paraśurāma&#x27;s direct speech; &#x27;bhūyaḥ&#x27; (&#x27;once more&#x27;) implies an earlier remonstrance now lost or summarized. Geography: the &#x27;Ocean&#x27; throughout this sarga is the Arabian Sea off the Guhagar coast.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : इंद्रवज्रा/उपजाति — या सर्गाच्या संवादभागाचे चालू वृत्त. कवीची काटकसर लक्षात घ्या : प्रत्येक चरणातील एकेक उपमा (अहिः / पञ्चाननः) पुढील संपूर्ण संघर्षाचे (३४–३९) तापमान ठरवते. हा श्लोक कथन आणि परशुरामाच्या प्रत्यक्ष भाषणामधील सांधा आहे; &#x27;भूयः&#x27; (पुन्हा) या शब्दावरून आधीचा एखादा समजावणीचा प्रयत्न सूचित होतो. भूगोल : या सर्गातील &#x27;समुद्र&#x27; म्हणजे गुहागर किनाऱ्यालगतचा अरबी समुद्र.</p></div></div>
+
+<div class="pagenav"><a href="verse-32.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 32</div></a><a class="next" href="verse-34.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 34</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 24 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 24</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 24</span><span class="bl-mr lang-mr">श्लोक 24</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">जिह्मव्यवहृता लुब्धाः शौचाचारविवर्जिताः ।<br>परस्त्रीलम्पटाः स्तेनाः पिशुनाः सत्यवर्जिताः ।।२४।।</div>
+  <div class="verse-iast">jihmavyavahṛtā lubdhāḥ śaucācāravivarjitāḥ । parastrīlampaṭāḥ stenāḥ piśunāḥ satyavarjitāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">जिह्म-व्यवहृताः । लुब्धाः । शौच-आचार-विवर्जिताः । पर-स्त्री-लम्पटाः । स्तेनाः । पिशुनाः । सत्य-वर्जिताः ।</div><div class="vig-iast">jihma-vyavahṛtāḥ । lubdhāḥ । śauca-ācāra-vivarjitāḥ । para-strī-lampaṭāḥ । stenāḥ । piśunāḥ । satya-varjitāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">व्यवहृताः + लुब्धाः = व्यवहृता लुब्धाः (विसर्ग-लोप) · शौच + आचार = शौचाचार</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(मानुषाः) जिह्मव्यवहृताः लुब्धाः शौचाचारविवर्जिताः परस्त्रीलम्पटाः स्तेनाः पिशुनाः सत्यवर्जिताः (भविष्यन्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Crooked in their dealings, greedy, devoid of purity and good conduct — libertines after others&#x27; wives, thieves, backbiters, bereft of truth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे लोक वाकडे वागणारे, लोभी, पवित्र आचारांपासून दूर असणारे, परस्त्रीलम्पट, चोर व दुष्ट असून यांचे सत्याशी वाकडे असते.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जिह्मव्यवहृताः</span>
+    <span class="word-iast">jihmavyavahṛtāḥ</span>
+  </div>
+  <div><span class="word-grammar">जिह्म-व्यवहृत (वि + अव + √हृ + क्त, तत्पुरुष) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m. (past participle)</div>
+  <p class="word-meaning lang-en">crooked in dealings, of deceitful conduct</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाकडे (कपटी) व्यवहार करणारे</p>
+  <div class="word-usage">
+    <div class="deva">जिह्मव्यवहृताः जनाः विश्वासं न अर्हन्ति</div>
+    <div class="usage-iast">jhmavyavahṛtāḥ janāḥ viśvāsaṃ na arhanti</div>
+    <div class="usage-meaning lang-en">People crooked in dealings do not deserve trust.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाकडे वागणारे लोक विश्वासास पात्र नसतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लुब्धाः</span>
+    <span class="word-iast">lubdhāḥ</span>
+  </div>
+  <div><span class="word-grammar">√लुभ् (दिवादिगण) + क्त प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m. (past participle)</div>
+  <p class="word-meaning lang-en">greedy, covetous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोभी</p>
+  <div class="word-usage">
+    <div class="deva">लुब्धाः नराः धर्मं धनाय विक्रीणन्ति</div>
+    <div class="usage-iast">lubdhāḥ narāḥ dharmaṃ dhanāya vikrīṇanti</div>
+    <div class="usage-meaning lang-en">Greedy men sell dharma for wealth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोभी लोक धनासाठी धर्म विकतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शौचाचारविवर्जिताः</span>
+    <span class="word-iast">śaucācāravivarjitāḥ</span>
+  </div>
+  <div><span class="word-grammar">शौच-आचार-विवर्जित (वि + √वृज् + क्त, तत्पुरुष समासमाला) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m. (past participle)</div>
+  <p class="word-meaning lang-en">devoid of purity and good conduct</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुचिता व सदाचार सोडलेले</p>
+  <div class="word-usage">
+    <div class="deva">शौचाचारविवर्जिताः यज्ञे न अधिक्रियन्ते</div>
+    <div class="usage-iast">śaucācāravivarjitāḥ yajñe na adhikriyante</div>
+    <div class="usage-meaning lang-en">Those devoid of purity and conduct are not entitled to sacrifice.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुचिता व सदाचार सोडलेले यज्ञाला अधिकारी नसतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परस्त्रीलम्पटाः</span>
+    <span class="word-iast">parastrīlampaṭāḥ</span>
+  </div>
+  <div><span class="word-grammar">पर-स्त्री-लम्पट (तत्पुरुष समास) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">libertines after others&#x27; wives</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परस्त्रीलंपट</p>
+  <div class="word-usage">
+    <div class="deva">परस्त्रीलम्पटाः समाजात् बहिष्क्रियन्ते</div>
+    <div class="usage-iast">parastrīlampaṭāḥ samājāt bahiṣkriyante</div>
+    <div class="usage-meaning lang-en">Libertines after others&#x27; wives are cast out of society.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परस्त्रीलंपटांना समाजातून बहिष्कृत केले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्तेनाः</span>
+    <span class="word-iast">stenāḥ</span>
+  </div>
+  <div><span class="word-grammar">स्तेन (√स्तेन् + अच्, कर्तृवाचक) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">thieves</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोर</p>
+  <div class="word-usage">
+    <div class="deva">स्तेनाः रात्रौ चौर्यं कुर्वन्ति</div>
+    <div class="usage-iast">stenāḥ rātrau cauryaṃ kurvanti</div>
+    <div class="usage-meaning lang-en">Thieves steal by night.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोर रात्री चोरी करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पिशुनाः</span>
+    <span class="word-iast">piśunāḥ</span>
+  </div>
+  <div><span class="word-grammar">पिशुन (√पिश् + उनन्, कर्तृवाचक) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m.</div>
+  <p class="word-meaning lang-en">backbiters, slanderers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चहाडखोर (पुस्तक: ‘दुष्ट’)</p>
+  <div class="word-usage">
+    <div class="deva">पिशुनाः मित्रेषु कलहं जनयन्ति</div>
+    <div class="usage-iast">piśunāḥ mitreṣu kalahaṃ janayanti</div>
+    <div class="usage-meaning lang-en">Backbiters sow quarrels among friends.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चहाडखोर मित्रांत कलह निर्माण करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्यवर्जिताः</span>
+    <span class="word-iast">satyavarjitāḥ</span>
+  </div>
+  <div><span class="word-grammar">सत्य-वर्जित (√वृज् + क्त, तृतीया तत्पुरुष — &#x27;सत्याने वर्जित&#x27;) प्रथमा बहुवचन पुंलिंग</span></div>
+  <div class="word-form">In this verse: nom. pl. m. (past participle)</div>
+  <p class="word-meaning lang-en">bereft of truth, truthless</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असत्यवादी</p>
+  <div class="word-usage">
+    <div class="deva">सत्यवर्जिताः वचांसि न प्रमाणानि</div>
+    <div class="usage-iast">satyavarjitāḥ vacāṃsi na pramāṇāni</div>
+    <div class="usage-meaning lang-en">The words of the truthless carry no authority.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असत्यवाद्यांची वचने प्रमाण नसतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The catalogue closes at the bedrock of personal character: dishonesty, impurity, and the abandonment of satya — truth being the very pillar the Purāṇas say still stands in Kali-yuga, dharma&#x27;s last leg. The mahātmya&#x27;s implied promise: whoever clings to satya and śauca at Vyāḍeśvara&#x27;s feet stands upon that last leg.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>यादी वैयक्तिक चारित्र्याच्या पायाशी येते : कपट, अशुचिता आणि सत्याचा त्याग — पुराणे म्हणतात कलियुगात धर्माचा शेवटचा पाय सत्य हाच उरतो. महात्म्याचे गर्भित आश्वासन असे : जो व्याडेश्वराच्या चरणी सत्य व शौच धरून राहतो, तोच त्या शेवटच्या पायावर उभा राहतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Puranic image of dharma as a bull standing on a single leg — satya — in the Kali-yuga (Bhāgavata 1.16–17, the Dharma-bull episode) gives this verse its weight: the satyavarjitāḥ are those who have kicked away the last support. Jihma-vyavahāra and paiśunya are counted among the upapātakas, minor sins, in the smṛtis.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कलियुगात धर्म हा एकाच पायावर — सत्यावर — उभा असलेला वृषभ या पुराणकल्पनेमुळे (भागवत १.१६–१७, धर्मवृषभ-प्रसंग) या श्लोकाला वजन येते : सत्यवर्जित हेच तो शेवटचा आधार लाथाडणारे आहेत. जिह्मव्यवहार व पैशुन्य स्मृतींत उपपातकांत गणले आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. Jihmavyavahṛtāḥ is jihma-vyavahṛta (vi + ava + √hṛ + kta). Note the book renders piśunāḥ as &#x27;दुष्ट&#x27; (wicked), while the standard śāstric sense is &#x27;backbiter, slanderer&#x27; (चहाडखोर), which the English rendering follows. Like vv. 20–23, every adjective is nominative plural masculine agreeing with mānuṣāḥ of v. 20.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. जिह्मव्यवहृताः हे जिह्म-व्यवहृत (वि + अव + √हृ + क्त) असे बनले आहे. पुस्तक पिशुनाः चा अर्थ &#x27;दुष्ट&#x27; असा देते, पण शास्त्रीय प्रमाण अर्थ &#x27;चहाडखोर, निंदक&#x27; असा असून इंग्रजी अर्थात तोच घेतला आहे. २०–२३ प्रमाणेच सर्व विशेषणे प्रथमा बहुवचन पुंलिंगात असून २० व्या श्लोकातील मानुषाः यांच्याशी अन्वित आहेत.</p></div></div>
+
+<div class="pagenav"><a href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 23</div></a><a class="next" href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 25</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

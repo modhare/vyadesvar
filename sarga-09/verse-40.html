@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 40 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 40</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 40</span><span class="bl-mr lang-mr">श्लोक 40</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">श्रुत्वा तच्चित्रमतुलं राजा राजीवलोचनः ।<br>मंत्रिभिः सहितः सद्भिर्लिङ्गाभ्याशमुपाययौ ।।४०।।</div>
+  <div class="verse-iast">śrutvā taccitramatulaṃ rājā rājīvalocanaḥ । maṃtribhiḥ sahitaḥ sadbhirliṅgābhyāśamupāyayau</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">श्रुत्वा । तत् । चित्रम् । अतुलम् । राजा । राजीव-लोचनः । मन्त्रिभिः । सहितः । सद्भिः । लिङ्ग-अभ्याशम् । उपाययौ ।</div><div class="vig-iast">śrutvā । tat । citram । atulam । rājā । rājīva-locanaḥ । mantribhiḥ । sahitaḥ । sadbhiḥ । liṅga-abhyāśam । upāyayau ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">तत् + चित्रम् = तच्चित्रम् · चित्रम् + अतुलम् = चित्रमतुलम् · लोचनः + मन्त्रिभिः = लोचनो मन्त्रिभिः · सद्भिः + लिङ्ग = सद्भिर्लिङ्ग · लिङ्ग + अभ्याशम् = लिङ्गाभ्याशम् · अभ्याशम् + उपाययौ = अभ्याशमुपाययौ</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत् अतुलं चित्रं श्रुत्वा राजीवलोचनः राजा सद्भिः मन्त्रिभिः सहितः लिङ्गाभ्याशम् उपाययौ ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Hearing that wondrous and incomparable tale, the lotus-eyed king came, with his virtuous ministers, to the very spot of the liṅga.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते आश्चर्यकारक व अपूर्व वृत्त ऐकून तो कमळासारखे डोळे असलेला राजा आपल्या सज्जन मन्त्र्यांसह लिङ्गाजवळ येऊन पोचला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्रमतुलम्</span>
+    <span class="word-iast">citramatulam</span>
+  </div>
+  <div><span class="word-grammar">चित्रम् (नपुं.) + अतुलम् (विशेषणम्) — द्वितीया एकवचनम्</span></div>
+  <div class="word-form">In this verse: तच्चित्रमतुलं</div>
+  <p class="word-meaning lang-en">an incomparable marvel</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अद्वितीय आश्चर्य</p>
+  <div class="word-usage">
+    <div class="deva">चित्रमतुलं वृत्तं श्रुतम् ।</div>
+    <div class="usage-iast">citram atulaṃ vṛttaṃ śrutam ।</div>
+    <div class="usage-meaning lang-en">An incomparable marvel was heard.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अद्वितीय आश्चर्य ऐकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राजीवलोचनः</span>
+    <span class="word-iast">rājīvalocanaḥ</span>
+  </div>
+  <div><span class="word-grammar">राजीव + लोचन — बहुव्रीहिसमासः, पुँल्लिङ्ग प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: राजीवलोचनः</div>
+  <p class="word-meaning lang-en">lotus-eyed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळासारखे डोळे असलेला</p>
+  <div class="word-usage">
+    <div class="deva">राजीवलोचनः नृपः आगतः ।</div>
+    <div class="usage-iast">rājīvalocanaḥ nṛpaḥ āgataḥ ।</div>
+    <div class="usage-meaning lang-en">The lotus-eyed king arrived.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमळनयन राजा आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लिङ्गाभ्याशम्</span>
+    <span class="word-iast">liṅgābhyāśam</span>
+  </div>
+  <div><span class="word-grammar">लिङ्ग + अभ्याश (पुँल्लिङ्ग) — षष्ठीतत्पुरुषः, द्वितीया एकवचनम्</span></div>
+  <div class="word-form">In this verse: लिङ्गाभ्याशम्</div>
+  <p class="word-meaning lang-en">to the vicinity of the liṅga</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लिंगाजवळ</p>
+  <div class="word-usage">
+    <div class="deva">ते लिङ्गाभ्याशम् उपागच्छन् ।</div>
+    <div class="usage-iast">te liṅgābhyāśam upāgacchan ।</div>
+    <div class="usage-meaning lang-en">They approached the vicinity of the liṅga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते लिंगाजवळ आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उपाययौ</span>
+    <span class="word-iast">upāyayau</span>
+  </div>
+  <div><span class="word-grammar">उप + आ + √या (अदादि) लिट् प्रथमपुरुष एकवचन परस्मैपद</span></div>
+  <div class="word-form">In this verse: उपाययौ</div>
+  <p class="word-meaning lang-en">went to, arrived at</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आला (उप + आ + √या, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">राजा स्थलम् उपाययौ ।</div>
+    <div class="usage-iast">rājā sthalam upāyayau ।</div>
+    <div class="usage-meaning lang-en">The king arrived at the place.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा स्थळी येऊन पोचला.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The king himself comes — ‘lotus-eyed,’ the poet’s conventional mark of a noble ruler — with his virtuous ministers to the very spot of the liṅga. Royal darśana seals the miracle: when the sovereign bows before the newly revealed liṅga, the whole kingdom’s worship is pledged. This is how a sthala is born in the kāvya’s telling — private wonder, tested testimony, and finally public, royal consecration.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्वतः राजा येतो — ‘राजीवलोचनः’, उदात्त नृपाचे कवीसंमत लक्षण — आपल्या सज्जन मन्त्र्यांसह लिंगाच्या प्रत्यक्ष स्थळी. राजदर्शन चमत्कारावर मोहोर उमटवते — जेव्हा सार्वभौम नव्याने प्रकट झालेल्या लिंगापुढे नतमस्तक होतो, तेव्हा संपूर्ण राज्याची पूजा प्रतिज्ञात होते. काव्याच्या कथनात स्थलाचा जन्म असाच होतो — खाजगी आश्चर्य, तपासलेली साक्ष, आणि शेवटी सार्वजनिक, राजकीय प्रतिष्ठापना.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The lotus-eyed (rājīvalocana) king is the Purāṇic ideal of the righteous ruler — his eyes, like lotuses, see clearly and kindly. When such a king goes in person with his ministers to the liṅga’s spot, the tīrtha receives royal consecration: private wonder becomes public worship. In sthala-tradition, the sovereign’s darśana is the seal upon a shrine’s sanctity.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राजीवलोचन राजा हा पौराणिक धार्मिक शासकाचा आदर्श आहे — कमळासारखे त्याचे डोळे स्पष्ट व दयाळूपणे पाहतात. असा राजा जेव्हा स्वतः मन्त्र्यांसह लिंगाच्या स्थळी जातो, तेव्हा तीर्थाला राजकीय प्रतिष्ठा मिळते — खाजगी आश्चर्य सार्वजनिक पूजेत बदलते. स्थलपरंपरेत सार्वभौमाचे दर्शन हेच देवस्थानाच्या पावित्र्यावरची मोहोर असते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Rājīvalocana (‘lotus-eyed’) is a stock mahākāvya epithet for noble kings. Liṅgābhyāśam — ‘to the vicinity of the liṅga’ — brings the court to the bamboo clump of verse 35: the wilderness thicket is about to become a temple court. With this verse the chain herdsman → stable-master → king is complete, and the sarga moves toward consecration. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>‘राजीवलोचन’ (‘कमळनयन’) हे उदात्त राजांचे महाकाव्यसंमत विशेषण आहे. ‘लिंगाभ्याशम्’ — ‘लिंगाच्या सान्निध्यात’ — दरबाराला ३५ व्या श्लोकातील बांबूच्या बेटापाशी आणते — वन्य झाडी आता मंदिराचे प्रांगण बनणार आहे. या श्लोकाने गुराखी → तबेलाधिकारी → राजा ही साखळी पूर्ण होते, आणि सर्ग प्रतिष्ठापनेकडे वळतो. वृत्त: अनुष्टुभ.</p></div></div>
+
+<div class="pagenav"><a href="verse-39.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 39</div></a><a class="next" href="verse-41.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 41</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

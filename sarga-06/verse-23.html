@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 23 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 23</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 23</span><span class="bl-mr lang-mr">श्लोक 23</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">बद्ध्वा सेतुं समुद्रे दशमुखनगरीं वानरैरर्दयित्वा ।<br>पौलस्त्यं सानुबन्धं यमपुरमिषुभिर्गन्तुमुद्वासयित्वा ।<br>लंकायां स्थापयित्वा तदनुजमनघं मैथिलीमानयित्वा ।<br>कृत्वा लोकं विशोकं क्षितिमथ बुभुजे राघवो रामचन्द्रः ।।२३।।</div>
+  <div class="verse-iast">baddhvā setuṃ samudre daśamukhanagarīṃ vānarairardayitvā । paulastyaṃ sānubandhaṃ yamapuramiṣubhirgantumudvāsayitvā । laṃkāyāṃ sthāpayitvā tadanujamanaghaṃ maithilīmānayitvā  । kṛtvā lokaṃ viśokaṃ kṣitimatha bubhuje rāghavo rāmacandraḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">बद्ध्वा । सेतुम् । समुद्रे । दशमुख-नगरीम् । वानरैः । अर्दयित्वा । पौलस्त्यम् । सानुबन्धम् । यमपुरम् । इषुभिः । गन्तुम् । उद्वासयित्वा । लङ्कायाम् । स्थापयित्वा । तत्-अनुजम् । अनघम् । मैथिलीम् । आनयित्वा । कृत्वा । लोकम् । विशोकम् । क्षितिम् । अथ । बुभुजे । राघवः । रामचन्द्रः ।</div><div class="vig-iast">baddhvā । setum । samudre । daśamukha-nagarīm । vānaraiḥ । ardayitvā । paulastyam । sānubandham । yamapuram । iṣubhiḥ । gantum । udvāsayitvā । laṅkāyām । sthāpayitvā । tat-anujam । anagham । maithilīm । ānayitvā । kṛtvā । lokam । viśokam । kṣitim । atha । bubhuje । rāghavaḥ । rāmacandraḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वानरैः + अर्दयित्वा = वानरैरर्दयित्वा · यमपुरम् + इषुभिः = यमपुरमिषुभिः · इषुभिः + गन्तुम् = इषुभिर्गन्तुम् · गन्तुम् + उद्वासयित्वा = गन्तुमुद्वासयित्वा · तत् + अनुजम् = तदनुजम् · मैथिलीम् + आनयित्वा = मैथिलीमानयित्वा · क्षितिम् + अथ = क्षितिमथ · राघवः + राम = राघवो राम</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">राघवः रामचन्द्रः समुद्रे सेतुं बद्ध्वा, वानरैः दशमुखनगरीम् अर्दयित्वा, सानुबन्धं पौलस्त्यम् इषुभिः यमपुरं गन्तुम् उद्वासयित्वा, अनघं तदनुजं लङ्कायां स्थापयित्वा, मैथिलीम् आनयित्वा, लोकं विशोकं कृत्वा अथ क्षितिं बुभुजे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Having bridged the ocean, ravaged the ten-faced king&#x27;s city with his vānara host, despatched Paulastya with all his following to Yama&#x27;s realm with his arrows, set the innocent younger brother on Laṅkā&#x27;s throne, brought back the Maithilī, and freed the world from sorrow — Rāghava Rāmacandra then ruled the earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्रावर सेतू बांधून वानरांच्या साहाय्याने दशमुख रावणाच्या नगरीवर उध्वस्त करून, सपरिवार रावणाला बाणांनी यमपुरीला जाण्यास भाग पाडून, त्याच्या धाकट्या निष्पाप भावाची (बिभीषणाची) लंकेत रघुकुलोत्पन्न रामाने स्थापना केली व मैथिलीला आणून लोकांना शोकरहित करून पृथ्वीवर राज्य केले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अर्दयित्वा</span>
+    <span class="word-iast">ardayitvā</span>
+  </div>
+  <div><span class="word-grammar">√अर्द् (चुरादि); क्त्वा प्रत्यय; अव्यय</span></div>
+  <div class="word-form">In this verse: वानरैरर्दयित्वा</div>
+  <p class="word-meaning lang-en">having ravaged, having harassed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उध्वस्त करून</p>
+  <div class="word-usage">
+    <div class="deva">वानराः लंकाम् अर्दयित्वा जयम् आपुः</div>
+    <div class="usage-iast">vānarāḥ laṅkām ardayitvā jayam āpuḥ</div>
+    <div class="usage-meaning lang-en">Having ravaged Laṅkā, the vānaras won victory.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वानरांनी लंकेचा विध्वंस करून विजय मिळवला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पौलस्त्यम्</span>
+    <span class="word-iast">paulastyam</span>
+  </div>
+  <div><span class="word-grammar">पुलस्त्य + यञ् (अपत्यार्थे तद्धित); द्वितीया एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: पौलस्त्यं</div>
+  <p class="word-meaning lang-en">Paulastya (Rāvaṇa, descendant of Pulastya)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुलस्त्यवंशज रावणाला</p>
+  <div class="word-usage">
+    <div class="deva">रामः पौलस्त्यम् इषुभिः अवधीत्</div>
+    <div class="usage-iast">rāmaḥ paulastyam iṣubhiḥ avadhīt</div>
+    <div class="usage-meaning lang-en">Rāma slew Paulastya with his arrows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने बाणांनी रावणाचा वध केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सानुबन्धम्</span>
+    <span class="word-iast">sānubandham</span>
+  </div>
+  <div><span class="word-grammar">सह-अनुबन्ध; बहुव्रीहि; द्वितीया एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: सानुबन्धं</div>
+  <p class="word-meaning lang-en">with his following, with his host</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सपरिवार</p>
+  <div class="word-usage">
+    <div class="deva">राजा सानुबन्धम् शत्रुम् अजयत्</div>
+    <div class="usage-iast">rājā sānubandham śatrum ajayat</div>
+    <div class="usage-meaning lang-en">The king conquered the enemy with all his following.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने शत्रूला सपरिवार जिंकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यमपुरं गन्तुम् उद्वासयित्वा</span>
+    <span class="word-iast">yamapuraṃ gantum udvāsayitvā</span>
+  </div>
+  <div><span class="word-grammar">यम-पुर (षष्ठी-तत्पुरुष) द्वितीया + गन्तुम् (√गम्, तुमुन्) + उद्वासयित्वा (उद् + √वास् णिच्, क्त्वा — अपाणिनीयम्, ल्यप् अपेक्षितः)</span></div>
+  <div class="word-form">In this verse: यमपुरमिषुभिर्गन्तुमुद्वासयित्वा</div>
+  <p class="word-meaning lang-en">having despatched (him) to go to Yama&#x27;s city</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यमपुरीला जाण्यासाठी हाकलून — *आनयित्वा / उद्वासयित्वा हे अपाणिनीय (उपसर्गासह ल्यप् हवा: आनाय्य, उद्वास्य) — पुस्तकाची तीच टीप.*</p>
+  <div class="word-usage">
+    <div class="deva">रामः रावणम् यमपुरं गन्तुम् उद्वासयित्वा राज्यम् अकरोत्</div>
+    <div class="usage-iast">rāmaḥ rāvaṇam yamapuraṃ gantum udvāsayitvā rājyam akarot</div>
+    <div class="usage-meaning lang-en">Having sent Rāvaṇa to Yama&#x27;s city, Rāma ruled the kingdom.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रावणाला यमपुरीला पाठवून रामाने राज्य केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तदनुजं अनघम्</span>
+    <span class="word-iast">tadanujaṃ anagham</span>
+  </div>
+  <div><span class="word-grammar">तत्-अनुज (षष्ठी-तत्पुरुष) + अनघ (नञ्-तत्पुरुष); द्वितीया एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: तदनुजमनघं</div>
+  <p class="word-meaning lang-en">his innocent younger brother (Vibhīṣaṇa)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचा निष्पाप धाकटा भाऊ (बिभीषण)</p>
+  <div class="word-usage">
+    <div class="deva">रामः तदनुजम् अनघम् लंकायाम् अभ्यषिञ्चत्</div>
+    <div class="usage-iast">rāmaḥ tadanujam anagham laṅkāyām abhyaṣiñcat</div>
+    <div class="usage-meaning lang-en">Rāma anointed his innocent younger brother in Laṅkā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने त्याच्या निष्पाप धाकट्या भावाचा लंकेत अभिषेक केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकं विशोकं कृत्वा</span>
+    <span class="word-iast">lokaṃ viśokaṃ kṛtvā</span>
+  </div>
+  <div><span class="word-grammar">लोक द्वितीया + विशोक (नञ्-बहुव्रीहि, &#x27;विगतः शोकः यस्मात्&#x27;) द्वितीया + कृत्वा (√कृ, क्त्वा)</span></div>
+  <div class="word-form">In this verse: कृत्वा लोकं विशोकं</div>
+  <p class="word-meaning lang-en">having made the world free of sorrow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाला शोकरहित करून</p>
+  <div class="word-usage">
+    <div class="deva">राजा लोकं विशोकं कृत्वा अमोदत</div>
+    <div class="usage-iast">rājā lokaṃ viśokaṃ kṛtvā amodata</div>
+    <div class="usage-meaning lang-en">Having freed the people from sorrow, the king rejoiced.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांना शोकरहित करून राजा आनंदला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षितिं बुभुजे</span>
+    <span class="word-iast">kṣitiṃ bubhuje</span>
+  </div>
+  <div><span class="word-grammar">क्षिति द्वितीया एकवचन, स्त्रीलिङ्ग + √भुज् (पालनार्थे, आत्मनेपद); लिट् प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: क्षितिमथ बुभुजे</div>
+  <p class="word-meaning lang-en">ruled, protected the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर राज्य केले (√भुज्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">धर्मात्मा राजा क्षितिं बुभुजे</div>
+    <div class="usage-iast">dharmātmā rājā kṣitiṃ bubhuje</div>
+    <div class="usage-meaning lang-en">The righteous king ruled the earth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्मात्मा राजाने पृथ्वीचे पालन केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>A whole epic in a single Sragdharā: the poet&#x27;s sūtra-style at its most compressed — setu, war, coronation, reunion, and the sorrow-free world, each a clause, each a līlā for the devotee to unfold in contemplation. &#x27;लोकं विशोकं कृत्वा&#x27; — &#x27;having made the world free of sorrow&#x27; — is the kāvya&#x27;s ideal of Rāma-rājya held up before the Konkan land that Paraśurāma raised from the sea: the sthala&#x27;s own charter, that righteous rule ends grief.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एकाच स्रग्धरेत संपूर्ण महाकाव्य : कवीची सूत्रशैली अत्यंत संक्षिप्त रूपात — सेतू, युद्ध, राज्याभिषेक, पुनर्मिलन आणि शोकरहित जग; प्रत्येक खंड एक वाक्य, भक्ताने चिंतनात उलगडावी अशी प्रत्येक लीला. &#x27;लोकं विशोकं कृत्वा&#x27; — &#x27;जगाला शोकरहित करून&#x27; — हे रामराज्याचे आदर्शचित्र आहे, जे परशुरामाने समुद्रातून वर आणलेल्या कोकणभूमीसमोर धरले आहे : स्थलाचाच जाहीरनामा — न्याय्य राज्य शोकाचा अंत करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is a table of contents of the Yuddhakāṇḍa: the Setubandha, the siege of Laṅkā, Rāvaṇa&#x27;s fall, Vibhīṣaṇa&#x27;s consecration (Rāmāyaṇa 6.116), and Sītā&#x27;s recovery. &#x27;Viśoka&#x27; echoes the Rāma-rājya descriptions of the Bālakāṇḍa and Uttarakāṇḍa, where no grief, disease or untimely death touches the kingdom. The sequence is exact, and the kāvya pointedly ends the war-narrative not with triumph but with the world&#x27;s freedom from sorrow.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक युद्धकाण्डाची अनुक्रमणिकाच आहे : सेतुबंध, लंकेला वेढा, रावणाचा पाडाव, बिभीषणाचा राज्याभिषेक (रामायण ६.११६) आणि सीतेची सुटका. &#x27;विशोक&#x27; हा बालकाण्ड व उत्तरकाण्डातील रामराज्यवर्णनांचा प्रतिध्वनी आहे — जेथे शोक, रोग वा अकाली मृत्यू राज्याला स्पर्शत नाही. क्रम अचूक आहे, आणि काव्य युद्धकथेचा शेवट विजयाने नव्हे तर जगाच्या शोकरहिततेने करते — हे हेतुपुरस्सर आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Sragdharā. The book&#x27;s own footnote (marked * at &#x27;मैथिलीमानयित्वा&#x27;) observes that आनयित्वा and उद्वासयित्वा are un-Pāṇinian: with the prefixes आ and उद् the lyap forms आनाय्य and उद्वास्य are required. The forms are kept as the poet&#x27;s licence — the regular forms would not scan in Sragdharā. &#x27;दशमुखनगरीं&#x27; is the accusative (object of अर्दयित्वा), emended from the print&#x27;s दशमुखनगरी per the reviewed textual note. The same licence is discussed in this sarga&#x27;s v6 note.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्रग्धरा. पुस्तकाची स्वतःची टीप (&#x27;मैथिलीमानयित्वा&#x27; येथे * चिन्हाने दर्शवलेली) सांगते की आनयित्वा व उद्वासयित्वा ही रूपे अपाणिनीय आहेत : आ व उद् या उपसर्गांसह आनाय्य व उद्वास्य ही ल्यप् रूपे हवीत. कवीच्या स्वातंत्र्य म्हणून ती ठेवली आहेत — नियमानुसार रूपे स्रग्धरेत बसणार नाहीत. &#x27;दशमुखनगरीं&#x27; ही द्वितीया आहे (अर्दयित्वा चे कर्म); छापील दशमुखनगरी यावरून तपासलेल्या पाठ-चर्चा नोंदीनुसार दुरुस्त केली आहे. याच स्वातंत्र्याची चर्चा या सर्गाच्या श्लोक ६ च्या नोंदीत आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 22</div></a><a class="next" href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 24</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

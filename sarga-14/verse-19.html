@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 19 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 19</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कृष्णस्याहं तस्य दासोऽस्मि यस्य पादौ नाभिः कं क्रमाद्भूर्भुवः स्वः ।<br>वह्निर्वक्त्रं चित्तमिन्दुर्दृगर्कः प्राणो वायुश्चैव मन्ये प्रतीकाः ।।१९।।</div>
+  <div class="verse-iast">kṛṣṇasyāhaṃ tasya dāso&#x27;smi yasya pādau nābhiḥ kaṃ kramādbhūrbhuvaḥ svaḥ । vahnirvaktraṃ cittamindurdṛgarkaḥ prāṇo vāyuścaiva manye pratīkāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कृष्णस्य । अहम् । तस्य । दासः । अस्मि । यस्य । पादौ । नाभिः । कम् । क्रमात् । भूः । भुवः । स्वः । वह्निः । वक्त्रम् । चित्तम् । इन्दुः । दृक् । अर्कः । प्राणः । वायुः । च । एव । मन्ये । प्रतीकाः ।</div><div class="vig-iast">kṛṣṇasya । aham । tasya । dāsaḥ । asmi । yasya । pādau । nābhiḥ । kam । kramāt । bhūḥ । bhuvaḥ । svaḥ । vahniḥ । vaktram । cittam । induḥ । dṛk । arkaḥ । prāṇaḥ । vāyuḥ । ca । eva । manye । pratīkāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">कृष्णस्य + अहम् = कृष्णस्याहम् · दासः + अस्मि = दासोऽस्मि · क्रमात् + भूः = क्रमाद्भूः · भूः + भुवः = भूर्भुवः · वह्निः + वक्त्रम् = वह्निर्वक्त्रम् (विसर्ग → र्) · इन्दुः + दृक् = इन्दुर्दृक् · दृक् + अर्कः = दृगर्कः (क् → ग्) · वायुः + च = वायुश्च · च + एव = चैव (वृद्धि)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्य पादौ नाभिः कं (च) क्रमात् भूः भुवः स्वः, वह्निः वक्त्रम्, इन्दुः चित्तम्, अर्कः दृक्, वायुः च एव प्राणः — (एते तस्य) प्रतीकाः (इति) मन्ये — तस्य कृष्णस्य अहं दासः अस्मि ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>I am the servant of that Kṛṣṇa whose two feet, navel and head are in order the earth, the sky and heaven — whose mouth is fire, whose mind is the moon, whose eye is the sun and whose breath is the wind: such, I hold, are His limbs.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याचे पाय नाभी व डोके क्रमाने पृथ्वी, अंतरिक्ष व स्वर्ग, वन्ही हे मुख, चन्द्र हे ज्याचे चित्त, सूर्य हा चक्षू आणि प्राण हा वायू असे ज्याचे अवयव आहेत. (म्हणजे सर्व विश्व ज्याचे अंग आहे) असे वाटते त्या कृष्णाचा मी दास आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृष्णस्य</span>
+    <span class="word-iast">kṛṣṇasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव. (षष्ठी-श्लोक)</span></div>
+  <div class="word-form">In this verse: कृष्णस्य</div>
+  <p class="word-meaning lang-en">of Kṛṣṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृष्णाचा</p>
+  <div class="word-usage">
+    <div class="deva">कृष्णस्य लीला अपाराः।</div>
+    <div class="usage-iast">kṛṣṇasya līlā apārāḥ</div>
+    <div class="usage-meaning lang-en">Kṛṣṇa&#x27;s play is boundless.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृष्णाची लीला अमर्याद आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अहम्</span>
+    <span class="word-iast">aham</span>
+  </div>
+  <div><span class="word-grammar">प्र. एव.</span></div>
+  <div class="word-form">In this verse: अहम्</div>
+  <p class="word-meaning lang-en">I</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी</p>
+  <div class="word-usage">
+    <div class="deva">अहम् अपि गमिष्यामि।</div>
+    <div class="usage-iast">aham api gamiṣyāmi</div>
+    <div class="usage-meaning lang-en">I too shall go.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी सुद्धा जाईन.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तस्य</span>
+    <span class="word-iast">tasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: तस्य</div>
+  <p class="word-meaning lang-en">his</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचा</p>
+  <div class="word-usage">
+    <div class="deva">तस्य नाम रामः।</div>
+    <div class="usage-iast">tasya nāma rāmaḥ</div>
+    <div class="usage-meaning lang-en">His name is Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे नाव राम आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दासः</span>
+    <span class="word-iast">dāsaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: दासः</div>
+  <p class="word-meaning lang-en">servant</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दास</p>
+  <div class="word-usage">
+    <div class="deva">दासः स्वामिनम् अनुवर्तते।</div>
+    <div class="usage-iast">dāsaḥ svāminam anuvartate</div>
+    <div class="usage-meaning lang-en">The servant follows his master.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दास स्वामीचे अनुकरण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्मि</span>
+    <span class="word-iast">asmi</span>
+  </div>
+  <div><span class="word-grammar">अस्, लट्, उ.पु. एव.</span></div>
+  <div class="word-form">In this verse: अस्मि</div>
+  <p class="word-meaning lang-en">am</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आहे</p>
+  <div class="word-usage">
+    <div class="deva">अहं सुखी अस्मि।</div>
+    <div class="usage-iast">ahaṃ sukhī asmi</div>
+    <div class="usage-meaning lang-en">I am happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी सुखी आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यस्य</span>
+    <span class="word-iast">yasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: यस्य</div>
+  <p class="word-meaning lang-en">whose</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे</p>
+  <div class="word-usage">
+    <div class="deva">यस्य धनम् अस्ति सः सुखी।</div>
+    <div class="usage-iast">yasya dhanam asti saḥ sukhī</div>
+    <div class="usage-meaning lang-en">He whose wealth exists is happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याच्याकडे धन आहे तो सुखी आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पादौ</span>
+    <span class="word-iast">pādau</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. द्विव.</span></div>
+  <div class="word-form">In this verse: पादौ</div>
+  <p class="word-meaning lang-en">two feet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन पाय</p>
+  <div class="word-usage">
+    <div class="deva">बालकस्य पादौ लघू।</div>
+    <div class="usage-iast">bālakasya pādau laghū</div>
+    <div class="usage-meaning lang-en">The child&#x27;s two feet are small.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बालकाचे दोन पाय लहान आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नाभिः</span>
+    <span class="word-iast">nābhiḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: नाभिः</div>
+  <p class="word-meaning lang-en">navel</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाभी</p>
+  <div class="word-usage">
+    <div class="deva">नाभिः शरीरमध्ये अस्ति।</div>
+    <div class="usage-iast">nābhiḥ śarīramadhye asti</div>
+    <div class="usage-meaning lang-en">The navel is in the middle of the body.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाभी शरीराच्या मध्यभागी असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कम्</span>
+    <span class="word-iast">kam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: कम्</div>
+  <p class="word-meaning lang-en">head</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मस्तक</p>
+  <div class="word-usage">
+    <div class="deva">तस्य कम् उन्नतम्।</div>
+    <div class="usage-iast">tasya kam unnatam</div>
+    <div class="usage-meaning lang-en">His head is held high.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे मस्तक उंचावलेले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रमात्</span>
+    <span class="word-iast">kramāt</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (पं.)</span></div>
+  <div class="word-form">In this verse: क्रमात्</div>
+  <p class="word-meaning lang-en">in order</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रमाने</p>
+  <div class="word-usage">
+    <div class="deva">ते क्रमात् आगच्छन्ति।</div>
+    <div class="usage-iast">te kramāt āgacchanti</div>
+    <div class="usage-meaning lang-en">They come in order.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते क्रमाने येतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूः</span>
+    <span class="word-iast">bhūḥ</span>
+  </div>
+  <div><span class="word-grammar">प्र. एव. (अव्यय)</span></div>
+  <div class="word-form">In this verse: भूः</div>
+  <p class="word-meaning lang-en">earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी</p>
+  <div class="word-usage">
+    <div class="deva">भूः अस्माकं माता।</div>
+    <div class="usage-iast">bhūḥ asmākaṃ mātā</div>
+    <div class="usage-meaning lang-en">The earth is our mother.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी ही आमची माता आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भुवः</span>
+    <span class="word-iast">bhuvaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: भुवः</div>
+  <p class="word-meaning lang-en">sky</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अंतरिक्ष</p>
+  <div class="word-usage">
+    <div class="deva">भुवः नीलम् अस्ति।</div>
+    <div class="usage-iast">bhuvaḥ nīlam asti</div>
+    <div class="usage-meaning lang-en">The sky is blue.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अंतरिक्ष निळे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वः</span>
+    <span class="word-iast">svaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: स्वः</div>
+  <p class="word-meaning lang-en">heaven</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वर्ग</p>
+  <div class="word-usage">
+    <div class="deva">पुण्येन स्वः प्राप्यते।</div>
+    <div class="usage-iast">puṇyena svaḥ prāpyate</div>
+    <div class="usage-meaning lang-en">Heaven is attained through merit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुण्याने स्वर्ग मिळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वह्निः</span>
+    <span class="word-iast">vahniḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वह्निः</div>
+  <p class="word-meaning lang-en">fire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नी</p>
+  <div class="word-usage">
+    <div class="deva">वह्निः प्रकाशते।</div>
+    <div class="usage-iast">vahniḥ prakāśate</div>
+    <div class="usage-meaning lang-en">Fire shines.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नी प्रकाशतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वक्त्रम्</span>
+    <span class="word-iast">vaktram</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वक्त्रम्</div>
+  <p class="word-meaning lang-en">mouth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुख</p>
+  <div class="word-usage">
+    <div class="deva">तस्य वक्त्रं प्रसन्नम्।</div>
+    <div class="usage-iast">tasya vaktraṃ prasannam</div>
+    <div class="usage-meaning lang-en">His mouth is serene.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे मुख प्रसन्न आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्तम्</span>
+    <span class="word-iast">cittam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: चित्तम्</div>
+  <p class="word-meaning lang-en">mind</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मन</p>
+  <div class="word-usage">
+    <div class="deva">चित्तं शान्तं कुरु।</div>
+    <div class="usage-iast">cittaṃ śāntaṃ kuru</div>
+    <div class="usage-meaning lang-en">Make the mind calm.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मन शांत कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इन्दुः</span>
+    <span class="word-iast">induḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: इन्दुः</div>
+  <p class="word-meaning lang-en">moon</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र</p>
+  <div class="word-usage">
+    <div class="deva">इन्दुः रात्रौ शोभते।</div>
+    <div class="usage-iast">induḥ rātrau śobhate</div>
+    <div class="usage-meaning lang-en">The moon shines at night.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र रात्री शोभतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृक्</span>
+    <span class="word-iast">dṛk</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव. (दृश्)</span></div>
+  <div class="word-form">In this verse: दृक्</div>
+  <p class="word-meaning lang-en">eye</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>डोळा</p>
+  <div class="word-usage">
+    <div class="deva">दृक् सत्यं पश्यतु।</div>
+    <div class="usage-iast">dṛk satyaṃ paśyatu</div>
+    <div class="usage-meaning lang-en">May the eye see the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>डोळ्याने सत्य पाहावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अर्कः</span>
+    <span class="word-iast">arkaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अर्कः</div>
+  <p class="word-meaning lang-en">sun</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्य</p>
+  <div class="word-usage">
+    <div class="deva">अर्कः पूर्वस्यां दिशि उदेति।</div>
+    <div class="usage-iast">arkaḥ pūrvasyāṃ diśi udeti</div>
+    <div class="usage-meaning lang-en">The sun rises in the east.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्य पूर्व दिशेला उगवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राणः</span>
+    <span class="word-iast">prāṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: प्राणः</div>
+  <p class="word-meaning lang-en">breath</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राण</p>
+  <div class="word-usage">
+    <div class="deva">प्राणः शरीरं धारयति।</div>
+    <div class="usage-iast">prāṇaḥ śarīraṃ dhārayati</div>
+    <div class="usage-meaning lang-en">Breath sustains the body.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राण शरीर धारण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वायुः</span>
+    <span class="word-iast">vāyuḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वायुः</div>
+  <p class="word-meaning lang-en">wind</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वायू</p>
+  <div class="word-usage">
+    <div class="deva">वायुः मन्दं वहति।</div>
+    <div class="usage-iast">vāyuḥ mandaṃ vahati</div>
+    <div class="usage-meaning lang-en">The wind blows gently.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वायू मंद वाहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च एव</span>
+    <span class="word-iast">ca eva</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: चैव</div>
+  <p class="word-meaning lang-en">and also</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि सुद्धा</p>
+  <div class="word-usage">
+    <div class="deva">सः च एव आगतः।</div>
+    <div class="usage-iast">saḥ ca eva āgataḥ</div>
+    <div class="usage-meaning lang-en">He too has come.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सुद्धा आला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्ये</span>
+    <span class="word-iast">manye</span>
+  </div>
+  <div><span class="word-grammar">मन्, लट्, उ.पु. एव.</span></div>
+  <div class="word-form">In this verse: मन्ये</div>
+  <p class="word-meaning lang-en">I think</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी मानतो</p>
+  <div class="word-usage">
+    <div class="deva">अहम् एवम् मन्ये।</div>
+    <div class="usage-iast">aham evam manye</div>
+    <div class="usage-meaning lang-en">I think so.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला असे वाटते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतीकाः</span>
+    <span class="word-iast">pratīkāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: प्रतीकाः</div>
+  <p class="word-meaning lang-en">limbs</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अवयव</p>
+  <div class="word-usage">
+    <div class="deva">तस्य प्रतीकाः सुन्दराः।</div>
+    <div class="usage-iast">tasya pratīkāḥ sundarāḥ</div>
+    <div class="usage-meaning lang-en">His limbs are beautiful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे अवयव सुंदर आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दासः अस्मि</span>
+    <span class="word-iast">dāsaḥ asmi</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. + लट् उ.पु. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: दासोऽस्मि</div>
+  <p class="word-meaning lang-en">I am the servant</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दास आहे</p>
+  <div class="word-usage">
+    <div class="deva">अहं तव दासः अस्मि।</div>
+    <div class="usage-iast">ahaṃ tava dāsaḥ asmi</div>
+    <div class="usage-meaning lang-en">I am your servant.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी तुझा दास आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पादौ नाभिः कम्</span>
+    <span class="word-iast">pādau nābhiḥ kam</span>
+  </div>
+  <div><span class="word-grammar">नाम, प्र. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: पादौ नाभिः कम्</div>
+  <p class="word-meaning lang-en">the feet, the navel, the head</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाय, नाभी व मस्तक (क = मस्तक)</p>
+  <div class="word-usage">
+    <div class="deva">पादौ नाभिः कम् इति त्रयम्।</div>
+    <div class="usage-iast">pādau nābhiḥ kam iti trayam</div>
+    <div class="usage-meaning lang-en">The feet, the navel, the head — these three.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाय, नाभी व मस्तक ही तिन्ही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूः भुवः स्वः</span>
+    <span class="word-iast">bhūḥ bhuvaḥ svaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय-समूह (संधिरूप)</span></div>
+  <div class="word-form">In this verse: भूर्भुवःस्वः</div>
+  <p class="word-meaning lang-en">earth, sky, heaven</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी, अंतरिक्ष, स्वर्ग</p>
+  <div class="word-usage">
+    <div class="deva">भूः भुवः स्वः इति त्रयो लोकाः।</div>
+    <div class="usage-iast">bhūḥ bhuvaḥ svaḥ iti trayo lokāḥ</div>
+    <div class="usage-meaning lang-en">Earth, sky, heaven — these are the three worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी, अंतरिक्ष, स्वर्ग हे तीन लोक होत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वह्निः वक्त्रम्</span>
+    <span class="word-iast">vahniḥ vaktram</span>
+  </div>
+  <div><span class="word-grammar">प्र. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: वह्निर्वक्त्रम्</div>
+  <p class="word-meaning lang-en">fire is the mouth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नी हे मुख</p>
+  <div class="word-usage">
+    <div class="deva">वह्निः वक्त्रम् इति स्मर्यते।</div>
+    <div class="usage-iast">vahniḥ vaktram iti smaryate</div>
+    <div class="usage-meaning lang-en">Fire is remembered as the mouth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नी हे मुख असे स्मरले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्तम् इन्दुः</span>
+    <span class="word-iast">cittam induḥ</span>
+  </div>
+  <div><span class="word-grammar">प्र. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: चित्तमिन्दुः</div>
+  <p class="word-meaning lang-en">the moon is the mind</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्र हे मन</p>
+  <div class="word-usage">
+    <div class="deva">चित्तम् इन्दुः इति वेदे उक्तम्।</div>
+    <div class="usage-iast">cittam induḥ iti vede uktam</div>
+    <div class="usage-meaning lang-en">In the Veda it is said: the moon is the mind.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेदात म्हटले आहे : चंद्र हे मन होय.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृक् अर्कः</span>
+    <span class="word-iast">dṛk arkaḥ</span>
+  </div>
+  <div><span class="word-grammar">प्र. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: दृगर्कः</div>
+  <p class="word-meaning lang-en">the sun is the eye</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्य हा नेत्र</p>
+  <div class="word-usage">
+    <div class="deva">दृक् अर्कः इति श्रुतिः।</div>
+    <div class="usage-iast">dṛk arkaḥ iti śrutiḥ</div>
+    <div class="usage-meaning lang-en">The sacred text says: the sun is the eye.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रुती म्हणते : सूर्य हा नेत्र होय.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राणः वायुः</span>
+    <span class="word-iast">prāṇaḥ vāyuḥ</span>
+  </div>
+  <div><span class="word-grammar">प्र. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: प्राणो वायुः</div>
+  <p class="word-meaning lang-en">the wind is the breath</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वायू हा प्राण (पुरुषसूक्त: चन्द्रमा मनसो जातः, चक्षोः सूर्यो अजायत)</p>
+  <div class="word-usage">
+    <div class="deva">प्राणः वायुः इति योगशास्त्रम्।</div>
+    <div class="usage-iast">prāṇaḥ vāyuḥ iti yogaśāstram</div>
+    <div class="usage-meaning lang-en">The science of yoga says: the wind is the breath.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योगशास्त्र म्हणते : वायू हा प्राण होय.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>After exclusive refuge (v. 18), the poet confesses the servant&#x27;s identity: dāso&#x27;smi — &#x27;I am His servant.&#x27; The body of the Lord he serves is the cosmos itself, limb by limb in the ancient virāṭ-puruṣa vision: earth His feet, sky His navel, heaven His head, fire His mouth, moon His mind, sun His eye, wind His breath. This is the viśvarūpa of the Gītā&#x27;s eleventh chapter transferred to Kṛṣṇa, and it teaches the Guhagar devotee that serving the Lord means serving the whole world as His body — there is no corner of creation outside Him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनन्य आश्रयानंतर (श्लोक १८) कवी दासाची ओळख कबूल करतो : दासोऽस्मि — &#x27;मी त्याचा दास आहे.&#x27; ज्या प्रभूची तो सेवा करतो त्याचे शरीर हेच विश्व आहे — प्राचीन विराट्-पुरुष दृष्टीप्रमाणे अवयवशः : पृथ्वी हे पाय, अंतरिक्ष नाभी, स्वर्ग मस्तक, अग्नी मुख, चंद्र मन, सूर्य नेत्र, वायू प्राण. हा गीतेच्या अकराव्या अध्यायातील विश्वरूपाचाच कृष्णाकडे केलेला अर्पणभाव आहे; आणि गुहागरच्या भक्ताला तो शिकवतो की प्रभूची सेवा म्हणजे संपूर्ण जगाची त्याचे शरीर म्हणून सेवा — सृष्टीचा एकही कोपरा त्याच्याबाहेर नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The limb-by-limb cosmology paraphrases the Puruṣa-sūkta&#x27;s vision of the cosmic Person — &#x27;the moon was born from His mind, the sun from His eye&#x27; (candramā manaso jātaḥ, cakṣoḥ sūryo ajāyata) — which the Bhāgavata and the Gītā&#x27;s viśvarūpa-darśana (chapter 11) apply to the personal Lord. To call oneself the dāsa of such a Lord is the classical Vaiṣṇava confession of śaraṇāgati: the servant&#x27;s whole world is already the Master&#x27;s body.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अवयवशः विश्वरचना पुरुषसूक्तातील वैश्विक पुरुषाच्या दृष्टीचा प्रतिध्वनी आहे — &#x27;चंद्र त्याच्या मनापासून जन्मला, डोळ्यापासून सूर्य उत्पन्न झाला&#x27; (चन्द्रमा मनसो जातः, चक्षोः सूर्यो अजायत) — जी भागवत व गीतेचे विश्वरूपदर्शन (अध्याय ११) व्यक्तीगत ईश्वरालाच लावतात. अशा प्रभूचा स्वतःला दास म्हणवणे ही शरणागतीची ठराविक वैष्णव कबुली आहे : दासाचे संपूर्ण जग आधीच स्वामीचे शरीर असते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is built on the three vyāhṛtis भूः भुवः स्वः (earth, atmosphere, heaven) mapped onto feet, navel and head &#x27;in order&#x27; (क्रमात्). कम् for &#x27;head&#x27; is an unusual sense, glossed in the padaccheda as मस्तक. Metre: Śālinī, continuing the Kṛṣṇa hymn. The Marathi gloss cites the Puruṣa-sūkta line for प्राणः वायुः.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक तीन व्याहृतींवर — भूः भुवः स्वः (पृथ्वी, अंतरिक्ष, स्वर्ग) — उभारला असून त्या &#x27;क्रमाने&#x27; (क्रमात्) पाय, नाभी व मस्तक यांवर बसवल्या आहेत. &#x27;मस्तक&#x27; या अर्थी कम् हा असामान्य अर्थ असून पदच्छेदात तशी नोंद आहे. वृत्त : शालिनी; कृष्ण-स्तोत्र पुढे चालू आहे. प्राणः वायुः साठी मराठीत पुरुषसूक्ताची ओळ उद्धृत केली आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 18</div></a><a class="next" href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 20</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 34 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 34</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 34</span><span class="bl-mr lang-mr">श्लोक 34</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्याराध्याश्वपं प्रागाद्गोपतिर्गोवनं वनम् ।<br>कपिला तु यथापूर्वं वञ्चयित्वा च बल्लवम् ।।३४।।</div>
+  <div class="verse-iast">ityārādhyāśvapaṃ prāgādgopatirgovanaṃ vanam । kapilā tu yathāpūrvaṃ vañcayitvā ca ballavam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । आराध्य । अश्वपम् । प्रागात् । गोपतिः । गो-वनम् । वनम् । कपिला । तु । यथापूर्वम् । वञ्चयित्वा । च । बल्लवम् ।</div><div class="vig-iast">iti । ārādhya । aśvapam । prāgāt । gopatiḥ । go-vanam । vanam । kapilā । tu । yathāpūrvam । vañcayitvā । ca । ballavam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">इति + आराध्य = इत्याराध्य (यण्) · आराध्य + अश्वपम् = आराध्याश्वपम् · प्र + अगात् = प्रागात् · प्रागात् + गोपतिः = प्रागाद्गोपतिः · गोपतिः + गोवनम् = गोपतिर्गोवनम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति अश्वपम् आराध्य गोपतिः गोवनं वनं प्रागात्; कपिला तु यथापूर्वं बल्लवं वञ्चयित्वा च तृणध्वजालयं प्राप्य लिङ्गे पयः अभ्यपातयत्; ताम् अनुगतः गोपतिः छलात् सकलं ददर्श ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Having thus won over the warden of the horses, the herdsman went forth to the forest, the pasture of the cows. But Kapilā, as ever, gave the cowherd the slip —</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अशी त्या घोड्यांच्या राखणदाराची विनवणी करून तो गुराखी आपल्या गाईंबरोबर अरण्यात गेला. कपिलेने अर्थात् नेहमीप्रमाणे त्या गुराख्याची नजर चुकवून त्या बांबूच्या बेटात जाऊन लिङ्गावर आपल्या दुधाचा अभिषेक केला. लपत छपत तिच्या मागे गेलेल्या गुराख्याने ते सर्व पाहिले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आराध्य अश्वपम्</span>
+    <span class="word-iast">ārādhya aśvapam</span>
+  </div>
+  <div><span class="word-grammar">आ + √राध् + क्त्वा (ल्यप्) + अश्वप (अश्व + प, पुँल्लिङ्ग द्वितीया एकवचनम्)</span></div>
+  <div class="word-form">In this verse: आराध्याश्वपम्</div>
+  <p class="word-meaning lang-en">having propitiated the horse-warden</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घोड्यांच्या रखवालाची विनवणी करून</p>
+  <div class="word-usage">
+    <div class="deva">अश्वपम् आराध्य गोपः वनं गतः ।</div>
+    <div class="usage-iast">aśvapam ārādhya gopaḥ vanaṃ gataḥ ।</div>
+    <div class="usage-meaning lang-en">Having won over the horse-warden, the herdsman went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घोड्यांच्या राखणदाराला संतुष्ट करून गुराखी अरण्यात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रागात्</span>
+    <span class="word-iast">prāgāt</span>
+  </div>
+  <div><span class="word-grammar">प्र + √इ (अदादि, गत्यर्थक) लुङ् प्रथमपुरुष एकवचन परस्मैपद</span></div>
+  <div class="word-form">In this verse: प्रागात्</div>
+  <p class="word-meaning lang-en">went forth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गेला (प्र + √इ, लुङ्)</p>
+  <div class="word-usage">
+    <div class="deva">सः वनं प्रागात् ।</div>
+    <div class="usage-iast">saḥ vanaṃ prāgāt ।</div>
+    <div class="usage-meaning lang-en">He went forth to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो अरण्यात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गोवनं वनम्</span>
+    <span class="word-iast">govanaṃ vanam</span>
+  </div>
+  <div><span class="word-grammar">गो + वन (नपुं.) + वन (नपुं. द्वितीया एकवचनम्)</span></div>
+  <div class="word-form">In this verse: गोवनं वनम्</div>
+  <p class="word-meaning lang-en">to the forest, the cows’ grazing ground</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाईंच्या रानात</p>
+  <div class="word-usage">
+    <div class="deva">गावः गोवनं वनं चरन्ति ।</div>
+    <div class="usage-iast">gāvaḥ govanaṃ vanaṃ caranti ।</div>
+    <div class="usage-meaning lang-en">The cows graze in the pasture-forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गायी गाईंच्या रानात चरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथापूर्वम्</span>
+    <span class="word-iast">yathāpūrvam</span>
+  </div>
+  <div><span class="word-grammar">यथा + पूर्व — अव्ययीभावसमासः, अव्ययम्</span></div>
+  <div class="word-form">In this verse: यथापूर्वं</div>
+  <p class="word-meaning lang-en">as before, as always</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्वीप्रमाणे</p>
+  <div class="word-usage">
+    <div class="deva">सः यथापूर्वं कर्म अकरोत् ।</div>
+    <div class="usage-iast">saḥ yathāpūrvaṃ karma akarot ।</div>
+    <div class="usage-meaning lang-en">He did the work as before.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने पूर्वीप्रमाणेच काम केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वञ्चयित्वा बल्लवम्</span>
+    <span class="word-iast">vañcayitvā ballavam</span>
+  </div>
+  <div><span class="word-grammar">√वञ्च् (चुरादि) + णिच् + क्त्वा + बल्लव (पुँल्लिङ्ग द्वितीया एकवचनम्)</span></div>
+  <div class="word-form">In this verse: वञ्चयित्वा च बल्लवम्</div>
+  <p class="word-meaning lang-en">having eluded the cowherd</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुराख्याला चकवून</p>
+  <div class="word-usage">
+    <div class="deva">बल्लवं वञ्चयित्वा सा वनम् अगच्छत् ।</div>
+    <div class="usage-iast">ballavaṃ vañcayitvā sā vanam agacchat ।</div>
+    <div class="usage-meaning lang-en">Having eluded the cowherd, she went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुराख्याला चकवून ती अरण्यात गेली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse opens the revelation: the cowherd has done his human duty — sought permission, gone to the pasture — and now the divine mystery unfolds on its own terms. Kapilā ‘as ever’ (yathāpūrvam) eludes the herdsman: the ways of grace are not captured by vigilance; the cow’s secret worship of the hidden liṅga shows that devotion flows even where no human eye watches. The sthala-māhātmya teaches that the sacred reveals itself precisely when human control relaxes.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक प्रकटीकरणाची सुरुवात करतो — गुराख्याने आपले मानवी कर्तव्य पार पाडले आहे, परवानगी घेतली, रानात गेला; आता दिव्य रहस्य आपल्याच नियमानुसार उलगडते. ‘यथापूर्वम्’ — नेहमीप्रमाणे — कपिला गुराख्याच्या नजरेतून सुटते; कृपेचे मार्ग दक्षतेने जखडता येत नाहीत. गुप्त लिंगाची तिची रहस्यमय पूजा दाखवते की मानवी दृष्टी पोचत नाही तेथेही भक्ती वाहते. स्थलमाहात्म्य शिकवते की मानवी नियंत्रण शिथिल होते तेव्हाच पवित्रता स्वतःला प्रकट करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The motif of the cow that slips away to worship a hidden liṅga recurs across sthala-purāṇas: the animal, untaught by men, knows the sacred spot by instinct — a sign that the place itself is charged with divinity. The herdsman’s leave-taking ‘having propitiated’ (ārādhya) the horse-warden shows the old courtesy of the stable: no servant acts without his master’s knowledge.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गुप्त लिंगाची पूजा करण्यासाठी निसटून जाणाऱ्या गाईचा आकृतीबंध अनेक स्थलपुराणांत आढळतो — माणसांनी न शिकवलेली जनावरे सहजप्रवृत्तीने पवित्र स्थळ ओळखतात; हे त्या स्थानातच दिव्यता भरलेली असल्याचे लक्षण आहे. घोड्यांच्या राखणदाराला ‘आराध्य’ — संतुष्ट करून — निघालेला गुराखी तबेल्याची जुनी शिस्त दाखवतो — स्वामीच्या माहितीशिवाय कोणताही सेवक कृती करत नाही.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Verses 34–35 form a single continuous sentence — the anvaya runs across both: the herdsman’s departure, Kapilā’s deception, her milk-offering, and the secret witnessing. The bamboo clump (tṛṇadhvaja — literally ‘grass-banner,’ the book’s gloss ‘bamboo’) marks the wild, unclaimed ground where the liṅga lay hidden. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>३४–३५ हे श्लोक एकच सलग वाक्य बनवतात — अन्वय दोन्हींवर पसरलेला आहे: गुराख्याचे निघणे, कपिलेची चकवाचकवी, तिचा दुधाचा अभिषेक आणि गुप्त दर्शन. बांबूचे बेट (तृणध्वज — शब्दशः ‘तृणध्वज’, ग्रंथाचा अर्थ ‘बांबू’) हे ते वन्य, दावारहित भूमी दर्शवते जेथे लिंग लपलेले होते. वृत्त: अनुष्टुभ.</p></div></div>
+
+<div class="pagenav"><a href="verse-33.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 33</div></a><a class="next" href="verse-35.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 35</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

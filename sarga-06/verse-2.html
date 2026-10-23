@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 2 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 2</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 2</span><span class="bl-mr lang-mr">श्लोक 2</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यथा भार्गवरूपेण क्षत्रियाणां क्षयाय हि ।<br>तथा राक्षसनाशार्थं त्रिदशैः प्रार्थितः किल ।।२।।</div>
+  <div class="verse-iast">yathā bhārgavarūpeṇa kṣatriyāṇāṃ kṣayāya hi । tathā rākṣasanāśārthaṃ tridaśaiḥ prārthitaḥ kila</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यथा । भार्गव-रूपेण । क्षत्रियाणाम् । क्षयाय । हि । तथा । राक्षस-नाश-अर्थम् । त्रिदशैः । प्रार्थितः । किल ।</div><div class="vig-iast">yathā । bhārgava-rūpeṇa । kṣatriyāṇām । kṣayāya । hi । tathā । rākṣasa-nāśa-artham । tridaśaiḥ । prārthitaḥ । kila ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">नाश + अर्थम् = नाशार्थम् · त्रिदशैः + प्रार्थितः = त्रिदशैः प्रार्थितः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यथा क्षत्रियाणां क्षयाय हि (सः) भार्गवरूपेण (अभूत्), तथा राक्षसनाशार्थं त्रिदशैः प्रार्थितः किल ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Just as He had taken the Bhārgava form for the destruction of the kṣatriyas, so too — so it is said — He was entreated by the gods for the destruction of the rākṣasas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्षत्रियांच्या विनाशासाठीच ज्याप्रमाणे भार्गव परशुराम अवतीर्ण झाले त्याप्रमाणेच राक्षसनाशासाठी देवांनी भगवन्ताची प्रार्थना केली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भार्गवरूपेण</span>
+    <span class="word-iast">bhārgavarūpeṇa</span>
+  </div>
+  <div><span class="word-grammar">भार्गवरूप (n., तत्पुरुष: भार्गवस्य रूपम्), तृतीया एकवचन (instrumental singular)</span></div>
+  <div class="word-form">In this verse: भार्गवरूपेण — instrumental singular</div>
+  <p class="word-meaning lang-en">in the form of Bhārgava (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या रूपाने</p>
+  <div class="word-usage">
+    <div class="deva">हरिः भार्गवरूपेण क्षत्रियान् अवधीत्</div>
+    <div class="usage-iast">hariḥ bhārgavarūpeṇa kṣatriyān avadhīt</div>
+    <div class="usage-meaning lang-en">Hari slew the kṣatriyas in the Bhārgava form.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीने परशुरामरूपाने क्षत्रियांचा वध केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षयाय</span>
+    <span class="word-iast">kṣayāya</span>
+  </div>
+  <div><span class="word-grammar">क्षय (m.), चतुर्थी एकवचन — तादर्थ्ये चतुर्थी (dative of purpose)</span></div>
+  <div class="word-form">In this verse: क्षयाय — dative singular of purpose</div>
+  <p class="word-meaning lang-en">for the destruction</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाशासाठी (तादर्थ्य चतुर्थी)</p>
+  <div class="word-usage">
+    <div class="deva">राक्षसानाम् क्षयाय हरिः अवततार</div>
+    <div class="usage-iast">rākṣasānām kṣayāya hariḥ avatatāra</div>
+    <div class="usage-meaning lang-en">Hari descended for the destruction of the rākṣasas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसांच्या नाशासाठी हरी अवतरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रिदशैः</span>
+    <span class="word-iast">tridaśaiḥ</span>
+  </div>
+  <div><span class="word-grammar">त्रिदश (m., &#x27;the thirty&#x27; = the gods), तृतीया बहुवचन (instrumental plural)</span></div>
+  <div class="word-form">In this verse: त्रिदशैः — instrumental plural</div>
+  <p class="word-meaning lang-en">by the gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांकडून</p>
+  <div class="word-usage">
+    <div class="deva">त्रिदशैः विष्णुः प्रार्थितः आसीत्</div>
+    <div class="usage-iast">tridaśaiḥ viṣṇuḥ prārthitaḥ āsīt</div>
+    <div class="usage-meaning lang-en">Viṣṇu was entreated by the gods.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांनी विष्णूची प्रार्थना केली होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रार्थितः</span>
+    <span class="word-iast">prārthitaḥ</span>
+  </div>
+  <div><span class="word-grammar">प्र-√अर्थ् (चुरादि) + क्त, पुंलिङ्ग प्रथमा एकवचन (past passive participle, nominative singular)</span></div>
+  <div class="word-form">In this verse: प्रार्थितः — past passive participle, nominative singular</div>
+  <p class="word-meaning lang-en">entreated, requested, prayed to</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विनवलेला</p>
+  <div class="word-usage">
+    <div class="deva">देवैः प्रार्थितः हरिः अवतीर्णः अभवत्</div>
+    <div class="usage-iast">devaiḥ prārthitaḥ hariḥ avatīrṇaḥ abhavat</div>
+    <div class="usage-meaning lang-en">Entreated by the gods, Hari descended.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांनी विनवणी केल्यामुळे हरी अवतरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किल</span>
+    <span class="word-iast">kila</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (indeclinable legendary/quotative particle)</span></div>
+  <div class="word-form">In this verse: किल — indeclinable</div>
+  <p class="word-meaning lang-en">so it is said; indeed (marks received tradition)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे म्हणतात</p>
+  <div class="word-usage">
+    <div class="deva">पुरा रामः अवतीर्णः अभवत् किल</div>
+    <div class="usage-iast">purā rāmaḥ avatīrṇaḥ abhavat kila</div>
+    <div class="usage-meaning lang-en">Long ago Rāma descended, so it is said.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्वी राम अवतरला, असे म्हणतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse pairs the two avatāras in a single pattern — यथा…तथा: the Lord answers the same way whenever adharma takes a new shape. It also names the trigger of grace: the gods&#x27; prayer (prārthitaḥ). Theologically, divine intervention is never arbitrary; it is drawn down by the cry of the oppressed, here voiced by the devas. The devotee learns that earnest collective prayer moves heaven.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक दोन अवतारांना एकाच साच्यात जोडतो — यथा…तथा : अधर्म नवे रूप धारण करतो तेव्हा भगवंत त्याच प्रकारे उत्तर देतात. कृपेचे निमित्तही तो सांगतो : देवांची प्रार्थना (प्रार्थितः). तत्त्वदृष्ट्या दैवी हस्तक्षेप कधीही स्वैर नसतो; पीडितांच्या आर्त हाकेने तो ओढला जातो — येथे ती हाक देवांनी दिली आहे. आर्त सामूहिक प्रार्थना स्वर्ग हलवते, हे भक्त यातून शिकतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic pattern is exact: when the earth groans under a burden, Brahmā leads the gods to Viṣṇu and begs for a descent — as in the Bhāgavata&#x27;s account of the gods&#x27; prayer before the Kṛṣṇāvatāra, and the Vālmīki Rāmāyaṇa&#x27;s devāsura frame (Bālakāṇḍa 15–16), where the gods ask Viṣṇu to be born as Daśaratha&#x27;s son to slay Rāvaṇa. किल marks this as received tradition, not the poet&#x27;s invention.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणपरंपरा अचूक आहे : पृथ्वी भाराने कण्हते तेव्हा ब्रह्मा देवांना घेऊन विष्णूकडे जातो आणि अवताराची भीक मागतो — कृष्णावतारापूर्वीच्या देवप्रार्थनेच्या भागवतवर्णनाप्रमाणे, आणि वाल्मीकि रामायणाच्या देवासुर चौकटीप्रमाणे (बालकांड १५–१६), जेथे रावणवधासाठी दशरथपुत्र म्हणून जन्म घेण्याची देव विष्णूला विनंती करतात. &#x27;किल&#x27; हे प्राप्त परंपरेचे चिन्ह आहे, कवीच्या कल्पनेचे नव्हे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The यथा…तथा construction binds this verse to v.1 and to the whole Paraśurāma cycle (sargas 4–5): the Rāmāvatāra is presented as the deliberate sequel to the Bhārgava mission. Note हि (indeed) strengthening the parallel, and त्रिदशाः, &#x27;the thirty&#x27; — the classical collective noun for the gods.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>यथा…तथा रचनेने हा श्लोक पहिल्या श्लोकाशी व संपूर्ण परशुरामचक्राशी (सर्ग ४–५) बांधला जातो : रामावतार भार्गवकार्याचा जाणीवपूर्वक उत्तरभाग म्हणून मांडला आहे. समांतरता बळकट करणारा &#x27;हि&#x27; (खरोखर) आणि देवांचा रूढ सामूहिक शब्द &#x27;त्रिदशाः&#x27; (&#x27;तीस&#x27;) लक्षात घ्या.</p></div></div>
+
+<div class="pagenav"><a href="verse-1.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 1</div></a><a class="next" href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 3</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

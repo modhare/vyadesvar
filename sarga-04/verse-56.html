@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 56 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 56</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 56</span><span class="bl-mr lang-mr">श्लोक 56</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Mālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अवनितलविशिष्टं हृत्सुविष्टं सुराणां<br>गिरिशचरणघृष्टं संनिकृष्टं पयोधेः ।<br>भृगुपतिपदमिष्टं संप्रजुष्टं गुणौघै-<br>रघविघटनसृष्टं धर्मपुष्टं चकासे ।।५६।।</div>
+  <div class="verse-iast">avanitalaviśiṣṭaṃ hṛtsuviṣṭaṃ surāṇāṃ giriśacaraṇaghṛṣṭaṃ saṃnikṛṣṭaṃ payodheḥ । bhṛgupatipadamiṣṭaṃ saṃprajuṣṭaṃ guṇaughai- raghavighaṭanasṛṣṭaṃ dharmapuṣṭaṃ cakāse</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अवनितल-विशिष्टम् । हृत्-सुविष्टम् । सुराणाम् । गिरिश-चरण-घृष्टम् । संनिकृष्टम् । पयोधेः । भृगुपति-पदम् । इष्टम् । संप्रजुष्टम् । गुण-ओघैः । अघ-विघटन-सृष्टम् । धर्म-पुष्टम् । चकासे ।</div><div class="vig-iast">avanitala-viśiṣṭam । hṛt-suviṣṭam । surāṇām । giriśa-caraṇa-ghṛṣṭam । saṃnikṛṣṭam । payodheḥ । bhṛgupati-padam । iṣṭam । saṃprajuṣṭam । guṇa-oghaiḥ । agha-vighaṭana-sṛṣṭam । dharma-puṣṭam । cakāse ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">हृत् + सुविष्टम् = हृत्सुविष्टम् · पदम् + इष्टम् = पदमिष्टम् · गुण + ओघैः = गुणौघैः (वृद्धि) · गुणौघैः + अघ = गुणौघैरघ (विसर्ग → र्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यथा गुहायां संलीनं वस्तु दुर्दृशां दुर्लभं, तथा अत्र वासः दुर्लभः; तस्मात् नाम्ना गुहाभिधम् — अवनितलविशिष्टं सुराणां हृत्सुविष्टं गिरिशचरणघृष्टं पयोधेः संनिकृष्टं भृगुपतिपदमिष्टं गुणौघैः संप्रजुष्टम् अघविघटनसृष्टं धर्मपुष्टं (क्षेत्रं) चकासे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Distinguished on the earth&#x27;s surface, entered into the hearts of the gods, rubbed by the feet of Giriśa, close to the ocean, the beloved abode of Bhṛgupati, endowed with hosts of virtues, created for the breaking of sins, nourished by dharma — it shone forth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याप्रमाणे गुहेत लपलेली वस्तू वाईट दृष्टीच्या लोकांना दुर्लभच असते त्याप्रमाणे येथे निवास करावयास मिळणे दुर्लभ; म्हणूनच हे सागराजवळ असणारे अवनितलावरील एक वैशिष्ट्यपूर्ण, देवांच्या हृदयांतही स्थान मिळवलेले, शंकराच्या चरणस्पर्शाने घासले गेलेले, सागरसन्निध व भृगुपती परशुरामाचे आवडते, अनेक गुणांनी समन्वित असलेले, धर्मपुष्ट व पापनिर्दालनासाठी निर्माण झालेले गुहाभिध नावाचे क्षेत्र (पृथ्वीवर) प्रकाशमान झाले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवनितलविशिष्टम्</span>
+    <span class="word-iast">avanitalaviśiṣṭam</span>
+  </div>
+  <div><span class="word-grammar">Tatpuruṣa: अवनितल (earth&#x27;s surface) + विशिष्ट, kta of वि + √शिष् (&#x27;distinguished&#x27;); accusative singular neuter</span></div>
+  <div class="word-form">In this verse: avanitalaviśiṣṭam (acc. sg. neut.)</div>
+  <p class="word-meaning lang-en">distinguished on the surface of the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीतलावर वैशिष्ट्यपूर्ण</p>
+  <div class="word-usage">
+    <div class="deva">अवनितलविशिष्टं तीर्थम् ।</div>
+    <div class="usage-iast">avanitalaviśiṣṭaṃ tīrtham ।</div>
+    <div class="usage-meaning lang-en">A tīrtha distinguished on the earth&#x27;s surface.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीतलावर वैशिष्ट्यपूर्ण तीर्थ.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुराणां हृत्सुविष्टम्</span>
+    <span class="word-iast">surāṇāṃ hṛtsuviṣṭam</span>
+  </div>
+  <div><span class="word-grammar">सुराणाम्: genitive plural of सुर; हृत्सुविष्टम्: हृत्सु (locative plural of हृद्) + विष्ट, kta of √विश् (&#x27;entered&#x27;); accusative singular neuter</span></div>
+  <div class="word-form">In this verse: surāṇāṃ hṛtsuviṣṭam</div>
+  <p class="word-meaning lang-en">entered into the hearts of the gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांच्या हृदयात स्थान मिळवलेले</p>
+  <div class="word-usage">
+    <div class="deva">सुराणां हृत्सुविष्टं स्थानम् ।</div>
+    <div class="usage-iast">surāṇāṃ hṛtsuviṣṭaṃ sthānam ।</div>
+    <div class="usage-meaning lang-en">The place entered into the hearts of the gods.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांच्या हृदयांत स्थान मिळवलेले स्थान.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गिरिशचरणघृष्टम्</span>
+    <span class="word-iast">giriśacaraṇaghṛṣṭam</span>
+  </div>
+  <div><span class="word-grammar">Tatpuruṣa chain: गिरिश (Śiva) + चरण (feet) + घृष्ट, kta of √घृष् (&#x27;rubbed&#x27;); accusative singular neuter</span></div>
+  <div class="word-form">In this verse: giriśacaraṇaghṛṣṭam (acc. sg. neut.)</div>
+  <p class="word-meaning lang-en">rubbed/touched by the feet of Śiva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवाच्या चरणांचा स्पर्श झालेले</p>
+  <div class="word-usage">
+    <div class="deva">गिरिशचरणघृष्टं क्षेत्रम् ।</div>
+    <div class="usage-iast">giriśacaraṇaghṛṣṭaṃ kṣetram ।</div>
+    <div class="usage-meaning lang-en">The holy place touched by Śiva&#x27;s feet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवाच्या चरणस्पर्शाने पावन झालेले क्षेत्र.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पयोधेः संनिकृष्टम्</span>
+    <span class="word-iast">payodheḥ saṃnikṛṣṭam</span>
+  </div>
+  <div><span class="word-grammar">पयोधेः: genitive singular of पयोधि (&#x27;ocean&#x27;); संनिकृष्टम्: kta of सम् + नि + √कृष् (&#x27;drawn near&#x27;); accusative singular neuter</span></div>
+  <div class="word-form">In this verse: payodheḥ saṃnikṛṣṭam</div>
+  <p class="word-meaning lang-en">close to the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या जवळ</p>
+  <div class="word-usage">
+    <div class="deva">पयोधेः संनिकृष्टं नगरम् ।</div>
+    <div class="usage-iast">payodheḥ saṃnikṛṣṭaṃ nagaram ।</div>
+    <div class="usage-meaning lang-en">The town close to the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राजवळचे नगर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृगुपतिपदमिष्टम्</span>
+    <span class="word-iast">bhṛgupatipadamiṣṭam</span>
+  </div>
+  <div><span class="word-grammar">भृगुपति (Paraśurāma, &#x27;lord of the Bhṛgus&#x27;) + पद (abode) + इष्ट, kta of √इष् (&#x27;desired, dear&#x27;); accusative singular neuter</span></div>
+  <div class="word-form">In this verse: bhṛgupatipadamiṣṭam (acc. sg. neut.)</div>
+  <p class="word-meaning lang-en">the beloved abode of Bhṛgupati (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाचे आवडते स्थान</p>
+  <div class="word-usage">
+    <div class="deva">भृगुपतिपदमिष्टं वनम् ।</div>
+    <div class="usage-iast">bhṛgupatipadamiṣṭaṃ vanam ।</div>
+    <div class="usage-meaning lang-en">The forest, beloved abode of Bhṛgupati.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भृगुपतीचे आवडते वन.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गुणौघैः संप्रजुष्टम्</span>
+    <span class="word-iast">guṇaughaiḥ saṃprajuṣṭam</span>
+  </div>
+  <div><span class="word-grammar">गुणौघैः: instrumental plural of गुणौघ (&#x27;host of virtues&#x27;); संप्रजुष्टम्: kta of सम् + प्र + √जुष् (&#x27;endowed, frequented&#x27;); accusative singular neuter</span></div>
+  <div class="word-form">In this verse: guṇaughaiḥ saṃprajuṣṭam</div>
+  <p class="word-meaning lang-en">endowed with hosts of virtues</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुणसमूहांनी युक्त</p>
+  <div class="word-usage">
+    <div class="deva">गुणौघैः संप्रजुष्टः जनः ।</div>
+    <div class="usage-iast">guṇaughaiḥ saṃprajuṣṭaḥ janaḥ ।</div>
+    <div class="usage-meaning lang-en">A person endowed with hosts of virtues.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुणसमूहांनी युक्त मनुष्य.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अघविघटनसृष्टम्</span>
+    <span class="word-iast">aghavighaṭanasṛṣṭam</span>
+  </div>
+  <div><span class="word-grammar">अघ (sin) + विघटन (breaking) + सृष्ट, kta of √सृज् (&#x27;created&#x27;); tatpuruṣa, &#x27;created for the breaking of sins&#x27;; accusative singular neuter</span></div>
+  <div class="word-form">In this verse: aghavighaṭanasṛṣṭam (acc. sg. neut.)</div>
+  <p class="word-meaning lang-en">created for the destruction of sins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापनाशासाठी निर्माण केलेले</p>
+  <div class="word-usage">
+    <div class="deva">अघविघटनसृष्टं तीर्थम् ।</div>
+    <div class="usage-iast">aghavighaṭanasṛṣṭaṃ tīrtham ।</div>
+    <div class="usage-meaning lang-en">A tīrtha created for the destruction of sins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापनाशासाठी निर्माण केलेले तीर्थ.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धर्मपुष्टम्</span>
+    <span class="word-iast">dharmapuṣṭam</span>
+  </div>
+  <div><span class="word-grammar">धर्म (dharma) + पुष्ट, kta of √पुष् (&#x27;nourished&#x27;); tatpuruṣa; accusative singular neuter</span></div>
+  <div class="word-form">In this verse: dharmapuṣṭam (acc. sg. neut.)</div>
+  <p class="word-meaning lang-en">nourished/strengthened by dharma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्माने पुष्ट</p>
+  <div class="word-usage">
+    <div class="deva">धर्मपुष्टं कुलम् ।</div>
+    <div class="usage-iast">dharmapuṣṭaṃ kulam ।</div>
+    <div class="usage-meaning lang-en">A family strengthened by dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्माने पुष्ट झालेले कुळ.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चकासे</span>
+    <span class="word-iast">cakāse</span>
+  </div>
+  <div><span class="word-grammar">Perfect (लिट्), 3rd singular ātmanepada of √काश्, &#x27;to shine&#x27;</span></div>
+  <div class="word-form">In this verse: cakāse (lit 3sg ātm.)</div>
+  <p class="word-meaning lang-en">it shone forth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोभू लागले (√काश्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">क्षेत्रं चकासे ।</div>
+    <div class="usage-iast">kṣetraṃ cakāse ।</div>
+    <div class="usage-meaning lang-en">The holy place shone forth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्षेत्र शोभू लागले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The closing catalogue answers the pilgrim&#x27;s unspoken question: why should I trust this place? Because heaven already trusts it — it has entered the hearts of the gods; because Śiva&#x27;s feet have rubbed it; because it destroys sin and nourishes dharma. Nine epithets, one assurance: the kṣetra is not the poet&#x27;s invention but heaven&#x27;s own choice, and &#x27;it shone&#x27; — the founding is complete, the light is lit.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शेवटची विशेषणमालिका यात्रेकरूच्या न बोललेल्या प्रश्नाचे उत्तर देते — या स्थळावर मी विश्वास का ठेवावा? कारण स्वर्गाने आधीच त्यावर विश्वास ठेवला आहे — ते देवांच्या हृदयांत प्रवेशले आहे; कारण शिवाच्या चरणांनी ते घासले आहे; कारण ते पाप नष्ट करते आणि धर्माचे पोषण करते. नऊ विशेषणे, एकच आश्वासन — हे क्षेत्र कवीची कल्पना नसून स्वर्गाचीच निवड आहे, आणि &#x27;ते शोभले&#x27; — स्थापना पूर्ण झाली, ज्योत पेटली.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is a miniature sthala-māhātmya in itself: each epithet is a Purāṇic credential of a great tīrtha — distinguished on earth, cherished in the hearts of the gods, trodden by Śiva&#x27;s feet, near the sea (like Dvārakā and Purī), beloved of the presiding sage, endowed with virtues, destroying sin, nourishing dharma. Such catalogues, found at the close of every Purāṇic kṣetra-description, invite the pilgrim to trust the place completely. चकासे, &#x27;it shone&#x27;, is the traditional closing verb: the kṣetra is now luminous, established.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक स्वतःच एक लघु स्थलमाहात्म्य आहे — प्रत्येक विशेषण मोठ्या तीर्थाचे पौराणिक प्रमाणपत्र आहे — पृथ्वीवर वैशिष्ट्यपूर्ण, देवांच्या हृदयांत जपलेले, शिवाच्या चरणांनी स्पर्शिलेले, समुद्रसन्निध (द्वारकेसारखे, पुरीसारखे), अधिष्ठात्या मुनीचे आवडते, गुणांनी युक्त, पाप नष्ट करणारे, धर्माचे पोषण करणारे. प्रत्येक पौराणिक क्षेत्रवर्णनाच्या शेवटी अशा याद्या येतात — यात्रेकरूने स्थळावर पूर्ण विश्वास ठेवावा म्हणून. चकासे, &#x27;ते शोभले&#x27;, हे ठरलेले समारोप-क्रियापद आहे — क्षेत्र आता तेजस्वी, प्रतिष्ठित झाले.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Mālinī (15 syllables per pāda: na-na-ma-ya-ya-gaṇas). The grammar notes parse हृत्सुविष्टम् as हृत्सु (locative plural of हृद्) + विष्टम् (&#x27;entered&#x27;), संप्रजुष्टम् from सम् + प्र + √जुष् (&#x27;endowed, frequented&#x27;), and चकासे as the perfect of √काश् (&#x27;it shone&#x27;). भृगुपतिपदम् is &#x27;the abode of Bhṛgupati&#x27; — Paraśurāma, lord of the Bhṛgus. The anvaya in the source file spans 4.55–56 as one sentence; the Marathi translation of 4.55 in the file already includes this verse&#x27;s content, and it is repeated here per the verse division.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: मालिनी (प्रत्येक चरणात १५ अक्षरे — न-न-म-य-य गण). व्याकरणटीपेत हृत्सुविष्टम् हे हृत्सु (हृद्‌चे सप्तमी बहुवचन) + विष्टम् (&#x27;प्रवेशलेले&#x27;), संप्रजुष्टम् हे सम् + प्र + √जुष्‌पासून (&#x27;युक्त, सेविलेले&#x27;), आणि चकासे हे √काश्‌चे पूर्णभूतकाळ (&#x27;ते शोभले&#x27;) असे विश्लेषित आहे. भृगुपतिपदम् म्हणजे &#x27;भृगुपतीचे स्थान&#x27; — परशुराम, भृगूंचा पती. मूळ फाइलमधील अन्वय ४.५५–५६ एकाच वाक्यात पसरलेला आहे; फाइलमधील ४.५५ चे मराठी भाषांतर या श्लोकाचा आशय आधीच समाविष्ट करते, आणि श्लोकविभागानुसार येथे पुनरुक्त आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-55.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 55</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-05/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 5 — Kṣetraracanāvarṇanaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 28 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 28</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 28</span><span class="bl-mr lang-mr">श्लोक 28</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अत्र चोदाहरन्त्येकां कथां चित्रां पुराविदः ।<br>ग्राव्णां हिरण्मयत्वस्य प्रत्ययप्रतिपादिनीम् ।।।।</div>
+  <div class="verse-iast">atra codāharantyekāṃ kathāṃ citrāṃ purāvidaḥ । grāvṇāṃ hiraṇmayatvasya pratyayapratipādinīm । ।  । ।</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अत्र च उदाहरन्ति एकाम् कथाम् चित्राम् पुराविदः । ग्राव्णाम् हिरण्मयत्वस्य प्रत्यय-प्रतिपादिनीम् ।</div><div class="vig-iast">atra ca udāharanti ekām kathām citrām purāvidaḥ । grāvṇām hiraṇmayatvasya pratyaya-pratipādinīm ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">च + उदाहरन्ति = चोदाहरन्ति (गुण) · उदाहरन्ति + एकाम् = उदाहरन्त्येकाम् (यण्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अत्र च पुराविदः ग्राव्णां हिरण्मयत्वस्य प्रत्ययप्रतिपादिनीम् एकां चित्रां कथाम् उदाहरन्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>And about this, those who know the lore of the past recount a wonderful tale — one that establishes conviction in the golden nature of the stones.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथील पाषाणांच्या मूळच्या सुवर्णमयत्वाची प्रचीती आणून देणारी एक अद्भुत कथा पूर्ववृत्त जाणणारे लोक सांगत असतात.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अत्र</span>
+    <span class="word-iast">atra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अत्र</div>
+  <p class="word-meaning lang-en">about this</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>याविषयी</p>
+  <div class="word-usage">
+    <div class="deva">अत्र एकः प्रश्नः उदेति।</div>
+    <div class="usage-iast">atra ekaḥ praśnaḥ udeti.</div>
+    <div class="usage-meaning lang-en">On this point a question arises.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>याविषयी एक प्रश्न उद्भवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">सः गच्छति च आगच्छति।</div>
+    <div class="usage-iast">saḥ gacchati ca āgacchati.</div>
+    <div class="usage-meaning lang-en">He goes and comes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो जातो आणि येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उदाहरन्ति</span>
+    <span class="word-iast">udāharanti</span>
+  </div>
+  <div><span class="word-grammar">उद् + आ + हृ, लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: उदाहरन्ति</div>
+  <p class="word-meaning lang-en">relate</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सांगतात</p>
+  <div class="word-usage">
+    <div class="deva">आचार्याः दृष्टान्तम् उदाहरन्ति।</div>
+    <div class="usage-iast">ācāryāḥ dṛṣṭāntam udāharanti.</div>
+    <div class="usage-meaning lang-en">The teachers cite an illustration.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आचार्य दृष्टान्त सांगतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एकाम्</span>
+    <span class="word-iast">ekām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: एकाम्</div>
+  <p class="word-meaning lang-en">a</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एक</p>
+  <div class="word-usage">
+    <div class="deva">सा एकां कथां शृणोति।</div>
+    <div class="usage-iast">sā ekāṃ kathāṃ śṛṇoti.</div>
+    <div class="usage-meaning lang-en">She listens to a story.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती एक कथा ऐकते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कथाम्</span>
+    <span class="word-iast">kathām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: कथाम्</div>
+  <p class="word-meaning lang-en">story</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कथा</p>
+  <div class="word-usage">
+    <div class="deva">माता कथां कथयति।</div>
+    <div class="usage-iast">mātā kathāṃ kathayati.</div>
+    <div class="usage-meaning lang-en">The mother tells a story.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आई कथा सांगते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चित्राम्</span>
+    <span class="word-iast">citrām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: चित्राम्</div>
+  <p class="word-meaning lang-en">wonderful</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अद्भुत</p>
+  <div class="word-usage">
+    <div class="deva">तेन चित्रां घटनां दृष्टा।</div>
+    <div class="usage-iast">tena citrāṃ ghaṭanāṃ dṛṣṭā.</div>
+    <div class="usage-meaning lang-en">A wonderful event was seen by him.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने एक अद्भुत घटना पाहिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुराविदः</span>
+    <span class="word-iast">purāvidaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: पुराविदः</div>
+  <p class="word-meaning lang-en">those who know the past</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्ववृत्त जाणणारे</p>
+  <div class="word-usage">
+    <div class="deva">पुराविदः इतिहासं रक्षन्ति।</div>
+    <div class="usage-iast">purāvidaḥ itihāsaṃ rakṣanti.</div>
+    <div class="usage-meaning lang-en">The knowers of the past preserve history.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्ववृत्त जाणणारे इतिहासाचे रक्षण करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ग्राव्णाम्</span>
+    <span class="word-iast">grāvṇām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.; ग्रावन्</span></div>
+  <div class="word-form">In this verse: ग्राव्णाम्</div>
+  <p class="word-meaning lang-en">of the stones</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाषाणांच्या</p>
+  <div class="word-usage">
+    <div class="deva">ग्राव्णां मध्ये सुवर्णं गुप्तम्।</div>
+    <div class="usage-iast">grāvṇāṃ madhye suvarṇaṃ guptam.</div>
+    <div class="usage-meaning lang-en">Gold is hidden among the stones.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाषाणांमध्ये सुवर्ण गुप्त आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हिरण्मयत्वस्य</span>
+    <span class="word-iast">hiraṇmayatvasya</span>
+  </div>
+  <div><span class="word-grammar">नपुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: हिरण्मयत्वस्य</div>
+  <p class="word-meaning lang-en">of their being golden</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुवर्णमयपणाची</p>
+  <div class="word-usage">
+    <div class="deva">हिरण्मयत्वस्य ज्ञानं कथया लभ्यते।</div>
+    <div class="usage-iast">hiraṇmayatvasya jñānaṃ kathayā labhyate.</div>
+    <div class="usage-meaning lang-en">Knowledge of the golden nature is gained through the story.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कथेतून सुवर्णमयपणाचे ज्ञान मिळते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रत्यय-प्रतिपादिनीम्</span>
+    <span class="word-iast">pratyaya-pratipādinīm</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: प्रत्ययप्रतिपादिनीम्</div>
+  <p class="word-meaning lang-en">establishing conviction</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रचीती आणून देणारी</p>
+  <div class="word-usage">
+    <div class="deva">सा प्रत्ययप्रतिपादिनीं युक्तिं वदति।</div>
+    <div class="usage-iast">sā pratyayapratipādinīṃ yuktiṃ vadati.</div>
+    <div class="usage-meaning lang-en">She states an argument that establishes conviction.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती प्रचीती आणून देणारा युक्तिवाद मांडते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The mahatmya follows the classic itihasa-purana device of proving a marvel by an akhyana: rather than arguing, it tells a story whose witness experienced the hills&#x27; golden reality. The tale that follows is thus presented not as entertainment but as pramana — a pratyaya-pratipadini katha, a narrative that produces conviction where reasoning stalls.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>माहात्म्य अद्भुत गोष्टी सिद्ध करण्याची इतिहास-पुराणांची ठराविक युक्ती वापरते — वाद न करता एक आख्यान सांगते, ज्याच्या साक्षीदाराने पर्वतांचे सुवर्णमय स्वरूप प्रत्यक्ष अनुभवले. पुढे येणारी कथा ही केवळ मनोरंजन नाही, तर प्रमाण आहे — प्रत्ययप्रतिपादिनी कथा, म्हणजे जेथे तर्क थांबतो तेथे निश्चय निर्माण करणारी कथा.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Udaharanti (&quot;they cite, adduce&quot;) is the standard puranic formula for introducing an illustrative legend (cf. the Mahabharata&#x27;s &quot;atra chodaharanti imam itihasam puratanam&quot;) — the story is offered as traditional testimony, not as the author&#x27;s invention. Puravidah, &quot;knowers of the past,&quot; marks the tellers as custodians of received lore, giving the tale the weight of parampara.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उदाहरन्ति (&quot;ते उदाहरण म्हणून सांगतात&quot;) हे एखादी दृष्टान्तकथा सादर करण्याचे पुराणांतील ठराविक सूत्र आहे (महाभारतातील &quot;अत्र चोदाहरन्तीममितिहासं पुरातनम्&quot; या प्रसिद्ध ओळीप्रमाणे) — कथा ही लेखकाची कल्पना नसून परंपरागत साक्ष म्हणून सादर केली जाते. पुराविदः, &quot;भूतकाळ जाणणारे&quot;, हे कथाकारांना प्राप्त परंपरेचे रक्षक ठरवते आणि कथेला परंपरेचे वजन देते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is a bridge (sankramana-shloka) between doctrine (v.27) and narrative (vv.29ff). Pratyayapratipadinim is a long feminine accusative agreeing with katham: pratyaya (conviction) + pratipadini (feminine of pratipadaka, &quot;establishing,&quot; from prati-√pad, nvul). Gravnam is genitive plural of gravan (stone); hiranmayatvasya is genitive of hiranmayatva, &quot;the state of being golden.&quot;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक सिद्धान्त (श्लोक २७) आणि कथानक (श्लोक २९ पुढे) यांमधील सेतुश्लोक आहे. प्रत्ययप्रतिपादिनीम् हे कथाम् याच्याशी अन्वित होणारे दीर्घ स्त्रीलिंगी द्वितीया रूप आहे: प्रत्यय (निश्चय, प्रचीती) + प्रतिपादिनी (प्रतिपादकाचे स्त्रीलिंग, &quot;स्थापित करणारी&quot;, प्रति-√पद् + ण्वुल्). ग्राव्णाम् हे ग्रावन् (पाषाण) याचे षष्ठी बहुवचन आहे; हिरण्मयत्वस्य हे हिरण्मयत्व (&quot;सुवर्णमयपणा&quot;) याची षष्ठी आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-27.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 27</div></a><a class="next" href="verse-29.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 29</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

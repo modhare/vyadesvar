@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 45 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 45</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 45</span><span class="bl-mr lang-mr">श्लोक 45</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">नानानेकमुखा दीर्घा महान्तो विकटस्फटाः ।<br>संत्रस्ताः खनिकर्तारो गर्त्तमाशु व्यपूरयन् ।।४५।।</div>
+  <div class="verse-iast">nānānekamukhā dīrghā mahānto vikaṭasphaṭāḥ । saṃtrastāḥ khanikartāro garttamāśu vyapūrayan</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">नाना । अनेक-मुखाः । दीर्घाः । महान्तः । विकट-स्फटाः । संत्रस्ताः । खनि-कर्तारः । गर्त्तम् । आशु । व्यपूरयन् ।</div><div class="vig-iast">nānā । aneka-mukhāḥ । dīrghāḥ । mahāntaḥ । vikaṭa-sphaṭāḥ । saṃtrastāḥ । khani-kartāraḥ । garttam । āśu । vyapūrayan ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">नाना + अनेक = नानानेक (सवर्णदीर्घ) · मुखाः + दीर्घाः = मुखा दीर्घाः · दीर्घाः + महान्तः = दीर्घा महान्तः · महान्तः + विकट = महान्तो विकट · कर्तारः + गर्त्तम् = कर्तारो गर्त्तम् · गर्त्तम् + आशु = गर्त्तमाशु</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(ते पवनाशनाः) नाना अनेकमुखाः दीर्घाः महान्तः विकटस्फटाः (आसन्); संत्रस्ताः खनिकर्तारः आशु गर्त्तं व्यपूरयन् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Of many kinds, many-headed, long, huge, with dreadful hoods — such were they. Terrified, the diggers quickly filled the pit back up.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनेक तोंडे असलेले, लांबलचक, व मोठ्या भीषण फणा असलेले ते मोठे नाग होते. त्यामुळे घाबरलेल्या त्या खणणाऱ्यांनी तो खड्डा वेगाने बुजवून टाकला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नानानेकमुखाः</span>
+    <span class="word-iast">nānānekamukhāḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि : नाना अनेकानि मुखानि येषाम् ; पुं. प्र. ब.व.</span></div>
+  <div class="word-form">In this verse: प्रथमा बहुवचन</div>
+  <p class="word-meaning lang-en">of many kinds, many-headed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नानाविध, अनेक तोंडे असलेले</p>
+  <div class="word-usage">
+    <div class="deva">नानानेकमुखाः राक्षसाः पुरे वसन्ति ।</div>
+    <div class="usage-iast">nānānekamukhāḥ rākṣasāḥ pure vasanti.</div>
+    <div class="usage-meaning lang-en">Many-headed demons of many kinds live in the city.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नानाविध, अनेक तोंडे असलेले राक्षस नगरात राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विकटस्फटाः</span>
+    <span class="word-iast">vikaṭasphaṭāḥ</span>
+  </div>
+  <div><span class="word-grammar">बहुव्रीहि : विकटाः स्फटाः (फणाः) येषाम् ; पुं. प्र. ब.व.</span></div>
+  <div class="word-form">In this verse: प्रथमा बहुवचन</div>
+  <p class="word-meaning lang-en">with dreadful hoods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भयंकर फणा असलेले</p>
+  <div class="word-usage">
+    <div class="deva">विकटस्फटः नागः मार्गे तस्थौ ।</div>
+    <div class="usage-iast">vikaṭasphaṭaḥ nāgaḥ mārge tasthau.</div>
+    <div class="usage-meaning lang-en">A serpent with a dreadful hood stood in the path.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भयंकर फणा असलेला नाग वाटेत उभा होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संत्रस्ताः</span>
+    <span class="word-iast">saṃtrastāḥ</span>
+  </div>
+  <div><span class="word-grammar">सम् + √त्रस् + क्त ; पुं. प्र. ब.व.</span></div>
+  <div class="word-form">In this verse: क्तान्त — &#x27;घाबरलेले&#x27;</div>
+  <p class="word-meaning lang-en">terrified, frightened</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घाबरलेले</p>
+  <div class="word-usage">
+    <div class="deva">संत्रस्ताः जनाः गृहम् प्राविशन् ।</div>
+    <div class="usage-iast">saṃtrastāḥ janāḥ gṛham prāviśan.</div>
+    <div class="usage-meaning lang-en">The terrified people entered the house.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घाबरलेले लोक घरात शिरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खनिकर्तारः</span>
+    <span class="word-iast">khanikartāraḥ</span>
+  </div>
+  <div><span class="word-grammar">खनि + कर्तृ (√कृ + तृच्) ; पुं. प्र. ब.व.</span></div>
+  <div class="word-form">In this verse: तृजन्त कर्तृनाम — प्रथमा बहुवचन</div>
+  <p class="word-meaning lang-en">the diggers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खणणारे</p>
+  <div class="word-usage">
+    <div class="deva">खनिकर्तारः क्षेत्रम् अगमन् ।</div>
+    <div class="usage-iast">khanikartāraḥ kṣetram agaman.</div>
+    <div class="usage-meaning lang-en">The diggers went to the field.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खणणारे शेतात गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गर्त्तम्</span>
+    <span class="word-iast">garttam</span>
+  </div>
+  <div><span class="word-grammar">गर्त्त (पुं./नपुं.), द्वि. ए.व.</span></div>
+  <div class="word-form">In this verse: द्वितीया एकवचन (पुस्तकातील द्वित्व-लेखनासह)</div>
+  <p class="word-meaning lang-en">the pit</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खड्डा</p>
+  <div class="word-usage">
+    <div class="deva">स गर्त्तम् मृदा पूरयति ।</div>
+    <div class="usage-iast">sa garttam mṛdā pūrayati.</div>
+    <div class="usage-meaning lang-en">He fills the pit with earth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो खड्डा मातीने भरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आशु</span>
+    <span class="word-iast">āśu</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: क्रियाविशेषण</div>
+  <p class="word-meaning lang-en">quickly, swiftly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्वरेने</p>
+  <div class="word-usage">
+    <div class="deva">आशु गच्छ ग्रामम् ।</div>
+    <div class="usage-iast">āśu gaccha grāmam.</div>
+    <div class="usage-meaning lang-en">Go quickly to the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लवकर गावाला जा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्यपूरयन्</span>
+    <span class="word-iast">vyapūrayan</span>
+  </div>
+  <div><span class="word-grammar">वि + √पॄ (पूरयति, चुरादि णिजन्त) ; लङ्, प्र.पु. ब.व.</span></div>
+  <div class="word-form">In this verse: लङ् बहुवचन — &#x27;त्यांनी भरून टाकला&#x27;</div>
+  <p class="word-meaning lang-en">they filled up</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भरून टाकला (लङ्)</p>
+  <div class="word-usage">
+    <div class="deva">ते कूपम् जलेन व्यपूरयन् ।</div>
+    <div class="usage-iast">te kūpam jalena vyapūrayan.</div>
+    <div class="usage-meaning lang-en">They filled the well with water.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांनी विहीर पाण्याने भरली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Terror is the honest response of the small before the great: the diggers, who came with spades, meet the guardians of the deep and retreat — and in retreating they do the right thing, filling the pit and leaving the mystery sealed. Not every depth is meant to be plumbed; some doors the earth itself shuts, and wisdom lies in knowing when to stop digging.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महानासमोर क्षुद्राची भीती ही प्रामाणिक प्रतिक्रिया आहे : पहाऱ्या घेऊन आलेले खणणारे पाताळरक्षकांना भेटतात आणि माघार घेतात — आणि माघार घेऊन ते योग्यच करतात; खड्डा बुजवतात, रहस्य बंद ठेवतात. प्रत्येक खोली मोजायची नसते; काही दारे पृथ्वी स्वतःच बंद करते, आणि केव्हा खणणे थांबवावे हे जाणणे हेच शहाणपण आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The great multi-hooded serpents — like Śeṣa and Vāsuki of the Purāṇas — are not mere monsters but the retinue of the deep, entitled to reverence rather than enmity. Sthala tradition treats the fear they inspire as salutary: it converts curiosity into reverence. The diggers&#x27; act of filling the pit is itself a rite — restoring the earth&#x27;s covering over what must remain hidden.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महान अनेकफणी साप — पुराणांतील शेष आणि वासुकी यांसारखे — हे केवळ राक्षस नसून पाताळाचे परिवार आहेत; त्यांना शत्रुत्वाऐवजी मानच द्यायचा असतो. स्थलपरंपरा त्यांनी निर्माण केलेली भीती हितकारक मानते : ती कुतूहलाचे रूपांतर आदरात करते. खड्डा बुजवण्याची खणणाऱ्यांची कृती हाच एक विधी आहे — लपून राहायलाच हवे त्यावर पृथ्वीचे आच्छादन परत घालणे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The grammatical subject (the pavanāśanāḥ of v. 44) is carried over. Garttam is printed with doubled -tt-, kept as in the book. Metre: Anuṣṭubh. The frightened filling-in of the pit closes the excavation episode; the king&#x27;s reflection follows in vv. 46–48.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>व्याकरणदृष्ट्या कर्ता (४४ व्या श्लोकातील पवनाशनाः) पुढे चालविला आहे. गर्त्तम् हे पुस्तकातील द्वित्व-लेखनासहच ठेवले आहे. वृत्त : अनुष्टुभ्. घाबरून खड्डा बुजवणे याने खणण्याचा प्रसंग संपतो; ४६–४८ व्या श्लोकांत राजाचे चिंतन पुढे येते.</p></div></div>
+
+<div class="pagenav"><a href="verse-44.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 44</div></a><a class="next" href="verse-46.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 46</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

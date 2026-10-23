@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 14 — Devastavanaḥ 21 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 14 — Devastavanaḥ</a><span>&rsaquo;</span><span class="here">Verse 21</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 21</span><span class="bl-mr lang-mr">श्लोक 21</span></h1>
+<p class="meta">Sarga 14 — Devastavanaḥ &middot; <span class="deva">चतुर्दशः सर्गः · देवस्तवनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कृष्ण श्रीमन्पाहि मां पुण्यकीर्ते स्वामिन्नास्सेऽनामरूपोऽपि सत्यम् ।<br>लोकस्यात्मा नामरूपाणि धत्से क्षेमाय त्वं केवलानन्दमात्रः ।।२१।।</div>
+  <div class="verse-iast">kṛṣṇa śrīmanpāhi māṃ puṇyakīrte svāminnāsse&#x27;nāmarūpo&#x27;pi satyam । lokasyātmā nāmarūpāṇi dhatse kṣemāya tvaṃ kevalānandamātraḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कृष्ण । श्रीमन् । पाहि । माम् । पुण्य-कीर्ते । स्वामिन् । आस्से । अनाम-रूपः । अपि । सत्यम् । लोकस्य । आत्मा । नाम-रूपाणि । धत्से । क्षेमाय । त्वम् । केवल-आनन्द-मात्रः ।</div><div class="vig-iast">kṛṣṇa । śrīman । pāhi । mām । puṇya-kīrte । svāmin । āsse । anāma-rūpaḥ । api । satyam । lokasya । ātmā । nāma-rūpāṇi । dhatse । kṣemāya । tvam । kevala-ānanda-mātraḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">स्वामिन् + आस्से = स्वामिन्नास्से (ह्रस्वानंतरचा न् द्वित्व पावतो) · आस्से + अनाम = आस्सेऽनाम (पूर्वरूप) · अनामरूपः + अपि = अनामरूपोऽपि · केवल + आनन्द = केवलानन्द (सवर्णदीर्घ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे पुण्यकीर्ते श्रीमन् स्वामिन् कृष्ण, मां पाहि । त्वं सत्यम् अनामरूपः अपि आस्से; लोकस्य आत्मा केवलानन्दमात्रः त्वं क्षेमाय नामरूपाणि धत्से ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O glorious Kṛṣṇa of holy fame, protect me! O Lord, in truth You are without name and form; yet as the Self of the world You take on names and forms for the welfare of people — You who are pure bliss alone.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुण्य कीर्ती असणाऱ्या श्रीमान् कृष्णा, माझे रक्षण कर. तू खऱ्या अर्थाने नामरूप-विहीन आहेस. तू सर्व जगताचा आत्मा व केवळ आनन्दरूप असून लोककल्याणासाठीच नावे व रूपे धारण करतोस.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Textual decision (applied): कृष्ण श्रीमान्याहि मां (print) → कृष्ण श्रीमन्पाहि मां — vocative श्रीमन् + पाहि, &quot;O glorious one, protect&quot; (Marathi श्रीमान् कृष्णा, माझे रक्षण कर); same meter.</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृष्ण</span>
+    <span class="word-iast">kṛṣṇa</span>
+  </div>
+  <div><span class="word-grammar">पुं. सं. एव. (संबोधन-श्लोक)</span></div>
+  <div class="word-form">In this verse: कृष्ण</div>
+  <p class="word-meaning lang-en">O Kṛṣṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे कृष्णा</p>
+  <div class="word-usage">
+    <div class="deva">कृष्ण रक्ष माम्।</div>
+    <div class="usage-iast">kṛṣṇa rakṣa mām</div>
+    <div class="usage-meaning lang-en">O Kṛṣṇa, protect me!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे कृष्णा, माझे रक्षण कर!</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीमन्</span>
+    <span class="word-iast">śrīman</span>
+  </div>
+  <div><span class="word-grammar">पुं. सं. एव.</span></div>
+  <div class="word-form">In this verse: श्रीमन्</div>
+  <p class="word-meaning lang-en">O glorious one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे श्रीमान्</p>
+  <div class="word-usage">
+    <div class="deva">श्रीमन् श्रूयताम्।</div>
+    <div class="usage-iast">śrīman śrūyatām</div>
+    <div class="usage-meaning lang-en">O glorious one, may it be heard.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे श्रीमान्, ऐकले जावो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पाहि</span>
+    <span class="word-iast">pāhi</span>
+  </div>
+  <div><span class="word-grammar">पा, लोट्, म.पु. एव.</span></div>
+  <div class="word-form">In this verse: पाहि</div>
+  <p class="word-meaning lang-en">protect</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षण कर</p>
+  <div class="word-usage">
+    <div class="deva">पाहि मां संकटात्।</div>
+    <div class="usage-iast">pāhi māṃ saṃkaṭāt</div>
+    <div class="usage-meaning lang-en">Protect me from danger.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संकटापासून माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">माम्</span>
+    <span class="word-iast">mām</span>
+  </div>
+  <div><span class="word-grammar">द्वि. एव.</span></div>
+  <div class="word-form">In this verse: माम्</div>
+  <p class="word-meaning lang-en">me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला</p>
+  <div class="word-usage">
+    <div class="deva">माम् अपि नय।</div>
+    <div class="usage-iast">mām api naya</div>
+    <div class="usage-meaning lang-en">Take me too.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मलाही ने.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुण्य-कीर्ते</span>
+    <span class="word-iast">puṇya-kīrte</span>
+  </div>
+  <div><span class="word-grammar">पुं. सं. एव.</span></div>
+  <div class="word-form">In this verse: पुण्यकीर्ते</div>
+  <p class="word-meaning lang-en">O one of holy fame</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे पुण्यकीर्ते</p>
+  <div class="word-usage">
+    <div class="deva">पुण्यकीर्ते राजन् जयतु।</div>
+    <div class="usage-iast">puṇyakīrte rājan jayatu</div>
+    <div class="usage-meaning lang-en">O king of holy fame, be victorious!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे पुण्यकीर्ती राजा, विजयी हो!</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वामिन्</span>
+    <span class="word-iast">svāmin</span>
+  </div>
+  <div><span class="word-grammar">पुं. सं. एव.</span></div>
+  <div class="word-form">In this verse: स्वामिन्</div>
+  <p class="word-meaning lang-en">O Lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्वामी</p>
+  <div class="word-usage">
+    <div class="deva">स्वामिन् प्रसादं कुरु।</div>
+    <div class="usage-iast">svāmin prasādaṃ kuru</div>
+    <div class="usage-meaning lang-en">O Lord, bestow grace.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्वामी, कृपा कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आस्से</span>
+    <span class="word-iast">āsse</span>
+  </div>
+  <div><span class="word-grammar">आस्, लट्, म.पु. एव.</span></div>
+  <div class="word-form">In this verse: आस्से</div>
+  <p class="word-meaning lang-en">you are</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू आहेस</p>
+  <div class="word-usage">
+    <div class="deva">त्वं कुत्र आस्से।</div>
+    <div class="usage-iast">tvaṃ kutra āsse</div>
+    <div class="usage-meaning lang-en">Where are you?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू कुठे आहेस?</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनाम-रूपः</span>
+    <span class="word-iast">anāma-rūpaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अनामरूपः</div>
+  <p class="word-meaning lang-en">without name and form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नाम व रूप नसलेला</p>
+  <div class="word-usage">
+    <div class="deva">आत्मा अनामरूपः उच्यते।</div>
+    <div class="usage-iast">ātmā anāmarūpaḥ ucyate</div>
+    <div class="usage-meaning lang-en">The Self is said to be without name and form.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आत्मा नाम-रूप-रहित म्हटला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपि</span>
+    <span class="word-iast">api</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अपि</div>
+  <p class="word-meaning lang-en">yet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तरीही</p>
+  <div class="word-usage">
+    <div class="deva">सः अपि आगतः।</div>
+    <div class="usage-iast">saḥ api āgataḥ</div>
+    <div class="usage-meaning lang-en">He too has come.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सुद्धा आला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्यम्</span>
+    <span class="word-iast">satyam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: सत्यम्</div>
+  <p class="word-meaning lang-en">truly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर</p>
+  <div class="word-usage">
+    <div class="deva">सत्यं सः साधुः।</div>
+    <div class="usage-iast">satyaṃ saḥ sādhuḥ</div>
+    <div class="usage-meaning lang-en">Truly, he is a good man.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर तो सज्जन आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकस्य</span>
+    <span class="word-iast">lokasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: लोकस्य</div>
+  <p class="word-meaning lang-en">of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचा</p>
+  <div class="word-usage">
+    <div class="deva">लोकस्य हितं चिन्तय।</div>
+    <div class="usage-iast">lokasya hitaṃ cintaya</div>
+    <div class="usage-meaning lang-en">Think of the world&#x27;s welfare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाच्या हिताचा विचार कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आत्मा</span>
+    <span class="word-iast">ātmā</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: आत्मा</div>
+  <p class="word-meaning lang-en">the self</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आत्मा</p>
+  <div class="word-usage">
+    <div class="deva">आत्मा नित्यः अस्ति।</div>
+    <div class="usage-iast">ātmā nityaḥ asti</div>
+    <div class="usage-meaning lang-en">The Self is eternal.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आत्मा नित्य आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नाम-रूपाणि</span>
+    <span class="word-iast">nāma-rūpāṇi</span>
+  </div>
+  <div><span class="word-grammar">नपुं. द्वि. बव.</span></div>
+  <div class="word-form">In this verse: नामरूपाणि</div>
+  <p class="word-meaning lang-en">names and forms</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नावे व रूपे</p>
+  <div class="word-usage">
+    <div class="deva">नामरूपाणि अनित्यानि।</div>
+    <div class="usage-iast">nāmarūpāṇi anityāni</div>
+    <div class="usage-meaning lang-en">Names and forms are impermanent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नावे व रूपे अनित्य आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धत्से</span>
+    <span class="word-iast">dhatse</span>
+  </div>
+  <div><span class="word-grammar">धा, लट्, म.पु. एव. (आत्मने.)</span></div>
+  <div class="word-form">In this verse: धत्से</div>
+  <p class="word-meaning lang-en">you take on</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धारण करतोस</p>
+  <div class="word-usage">
+    <div class="deva">त्वं रूपं धत्से।</div>
+    <div class="usage-iast">tvaṃ rūpaṃ dhatse</div>
+    <div class="usage-meaning lang-en">You take on a form.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू रूप धारण करतोस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षेमाय</span>
+    <span class="word-iast">kṣemāya</span>
+  </div>
+  <div><span class="word-grammar">नपुं. च. एव.</span></div>
+  <div class="word-form">In this verse: क्षेमाय</div>
+  <p class="word-meaning lang-en">for the welfare</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कल्याणासाठी</p>
+  <div class="word-usage">
+    <div class="deva">क्षेमाय सर्वं कुरु।</div>
+    <div class="usage-iast">kṣemāya sarvaṃ kuru</div>
+    <div class="usage-meaning lang-en">Do everything for welfare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कल्याणासाठी सर्व कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वम्</span>
+    <span class="word-iast">tvam</span>
+  </div>
+  <div><span class="word-grammar">प्र. एव.</span></div>
+  <div class="word-form">In this verse: त्वम्</div>
+  <p class="word-meaning lang-en">you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू</p>
+  <div class="word-usage">
+    <div class="deva">त्वम् एव समर्थः।</div>
+    <div class="usage-iast">tvam eva samarthaḥ</div>
+    <div class="usage-meaning lang-en">You alone are capable.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तूच समर्थ आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">केवल-आनन्द-मात्रः</span>
+    <span class="word-iast">kevala-ānanda-mātraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: केवलानन्दमात्रः</div>
+  <p class="word-meaning lang-en">pure bliss alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केवळ आनंदरूप</p>
+  <div class="word-usage">
+    <div class="deva">ब्रह्म केवलानन्दमात्रम्।</div>
+    <div class="usage-iast">brahma kevalānandamātram</div>
+    <div class="usage-meaning lang-en">Brahman is pure bliss alone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्म हे केवळ आनंदरूप आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुण्यकीर्ते</span>
+    <span class="word-iast">puṇyakīrte</span>
+  </div>
+  <div><span class="word-grammar">पुं. सं. एव. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: पुण्यकीर्ते</div>
+  <p class="word-meaning lang-en">O one of holy fame</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे पुण्यकीर्ती</p>
+  <div class="word-usage">
+    <div class="deva">पुण्यकीर्ते देव पाहि माम्।</div>
+    <div class="usage-iast">puṇyakīrte deva pāhi mām</div>
+    <div class="usage-meaning lang-en">O God of holy fame, protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे पुण्यकीर्ती देवा, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पाहि माम्</span>
+    <span class="word-iast">pāhi mām</span>
+  </div>
+  <div><span class="word-grammar">लोट् म.पु. + द्वि. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: पाहि माम्</div>
+  <p class="word-meaning lang-en">protect me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझे रक्षण कर (√पा, आज्ञार्थ)</p>
+  <div class="word-usage">
+    <div class="deva">पाहि माम् इति भक्तः वदति।</div>
+    <div class="usage-iast">pāhi mām iti bhaktaḥ vadati</div>
+    <div class="usage-meaning lang-en">The devotee says: protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त म्हणतो : माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनामरूपः अपि सत्यम्</span>
+    <span class="word-iast">anāmarūpaḥ api satyam</span>
+  </div>
+  <div><span class="word-grammar">प्र. + अव्यय (संधिरूप)</span></div>
+  <div class="word-form">In this verse: अनामरूपोऽपि सत्यम्</div>
+  <p class="word-meaning lang-en">though truly without name and form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर नाम-रूप-रहित असूनही</p>
+  <div class="word-usage">
+    <div class="deva">सः अनामरूपः अपि सत्यम् पूज्यः।</div>
+    <div class="usage-iast">saḥ anāmarūpaḥ api satyam pūjyaḥ</div>
+    <div class="usage-meaning lang-en">Though truly without name and form, he is worshipful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो खरोखर नाम-रूप-रहित असूनही पूजनीय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकस्य आत्मा</span>
+    <span class="word-iast">lokasya ātmā</span>
+  </div>
+  <div><span class="word-grammar">ष. + प्र. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: लोकस्यात्मा</div>
+  <p class="word-meaning lang-en">the self of the world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाचा आत्मा</p>
+  <div class="word-usage">
+    <div class="deva">लोकस्य आत्मा ईश्वरः।</div>
+    <div class="usage-iast">lokasya ātmā īśvaraḥ</div>
+    <div class="usage-meaning lang-en">God is the self of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ईश्वर हा जगाचा आत्मा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नामरूपाणि धत्से</span>
+    <span class="word-iast">nāmarūpāṇi dhatse</span>
+  </div>
+  <div><span class="word-grammar">द्वि. बव. + लट् (संधिरूप)</span></div>
+  <div class="word-form">In this verse: नामरूपाणि धत्से</div>
+  <p class="word-meaning lang-en">you assume names and forms</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नावे व रूपे धारण करतोस (√धा)</p>
+  <div class="word-usage">
+    <div class="deva">भक्तानुग्रहाय नामरूपाणि धत्से।</div>
+    <div class="usage-iast">bhaktānugrahāya nāmarūpāṇi dhatse</div>
+    <div class="usage-meaning lang-en">For the grace of devotees you assume names and forms.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्तांवरील अनुग्रहासाठी नावे व रूपे धारण करतोस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">केवलानन्दमात्रः</span>
+    <span class="word-iast">kevalānandamātraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव. (संधिरूप)</span></div>
+  <div class="word-form">In this verse: केवलानन्दमात्रः</div>
+  <p class="word-meaning lang-en">pure bliss alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केवळ आनंदस्वरूप</p>
+  <div class="word-usage">
+    <div class="deva">केवलानन्दमात्रः सः ध्येयः।</div>
+    <div class="usage-iast">kevalānandamātraḥ saḥ dhyeyaḥ</div>
+    <div class="usage-meaning lang-en">He who is pure bliss alone is to be meditated on.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जो केवळ आनंदरूप आहे त्याचे ध्यान करावे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse states the devotional resolution of the oldest Vedāntic tension: the Lord is truly nirguṇa — without name and form — and yet He is not distant, for as the Self of the world He willingly wears names and forms for the welfare of beings. The poet does not ask the formless to become formed as a concession; the avatāra is grace itself, the blissful One (kevalānandamātra) bending toward the devotee. For the worshipper at Guhagar this is the charter of mūrti-seva: the stone image is not a limitation of God but His compassion made approachable.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक वेदान्तातील प्राचीनतम तणावाचे भक्तिपर निराकरण मांडतो : प्रभू खरोखरच निर्गुण आहे — नाम-रूप-रहित — तरी तो दूर नाही, कारण जगाचा आत्मा म्हणून तो प्राण्यांच्या कल्याणासाठी स्वेच्छेने नावे व रूपे धारण करतो. कवी निराकाराला साकार होण्याची सवलत मागत नाही; अवतार हीच कृपा आहे — केवळ आनंदरूप असलेला तो भक्ताकडे वाकतो. गुहागरच्या उपासकासाठी हा मूर्तिसेवेचा आधार आहे : दगडी मूर्ती ही देवाची मर्यादा नसून त्याचीच जवळ येण्याजोगी केलेली करुणा आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The pairing of &#x27;without name and form&#x27; with &#x27;He takes on names and forms&#x27; is the classical avatāra doctrine of the Gītā: though unborn and imperishable, the Lord manifests by His own māyā whenever dharma declines (Gītā 4.6–8), and the Bhāgavata adds that He does so for the welfare (kṣema) of His devotees. The epithet &#x27;pure bliss alone&#x27; (kevalānandamātra) belongs to the Upaniṣadic description of Brahman as ānanda, here made the personal ground of divine compassion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;नाम-रूप-रहित&#x27; आणि &#x27;तो नावे व रूपे धारण करतो&#x27; ही जोडी गीतेचा ठराविक अवतार-सिद्धान्त आहे : अज व अविनाशी असूनही जेव्हा धर्माचा ऱ्हास होतो तेव्हा प्रभू स्वतःच्या मायेने प्रगट होतो (गीता ४.६–८), आणि भागवत त्यात भर घालते की तो आपल्या भक्तांच्या कल्याणासाठी (क्षेम) असे करतो. &#x27;केवळ आनंदरूप&#x27; (केवलानन्दमात्र) हे विशेषण ब्रह्माच्या आनंदरूप या उपनिषदांतील वर्णनातील असून येथे ते दैवी करुणेचा व्यक्तिगत आधार बनले आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse turns on a paradox the poet states without apology: अनामरूपोऽपि सत्यम् — &#x27;though truly without name and form.&#x27; नामरूपाणि is the standard Vedāntic term for the phenomenal world of distinct names and forms. Metre: Śālinī. Note the vocative chain कृष्ण–श्रीमन्–पुण्यकीर्ते–स्वामिन्, each adding a facet before the single imperative पाहि माम्, &#x27;protect me.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक कवीने बिनदिक्कत मांडलेल्या विरोधाभासावर फिरतो : अनामरूपोऽपि सत्यम् — &#x27;खरोखर नाम-रूप-रहित असूनही.&#x27; नामरूपाणि ही भिन्न नावे व रूपे असलेल्या दृश्य जगासाठी वेदान्तातील ठराविक संज्ञा आहे. वृत्त : शालिनी. कृष्ण–श्रीमन्–पुण्यकीर्ते–स्वामिन् ही संबोधनांची मालिका लक्षात घ्या; प्रत्येक संबोधन एक पैलू जोडते आणि शेवटी एकच आज्ञार्थ येतो — पाहि माम्, &#x27;माझे रक्षण कर.&#x27;</p></div></div>
+
+<div class="pagenav"><a href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 20</div></a><a class="next" href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 22</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

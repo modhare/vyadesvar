@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 21 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 21</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 21</span><span class="bl-mr lang-mr">श्लोक 21</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तस्य दुर्गपतेर्दुर्गगोपनाय निवेशितः ।<br>परितः परिवेषोऽभूत्कर्मराणां समर्मरः ।।२१।।</div>
+  <div class="verse-iast">tasya durgapaterdurgagopanāya niveśitaḥ । paritaḥ pariveṣo&#x27;bhūtkarmarāṇāṃ samarmaraḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तस्य । दुर्ग-पतेः । दुर्ग-गोपनाय । निवेशितः । परितः । परिवेषः । अभूत् । कर्मराणाम् । स-मर्मरः ।</div><div class="vig-iast">tasya । durga-pateḥ । durga-gopanāya । niveśitaḥ । paritaḥ । pariveṣaḥ । abhūt । karmarāṇām । sa-marmaraḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पतेः + दुर्ग = पतेर्दुर्ग · परिवेषः + अभूत् = परिवेषोऽभूत्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तस्य दुर्गपतेः दुर्गगोपनाय परितः निवेशितः समर्मरः कर्मराणां परिवेषः अभूत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>For the guarding of that lord of the fort&#x27;s strongholds, all around was settled a clattering settlement of smiths, noisy with their work.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्या दुर्गाधिपतीच्या दुर्गांचे म्हणजे किल्ल्यांचे संरक्षण करण्यासाठी आजूबाजूला (आयुधांच्या व उपकरणांच्या) आवाजांनी गजबजलेली अशी लोहारांची वस्ती होती.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दुर्गगोपनाय</span>
+    <span class="word-iast">durgagopanāya</span>
+  </div>
+  <div><span class="word-grammar">दुर्गाणां गोपनाय (√गुप् + ल्युट्, भावे), चतुर्थीतत्पुरुषः; नपुंसकलिङ्गम्, चतुर्थी एकवचनम्</span></div>
+  <div class="word-form">In this verse: दुर्गगोपनाय</div>
+  <p class="word-meaning lang-en">for the protection of the strongholds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>किल्ल्याच्या रक्षणासाठी</p>
+  <div class="word-usage">
+    <div class="deva">वीराः दुर्गगोपनाय नियुक्ताः अभवन्।</div>
+    <div class="usage-iast">vīrāḥ durgagopanāya niyuktāḥ abhavan.</div>
+    <div class="usage-meaning lang-en">The heroes were appointed for guarding the forts.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वीर किल्ल्यांच्या रक्षणासाठी नेमले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निवेशितः</span>
+    <span class="word-iast">niveśitaḥ</span>
+  </div>
+  <div><span class="word-grammar">नि + √विश् (विशति, तुदादिगणः) + क्तप्रत्ययः; पुंलिङ्गम्, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: निवेशितः</div>
+  <p class="word-meaning lang-en">settled, established</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वसवलेला</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामः नद्याः तीरे निवेशितः आसीत्।</div>
+    <div class="usage-iast">grāmaḥ nadyāḥ tīre niveśitaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">The village was settled on the river&#x27;s bank.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाव नदीकाठी वसवले होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परितः</span>
+    <span class="word-iast">paritaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्ययम् (परि + तस् प्रत्ययः); द्वितीयया वा षष्ठ्या वा योगः</span></div>
+  <div class="word-form">In this verse: परितः</div>
+  <p class="word-meaning lang-en">all around, on every side</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सभोवती</p>
+  <div class="word-usage">
+    <div class="deva">नगरं परितः वनम् अस्ति।</div>
+    <div class="usage-iast">nagaraṃ paritaḥ vanam asti.</div>
+    <div class="usage-meaning lang-en">There is forest all around the city.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहराभोवती जंगल आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिवेषः</span>
+    <span class="word-iast">pariveṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">परि + √विष् (वेष्टने) + घञ् प्रत्ययः; पुंलिङ्गम्, प्रथमा एकवचनम्</span></div>
+  <div class="word-form">In this verse: परिवेषः</div>
+  <p class="word-meaning lang-en">an encircling settlement, surrounding colony</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेढा, वसाहत</p>
+  <div class="word-usage">
+    <div class="deva">दुर्गस्य परिवेषः कर्मकरैः पूर्णः आसीत्।</div>
+    <div class="usage-iast">durgasya pariveṣaḥ karmakaraiḥ pūrṇaḥ āsīt.</div>
+    <div class="usage-meaning lang-en">The settlement around the fort was full of artisans.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>किल्ल्याभोवतीची वस्ती कारागिरांनी भरलेली होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कर्मराणाम्</span>
+    <span class="word-iast">karmarāṇām</span>
+  </div>
+  <div><span class="word-grammar">कर्मर (पुंलिङ्गम्), षष्ठी विभक्तिः, बहुवचनम्</span></div>
+  <div class="word-form">In this verse: कर्मराणाम्</div>
+  <p class="word-meaning lang-en">of the blacksmiths</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोहारांचा (कर्मर = कर्मार, वृत्तासाठी)</p>
+  <div class="word-usage">
+    <div class="deva">कर्मराणां शब्दः दूरात् श्रूयते।</div>
+    <div class="usage-iast">karmarāṇāṃ śabdaḥ dūrāt śrūyate.</div>
+    <div class="usage-meaning lang-en">The sound of the smiths is heard from afar.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोहारांचा आवाज दूरून ऐकू येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समर्मरः</span>
+    <span class="word-iast">samarmaraḥ</span>
+  </div>
+  <div><span class="word-grammar">सह मर्मरेण (बहुव्रीहिसमासः); पुंलिङ्गम्, प्रथमा एकवचनम् (परिवेषस्य विशेषणम्)</span></div>
+  <div class="word-form">In this verse: समर्मरः</div>
+  <p class="word-meaning lang-en">resounding with clatter, noisy with work</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खणखणाटाने युक्त</p>
+  <div class="word-usage">
+    <div class="deva">आपणः समर्मरः जनैः पूर्णः।</div>
+    <div class="usage-iast">āpaṇaḥ samarmaraḥ janaiḥ pūrṇaḥ.</div>
+    <div class="usage-meaning lang-en">The market, buzzing with noise, was full of people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गजबजलेला बाजार लोकांनी भरलेला होता.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The clattering smiths&#x27; colony ringing the fort shows that dharma&#x27;s stronghold rests on humble labor. Every craft holds an honored place in the social order, and the noisy settlement paints a living, working society — not an idle court — as the setting of the sacred legend.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>किल्ल्याभोवती लोहारांची गजबजलेली वस्ती दाखवते — धर्माच्या दुर्गाचे रक्षण सामान्य कारागिरांच्या श्रमांवर अवलंबून असते. प्रत्येक व्यवसायाला धर्मव्यवस्थेत मानाचे स्थान आहे. ही गजबजलेली वस्ती जिवंत, कार्यरत समाजाचे चित्र रेखाटते — आळशी दरबाराचे नव्हे — आणि हेच पवित्र कथेचे वातावरण आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The fort (durga) is one of the seven limbs of the state in political science, and its upkeep depends on smiths, carpenters, and artisans, whom the Arthaśāstra places under state care. The verse honors the working orders as guardians of the realm&#x27;s strength.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राज्यशास्त्रात दुर्ग हे राज्याच्या सात अंगांपैकी एक आहे; त्याच्या देखभालीसाठी लोहार, सुतार आणि कारागीर लागतात, ज्यांना अर्थशास्त्र राज्याच्या संरक्षणाखाली ठेवते. राज्याच्या बळाचे रक्षक म्हणून या श्लोकात श्रमजीवी वर्गांचा गौरव केला आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Karmara (also karmāra) = blacksmith; samarmaraḥ = &#x27;with (their) clatter&#x27; (marmara, the murmur of work). The verse places an artisans&#x27; settlement (pariveṣa) ringing the fort — sthala geography of the old fortified town.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: अनुष्टुभ्. कर्मर (कर्मार हाही पाठ) म्हणजे लोहार; समर्मरः म्हणजे &#x27;(त्यांच्या) कामाच्या गडबडीने गजबजलेले&#x27; (मर्मर = कामाचा घरघराट). किल्ल्याभोवती कारागिरांची वस्ती (परिवेष) — जुन्या किल्लेवजा शहराच्या स्थलरचनेचे हे चित्र आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 20</div></a><a class="next" href="verse-22.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 22</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

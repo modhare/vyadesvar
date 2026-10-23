@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 27 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 27</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 27</span><span class="bl-mr lang-mr">श्लोक 27</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">रामोऽपि तान्समानीय षष्टिसंख्यान्कुटुम्बिनः ।<br>पवित्रगोत्रान् गोत्रायां तद्वासार्थं स्वसन्निधौ ।।२७।।</div>
+  <div class="verse-iast">rāmo&#x27;pi tānsamānīya ṣaṣṭisaṃkhyānkuṭumbinaḥ । pavitragotrān gotrāyāṃ tadvāsārthaṃ svasannidhau</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">रामः । अपि । तान् । समानीय । षष्टि-संख्यान् । कुटुम्बिनः । पवित्र-गोत्रान् । गोत्रायाम् । तत्-वास-अर्थम् । स्व-सन्निधौ ।</div><div class="vig-iast">rāmaḥ । api । tān । samānīya । ṣaṣṭi-saṃkhyān । kuṭumbinaḥ । pavitra-gotrān । gotrāyām । tat-vāsa-artham । sva-sannidhau ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">रामः + अपि = रामोऽपि · तान् + समानीय = तान्समानीय · तत् + वास = तद्वास (त् → द्) · वास + अर्थम् = वासार्थम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">रामः अपि तान् षष्टिसंख्यान् पवित्रगोत्रान् कुटुम्बिनः समानीय, सर्वेशः (सन्) तद्वासार्थं स्वसन्निधौ गोत्रायां विश्वकर्मणा पुरन्दरपुरप्रतिमं सर्वसंपद्विभूषितं — सुन्दरैः सद्मभिः सौधैः नानावीथीचतुष्पथैः जुष्टं, व्युष्टं, प्रसृष्टाट्टं, परं दृष्टितुष्टिकरं — पुरं कारयामास ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Rāma too gathered together those sixty householder families of pure lineage, and — the Lord of all — for their dwelling had a city built for them on the earth, close to his own abode, by Viśvakarman: a city like Indra&#x27;s own, adorned with every wealth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पवित्र गोत्र असलेल्या त्या साठ ब्राह्मणपरिवारांना एकत्र आणून सर्वेश परशुरामाने त्यांच्या निवासासाठी स्वतःच्या शेजारीच विश्वकर्म्याकरवी त्या भूमीवर इंद्राच्या राजधानीशी तुलना करण्यासारखे शहर तयार केले. ते शहर सुंदर अशा हवेल्यांनी, सौधांनी, वीथींनी व मोठमोठ्या चौरस्त्यांनी सुशोभित, निरनिराळ्या प्रासादांनी अलंकृत, प्रकाशाने व संपत्तीने समन्वित आणि दृष्टीला फार आनंद देणार होते.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समानीय</span>
+    <span class="word-iast">samānīya</span>
+  </div>
+  <div><span class="word-grammar">absolutive (ल्यप्) of √नी (1st class, bhvādi) with prefixes सम् + आ</span></div>
+  <div class="word-form">In this verse: तान्समानीय (तान् + समानीय)</div>
+  <p class="word-meaning lang-en">having gathered together</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकत्र आणून</p>
+  <div class="word-usage">
+    <div class="deva">राजा प्रजाः समानीय सभायां अवदत्</div>
+    <div class="usage-iast">rājā prajāḥ samānīya sabhāyāṃ avadat</div>
+    <div class="usage-meaning lang-en">The king, having gathered the people, spoke in the assembly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने प्रजेला एकत्र आणून सभेत भाषण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">षष्टिसंख्यान् कुटुम्बिनः</span>
+    <span class="word-iast">ṣaṣṭisaṃkhyān kuṭumbinaḥ</span>
+  </div>
+  <div><span class="word-grammar">षष्टिसंख्यान्: acc. pl. m. of षष्टिसंख्य (षष्टि + संख्या, बहुव्रीहि, &#x27;numbered sixty&#x27;); कुटुम्बिनः: acc. pl. m. of कुटुम्बिन् (कुटुम्ब + इनि, मत्वर्थीय)</span></div>
+  <div class="word-form">In this verse: षष्टिसंख्यान्कुटुम्बिनः</div>
+  <p class="word-meaning lang-en">the sixty householder families</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साठ गृहस्थ कुटुंबे</p>
+  <div class="word-usage">
+    <div class="deva">आचार्यः षष्टिसंख्यान् अन्तेवासिनः पाठयामास</div>
+    <div class="usage-iast">ācāryaḥ ṣaṣṭisaṃkhyān antevāsinaḥ pāṭhayāmāsa</div>
+    <div class="usage-meaning lang-en">The teacher taught sixty resident pupils.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आचार्यांनी साठ अन्तेवासींना शिकवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पवित्रगोत्रान्</span>
+    <span class="word-iast">pavitragotrān</span>
+  </div>
+  <div><span class="word-grammar">acc. pl. m. of पवित्रगोत्र (पवित्र + गोत्र, बहुव्रीहि, &#x27;of pure lineage&#x27;)</span></div>
+  <div class="word-form">In this verse: पवित्रगोत्रान्</div>
+  <p class="word-meaning lang-en">of pure lineage</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पवित्र गोत्रांचे</p>
+  <div class="word-usage">
+    <div class="deva">पवित्रगोत्रान् विप्रान् पूजयेत्</div>
+    <div class="usage-iast">pavitragotrān viprān pūjayet</div>
+    <div class="usage-meaning lang-en">One should honor brāhmaṇas of pure lineage.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पवित्र गोत्रांच्या ब्राह्मणांचा सन्मान करावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गोत्रायाम्</span>
+    <span class="word-iast">gotrāyām</span>
+  </div>
+  <div><span class="word-grammar">loc. sg. f. of गोत्रा (स्त्रीलिङ्ग, &#x27;earth&#x27;)</span></div>
+  <div class="word-form">In this verse: गोत्रायाम्</div>
+  <p class="word-meaning lang-en">on the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर (गोत्रा = भूमी)</p>
+  <div class="word-usage">
+    <div class="deva">गोत्रायां सर्वे प्राणिनः वसन्ति</div>
+    <div class="usage-iast">gotrāyāṃ sarve prāṇinaḥ vasanti</div>
+    <div class="usage-meaning lang-en">All living beings dwell on the earth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर सर्व प्राणी राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तद्वासार्थम्</span>
+    <span class="word-iast">tadvāsārtham</span>
+  </div>
+  <div><span class="word-grammar">acc. sg. n. (adverbial) of तद्वासार्थ (तत् + वास + अर्थ, षष्ठी-तत्पुरुष, &#x27;for the purpose of their dwelling&#x27;)</span></div>
+  <div class="word-form">In this verse: तद्वासार्थम्</div>
+  <p class="word-meaning lang-en">for their dwelling</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांच्या निवासासाठी</p>
+  <div class="word-usage">
+    <div class="deva">गृहं तद्वासार्थं निर्मितम्</div>
+    <div class="usage-iast">gṛhaṃ tadvāsārthaṃ nirmitam</div>
+    <div class="usage-meaning lang-en">The house was built for their dwelling.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>घर त्यांच्या निवासासाठी बांधले गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वसन्निधौ</span>
+    <span class="word-iast">svasannidhau</span>
+  </div>
+  <div><span class="word-grammar">loc. sg. m. of स्वसन्निधि (स्व + सन्निधि, षष्ठी-तत्पुरुष)</span></div>
+  <div class="word-form">In this verse: स्वसन्निधौ</div>
+  <p class="word-meaning lang-en">in his own proximity</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्याजवळ</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः गुरोः स्वसन्निधौ तिष्ठन्ति</div>
+    <div class="usage-iast">bhaktāḥ guroḥ svasannidhau tiṣṭhanti</div>
+    <div class="usage-meaning lang-en">The devotees stay in the guru&#x27;s own proximity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त गुरूच्या सान्निध्यात राहतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The Lord does not merely summon; He provides. For those who leave everything and follow, grace builds a home — and not a bare shelter but a city &#x27;like Indra&#x27;s,&#x27; radiant with all prosperity. This is the sthala&#x27;s promise: whoever settles near the Lord&#x27;s feet finds both shelter and splendor.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भगवंत केवळ बोलावत नाहीत; ते सोयही करतात. जे सर्व सोडून अनुसरण करतात त्यांच्यासाठी कृपा घर बांधते — आणि ते केवळ निवारा नव्हे, तर &#x27;इंद्राच्या नगरीसारखे&#x27; सर्व संपत्तीने तेजाळणारे नगर. हेच स्थलाचे वचन आहे: जो भगवंताच्या चरणांजवळ वसतो त्याला निवारा व वैभव दोन्ही लाभते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Viśvakarman, the divine architect who built Dvārakā and Laṅkā in the old tales, is here the agent of Paraśurāma&#x27;s grace — the Lord commands, the craftsman of the gods executes. The sixty pure-lineage families are the seed of the community the kāvya is about to name: the Chitpavans of the Konkan coast, whose origin-legend this sarga preserves. Purandara-pura is Amarāvatī, Indra&#x27;s capital — the comparison sets the new settlement among the heavens.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जुन्या कथांत द्वारका व लंका बांधणारा दिव्य शिल्पी विश्वकर्मा येथे परशुरामाच्या कृपेचा साधन आहे — भगवंत आज्ञा करतात, देवांचा कारागीर ती पार पाडतो. पवित्र गोत्रांची साठ कुटुंबे ही काव्य ज्याचे नाव पुढे घेणार आहे त्या समाजाचे बीज आहेत: कोकण किनाऱ्यावरील चित्पावन, ज्यांची उत्पत्ती-कथा हा सर्ग जतन करतो. पुरंदरपुर म्हणजे इंद्राची राजधानी अमरावती — या तुलनेने नवीन वसाहत स्वर्गाच्या पंक्तीत बसते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. Verses 27–29 form a single long sentence (one anvaya): v. 27 gives the subject and the gathering, v. 28 the command and the city&#x27;s likeness, v. 29 its ornaments. गोत्रायाम् uses गोत्रा, the feminine of गोत्र (&#x27;cow-pen&#x27;), in its old sense &#x27;earth.&#x27; स्वसन्निधौ — beside his own dwelling — anchors the settlement to the temple sthala at Guhagar.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. २७–२९ हे श्लोक एकच दीर्घ वाक्य (एक अन्वय) बनवतात: २७ वा कर्ता व एकत्रीकरण देतो, २८ वा आज्ञा व नगराचे साम्य, २९ वा त्याचे अलंकार. गोत्रायाम् मध्ये गोत्रा — गोत्र (गोठा) चे स्त्रीलिंग — &#x27;पृथ्वी&#x27; या जुन्या अर्थाने वापरले आहे. स्वसन्निधौ — त्याच्या स्वतःच्या निवासाजवळ — वसाहत गुहागर येथील मंदिरस्थलाशी जोडते.</p></div></div>
+
+<div class="pagenav"><a href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 26</div></a><a class="next" href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 28</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

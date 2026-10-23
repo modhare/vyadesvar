@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 18 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 18</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 18</span><span class="bl-mr lang-mr">श्लोक 18</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">दानप्रदा यत्करिणोऽपि नूनं तद्दानशक्तिः किमु वर्णनीया ।<br>सेनास्य गंधर्ववती हतारेरलं प्रतापस्तवनेन तस्मात् ।।१८।।</div>
+  <div class="verse-iast">dānapradā yatkariṇo&#x27;pi nūnaṃ taddānaśaktiḥ kimu varṇanīyā । senāsya gaṃdharvavatī hatāreralaṃ pratāpastavanena tasmāt</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">दान-प्रदाः । यत्-करिणः । अपि । नूनम् । तत्-दान-शक्तिः । किम् । उ । वर्णनीया । सेना । अस्य । गन्धर्ववती । हत-अरेः । अलम् । प्रताप-स्तवनेन । तस्मात् ।</div><div class="vig-iast">dāna-pradāḥ । yat-kariṇaḥ । api । nūnam । tat-dāna-śaktiḥ । kim । u । varṇanīyā । senā । asya । gandharvavatī । hata-areḥ । alam । pratāpa-stavanena । tasmāt ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">करिणः + अपि = करिणोऽपि · तत् + दान = तद्दान · किम् + उ = किमु · सेना + अस्य = सेनास्य · हत + अरेः = हतारेः · अरेः + अलम् = अरेरलम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्करिणः अपि नूनं दानप्रदाः, तद्दानशक्तिः किमु वर्णनीया? हतारेः अस्य सेना गन्धर्ववती; तस्मात् प्रतापस्तवनेन अलम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>When even his elephants were surely givers of dāna — the gift of alms, and by pun the ichor streaming from their temples — how indeed is the might of his own giving to be described? The army of this foe-destroying king was graced with gandharvas; so let this praise of his majesty suffice!</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याचे हत्ती हेही खरोखरच दानप्रद (म्हणजे मदरूपी द्रवपदार्थाचा वर्षाव करणारे) होते त्याच्या दान करण्याच्या शक्तीचे कसे वर्णन करावे? शत्रू नष्ट केलेल्या त्या राजाची सेना गंधर्वांनी युक्त होती; म्हणून त्याच्या प्रतापाची इतकीच स्तुती पुरे!</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दानप्रदाः यत्करिणः</span>
+    <span class="word-iast">dānapradāḥ yatkariṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">दानप्रद (दानं प्रददातीति, उपपदतत्पुरुषः; पुंलिङ्गम्, प्रथमा बहुवचनम्) + यद् (षष्ठी एकवचनम्) + करिन् (पुंलिङ्गम्, प्रथमा बहुवचनम्)</span></div>
+  <div class="word-form">In this verse: दानप्रदा यत्करिणोऽपि</div>
+  <p class="word-meaning lang-en">whose elephants, too, were givers of dāna (gifts — and by pun, the ichor of rut)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे हत्तीही ‘दान’ (मदजल / देणगी) देणारे</p>
+  <div class="word-usage">
+    <div class="deva">यत्करिणः दानप्रदाः तस्य दानशक्तिः कीदृशी।</div>
+    <div class="usage-iast">yatkariṇaḥ dānapradāḥ tasya dānaśaktiḥ kīdṛśī.</div>
+    <div class="usage-meaning lang-en">How great must be the liberality of him whose elephants are givers of gifts!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे हत्ती दान देणारे, त्याची दानशक्ती किती मोठी असणार!</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तद्दानशक्तिः किमु वर्णनीया</span>
+    <span class="word-iast">taddānaśaktiḥ kimu varṇanīyā</span>
+  </div>
+  <div><span class="word-grammar">तत् (सर्वनाम) + दानशक्ति (स्त्रीलिङ्गम्, प्रथमा एकवचनम्) + किम् (अव्ययम्) + उ (अव्ययम्) + वर्णनीया (√वर्ण् + अनीयर्, स्त्रीलिङ्गम्, प्रथमा एकवचनम्)</span></div>
+  <div class="word-form">In this verse: तद्दानशक्तिः किमु वर्णनीया</div>
+  <p class="word-meaning lang-en">how indeed is the power of his giving to be described!</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या (स्वतःच्या) दानशक्तीचे वर्णन काय करावे?</p>
+  <div class="word-usage">
+    <div class="deva">तस्य गुणाः किमु वर्णनीयाः।</div>
+    <div class="usage-iast">tasya guṇāḥ kimu varṇanīyāḥ.</div>
+    <div class="usage-meaning lang-en">How indeed are his virtues to be described!</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या गुणांचे वर्णन कसे करावे!</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गन्धर्ववती</span>
+    <span class="word-iast">gandharvavatī</span>
+  </div>
+  <div><span class="word-grammar">गन्धर्व + मतुप् (वतुप्) प्रत्ययः; स्त्रीलिङ्गम्, प्रथमा विभक्तिः, एकवचनम् (सेनायाः विशेषणम्)</span></div>
+  <div class="word-form">In this verse: गंधर्ववती</div>
+  <p class="word-meaning lang-en">attended by gandharvas, graced with celestial musicians</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंधर्वयुक्त (घोडे / गायक)</p>
+  <div class="word-usage">
+    <div class="deva">उत्सवे सभा गन्धर्ववती अभूत्।</div>
+    <div class="usage-iast">utsave sabhā gandharvavatī abhūt.</div>
+    <div class="usage-meaning lang-en">At the festival the assembly was graced with gandharvas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्सवात सभा गंधर्वांनी शोभत होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हतारेः</span>
+    <span class="word-iast">hatāreḥ</span>
+  </div>
+  <div><span class="word-grammar">हत + अरि (बहुव्रीहिसमासः, &#x27;हताः अरयः यस्य&#x27;); पुंलिङ्गम्, षष्ठी विभक्तिः, एकवचनम्</span></div>
+  <div class="word-form">In this verse: हतारेः</div>
+  <p class="word-meaning lang-en">of him whose enemies were slain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रू मारलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">हतारेः राज्ञः यशः सर्वत्र गीयते।</div>
+    <div class="usage-iast">hatāreḥ rājñaḥ yaśaḥ sarvatra gīyate.</div>
+    <div class="usage-meaning lang-en">The fame of the foe-slaying king is sung everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रूंना मारणाऱ्या राजाचे यश सर्वत्र गायले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अलं प्रतापस्तवनेन</span>
+    <span class="word-iast">alaṃ pratāpastavanena</span>
+  </div>
+  <div><span class="word-grammar">अलम् (अव्ययम्, &#x27;पुरे, बस्स&#x27;) + प्रतापस्तवन (प्रतापस्य स्तवनम्, षष्ठीतत्पुरुषः; नपुंसकलिङ्गम्, तृतीया एकवचनम्)</span></div>
+  <div class="word-form">In this verse: अलं प्रतापस्तवनेन</div>
+  <p class="word-meaning lang-en">enough of praising his might</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रतापाच्या स्तुतीची आवश्यकता नाही (अलम् + तृतीया = पुरे)</p>
+  <div class="word-usage">
+    <div class="deva">अलं तव स्तवनेन, कार्यं कुरु।</div>
+    <div class="usage-iast">alaṃ tava stavanena, kāryaṃ kuru.</div>
+    <div class="usage-meaning lang-en">Enough of praising you — do the work.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझी स्तुती पुरे झाली — काम कर.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Liberality (dāna) is the spine of kingship, and the poet heightens it with a playful pun: even the king&#x27;s elephants &#x27;give,&#x27; streaming temple-ichor. The gandharvas gracing his army show that his fame is sung even by celestials. The closing &#x27;enough of praise&#x27; is the kāvya&#x27;s conventional modesty — a reminder that eulogy too needs measure.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दान हा राजधर्माचा कणा आहे. कवी शब्दखेळाने सांगतो — ज्याचे हत्ती देखील दानधारा सोडतात, त्याच्या दानशक्तीचे वर्णन कसे करावे! सेनेत गंधर्व असणे म्हणजे त्याची कीर्ती दिव्यलोकातही गायली जाते. शेवटची ओळ कवीची विनयशीलता दाखवते — स्तुतीला मर्यादा असावी, हेच काव्याचे शिष्टसंकेत सांगतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The elephant&#x27;s temple-ichor (mada) flowing in rut is a stock image of royal splendour in Sanskrit poetry; here it puns with dāna, &#x27;a gift,&#x27; to magnify the king&#x27;s liberality. Gandharvas as celestial musicians attending a hero&#x27;s fame recall the epic image of heaven itself applauding earthly virtue.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मदमस्त हत्तीच्या गंडस्थळातून वाहणारा मद हा संस्कृत काव्यातील राजवैभवाची रूढ प्रतिमा आहे; येथे दान (&#x27;देणे&#x27;) या शब्दाशी तिचा श्लेष साधून राजाच्या दानशक्तीचे महत्त्व वाढवले आहे. नायकाच्या कीर्तीभोवती गंधर्व हे दिव्य गायक असणे, हे स्वर्गच पृथ्वीवरील पुण्याचे कौतुक करतो, या महाभारतीय प्रतिमेची आठवण करून देते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Upajāti. Dānaprada carries the double sense — &#x27;giver of gifts&#x27; and, of rutting elephants, &#x27;emitter of temple-ichor (mada)&#x27;; the book&#x27;s Marathi glosses the latter explicitly. The &#x27;[page 77]&#x27; in the source gloss is a scan page-marker, not verse text.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त: उपजाति. दानप्रद या शब्दाला दुहेरी अर्थ आहे — &#x27;दान देणारा&#x27; आणि मदमस्त हत्तीबद्दल &#x27;मद स्रवणारा&#x27;; ग्रंथाच्या मराठी अर्थात दुसरा अर्थ स्पष्ट केला आहे. स्रोत-भाषांतरातील &#x27;[page 77]&#x27; ही छापील पानाची खूण आहे, श्लोकाचा भाग नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-17.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 17</div></a><a class="next" href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 19</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

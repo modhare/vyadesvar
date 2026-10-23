@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 20 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 20</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 20</span><span class="bl-mr lang-mr">श्लोक 20</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तत्र तीर्थानि भूरीणि पावनानि महान्ति च ।<br>सरितां च पतिस्तत्र तीर्थराजोऽन्तिकस्थितः ।।२०।।</div>
+  <div class="verse-iast">tatra tīrthāni bhūrīṇi pāvanāni mahānti ca । saritāṃ ca patistatra tīrtharājo&#x27;ntikasthitaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत्र । तीर्थानि । भूरीणि । पावनानि । महान्ति । च । सरिताम् । च । पतिः । तत्र । तीर्थराजः । अन्तिक-स्थितः ।</div><div class="vig-iast">tatra । tīrthāni । bhūrīṇi । pāvanāni । mahānti । ca । saritām । ca । patiḥ । tatra । tīrtharājaḥ । antika-sthitaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पतिः + तत्र = पतिस्तत्र (विसर्ग → स्) · तीर्थराजः + अन्तिक = तीर्थराजोऽन्तिक (पूर्वरूप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत्र भूरीणि महान्ति पावनानि च तीर्थानि (सन्ति); तत्र च सरितां पतिः तीर्थराजः अन्तिकस्थितः (अस्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Many great and sanctifying tīrthas are there; and there too, standing close at hand, is the lord of rivers — the ocean, the king of tīrthas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तेथे अनेक पावन करणारी महान तीर्थे आहेत. शिवाय तीर्थराज असा सरित्पती सागर जवळच उपस्थित आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूरीणि</span>
+    <span class="word-iast">bhūrīṇi</span>
+  </div>
+  <div><span class="word-grammar">भूरि (adjective, &#x27;much, many&#x27;); neuter nominative/accusative plural</span></div>
+  <div class="word-form">In this verse: neuter nominative plural (qualifying तीर्थानि)</div>
+  <p class="word-meaning lang-en">many, numerous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक</p>
+  <div class="word-usage">
+    <div class="deva">तत्र भूरीणि तीर्थानि सन्ति</div>
+    <div class="usage-iast">tatra bhūrīṇi tīrthāni santi</div>
+    <div class="usage-meaning lang-en">There are many holy places there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे अनेक तीर्थे आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पावनानि</span>
+    <span class="word-iast">pāvanāni</span>
+  </div>
+  <div><span class="word-grammar">पावन (√pū 9U/1Ā, &#x27;to purify&#x27; + lyuṭ suffix; adjective/neuter noun, &#x27;purifying&#x27;); neuter nominative/accusative plural</span></div>
+  <div class="word-form">In this verse: neuter nominative plural (qualifying तीर्थानि)</div>
+  <p class="word-meaning lang-en">sanctifying, purifying, purificatory</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पवित्र करणारी</p>
+  <div class="word-usage">
+    <div class="deva">तीर्थजलानि पावनानि सन्ति</div>
+    <div class="usage-iast">tīrthajalāni pāvanāni santi</div>
+    <div class="usage-meaning lang-en">The tīrtha waters are purifying.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीर्थांचे पाणी पवित्र करणारे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरितां पतिः</span>
+    <span class="word-iast">saritāṃ patiḥ</span>
+  </div>
+  <div><span class="word-grammar">सरित् (f., &#x27;river&#x27;), genitive plural + पति (m., &#x27;lord, master&#x27;), nominative singular → ṣaṣṭhī-tatpuruṣa</span></div>
+  <div class="word-form">In this verse: nominative singular phrase</div>
+  <p class="word-meaning lang-en">the lord of rivers, the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्यांचा स्वामी, समुद्र</p>
+  <div class="word-usage">
+    <div class="deva">सरिताम् पतिः सागरः अन्तिके अस्ति</div>
+    <div class="usage-iast">saritām patiḥ sāgaraḥ antike asti</div>
+    <div class="usage-meaning lang-en">The ocean, lord of rivers, is nearby.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्यांचा स्वामी समुद्र जवळच आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तीर्थराजः</span>
+    <span class="word-iast">tīrtharājaḥ</span>
+  </div>
+  <div><span class="word-grammar">तीर्थ (n., &#x27;holy ford, sacred place&#x27;) + राजन् (m., &#x27;king&#x27;) → tatpuruṣa; masculine nominative singular</span></div>
+  <div class="word-form">In this verse: nominative singular</div>
+  <p class="word-meaning lang-en">king of tīrthas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीर्थांचा राजा</p>
+  <div class="word-usage">
+    <div class="deva">सागरः तीर्थराजः इति उच्यते</div>
+    <div class="usage-iast">sāgaraḥ tīrtharājaḥ iti ucyate</div>
+    <div class="usage-meaning lang-en">The ocean is called the king of tīrthas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राला तीर्थराज म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्तिकस्थितः</span>
+    <span class="word-iast">antikasthitaḥ</span>
+  </div>
+  <div><span class="word-grammar">अन्तिक (n., &#x27;proximity, nearness&#x27;) + स्थित (past passive participle of √sthā, &#x27;stood, situated&#x27;) → tatpuruṣa; masculine nominative singular</span></div>
+  <div class="word-form">In this verse: nominative singular (predicate)</div>
+  <p class="word-meaning lang-en">standing near, situated close at hand</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जवळच असलेला</p>
+  <div class="word-usage">
+    <div class="deva">मन्दिरम् ग्रामात् अन्तिकस्थितम् अस्ति</div>
+    <div class="usage-iast">mandiram grāmāt antikasthitam asti</div>
+    <div class="usage-meaning lang-en">The temple stands near the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिर गावाजवळच आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>A kṣetra is proved by its tīrthas, and here they are &#x27;many, great, and purifying&#x27; — while the ocean itself, into which all rivers flow, stands at the door as their king. Water is the visible form of grace in the sthala tradition: the same sea that once swallowed the land now sanctifies it. For the pilgrim this verse is an invitation — the merit of countless tīrthas gathered in one place.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्षेत्राची सिद्धता त्याच्या तीर्थांवरून होते; येथे ती &#x27;अनेक, महान आणि पावन करणारी&#x27; आहेत, तर सर्व नद्या ज्या समुद्रात मिळतात तो स्वतः तीर्थराज म्हणून दारात उभा आहे. स्थलपरंपरेत पाणी ही कृपेचे दृश्य रूप आहे — ज्या समुद्राने एकेकाळी भूमी गिळली होती, तोच आता तिला पावन करतो. यात्रेकरूसाठी हा श्लोक निमंत्रण आहे — असंख्य तीर्थांचे पुण्य एकाच ठिकाणी एकवटले आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>In the Purāṇic tīrtha system every sacred spot draws its power from association — with a deity&#x27;s act, a sage&#x27;s austerity, or a river&#x27;s touch. Here the poet concentrates the whole network in one place: many tīrthas at once, and the ocean itself — into which all rivers flow — presiding as their king. The sea that Paraśurāma once commanded to withdraw now returns as a servant of the kṣetra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणांतील तीर्थव्यवस्थेत प्रत्येक पवित्र स्थान आपली शक्ती संबंधातून घेते — देवतेच्या कृतीशी, ऋषीच्या तपाशी किंवा नदीच्या स्पर्शाशी असलेल्या संबंधातून. येथे कवी संपूर्ण जाळे एकाच ठिकाणी एकवटतो : एकाच वेळी अनेक तीर्थे, आणि सर्व नद्या ज्या समुद्रात मिळतात तो स्वतः त्यांचा राजा म्हणून विराजमान. ज्या समुद्राला परशुरामाने एकेकाळी मागे हटण्याची आज्ञा केली होती, तोच आता क्षेत्राचा सेवक म्हणून परत येतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Lord of rivers&#x27; (saritāṃ patiḥ) is the standard Sanskrit kenning for the ocean; Guhagar stands on the Arabian Sea coast, and the Vāśiṣṭhī — the &#x27;Jagatpāvanī&#x27; of verse 8 — meets the sea near it. &#x27;Tīrtharāja&#x27; is elsewhere Prayāga&#x27;s title; its application to the ocean here is the poet&#x27;s local claim, typical of sthala-kāvyas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;नद्यांचा स्वामी&#x27; (सरितां पतिः) हे समुद्राचे प्रचलित संस्कृत पर्यायनाम आहे; गुहागर अरबी समुद्रकिनारी आहे, आणि श्लोक ८ मधील &#x27;जगत्पावनी&#x27; वाशिष्ठी नदी जवळच समुद्राला मिळते. &#x27;तीर्थराज&#x27; ही पदवी अन्यत्र प्रयागाची आहे; येथे ती समुद्राला लावणे हा कवीचा स्थानिक दावा आहे — स्थलकाव्यांत हा प्रकार नेहमीचा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 19</div></a><a class="next" href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 21</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

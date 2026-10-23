@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 22 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 22</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 22</span><span class="bl-mr lang-mr">श्लोक 22</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स त्वं पुराणपुरुषो जगद्व्यापी जगन्मयः ।<br>मायाजवन्या संछन्नस्त्वलक्ष्यश्चर्मचक्षुषाम् ।।२२।।</div>
+  <div class="verse-iast">sa tvaṃ purāṇapuruṣo jagadvyāpī jaganmayaḥ । māyājavanyā saṃchannastvalakṣyaścarmacakṣuṣām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">सः । त्वम् । पुराण-पुरुषः । जगत्-व्यापी । जगत्-मयः । माया-जवन्या । संछन्नः । तु । अलक्ष्यः । चर्म-चक्षुषाम् ।</div><div class="vig-iast">saḥ । tvam । purāṇa-puruṣaḥ । jagat-vyāpī । jagat-mayaḥ । māyā-javanyā । saṃchannaḥ । tu । alakṣyaḥ । carma-cakṣuṣām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सः + त्वम् = स त्वम् · पुरुषः + जगत् = पुरुषो जगत् · जगत् + व्यापी = जगद्व्यापी · जगत् + मयः = जगन्मयः (त् → न्) · संछन्नः + तु = संछन्नस्तु · तु + अलक्ष्यः = त्वलक्ष्यः (यण्) · अलक्ष्यः + चर्म = अलक्ष्यश्चर्म (विसर्ग → श्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्य (अंशे) काद्याः ब्रह्माण्डकोटयः भूरिशः तिष्ठन्ति, यथा अत्र त्वन्मदादयः (तथा) तत्र ईदृक्षाः लक्षशः (सन्ति), सः त्वं जगद्व्यापी जगन्मयः पुराणपुरुषः (असि); मायाजवन्या संछन्नः तु चर्मचक्षुषाम् अलक्ष्यः (असि) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>…that same you are the primeval Person — pervading the universe, the universe itself — yet veiled by the curtain of māyā, you remain unseen by eyes of flesh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याप्रमाणे येथे (या ब्रह्माण्डात) तू, मी आदिकरून समाविष्ट आहोत त्याप्रमाणे जलादि कोटिकोटी विस्तीर्ण अशी लाखो ब्रह्माण्डे ज्याच्या एका भागात सामावली आहेत असा जगद्व्यापी, जगन्मय असा तू पुराणपुरुष असून मायेच्या आवरणाने वेष्टित व म्हणूनच चर्मचक्षूंना अगोचर आहेस.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुराणपुरुषः</span>
+    <span class="word-iast">purāṇapuruṣaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the karmadhāraya पुराणपुरुष — &#x27;the ancient person&#x27;</span></div>
+  <div class="word-form">In this verse: पुराणपुरुषः (पुराण + पुरुषः)</div>
+  <p class="word-meaning lang-en">the primeval Person</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आदिपुरुष</p>
+  <div class="word-usage">
+    <div class="deva">पुराणपुरुषः नारायणः जगत् पाति</div>
+    <div class="usage-iast">purāṇapuruṣaḥ nārāyaṇaḥ jagat pāti</div>
+    <div class="usage-meaning lang-en">Nārāyaṇa, the primeval Person, protects the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आदिपुरुष नारायण जगाचे रक्षण करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगद्व्यापी</span>
+    <span class="word-iast">jagadvyāpī</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of जगद्व्यापिन् — जगत् + √आप् + णिनि (3.2.78), upapada-tatpuruṣa</span></div>
+  <div class="word-form">In this verse: जगद्व्यापी (जगत् + व्यापिन्)</div>
+  <p class="word-meaning lang-en">pervading the universe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाला व्यापणारा</p>
+  <div class="word-usage">
+    <div class="deva">जगद्व्यापी ईश्वरः सर्वत्र अस्ति</div>
+    <div class="usage-iast">jagadvyāpī īśvaraḥ sarvatra asti</div>
+    <div class="usage-meaning lang-en">The all-pervading Lord is everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगाला व्यापणारा ईश्वर सर्वत्र आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगन्मयः</span>
+    <span class="word-iast">jaganmayaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of जगन्मय — जगत् + मयट् (&#x27;made of, consisting of&#x27;)</span></div>
+  <div class="word-form">In this verse: जगन्मयः (जगत् + मयः)</div>
+  <p class="word-meaning lang-en">consisting of the universe, the universe itself</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगद्रूप</p>
+  <div class="word-usage">
+    <div class="deva">सर्वम् इदम् जगन्मयम् ब्रह्म</div>
+    <div class="usage-iast">sarvam idam jaganmayam brahma</div>
+    <div class="usage-meaning lang-en">All this is Brahman, the universe itself.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे सर्व जगद्रूप ब्रह्मच आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मायाजवन्या</span>
+    <span class="word-iast">māyājavanyā</span>
+  </div>
+  <div><span class="word-grammar">instrumental singular (feminine) of मायाजवनी — ṣaṣṭhī-tatpuruṣa: मायायाः जवनी (&#x27;curtain of māyā&#x27;)</span></div>
+  <div class="word-form">In this verse: मायाजवन्या</div>
+  <p class="word-meaning lang-en">by the curtain/veil of māyā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायेच्या पडद्याने (जवनिका = पडदा)</p>
+  <div class="word-usage">
+    <div class="deva">मायाजवन्या सत्यम् संछन्नम् अस्ति</div>
+    <div class="usage-iast">māyājavanyā satyam saṃchannam asti</div>
+    <div class="usage-meaning lang-en">Truth lies veiled by the curtain of māyā.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मायेच्या पडद्याने सत्य झाकलेले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संछन्नः</span>
+    <span class="word-iast">saṃchannaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the past participle सम् + √छद् (1st class) + क्त, &#x27;covered&#x27;</span></div>
+  <div class="word-form">In this verse: संछन्नः (सम् + छन्नः)</div>
+  <p class="word-meaning lang-en">covered, concealed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाकलेला</p>
+  <div class="word-usage">
+    <div class="deva">मेघैः संछन्नः सूर्यः न दृश्यते</div>
+    <div class="usage-iast">meghaiḥ saṃchannaḥ sūryaḥ na dṛśyate</div>
+    <div class="usage-meaning lang-en">The sun, covered by clouds, is not seen.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ढगांनी झाकलेला सूर्य दिसत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चर्मचक्षुषाम् अलक्ष्यः</span>
+    <span class="word-iast">carmacakṣuṣām alakṣyaḥ</span>
+  </div>
+  <div><span class="word-grammar">चर्मचक्षुषाम्: genitive plural of चर्मचक्षुस् (neuter s-stem, &#x27;eye of flesh&#x27;); अलक्ष्यः: nominative singular (masc.) of अलक्ष्य — नञ्-तत्पुरुष: &#x27;not to be seen&#x27; (√लक्ष् + ण्यत्)</span></div>
+  <div class="word-form">In this verse: चर्मचक्षुषाम् अलक्ष्यः</div>
+  <p class="word-meaning lang-en">invisible to eyes of flesh</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चर्मचक्षूंना अदृश्य</p>
+  <div class="word-usage">
+    <div class="deva">सूक्ष्मम् वस्तु चर्मचक्षुषाम् अलक्ष्यम् अस्ति</div>
+    <div class="usage-iast">sūkṣmam vastu carmacakṣuṣām alakṣyam asti</div>
+    <div class="usage-meaning lang-en">A subtle thing is invisible to eyes of flesh.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूक्ष्म वस्तू चर्मचक्षूंना दिसत नाही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse holds the central paradox of devotion in one breath: God is everything (jaganmaya) and yet hidden from everything. The veil is not God&#x27;s distance but our instrument — fleshly eyes cannot see what only the inward eye beholds. Hence the whole spiritual path: not travelling to God, but lifting the curtain — through grace, the guru&#x27;s word, and the stilling of the mind.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक एका श्वासात भक्तीचा केंद्रीय विरोधाभास धरतो — ईश्वर सर्व काही आहे (जगन्मय) आणि तरी सर्वांपासून लपलेला आहे. पडदा ईश्वराच्या दूरत्वाचा नसून आपल्या साधनाचा आहे — चर्मचक्षूंना ते दिसत नाही जे केवळ अंतर्दृष्टी पाहते. म्हणूनच संपूर्ण आध्यात्मिक मार्ग — देवाकडे प्रवास नव्हे, तर पडदा उचलणे — कृपेने, गुरुवाक्याने आणि मनाच्या शांतीने.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Immanence and hiddenness together: the Lord is jagadvyāpī (pervading all) and jaganmaya (constituted by all), yet alakṣya — unseeable — to carmacakṣus, eyes of flesh. The tradition resolves the tension by the veil of māyā: not that God hides, but that the perceiver&#x27;s instrument is veiled. Darśana, in this theology, is less God&#x27;s appearance than the lifting of the devotee&#x27;s curtain — which is why the same Śiva who is &#x27;invisible&#x27; stands here conversing: grace has lifted it for Paraśurāma.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अंतर्व्याप्ती व गूढता एकत्र — ईश्वर जगद्व्यापी (सर्वांना व्यापणारा) व जगन्मय (सर्वांनी घडलेला) आहे, तरी चर्मचक्षूंना अलक्ष्य — अदृश्य. परंपरा हा ताण मायेच्या पडद्याने सोडवते — देव लपतो म्हणून नव्हे, तर पाहणाऱ्याचे साधनच झाकलेले असते. या तत्त्वज्ञानात दर्शन म्हणजे देवाचे प्रकटणे कमी आणि भक्ताचा पडदा उचलला जाणे जास्त — म्हणूनच &#x27;अदृश्य&#x27; असलेला तोच शिव येथे संवाद करीत उभा आहे — परशुरामासाठी कृपेने पडदा उचलला गेला आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh; completes the sentence begun in 21 (&#x27;that same you are…&#x27;). Note the adversative तु (in संछन्नस्तु, &#x27;yet veiled&#x27;) pivoting from cosmic majesty to hiddenness — the whole stotra&#x27;s movement in miniature.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्; २१ मध्ये सुरू झालेले वाक्य पूर्ण करते (&#x27;तोच तू…&#x27;). संछन्नस्तु मधील विरोधदर्शक तु (&#x27;तरी झाकलेला&#x27;) लक्षात घ्या — वैश्विक महिमेकडून गूढतेकडे वळण — संपूर्ण स्तोत्राचीच लघुरूपातील गति.</p></div></div>
+
+<div class="pagenav"><a href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 21</div></a><a class="next" href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 23</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

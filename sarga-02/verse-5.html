@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 5 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 5</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कक्षप्रक्षेपणं वह्नेरुद्दीपनकरं परम् ।<br>संरंभारम्भकं तद्वन्महतामवमाननम् ।।५।।</div>
+  <div class="verse-iast">kakṣaprakṣepaṇaṃ vahneruddīpanakaraṃ param । saṃraṃbhārambhakaṃ tadvanmahatāmavamānanam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कक्ष-प्रक्षेपणम् । वह्नेः । उद्दीपन-करम् । परम् । संरम्भ-आरम्भकम् । तद्वत् । महताम् । अवमाननम् ।</div><div class="vig-iast">kakṣa-prakṣepaṇam । vahneḥ । uddīpana-karam । param । saṃrambha-ārambhakam । tadvat । mahatām । avamānanam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वह्नेः + उद्दीपन = वह्नेरुद्दीपन (विसर्ग → र्) · संरम्भ + आरम्भकम् = संरम्भारम्भकम् (सवर्णदीर्घ) · तद्वत् + महताम् = तद्वन्महताम् (त् → न्) · महताम् + अवमाननम् = महतामवमाननम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(यथा) कक्षप्रक्षेपणं वह्नेः परम् उद्दीपनकरम्, तद्वत् महताम् अवमाननं संरम्भारम्भकम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;Throwing dry straw into fire only makes it blaze higher; likewise, insulting the great is the very beginning of calamity.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;वाळलेले गवत आगीत टाकणे हे अग्नीला अधिकच प्रज्वलित करते. त्याचप्रमाणे थोरांचा अपमान हा महान अरिष्टाची नान्दी ठरतो.&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कक्षप्रक्षेपणम्</span>
+    <span class="word-iast">kakṣaprakṣepaṇam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular (प्रथमा एकवचन), tatpuruṣa compound (कक्षस्य प्रक्षेपणम्, &#x27;the throwing of dry grass&#x27;)</span></div>
+  <div class="word-form">In this verse: कक्षप्रक्षेपणम् (stem कक्षप्रक्षेपण)</div>
+  <p class="word-meaning lang-en">the throwing of dry straw (into fire)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(आगीत) वाळलेले गवत टाकणे</p>
+  <div class="word-usage">
+    <div class="deva">कक्षप्रक्षेपणम् अग्निम् वर्धयति ।</div>
+    <div class="usage-iast">kakṣaprakṣepaṇam agnim vardhayati ।</div>
+    <div class="usage-meaning lang-en">Throwing dry grass feeds the fire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाळलेले गवत टाकणे अग्नी वाढवते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वह्नेः</span>
+    <span class="word-iast">vahneḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular (षष्ठी एकवचन), i-stem noun वह्नि</span></div>
+  <div class="word-form">In this verse: वह्नेः (stem वह्नि; in verse वह्नेः + उद्दीपन → वह्नेरुद्दीपन)</div>
+  <p class="word-meaning lang-en">of fire</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नीचे</p>
+  <div class="word-usage">
+    <div class="deva">वह्नेः ज्वालाः उन्नताः भवन्ति ।</div>
+    <div class="usage-iast">vahneḥ jvālāḥ unnatāḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">The flames of fire rise high.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नीच्या ज्वाळा उंच जातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उद्दीपनकरं परम्</span>
+    <span class="word-iast">uddīpanakaraṃ param</span>
+  </div>
+  <div><span class="word-grammar">उद्दीपनकरम्: तत्पुरुष (उद्दीपन + कर), neuter accusative singular used as predicate; परम्: adverbial intensifier</span></div>
+  <div class="word-form">In this verse: उद्दीपनकरं परम् (stem उद्दीपनकर)</div>
+  <p class="word-meaning lang-en">exceedingly inflaming, that which blazes up greatly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधिकच भडकवणारे</p>
+  <div class="word-usage">
+    <div class="deva">वायुः वह्नेः उद्दीपनकरम् परम् भवति ।</div>
+    <div class="usage-iast">vāyuḥ vahneḥ uddīpanakaram param bhavati ।</div>
+    <div class="usage-meaning lang-en">Wind greatly intensifies fire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वारा अग्नीला अधिकच भडकवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तद्वत्</span>
+    <span class="word-iast">tadvat</span>
+  </div>
+  <div><span class="word-grammar">तद् + वति suffix; avyaya (indeclinable)</span></div>
+  <div class="word-form">In this verse: तद्वत् (indeclinable; in verse तद्वत् + महताम् → तद्वन्महताम्)</div>
+  <p class="word-meaning lang-en">likewise, in the same way</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचप्रमाणे</p>
+  <div class="word-usage">
+    <div class="deva">यथा पिता तद्वत् पुत्रः ।</div>
+    <div class="usage-iast">yathā pitā tadvat putraḥ ।</div>
+    <div class="usage-meaning lang-en">As the father, so the son.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जसा पिता तसाच मुलगा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">महताम् अवमाननम्</span>
+    <span class="word-iast">mahatām avamānanam</span>
+  </div>
+  <div><span class="word-grammar">महताम्: genitive plural of महत्; अवमाननम्: अव + √मन् + ल्युट्, neuter nominative singular</span></div>
+  <div class="word-form">In this verse: महताम् अवमाननम् (in verse महताम् + अवमाननम् → महतामवमाननम्)</div>
+  <p class="word-meaning lang-en">the insulting of the great, insult offered to the mighty</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>थोरांचा अपमान</p>
+  <div class="word-usage">
+    <div class="deva">महताम् अवमाननम् अनर्थाय भवति ।</div>
+    <div class="usage-iast">mahatām avamānanam anarthāya bhavati ।</div>
+    <div class="usage-meaning lang-en">Insulting the great leads to calamity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>थोरांचा अपमान अनर्थाला कारणीभूत होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संरम्भारम्भकम्</span>
+    <span class="word-iast">saṃrambhārambhakam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular (प्रथमा एकवचन), tatpuruṣa compound (संरम्भस्य आरम्भकम्, &#x27;the beginner of fury&#x27;)</span></div>
+  <div class="word-form">In this verse: संरम्भारम्भकम् (in verse संरम्भ + आरम्भकम् → संरम्भारम्भकम्)</div>
+  <p class="word-meaning lang-en">that which initiates fury (and calamity)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रोधाचा (आणि अनर्थाचा) प्रारंभ करणारे</p>
+  <div class="word-usage">
+    <div class="deva">दुर्वचनम् संरम्भारम्भकम् भवति ।</div>
+    <div class="usage-iast">durvacanam saṃrambhārambhakam bhavati ।</div>
+    <div class="usage-meaning lang-en">A harsh word is the beginning of fury.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कटू बोलणे क्रोधाची नान्दी असते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Insult is fuel: just as straw does not smother flame but feeds it, provocation does not diminish the great — it summons their terrible aspect. The verse gives the inner mechanics of verse 3&#x27;s warning: slighting power is not a small act but the first spark of one&#x27;s own ruin. Devotionally, it counsels guarding one&#x27;s speech before saints and elders, for a careless word can ignite what no apology can quench.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अपमान हे इंधन आहे : वाळलेले गवत जसे ज्वाला विझवत नाही तर तिला खतपाणी घालते, तसेच चिडवणे थोरांना कमी करत नाही — ते त्यांचे उग्र रूप जागे करते. तिसऱ्या श्लोकातील इशाऱ्याची आंतरिक यंत्रणा हा श्लोक देतो : सामर्थ्याची उपेक्षा ही लहान कृती नसून स्वतःच्या नाशाची पहिली ठिणगी असते. भक्तिभावाने, संत-वडीलधाऱ्यांपुढे जिभेवर ताबा ठेवावा, असा सल्ला यात आहे — कारण एक बेजबाबदार शब्द अशी आग पेटवू शकतो जी कोणत्याही क्षमायाचनेने विझणार नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Fire fed with straw is a favourite nīti image for anger provoked by insult — the Hitopadeśa and Pañcatantra use the same figure to warn kings against humiliating strong vassals. संरम्भ, &#x27;fury&#x27;, is the technical term for the wrath that precedes battle in alaṅkāra-śāstra. The verse universalises the Ocean&#x27;s particular fault: his &#x27;straw&#x27; was defiance, and Paraśurāma&#x27;s fire nearly consumed him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गवताने खतपाणी घातलेला अग्नी ही अपमानाने चिडवलेल्या क्रोधाची नीतिशास्त्रातील आवडती प्रतिमा आहे — बलवान मांडलिकांचा अपमान न करण्याचा इशारा देण्यासाठी हितोपदेश आणि पंचतंत्र हेच रूपक वापरतात. संरम्भ (&#x27;संताप&#x27;) हा अलंकारशास्त्रात युद्धापूर्वीच्या क्रोधाची तांत्रिक संज्ञा आहे. हा श्लोक समुद्राच्या विशिष्ट दोषाचे सार्वत्रिकीकरण करतो : त्याचे &#x27;गवत&#x27; म्हणजे अवज्ञा होती आणि परशुरामाचा अग्नी त्याला जाळता जाळता राहिला.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>A dṛṣṭānta (illustrative parallel) in anuṣṭubh: यथा is elided, leaving the bare correlative तद्वत्. उद्दीपनकरम् joins उद्दीपन (उत् + √दीप् + ल्युट्, &#x27;kindling&#x27;) with कर (&#x27;making&#x27;), and परम् intensifies it — &#x27;exceedingly inflaming&#x27;. संरम्भारम्भकम् (संरम्भ + आरम्भकम्, savarṇadīrgha sandhi) is a tatpuruṣa: &#x27;that which begins fury&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभातील दृष्टान्त अलंकार : यथा अध्याहृत असून केवळ तद्वत् हे संबंधदर्शक उरले आहे. उद्दीपनकरम् मध्ये उद्दीपन (उत् + √दीप् + ल्युट्, &#x27;प्रज्वलन&#x27;) आणि कर (&#x27;करणारे&#x27;) जोडले असून परम् त्याला तीव्र करते — &#x27;अत्यंत भडकवणारे&#x27;. संरम्भारम्भकम् (संरम्भ + आरम्भकम्, सवर्णदीर्घ संधी) हा तत्पुरुष समास आहे : &#x27;संतापाचा प्रारंभ करणारे&#x27;.</p></div></div>
+
+<div class="pagenav"><a href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 4</div></a><a class="next" href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 6</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

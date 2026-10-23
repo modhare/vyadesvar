@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 19 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 19</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 19</span><span class="bl-mr lang-mr">श्लोक 19</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">न्याय्यः सरिन्नायकगर्भभूमौ ममाश्रमोऽन्यत्र न कुत्रचित्कौ ।।<br>इत्थं विनिश्चित्य मतिं मनीषी चचाल शैलादतिशैलसारः ।।१९।।</div>
+  <div class="verse-iast">nyāyyaḥ sarinnāyakagarbhabhūmau mamāśramo&#x27;nyatra na kutracitkau । । itthaṃ viniścitya matiṃ manīṣī cacāla śailādatiśailasāraḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">न्याय्यः । सरित्-नायक-गर्भ-भूमौ । मम । आश्रमः । अन्यत्र । न । कुत्रचित् । कौ । इत्थम् । विनिश्चित्य । मतिम् । मनीषी । चचाल । शैलात् । अति-शैल-सारः ।</div><div class="vig-iast">nyāyyaḥ । sarit-nāyaka-garbha-bhūmau । mama । āśramaḥ । anyatra । na । kutracit । kau । ittham । viniścitya । matim । manīṣī । cacāla । śailāt । ati-śaila-sāraḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सरित् + नायक = सरिन्नायक (त् → न्, अनुनासिक) · मम + आश्रमः = ममाश्रमः · आश्रमः + अन्यत्र = आश्रमोऽन्यत्र (विसर्ग → ओ, पूर्वरूप) · कुत्रचित् + कौ = कुत्रचित्कौ · शैलात् + अति = शैलादति (त् → द्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">‘मम आश्रमः सरिन्नायकगर्भभूमौ न्याय्यः, अन्यत्र कौ कुत्रचित् न’ — इत्थं मतिं विनिश्चित्य अतिशैलसारः मनीषी शैलात् चचाल ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;It is fitting that my hermitage stand upon land enclosed by the lord of rivers — not anywhere else upon the earth.&#x27; Having thus firmly resolved his thought, the wise man, firmer than any mountain, set out from the mountain.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;माझा आश्रम पृथ्वीच्या पृष्ठभागावर कोठेही नसावा, तो नदीपती समुद्राच्या अंतर्गत भूमीवरच असावा हे रास्त (किंवा न्याय्य) आहे.&#x27; असा विचार निश्चित करून पर्वतापेक्षाही अधिक सामर्थ्य असलेला तो मनीषी त्या पर्वतावरून निघाला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न्याय्यः</span>
+    <span class="word-iast">nyāyyaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; न्याय + यत् (gerundive suffix)</span></div>
+  <div class="word-form">In this verse: न्याय्यः</div>
+  <p class="word-meaning lang-en">proper, fitting, just</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य, न्यायाला धरून</p>
+  <div class="word-usage">
+    <div class="deva">न्याय्यः मार्गः एव श्रेयस्करः ।</div>
+    <div class="usage-iast">nyāyyaḥ mārgaḥ eva śreyaskaraḥ ।</div>
+    <div class="usage-meaning lang-en">The just path alone is beneficial.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>न्यायाला धरून असलेलाच मार्ग हितकारक.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरिन्नायक</span>
+    <span class="word-iast">sarinnāyaka</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; tatpuruṣa (सरित्-नायक)</span></div>
+  <div class="word-form">In this verse: सरिन्नायकः (nom. sg.)</div>
+  <p class="word-meaning lang-en">lord of rivers, the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्यांचा स्वामी, समुद्र</p>
+  <div class="word-usage">
+    <div class="deva">सरिन्नायकः गम्भीरः अस्ति ।</div>
+    <div class="usage-iast">sarinnāyakaḥ gambhīraḥ asti ।</div>
+    <div class="usage-meaning lang-en">The lord of rivers (the ocean) is deep.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्यांचा स्वामी (समुद्र) गंभीर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गर्भभूमौ</span>
+    <span class="word-iast">garbhabhūmau</span>
+  </div>
+  <div><span class="word-grammar">feminine locative singular; tatpuruṣa (गर्भ-भूमि)</span></div>
+  <div class="word-form">In this verse: गर्भभूमौ</div>
+  <p class="word-meaning lang-en">on the land within (the sea)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आतल्या भूमीवर (समुद्राखालील जमिनीवर)</p>
+  <div class="word-usage">
+    <div class="deva">गर्भभूमौ मम आश्रमः भवतु ।</div>
+    <div class="usage-iast">garbhabhūmau mama āśramaḥ bhavatu ।</div>
+    <div class="usage-meaning lang-en">Let my hermitage be on the land within.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आतल्या भूमीवर माझा आश्रम असावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्यत्र कौ कुत्रचित् न</span>
+    <span class="word-iast">anyatra kau kutracit na</span>
+  </div>
+  <div><span class="word-grammar">indeclinables; कौ = locative singular of कु (&#x27;earth&#x27;)</span></div>
+  <div class="word-form">In this verse: अन्यत्र, कौ, कुत्रचित्, न</div>
+  <p class="word-meaning lang-en">not anywhere else on earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर (कु, सप्तमी कौ) इतरत्र कोठेही नाही</p>
+  <div class="word-usage">
+    <div class="deva">कौ कुत्रचित् तादृशः पर्वतः न अस्ति ।</div>
+    <div class="usage-iast">kau kutracit tādṛśaḥ parvataḥ na asti ।</div>
+    <div class="usage-meaning lang-en">Nowhere on earth is there such a mountain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवर कोठेही असा पर्वत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इत्थं मतिं विनिश्चित्य</span>
+    <span class="word-iast">itthaṃ matiṃ viniścitya</span>
+  </div>
+  <div><span class="word-grammar">इत्थम् indeclinable; मतिम् feminine accusative singular; विनिश्चित्य = absolutive (lyap) of वि + नि + √चि</span></div>
+  <div class="word-form">In this verse: इत्थम्, मतिम्, विनिश्चित्य</div>
+  <p class="word-meaning lang-en">having firmly resolved (his) thought thus</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असा विचार पक्का करून</p>
+  <div class="word-usage">
+    <div class="deva">इत्थम् मतिम् विनिश्चित्य सः प्रातिष्ठत ।</div>
+    <div class="usage-iast">ittham matiṃ viniścitya saḥ prātiṣṭhata ।</div>
+    <div class="usage-meaning lang-en">Having thus firmly resolved, he set out.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असा विचार पक्का करून तो निघाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मनीषी</span>
+    <span class="word-iast">manīṣī</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; मनस् + ईष (uṇādi suffix)</span></div>
+  <div class="word-form">In this verse: मनीषी</div>
+  <p class="word-meaning lang-en">the wise man, sage</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुद्धिमान</p>
+  <div class="word-usage">
+    <div class="deva">मनीषी सर्वदा सत्यम् वदति ।</div>
+    <div class="usage-iast">manīṣī sarvadā satyam vadati ।</div>
+    <div class="usage-meaning lang-en">The wise man always speaks the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुद्धिमान माणूस नेहमी सत्य बोलतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चचाल</span>
+    <span class="word-iast">cacāla</span>
+  </div>
+  <div><span class="word-grammar">√चल्, liṭ, 3rd person singular, parasmaipada</span></div>
+  <div class="word-form">In this verse: चचाल</div>
+  <p class="word-meaning lang-en">set out, departed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निघाला (√चल्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">सूर्योदये सः चचाल ।</div>
+    <div class="usage-iast">sūryodaye saḥ cacāla ।</div>
+    <div class="usage-meaning lang-en">At sunrise he set out.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्योदयाला तो निघाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शैलात्</span>
+    <span class="word-iast">śailāt</span>
+  </div>
+  <div><span class="word-grammar">masculine ablative singular</span></div>
+  <div class="word-form">In this verse: शैलात्</div>
+  <p class="word-meaning lang-en">from the mountain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पर्वतावरून (पञ्चमी)</p>
+  <div class="word-usage">
+    <div class="deva">शैलात् नदी प्रभवति ।</div>
+    <div class="usage-iast">śailāt nadī prabhavati ।</div>
+    <div class="usage-meaning lang-en">The river rises from the mountain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पर्वतावरून नदी उगम पावते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अतिशैलसारः</span>
+    <span class="word-iast">atiśailasāraḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (अति-शैल-सार)</span></div>
+  <div class="word-form">In this verse: अतिशैलसारः</div>
+  <p class="word-meaning lang-en">of firmness surpassing a mountain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पर्वतापेक्षाही अधिक सामर्थ्य (दृढता) असलेला</p>
+  <div class="word-usage">
+    <div class="deva">अतिशैलसारः धीरः न विचलति ।</div>
+    <div class="usage-iast">atiśailasāraḥ dhīraḥ na vicalati ।</div>
+    <div class="usage-meaning lang-en">The steadfast man, firmer than a mountain, does not waver.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पर्वतापेक्षाही दृढ असलेला धीर माणूस डगमगत नाही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Having chosen dharma over comfort, Paraśurāma resolves to dwell only on land that belongs to no one — land still hidden within the ocean. This resolution is the seed of the Konkan: the whole sthala-purāṇa grows from one man&#x27;s refusal to profit from his own gift. Devotionally, it is the model of aparigraha — never enjoying what one has renounced.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सुखसोयींपेक्षा धर्माला प्राधान्य देऊन परशुराम ठरवतो — कुणाच्याही मालकीची नसलेली, अजून समुद्रात लपलेली भूमीच माझे निवासस्थान होईल. कोकणचे बीज हेच आहे — स्वतःच्या दानाचा लाभ घेण्यास नकार देणाऱ्या एका पुरुषातून हे संपूर्ण स्थलपुराण उगम पावते. भक्तिभावाने पाहिले तर हे अपरिग्रहाचे आदर्श उदाहरण आहे — सोडलेल्याचा उपभोग कधीही घेऊ नये.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>This resolve is the Purāṇic charter of the Konkan: the Mahābhārata (Śānti-parvan) and the Sahyādri-khaṇḍa tell how Paraśurāma, forbidden the earth he had given away, won new land from the sea and raised Aparānta — &#x27;the western end&#x27; — from the waters for his dwelling.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा निश्चय म्हणजे कोकणचा पुराणप्रसिद्ध हक्कदस्तऐवज आहे — महाभारत (शांतिपर्व) व सह्याद्रिखंड सांगतात की दान केलेल्या पृथ्वीवर राहण्यास मनाई झालेल्या परशुरामाने समुद्राकडून नवी भूमी मिळवून अपरान्त — &#x27;पश्चिमेकडील टोक&#x27; — पाण्यातून वर आणले व तेथे राहिला.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>कौ is the locative singular of कु (&#x27;earth&#x27;); सरिन्नायक, &#x27;lord of rivers&#x27;, is a standard kenning for the ocean. The verse states the sarga&#x27;s whole logic: a new land must be raised because the old one may not be used.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कौ हे कु (&#x27;पृथ्वी&#x27;) शब्दाचे सप्तमी एकवचन आहे; सरिन्नायक, &#x27;नद्यांचा स्वामी&#x27;, हे समुद्राचे रूढ उपनाम आहे. संपूर्ण सर्गाचे तर्कशास्त्र हा श्लोक मांडतो — जुनी भूमी वापरता येत नाही, म्हणून नवी भूमी वर आणावी लागते.</p></div></div>
+
+<div class="pagenav"><a href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 18</div></a><a class="next" href="verse-20.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 20</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

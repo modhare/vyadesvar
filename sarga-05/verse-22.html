@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 22 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 22</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 22</span><span class="bl-mr lang-mr">श्लोक 22</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तत्र वो वसतां क्वापि क्वापि नार्तिर्भविष्यति ।<br>न भविष्यति दारिद्र्यं न रोगा नापमृत्यवः ।।२२।।</div>
+  <div class="verse-iast">tatra vo vasatāṃ kvāpi kvāpi nārtirbhaviṣyati । na bhaviṣyati dāridryaṃ na rogā nāpamṛtyavaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत्र । वः । वसताम् । क्व अपि । क्व अपि । न । आर्तिः । भविष्यति । न । भविष्यति । दारिद्र्यम् । न । रोगाः । न । अपमृत्यवः ।</div><div class="vig-iast">tatra । vaḥ । vasatām । kva api । kva api । na । ārtiḥ । bhaviṣyati । na । bhaviṣyati । dāridryam । na । rogāḥ । na । apamṛtyavaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">क्व + अपि = क्वापि · न + आर्तिः = नार्तिः · आर्तिः + भविष्यति = आर्तिर्भविष्यति · रोगाः + न = रोगा न · न + अपमृत्यवः = नापमृत्यवः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत्र वसतां वः क्वापि क्वापि आर्तिः न भविष्यति; दारिद्र्यं न भविष्यति, रोगाः न, अपमृत्यवः न ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>For you who dwell there, no distress shall ever befall you anywhere; poverty shall not touch you, nor diseases, nor untimely deaths.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तेथे निवास करीत असताना तुम्हाला कुठल्याही प्रकारची व कोणतीही अडचण येणार नाही; दारिद्र्य तुम्हाला भोवणार नाही; रोग व अपमृत्यू यांचा उपसर्गही होणार नाही.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वसतां वः</span>
+    <span class="word-iast">vasatāṃ vaḥ</span>
+  </div>
+  <div><span class="word-grammar">√vas (1P, &#x27;to dwell&#x27;) + śatṛ (present participle) → वसत्, genitive plural masculine; + वः (enclitic genitive/dative/accusative plural of युष्मद्)</span></div>
+  <div class="word-form">In this verse: genitive plural participle + enclitic pronoun</div>
+  <p class="word-meaning lang-en">of you who dwell (there)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राहणाऱ्या तुम्हाला (शतृ, षष्ठी)</p>
+  <div class="word-usage">
+    <div class="deva">तत्र वसताम् वः आर्तिः न भविष्यति</div>
+    <div class="usage-iast">tatra vasatām vaḥ ārtiḥ na bhaviṣyati</div>
+    <div class="usage-meaning lang-en">For you dwelling there, there shall be no distress.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे राहणाऱ्या तुम्हाला कोणतीही पीडा होणार नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्वापि क्वापि</span>
+    <span class="word-iast">kvāpi kvāpi</span>
+  </div>
+  <div><span class="word-grammar">क्व (interrogative indeclinable, &#x27;where, when&#x27;) + अपि (particle) → indeclinable; doubled — vīpsā (repetition for totality)</span></div>
+  <div class="word-form">In this verse: indeclinable, doubled</div>
+  <p class="word-meaning lang-en">anywhere, at any time; (with negation) nowhere, never</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुठेही, कधीही (वीप्सा)</p>
+  <div class="word-usage">
+    <div class="deva">क्वापि क्वापि आर्तिः न भविष्यति</div>
+    <div class="usage-iast">kvāpi kvāpi ārtiḥ na bhaviṣyati</div>
+    <div class="usage-meaning lang-en">Nowhere, at no time, shall there be distress.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुठेही, कधीही पीडा होणार नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आर्तिः</span>
+    <span class="word-iast">ārtiḥ</span>
+  </div>
+  <div><span class="word-grammar">feminine noun from √ṛ (&#x27;to go; to afflict&#x27;) + kti; nominative singular</span></div>
+  <div class="word-form">In this verse: nominative singular</div>
+  <p class="word-meaning lang-en">distress, affliction, pain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पीडा</p>
+  <div class="word-usage">
+    <div class="deva">दुःखात् आर्तिः जायते</div>
+    <div class="usage-iast">duḥkhāt ārtiḥ jāyate</div>
+    <div class="usage-meaning lang-en">Distress arises from suffering.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुःखातून पीडा उत्पन्न होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दारिद्र्यम्</span>
+    <span class="word-iast">dāridryam</span>
+  </div>
+  <div><span class="word-grammar">दरिद्र (adjective, &#x27;poor&#x27;) + ṣyañ → neuter abstract noun</span></div>
+  <div class="word-form">In this verse: neuter nominative/accusative singular</div>
+  <p class="word-meaning lang-en">poverty, indigence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरिबी</p>
+  <div class="word-usage">
+    <div class="deva">दारिद्र्यम् दुःखस्य कारणम्</div>
+    <div class="usage-iast">dāridryam duḥkhasya kāraṇam</div>
+    <div class="usage-meaning lang-en">Poverty is a cause of suffering.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दारिद्र्य हे दुःखाचे कारण आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपमृत्यवः</span>
+    <span class="word-iast">apamṛtyavaḥ</span>
+  </div>
+  <div><span class="word-grammar">अप (prefix, &#x27;away, off, untimely&#x27;) + मृत्यु (m., &#x27;death&#x27;) → tatpuruṣa; masculine nominative plural</span></div>
+  <div class="word-form">In this verse: nominative plural</div>
+  <p class="word-meaning lang-en">untimely deaths</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अकालमृत्यू</p>
+  <div class="word-usage">
+    <div class="deva">क्षेत्रे अपमृत्यवः न भविष्यन्ति</div>
+    <div class="usage-iast">kṣetre apamṛtyavaḥ na bhaviṣyanti</div>
+    <div class="usage-meaning lang-en">In this sacred land there shall be no untimely deaths.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या क्षेत्रात अकालमृत्यू होणार नाहीत.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The promise is total: no distress of any kind, no poverty, no disease, no untimely death. In kṣetra-māhātmyas such catalogues are not mere poetry — they describe the afflictions of the material world from which a consecrated land shelters its dwellers. The devotee reads this as assurance that sincere residence in the Lord&#x27;s land carries his providence into daily life, not only into the next world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे अभिवचन संपूर्ण आहे : कसलीही पीडा नाही, दारिद्र्य नाही, रोग नाहीत, अकालमृत्यू नाहीत. क्षेत्रमाहात्म्यांतील अशा याद्या केवळ काव्य नसतात — प्रतिष्ठित भूमी तिच्या निवाशांना ज्या आधिभौतिक दुःखांपासून वाचवते, त्यांचे ते वर्णन असते. भगवंताच्या भूमीत निष्ठेने राहणाऱ्याला दैनंदिन जीवनातही त्याची कृपादृष्टी लाभते, केवळ परलोकात नव्हे — असे आश्वासन भक्त यातून घेतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Kṣetra-māhātmyas regularly open their praise with such &#x27;absence catalogues&#x27; — what does not occur here: poverty, disease, untimely death. The claim is not medical but theological: where dharma is established and the Lord&#x27;s protection is invoked, the afflictions that stalk ordinary human life are held at bay. The devotee reads it as the fruit of residence (vāsa) in a consecrated land.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>क्षेत्रमाहात्म्ये आपली स्तुती अशा &#x27;अभाव-याद्यां&#x27;नीच सुरू करतात — येथे काय घडत नाही : दारिद्र्य, रोग, अकालमृत्यू. हा दावा वैद्यकीय नसून तात्त्विक आहे : जेथे धर्म स्थापित आहे आणि भगवंताच्या रक्षणाचे आवाहन केले आहे, तेथे सामान्य मानवी जीवनाला ग्रासणारी दुःखे दूर ठेवली जातात. प्रतिष्ठित भूमीतील निवासाचे (वासाचे) फळ म्हणून भक्त हे वाचतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Ārti (distress) is the general term; the verse then particularizes the three great household fears — dāridrya (poverty), roga (disease), apamṛtyu (untimely death). Kvāpi kvāpi is vīpsā, repetition for emphasis: &#x27;anywhere at all, at any time at all.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आर्तिः (पीडा) हे सामान्य पद आहे; नंतर श्लोक तीन मोठ्या गृहस्थ-भयांचे विशेषीकरण करतो — दारिद्र्य, रोग, अपमृत्यू. &#x27;क्वापि क्वापि&#x27; ही वीप्सा आहे, भर देण्यासाठी केलेली पुनरुक्ती : &#x27;कुठेही, कधीही.&#x27;</p></div></div>
+
+<div class="pagenav"><a href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 21</div></a><a class="next" href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 23</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

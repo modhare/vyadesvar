@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 8 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 8</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 8</span><span class="bl-mr lang-mr">श्लोक 8</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">नागमिष्यो यदि क्षिप्रं शरणार्थी समुद्र माम्।।<br>तर्ह्येवाशोषयिष्यं त्वा दारुणेनास्त्रवह्निना ।।८।।</div>
+  <div class="verse-iast">nāgamiṣyo yadi kṣipraṃ śaraṇārthī samudra mām । । tarhyevāśoṣayiṣyaṃ tvā dāruṇenāstravahninā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">न । आगमिष्यः । यदि । क्षिप्रम् । शरण-अर्थी । समुद्र । माम् । तर्हि । एव । अशोषयिष्यम् । त्वा । दारुणेन । अस्त्र-वह्निना ।</div><div class="vig-iast">na । āgamiṣyaḥ । yadi । kṣipram । śaraṇa-arthī । samudra । mām । tarhi । eva । aśoṣayiṣyam । tvā । dāruṇena । astra-vahninā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">न + आगमिष्यः = नागमिष्यः (सवर्णदीर्घ) · आगमिष्यः + यदि = आगमिष्यो यदि (विसर्ग → ओ) · शरण + अर्थी = शरणार्थी · तर्हि + एव = तर्ह्येव (यण्) · एव + अशोषयिष्यम् = एवाशोषयिष्यम् · दारुणेन + अस्त्र = दारुणेनास्त्र</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे समुद्र, यदि (त्वं) शरणार्थी (सन्) क्षिप्रं मां न आगमिष्यः, तर्हि एव (अहं) दारुणेन अस्त्रवह्निना त्वा अशोषयिष्यम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;O Ocean, had you not come swiftly to me as a seeker of refuge, I would certainly have dried you up with the dread fire of my weapon.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;हे समुद्रा, जर तू लवकर माझ्याकडे शरणार्थी म्हणून आला नसतास तर दारुण अशा अस्त्ररूपी अग्नीने मी निश्चितच तुझे शोषण करून टाकले असते.&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न आगमिष्यः</span>
+    <span class="word-iast">na āgamiṣyaḥ</span>
+  </div>
+  <div><span class="word-grammar">आ + √गम्, lṛṅ (conditional), parasmaipada, second person singular; न negation</span></div>
+  <div class="word-form">In this verse: न आगमिष्यः (in verse न + आगमिष्यः → नागमिष्यः, आगमिष्यः + यदि → आगमिष्यो यदि)</div>
+  <p class="word-meaning lang-en">you would not have come</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आला नसतास (आ + √गम्, लृङ्)</p>
+  <div class="word-usage">
+    <div class="deva">यदि त्वम् न आगमिष्यः तर्हि दण्डः अभविष्यत् ।</div>
+    <div class="usage-iast">yadi tvam na āgamiṣyaḥ tarhi daṇḍaḥ abhaviṣyat ।</div>
+    <div class="usage-meaning lang-en">If you had not come, there would have been punishment.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जर तू आला नसतास तर शिक्षा झाली असती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षिप्रम्</span>
+    <span class="word-iast">kṣipram</span>
+  </div>
+  <div><span class="word-grammar">क्षिप्र, neuter accusative singular used adverbially</span></div>
+  <div class="word-form">In this verse: क्षिप्रम् (stem क्षिप्र)</div>
+  <p class="word-meaning lang-en">quickly, swiftly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लवकर</p>
+  <div class="word-usage">
+    <div class="deva">दूतः क्षिप्रम् धावति ।</div>
+    <div class="usage-iast">dūtaḥ kṣipram dhāvati ।</div>
+    <div class="usage-meaning lang-en">The messenger runs swiftly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दूत लवकर धावतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शरणार्थी</span>
+    <span class="word-iast">śaraṇārthī</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular (प्रथमा एकवचन), शरण + अर्थिन् (√अर्थ् + इनि)</span></div>
+  <div class="word-form">In this verse: शरणार्थी (stem शरणार्थिन्; in verse शरण + अर्थी → शरणार्थी)</div>
+  <p class="word-meaning lang-en">one seeking refuge, a suppliant</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरण मागणारा</p>
+  <div class="word-usage">
+    <div class="deva">शरणार्थी राजानम् उपागच्छत् ।</div>
+    <div class="usage-iast">śaraṇārthī rājānam upāgacchat ।</div>
+    <div class="usage-meaning lang-en">The suppliant approached the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरण मागणारा राजाकडे गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तर्हि एव</span>
+    <span class="word-iast">tarhi eva</span>
+  </div>
+  <div><span class="word-grammar">तर्हि: avyaya (correlative of यदि); एव: emphatic particle</span></div>
+  <div class="word-form">In this verse: तर्हि एव (in verse तर्हि + एव → तर्ह्येव, एव + अशोषयिष्यम् → एवाशोषयिष्यम्)</div>
+  <p class="word-meaning lang-en">then indeed, in that case certainly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तर निश्चितच</p>
+  <div class="word-usage">
+    <div class="deva">तर्हि एव अहम् गमिष्यामि ।</div>
+    <div class="usage-iast">tarhi eva aham gamiṣyāmi ।</div>
+    <div class="usage-meaning lang-en">In that case I shall certainly go.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तर मग मी नक्कीच जाईन.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अशोषयिष्यम्</span>
+    <span class="word-iast">aśoṣayiṣyam</span>
+  </div>
+  <div><span class="word-grammar">√शुष्, causative (ṇijanta), lṛṅ (conditional), parasmaipada, first person singular</span></div>
+  <div class="word-form">In this verse: अशोषयिष्यम् (conditional stem शोषयिष्य)</div>
+  <p class="word-meaning lang-en">I would have dried up, I would have parched</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोषून टाकले असते (√शुष्, णिजन्त, लृङ्)</p>
+  <div class="word-usage">
+    <div class="deva">वायुः तीव्रः चेत् जलम् अशोषयिष्यत् ।</div>
+    <div class="usage-iast">vāyuḥ tīvraḥ cet jalam aśoṣayiṣyat ।</div>
+    <div class="usage-meaning lang-en">Had the wind been fierce, it would have dried up the water.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वारा तीव्र असता तर पाण्याचे शोषण झाले असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वा</span>
+    <span class="word-iast">tvā</span>
+  </div>
+  <div><span class="word-grammar">accusative singular of युष्मद् (short Vedic form of त्वाम्)</span></div>
+  <div class="word-form">In this verse: त्वा (= त्वाम्)</div>
+  <p class="word-meaning lang-en">you (as object), thee</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुला (= त्वाम्)</p>
+  <div class="word-usage">
+    <div class="deva">अहम् त्वा रक्षिष्यामि ।</div>
+    <div class="usage-iast">aham tvā rakṣiṣyāmi ।</div>
+    <div class="usage-meaning lang-en">I shall protect you.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी तुझे रक्षण करीन.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दारुणेन अस्त्रवह्निना</span>
+    <span class="word-iast">dāruṇena astravahninā</span>
+  </div>
+  <div><span class="word-grammar">दारुणेन: masculine/neuter instrumental singular of दारुण; अस्त्रवह्निना: rūpaka compound (अस्त्र एव वह्निः), masculine instrumental singular</span></div>
+  <div class="word-form">In this verse: दारुणेन अस्त्रवह्निना (in verse दारुणेन + अस्त्र → दारुणेनास्त्र)</div>
+  <p class="word-meaning lang-en">with the dread, terrible fire of the (divine) weapon</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भयंकर अस्त्ररूपी अग्नीने</p>
+  <div class="word-usage">
+    <div class="deva">रामः दारुणेन अस्त्रवह्निना राक्षसान् ददाह ।</div>
+    <div class="usage-iast">rāmaḥ dāruṇena astravahninā rākṣasān dadāha ।</div>
+    <div class="usage-meaning lang-en">Rāma burnt the demons with the dread fire of his weapon.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने भयंकर अस्त्राग्नीने राक्षसांना जाळले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The conditional mood carries the theology: destruction was certain, and only timely surrender averted it — grace does not cancel the law, it answers the one who turns in time. The &#x27;fire of the weapon&#x27; is the tejas of the avatāra, before which even the ocean is but a puddle. For the devotee, the verse is both warning and assurance: delay in śaraṇāgati is perilous, but śaraṇāgati itself is unfailingly effective.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>संभाव्य भूतकाळातच तत्त्वज्ञान दडले आहे : नाश निश्चित होता आणि वेळीच केलेल्या शरणागतीनेच तो टळला — कृपा नियम रद्द करत नाही, तर वेळीच वळणाऱ्याला उत्तर देते. &#x27;अस्त्राचा अग्नी&#x27; हे अवताराचे तेज आहे, ज्यापुढे समुद्रही केवळ डबकेच ठरतो. भक्तासाठी हा श्लोक इशारा आणि आश्वासन दोन्ही आहे : शरणागतीत विलंब धोकादायक आहे, पण शरणागती स्वतः कधीही निष्फळ ठरत नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The threat to dry the ocean has great Purāṇic precedent: Rāma, when Sāgara delayed, vowed to dry him with the brahmāstra (Yuddhakāṇḍa), and Agastya once drank the ocean dry to expose the hiding asuras. Paraśurāma&#x27;s astra-vahni belongs to the same avatāra-tejas. Tradition reads the verse as sthala-māhātmya in seed form — the land of the Konkan exists because the Ocean, forewarned, yielded it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्राचे शोषण करण्याच्या धमकीला मोठी पौराणिक परंपरा आहे : सागराने विलंब केल्यावर रामाने ब्रह्मास्त्राने त्याचे शोषण करण्याची प्रतिज्ञा केली (युद्धकांड), आणि अगस्त्याने एकदा लपलेल्या असुरांना उघडे पाडण्यासाठी समुद्र पिऊन टाकला. परशुरामांचा अस्त्रवह्नि त्याच अवतार-तेजाचा आहे. परंपरा या श्लोकात स्थलमाहात्म्याचे बीज पाहते — समुद्राने पूर्वसूचना मिळताच मान्य केल्यामुळे कोकणची भूमी अस्तित्वात आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Both verbs are in लृङ्, the conditional mood: आगमिष्यः (आ + √गम्, second person singular, &#x27;you would have come&#x27;) and अशोषयिष्यम् (√शुष्, causative, first person singular, &#x27;I would have dried up&#x27;) — the grammar of a catastrophe averted. अस्त्रवह्नि is a rūpaka (metaphorical identification): &#x27;the weapon which is fire&#x27;. त्वा is the short Vedic form of त्वाम्, common in kāvya.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दोन्ही क्रियापदे लृङ् (संभाव्य भूतकाळ) मध्ये आहेत : आगमिष्यः (आ + √गम्, मध्यमपुरुष एकवचन, &#x27;तू आला असतास&#x27;) आणि अशोषयिष्यम् (√शुष्, णिजन्त, उत्तमपुरुष एकवचन, &#x27;मी शोषून टाकले असते&#x27;) — टळलेल्या अनर्थाचे व्याकरण. अस्त्रवह्नि हे रूपक आहे : &#x27;अग्नीच असलेले अस्त्र&#x27;. त्वा हे त्वाम् चे लहान वैदिक रूप असून काव्यात सापडते.</p></div></div>
+
+<div class="pagenav"><a href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 7</div></a><a class="next" href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 9</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

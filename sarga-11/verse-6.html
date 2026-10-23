@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अत्रासीत्परममुनिः पुरा स कश्चित् संतेपे परमतपो मुकुन्दतुष्ट्यै ।<br>संतुष्टो हरिरकरोदनामयं त-मेतस्मात्प्रथितमिदं पदं पृथिव्याम् ।।६।।</div>
+  <div class="verse-iast">atrāsītparamamuniḥ purā sa kaścit saṃtepe paramatapo mukundatuṣṭyai । saṃtuṣṭo harirakarodanāmayaṃ ta-metasmātprathitamidaṃ padaṃ pṛthivyām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अत्र । आसीत् । परम-मुनिः । पुरा । सः । कश्चित् । संतेपे । परम-तपः । मुकुन्द-तुष्ट्यै । संतुष्टः । हरिः । अकरोत् । अनामयम् । तम् । एतस्मात् । प्रथितम् । इदम् । पदम् । पृथिव्याम् ।</div><div class="vig-iast">atra । āsīt । parama-muniḥ । purā । saḥ । kaścit । saṃtepe । parama-tapaḥ । mukunda-tuṣṭyai । saṃtuṣṭaḥ । hariḥ । akarot । anāmayam । tam । etasmāt । prathitam । idam । padam । pṛthivyām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">अत्र + आसीत् = अत्रासीत् · तपः + मुकुन्द = तपो मुकुन्द · संतुष्टः + हरिः = संतुष्टो हरिः · हरिः + अकरोत् = हरिरकरोत् · अकरोत् + अनामयम् = अकरोदनामयम् · तम् + एतस्मात् = तमेतस्मात् · प्रथितम् + इदम् = प्रथितमिदम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">पुरा अत्र सः कश्चित् परममुनिः आसीत्; (सः) मुकुन्दतुष्ट्यै परमतपः संतेपे; संतुष्टः हरिः तम् अनामयम् अकरोत्; एतस्मात् इदं पदं पृथिव्यां प्रथितम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In ancient days a great sage dwelt here; to win Mukunda&#x27;s favour he practised the fiercest austerities. Pleased, Hari made him wholly free of disease — and hence this place grew famous upon the earth.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्राचीन काळी कोणी एक महान् मुनी होऊन गेला त्याने मुकुन्दाला प्रसन्न करून घेण्यासाठी मोठे उग्र तप केले. संतुष्ट झालेल्या कृष्णाने त्या मुनीला पूर्ण अनामय (निरोगी) करून टाकले. त्यामुळे पृथ्वीवर हे ठिकाण प्रसिद्ध झाले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संतेपे परमतपः</span>
+    <span class="word-iast">saṃtepe paramatapaḥ</span>
+  </div>
+  <div><span class="word-grammar">perfect 3rd singular ātmanepada (सम्-√तप्, lit) + neuter accusative singular (परम-तपस्)</span></div>
+  <div class="word-form">In this verse: संतेपे परमतपः</div>
+  <p class="word-meaning lang-en">performed severe austerity</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कठोर तप केले (सम् + √तप्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">ऋषिः वने परमतपः संतेपे।</div>
+    <div class="usage-iast">ṛṣiḥ vane paramatapaḥ saṃtepe.</div>
+    <div class="usage-meaning lang-en">The sage performed severe austerity in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऋषीने वनात घोर तप केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मुकुन्दतुष्ट्यै</span>
+    <span class="word-iast">mukundatuṣṭyai</span>
+  </div>
+  <div><span class="word-grammar">feminine dative singular (मुकुन्द-तुष्टि)</span></div>
+  <div class="word-form">In this verse: मुकुन्दतुष्ट्यै</div>
+  <p class="word-meaning lang-en">to please Mukunda</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुकुंदाला संतुष्ट करण्यासाठी</p>
+  <div class="word-usage">
+    <div class="deva">भक्तः मुकुन्दतुष्ट्यै व्रतं चरति।</div>
+    <div class="usage-iast">bhaktaḥ mukundatuṣṭyai vrataṃ carati.</div>
+    <div class="usage-meaning lang-en">The devotee observes a vow to please Mukunda.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त मुकुंदाला संतुष्ट करण्यासाठी व्रत करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनामयम्</span>
+    <span class="word-iast">anāmayam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular adjective (अ-नामय, &#x27;free from disease&#x27;)</span></div>
+  <div class="word-form">In this verse: अनामयम्</div>
+  <p class="word-meaning lang-en">free of disease, hale</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रोगमुक्त</p>
+  <div class="word-usage">
+    <div class="deva">वैद्यः तं रोगिणम् अनामयम् अकरोत्।</div>
+    <div class="usage-iast">vaidyaḥ taṃ rogiṇam anāmayam akarot.</div>
+    <div class="usage-meaning lang-en">The physician made the sick man hale.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वैद्याने त्या रोग्याला निरोगी केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एतस्मात्</span>
+    <span class="word-iast">etasmāt</span>
+  </div>
+  <div><span class="word-grammar">neuter/masculine ablative singular (एतद्)</span></div>
+  <div class="word-form">In this verse: एतस्मात्</div>
+  <p class="word-meaning lang-en">from this, hence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यामुळे</p>
+  <div class="word-usage">
+    <div class="deva">एतस्मात् कारणात् सः वनं गतः।</div>
+    <div class="usage-iast">etasmāt kāraṇāt saḥ vanaṃ gataḥ.</div>
+    <div class="usage-meaning lang-en">For this reason he went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यामुळे तो वनात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पदम्</span>
+    <span class="word-iast">padam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative singular</span></div>
+  <div class="word-form">In this verse: पदम्</div>
+  <p class="word-meaning lang-en">place, spot</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थान</p>
+  <div class="word-usage">
+    <div class="deva">इदं पदं पवित्रं मन्यते।</div>
+    <div class="usage-iast">idaṃ padaṃ pavitraṃ manyate.</div>
+    <div class="usage-meaning lang-en">This place is deemed holy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्थान पवित्र मानले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रथितम्</span>
+    <span class="word-iast">prathitam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular past participle (√प्रथ्, &#x27;famed&#x27;)</span></div>
+  <div class="word-form">In this verse: प्रथितम्</div>
+  <p class="word-meaning lang-en">become famous</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्ध झाले</p>
+  <div class="word-usage">
+    <div class="deva">तस्य नाम जगति प्रथितम्।</div>
+    <div class="usage-iast">tasya nāma jagati prathitam.</div>
+    <div class="usage-meaning lang-en">His name became famous in the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे नाव जगात प्रसिद्ध झाले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Tapas, grace, healing — the verse compresses the classic tīrtha-origin into four lines: the sage strives, Mukunda is pleased, disease is lifted, the place becomes famous. Its devotional point is that the deity here is first a healer; people come not with philosophy but with suffering. The moral is equally plain: austerity undertaken to please the Lord, not to gain power, draws grace that overflows to a whole region.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तप, कृपा, आरोग्य — हा श्लोक तीर्थोत्पत्तीची अभिजात कथा चार ओळींत साकारतो : मुनी प्रयत्न करतो, मुकुंद प्रसन्न होतो, रोग दूर होतो, स्थान प्रसिद्ध होते. यातील भक्तिपर मुद्दा असा की येथील देव प्रथम वैद्य आहे; लोक तत्त्वज्ञान घेऊन नव्हे, तर दुःख घेऊन येतात. बोधही तितकाच स्पष्ट आहे : भगवंताला संतुष्ट करण्यासाठी केलेले तप — सत्ता मिळवण्यासाठी नव्हे — अशी कृपा आकर्षित करते की ती संपूर्ण प्रदेशावर ओसंडून वाहते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The pattern — a sage&#x27;s fierce tapas, the pleased deity&#x27;s grace, and a tīrtha born from the event — is the standard origin-story of sacred places across the Purāṇas. Here the grace takes the form of healing (anāmaya), marking this Kṛṣṇa-kṣetra as a place where devotees have always sought relief from disease.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मुनीचे उग्र तप, प्रसन्न देवाची कृपा आणि त्या प्रसंगातून जन्माला आलेले तीर्थ — हा पुराणांतील पवित्र स्थानांच्या उत्पत्तीचा प्रमाणित आकृतिबंध आहे. येथे कृपेला आरोग्याचे (अनामय) रूप मिळाले आहे; त्यामुळे हे कृष्णक्षेत्र रोगमुक्तीसाठी भक्त नेहमी धाव घेतात असे स्थान ठरते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Saṃtepe is the perfect (lit, ātmanepada) of sam-√tap. Mukunda (&#x27;giver of mukti&#x27;) is Kṛṣṇa. Anāmaya — &#x27;freedom from disease&#x27; — is also a technical term of Āyurveda. The verse closes the aetiology: etasmāt idaṃ padaṃ pṛthivyāṃ prathitam, &#x27;hence this place became famous on earth&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;संतेपे&#x27; हे सम्-√तप् धातूचे पूर्णभूतकाळी (लिट्, आत्मनेपदी) रूप आहे. &#x27;मुकुंद&#x27; (मुक्ती देणारा) म्हणजे कृष्ण. &#x27;अनामय&#x27; — रोगमुक्तता — ही आयुर्वेदातीलही पारिभाषिक संज्ञा आहे. हा श्लोक उत्पत्तिकथेचा समारोप करतो : &#x27;एतस्मात् इदं पदं पृथिव्यां प्रथितम्&#x27; — &#x27;त्यामुळे हे स्थान पृथ्वीवर प्रसिद्ध झाले&#x27;.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

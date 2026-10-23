@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 37 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 37</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 37</span><span class="bl-mr lang-mr">श्लोक 37</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्यद्भुतोक्तिः प्रलयानलाभं संक्षुब्धदर्वीकरभोगभीमम् ।।<br>प्रचण्डचापेशितभीमबाणं स सन्दधे सागरशोषणाय ।।३७।।</div>
+  <div class="verse-iast">ityadbhutoktiḥ pralayānalābhaṃ saṃkṣubdhadarvīkarabhogabhīmam । । pracaṇḍacāpeśitabhīmabāṇaṃ sa sandadhe sāgaraśoṣaṇāya</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । अद्भुत-उक्तिः । प्रलय-अनल-आभम् । संक्षुब्ध-दर्वीकर-भोग-भीमम् । प्रचण्ड-चापे (?) । शित-भीम-बाणम् । सः । सन्दधे । सागर-शोषणाय ।</div><div class="vig-iast">iti । adbhuta-uktiḥ । pralaya-anala-ābham । saṃkṣubdha-darvīkara-bhoga-bhīmam । pracaṇḍa-cāpe (?) । śita-bhīma-bāṇam । saḥ । sandadhe । sāgara-śoṣaṇāya ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">इति + अद्भुत = इत्यद्भुत (यण्) · अद्भुत + उक्तिः = अद्भुतोक्तिः (गुण) · प्रलय + अनल = प्रलयानल · अनल + आभम् = अनलाभम् (सवर्णदीर्घ) · चापे + शित = चापेशित · बाणम् + सः = बाणं स · सः + सन्दधे = स सन्दधे</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति अद्भुतोक्तिः सः सागरशोषणाय प्रचण्डचापे प्रलयानलाभं संक्षुब्धदर्वीकरभोगभीमं शितभीमबाणं सन्दधे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Speaking thus with wondrous words, he — for the drying of the Ocean — nocked to his bow a keen and fearsome arrow, blazing like the fire of dissolution and terrible as the spread hood of an enraged serpent.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अशी अद्भुत वाणी उच्चारणाऱ्या त्या परशुरामाने सागराच्या शोषणासाठी प्रलयकाळच्या अग्नीसारख्या, खवळलेल्या नागाच्या फणांप्रमाणे भीषण व प्रचंड धनुष्यावर चढविल्यामुळे जाज्वल्य व भयंकर भासणाऱ्या बाणाचे संधान केले.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 37, line 1: प्रलयानिलाभं → प्रलयानलाभं (Marathi: अग्नीसारख्या)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अद्भुतोक्तिः</span>
+    <span class="word-iast">adbhutoktiḥ</span>
+  </div>
+  <div><span class="word-grammar">अद्भुत + उktaि (√वच् + ktin); &#x27;अद्भुता उktaिः यस्य&#x27; — bahuvrīhi; nominative singular, masculine</span></div>
+  <div class="word-form">In this verse: इत्यद्भुतोक्तिः</div>
+  <p class="word-meaning lang-en">he of wondrous speech; utterer of marvellous words</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अद्भुत वाणी उच्चारणारा</p>
+  <div class="word-usage">
+    <div class="deva">अद्भुतोक्तिः कविः सभां रञ्जयति।</div>
+    <div class="usage-iast">adbhutoktiḥ kaviḥ sabhāṃ rañjayati.</div>
+    <div class="usage-meaning lang-en">The poet of wondrous speech delights the assembly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अद्भुत वाणीचा कवी सभा रंजवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रलयानलाभम्</span>
+    <span class="word-iast">pralayānalābham</span>
+  </div>
+  <div><span class="word-grammar">प्रलय + अनल + आभा; &#x27;प्रलयानलस्य आभा इव आभा यस्य&#x27; — bahuvrīhi; accusative singular, masculine (बाणम्‌चे adjective)</span></div>
+  <div class="word-form">In this verse: प्रलयानलाभं</div>
+  <p class="word-meaning lang-en">having the lustre of the fire of dissolution</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रलयाग्नीसारखी कांती असलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">प्रलयानलाभं बाणं सः सन्दधे।</div>
+    <div class="usage-iast">pralayānalābhaṃ bāṇaṃ saḥ sandadhe.</div>
+    <div class="usage-meaning lang-en">He nocked the arrow blazing like doomsday fire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने प्रलयाग्नीसारखा जळणारा बाण जोडला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संक्षुब्धदर्वीकरभोगभीमम्</span>
+    <span class="word-iast">saṃkṣubdhadarvīkarabhogabhīmam</span>
+  </div>
+  <div><span class="word-grammar">संक्षुब्ध (सम् + √क्षुभ् + kta) + दर्वीकर (&#x27;दर्वीं फणां करोति&#x27;) + भोग (फणा/शरीर) + भीम; bahuvrīhi; accusative singular, masculine</span></div>
+  <div class="word-form">In this verse: संक्षुब्धदर्वीकरभोगभीमम्</div>
+  <p class="word-meaning lang-en">terrible as the spread hood/coil of an enraged serpent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खवळलेल्या फणाधारी नागाच्या (दर्वीकर) फणेप्रमाणे (भोग) भीषण</p>
+  <div class="word-usage">
+    <div class="deva">संक्षुब्धदर्वीकरभोगभीमं रूपं दृष्ट्वा सर्वे बिभ्यति।</div>
+    <div class="usage-iast">saṃkṣubdhadarvīkarabhogabhīmaṃ rūpaṃ dṛṣṭvā sarve bibhyati.</div>
+    <div class="usage-meaning lang-en">Seeing the form, terrible as an enraged serpent&#x27;s hood, all are afraid.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खवळलेल्या नागाच्या फणेप्रमाणे भीषण रूप पाहून सर्व घाबरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रचण्डचापेशित</span>
+    <span class="word-iast">pracaṇḍacāpeśita</span>
+  </div>
+  <div><span class="word-grammar">पदच्छेद-शंका : प्रचण्ड-चापे (locative singular) + शित (√शो + kta, &#x27;धार लावलेला&#x27;); saptamī-tatpuruṣaवत् usage; accusative singular, masculine (बाणम्‌चे adjective)</span></div>
+  <div class="word-form">In this verse: प्रचण्डचापेशितभीमबाणं</div>
+  <p class="word-meaning lang-en">the keen (arrow) set upon the mighty bow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>*पदच्छेद-शंका:* ‘प्रचण्डचापे (सप्तमी) + शित (धार लावलेला)’ = प्रचंड धनुष्यावर (ठेवलेला) तीक्ष्ण बाण; किंवा ‘चाप + इषित (प्रेरित)’. पहिला विग्रह मराठीतील ‘धनुष्यावर चढविल्यामुळे’ शी जुळतो.</p>
+  <div class="word-usage">
+    <div class="deva">प्रचण्डचापेशितः बाणः लक्ष्यं भिनत्ति।</div>
+    <div class="usage-iast">pracaṇḍacāpeśitaḥ bāṇaḥ lakṣyaṃ bhinatti.</div>
+    <div class="usage-meaning lang-en">The keen arrow on the mighty bow pierces the mark.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रचंड धनुष्यावरचा तीक्ष्ण बाण लक्ष्य भेदतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सन्दधे</span>
+    <span class="word-iast">sandadhe</span>
+  </div>
+  <div><span class="word-grammar">सम् + √धा (3rd class, ātmanepada), liṭ, 3rd person singular</span></div>
+  <div class="word-form">In this verse: स सन्दधे</div>
+  <p class="word-meaning lang-en">he fitted, nocked (the arrow to the string)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संधान केले, जोडला (सम् + √धा, लिट्, आत्मनेपद)</p>
+  <div class="word-usage">
+    <div class="deva">धनुर्धरः बाणं सन्दधे।</div>
+    <div class="usage-iast">dhanurdharaḥ bāṇaṃ sandadhe.</div>
+    <div class="usage-meaning lang-en">The archer nocked the arrow.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनुर्धराने बाण जोडला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सागरशोषणाय</span>
+    <span class="word-iast">sāgaraśoṣaṇāya</span>
+  </div>
+  <div><span class="word-grammar">सागर + शोषण (√शुष् + ṇic + lyuṭ, impersonal); dative singular, neuter (dative of purpose)</span></div>
+  <div class="word-form">In this verse: सागरशोषणाय</div>
+  <p class="word-meaning lang-en">for the drying up of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र सुकवण्यासाठी (तादर्थ्य चतुर्थी)</p>
+  <div class="word-usage">
+    <div class="deva">सागरशोषणाय सः तपः चकार।</div>
+    <div class="usage-iast">sāgaraśoṣaṇāya saḥ tapaḥ cakāra.</div>
+    <div class="usage-meaning lang-en">He practised austerity for the drying of the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र सुकवण्यासाठी त्याने तप केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The nocked arrow blazing like doomsday fire is divine determination taking concrete form: resolve has been deliberated (verse 35), and now it is set to the string. For the sādhaka this is the moment of no return in any great undertaking — the point where intention becomes commitment and the bow is drawn. The verse also holds the sthala-secret of the whole kāvya in one word, sāgaraśoṣaṇāya: the sea must recede so that the land — Guhagar, the temple, the whole sacred geography — can come to be. Destruction here is the midwife of creation.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रलयाग्नीसारखा जळणारा, जोडलेला बाण म्हणजे दैवी निश्चयाचे मूर्त रूप : विचारविनिमय झाला (३५ वा श्लोक), आता तो दोरीला लावला गेला आहे. साधकासाठी हा कोणत्याही महान कार्यातील परत न येण्याचा क्षण आहे — जेथे हेतू वचनबद्धतेत रूपांतरित होतो आणि धनुष्य ताणले जाते. या श्लोकात संपूर्ण काव्याचे स्थल-रहस्य एका शब्दात आहे — सागरशोषणाय : भूमी — गुहागर, मंदिर, संपूर्ण पवित्र भूगोल — निर्माण व्हावी म्हणून समुद्राने मागे हटले पाहिजे. येथील संहार हा सृष्टीची दाई आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The arrow blazing &#x27;like the fire of dissolution&#x27; (pralayānala) recalls the Purāṇic image of the saṃvartaka fire that drinks the oceans at the end of the age — the very fire Paraśurāma now summons in miniature. &#x27;Sandadhe&#x27; (he nocked/fitted) is the technical term of dhanurveda for setting the arrow to the string. The serpent-hood simile (darvīkara-bhoga) suits an arrow whose feathers and barbed head, quivering on the string, resemble a cobra&#x27;s expanded hood — a standard kāvya image for a drawn arrow. Wrath and grace are one here: the same bow that threatens the sea will win the land where temples will rise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;प्रलयाग्नीसारखा&#x27; (प्रलयानल) जळणारा बाण युगान्ती समुद्र प्राशन करणाऱ्या पुराणप्रसिद्ध संवर्तक अग्नीची आठवण करून देतो — तोच अग्नी परशुराम आता लघुरूपात आवाहन करतो. &#x27;सन्दधे&#x27; (जोडला) हा बाण दोरीला लावण्याचा धनुर्वेदातील तांत्रिक शब्द आहे. सर्पफणेची उपमा (दर्वीकर-भोग) दोरीवर थरथरणाऱ्या बाणाला शोभते — त्याची पिसे आणि काटेरी टोक फणा पसरलेल्या नागासारखी दिसतात; हे ताणलेल्या बाणाचे पारंपरिक काव्यचित्र आहे. येथे क्रोध आणि कृपा एकच आहेत : समुद्राला धमकावणारे तेच धनुष्य ती भूमी जिंकणार आहे जिच्यावर मंदिरे उभारणार आहेत.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Textual notes: (1) the print&#x27;s &#x27;प्रलयानिलाभं&#x27; is emended to &#x27;प्रलयानलाभं&#x27; — the Marathi &#x27;अग्नीसारख्या&#x27; confirms anala (fire), not anila (wind). (2) &#x27;प्रचण्डचापेशित&#x27; is doubtful: the transcription parses it as pracaṇḍa-cāpe (locative) + śita (sharpened) = &#x27;the keen (arrow) set on the mighty bow,&#x27; which matches the Marathi &#x27;धनुष्यावर चढविल्यामुळे&#x27;; an alternative parse, cāpa + iṣita (discharged), is grammatically possible but fits the sense less well. The reading is flagged, not silently resolved. Note &#x27;sāgaraśoṣaṇāya&#x27; — the dative of purpose (tādarthya caturthī): the nocking is expressly &#x27;for the drying of the ocean.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाठ-चर्चा : (१) छापील &#x27;प्रलयानिलाभं&#x27; हे &#x27;प्रलयानलाभं&#x27; असे दुरुस्त केले आहे — मराठीतील &#x27;अग्नीसारख्या&#x27; हे अनल (अग्नी) हेच सिद्ध करते, अनिल (वारा) नव्हे. (२) &#x27;प्रचण्डचापेशित&#x27; संशयास्पद आहे : प्रतिलेखनात प्रचण्ड-चापे (सप्तमी) + शित (धार लावलेला) = &#x27;प्रचंड धनुष्यावरचा तीक्ष्ण (बाण)&#x27; असा विग्रह केला आहे, जो मराठीतील &#x27;धनुष्यावर चढविल्यामुळे&#x27; शी जुळतो; चाप + इषित (सोडलेला) हा पर्यायी विग्रह व्याकरणदृष्ट्या शक्य आहे पण अर्थाशी कमी जुळतो. हा पाठ नोंदवला आहे, गुप्तपणे सोडवलेला नाही. &#x27;सागरशोषणाय&#x27; लक्षात घ्या — हेत्वर्थी चतुर्थी (तादर्थ्य) : संधान हे स्पष्टपणे &#x27;समुद्र सुकवण्यासाठी&#x27; आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-36.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 36</div></a><a class="next" href="verse-38.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 38</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

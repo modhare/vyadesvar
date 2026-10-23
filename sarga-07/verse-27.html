@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 7 — Kṛṣṇāvatāravarṇanaḥ 27 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 27</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 27</span><span class="bl-mr lang-mr">श्लोक 27</span></h1>
+<p class="meta">Sarga 7 — Kṛṣṇāvatāravarṇanaḥ &middot; <span class="deva">सप्तमः सर्गः · कृष्णावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Mandākrāntā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्थं पोतं भवजलनिधौ मज्जतां ज्योतिरेकं<br>शोकागाधे तमसि पततां कर्मबन्धच्छिदासिम् ।<br>मायामार्तेरगदममृतं काङ्क्षतां कल्पवृक्षं<br>लक्ष्मीवासं मनसि कलये पङ्कजाक्षाश्रयाशम् ।।२७।।</div>
+  <div class="verse-iast">itthaṃ potaṃ bhavajalanidhau majjatāṃ jyotirekaṃ śokāgādhe tamasi patatāṃ karmabandhacchidāsim । māyāmārteragadamamṛtaṃ kāṅkṣatāṃ kalpavṛkṣaṃ lakṣmīvāsaṃ manasi kalaye paṅkajākṣāśrayāśam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इत्थम् । पोतम् । भव-जलनिधौ । मज्जताम् । ज्योतिः । एकम् । शोक-अगाधे । तमसि । पतताम् । कर्म-बन्ध-छिदा-असिम् । मायाम् (माया-?) । आर्तेः । अगदम् । अमृतम् । काङ्क्षताम् । कल्पवृक्षम् । लक्ष्मी-वासम् । मनसि । कलये । पङ्कजाक्ष-आश्रय-आशम् (?) ।</div><div class="vig-iast">ittham । potam । bhava-jalanidhau । majjatām । jyotiḥ । ekam । śoka-agādhe । tamasi । patatām । karma-bandha-chidā-asim । māyām (māyā-?) । ārteḥ । agadam । amṛtam । kāṅkṣatām । kalpavṛkṣam । lakṣmī-vāsam । manasi । kalaye । paṅkajākṣa-āśraya-āśam (?) ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ज्योतिः + एकम् = ज्योतिरेकम् · शोक + अगाधे = शोकागाधे · छिदा + असिम् = छिदासिम् · मायाम् + आर्तेः = मायामार्तेः · आर्तेः + अगदम् = आर्तेरगदम् · अक्ष + आश्रय = अक्षाश्रय · आश्रय + आशम् = आश्रयाशम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इत्थं भवजलनिधौ मज्जतां पोतं, शोकागाधे तमसि पतताम् एकं ज्योतिः, कर्मबन्धच्छिदासिम्, … आर्तेः अगदम् अमृतं, काङ्क्षतां कल्पवृक्षं, लक्ष्मीवासं पङ्कजाक्षाश्रयाशं (तम्) मनसि कलये ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>For those sinking in the ocean of becoming — a boat; for those plunging into darkness made bottomless by grief — the one light; the sword that severs the bondage of karma; for the anguish born of delusion — a nectar-medicine; for those who long — the wish-fulfilling tree; the abode of Lakṣmī — Him, the refuge of the lotus-eyed, I hold ever in my mind.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भवसागरात बुडणाऱ्यांना वाचविणारे जहाज, शोकाने अगाध भासणाऱ्या अंधकारांत निमग्न होणाऱ्यांना एकमेव प्रकाश व त्यांचा कर्मबंध छेदून टाकणारे खड्गच भासणाऱ्या मायेने उत्पन्न झालेल्या वेदनेवर अमृत औषध असणाऱ्या व आकांक्षा बाळगणाऱ्यांचा कल्पवृक्षच भासणाऱ्या त्या लक्ष्मीच्या निवास असणाऱ्या, कमलनेत्रांच्या आश्रयस्थानाचा मी मनात (सतत) विचार करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पोतम्</span>
+    <span class="word-iast">potam</span>
+  </div>
+  <div><span class="word-grammar">पोत (m./n., &#x27;boat, ship&#x27;); द्वितीया एकवचन नपुंसकलिङ्ग (accusative singular neuter)</span></div>
+  <div class="word-form">In this verse: पोतम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">a boat (of rescue)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नौका</p>
+  <div class="word-usage">
+    <div class="deva">दीनानाम् हरिः पोतम् इव।</div>
+    <div class="usage-iast">dīnānām hariḥ potam iva</div>
+    <div class="usage-meaning lang-en">Hari is as a boat to the afflicted.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दीनांसाठी हरी नौकेसारखा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मज्जताम्</span>
+    <span class="word-iast">majjatām</span>
+  </div>
+  <div><span class="word-grammar">√मज्ज् &#x27;to sink, dive&#x27; + शतृ (present participle); षष्ठी बहुवचन (genitive plural, &#x27;of those sinking&#x27;) — भवजलनिधौ मज्जताम् (पोतम्): &#x27;the boat for those sinking in the ocean of becoming&#x27;</span></div>
+  <div class="word-form">In this verse: मज्जताम् — genitive plural participle as printed</div>
+  <p class="word-meaning lang-en">for those sinking (in the ocean of becoming)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुडणाऱ्यांसाठी</p>
+  <div class="word-usage">
+    <div class="deva">मज्जताम् अपि हरिः शरणम्।</div>
+    <div class="usage-iast">majjatām api hariḥ śaraṇam</div>
+    <div class="usage-meaning lang-en">Even for the drowning, Hari is the refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बुडणाऱ्यांसाठीही हरी आश्रय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शोकागाधे तमसि</span>
+    <span class="word-iast">śokāgādhe tamasi</span>
+  </div>
+  <div><span class="word-grammar">शोक (m., &#x27;grief&#x27;) + अगाध (adj., &#x27;unfathomable, bottomless&#x27;), बहुव्रीहि (&#x27;made bottomless by grief&#x27;); तमस् (n., &#x27;darkness&#x27;); both सप्तमी एकवचन — &#x27;in the darkness made bottomless by grief&#x27; (शोक + अगाधे → शोकागाधे)</span></div>
+  <div class="word-form">In this verse: शोकागाधे तमसि — locative phrase as printed</div>
+  <p class="word-meaning lang-en">in the darkness made bottomless by grief</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोकरूपी अथांग अंधारात</p>
+  <div class="word-usage">
+    <div class="deva">शोकागाधे तमसि भक्तिः दीपः।</div>
+    <div class="usage-iast">śokāgādhe tamasi bhaktiḥ dīpaḥ</div>
+    <div class="usage-meaning lang-en">In grief-fathomless darkness, devotion is the lamp.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोकाने अथांग झालेल्या अंधारात भक्ती हाच दीप आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ज्योतिरेकम्</span>
+    <span class="word-iast">jyotirekam</span>
+  </div>
+  <div><span class="word-grammar">ज्योतिस् (n., &#x27;light&#x27;) + एक (adj., &#x27;one&#x27;), कर्मधारय (&#x27;the one light&#x27;); द्वितीया एकवचन (ज्योतिः + एकम् → ज्योतिरेकम्)</span></div>
+  <div class="word-form">In this verse: ज्योतिरेकम् — accusative singular as printed (ज्योतिः + एकम्)</div>
+  <p class="word-meaning lang-en">the one (saving) light</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकमेव प्रकाश</p>
+  <div class="word-usage">
+    <div class="deva">ज्योतिरेकम् हृदये ध्यायामि।</div>
+    <div class="usage-iast">jyotirekam hṛdaye dhyāyāmi</div>
+    <div class="usage-meaning lang-en">I meditate on the one light in my heart.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हृदयातील एकमेव प्रकाशाचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कर्मबन्धच्छिदासिम्</span>
+    <span class="word-iast">karmabandhacchidāsim</span>
+  </div>
+  <div><span class="word-grammar">कर्मन् (n., &#x27;karma&#x27;) + बन्ध (m., &#x27;bond&#x27;) + छिदा (f., &#x27;cutting&#x27;; √छिद्) + असि (m., &#x27;sword&#x27;), तत्पुरुष/उपपद chain (&#x27;the sword that is the cutting of karma&#x27;s bonds&#x27;); द्वितीया एकवचन पुंल्लिङ्ग (छिदा + असिम् → छिदासिम्)</span></div>
+  <div class="word-form">In this verse: कर्मबन्धच्छिदासिम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">the sword that severs the bonds of karma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कर्मबंध तोडणारी तलवार</p>
+  <div class="word-usage">
+    <div class="deva">ज्ञानम् एव कर्मबन्धच्छिदासिः।</div>
+    <div class="usage-iast">jñānam eva karmabandhacchidāsiḥ</div>
+    <div class="usage-meaning lang-en">Knowledge alone is the sword that severs karma&#x27;s bonds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्ञानच कर्मबंध तोडणारी तलवार आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आर्तेः अगदम्</span>
+    <span class="word-iast">ārteḥ agadam</span>
+  </div>
+  <div><span class="word-grammar">आर्तिः (f., &#x27;pain, anguish&#x27;; आर्त &#x27;afflicted&#x27; + ति), षष्ठी एकवचन; अगद (m./n., &#x27;medicine, antidote&#x27;), द्वितीया एकवचन — &#x27;the medicine for anguish&#x27; (the anguish born of the delusion named by the verse&#x27;s मायाम्); sandhi आर्तेः + अगदम् → आर्तेरगदम्</span></div>
+  <div class="word-form">In this verse: आर्तेः अगदम् — as printed (आर्तेः + अगदम् → आर्तेरगदम्)</div>
+  <p class="word-meaning lang-en">the medicine for anguish (born of delusion)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वेदनेवरील औषध</p>
+  <div class="word-usage">
+    <div class="deva">हरिस्मरणम् आर्तेः अगदम्।</div>
+    <div class="usage-iast">harismaraṇam ārteḥ agadam</div>
+    <div class="usage-meaning lang-en">Remembrance of Hari is the cure for anguish.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीचे स्मरण वेदनेवरील औषध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काङ्क्षतां कल्पवृक्षम्</span>
+    <span class="word-iast">kāṅkṣatāṃ kalpavṛkṣam</span>
+  </div>
+  <div><span class="word-grammar">√काङ्क्ष् &#x27;to desire, long for&#x27; + शतृ (present participle), षष्ठी बहुवचन (&#x27;of those who long&#x27;); कल्पवृक्ष (m., &#x27;wish-fulfilling tree&#x27;), द्वितीया एकवचन; sandhi काङ्क्षताम् + कल्पवृक्षम् → काङ्क्षतां कल्पवृक्षम्</span></div>
+  <div class="word-form">In this verse: काङ्क्षतां कल्पवृक्षम् — as printed (काङ्क्षताम् + कल्पवृक्षम्)</div>
+  <p class="word-meaning lang-en">the wish-tree for those who long</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इच्छा करणाऱ्यांचा कल्पवृक्ष</p>
+  <div class="word-usage">
+    <div class="deva">हरिः काङ्क्षताम् कल्पवृक्षम् इव।</div>
+    <div class="usage-iast">hariḥ kāṅkṣatāṃ kalpavṛkṣam iva</div>
+    <div class="usage-meaning lang-en">Hari is as the wish-tree to those who long.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इच्छा करणाऱ्यांसाठी हरी कल्पवृक्षासारखा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लक्ष्मीवासम्</span>
+    <span class="word-iast">lakṣmīvāsam</span>
+  </div>
+  <div><span class="word-grammar">लक्ष्मी (f.) + वास (m., &#x27;abode&#x27;), षष्ठी-तत्पुरुष (&#x27;the abode of Lakṣmī&#x27;); द्वितीया एकवचन पुंल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: लक्ष्मीवासम् — accusative singular as printed</div>
+  <p class="word-meaning lang-en">the abode of Lakṣmī</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लक्ष्मीचे निवासस्थान</p>
+  <div class="word-usage">
+    <div class="deva">हृदयम् भक्तस्य लक्ष्मीवासम् भवति।</div>
+    <div class="usage-iast">hṛdayam bhaktasya lakṣmīvāsam bhavati</div>
+    <div class="usage-meaning lang-en">The devotee&#x27;s heart becomes the abode of Lakṣmī.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्ताचे हृदय लक्ष्मीचे निवासस्थान होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पङ्कजाक्षाश्रयाशम् (?)</span>
+    <span class="word-iast">paṅkajākṣāśrayāśam (?)</span>
+  </div>
+  <div><span class="word-grammar">पङ्कजाक्ष (बहुव्रीहि: पङ्कजे इव अक्षिणी यस्य — &#x27;lotus-eyed&#x27;) + आश्रय (m., &#x27;refuge&#x27;) + आशम् (metrically motivated closing syllable; per the book&#x27;s Marathi, &#x27;कमलनेत्रांच्या आश्रयस्थाना&#x27; — &#x27;the refuge of the lotus-eyed&#x27;); द्वितीया एकवचन as printed — the print&#x27;s पङ्ककक्षाश्रयाशम् was emended to पङ्कजाक्षाश्रयाशम् (see the 7.7 textual note), with identical syllable weights</span></div>
+  <div class="word-form">In this verse: पङ्कजाक्षाश्रयाशम् (?) — accusative singular as printed (emended from पङ्ककक्षाश्रयाशम्)</div>
+  <p class="word-meaning lang-en">the refuge of the lotus-eyed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमलनयनाचा आश्रय (आशा)</p>
+  <div class="word-usage">
+    <div class="deva">पङ्कजाक्षाश्रयाशम् मनसि ध्यायामि।</div>
+    <div class="usage-iast">paṅkajākṣāśrayāśam manasi dhyāyāmi</div>
+    <div class="usage-meaning lang-en">I meditate in my mind on the refuge of the lotus-eyed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमलनेत्रांच्या आश्रयाचे मी मनात ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मनसि कलये</span>
+    <span class="word-iast">manasi kalaye</span>
+  </div>
+  <div><span class="word-grammar">मनस् (n., &#x27;mind&#x27;), सप्तमी एकवचन; √कल् (कलयति &#x27;to count, consider, contemplate&#x27;), लट् आत्मनेपद उत्तमपुरुष एकवचन — &#x27;I contemplate (in my mind)&#x27;</span></div>
+  <div class="word-form">In this verse: मनसि कलये — locative + 1st sg. verb as printed</div>
+  <p class="word-meaning lang-en">I hold (Him) in my mind; I contemplate</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मनात ध्यातो</p>
+  <div class="word-usage">
+    <div class="deva">नित्यम् हरिम् मनसि कलये।</div>
+    <div class="usage-iast">nityam harim manasi kalaye</div>
+    <div class="usage-meaning lang-en">I contemplate Hari in my mind daily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी रोज हरीचे मनात चिंतन करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the sarga&#x27;s great &#x27;prayer of metaphors&#x27;: each image names a human extremity — drowning, darkness, bondage, sickness, want — and answers it with the Lord. The sequence moves from rescue (boat, light, sword) to healing and fulfilment (medicine, wish-tree) to the stillness of Lakṣmī&#x27;s abode: grace does not only save, it settles the heart. &#x27;Manasi kalaye&#x27; turns the whole verse into a dhyāna practice — the mind holds Him under all these forms at once. For the sthala, the verse gathers the Kṛṣṇa story into one contemplative knot before the closing vision of the flute-player (v. 28).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा सर्गातील &#x27;रूपकांची महाप्रार्थना&#x27; आहे : प्रत्येक प्रतिमा मानवी अतीव अवस्था सांगते — बुडणे, अंधार, बंधन, व्याधी, इच्छा — आणि भगवंत तिला उत्तर देतात. क्रम तारणापासून (नौका, प्रकाश, खड्ग) बरे करण्याकडे व पूर्णतेकडे (औषध, कल्पवृक्ष) आणि शेवटी लक्ष्मीच्या निवासाच्या स्थिरतेकडे जातो : कृपा केवळ तारत नाही, तर हृदयाला स्थिर करते. &#x27;मनसि कलये&#x27; संपूर्ण श्लोकाला ध्यानसाधना बनवते — मन त्याला एकाच वेळी या सर्व रूपांत धारण करते. स्थलमहात्म्याच्या दृष्टीने हा श्लोक कृष्णकथा एका चिंतनगाठीत बांधतो, मुरलीधराच्या समारोप दर्शनापूर्वी (श्लोक २८).</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The boat across the &#x27;ocean of becoming&#x27; (bhavajaladhi) is among the oldest images of grace: for those who cannot swim the saṃsāra-sea themselves, the Lord is the ferry (tāraka). &#x27;Karmabandhacchid&#x27; — the sword severing karmic bonds — recalls the Gītā&#x27;s sword of knowledge, jñānāsinā (4.42). The kalpavṛkṣa is the wish-tree of Indra&#x27;s heaven; here it is surpassed, for the Lord grants not heaven&#x27;s pleasures but liberation itself. &#x27;Lakṣmīvāsa&#x27; — He in whose heart Lakṣmī dwells — is the Vaiṣṇava seal: Śrī never leaves Him.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;भवजलधि&#x27; ओलांडणारी नौका ही कृपेच्या प्राचीनतम प्रतिमांपैकी एक आहे : जे स्वतः संसारसमुद्र पोहू शकत नाहीत त्यांच्यासाठी भगवंत तारक नौका आहेत. &#x27;कर्मबंधच्छित्&#x27; — कर्मबंधन तोडणारे खड्ग — गीतेच्या ज्ञानखड्गाची (४.४२) आठवण करून देते. कल्पवृक्ष हा इंद्राच्या स्वर्गातील इच्छापूर्ती वृक्ष आहे; येथे तो मागे पडतो : भगवंत स्वर्गसुखे नव्हे, तर साक्षात् मोक्ष देतात. &#x27;लक्ष्मीवास&#x27; — ज्याच्या हृदयात लक्ष्मी वास करते — हे वैष्णवमुद्रा आहे : श्री त्याला कधीही सोडत नाही.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is in Mandākrāntā (17 syllables per pāda: 4+6+7). The long chain of accusatives — पोतम्, ज्योतिः, असिम्, अगदम्, अमृतम्, कल्पवृक्षम्, वासम्, आश्रयाशम् — stand in apposition as objects of the single verb कलये (&#x27;I contemplate&#x27;): He is, at once, all these things to all these sufferers. Line 4&#x27;s पङ्कजाक्षाश्रयाशम् carries the sarga&#x27;s recorded emendation: the print read पङ्ककक्षाश्रयाशम् (see the 7.7 textual note); पङ्कजाक्ष restores &#x27;lotus-eyed&#x27; with identical syllable weights, so the metre is undisturbed. The final आशम् supplies the seventeenth syllable; the book&#x27;s Marathi reads the whole as &#x27;the refuge of the lotus-eyed.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक मंदाक्रान्तेत आहे (प्रत्येक चरण १७ अक्षरे : ४+६+७). द्वितीयांची दीर्घ माळ — पोतम्, ज्योतिः, असिम्, अगदम्, अमृतम्, कल्पवृक्षम्, वासम्, आश्रयाशम् — ही सर्व समानाधिकरणात असून एकाच कलये (&#x27;मी चिंतितो&#x27;) क्रियापदाची कर्मे आहेत : तो एकाच वेळी या सर्व पीडितांसाठी ही सर्व आहे. चौथ्या ओळीतील पङ्कजाक्षाश्रयाशम् हा सर्गात नोंदवलेली दुरुस्ती वाहतो : छापील प्रतीत पङ्ककक्षाश्रयाशम् होते (७.७ ची पाठ-चर्चा पहा); पङ्कजाक्ष &#x27;कमलनेत्र&#x27; परत आणते, अक्षरभार सारखेच असल्याने वृत्त अबाधित राहते. शेवटचे आशम् सतरावे अक्षर पुरवते; पुस्तकाचे मराठी संपूर्ण शब्दाला &#x27;कमलनेत्रांच्या आश्रयस्थाना&#x27; असे वाचते.</p></div></div>
+
+<div class="pagenav"><a href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 26</div></a><a class="next" href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 28</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 10 — Vāḍeśvarālayavarṇanam 44 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 10 — Vāḍeśvarālayavarṇanam</a><span>&rsaquo;</span><span class="here">Verse 44</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 44</span><span class="bl-mr lang-mr">श्लोक 44</span></h1>
+<p class="meta">Sarga 10 — Vāḍeśvarālayavarṇanam &middot; <span class="deva">दशमः सर्गः · वाडेश्वरालयवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">प्रत्यक्षो जामदग्न्यस्य निजरूपेण यः सदा ।<br>अन्येषां लिङ्गरूपेण बहुरूपी समस्तदृक् ।।४४।।</div>
+  <div class="verse-iast">pratyakṣo jāmadagnyasya nijarūpeṇa yaḥ sadā । anyeṣāṃ liṅgarūpeṇa bahurūpī samastadṛk</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">प्रत्यक्षः । जामदग्न्यस्य । निज-रूपेण । यः । सदा । अन्येषाम् । लिङ्ग-रूपेण । बहु-रूपी । समस्त-दृक् ।</div><div class="vig-iast">pratyakṣaḥ । jāmadagnyasya । nija-rūpeṇa । yaḥ । sadā । anyeṣām । liṅga-rūpeṇa । bahu-rūpī । samasta-dṛk ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रत्यक्षः + जामदग्न्यस्य = प्रत्यक्षो जामदग्न्यस्य</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यः बहुरूपी समस्तदृक् जामदग्न्यस्य सदा निजरूपेण प्रत्यक्षः, अन्येषां लिङ्गरूपेण (प्रत्यक्षः) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>To Jāmadagnya He is ever manifest in His own true form; to all others, in the form of the liṅga — the many-formed, all-beholding Lord.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा बहुरूपी व सर्वसाक्षी वाडेश्वर परशुरामाला सदैव निजरूपांत प्रत्यक्ष दिसतो व इतरांसाठी लिङ्गरूपांत दृष्टीला पडतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जामदग्न्यस्य</span>
+    <span class="word-iast">jāmadagnyasya</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular of जामदग्न्य (descendant of Jamadagni = Paraśurāma); from जमदग्नि + ष्यञ्, used here with dative force</span></div>
+  <div class="word-form">In this verse: जामदग्न्यस्य</div>
+  <p class="word-meaning lang-en">of Paraśurāma, the son of Jamadagni</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाला</p>
+  <div class="word-usage">
+    <div class="deva">जामदग्न्यस्य तपो महदासीत्।</div>
+    <div class="usage-iast">jāmadagnyasya tapo mahadāsīt.</div>
+    <div class="usage-meaning lang-en">The austerity of Paraśurāma was great.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाचे तप महान होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निजरूपेण</span>
+    <span class="word-iast">nijarūpeṇa</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa compound, neuter instrumental singular; निज + रूप</span></div>
+  <div class="word-form">In this verse: निजरूपेण</div>
+  <p class="word-meaning lang-en">in His own true form</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःच्या रूपात</p>
+  <div class="word-usage">
+    <div class="deva">देवः स्वभक्ताय निजरूपेणादृश्यत।</div>
+    <div class="usage-iast">devaḥ svabhaktāya nijarūpeṇādṛśyata.</div>
+    <div class="usage-meaning lang-en">The Lord appeared to His devotee in His own true form.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव आपल्या भक्ताला स्वतःच्या रूपात दिसला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्येषाम्</span>
+    <span class="word-iast">anyeṣām</span>
+  </div>
+  <div><span class="word-grammar">masculine/neuter genitive plural of अन्य</span></div>
+  <div class="word-form">In this verse: अन्येषाम्</div>
+  <p class="word-meaning lang-en">of others, for others</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इतरांना</p>
+  <div class="word-usage">
+    <div class="deva">अन्येषां कृते सदा यत्नः करणीयः।</div>
+    <div class="usage-iast">anyeṣāṃ kṛte sadā yatnaḥ karaṇīyaḥ.</div>
+    <div class="usage-meaning lang-en">Effort should always be made for the sake of others.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इतरांसाठी नेहमी प्रयत्न करावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बहुरूपी</span>
+    <span class="word-iast">bahurūpī</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound, masculine nominative singular; बहु + रूप + इन्</span></div>
+  <div class="word-form">In this verse: बहुरूपी</div>
+  <p class="word-meaning lang-en">the many-formed one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक रूपे धारण करणारा</p>
+  <div class="word-usage">
+    <div class="deva">बहुरूपी विष्णुः पुराणेषु वर्ण्यते।</div>
+    <div class="usage-iast">bahurūpī viṣṇuḥ purāṇeṣu varṇyate.</div>
+    <div class="usage-meaning lang-en">Viṣṇu the many-formed is described in the Purāṇas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अनेक रूपे धारण करणारा विष्णू पुराणांत वर्णिला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समस्तदृक्</span>
+    <span class="word-iast">samastadṛk</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi compound, masculine nominative singular; समस्त + √दृश् + क्विप् (agent of seeing)</span></div>
+  <div class="word-form">In this verse: समस्तदृक्</div>
+  <p class="word-meaning lang-en">the all-seeing one</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वद्रष्टा, सर्वसाक्षी</p>
+  <div class="word-usage">
+    <div class="deva">समस्तदृक् ईश्वरः सर्वं पश्यति।</div>
+    <div class="usage-iast">samastadṛk īśvaraḥ sarvaṃ paśyati.</div>
+    <div class="usage-meaning lang-en">Īśvara the all-seeing beholds everything.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वसाक्षी ईश्वर सर्व काही पाहतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse resolves the apparent distance between the mythic past and the present: to Paraśurāma, the sthala&#x27;s founder, the Lord is ever visible in His own true form; to other devotees, in the liṅga. The teaching is that the same God shows Himself according to the devotee&#x27;s capacity — many-formed in grace, yet one all-seeing witness. For the pilgrim, this means the liṅga before him is not a lesser presence but the very presence, given in the form his eyes can bear.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक पौराणिक भूतकाळ आणि वर्तमान यांतील दिसणारे अंतर दूर करतो — या स्थलाच्या संस्थापकाला, परशुरामाला, भगवान् सदैव आपल्या निजरूपात दिसतो; इतर भक्तांना लिंगरूपात. यातली शिकवण अशी की तोच ईश्वर भक्ताच्या क्षमतेनुसार स्वतःला प्रकट करतो — कृपेत अनेक रूपे धारण करणारा, तरीही एकच सर्वसाक्षी. यात्रेकरूसाठी याचा अर्थ असा की त्याच्या समोरील लिंग ही काही कमी प्रतीची उपस्थिती नसून तीच उपस्थिती आहे — त्याच्या डोळ्यांना सहन होईल अशा रूपात दिलेली.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The tradition reads a double darśana here, not a contradiction: Paraśurāma, the sthala&#x27;s founder and the Lord&#x27;s own devotee, beholds Him always in His निजरूप — His own true form — while other worshippers behold Him in the liṅga. Grace is proportioned to bhakti, and the same Lord is बहुरूपी, many-formed in His showing, yet समस्तदृक्, the one all-seeing witness who beholds every beholder. For the pilgrim the teaching is tender: the liṅga before you is no lesser presence — it is the full presence, given in the form your eyes can bear.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परंपरा येथे दुहेरी दर्शन वाचते, विरोधाभास नव्हे — या स्थलाचा संस्थापक आणि भगवंताचा स्वतःचा भक्त परशुराम त्याला सदैव निजरूपात — स्वतःच्या खऱ्या रूपात — पाहतो, तर इतर उपासक लिंगरूपात पाहतात. कृपा भक्तीच्या प्रमाणात मिळते, आणि तोच भगवान् बहुरूपी आहे — प्रकटनात अनेक रूपे धारण करणारा, तरी समस्तदृक् आहे — प्रत्येक द्रष्ट्याला पाहणारा एकच सर्वसाक्षी. यात्रेकरूसाठी शिकवण प्रेमळ आहे — तुझ्यासमोरील लिंग ही काही कमी प्रतीची उपस्थिती नाही — ती पूर्ण उपस्थितीच आहे, तुझ्या डोळ्यांना सहन होईल अशा रूपात दिलेली.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>जामदग्न्यस्य (&#x27;of the son of Jamadagni&#x27;, i.e. Paraśurāma) is genitive with dative force — &#x27;for Paraśurāma&#x27;. The verse is built on a clean parallel: निजरूपेण / लिङ्गरूपेण, with सदा प्रत्यक्षः stated for the one and प्रत्यक्षः understood for the others. बहुरूपी and समस्तदृक् are bahuvrīhi epithets — &#x27;whose forms are many&#x27;, &#x27;whose seeing embraces all&#x27; — closing the verse with the Lord&#x27;s twofold character: manifold in grace, single in witness. After the temple&#x27;s description (the sarga&#x27;s title is Vāḍeśvarālayavarṇanam), the poet now settles the theology of the deity&#x27;s presence before the final benediction.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जामदग्न्यस्य (&#x27;जमदग्नीचा पुत्र&#x27;, म्हणजे परशुराम) ही षष्ठी चतुर्थीच्या अर्थाने आहे — &#x27;परशुरामासाठी&#x27;. श्लोक स्वच्छ समांतर रचनेवर उभा आहे — निजरूपेण / लिङ्गरूपेण; एकासाठी सदा प्रत्यक्ष म्हटले आहे, इतरांसाठी प्रत्यक्ष अध्याहृत आहे. बहुरूपी आणि समस्तदृक् ही बहुव्रीही विशेषणे आहेत — &#x27;ज्याची रूपे अनेक&#x27;, &#x27;ज्याचे पाहणे सर्वांना व्यापते&#x27; — भगवंताच्या दुहेरी स्वभावाने श्लोकाचा समारोप होतो — कृपेत अनेक, साक्षित्वात एक. मंदिराच्या वर्णनानंतर (सर्गाचे नाव वाडेश्वरालयवर्णनम् आहे) कवी आता अंतिम आशीर्वादापूर्वी देवतेच्या उपस्थितीचे तत्त्वज्ञान निश्चित करतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 43</div></a><a class="next" href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 45</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

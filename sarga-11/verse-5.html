@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 5 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 5</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">वाडेशादथ हुतभुग्दिशाविभागे विक्षेपावधि विशिखस्य सुप्रसिद्धम् ।<br>सुक्षेत्रं परमपवित्रमेकमुर्व्यां कंसारेर्जयति जनैरुपास्यमानम् ।।५।।</div>
+  <div class="verse-iast">vāḍeśādatha hutabhugdiśāvibhāge vikṣepāvadhi viśikhasya suprasiddham । sukṣetraṃ paramapavitramekamurvyāṃ kaṃsārerjayati janairupāsyamānam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">वाडेशात् । अथ । हुतभुक्-दिशा-विभागे । विक्षेप-अवधि । विशिखस्य । सु-प्रसिद्धम् । सु-क्षेत्रम् । परम-पवित्रम् । एकम् । उर्व्याम् । कंस-अरेः । जयति । जनैः । उपास्यमानम् ।</div><div class="vig-iast">vāḍeśāt । atha । hutabhuk-diśā-vibhāge । vikṣepa-avadhi । viśikhasya । su-prasiddham । su-kṣetram । parama-pavitram । ekam । urvyām । kaṃsa-areḥ । jayati । janaiḥ । upāsyamānam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वाडेशात् + अथ = वाडेशादथ · हुतभुक् + दिशा = हुतभुग्दिशा (जश्त्व) · पवित्रम् + एकम् = पवित्रमेकम् · एकम् + उर्व्याम् = एकमुर्व्याम् · कंस + अरेः = कंसारेः · कंसारेः + जयति = कंसारेर्जयति · जनैः + उपास्यमानम् = जनैरुपास्यमानम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ वाडेशात् हुतभुग्दिशाविभागे विशिखस्य विक्षेपावधि जनैः उपास्यमानं सुप्रसिद्धं परमपवित्रं कंसारेः एकं सुक्षेत्रम् उर्व्यां जयति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>South-east of Vāḍeśa, an arrow&#x27;s flight away, there triumphs upon the earth a most holy and far-famed kṣetra of Kaṁsa&#x27;s foe — one blessed shrine, worshipped by the people.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वाडेशापासून आग्नेय दिशेला एक बाण फेकण्याच्या अंतरावर सुप्रसिद्ध, लोकांकडून आजही पूजित होणारे व परमपवित्र असे कंसरिपू श्रीकृष्णाचे एक स्थान पृथ्वीवर विराजमान आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हुतभुग्दिशाविभागे</span>
+    <span class="word-iast">hutabhugdiśāvibhāge</span>
+  </div>
+  <div><span class="word-grammar">masculine locative singular (hutabhuk-diśā-vibhāga, compound)</span></div>
+  <div class="word-form">In this verse: हुतभुग्दिशाविभागे</div>
+  <p class="word-meaning lang-en">in the south-eastern (fire) quarter</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अग्नीच्या दिशेला (आग्नेय)</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामस्य हुतभुग्दिशाविभागे नदी वहति।</div>
+    <div class="usage-iast">grāmasya hutabhugdiśāvibhāge nadī vahati.</div>
+    <div class="usage-meaning lang-en">A river flows to the south-east of the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या आग्नेयेला नदी वाहते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कंसारेः</span>
+    <span class="word-iast">kaṃsāreḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular (कंस-अरि)</span></div>
+  <div class="word-form">In this verse: कंसारेः</div>
+  <p class="word-meaning lang-en">of Kaṁsa&#x27;s foe (Kṛṣṇa)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कंसाच्या शत्रूचे (श्रीकृष्णाचे)</p>
+  <div class="word-usage">
+    <div class="deva">कंसारेः कथा भागवते पठ्यते।</div>
+    <div class="usage-iast">kaṃsāreḥ kathā bhāgavate paṭhyate.</div>
+    <div class="usage-meaning lang-en">The story of Kaṁsa&#x27;s foe is read in the Bhāgavata.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कंसाच्या शत्रूची कथा भागवतात वाचली जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुक्षेत्रम्</span>
+    <span class="word-iast">sukṣetram</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative singular (सु-क्षेत्र)</span></div>
+  <div class="word-form">In this verse: सुक्षेत्रम्</div>
+  <p class="word-meaning lang-en">a blessed holy place</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम क्षेत्र</p>
+  <div class="word-usage">
+    <div class="deva">इदं सुक्षेत्रं यात्रिकैः सेव्यते।</div>
+    <div class="usage-iast">idaṃ sukṣetraṃ yātrikaiḥ sevyate.</div>
+    <div class="usage-meaning lang-en">This blessed kṣetra is frequented by pilgrims.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या पुण्यक्षेत्राला यात्रेकरू भेट देतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जनैरुपास्यमानम्</span>
+    <span class="word-iast">janairupāsyamānam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative/accusative singular present passive participle (उप-√आस्) with instrumental जनैः</span></div>
+  <div class="word-form">In this verse: जनैरुपास्यमानम्</div>
+  <p class="word-meaning lang-en">being worshipped by the people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांकडून उपासिले जाणारे</p>
+  <div class="word-usage">
+    <div class="deva">जनैरुपास्यमानं देवालयं पश्य।</div>
+    <div class="usage-iast">janairupāsyamānaṃ devālayaṃ paśya.</div>
+    <div class="usage-meaning lang-en">Behold the temple worshipped by the people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकांकडून पूजिले जाणारे देऊळ पाहा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जयति</span>
+    <span class="word-iast">jayati</span>
+  </div>
+  <div><span class="word-grammar">present 3rd singular (√जि)</span></div>
+  <div class="word-form">In this verse: जयति</div>
+  <p class="word-meaning lang-en">triumphs, shines gloriously</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विजयी आहे, शोभते</p>
+  <div class="word-usage">
+    <div class="deva">धर्मो जयति सर्वदा।</div>
+    <div class="usage-iast">dharmo jayati sarvadā.</div>
+    <div class="usage-meaning lang-en">Dharma ever triumphs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्माचा नेहमी विजय होतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sarga balances Śiva and Viṣṇu shrines around Guhagar, and this verse introduces Kṛṣṇa&#x27;s kṣetra with the poet&#x27;s benedictory jayati — &#x27;it triumphs&#x27;. A shrine &#x27;triumphs&#x27; when it lives: worshipped by people, famed abroad, supremely pure. The verse quietly teaches that holiness is not a property of stones but of continuous, living worship.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा सर्ग गुहागरभोवती शिव आणि विष्णू यांची देवालये समतोलपणे मांडतो आणि हा श्लोक कृष्णाच्या क्षेत्राची ओळख कवीच्या आशीर्वादात्मक &#x27;जयति&#x27; — &#x27;ते विजयी आहे&#x27; — या शब्दाने करून देतो. लोकांकडून पूजिले जाणारे, दूरवर प्रसिद्ध, परमपवित्र देवस्थानच &#x27;विजयी&#x27; होते. हा श्लोक शांतपणे शिकवतो की पावित्र्य हे दगडांचा गुणधर्म नसून अखंड, जिवंत उपासनेचा गुणधर्म आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Kṛṣṇa as Kaṁsāri, the foe of Kaṁsa, is the beloved deity of the Konkan coast, where Vaiṣṇava and Śaiva shrines stand side by side. Sthala literature seldom insists on sectarian boundaries; the same poet who glorifies Śiva&#x27;s liṅgas celebrates Kṛṣṇa&#x27;s kṣetra with equal devotion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कंसारी — कंसाचा शत्रू — असलेला कृष्ण हा कोकणकिनाऱ्याचा लाडका देव असून तेथे वैष्णव व शैव देवालये शेजारीशेजारी उभी आहेत. स्थल-साहित्य क्वचितच पंथीय सीमा आग्रहाने मांडते; शिवलिंगांचा गौरव करणारा हाच कवी कृष्णाच्या क्षेत्राचे तितक्याच भक्तीने कौतुक करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Hutabhuk (&#x27;the oblation-eater&#x27;) is Agni, whose quarter is the south-east (āgneya). The arrow-shot measure (vikṣepāvadhi viśikhasya) recurs from verse 1, giving the shrine-tour a consistent scale. Jayati — &#x27;triumphs&#x27; — is the poet&#x27;s benedictory idiom for a living, worshipped shrine.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;हुतभुक्&#x27; (हवी भक्षण करणारा) म्हणजे अग्नी; त्याची दिशा आग्नेय आहे. बाणाच्या टप्प्याचे माप (विक्षेपावधि विशिखस्य) श्लोक १ वरून परत येते — त्यामुळे देवालय-यात्रेला एकसंध माप मिळते. &#x27;जयति&#x27; — &#x27;विजयी आहे&#x27; — ही जिवंत, पूजिल्या जाणाऱ्या देवस्थानासाठी कवीची आशीर्वादात्मक भाषा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 4</div></a><a class="next" href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 6</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

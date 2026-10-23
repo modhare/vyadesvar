@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">भगवन्सरस्वदुदरे नगरी ङ्किमस्तके सति लकेति मम ।।<br>अविलंघ्यनीरनिधिदुर्गवृतामवजेतुमीश इह कोऽपि न ताम् ।।२५।।</div>
+  <div class="verse-iast">bhagavansarasvadudare nagarī ṅkimastake sati laketi mama । । avilaṃghyanīranidhidurgavṛtāmavajetumīśa iha ko&#x27;pi na tām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">भगवन् । सरस्वत्-उदरे । नगरी । ङ्कि-मस्तके । सति । लका । इति । मम । अविलङ्घ्य-नीरनिधि-दुर्ग-वृताम् । अवजेतुम् । ईशः । इह । कः । अपि । न । ताम् ।</div><div class="vig-iast">bhagavan । sarasvat-udare । nagarī । ṅki-mastake । sati । lakā । iti । mama । avilaṅghya-nīranidhi-durga-vṛtām । avajetum । īśaḥ । iha । kaḥ । api । na । tām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भगवन् + सरस्वत् = भगवन्सरस्वत् · सरस्वत् + उदरे = सरस्वदुदरे (त् → द्) · लका + इति = लकेति (गुण) · वृताम् + अवजेतुम् + ईशः = वृतामवजेतुमीशः · ईशः + इह = ईश इह (विसर्गलोप) · कः + अपि = कोऽपि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भगवन्, सरस्वदुदरे ‘ङ्किमस्तके सति लका’ इति (नाम) मम नगरी (अस्ति); अविलङ्घ्यनीरनिधिदुर्गवृतां ताम् अवजेतुम् इह कः अपि ईशः न (अस्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;O Lord, in the belly of the ocean lies my capital, named Laṅkā — formed by placing the letter ṅa atop the word lakā. None here is able to conquer it, girt as it is by the impassable ocean as its fortress.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;&#x27;भगवन्, समुद्राच्या उदरात &#x27;लका&#x27; या शब्दाच्या डोक्यावर ङ् ठेवला असता होणाऱ्या &#x27;लङ्का&#x27; नावाची माझी नगरी (राजधानी) आहे. ओलांडता न येणाऱ्या समुद्ररूपी दुर्गाने वेढलेल्या त्या नगरीला जिंकण्यास, हे भगवन्, कोणीही समर्थ नाही.&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरस्वदुदरे</span>
+    <span class="word-iast">sarasvadudare</span>
+  </div>
+  <div><span class="word-grammar">neuter locative singular; तत्पुरुष सरस्वत्-उदर (&#x27;belly of the sea&#x27;; सरस्वत् = &#x27;ocean&#x27; here)</span></div>
+  <div class="word-form">In this verse: सरस्वदुदरे (सप्तमी एकवचन)</div>
+  <p class="word-meaning lang-en">in the belly / midst of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या उदरात (सरस्वत् = समुद्र)</p>
+  <div class="word-usage">
+    <div class="deva">सरस्वत् उदरे मत्स्याः वसन्ति ।</div>
+    <div class="usage-iast">sarasvat udare matsyāḥ vasanti ।</div>
+    <div class="usage-meaning lang-en">Fishes dwell in the belly of the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या उदरात मासे राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नगरी</span>
+    <span class="word-iast">nagarī</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular</span></div>
+  <div class="word-form">In this verse: नगरी (प्रथमा एकवचन)</div>
+  <p class="word-meaning lang-en">city, capital</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजधानी</p>
+  <div class="word-usage">
+    <div class="deva">नगरी समृद्धा अभवत् ।</div>
+    <div class="usage-iast">nagarī samṛddhā abhavat ।</div>
+    <div class="usage-meaning lang-en">The city became prosperous.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नगरी समृद्ध झाली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अविलङ्घ्यनीरनिधिदुर्गवृताम्</span>
+    <span class="word-iast">avilaṅghyanīranidhidurgavṛtām</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular; बहुव्रीहि: अविलङ्घ्य-नीरनिधि-दुर्ग-वृत (&#x27;encompassed by the impassable-ocean-fortress&#x27;)</span></div>
+  <div class="word-form">In this verse: अविलङ्घ्यनीरनिधिदुर्गवृताम् (द्वितीया एकवचन)</div>
+  <p class="word-meaning lang-en">girt by the impassable ocean as its fortress</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओलांडता न येणाऱ्या सागररूपी किल्ल्याने वेढलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">सेना अविलङ्घ्य नीरनिधि दुर्ग वृताम् पुरीम् अपश्यत् ।</div>
+    <div class="usage-iast">senā avilaṅghya nīranidhi durga vṛtām purīm apaśyat ।</div>
+    <div class="usage-meaning lang-en">The army saw the city girt by the impassable ocean-fortress.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सैन्याने ओलांडता न येणाऱ्या सागर-दुर्गाने वेढलेली नगरी पाहिली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवजेतुम् ईशः</span>
+    <span class="word-iast">avajetum īśaḥ</span>
+  </div>
+  <div><span class="word-grammar">अवजेतुम् — infinitive (तुमुन्) of अव + √जि; ईशः — masculine nominative singular (&#x27;capable&#x27;)</span></div>
+  <div class="word-form">In this verse: अवजेतुम् (तुमुन्) + ईशः</div>
+  <p class="word-meaning lang-en">able to conquer</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जिंकण्यास समर्थ</p>
+  <div class="word-usage">
+    <div class="deva">कः ताम् पुरीम् अवजेतुम् ईशः अस्ति ।</div>
+    <div class="usage-iast">kaḥ tām purīm avajetum īśaḥ asti ।</div>
+    <div class="usage-meaning lang-en">Who is able to conquer that city?</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या नगरीला जिंकण्यास कोण समर्थ आहे?</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāvaṇa describes Laṅkā&#x27;s safety — a city ringed by the sea, unconquerable — yet the verse quietly teaches the limits of all earthly fortresses: the very ocean that guards Laṅkā is now receding at a sage&#x27;s arrow, and walls that nature built can be unbuilt by divine will. Security founded on geography alone is fragile; the poet will soon show the true refuge in the muni&#x27;s own region (3.32).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रावण लंकेची सुरक्षितता वर्णितो — समुद्राने वेढलेली, अजिंक्य नगरी — पण हा श्लोक शांतपणे सर्व पार्थिव दुर्गांच्या मर्यादा शिकवतो : लंकेचे रक्षण करणाराच समुद्र आता ऋषीच्या बाणाने मागे हटत आहे; निसर्गाने बांधलेल्या भिंती दैवी इच्छेने पाडल्या जाऊ शकतात. केवळ भूगोलावर उभारलेली सुरक्षितता नाजूक असते; खरे आश्रयस्थान मुनीच्याच प्रदेशात आहे, हे कवी लवकरच दाखवणार आहे (३.३२).</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The letter-riddle (prahelikā) naming Laṅkā by &#x27;ṅa placed on the head of lakā&#x27; is a courtly kāvya sport; the Rāmāyaṇa itself describes Laṅkā as girt by the ocean and therefore unassailable except by Rāma&#x27;s causeway. The poet keeps that epic geography intact — Laṅkā&#x27;s sea-moat is real, which is why its draining is a crisis.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;लका&#x27;च्या डोक्यावर ङ् ठेवून लंका हे नाव सांगणारी अक्षर-प्रहेलिका हा दरबारी काव्य-खेळ आहे; रामायणातही लंका समुद्राने वेढलेली व म्हणून रामाच्या सेतूशिवाय अभेद्य वर्णिली आहे. कवी तो महाकाव्य-भूगोल जसाच्या तसा ठेवतो — लंकेचा सागर-खंदक खरा आहे, म्हणूनच त्याचे आटणे हे संकट आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The OCR-notes confirm the print&#x27;s ङ्किमस्तके: the ड्-shaped glyph is ङ्, as the Marathi note&#x27;s riddle shows (ङ् + लका = लङ्का). The pāda remains one syllable short of Pramitākṣarā as printed; it is left unchanged and flagged here.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शुद्धिपत्रात छापील ङ्किमस्तके खरे ठरवले आहे : ड्-सारखे दिसणारे अक्षर ङ् आहे, जसे मराठी टीपेतील कोड्यातून दिसते (ङ् + लका = लङ्का). छापील रूपात हा पाद प्रमिताक्षरेच्या एका अक्षराने कमी आहे; तसाच ठेवून येथे नोंद केली आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 3 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 3</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 3</span><span class="bl-mr lang-mr">श्लोक 3</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śārdūlavikrīḍitam</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">श्रीकृष्ण स्वजनेष्टदापरिमितं नत्वाऽर्थये त्वामिदं<br>यन्मन्मौढ्यविलेलिहाननिशितव्यालस्फटामण्डले ।।<br>तार्क्ष्यस्कन्धकृतासनेन भवता स्थानं विधेयं क्षणं<br>तेनैवाखिलवाङ्मयस्य सपदि स्यां पारगस्तत्त्वतः ।।३।।</div>
+  <div class="verse-iast">śrīkṛṣṇa svajaneṣṭadāparimitaṃ natvā&#x27;rthaye tvāmidaṃ yanmanmauḍhyavilelihānaniśitavyālasphaṭāmaṇḍale । । tārkṣyaskandhakṛtāsanena bhavatā sthānaṃ vidheyaṃ kṣaṇaṃ tenaivākhilavāṅmayasya sapadi syāṃ pāragastattvataḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">श्रीकृष्ण । स्वजन-इष्ट-द । अपरिमितम् । नत्वा । अर्थये । त्वाम् । इदम् । यत् । मत्-मौढ्य-विलेलिहान-निशित-व्याल-स्फटा-मण्डले । तार्क्ष्य-स्कन्ध-कृत-आसनेन । भवता । स्थानम् । विधेयम् । क्षणम् । तेन । एव । अखिल-वाङ्मयस्य । सपदि । स्याम् । पारगः । तत्त्वतः ।</div><div class="vig-iast">śrīkṛṣṇa । svajana-iṣṭa-da । aparimitam । natvā । arthaye । tvām । idam । yat । mat-mauḍhya-vilelihāna-niśita-vyāla-sphaṭā-maṇḍale । tārkṣya-skandha-kṛta-āsanena । bhavatā । sthānam । vidheyam । kṣaṇam । tena । eva । akhila-vāṅmayasya । sapadi । syām । pāragaḥ । tattvataḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">स्वजन + इष्ट = स्वजनेष्ट (गुण) · स्वजनेष्टद + अपरिमितम् = स्वजनेष्टदापरिमितम् (सवर्णदीर्घ) · नत्वा + अर्थये = नत्वाऽर्थये · त्वाम् + इदम् = त्वामिदम् · यत् + मत् = यन्मत् (त् → न्) · मत् + मौढ्य = मन्मौढ्य · कृत + आसनेन = कृतासनेन · तेन + एव = तेनैव (वृद्धि) · एव + अखिल = एवाखिल · वाक् + मय = वाङ्मय (क् → ङ्) · पारगः + तत्त्वतः = पारगस्तत्त्वतः (विसर्ग → स्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">हे (अपरिमितं) स्वजनेष्टद श्रीकृष्ण, (त्वां) नत्वा त्वाम् इदम् अर्थये — यत् तार्क्ष्यस्कन्धकृतासनेन भवता मन्मौढ्यविलेलिहाननिशितव्यालस्फटामण्डले क्षणं स्थानं विधेयम् । तेन एव (अहं) सपदि तत्त्वतः अखिलवाङ्मयस्य पारगः स्याम् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O Śrī Kṛṣṇa — boundless giver of cherished boons to your own devotees — bowing to you, I make this one request: that you, who have made a seat of Garuḍa&#x27;s mighty shoulders, should for a moment set your foot upon the circle of the expanded hoods of the serpent of my folly, ever flickering its keen tongue. For by that very act alone shall I, at once and in truth, reach the far shore of all learning.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्रीकृष्णा, स्वजनांवर इष्ट वस्तूंचा अपरिमित वर्षाव करणाऱ्या तुला वंदन करून मी तुझी याचना करतो की माझ्या मौर्ख्यरूपी सर्पाच्या तीक्ष्ण, वर्तुळाकार व विस्तीर्ण फणांवर गरुडाच्या विशाल शरीरावर आसन मांडणाऱ्या तू क्षणभर आरोहण करावे हे योग्य. कारण त्यामुळेच मी तत्त्वतः संपूर्ण वाङ्मयाच्या परतीरावर झटकन पोचू शकेन.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 3, line 1: नत्वाऽथर्वे → नत्वाऽर्थये (नत्वा + अर्थये, ‘वंदन करून याचना करतो’) Verse 3, line 2: विलोललिहान → विलेलिहान (intensive of √लिह्); विशित → निशित (‘तीक्ष्ण’; the Marathi तीक्ष्ण) Verse 3, line 3: कृतासनने → कृतासनेन (instrumental) Verse 3, line 4: पारगमस्तुतः → पारगस्तत्त्वतः (पारगः + तत्त्वतः)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वजनेष्टद</span>
+    <span class="word-iast">svajaneṣṭada</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (स्वजनेभ्यः इष्टं ददाति इति), masculine vocative singular</span></div>
+  <div class="word-form">In this verse: स्वजनेष्टदापरिमितं</div>
+  <p class="word-meaning lang-en">O giver of cherished boons to your own people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्वजनांना इष्ट देणाऱ्या (संबोधन)</p>
+  <div class="word-usage">
+    <div class="deva">स्वजन-इष्ट-द कृष्ण, माम् रक्ष ।</div>
+    <div class="usage-iast">svajana-iṣṭa-da kṛṣṇa, mām rakṣa ।</div>
+    <div class="usage-meaning lang-en">O Kṛṣṇa, giver of cherished boons to your own, protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्वजनांना इष्ट देणाऱ्या कृष्णा, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपरिमितम्</span>
+    <span class="word-iast">aparimitam</span>
+  </div>
+  <div><span class="word-grammar">past passive participle of परि + √मा with negative prefix अ-, used adverbially in the accusative</span></div>
+  <div class="word-form">In this verse: अपरिमितं</div>
+  <p class="word-meaning lang-en">boundlessly, immeasurably</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अपरिमितपणे</p>
+  <div class="word-usage">
+    <div class="deva">सः अपरिमितम् धनम् अयच्छत् ।</div>
+    <div class="usage-iast">saḥ aparimitam dhanam ayacchat ।</div>
+    <div class="usage-meaning lang-en">He gave wealth boundlessly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने अपरिमित धन दिले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नत्वा</span>
+    <span class="word-iast">natvā</span>
+  </div>
+  <div><span class="word-grammar">ktvā absolutive of √नम् (1st class)</span></div>
+  <div class="word-form">In this verse: नत्वा</div>
+  <p class="word-meaning lang-en">having bowed down</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमस्कार करून</p>
+  <div class="word-usage">
+    <div class="deva">गुरुम् नत्वा शिष्यः उपाविशत् ।</div>
+    <div class="usage-iast">gurum natvā śiṣyaḥ upāviśat ।</div>
+    <div class="usage-meaning lang-en">Having bowed to the teacher, the pupil sat down.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूंना नमस्कार करून शिष्य बसला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अर्थये</span>
+    <span class="word-iast">arthaye</span>
+  </div>
+  <div><span class="word-grammar">√अर्थ् (10th class, curādi, ātmanepada), present indicative, first person singular</span></div>
+  <div class="word-form">In this verse: अर्थये</div>
+  <p class="word-meaning lang-en">I request, I beg</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी याचना करतो (√अर्थ्, उत्तम पुरुष)</p>
+  <div class="word-usage">
+    <div class="deva">अहम् त्वाम् इदम् अर्थये ।</div>
+    <div class="usage-iast">aham tvām idam arthaye ।</div>
+    <div class="usage-meaning lang-en">I request this of you.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी तुझी ही याचना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्</span>
+    <span class="word-iast">yat</span>
+  </div>
+  <div><span class="word-grammar">indeclinable conjunction (from यद्), introducing the content of the request</span></div>
+  <div class="word-form">In this verse: यत्</div>
+  <p class="word-meaning lang-en">namely, that (introducing the prayer)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>की</p>
+  <div class="word-usage">
+    <div class="deva">यत् वदामि तत् शृणु ।</div>
+    <div class="usage-iast">yat vadāmi tat śṛṇu ।</div>
+    <div class="usage-meaning lang-en">Hear what I say.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी जे सांगतो ते ऐक.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्मौढ्य</span>
+    <span class="word-iast">manmauḍhya</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (मम मौढ्यम्), neuter stem form in compound</span></div>
+  <div class="word-form">In this verse: मन्मौढ्य</div>
+  <p class="word-meaning lang-en">my folly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझे मौर्ख्य (हाच सर्प)</p>
+  <div class="word-usage">
+    <div class="deva">मत्-मौढ्यम् एव मे शत्रुः ।</div>
+    <div class="usage-iast">mat-mauḍhyam eva me śatruḥ ।</div>
+    <div class="usage-meaning lang-en">My folly itself is my enemy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझे मौर्ख्य हाच माझा शत्रू आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विलेलिहान</span>
+    <span class="word-iast">vilelihāna</span>
+  </div>
+  <div><span class="word-grammar">intensive (yaṅanta) present participle (śānac) of √लिह् (2nd class), masculine nominative singular</span></div>
+  <div class="word-form">In this verse: विलेलिहान</div>
+  <p class="word-meaning lang-en">repeatedly licking, ever flickering (its tongue)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुनःपुन्हा जीभ चाटणारा (√लिह्, यङन्त, शानच्)</p>
+  <div class="word-usage">
+    <div class="deva">विलेलिहानः सर्पः बिलात् निर्गच्छति ।</div>
+    <div class="usage-iast">vilelihānaḥ sarpaḥ bilāt nirgacchati ।</div>
+    <div class="usage-meaning lang-en">The serpent, flickering its tongue again and again, comes out of its hole.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुनःपुन्हा जीभ चाटणारा सर्प बिळातून बाहेर येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निशित</span>
+    <span class="word-iast">niśita</span>
+  </div>
+  <div><span class="word-grammar">past passive participle of नि + √शो (4th class), used as adjective</span></div>
+  <div class="word-form">In this verse: निशित</div>
+  <p class="word-meaning lang-en">sharpened, keen</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीक्ष्ण</p>
+  <div class="word-usage">
+    <div class="deva">निशितः खड्गः शत्रुम् छिनत्ति ।</div>
+    <div class="usage-iast">niśitaḥ khaḍgaḥ śatrum chinatti ।</div>
+    <div class="usage-meaning lang-en">The sharpened sword cuts the enemy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीक्ष्ण तलवार शत्रूला छेदते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्याल</span>
+    <span class="word-iast">vyāla</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular</span></div>
+  <div class="word-form">In this verse: व्याल</div>
+  <p class="word-meaning lang-en">a serpent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्प</p>
+  <div class="word-usage">
+    <div class="deva">व्यालः फणाम् उत्थापयति ।</div>
+    <div class="usage-iast">vyālaḥ phaṇām utthāpayati ।</div>
+    <div class="usage-meaning lang-en">The serpent raises its hood.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्प फणा उभारतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्फटामण्डले</span>
+    <span class="word-iast">sphaṭāmaṇḍale</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (स्फटानां मण्डलम्), neuter locative singular</span></div>
+  <div class="word-form">In this verse: स्फटामण्डले</div>
+  <p class="word-meaning lang-en">on the circle of expanded hoods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फणांच्या मंडलावर (सप्तमी)</p>
+  <div class="word-usage">
+    <div class="deva">स्फटा-मण्डले पादम् मा धेहि ।</div>
+    <div class="usage-iast">sphaṭā-maṇḍale pādam mā dhehi ।</div>
+    <div class="usage-meaning lang-en">Do not set your foot on the circle of hoods.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फणांच्या मंडलावर पाय ठेवू नकोस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तार्क्ष्यस्कन्धकृतासनेन</span>
+    <span class="word-iast">tārkṣyaskandhakṛtāsanena</span>
+  </div>
+  <div><span class="word-grammar">bahuvrīhi (तार्क्ष्यस्य स्कन्धे कृतम् आसनं येन), masculine instrumental singular, agreeing with भवता</span></div>
+  <div class="word-form">In this verse: तार्क्ष्यस्कन्धकृतासनेन</div>
+  <p class="word-meaning lang-en">by you who have made a seat of Garuḍa&#x27;s shoulders</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरुडाच्या खांद्यावर आसन मांडणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">तार्क्ष्य-स्कन्ध-कृत-आसनेन विष्णुना जगत् रक्षितम् ।</div>
+    <div class="usage-iast">tārkṣya-skandha-kṛta-āsanena viṣṇunā jagat rakṣitam ।</div>
+    <div class="usage-meaning lang-en">The world is protected by Viṣṇu, who has made Garuḍa&#x27;s shoulders his seat.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गरुडाच्या खांद्यावर आसन मांडणाऱ्या विष्णूने जगाचे रक्षण केले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवता</span>
+    <span class="word-iast">bhavatā</span>
+  </div>
+  <div><span class="word-grammar">masculine/neuter instrumental singular of भवत् (honorific &#x27;you&#x27;)</span></div>
+  <div class="word-form">In this verse: भवता</div>
+  <p class="word-meaning lang-en">by you (honorific)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण (तृतीया; कर्मणि रचना)</p>
+  <div class="word-usage">
+    <div class="deva">भवता कृतम् कार्यम् साधु ।</div>
+    <div class="usage-iast">bhavatā kṛtam kāryam sādhu ।</div>
+    <div class="usage-meaning lang-en">The work done by you is excellent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण केलेले कार्य उत्तम आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्थानं विधेयम्</span>
+    <span class="word-iast">sthānaṃ vidheyam</span>
+  </div>
+  <div><span class="word-grammar">स्थानम् = neuter accusative singular; विधेयम् = gerundive (yat-pratyaya) of वि + √धा, passive construction &#x27;is to be done&#x27;</span></div>
+  <div class="word-form">In this verse: विधेयं</div>
+  <p class="word-meaning lang-en">a stand should be taken, the foot should be set</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उभे राहावे, पाय ठेवावा</p>
+  <div class="word-usage">
+    <div class="deva">अत्र एव स्थानम् विधेयम् ।</div>
+    <div class="usage-iast">atra eva sthānam vidheyam ।</div>
+    <div class="usage-meaning lang-en">The stand is to be taken right here.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथेच उभे राहावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षणम्</span>
+    <span class="word-iast">kṣaṇam</span>
+  </div>
+  <div><span class="word-grammar">masculine accusative singular, used adverbially (accusative of duration)</span></div>
+  <div class="word-form">In this verse: क्षणं</div>
+  <p class="word-meaning lang-en">for a moment</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्षणभर</p>
+  <div class="word-usage">
+    <div class="deva">क्षणम् तिष्ठ, मा गच्छ ।</div>
+    <div class="usage-iast">kṣaṇam tiṣṭha, mā gaccha ।</div>
+    <div class="usage-meaning lang-en">Stay a moment, do not go.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्षणभर थांब, जाऊ नकोस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तेन एव</span>
+    <span class="word-iast">tena eva</span>
+  </div>
+  <div><span class="word-grammar">तेन = neuter instrumental singular of तद्; एव = emphatic particle</span></div>
+  <div class="word-form">In this verse: तेनैवाखिल</div>
+  <p class="word-meaning lang-en">by that very (deed) alone</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यामुळेच</p>
+  <div class="word-usage">
+    <div class="deva">तेन एव कार्यम् सिद्धम् ।</div>
+    <div class="usage-iast">tena eva kāryam siddham ।</div>
+    <div class="usage-meaning lang-en">By that very act the work was accomplished.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच कृतीने कार्य सिद्ध झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सपदि</span>
+    <span class="word-iast">sapadi</span>
+  </div>
+  <div><span class="word-grammar">indeclinable adverb</span></div>
+  <div class="word-form">In this verse: सपदि</div>
+  <p class="word-meaning lang-en">at once, immediately</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्वरित</p>
+  <div class="word-usage">
+    <div class="deva">सः सपदि आगच्छत् ।</div>
+    <div class="usage-iast">saḥ sapadi āgacchat ।</div>
+    <div class="usage-meaning lang-en">He came at once.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो ताबडतोब आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अखिलवाङ्मयस्य पारगः</span>
+    <span class="word-iast">akhilavāṅmayasya pāragaḥ</span>
+  </div>
+  <div><span class="word-grammar">अखिलवाङ्मयस्य = neuter genitive singular (अखिल + वाङ्मय); पारगः = masculine nominative singular (पारं गच्छति)</span></div>
+  <div class="word-form">In this verse: पारगस्तत्त्वतः</div>
+  <p class="word-meaning lang-en">one who has reached the far shore of all literature</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपूर्ण वाङ्मयाच्या पलीकडे पोचलेला</p>
+  <div class="word-usage">
+    <div class="deva">अखिल-वाङ्मयस्य पारगः पण्डितः वन्द्यः ।</div>
+    <div class="usage-iast">akhila-vāṅmayasya pāragaḥ paṇḍitaḥ vandyaḥ ।</div>
+    <div class="usage-meaning lang-en">The scholar who has crossed to the far shore of all learning is worthy of honour.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपूर्ण वाङ्मयाच्या पैलतीराला पोचलेला पंडित वंदनीय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्याम्</span>
+    <span class="word-iast">syām</span>
+  </div>
+  <div><span class="word-grammar">√अस् (2nd class), optative (vidhiliṅ), first person singular</span></div>
+  <div class="word-form">In this verse: स्यां</div>
+  <p class="word-meaning lang-en">may I become</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मी व्हावे (√अस्, विधिलिङ्)</p>
+  <div class="word-usage">
+    <div class="deva">अहम् अपि पण्डितः स्याम् ।</div>
+    <div class="usage-iast">aham api paṇḍitaḥ syām ।</div>
+    <div class="usage-meaning lang-en">May I too become a scholar.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मीही पंडित व्हावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्त्वतः</span>
+    <span class="word-iast">tattvataḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable formed with तसिल् suffix from तत्त्व</span></div>
+  <div class="word-form">In this verse: तत्त्वतः</div>
+  <p class="word-meaning lang-en">in truth, truly, in essence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर</p>
+  <div class="word-usage">
+    <div class="deva">तत्त्वतः सः साधुः अस्ति ।</div>
+    <div class="usage-iast">tattvataḥ saḥ sādhuḥ asti ।</div>
+    <div class="usage-meaning lang-en">In truth, he is a good man.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>खरोखर तो सज्जन आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The poet does not ask Kṛṣṇa for learning itself but for the removal of its enemy — his own folly, pictured as a venomous serpent with spread hoods. Just as Garuḍa, the natural foe of serpents, crushes them underfoot, the Lord&#x27;s grace tramples ignorance. Devotionally this is the deepest humility of the maṅgala: the author admits that no kāvya about a holy place can be composed by a mind still bitten by mūrkhatā, and begs the Lord to stand upon that serpent first.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कवी कृष्णाकडे विद्या मागत नाही, तर तिच्या शत्रूचा — आपल्या मौर्ख्यरूपी विषारी सर्पाचा — नाश मागतो. सर्पांचा स्वाभाविक शत्रू गरुड जसा त्यांना पायदळी तुडवतो, तशी भगवंताची कृपा अज्ञानाला चिरडते. मंगलाची ही सर्वात गहन नम्रता आहे — मौर्ख्याने दंश केलेल्या मनाकडून पवित्र स्थळाचे काव्य रचले जाऊ शकत नाही, हे मान्य करून कवी भगवंताला आधी त्या सर्पावर पाय ठेवण्याची याचना करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Kṛṣṇa as Garuḍadhvaja — he whose banner and vehicle is Garuḍa — is the immemorial foe of serpents in Purāṇic lore: Garuḍa, son of Vinatā, humbled the serpent-sons of Kadru, and Viṣṇu rides him into every battle. The poet turns this cosmic enmity inward: the &#x27;serpent&#x27; is his own folly, its raised hoods the swelling of pride and ignorance. The image of &#x27;crossing to the far shore&#x27; (pāraga) is the Upaniṣadic figure for mastering a śāstra — knowledge as an ocean to be crossed, with the Lord&#x27;s footfall as the boat.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>गरुडध्वज कृष्ण — ज्याचा ध्वज व वाहन गरुड आहे — पुराणकथेत सर्पांचा चिरंतन शत्रू आहे : विनतापुत्र गरुडाने कद्रूपुत्र सर्पांना नमवले आणि विष्णू प्रत्येक युद्धात त्यावर आरूढ होतो. कवी हे वैश्विक वैर अंतर्मुख करतो — &#x27;सर्प&#x27; म्हणजे त्याचे स्वतःचे मौर्ख्य, त्याचे उभारलेले फणे म्हणजे अहंकार व अज्ञान यांची फुगवण. &#x27;पैलतीर गाठणे&#x27; (पारग) हे शास्त्रावर प्रभुत्व मिळवण्याचे उपनिषदिक रूपक आहे — विद्या म्हणजे तरून जावयाचा सागर आणि भगवंताचा पदन्यास म्हणजे नाव.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Like the two preceding verses this is śārdūlavikrīḍitam (19 syllables per pāda). Note the poet&#x27;s logic across the maṅgala: v. 1 asked Gaṇeśa to remove obstacles in general; v. 2 asked Sarasvatī to purify speech; here the specific obstacle is named — mūrkhatā, folly. The compound तार्क्ष्यस्कन्धकृतासन is a compact rūpaka: the Lord needs no other weapon against the serpent of ignorance than the foot that already rests on Garuḍa. &#x27;Svajanānām iṣṭadam&#x27; echoes the Gītā&#x27;s promise that the Lord grants what his devotees cherish.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आधीच्या दोन श्लोकांप्रमाणे हाही शार्दूलविक्रीडितात आहे (प्रति चरण १९ अक्षरे). मंगलातील कवीचा तर्क लक्षात घ्या : श्लोक १ मध्ये गणेशाकडे सर्वसाधारण विघ्ननिवारण मागितले; श्लोक २ मध्ये सरस्वतीकडे वाणीशुद्धी मागितली; येथे विशिष्ट अडथळ्याचे नाव घेतले आहे — मौर्ख्य. तार्क्ष्यस्कन्धकृतासन हे समासरूपक संक्षिप्त आहे — अज्ञानरूपी सर्पाविरुद्ध भगवंताला गरुडावर असलेल्या पायाव्यतिरिक्त अन्य शस्त्राची गरज नाही. &#x27;स्वजनेष्टद&#x27; हे गीतेतील &#x27;भक्तांना त्यांचे इष्ट देण्याचे&#x27; अभिवचन स्मरणात आणते.</p></div></div>
+
+<div class="pagenav"><a href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 2</div></a><a class="next" href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 4</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

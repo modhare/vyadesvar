@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 31 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 31</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 31</span><span class="bl-mr lang-mr">श्लोक 31</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्युग्रधन्वा समुदीर्य तत्र प्रतीक्षमाणोपसृतिं पयोधेः।।<br>आसायमासीदुदधिस्तु दर्पाच्चक्रे न तच्छासनमुज्झितायुः ।।३१।।</div>
+  <div class="verse-iast">ityugradhanvā samudīrya tatra pratīkṣamāṇopasṛtiṃ payodheḥ । । āsāyamāsīdudadhistu darpāccakre na tacchāsanamujjhitāyuḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । उग्र-धन्वा । समुदीर्य । तत्र । प्रतीक्षमाणः । उपसृतिम् (?) । पयोधेः । आ-सायम् । आसीत् । उदधिः । तु । दर्पात् । चक्रे । न । तत्-शासनम् । उज्झित-आयुः ।</div><div class="vig-iast">iti । ugra-dhanvā । samudīrya । tatra । pratīkṣamāṇaḥ । upasṛtim (?) । payodheḥ । ā-sāyam । āsīt । udadhiḥ । tu । darpāt । cakre । na । tat-śāsanam । ujjhita-āyuḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">इति + उग्र = इत्युग्र (यण्) · आसीत् + उदधिः = आसीदुदधिः (त् → द्) · उदधिः + तु = उदधिस्तु (विसर्ग → स्) · दर्पात् + चक्रे = दर्पाच्चक्रे (त् → च्) · तत् + शासनम् = तच्छासनम् (त् + श = च्छ) · उज्झित + आयुः = उज्झितायुः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति समुदीर्य उग्रधन्वा (रामः) तत्र पयोधेः अपसृतिं (उपसृतिं) प्रतीक्षमाणः आसायम् आसीत्; उदधिः तु उज्झितायुः (इव) दर्पात् तच्छासनं न चक्रे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Having thus declared, the wielder of the dread bow waited there till evening for the ocean&#x27;s withdrawal; but the ocean — as though his span of life were spent — proudly paid no heed to that command.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>असे स्पष्ट म्हणून उग्र धनुष्य धारण करणारा तो परशुराम समुद्राच्या सरकण्याची वाट पाहात संध्याकाळपर्यंत थांबला; परंतु जणू आयुष्यच संपले आहे अशा त्या समुद्राने गर्वाने ती आज्ञा पाळली नाही.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">इति समुदीर्य</span>
+    <span class="word-iast">iti samudīrya</span>
+  </div>
+  <div><span class="word-grammar">इति indeclinable; समुदीर्य: absolutive (lyap) of सम् + उत् + √ईर्</span></div>
+  <div class="word-form">In this verse: इति, समुदीर्य</div>
+  <p class="word-meaning lang-en">having thus declared</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे स्पष्ट उच्चारून</p>
+  <div class="word-usage">
+    <div class="deva">इति समुदीर्य सः तूष्णीम् अभवत् ।</div>
+    <div class="usage-iast">iti samudīrya saḥ tūṣṇīm abhavat ।</div>
+    <div class="usage-meaning lang-en">Having thus declared, he fell silent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>असे स्पष्ट म्हणून तो शांत झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उग्रधन्वा</span>
+    <span class="word-iast">ugradhanvā</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (उग्र-धन्वन्)</span></div>
+  <div class="word-form">In this verse: उग्रधन्वा (stem उग्रधन्वन्)</div>
+  <p class="word-meaning lang-en">wielder of the dread bow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उग्र धनुष्य धारण करणारा</p>
+  <div class="word-usage">
+    <div class="deva">उग्रधन्वा रामः शत्रून् अजयत् ।</div>
+    <div class="usage-iast">ugradhanvā rāmaḥ śatrūn ajayat ।</div>
+    <div class="usage-meaning lang-en">Rāma, wielder of the dread bow, conquered his foes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उग्र धनुष्य धारण करणाऱ्या रामाने शत्रू जिंकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्र</span>
+    <span class="word-iast">tatra</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (त्रल् suffix)</span></div>
+  <div class="word-form">In this verse: तत्र</div>
+  <p class="word-meaning lang-en">there</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे</p>
+  <div class="word-usage">
+    <div class="deva">तत्र वृक्षः अस्ति ।</div>
+    <div class="usage-iast">tatra vṛkṣaḥ asti ।</div>
+    <div class="usage-meaning lang-en">There is a tree there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे झाड आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतीक्षमाणः</span>
+    <span class="word-iast">pratīkṣamāṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; present participle (śānac) of प्रति + √ईक्ष्</span></div>
+  <div class="word-form">In this verse: प्रतीक्षमाणः</div>
+  <p class="word-meaning lang-en">waiting for, expecting</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाट पाहत</p>
+  <div class="word-usage">
+    <div class="deva">प्रतीक्षमाणः सः द्वारे अतिष्ठत् ।</div>
+    <div class="usage-iast">pratīkṣamāṇaḥ saḥ dvāre atiṣṭhat ।</div>
+    <div class="usage-meaning lang-en">Waiting, he stood at the door.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाट पाहत तो दारात उभा राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पयोधेः</span>
+    <span class="word-iast">payodheḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive/ablative singular</span></div>
+  <div class="word-form">In this verse: पयोधेः</div>
+  <p class="word-meaning lang-en">of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या</p>
+  <div class="word-usage">
+    <div class="deva">पयोधेः तरङ्गाः उन्नताः ।</div>
+    <div class="usage-iast">payodheḥ taraṅgāḥ unnatāḥ ।</div>
+    <div class="usage-meaning lang-en">The ocean&#x27;s waves are lofty.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या लाटा उंच आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आसायम् आसीत्</span>
+    <span class="word-iast">āsāyam āsīt</span>
+  </div>
+  <div><span class="word-grammar">आसायम्: आ + सायम् (&#x27;till evening&#x27;); आसीत्: √आस्, laṅ, 3rd person singular</span></div>
+  <div class="word-form">In this verse: आसायम्, आसीत्</div>
+  <p class="word-meaning lang-en">remained till evening</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संध्याकाळपर्यंत थांबला</p>
+  <div class="word-usage">
+    <div class="deva">सः आसायम् तत्र आसीत् ।</div>
+    <div class="usage-iast">saḥ āsāyam tatra āsīt ।</div>
+    <div class="usage-meaning lang-en">He remained there till evening.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो संध्याकाळपर्यंत तेथे थांबला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उदधिः तु</span>
+    <span class="word-iast">udadhiḥ tu</span>
+  </div>
+  <div><span class="word-grammar">उदधिः: masculine nominative singular; तु indeclinable</span></div>
+  <div class="word-form">In this verse: उदधिः, तु</div>
+  <p class="word-meaning lang-en">but the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राने मात्र</p>
+  <div class="word-usage">
+    <div class="deva">उदधिः तु गम्भीरः एव आसीत् ।</div>
+    <div class="usage-iast">udadhiḥ tu gambhīraḥ eva āsīt ।</div>
+    <div class="usage-meaning lang-en">But the ocean remained deep indeed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्र मात्र गंभीरच राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दर्पात्</span>
+    <span class="word-iast">darpāt</span>
+  </div>
+  <div><span class="word-grammar">masculine ablative singular</span></div>
+  <div class="word-form">In this verse: दर्पात्</div>
+  <p class="word-meaning lang-en">out of pride</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गर्वामुळे</p>
+  <div class="word-usage">
+    <div class="deva">दर्पात् सः न अवदत् ।</div>
+    <div class="usage-iast">darpāt saḥ na avadat ।</div>
+    <div class="usage-meaning lang-en">Out of pride he did not speak.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गर्वामुळे तो बोलला नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तच्छासनं न चक्रे</span>
+    <span class="word-iast">tacchāsanaṃ na cakre</span>
+  </div>
+  <div><span class="word-grammar">तच्छासनम्: neuter accusative singular; न indeclinable; चक्रे: √कृ, liṭ, 3rd person singular, ātmanepada</span></div>
+  <div class="word-form">In this verse: तच्छासनम्, न, चक्रे</div>
+  <p class="word-meaning lang-en">did not obey that command</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती आज्ञा पाळली नाही</p>
+  <div class="word-usage">
+    <div class="deva">सः तच्छासनम् न चक्रे ।</div>
+    <div class="usage-iast">saḥ tacchāsanam na cakre ।</div>
+    <div class="usage-meaning lang-en">He did not obey that command.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने ती आज्ञा पाळली नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उज्झितायुः</span>
+    <span class="word-iast">ujjhitāyuḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi (उज्झित-आयुस्)</span></div>
+  <div class="word-form">In this verse: उज्झितायुः (stem उज्झितायुस्)</div>
+  <p class="word-meaning lang-en">whose life is as good as forfeit, doomed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे आयुष्य जणू संपले आहे (असा)</p>
+  <div class="word-usage">
+    <div class="deva">उज्झितायुः अपि सः न अबिभेत् ।</div>
+    <div class="usage-iast">ujjhitāyuḥ api saḥ na abibhet ।</div>
+    <div class="usage-meaning lang-en">Even though doomed, he did not fear.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आयुष्य संपल्यासारखा झालेलाही तो घाबरला नाही.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The hero waits till evening — patience before punishment, the mark of the dharmic warrior. But the ocean, blinded by pride, ignores the command, &#x27;as though his life were spent&#x27; — the poet already hints at the doom that pride invites. The verse teaches that arrogance toward dharma is self-destruction; the ocean&#x27;s refusal sets up the righteous wrath that follows.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नायक संध्याकाळपर्यंत वाट पाहतो — शिक्षेआधी संयम, हेच धार्मिक योद्ध्याचे लक्षण. पण गर्वाने आंधळा झालेला समुद्र आज्ञेकडे दुर्लक्ष करतो, &#x27;जणू त्याचे आयुष्य संपले आहे&#x27; — गर्व कोणता विनाश आमंत्रित करतो याची कवी आधीच सूचना देतो. धर्माविरुद्धचा अहंकार म्हणजे आत्मविनाश, हे हा श्लोक शिकवतो; समुद्राचा नकार पुढे येणाऱ्या न्याय्य क्रोधाची पार्श्वभूमी रचतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Waiting till evening before acting shows the hero&#x27;s kṣamā, forbearance — punishment only after patience is exhausted, the mark of the dharmic warrior. The ocean&#x27;s pride recalls the Rāmāyaṇa&#x27;s ocean, who likewise ignored Rāma until the bow was strung.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कृतीआधी संध्याकाळपर्यंत वाट पाहणे हे नायकाची क्षमा, सहनशीलता दाखवते — संयम संपल्यावरच शिक्षा, हेच धार्मिक योद्ध्याचे लक्षण. समुद्राचा गर्व रामायणातील समुद्राची आठवण करून देतो, ज्याने धनुष्य चढवेपर्यंत रामाकडे दुर्लक्ष केले होते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The working anvaya reads अपसृतिम् for the print&#x27;s उपसृतिम् — &#x27;retreat&#x27;, not &#x27;approach&#x27;, is the sense required. उज्झितायुः — &#x27;whose life is as good as abandoned&#x27;, i.e. doomed: the pāda already foreshadows the wrath of v. 32.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कार्यटीपेतील अन्वय छापील उपसृतिम् ऐवजी अपसृतिम् वाचतो — &#x27;माघार&#x27; हाच अर्थ अपेक्षित आहे, &#x27;जवळ येणे&#x27; नव्हे. उज्झितायुः — &#x27;ज्याचे आयुष्य जणू सोडून दिलेले&#x27;, म्हणजे विनाशोन्मुख : हे चरण ३२ व्या श्लोकातील क्रोधाची आधीच सूचना देते.</p></div></div>
+
+<div class="pagenav"><a href="verse-30.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 30</div></a><a class="next" href="verse-32.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 32</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

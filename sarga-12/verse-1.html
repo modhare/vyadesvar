@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ दाल्भ्यं नाम पुरं ब्रह्माण्डोदरमण्डनम् ।<br>यज्जगत्पावनीसिंधुक्षारसागरसंगमे ।।१।।</div>
+  <div class="verse-iast">atha dālbhyaṃ nāma puraṃ brahmāṇḍodaramaṇḍanam । yajjagatpāvanīsiṃdhukṣārasāgarasaṃgame</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ दाल्भ्यम् नाम पुरम् ब्रह्माण्ड-उदर-मण्डनम् । यत् जगत्पावनी-सिन्धु-क्षार-सागर-संगमे ।</div><div class="vig-iast">atha dālbhyam nāma puram brahmāṇḍa-udara-maṇḍanam । yat jagatpāvanī-sindhu-kṣāra-sāgara-saṃgame ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">ब्रह्माण्ड + उदर = ब्रह्माण्डोदर (गुण) · यत् + जगत् = यज्जगत् (त् → ज्) · क्षार + सागर = क्षारसागर</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ यत् जगत्पावनीसिन्धुक्षारसागरसंगमे (अस्ति), (तत्) ब्रह्माण्डोदरमण्डनं दाल्भ्यं नाम पुरम् (अस्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Now: the city named Dalbhya - an ornament of the womb of the vast universe - lies at the confluence of the world-purifying river Jagatpavani and the briny sea.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या विस्तीर्ण ब्रह्माण्डाचे भूषण असे दाल्भ्य नावाचे शहर (आजचे दाभोळ) जगत्पावनी (वाशिष्ठी) नदी व समुद्र यांच्या संगमावर वसलेले आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अथ</span>
+    <span class="word-iast">atha</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अथ</div>
+  <p class="word-meaning lang-en">now</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आता</p>
+  <div class="word-usage">
+    <div class="deva">अथ स्नानविधिं वर्णयामि।</div>
+    <div class="usage-iast">atha snanavidhim varnayami.</div>
+    <div class="usage-meaning lang-en">Now I shall describe the rite of bathing.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आता मी स्नानाचा विधी सांगतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दाल्भ्यम्</span>
+    <span class="word-iast">dālbhyam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: दाल्भ्यं</div>
+  <p class="word-meaning lang-en">Dālbhya (Dabhol)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दाल्भ्य (आजचे दाभोळ)</p>
+  <div class="word-usage">
+    <div class="deva">दाल्भ्यम् इति पुरं वाशिष्ठीसङ्गमे अस्ति।</div>
+    <div class="usage-iast">dalbhyam iti puram vashishthisangame asti.</div>
+    <div class="usage-meaning lang-en">The city called Dalbhya stands at the Vashishthi confluence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;दाल्भ्य&#x27; नावाचे नगर वाशिष्ठीच्या संगमावर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नाम</span>
+    <span class="word-iast">nāma</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: नाम</div>
+  <p class="word-meaning lang-en">named</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नावाचे</p>
+  <div class="word-usage">
+    <div class="deva">अत्र दाल्भ्येश्वरः नाम देवः पूज्यते।</div>
+    <div class="usage-iast">atra dalbhyeshvarah nama devah pujyate.</div>
+    <div class="usage-meaning lang-en">Here the god named Dalbhyeshvara is worshipped.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>येथे &#x27;दाल्भ्येश्वर&#x27; नावाचे देव पूजले जातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुरम्</span>
+    <span class="word-iast">puram</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: पुरं</div>
+  <p class="word-meaning lang-en">city</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नगर</p>
+  <div class="word-usage">
+    <div class="deva">इदं पुरं प्रासादैः शोभते।</div>
+    <div class="usage-iast">idam puram prasadaih shobhate.</div>
+    <div class="usage-meaning lang-en">This city shines with its temples.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे नगर मंदिरांनी शोभून दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ब्रह्माण्ड-उदर-मण्डनम्</span>
+    <span class="word-iast">brahmāṇḍa-udara-maṇḍanam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: ब्रह्माण्डोदरमण्डनम्</div>
+  <p class="word-meaning lang-en">ornament of the universe</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ब्रह्मांडाचे भूषण</p>
+  <div class="word-usage">
+    <div class="deva">काशीक्षेत्रं ब्रह्माण्डोदरमण्डनम् इति कथ्यते।</div>
+    <div class="usage-iast">kashikshetram brahmandodaramandanam iti kathyate.</div>
+    <div class="usage-meaning lang-en">The holy land of Kashi is called an ornament of the universe.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काशीक्षेत्राला ब्रह्मांडाचे भूषण म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्</span>
+    <span class="word-iast">yat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: यज् (यज्जगत्पावनीसिन्धुक्षारसागरसंगमे)</div>
+  <p class="word-meaning lang-en">which</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे</p>
+  <div class="word-usage">
+    <div class="deva">यत् पुरं सागरतीरे अस्ति तत् दाल्भ्यम्।</div>
+    <div class="usage-iast">yat puram sagaratire asti tat dalbhyam.</div>
+    <div class="usage-meaning lang-en">The city which stands on the seashore is Dalbhya.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जे नगर समुद्रकिनारी आहे ते दाल्भ्य.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जगत्पावनी-सिन्धु-क्षार-सागर-संगमे</span>
+    <span class="word-iast">jagatpāvanī-sindhu-kṣāra-sāgara-saṃgame</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: जगत्पावनीसिन्धुक्षारसागरसंगमे</div>
+  <p class="word-meaning lang-en">at the meeting of the river Jagatpāvanī and the salt sea</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगत्पावनी (वाशिष्ठी) नदी व खारा समुद्र यांच्या संगमावर</p>
+  <div class="word-usage">
+    <div class="deva">जगत्पावनीसिन्धुक्षारसागरसङ्गमे तीर्थं वर्तते।</div>
+    <div class="usage-iast">jagatpavanisindhuksharasagarasangame tirtham vartate.</div>
+    <div class="usage-meaning lang-en">At the confluence of the Jagatpavani and the salt sea there is a holy tirtha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जगत्पावनी व खारा समुद्र यांच्या संगमावर तीर्थ आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse opens Sarga 12&#x27;s northward survey of shrines with Dabhol, the port town at the mouth of the Vashishthi. By calling a small coastal city the &#x27;ornament of the universe&#x27;s womb,&#x27; the poet teaches that no ksetra is small where a river meets the sea and a sage&#x27;s tapas has settled - tirtha geography itself is glorification. For the devotee, it is a reminder that Vyadeshwar&#x27;s domain extends through the whole Konkan coastline, each sangama a door to the same grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बाराव्या सर्गाच्या उत्तरेकडील क्षेत्रांच्या प्रवासाची सुरुवात दाभोळपासून होते - वाशिष्ठीच्या मुखाजवळचे बंदर. एका छोट्या किनारपट्टीच्या शहराला &#x27;ब्रह्मांडाच्या उदराचे भूषण&#x27; म्हटल्याने कवी शिकवतो की नदी समुद्राला मिळते आणि मुनींचे तप तिथे स्थिरावते तिथे कोणतेही क्षेत्र लहान नसते - तीर्थाचे भूगोलच गौरव आहे. भक्तासाठी हे स्मरण आहे की व्याडेश्वराचे क्षेत्र संपूर्ण कोकणकिनाऱ्यात पसरले आहे; प्रत्येक संगम त्याच कृपेचे द्वार आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The name Dalbhya is traditionally derived from the sage Dalbhya - the local tradition recalled here (cf. 5.9) makes the city itself the sage&#x27;s foundation, and the Dalbhyeshvara temple its heart. Puranic literature consistently praises river-sea confluences (sangamas) as tirthas where bathing destroys sin, and the poet follows that convention by placing the city precisely &#x27;at the meeting of the holy river and the salt sea.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दाल्भ्य हे नाव पारंपरिकरीत्या दाल्भ्य मुनींपासून आले आहे - येथे आठवलेली स्थानिक परंपरा (पहा ५.९) हेच शहर मुनींनी वसवले असे सांगते आणि दाल्भ्येश्वर मंदिर त्याचे हृदय आहे. पुराणसाहित्य नदी-समुद्र संगमांना पाप नष्ट करणारे तीर्थ म्हणून नेहमीच गौरवते; कवी त्याच परंपरेचे अनुसरण करून शहर नेमके &#x27;पवित्र नदी व खारा समुद्र यांच्या मिलनस्थानी&#x27; ठेवतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The Jagatpavani is the Vashishthi - the identification argued at 4.43 and confirmed by Dabhol&#x27;s position at the Vashishthi&#x27;s mouth; the modern town is Dabhol in Ratnagiri district. &#x27;Ornament of the womb of the universe&#x27; is stock kavya hyperbole, the kind of mangala-flourish with which a sarga conventionally opens a new region. The verse is in anustubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;जगत्पावनी&#x27; म्हणजे वाशिष्ठी - ४.४३ मध्ये सुचवलेली आणि वाशिष्ठीच्या मुखाशी दाभोळ असल्याने सिद्ध झालेली ओळख; आधुनिक शहर रत्नागिरी जिल्ह्यातील दाभोळ आहे. &#x27;ब्रह्मांडाच्या उदराचे भूषण&#x27; ही काव्यपरंपरागत अतिशयोक्ती आहे - नवीन प्रदेशाची सुरुवात करताना सर्गात रूढ असलेला मंगल-प्रारंभ. श्लोक अनुष्टुभ वृत्तात आहे.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-11/verse-61.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 61</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

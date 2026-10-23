@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 22 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 22</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 22</span><span class="bl-mr lang-mr">श्लोक 22</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Sragdharā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कोदण्डं सुप्रचण्डं प्रतिविततगुणं वामपाणौ च दक्षे<br>बाणं कट्यां कृपाणं स्वहिमिव सुफणं स्वर्णनाराचपूर्णम् ।<br>पृष्ठे तूणं तथैणं रचितमणिगणं वारबाणं च शोणं<br>बिभ्रद्रामोऽभिरामो जगति विजयते संवृतो वीरलक्ष्म्या ।।२२।।</div>
+  <div class="verse-iast">kodaṇḍaṃ supracaṇḍaṃ prativitataguṇaṃ vāmapāṇau ca dakṣe bāṇaṃ kaṭyāṃ kṛpāṇaṃ svahimiva suphaṇaṃ svarṇanārācapūrṇam । pṛṣṭhe tūṇaṃ tathaiṇaṃ racitamaṇigaṇaṃ vārabāṇaṃ ca śoṇaṃ bibhradrāmo&#x27;bhirāmo jagati vijayate saṃvṛto vīralakṣmyā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कोदण्डम् । सुप्रचण्डम् । प्रतिवितत-गुणम् । वाम-पाणौ । च । दक्षे । बाणम् । कट्याम् । कृपाणम् । सु-अहिम् । इव । सुफणम् । स्वर्ण-नाराच-पूर्णम् । पृष्ठे । तूणम् । तथा । ऐणम् । रचित-मणिगणम् । वारबाणम् । च । शोणम् । बिभ्रत् । रामः । अभिरामः । जगति । विजयते । संवृतः । वीर-लक्ष्म्या ।</div><div class="vig-iast">kodaṇḍam । supracaṇḍam । prativitata-guṇam । vāma-pāṇau । ca । dakṣe । bāṇam । kaṭyām । kṛpāṇam । su-ahim । iva । suphaṇam । svarṇa-nārāca-pūrṇam । pṛṣṭhe । tūṇam । tathā । aiṇam । racita-maṇigaṇam । vārabāṇam । ca । śoṇam । bibhrat । rāmaḥ । abhirāmaḥ । jagati । vijayate । saṃvṛtaḥ । vīra-lakṣmyā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सु + अहिम् = स्वहिम् (यण्) · स्वहिम् + इव = स्वहिमिव · तथा + ऐणम् = तथैणम् (वृद्धि) · बिभ्रत् + रामः = बिभ्रद्रामः (त् → द्) · रामः + अभिरामः = रामोऽभिरामः (पूर्वरूप) · अभिरामः + जगति = अभिरामो जगति · संवृतः + वीर = संवृतो वीर</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">वामपाणौ सुप्रचण्डं प्रतिविततगुणं कोदण्डं, दक्षे च स्वहिम् इव सुफणं बाणं, कट्यां कृपाणं, पृष्ठे स्वर्णनाराचपूर्णं रचितमणिगणं ऐणं तूणं, तथा शोणं वारबाणं च बिभ्रत्, वीरलक्ष्म्या संवृतः अभिरामः रामः जगति विजयते ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Bow in his left hand — mighty, its string drawn taut; in his right an arrow like a fair-hooded serpent; a sword at his waist; on his back a quiver of deerskin, gem-studded, filled with golden shafts; and a red cuirass — wearing all this, the lovely Rāma, girt with heroic glory, triumphs in the world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>डाव्या हातात ताणलेल्या दोरीचे प्रचंड धनुष्य, उजव्या हातात फणायुक्त नागाप्रमाणे असणारा बाण, कमरेला तलवार, पाठीवर हरिणाच्या कातड्याचा मणिखचित भाता आणि लाल चिलखत धारण करणारा, वीरश्रीने वेढलेला आकर्षक राम या जगात विजयी होतो. (अशा रामाचा जगात विजय असो.)</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कोदण्डम्</span>
+    <span class="word-iast">kodaṇḍam</span>
+  </div>
+  <div><span class="word-grammar">धनुः-पर्याय; द्वितीया एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: कोदण्डं</div>
+  <p class="word-meaning lang-en">bow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनुष्य</p>
+  <div class="word-usage">
+    <div class="deva">वीरः कोदण्डम् गृहीत्वा युद्धम् अगच्छत्</div>
+    <div class="usage-iast">vīraḥ kodaṇḍam gṛhītvā yuddham agacchat</div>
+    <div class="usage-meaning lang-en">Taking his bow, the hero went to battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनुष्य घेऊन वीर युद्धाला गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतिविततगुणम्</span>
+    <span class="word-iast">prativitataguṇam</span>
+  </div>
+  <div><span class="word-grammar">प्रति-वितत-गुण; तृतीया-तत्पुरुषगर्भ बहुव्रीहि (&#x27;प्रतिविततः गुणः यस्य&#x27;); द्वितीया एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: प्रतिविततगुणं</div>
+  <p class="word-meaning lang-en">whose string is drawn taut</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ताणलेल्या दोरीचे</p>
+  <div class="word-usage">
+    <div class="deva">धनुः प्रतिविततगुणम् आसीत्</div>
+    <div class="usage-iast">dhanuḥ prativitataguṇam āsīt</div>
+    <div class="usage-meaning lang-en">The bow was strung taut.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनुष्याची दोरी ताणलेली होती.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वामपाणौ</span>
+    <span class="word-iast">vāmapāṇau</span>
+  </div>
+  <div><span class="word-grammar">वाम-पाणि; कर्मधारय; सप्तमी एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: वामपाणौ</div>
+  <p class="word-meaning lang-en">in the left hand</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>डाव्या हातात</p>
+  <div class="word-usage">
+    <div class="deva">धनुर्धरः वामपाणौ चापम् धरति</div>
+    <div class="usage-iast">dhanurdharaḥ vāmapāṇau cāpam dharati</div>
+    <div class="usage-meaning lang-en">The archer holds the bow in his left hand.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धनुर्धर डाव्या हातात धनुष्य धरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दक्षे</span>
+    <span class="word-iast">dakṣe</span>
+  </div>
+  <div><span class="word-grammar">दक्ष (विशेषण, &#x27;उजवा/कुशल&#x27;); सप्तमी एकवचन (पाणौ अध्याहृतम्)</span></div>
+  <div class="word-form">In this verse: दक्षे</div>
+  <p class="word-meaning lang-en">in the right (hand)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उजव्या (हातात) — *पुस्तकात ‘सावध’; शुद्धिपत्र पहा.*</p>
+  <div class="word-usage">
+    <div class="deva">योधः दक्षे बाणम् धरति</div>
+    <div class="usage-iast">yodhaḥ dakṣe bāṇam dharati</div>
+    <div class="usage-meaning lang-en">The warrior holds an arrow in his right hand.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योद्धा उजव्या हातात बाण धरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वहिमिव सुफणम्</span>
+    <span class="word-iast">svahimiva suphaṇam</span>
+  </div>
+  <div><span class="word-grammar">सु-अहि + इव (अव्यय) + सु-फण (बहुव्रीहि); द्वितीया एकवचन, पुल्लिङ्ग (बाणम्-विशेषणम्)</span></div>
+  <div class="word-form">In this verse: स्वहिमिव सुफणं</div>
+  <p class="word-meaning lang-en">like a fair serpent with a fine hood</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर फणा असलेल्या सापासारखा (बाण)</p>
+  <div class="word-usage">
+    <div class="deva">बाणः स्वहिम् इव सुफणः आसीत्</div>
+    <div class="usage-iast">bāṇaḥ svahim iva suphaṇaḥ āsīt</div>
+    <div class="usage-meaning lang-en">The arrow was like a fine-hooded fair serpent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बाण सुंदर फणेच्या सापासारखा होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कट्यां कृपाणम्</span>
+    <span class="word-iast">kaṭyāṃ kṛpāṇam</span>
+  </div>
+  <div><span class="word-grammar">कटि सप्तमी एकवचन, स्त्रीलिङ्ग + कृपाण द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: कट्यां कृपाणं</div>
+  <p class="word-meaning lang-en">a sword at the waist</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कमरेला तलवार</p>
+  <div class="word-usage">
+    <div class="deva">राजा कट्यां कृपाणम् बबन्ध</div>
+    <div class="usage-iast">rājā kaṭyāṃ kṛpāṇam babandha</div>
+    <div class="usage-meaning lang-en">The king bound a sword at his waist.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजाने कमरेला तलवार बांधली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ऐणं तूणम्</span>
+    <span class="word-iast">aiṇaṃ tūṇam</span>
+  </div>
+  <div><span class="word-grammar">एण + अण् (&#x27;एणस्य इदम्&#x27;) + तूण; द्वितीया एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: तथैणं</div>
+  <p class="word-meaning lang-en">a quiver of deerskin</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरणाच्या कातड्याचा भाता</p>
+  <div class="word-usage">
+    <div class="deva">वीरः पृष्ठे ऐणं तूणम् वहति</div>
+    <div class="usage-iast">vīraḥ pṛṣṭhe aiṇaṃ tūṇam vahati</div>
+    <div class="usage-meaning lang-en">The hero bears a deerskin quiver on his back.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वीर पाठीवर हरणकातड्याचा भाता वाहतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वर्णनाराचपूर्णम्</span>
+    <span class="word-iast">svarṇanārācapūrṇam</span>
+  </div>
+  <div><span class="word-grammar">स्वर्ण-नाराच-पूर्ण; तृतीया-तत्पुरुषगर्भ बहुव्रीहि; द्वितीया एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: स्वर्णनाराचपूर्णम्</div>
+  <p class="word-meaning lang-en">filled with golden arrows</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सोनेरी बाणांनी भरलेला</p>
+  <div class="word-usage">
+    <div class="deva">तूणम् स्वर्णनाराचपूर्णम् आसीत्</div>
+    <div class="usage-iast">tūṇam svarṇanārācapūrṇam āsīt</div>
+    <div class="usage-meaning lang-en">The quiver was full of golden arrows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भाता सोनेरी बाणांनी भरलेला होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वारबाणं शोणम्</span>
+    <span class="word-iast">vārabāṇaṃ śoṇam</span>
+  </div>
+  <div><span class="word-grammar">वारबाण (चिलखत) + शोण (विशेषण); द्वितीया एकवचन, नपुंसकलिङ्ग</span></div>
+  <div class="word-form">In this verse: वारबाणं च शोणं</div>
+  <p class="word-meaning lang-en">red armour, red cuirass</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लाल चिलखत</p>
+  <div class="word-usage">
+    <div class="deva">योधः शोणं वारबाणम् अधारयत्</div>
+    <div class="usage-iast">yodhaḥ śoṇaṃ vārabāṇam adhārayat</div>
+    <div class="usage-meaning lang-en">The warrior wore red armour.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योद्ध्याने लाल चिलखत घातले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बिभ्रत्</span>
+    <span class="word-iast">bibhrat</span>
+  </div>
+  <div><span class="word-grammar">√भृ (जुहोत्यादि); शतृ प्रत्यय; प्रथमा एकवचन, पुल्लिङ्ग</span></div>
+  <div class="word-form">In this verse: बिभ्रद्रामोऽभिरामो</div>
+  <p class="word-meaning lang-en">wearing, bearing</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धारण करणारा</p>
+  <div class="word-usage">
+    <div class="deva">मालाम् बिभ्रत् देवः शोभते</div>
+    <div class="usage-iast">mālām bibhrat devaḥ śobhate</div>
+    <div class="usage-meaning lang-en">The god wearing a garland shines.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माळ धारण करणारा देव शोभतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रामोऽभिरामः</span>
+    <span class="word-iast">rāmo&#x27;bhirāmaḥ</span>
+  </div>
+  <div><span class="word-grammar">रामः + अभिराम (नञ्-तत्पुरुष, &#x27;रमणीय&#x27;); प्रथमा एकवचन, पुल्लिङ्ग; यमक</span></div>
+  <div class="word-form">In this verse: रामोऽभिरामो</div>
+  <p class="word-meaning lang-en">the lovely Rāma (a yamaka)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मनोहर राम (यमक)</p>
+  <div class="word-usage">
+    <div class="deva">रामः अभिरामः सर्वेषाम् प्रियः</div>
+    <div class="usage-iast">rāmaḥ abhirāmaḥ sarveṣām priyaḥ</div>
+    <div class="usage-meaning lang-en">The lovely Rāma is dear to all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मनोहर राम सर्वांना प्रिय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विजयते</span>
+    <span class="word-iast">vijayate</span>
+  </div>
+  <div><span class="word-grammar">वि + √जि; लट् प्रथमपुरुष एकवचन, आत्मनेपद</span></div>
+  <div class="word-form">In this verse: विजयते</div>
+  <p class="word-meaning lang-en">triumphs, is victorious</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विजयी होतो (वि + √जि, आत्मनेपद)</p>
+  <div class="word-usage">
+    <div class="deva">धर्मः जगति विजयते</div>
+    <div class="usage-iast">dharmaḥ jagati vijayate</div>
+    <div class="usage-meaning lang-en">Dharma triumphs in the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्म जगात विजयी होतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The kāvya slows here into Sragdharā — the long metre of dwelling and delight — to give the devotee a dhyāna: the Lord&#x27;s vīra-rūpa, weapon by weapon, limb by limb. Every armament is in its place because dharma is never unprepared; yet the yamaka &#x27;रामोऽभिरामः&#x27; insists that even in war-gear the Lord delights the eye — terror to the wicked, beauty to the devotee. &#x27;Vīralakṣmī&#x27; — heroic glory itself — attends him like a garland: victory follows the righteous warrior as surely as a shadow.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे काव्य स्रग्धरा वृत्तात मंदावते — रमण्याच्या आणि आनंदाच्या दीर्घ वृत्तात — भक्ताला एक ध्यान देण्यासाठी : भगवंताचे वीररूप, शस्त्राशस्त्राने, अवयवावयवाने. प्रत्येक शस्त्र आपल्या जागी आहे, कारण धर्म कधीही असज्ज नसतो; पण &#x27;रामोऽभिरामः&#x27; हे यमक आग्रहाने सांगते की युद्धसज्जतेतही भगवंत डोळ्यांना आनंद देतो — दुष्टांना भय, भक्ताला सौंदर्य. &#x27;वीरलक्ष्मी&#x27; — वीरश्री — त्याला माळेप्रमाणे वेढते : विजय न्याय्य योद्ध्याच्या मागे सावलीप्रमाणे येतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The arming of the hero before the great war is an epic set-piece (cf. the Yuddhakāṇḍa&#x27;s arming scenes); the kāvya renders it as iconography — the devotee may picture each item. The kodanda, the tūṇa (quiver), the sword at the waist and the vārabāṇa (cuirass) are Rāma&#x27;s standing attributes in dhyāna-ślokas. The deerskin (aiṇa) quiver recalls the forest exile — the prince goes to war still wearing the wilds.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महायुद्धापूर्वी वीराची शस्त्रसज्जता हा महाकाव्यांचा ठरलेला देखावा आहे (युद्धकाण्डातील सज्जताप्रसंग पहा); काव्य ते मूर्तिवर्णनाच्या रूपात मांडते — भक्त प्रत्येक वस्तू डोळ्यांसमोर आणू शकतो. कोदण्ड, तूण (भाता), कमरेची तलवार व वारबाण (चिलखत) ही ध्यानश्लोकांतील रामाची स्थिर लक्षणे आहेत. हरणकातड्याचा (ऐण) भाता वनवासाची आठवण करून देतो — राजपुत्र युद्धाला जातो, तरी वनाची वेशभूषा अंगावरच आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The first of three Sragdharā verses (22–24) — the 21-syllable × 4 metre the poet reserves for set-pieces. &#x27;दक्षे&#x27; (&#x27;in the right hand&#x27;, पाणौ understood) is glossed &#x27;सावध&#x27; in the print, marked &#x27;see the śuddhipatra&#x27;; the translation follows दक्ष = right. &#x27;स्वहिमिव&#x27; resolves as सु + अहिम् + इव (yaṇ). The yamaka रामः / अभिरामः (&#x27;Rāma the delightful&#x27;) is the verse&#x27;s audible jewel. Metre: Sragdharā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तीन स्रग्धरा श्लोकांपैकी पहिला (२२–२४) — देखाव्यांसाठी कवीने राखून ठेवलेले २१ अक्षरांचे चौपदी वृत्त. &#x27;दक्षे&#x27; (&#x27;उजव्या हातात&#x27;, पाणौ अध्याहृत) याचा छापील अर्थ &#x27;सावध&#x27; असून &#x27;शुद्धिपत्र पहा&#x27; अशी नोंद आहे; भाषांतर दक्ष = उजवा या अर्थाने केले आहे. &#x27;स्वहिमिव&#x27; चा विग्रह सु + अहिम् + इव (यण्). रामः / अभिरामः (&#x27;मनोहर राम&#x27;) हे यमक श्लोकाचे श्रवणरत्न आहे. वृत्त : स्रग्धरा.</p></div></div>
+
+<div class="pagenav"><a href="verse-21.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 21</div></a><a class="next" href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 23</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

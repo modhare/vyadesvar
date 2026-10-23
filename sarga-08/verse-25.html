@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">शुनामिव कपीनां वा वर्णसङ्करकारकाः ।<br>नीचसेवापराः शूद्रधर्माणः काकवृत्तयः ।।२५।।</div>
+  <div class="verse-iast">śunāmiva kapīnāṃ vā varṇasaṅkarakārakāḥ । nīcasevāparāḥ śūdradharmāṇaḥ kākavṛttayaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">शुनाम् । इव । कपीनाम् । वा । वर्ण-सङ्कर-कारकाः । नीच-सेवा-पराः । शूद्र-धर्माणः । काक-वृत्तयः ।</div><div class="vig-iast">śunām । iva । kapīnām । vā । varṇa-saṅkara-kārakāḥ । nīca-sevā-parāḥ । śūdra-dharmāṇaḥ । kāka-vṛttayaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">शुनाम् + इव = शुनामिव · कारकाः + नीच = कारका नीच (विसर्ग-लोप)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(मानुषाः) शुनाम् इव कपीनां वा (इव) वर्णसङ्करकारकाः, नीचसेवापराः, शूद्रधर्माणः, काकवृत्तयः (भविष्यन्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Like bitches — or like she-monkeys — they will breed confusion of the castes; devoted to serving the low and marked with the ways of śūdras, they will have the nature of crows, pecking at sores.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कुत्र्यांप्रमाणे किंवा माकडांप्रमाणे वर्णसङ्कर करणारे, नीच लोकांच्या सेवेस तत्पर व शूद्रांचे गुण असणारे हे कावळ्याच्या वृत्तीचे (व्रणांवर प्रहार करणारे) असतात.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुनाम्</span>
+    <span class="word-iast">śunām</span>
+  </div>
+  <div><span class="word-grammar">श्वन्-शब्दात् षष्ठीविभक्तौ बहुवचने रूपम्</span></div>
+  <div class="word-form">In this verse: शुनामिव</div>
+  <p class="word-meaning lang-en">of dogs</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कुत्र्यांच्या (श्वन्, षष्ठी बहु.)</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामे शुनाम् नादः श्रूयते ।</div>
+    <div class="usage-iast">grāme śunām nādaḥ śrūyate ।</div>
+    <div class="usage-meaning lang-en">In the village the baying of dogs is heard.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावात कुत्र्यांचे भुंकणे ऐकू येते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कपीनाम्</span>
+    <span class="word-iast">kapīnām</span>
+  </div>
+  <div><span class="word-grammar">कपि-शब्दात् (इकारान्तपुंलिङ्गात्) षष्ठीविभक्तौ बहुवचने रूपम्</span></div>
+  <div class="word-form">In this verse: कपीनां</div>
+  <p class="word-meaning lang-en">of monkeys</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माकडांच्या</p>
+  <div class="word-usage">
+    <div class="deva">वने कपीनाम् यूथम् चरति ।</div>
+    <div class="usage-iast">vane kapīnām yūtham carati ।</div>
+    <div class="usage-meaning lang-en">A troop of monkeys roams in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वनात माकडांचा कळप फिरतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वर्णसङ्करकारकाः</span>
+    <span class="word-iast">varṇasaṅkarakārakāḥ</span>
+  </div>
+  <div><span class="word-grammar">वर्णसङ्करं कुर्वन्ति इति — तत्पुरुषसमासः (√कृ + ण्वुल् → कारकः); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: वर्णसङ्करकारका</div>
+  <p class="word-meaning lang-en">causing the mingling of the castes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वर्णसंकर करणारे</p>
+  <div class="word-usage">
+    <div class="deva">अशास्त्रीयविवाहैः जनाः वर्णसङ्करकारकाः भवन्ति ।</div>
+    <div class="usage-iast">aśāstrīyavivāhaiḥ janāḥ varṇasaṅkarakārakāḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">Through unscriptural marriages people become mixers of the castes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अशास्त्रीय विवाहांमुळे लोक वर्णसंकर करणारे होतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नीचसेवापराः</span>
+    <span class="word-iast">nīcasevāparāḥ</span>
+  </div>
+  <div><span class="word-grammar">नीचसेवायां पराः इति बहुव्रीहिसमासः; प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: नीचसेवापराः</div>
+  <p class="word-meaning lang-en">devoted to serving the low</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नीचांच्या सेवेत तत्पर</p>
+  <div class="word-usage">
+    <div class="deva">सज्जनाः नीचसेवापराः न भवन्ति ।</div>
+    <div class="usage-iast">sajjanāḥ nīcasevāparāḥ na bhavanti ।</div>
+    <div class="usage-meaning lang-en">Good men are not devoted to serving the low.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जन नीचांच्या सेवेत तत्पर नसतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शूद्रधर्माणः</span>
+    <span class="word-iast">śūdradharmāṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">शूद्रः धर्मः येषाम् इति बहुव्रीहिसमासः (धर्मन्-शब्दः नकारान्तः); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: शूद्रधर्माणः</div>
+  <p class="word-meaning lang-en">bearing the ways (dharma) of śūdras</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शूद्रांचे धर्म/वृत्ती असलेले</p>
+  <div class="word-usage">
+    <div class="deva">विद्याहीनाः जनाः शूद्रधर्माणः भवन्ति ।</div>
+    <div class="usage-iast">vidyāhīnāḥ janāḥ śūdradharmāṇaḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">Unlearned people take on śūdra ways.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्याहीन लोक शूद्रांचे गुण धारण करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काकवृत्तयः</span>
+    <span class="word-iast">kākavṛttayaḥ</span>
+  </div>
+  <div><span class="word-grammar">काकस्य वृत्तिः येषाम् इति बहुव्रीहिसमासः (वृत्ति-शब्दः स्त्रीलिङ्गः); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: काकवृत्तयः</div>
+  <p class="word-meaning lang-en">crow-natured — pecking at sores, delighting in others&#x27; faults</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कावळ्यासारखे (व्रणावर चोच मारणारे)</p>
+  <div class="word-usage">
+    <div class="deva">परदोषदर्शिनः जनाः काकवृत्तयः उच्यन्ते ।</div>
+    <div class="usage-iast">paradoṣadarśinaḥ janāḥ kākavṛttayaḥ ucyante ।</div>
+    <div class="usage-meaning lang-en">People who see only others&#x27; faults are called crow-natured.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुसऱ्यांचे दोषच पाहणारे लोक कावळ्याच्या वृत्तीचे म्हटले जातात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Paraśurāma&#x27;s prophecy begins with the social body: when conduct loses its scriptural anchor, birth-lines blur and men take their cues from the low — like crows, pecking at wounds instead of healing them. The spiritual warning is that impurity spreads fastest through imitation: the company we keep and the appetites we indulge decide our real standing, whatever our birth. For the devotee at Guhagar the verse is a mirror — keep the company of the holy name, not of the crow-natured.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>परशुरामांची भविष्यवाणी समाजशरीरापासून सुरू होते : वागणुकीला शास्त्राचा आधार सुटला की जन्मरेषा पुसट होतात आणि लोक नीचांचे अनुकरण करू लागतात — कावळ्यासारखे, जखमा भरून काढण्याऐवजी त्यांवर चोच मारणारे. आध्यात्मिक इशारा असा की अपवित्रता अनुकरणातून सर्वांत वेगाने पसरते — आपली संगत आणि आपल्या वासना हेच आपले खरे स्थान ठरवतात, जन्म नव्हे. गुहागरच्या भक्तासाठी हा श्लोक आरसा आहे — कावळ्यावृत्तीच्या संगतीऐवजी भगवन्नामाची संगत धरावी.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic accounts of the Kali age describe it in nearly these terms: dharma declines day by day — truthfulness, purity, forbearance and mercy fade; men become short-lived and small-minded; and the orders of society mix together, the signs of the twice-born becoming mere costume (Bhāgavata, Skandha 12, Adhyāya 2, paraphrased). The dog, monkey and crow similes belong to this stock of images: in the tradition&#x27;s moral arithmetic, conduct — not birth — reveals a man&#x27;s real order.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कलियुगाचे पुराणोक्त वर्णन जवळजवळ अशाच शब्दांत आहे : धर्म दिवसेंदिवस क्षीण होतो — सत्य, शौच, क्षमा आणि दया नष्ट होतात; मनुष्य अल्पायुषी व क्षुद्रबुद्धी होतो; आणि समाजाचे वर्ण एकमेकांत मिसळतात — द्विजांची लक्षणे केवळ वेष उरतात (भागवत, स्कंध १२, अध्याय २, भावार्थ). कुत्रा, माकड आणि कावळा या उपमा याच परंपरागत प्रतिमासंचातील आहेत : परंपरेच्या नीतिशास्त्रात माणसाचा खरा वर्ण वागणुकीने ठरतो, जन्माने नव्हे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh throughout this sarga. Verses 25–32 are Paraśurāma&#x27;s prophecy-speech, spoken after the Brahmin boys&#x27; test (vv. 1–8) in the sarga&#x27;s frame — &#x27;Kali arrives; Paraśurāma is tested, curses, and withdraws from sight&#x27; — and leading to his tirodhāna, which gives the sarga its title Rāmatirodhānaḥ. The future sense here is carried by the context (cf. v. 27&#x27;s भविष्यन्ति). The &#x27;crow-nature&#x27; image is glossed again at v. 29 (&#x27;striking at others&#x27; weak spots&#x27;).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या सर्गात सर्वत्र अनुष्टुभ् वृत्त आहे. २५–३२ हे श्लोक परशुरामांचे भविष्यवचन आहे — ब्राह्मणपुत्रांच्या परीक्षेनंतर (श्लो. १–८) सर्गाच्या चौकटीत सांगितलेले : &#x27;कली येतो; परशुरामांची परीक्षा होते, ते शाप देतात आणि दृष्टीआड होतात&#x27; — आणि त्यांच्या तिरोधानाकडे नेणारे, ज्यावरून सर्गाचे &#x27;रामतिरोधानः&#x27; हे नाव पडले आहे. येथील भविष्यकाळाचा बोध संदर्भातून येतो (श्लो. २७ मधील &#x27;भविष्यन्ति&#x27; पहा). &#x27;कावळ्याच्या वृत्ती&#x27;ची प्रतिमा श्लो. २९ मध्ये पुन्हा येते (&#x27;दुसऱ्यांच्या वर्मस्थानी प्रहार&#x27;).</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

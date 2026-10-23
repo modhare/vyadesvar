@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 44 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 44</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 44</span><span class="bl-mr lang-mr">श्लोक 44</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">समुद्रतीरे रुचिरं वनं प्रियतमं मम ।<br>तत्र त्वां रोचये द्रष्टुं प्रातः स्नातः सरस्वति ।।४४।।</div>
+  <div class="verse-iast">samudratīre ruciraṃ vanaṃ priyatamaṃ mama । tatra tvāṃ rocaye draṣṭuṃ prātaḥ snātaḥ sarasvati</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">समुद्र-तीरे । रुचिरम् । वनम् । प्रियतमम् । मम । तत्र । त्वाम् । रोचये । द्रष्टुम् । प्रातः । स्नातः । सरस्वति ।</div><div class="vig-iast">samudra-tīre । ruciram । vanam । priyatamam । mama । tatra । tvām । rocaye । draṣṭum । prātaḥ । snātaḥ । sarasvati ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">प्रातः + स्नातः = प्रातः स्नातः · स्नातः + सरस्वति = स्नातः सरस्वति</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत्र अपि मद्गिरेः मूले सागरगामिनी सरित् (अस्ति); तत्सिन्धुसंगमात् याम्यां दिशि योजनमात्रतः समुद्रतीरे मम प्रियतमं रुचिरं वनम् (अस्ति); तत्र सरस्वति प्रातः स्नातः (अहं) त्वां द्रष्टुं रोचये ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>On the seashore there stands my dearest lovely grove. There, O Sarasvat, having bathed at dawn, I long to behold you.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तेथेच माझ्या नावाच्या (महेन्द्र) पर्वताच्या पायथ्याशी सागराकडे जाणारी नदी आहे. त्या नदीच्या सागरसंगमापासून दक्षिण दिशेला एक योजनावर समुद्रतीरी माझे अत्यंत प्रिय सुंदर वन आहे. तेथे समुद्रात सकाळी स्नान करून तुझे दर्शन घ्यावे अशी माझी इच्छा आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुचिरम्</span>
+    <span class="word-iast">ruciram</span>
+  </div>
+  <div><span class="word-grammar">adjective, nominative/accusative singular neuter</span></div>
+  <div class="word-form">In this verse: रुचिरम्</div>
+  <p class="word-meaning lang-en">lovely, delightful</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर</p>
+  <div class="word-usage">
+    <div class="deva">रुचिरम् वनम् पश्यतः मनः प्रसीदति ।</div>
+    <div class="usage-iast">ruciram vanam paśyataḥ manaḥ prasīdati ।</div>
+    <div class="usage-meaning lang-en">Seeing the lovely grove, the mind grows calm.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर वन पाहिल्यावर मन प्रसन्न होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रियतमं मम</span>
+    <span class="word-iast">priyatamaṃ mama</span>
+  </div>
+  <div><span class="word-grammar">superlative (tamap) of प्रिय, accusative singular neuter; मम — genitive singular of अस्मद्</span></div>
+  <div class="word-form">In this verse: प्रियतमं मम</div>
+  <p class="word-meaning lang-en">dearest to me</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मला अतिशय आवडते</p>
+  <div class="word-usage">
+    <div class="deva">प्रियतमम् मम स्थानम् एतत् वनम् इति वदति मुनिः ।</div>
+    <div class="usage-iast">priyatamam mama sthānam etat vanam iti vadati muniḥ ।</div>
+    <div class="usage-meaning lang-en">This grove is the place dearest to me — says the sage.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘हे वन मला सर्वांत प्रिय स्थान आहे’ असे मुनी म्हणतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सरस्वति</span>
+    <span class="word-iast">sarasvati</span>
+  </div>
+  <div><span class="word-grammar">vocative singular of सरस्वत् (masculine, &#x27;abounding in water&#x27; — the ocean); not the goddess सरस्वती</span></div>
+  <div class="word-form">In this verse: सरस्वति</div>
+  <p class="word-meaning lang-en">O Sarasvat (the sea)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे समुद्रा (सरस्वत् — संबोधन; ३.२५ पहा)</p>
+  <div class="word-usage">
+    <div class="deva">हे सरस्वति तव तीरे मुनयः वसन्ति इति कविः आह ।</div>
+    <div class="usage-iast">he sarasvati tava tīre munayaḥ vasanti iti kaviḥ āha ।</div>
+    <div class="usage-meaning lang-en">O sea, on your shore sages dwell — says the poet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘हे समुद्रा, तुझ्या काठी मुनी राहतात’ असे कवी म्हणतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रातः स्नातः</span>
+    <span class="word-iast">prātaḥ snātaḥ</span>
+  </div>
+  <div><span class="word-grammar">प्रातः — indeclinable, &#x27;at dawn&#x27;; स्नातः — past passive participle of √snā (class 2), nominative singular masculine</span></div>
+  <div class="word-form">In this verse: प्रातः स्नातः</div>
+  <p class="word-meaning lang-en">bathed at dawn</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सकाळी स्नान केलेला</p>
+  <div class="word-usage">
+    <div class="deva">प्रातः स्नातः भक्तः देवम् अर्चयति ।</div>
+    <div class="usage-iast">prātaḥ snātaḥ bhaktaḥ devam arcayati ।</div>
+    <div class="usage-meaning lang-en">Bathed at dawn, the devotee worships the Lord.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सकाळी स्नान केलेला भक्त देवाची पूजा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वां द्रष्टुं रोचये</span>
+    <span class="word-iast">tvāṃ draṣṭuṃ rocaye</span>
+  </div>
+  <div><span class="word-grammar">रोचये — √ruc (class 1), first person singular, present, ātmanepada; द्रष्टुम् — infinitive (tumun) of √dṛś</span></div>
+  <div class="word-form">In this verse: त्वां द्रष्टुं रोचये</div>
+  <p class="word-meaning lang-en">I long to behold you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझे दर्शन घेणे मला आवडेल (√रुच्, णिच्, आत्मनेपद)</p>
+  <div class="word-usage">
+    <div class="deva">त्वाम् द्रष्टुम् रोचये इति भक्तस्य हृदयस्य वाणी ।</div>
+    <div class="usage-iast">tvām draṣṭum rocaye iti bhaktasya hṛdayasya vāṇī ।</div>
+    <div class="usage-meaning lang-en">I long to behold you — this is the voice of the devotee&#x27;s heart.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>‘तुला पाहावे असे मला वाटते’ — हे भक्ताच्या हृदयाची वाणी.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The grove (vanam) is the true subject of the boon: not a palace or a city but a forest clearing by the sea — the classic āśrama setting. Paraśurāma&#x27;s wish is strikingly modest: a bath at sunrise and the Lord&#x27;s face. For the devotee the lesson is that the highest prayer asks for the simplest things — śuddhi (purity) and darśana (vision) — and lets the Lord supply the rest. The &#x27;dearest grove&#x27; is Guhagar before it had a name.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे वन (वनम्) हेच वरदानाचे खरे विषय आहे : राजवाडा किंवा नगर नव्हे, तर समुद्रकाठी वनातील मोकळी जागा — आश्रमाची शास्त्रीय पार्श्वभूमी. परशुरामाची इच्छा विलक्षण साधी आहे : सूर्योदयी स्नान आणि भगवंताचे मुख. भक्तासाठी धडा असा की सर्वोच्च प्रार्थना सर्वांत साध्या गोष्टी मागते — शुद्धी आणि दर्शन — आणि बाकीचे भगवंतावर सोपवते. ‘अत्यंत प्रिय वन’ म्हणजे नाव मिळण्यापूर्वीचे गुहागर.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The address सरस्वति to the sea is a bold poetic figure: the ocean, सरस्वत् (&#x27;abounding in waters&#x27;), is invoked as a witness and purifier of the dawn bath, much as rivers are invoked in the morning snāna-mantras. In the Purāṇas the samudra is himself a tīrtha — bathing in him at sunrise is a prāyaścitta and a maṅgala alike. The locative absolute प्रातः स्नातः (&#x27;having bathed at dawn&#x27;) sets the daily rhythm that will become the temple&#x27;s own: snāna, then darśana, then arcana.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्राला सरस्वति हे संबोधन धाडसी काव्यालंकार आहे : सरस्वत् (‘जलांनी युक्त’) असलेला समुद्र प्रातःस्नानाचा साक्षी आणि पावनकर्ता म्हणून आवाहिला आहे — सकाळच्या स्नानमंत्रांत नद्या आवाहिल्या जातात तसेच. पुराणांत समुद्र स्वतःच तीर्थ आहे — सूर्योदयी त्यात स्नान हे प्रायश्चित्तही आहे आणि मंगलही. प्रातः स्नातः (‘सकाळी स्नान करून’) हे सति-सप्तमीसारखे प्रयोग मंदिराचेच दैनंदिन चक्र ठरवते : स्नान, मग दर्शन, मग अर्चन.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Anuṣṭubh. Note: the anvaya for 4.43–44 is a single sentence spanning both verses — the book&#x27;s own prose joins them; the translation is split here only for the verse-page layout. Grammar note: सरस्वति is the vocative of सरस्वत् (masculine, &#x27;the sea&#x27;), not of the goddess सरस्वती — the same gloss as 3.25. रोचये is √ruc (class 1) in the ātmanepada, first person singular: literally &#x27;it pleases me&#x27;, i.e. &#x27;I desire&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : अनुष्टुप्. टीप : ४.४३–४४ चा अन्वय दोन्ही श्लोक मिळून एकच वाक्य आहे — पुस्तकाची गद्यरचनाही त्यांना जोडते; येथे भाषांतर केवळ श्लोकपृष्ठाच्या रचनेसाठी विभागले आहे. व्याकरण-टिप्पणी : सरस्वति हे सरस्वत् (पुंल्लिङ्गी, ‘समुद्र’) चे संबोधन आहे, सरस्वती देवीचे नव्हे — ३.२५ मधीलच अर्थ. रोचये हे √रुच् (गण १) चे आत्मनेपदी प्रथमपुरुषी एकवचन : शब्दशः ‘मला आवडते’, म्हणजे ‘माझी इच्छा आहे’.</p></div></div>
+
+<div class="pagenav"><a href="verse-43.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 43</div></a><a class="next" href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 45</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

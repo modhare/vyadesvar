@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 47 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 47</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 47</span><span class="bl-mr lang-mr">श्लोक 47</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यत्र प्रपन्नाः प्रतरन्ति दुर्गतिं तीर्णाः पुनः स्वर्गगतिं लभन्ते ।<br>लब्ध्वा भवाब्धौ न पुना रमन्ते तच्छुक्लतीर्थं शरणं ममास्तु ।।४७।।</div>
+  <div class="verse-iast">yatra prapannāḥ prataranti durgatiṃ tīrṇāḥ punaḥ svargagatiṃ labhante । labdhvā bhavābdhau na punā ramante tacchuklatīrthaṃ śaraṇaṃ mamāstu</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यत्र प्रपन्नाः प्रतरन्ति दुर्गतिम् तीर्णाः पुनः स्वर्ग-गतिम् लभन्ते । लब्ध्वा भव-अब्धौ न पुनः रमन्ते तत् शुक्ल-तीर्थम् शरणम् मम अस्तु ।</div><div class="vig-iast">yatra prapannāḥ prataranti durgatim tīrṇāḥ punaḥ svarga-gatim labhante । labdhvā bhava-abdhau na punaḥ ramante tat śukla-tīrtham śaraṇam mama astu ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पुनः + रमन्ते = पुना रमन्ते (र्-लोप, पूर्वस्वर दीर्घ) · तत् + शुक्ल = तच्छुक्ल (त् + श → च्छ) · मम + अस्तु = ममास्तु</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र प्रपन्नाः दुर्गतिं प्रतरन्ति, तीर्णाः (च) पुनः स्वर्गगतिं लभन्ते, लब्ध्वा (च) पुनः भवाब्धौ न रमन्ते, तत् शुक्लतीर्थं मम शरणम् अस्तु । (वृत्त: उपजाति)</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Where those who take refuge cross over misfortune, and having crossed attain once more the path of heaven, and having attained it sport no more in the ocean of becoming — may that Śukla tīrtha be my refuge.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्या तीर्थावर पोचल्यानंतर मानव दुर्गती ओलांडतात, ज्यांत स्नान केल्यानंतर त्यांना पुन्हा स्वर्गप्राप्ती होते व एकदा ती मिळाल्यानंतर त्यांना पुन्हा या भवसागरात रममाण व्हावे लागत नाही ते शुक्लतीर्थ माझे आश्रयस्थान होवो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यत्र</span>
+    <span class="word-iast">yatra</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यत्र</div>
+  <p class="word-meaning lang-en">where</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे</p>
+  <div class="word-usage">
+    <div class="deva">यत्र स्नेहस्तत्र सुखम्।</div>
+    <div class="usage-iast">yatra snehastatra sukham.</div>
+    <div class="usage-meaning lang-en">Where there is affection, there is happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथे स्नेह तेथे सुख.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रपन्नाः</span>
+    <span class="word-iast">prapannāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.; क्त</span></div>
+  <div class="word-form">In this verse: प्रपन्नाः</div>
+  <p class="word-meaning lang-en">those who resort</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरण आलेले</p>
+  <div class="word-usage">
+    <div class="deva">प्रपन्नाः शरणं लभन्ते।</div>
+    <div class="usage-iast">prapannāḥ śaraṇaṃ labhante.</div>
+    <div class="usage-meaning lang-en">Those who take refuge obtain shelter.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरण आलेल्यांना आश्रय मिळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतरन्ति</span>
+    <span class="word-iast">prataranti</span>
+  </div>
+  <div><span class="word-grammar">प्र + तॄ, लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: प्रतरन्ति</div>
+  <p class="word-meaning lang-en">cross</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ओलांडतात</p>
+  <div class="word-usage">
+    <div class="deva">धीराः कष्टं प्रतरन्ति।</div>
+    <div class="usage-iast">dhīrāḥ kaṣṭaṃ prataranti.</div>
+    <div class="usage-meaning lang-en">The brave cross over hardship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धीर लोक कष्ट ओलांडतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दुर्गतिम्</span>
+    <span class="word-iast">durgatim</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: दुर्गतिम्</div>
+  <p class="word-meaning lang-en">misfortune</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुर्गती</p>
+  <div class="word-usage">
+    <div class="deva">स दुर्गतिं प्राप्नोत्।</div>
+    <div class="usage-iast">sa durgatiṃ prāpnot.</div>
+    <div class="usage-meaning lang-en">He met with misfortune.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याला दुर्गती प्राप्त झाली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तीर्णाः</span>
+    <span class="word-iast">tīrṇāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.; क्त</span></div>
+  <div class="word-form">In this verse: तीर्णाः</div>
+  <p class="word-meaning lang-en">having crossed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तरून गेलेले</p>
+  <div class="word-usage">
+    <div class="deva">तीर्णाः सागरं सुखं लभन्ते।</div>
+    <div class="usage-iast">tīrṇāḥ sāgaraṃ sukhaṃ labhante.</div>
+    <div class="usage-meaning lang-en">Those who have crossed the ocean find happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सागर तरून गेलेले सुख मिळवतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुनः</span>
+    <span class="word-iast">punaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: पुनः</div>
+  <p class="word-meaning lang-en">then</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मग</p>
+  <div class="word-usage">
+    <div class="deva">स पुनरागच्छत्।</div>
+    <div class="usage-iast">sa punarāgacchat.</div>
+    <div class="usage-meaning lang-en">He came again.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो पुन्हा आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वर्ग-गतिम्</span>
+    <span class="word-iast">svarga-gatim</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: स्वर्गगतिम्</div>
+  <p class="word-meaning lang-en">the way to heaven</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वर्गप्राप्ती</p>
+  <div class="word-usage">
+    <div class="deva">पुण्येन स्वर्गगतिं लभते।</div>
+    <div class="usage-iast">puṇyena svargagatiṃ labhate.</div>
+    <div class="usage-meaning lang-en">By merit one attains the path to heaven.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुण्याने स्वर्गप्राप्ती होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लभन्ते</span>
+    <span class="word-iast">labhante</span>
+  </div>
+  <div><span class="word-grammar">लभ्, लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: लभन्ते</div>
+  <p class="word-meaning lang-en">gain</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मिळवतात</p>
+  <div class="word-usage">
+    <div class="deva">छात्राः विद्यां लभन्ते।</div>
+    <div class="usage-iast">chātrāḥ vidyāṃ labhante.</div>
+    <div class="usage-meaning lang-en">Students gain knowledge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्यार्थी विद्या मिळवतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लब्ध्वा</span>
+    <span class="word-iast">labdhvā</span>
+  </div>
+  <div><span class="word-grammar">क्त्वा</span></div>
+  <div class="word-form">In this verse: लब्ध्वा</div>
+  <p class="word-meaning lang-en">having gained</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मिळवून</p>
+  <div class="word-usage">
+    <div class="deva">धनं लब्ध्वा स सुखी अभवत्।</div>
+    <div class="usage-iast">dhanaṃ labdhvā sa sukhī abhavat.</div>
+    <div class="usage-meaning lang-en">Having gained wealth, he became happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धन मिळवून तो सुखी झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भव-अब्धौ</span>
+    <span class="word-iast">bhava-abdhau</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: भवाब्धौ</div>
+  <p class="word-meaning lang-en">in the ocean of existence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसारसागरात</p>
+  <div class="word-usage">
+    <div class="deva">भवाब्धौ मग्ना जीवाः।</div>
+    <div class="usage-iast">bhavābdhau magnā jīvāḥ.</div>
+    <div class="usage-meaning lang-en">Beings are immersed in the ocean of existence.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जीव संसारसागरात बुडालेले आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न पुनः</span>
+    <span class="word-iast">na punaḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (पुना रमन्ते: र-पूर्वी विसर्गलोप, दीर्घ)</span></div>
+  <div class="word-form">In this verse: न पुना</div>
+  <p class="word-meaning lang-en">never again</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुन्हा नाही</p>
+  <div class="word-usage">
+    <div class="deva">स न पुनरागमिष्यति।</div>
+    <div class="usage-iast">sa na punarāgamiṣyati.</div>
+    <div class="usage-meaning lang-en">He will never come again.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो पुन्हा कधीही येणार नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रमन्ते</span>
+    <span class="word-iast">ramante</span>
+  </div>
+  <div><span class="word-grammar">रम्, लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: रमन्ते</div>
+  <p class="word-meaning lang-en">delight</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रमतात</p>
+  <div class="word-usage">
+    <div class="deva">बालाः उद्याने रमन्ते।</div>
+    <div class="usage-iast">bālāḥ udyāne ramante.</div>
+    <div class="usage-meaning lang-en">The children play in the garden.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुले बागेत खेळतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्</span>
+    <span class="word-iast">tat</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: तत्</div>
+  <p class="word-meaning lang-en">that</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते</p>
+  <div class="word-usage">
+    <div class="deva">तत् सत्यम्।</div>
+    <div class="usage-iast">tat satyam.</div>
+    <div class="usage-meaning lang-en">That is true.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते खरे आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुक्ल-तीर्थम्</span>
+    <span class="word-iast">śukla-tīrtham</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: शुक्लतीर्थं</div>
+  <p class="word-meaning lang-en">the Śukla tīrtha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुक्लतीर्थ</p>
+  <div class="word-usage">
+    <div class="deva">शुक्लतीर्थं मम शरणम्।</div>
+    <div class="usage-iast">śuklatīrthaṃ mama śaraṇam.</div>
+    <div class="usage-meaning lang-en">The Śukla tīrtha is my refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुक्लतीर्थ माझे आश्रयस्थान आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शरणम्</span>
+    <span class="word-iast">śaraṇam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: शरणम्</div>
+  <p class="word-meaning lang-en">refuge</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आश्रय</p>
+  <div class="word-usage">
+    <div class="deva">धर्मः शरणं प्रपन्नानाम्।</div>
+    <div class="usage-iast">dharmaḥ śaraṇaṃ prapannānām.</div>
+    <div class="usage-meaning lang-en">Dharma is the refuge of those who seek it.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्म हा शरण आलेल्यांचा आश्रय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मम</span>
+    <span class="word-iast">mama</span>
+  </div>
+  <div><span class="word-grammar">ष. एव.</span></div>
+  <div class="word-form">In this verse: मम</div>
+  <p class="word-meaning lang-en">my</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझे</p>
+  <div class="word-usage">
+    <div class="deva">मम नाम रामः।</div>
+    <div class="usage-iast">mama nāma rāmaḥ.</div>
+    <div class="usage-meaning lang-en">My name is Rāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माझे नाव राम आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अस्तु</span>
+    <span class="word-iast">astu</span>
+  </div>
+  <div><span class="word-grammar">लोट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: अस्तु</div>
+  <p class="word-meaning lang-en">be</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>होवो</p>
+  <div class="word-usage">
+    <div class="deva">कल्याणमस्तु।</div>
+    <div class="usage-iast">kalyāṇamastu.</div>
+    <div class="usage-meaning lang-en">May there be welfare.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कल्याण होवो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the theological heart of the Śukla-tīrtha hymn: a three-step ascent — those who take refuge cross misfortune (prapannāḥ prataranti durgatim), the crossed attain heaven (tīrṇāḥ svargagatim labhante), and the attainers never again sport in the ocean of becoming (na punar ramante). The last step quietly passes beyond svarga to mokṣa: no return. The verse ends, as the hymn must, in surrender: &#x27;may that tīrtha be my refuge.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे शुक्लतीर्थस्तोत्राचे तात्त्विक हृदय आहे : त्रिपदी आरोहण — शरण आलेले दुर्गती ओलांडतात (प्रपन्नाः प्रतरन्ति दुर्गतिम्), तरून गेलेले स्वर्गप्राप्ती मिळवतात (तीर्णाः स्वर्गगतिं लभन्ते), आणि प्राप्त झालेले पुन्हा भवसागरात रमत नाहीत (न पुनः रमन्ते). शेवटची पायरी शांतपणे स्वर्गाच्या पलीकडे मोक्षाकडे जाते — परतणे नाही. स्तोत्राला साजेसे, श्लोक शरणागतीत संपतो : &#x27;ते तीर्थ माझे आश्रयस्थान होवो.&#x27;</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse plays on the root √tṛ in three forms — prataranti (&#x27;they cross&#x27;), tīrṇāḥ (&#x27;having crossed&#x27;), and the tīrtha itself — to enact in grammar what the tīrtha does in fact: carry across. The sequence durgati → svargagati → freedom from punar-bhava is the standard purāṇic ladder of tīrtha-phala, here compressed into a single Upajāti stanza.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>√तृ धातूच्या तीन रूपांवर — प्रतरन्ति (&#x27;ते ओलांडतात&#x27;), तीर्णाः (&#x27;तरून गेलेले&#x27;) आणि तीर्थ स्वतः — श्लोक श्लेष साधतो; व्याकरणात तेच घडवतो जे तीर्थ प्रत्यक्षात करते : तरून नेणे. दुर्गति → स्वर्गगति → पुनर्भवापासून मुक्ती ही तीर्थफळाची प्रमाणित पुराणोक्त शिडी येथे एकाच उपजाती छंदात संक्षिप्त केली आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Upajāti. The sandhi note records a phonetic detail preserved in the transcription: punaḥ + ramante → punā ramante, with loss of visarga and compensatory lengthening of the preceding vowel — the verse prints न पुना रमन्ते. The three verbs of motion (pra-pad, pra-tṝ, ram) trace the pilgrim&#x27;s whole journey from surrender to play to play&#x27;s end.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : उपजाति. संधीटीपेत प्रतिलेखनात जतन केलेला एक ध्वनिशास्त्रीय तपशील नोंदवला आहे : पुनः + रमन्ते → पुना रमन्ते — विसर्गलोप आणि पूर्वस्वरदीर्घीकरण; श्लोकात &#x27;न पुना रमन्ते&#x27; असेच छापले आहे. गतीची तीन क्रियापदे (प्र-पद्, प्र-तृ, रम्) शरणागतीपासून क्रीडेपर्यंत आणि क्रीडेच्या अंतापर्यंतचा यात्रेकरूचा संपूर्ण प्रवास रेखाटतात.</p></div></div>
+
+<div class="pagenav"><a href="verse-46.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 46</div></a><a class="next" href="verse-48.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 48</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

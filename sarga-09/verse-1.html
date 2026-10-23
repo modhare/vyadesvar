@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ 1 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ</a><span>&rsaquo;</span><span class="here">Verse 1</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 1</span><span class="bl-mr lang-mr">श्लोक 1</span></h1>
+<p class="meta">Sarga 9 — Vāḍeśvaraliṅgāvirbhāvaḥ &middot; <span class="deva">नवमः सर्गः · वाडेश्वरलिङ्गाविर्भावः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Mālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ कलिमनुवृत्तं कालगत्या विदित्वा<br>सकलमुनिसमूहा भार्गवक्षेत्रसंस्थाः ।<br>निजनिजनिलयेषु स्थापयित्वामरेशान्<br>हरिचरणनिघृष्टां संप्रविष्टा विशालाम् ।।१।।</div>
+  <div class="verse-iast">atha kalimanuvṛttaṃ kālagatyā viditvā sakalamunisamūhā bhārgavakṣetrasaṃsthāḥ । nijanijanilayeṣu sthāpayitvāmareśān haricaraṇanighṛṣṭāṃ saṃpraviṣṭā viśālām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । कलिम् । अनुवृत्तम् । काल-गत्या । विदित्वा । सकल-मुनि-समूहाः । भार्गव-क्षेत्र-संस्थाः । निज-निज-निलयेषु । स्थापयित्वा । अमर-ईशान् । हरि-चरण-निघृष्टाम् । संप्रविष्टाः । विशालाम् ।</div><div class="vig-iast">atha । kalim । anuvṛttam । kāla-gatyā । viditvā । sakala-muni-samūhāḥ । bhārgava-kṣetra-saṃsthāḥ । nija-nija-nilayeṣu । sthāpayitvā । amara-īśān । hari-caraṇa-nighṛṣṭām । saṃpraviṣṭāḥ । viśālām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">कलिम् + अनुवृत्तम् = कलिमनुवृत्तम् · समूहाः + भार्गव = समूहा भार्गव (विसर्ग-लोप) · स्थापयित्वा + अमर = स्थापयित्वामर · अमर + ईशान् = अमरेशान् (गुण) · संप्रविष्टाः + विशालाम् = संप्रविष्टा विशालाम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ कालगत्या कलिम् अनुवृत्तं विदित्वा भार्गवक्षेत्रसंस्थाः सकलमुनिसमूहाः निजनिजनिलयेषु अमरेशान् स्थापयित्वा हरिचरणनिघृष्टां विशालां संप्रविष्टाः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then, perceiving through the course of time that Kali had arrived in his turn, all the hosts of sages dwelling in Bhargava&#x27;s land installed the lords of the immortals in their own homes, and entered the Vishala river, hallowed by the touch of Hari&#x27;s feet.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>नंतर कालगतीनुसार कली अवतीर्ण झाल्याचे जाणून परशुरामक्षेत्रात राहाणाऱ्या सर्व मुनिसमूहांनी आपापल्या घरांत देवांची स्थापना करून हरिचरणांनी पावन झालेल्या विशालानदीत प्रवेश केला.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कालगत्या</span>
+    <span class="word-iast">kālagatyā</span>
+  </div>
+  <div><span class="word-grammar">instrumental singular (tritiya ekavachana) of kala-gati (feminine, i-karanta)</span></div>
+  <div class="word-form">In this verse: कालगत्या — as printed</div>
+  <p class="word-meaning lang-en">by the course of time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळाच्या गतीने</p>
+  <div class="word-usage">
+    <div class="deva">कालगत्या जगतः सर्वे भावाः परिवर्तन्ते</div>
+    <div class="usage-iast">kalagatya jagatah sarve bhavah parivartante</div>
+    <div class="usage-meaning lang-en">By the course of time all the conditions of the world change.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळाच्या गतीने जगातील सर्व अवस्था बदलतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कलिमनुवृत्तम्</span>
+    <span class="word-iast">kalimanuvṛttam</span>
+  </div>
+  <div><span class="word-grammar">accusative singular neuter of the compound kali + anuvritta (past participle of anu + vrit); dvitiya ekavachana, napumsakalinga</span></div>
+  <div class="word-form">In this verse: कलिमनुवृत्तं — anusvara for -म्</div>
+  <p class="word-meaning lang-en">Kali come in his turn, Kali having begun his sway</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कली (क्रमाने) आला आहे असे</p>
+  <div class="word-usage">
+    <div class="deva">कलिम् अनुवृत्तम् विदित्वा मुनयः चिन्तिताः अभवन्</div>
+    <div class="usage-iast">kalim anuvrittam viditva munayah chintitah abhavan</div>
+    <div class="usage-meaning lang-en">Having known that Kali had come in his turn, the sages became thoughtful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कली आला आहे हे जाणून मुनी चिंतित झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भार्गवक्षेत्रसंस्थाः</span>
+    <span class="word-iast">bhārgavakṣetrasaṃsthāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine (prathama bahuvachana) of the bahuvrihi compound; samstha as tatpurusha, &#x27;dwelling in&#x27;</span></div>
+  <div class="word-form">In this verse: भार्गवक्षेत्रसंस्थाः — as printed</div>
+  <p class="word-meaning lang-en">dwelling in the Bhargava (Parashurama&#x27;s) land</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामक्षेत्रात राहणारे</p>
+  <div class="word-usage">
+    <div class="deva">भार्गवक्षेत्रसंस्थाः मुनयः तपसा तप्ताः आसन्</div>
+    <div class="usage-iast">bhargavakshetrasamsthah munayah tapasa taptah asan</div>
+    <div class="usage-meaning lang-en">The sages dwelling in Parashurama&#x27;s land were glowing with austerity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामक्षेत्रात राहणारे मुनी तपाने तप्त झाले होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">निजनिजनिलयेषु</span>
+    <span class="word-iast">nijanijanilayeṣu</span>
+  </div>
+  <div><span class="word-grammar">locative plural (saptami bahuvachana) masculine/neuter of the reduplicated possessive compound nija-nija-nilaya</span></div>
+  <div class="word-form">In this verse: निजनिजनिलयेषु — as printed</div>
+  <p class="word-meaning lang-en">in their respective homes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपापल्या घरांत</p>
+  <div class="word-usage">
+    <div class="deva">निजनिजनिलयेषु देवाः स्थापिताः अभवन्</div>
+    <div class="usage-iast">nijanijanilayeshu devah sthapitah abhavan</div>
+    <div class="usage-meaning lang-en">The gods were installed in their respective homes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपापल्या घरांत देवांची स्थापना करण्यात आली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अमरेशान्</span>
+    <span class="word-iast">amareśān</span>
+  </div>
+  <div><span class="word-grammar">accusative plural masculine (dvitiya bahuvachana) of amara-isha, tatpurusha, &#x27;lord of the immortals&#x27;</span></div>
+  <div class="word-form">In this verse: अमरेशान् — in स्थापयित्वामरेशान्</div>
+  <p class="word-meaning lang-en">the gods, the lords of the immortals</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवांना</p>
+  <div class="word-usage">
+    <div class="deva">भक्ताः अमरेशान् पुष्पैः अर्चयन्ति</div>
+    <div class="usage-iast">bhaktah amareshan pushpaih archayanti</div>
+    <div class="usage-meaning lang-en">Devotees worship the gods with flowers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भक्त देवांची फुलांनी पूजा करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्थापयित्वा</span>
+    <span class="word-iast">sthāpayitvā</span>
+  </div>
+  <div><span class="word-grammar">absolutive (ktva) of the causative of stha — sthapayati; &#x27;having caused to stand&#x27;</span></div>
+  <div class="word-form">In this verse: स्थापयित्वा — in स्थापयित्वामरेशान्</div>
+  <p class="word-meaning lang-en">having installed, having placed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थापून</p>
+  <div class="word-usage">
+    <div class="deva">देवम् स्थापयित्वा मुनयः नदीम् प्रविष्टाः</div>
+    <div class="usage-iast">devam sthapayitva munayah nadim pravishthah</div>
+    <div class="usage-meaning lang-en">Having installed the god, the sages entered the river.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाची स्थापना करून मुनी नदीत शिरले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हरिचरणनिघृष्टाम्</span>
+    <span class="word-iast">haricaraṇanighṛṣṭām</span>
+  </div>
+  <div><span class="word-grammar">accusative singular feminine (dvitiya ekavachana, strilinga) of the bahuvrihi compound; nighrishta = past participle of ni + ghrish, &#x27;rubbed&#x27;</span></div>
+  <div class="word-form">In this verse: हरिचरणनिघृष्टां — anusvara for -म्</div>
+  <p class="word-meaning lang-en">rubbed smooth by the feet of Hari, hallowed by his footfall</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीच्या चरणांनी घासलेल्या (स्पर्शलेल्या)</p>
+  <div class="word-usage">
+    <div class="deva">हरिचरणनिघृष्टाम् नदीम् मुनयः प्रविशन्ति स्म</div>
+    <div class="usage-iast">haricharananighrishtam nadim munayah pravishanti sma</div>
+    <div class="usage-meaning lang-en">The sages used to enter the river made holy by Hari&#x27;s feet.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरीच्या चरणांनी पावन झालेल्या नदीत मुनी प्रवेश करीत असत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विशालाम्</span>
+    <span class="word-iast">viśālām</span>
+  </div>
+  <div><span class="word-grammar">accusative singular feminine of vishala (proper name of the river)</span></div>
+  <div class="word-form">In this verse: विशालाम् — as printed</div>
+  <p class="word-meaning lang-en">the Vishala (river)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विशाल (नदीत)</p>
+  <div class="word-usage">
+    <div class="deva">विशालाम् नदीम् प्राप्य ते स्नानम् चक्रुः</div>
+    <div class="usage-iast">vishalam nadim prapya te snanam chakruh</div>
+    <div class="usage-meaning lang-en">Having reached the Vishala river, they bathed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विशाला नदी गाठून त्यांनी स्नान केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संप्रविष्टाः</span>
+    <span class="word-iast">saṃpraviṣṭāḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative plural masculine, past participle of sam + pra + vish (shatva after vi gives -shta)</span></div>
+  <div class="word-form">In this verse: संप्रविष्टा — visarga dropped before विशालाम्</div>
+  <p class="word-meaning lang-en">entered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रवेशले</p>
+  <div class="word-usage">
+    <div class="deva">मुनयः संप्रविष्टाः विशालाम् नदीम्</div>
+    <div class="usage-iast">munayah sampravishtah vishalam nadim</div>
+    <div class="usage-meaning lang-en">The sages entered the Vishala river.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनी विशाला नदीत प्रवेशले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse marks the close of the age of the rishis&#x27; visible presence in the kshetra. With Kali&#x27;s advent the sages withdraw — not in fear, but as a deliberate act of preservation: they enshrine the gods in their own homes and return to the sanctified river, keeping dharma alive in seed-form through the dark age. For the pilgrim it teaches that even when the age is unpropitious, worship does not cease; it withdraws into the heart, where every home can become a shrine. The Vishala river, touched by Hari&#x27;s feet, stands for the ever-flowing grace that remains accessible when outer conditions fail.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक ऋषींच्या दृश्य उपस्थितीचा अंत आणि कलियुगाचा प्रारंभ सांगतो. मुनी भयाने नव्हे, तर धर्माच्या संरक्षणाच्या जाणीवपूर्वक हेतूने अंतर्धान पावतात — देवांना आपापल्या घरांतच स्थापून ते हरीचरणपावन नदीत प्रवेश करतात. यातून भाविकाला हा संदेश मिळतो की काळ प्रतिकूल असला तरी उपासना थांबत नाही; ती हृदयात माघार घेते आणि प्रत्येक घर मंदिर बनू शकते. विशाला नदी हे त्या सतत वाहणाऱ्या कृपेचे प्रतीक आहे जी बाह्य परिस्थिती बिघडली तरीही उपलब्ध राहते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Puranas say that at the onset of Kali-yuga many holy beings withdrew from the open world — the seven rishis, the siddhas, and, in this local tradition, the sages of Parashurama&#x27;s land. Installing the deity in one&#x27;s own home (griha-devata) is an ancient practice: when public worship cannot be sustained, the home shrine keeps the fire of dharma burning. The image of sages entering the river recalls the vanaprastha ideal — final absorption into the sacred waters.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे सांगतात की कलियुगाच्या प्रारंभी अनेक पवित्र जीव जगाच्या दृश्य क्षेत्रातून माघार घेतात — सप्तर्षी, सिद्ध आणि या स्थानिक परंपरेनुसार परशुरामक्षेत्रातील मुनी. स्वतःच्या घरात देवता स्थापणे (गृहदेवता) ही प्राचीन प्रथा आहे : सार्वजनिक उपासना टिकवता येत नसेल तेव्हा घरातील देवघर धर्माची ज्योत तेवत ठेवते. मुनी नदीत प्रवेश करतात ही प्रतिमा वानप्रस्थ आदर्शाची आठवण करून देते — पवित्र जलातील अंतिम विलीनता.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Malini metre (15 syllables). &#x27;Bhargava-kshetra&#x27; is the land raised by Parashurama, i.e. the Konkan/Aparanta region; this verse opens the sarga&#x27;s transition from the mythic age to historical time (Shalivahana, the kings of the Gudha country). The Vishala river is not identified further in the kavya; it likely belongs to the local sacred geography around Guhagar.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मालिनी वृत्त (१५ अक्षरे). &#x27;भार्गवक्षेत्र&#x27; म्हणजे परशुरामाने वर आणलेली भूमी — अर्थात कोकण/अपरांत प्रदेश; या श्लोकाने सर्ग पौराणिक काळातून ऐतिहासिक काळाकडे (शालिवाहन, गूढदेशातील राजे) वळतो. विशाला नदीची काव्यात पुढे ओळख दिलेली नाही; ती गुहागर परिसराच्या स्थानिक पवित्र भूगोलातील असावी.</p></div></div>
+
+<div class="pagenav"><a href="../../../kavya/vyadeshvarodaya/sarga-08/verse-46.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Sarga 8 — Rāmatirodhānaḥ 46</div></a><a class="next" href="verse-2.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 2</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

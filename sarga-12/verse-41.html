@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 41 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 41</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 41</span><span class="bl-mr lang-mr">श्लोक 41</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Mālinī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">जयतु जयतु नित्यं शुक्लतीर्थं सुतीर्थं भवति सपदि यस्मिन्मज्जतां सज्जनानाम् ।<br>दुरिततिमिरनाशः पुण्यतत्त्वप्रकाशः सुरवरपदवासः संसृतेः संनिरासः ।।४१।।</div>
+  <div class="verse-iast">jayatu jayatu nityaṃ śuklatīrthaṃ sutīrthaṃ bhavati sapadi yasminmajjatāṃ sajjanānām । duritatimiranāśaḥ puṇyatattvaprakāśaḥ suravarapadavāsaḥ saṃsṛteḥ saṃnirāsaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">जयतु जयतु नित्यम् शुक्ल-तीर्थम् सु-तीर्थम् भवति सपदि यस्मिन् मज्जताम् सत्-जनानाम् । दुरित-तिमिर-नाशः पुण्य-तत्त्व-प्रकाशः सुर-वर-पद-वासः संसृतेः संनिरासः ।</div><div class="vig-iast">jayatu jayatu nityam śukla-tīrtham su-tīrtham bhavati sapadi yasmin majjatām sat-janānām । durita-timira-nāśaḥ puṇya-tattva-prakāśaḥ sura-vara-pada-vāsaḥ saṃsṛteḥ saṃnirāsaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यस्मिन् + मज्जताम् = यस्मिन्मज्जताम् · सत् + जनानाम् = सज्जनानाम् (त् → ज्) · संसृतेः + संनिरासः = संसृतेः संनिरासः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">सुतीर्थं शुक्लतीर्थं नित्यं जयतु जयतु; यस्मिन् मज्जतां सज्जनानां सपदि दुरिततिमिरनाशः, पुण्यतत्त्वप्रकाशः, सुरवरपदवासः, संसृतेः संनिरासः (च) भवति । (वृत्त: मालिनी)</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Glory, glory ever be to the Śukla tīrtha, the foremost of tīrthas! For the good who bathe therein there comes at once the destruction of the darkness of sin, the shining forth of the light of merit, a dwelling in the abode of the best of gods, and the complete end of the round of births.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्या या तीर्थात स्नान करणाऱ्या सज्जनांच्या पापान्धकाराचा ताबडतोब नाश होऊन त्यांच्यातील पुण्यांशाचा प्रकाश फाकतो, त्यांच्या पुनर्जन्माची शक्यता नष्ट होऊन त्यांचा स्वर्गातील निवास निश्चित होतो त्या तीर्थांतील श्रेष्ठ अशा शुक्लतीर्थाचा पुनः पुन्हा जयजयकार असो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जयतु जयतु</span>
+    <span class="word-iast">jayatu jayatu</span>
+  </div>
+  <div><span class="word-grammar">जि, लोट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: जयतु जयतु</div>
+  <p class="word-meaning lang-en">victory, victory</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जयजयकार असो</p>
+  <div class="word-usage">
+    <div class="deva">जयतु जयतु धर्मः।</div>
+    <div class="usage-iast">jayatu jayatu dharmaḥ.</div>
+    <div class="usage-meaning lang-en">Let dharma ever triumph.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्माचा नेहमी जयजयकार असो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नित्यम्</span>
+    <span class="word-iast">nityam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: नित्यम्</div>
+  <p class="word-meaning lang-en">ever</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नेहमी</p>
+  <div class="word-usage">
+    <div class="deva">सूर्यो नित्यमुदेति।</div>
+    <div class="usage-iast">sūryo nityamudeti.</div>
+    <div class="usage-meaning lang-en">The sun rises daily.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सूर्य रोज उगवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शुक्ल-तीर्थम्</span>
+    <span class="word-iast">śukla-tīrtham</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: शुक्लतीर्थं</div>
+  <p class="word-meaning lang-en">the Śukla tīrtha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुक्लतीर्थ</p>
+  <div class="word-usage">
+    <div class="deva">शुक्लतीर्थं पवित्रं तीर्थम्।</div>
+    <div class="usage-iast">śuklatīrthaṃ pavitraṃ tīrtham.</div>
+    <div class="usage-meaning lang-en">The Śukla tīrtha is a holy tīrtha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुक्लतीर्थ हे पवित्र तीर्थ आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सु-तीर्थम्</span>
+    <span class="word-iast">su-tīrtham</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सुतीर्थं</div>
+  <p class="word-meaning lang-en">the excellent tīrtha</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्तम तीर्थ</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गा सुतीर्थं कथ्यते।</div>
+    <div class="usage-iast">gaṅgā sutīrthaṃ kathyate.</div>
+    <div class="usage-meaning lang-en">The Gaṅgā is called an excellent tīrtha.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगेला उत्तम तीर्थ म्हणतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवति</span>
+    <span class="word-iast">bhavati</span>
+  </div>
+  <div><span class="word-grammar">भू, लट्, प्र.पु. एव.</span></div>
+  <div class="word-form">In this verse: भवति</div>
+  <p class="word-meaning lang-en">there comes</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>होतो</p>
+  <div class="word-usage">
+    <div class="deva">विद्यया विनयो भवति।</div>
+    <div class="usage-iast">vidyayā vinayo bhavati.</div>
+    <div class="usage-meaning lang-en">Through learning comes humility.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विद्येने विनय येतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सपदि</span>
+    <span class="word-iast">sapadi</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: सपदि</div>
+  <p class="word-meaning lang-en">at once</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तत्काळ</p>
+  <div class="word-usage">
+    <div class="deva">स सपदि गृहमगच्छत्।</div>
+    <div class="usage-iast">sa sapadi gṛhamagacchat.</div>
+    <div class="usage-meaning lang-en">He went home at once.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो ताबडतोब घरी गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यस्मिन्</span>
+    <span class="word-iast">yasmin</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: यस्मिन्</div>
+  <p class="word-meaning lang-en">in which</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्यात</p>
+  <div class="word-usage">
+    <div class="deva">यस्मिन् देशे गङ्गा वहति स पावनः।</div>
+    <div class="usage-iast">yasmin deśe gaṅgā vahati sa pāvanaḥ.</div>
+    <div class="usage-meaning lang-en">The land in which the Gaṅgā flows is holy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्या देशात गंगा वाहते तो पवित्र आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मज्जताम्</span>
+    <span class="word-iast">majjatām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.; शतृ</span></div>
+  <div class="word-form">In this verse: मज्जताम्</div>
+  <p class="word-meaning lang-en">bathing</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्नान करणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">नद्यां मज्जतां जनानां पापं नश्यति।</div>
+    <div class="usage-iast">nadyāṃ majjatāṃ janānāṃ pāpaṃ naśyati.</div>
+    <div class="usage-meaning lang-en">The sin of people bathing in the river is destroyed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नदीत स्नान करणाऱ्या लोकांचे पाप नष्ट होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्-जनानाम्</span>
+    <span class="word-iast">sat-janānām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.</span></div>
+  <div class="word-form">In this verse: सज्जनानाम्</div>
+  <p class="word-meaning lang-en">of good people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांचा</p>
+  <div class="word-usage">
+    <div class="deva">सज्जनानां सङ्गतिः श्रेयस्करी।</div>
+    <div class="usage-iast">sajjanānāṃ saṅgatiḥ śreyaskarī.</div>
+    <div class="usage-meaning lang-en">The company of good people is beneficial.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सज्जनांची संगत हितकारक असते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दुरित-तिमिर-नाशः</span>
+    <span class="word-iast">durita-timira-nāśaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: दुरिततिमिरनाशः</div>
+  <p class="word-meaning lang-en">the end of the darkness of sin</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापांधकाराचा नाश</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गास्नानं दुरिततिमिरनाशं करोति।</div>
+    <div class="usage-iast">gaṅgāsnānaṃ duritatimiranāśaṃ karoti.</div>
+    <div class="usage-meaning lang-en">Bathing in the Gaṅgā destroys the darkness of sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगास्नान पापांधकाराचा नाश करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुण्य-तत्त्व-प्रकाशः</span>
+    <span class="word-iast">puṇya-tattva-prakāśaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: पुण्यतत्त्वप्रकाशः</div>
+  <p class="word-meaning lang-en">the shining of merit</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुण्याचा प्रकाश</p>
+  <div class="word-usage">
+    <div class="deva">दानं पुण्यतत्त्वप्रकाशाय भवति।</div>
+    <div class="usage-iast">dānaṃ puṇyatattvaprakāśāya bhavati.</div>
+    <div class="usage-meaning lang-en">Charity leads to the shining of merit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दानाने पुण्याचा प्रकाश होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुर-वर-पद-वासः</span>
+    <span class="word-iast">sura-vara-pada-vāsaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सुरवरपदवासः</div>
+  <p class="word-meaning lang-en">a dwelling in the gods&#x27; abode</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वर्गात निवास</p>
+  <div class="word-usage">
+    <div class="deva">पुण्येन सुरवरपदवासो लभ्यते।</div>
+    <div class="usage-iast">puṇyena suravarapadavāso labhyate.</div>
+    <div class="usage-meaning lang-en">By merit, dwelling in the gods&#x27; abode is gained.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुण्याने देवांच्या लोकी निवास मिळतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संसृतेः</span>
+    <span class="word-iast">saṃsṛteḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. ष. एव.</span></div>
+  <div class="word-form">In this verse: संसृतेः</div>
+  <p class="word-meaning lang-en">of saṃsāra</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसाराचा</p>
+  <div class="word-usage">
+    <div class="deva">ज्ञानात् संसृतेरन्तो भवति।</div>
+    <div class="usage-iast">jñānāt saṃsṛteranto bhavati.</div>
+    <div class="usage-meaning lang-en">Through knowledge comes the end of saṃsāra.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्ञानाने संसाराचा अंत होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">संनिरासः</span>
+    <span class="word-iast">saṃnirāsaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: संनिरासः</div>
+  <p class="word-meaning lang-en">complete end</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूर्ण नाश</p>
+  <div class="word-usage">
+    <div class="deva">वैराग्यं दुःखस्य संनिरासं करोति।</div>
+    <div class="usage-iast">vairāgyaṃ duḥkhasya saṃnirāsaṃ karoti.</div>
+    <div class="usage-meaning lang-en">Detachment brings the complete end of suffering.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वैराग्य दुःखाचा पूर्ण नाश करते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This verse states the classical fourfold fruit of tīrtha-snāna: the instant destruction of sin&#x27;s darkness, the shining forth of merit, residence in heaven, and the final end of rebirth. By packing all four into one breathless Mālinī stanza, the poet raises this local sea-tīrtha to the rank of the great purāṇic tīrthas. Devotionally it teaches that a tīrtha works by grace, not by the bathers&#x27; merit — it is the good (sajjana) who come, but the tīrtha that transforms.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या श्लोकात तीर्थस्नानाची चतुर्विध फळे सांगितली आहेत — पापान्धकाराचा तत्काळ नाश, पुण्याचा प्रकाश, स्वर्गवास आणि पुनर्जन्माचा संपूर्ण अंत. या चारही फळांना एकाच मालिनी छंदात गुंफून कवीने या स्थानिक समुद्रतीर्थाला पुराणांतील महान तीर्थांच्या पंक्तीत नेऊन बसवले आहे. भक्तीच्या दृष्टीने यातून शिकवण अशी की, तीर्थ हे स्नान करणाऱ्याच्या पुण्याने नव्हे, तर स्वतःच्या कृपेनेच कार्य करते — येणारे सज्जन असतात, पण त्यांचे रूपांतर करणारे तीर्थ असते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The four fruits — pāpa-nāśa, puṇya-prakāśa, svarga-vāsa, saṃsāra-nirāsa — follow the standard purāṇic ladder of tīrtha-phala, where bathing first cleanses, then adorns, then elevates, and finally liberates. The verse deliberately telescopes the two goals of the kāmya devotee (heaven) and the mumukṣu (end of rebirth) into a single blessing, so that every kind of pilgrim finds his hope here.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पापनाश, पुण्यप्रकाश, स्वर्गवास आणि संसारनिरास ही चार फळे तीर्थफळाच्या पुराणोक्त परंपरेला धरून आहेत — स्नान प्रथम शुद्ध करते, मग भूषवते, मग उन्नत करते आणि शेवटी मुक्त करते. काम्य भक्ताचे (स्वर्ग) आणि मुमुक्षूचे (पुनर्जन्माचा अंत) अशी दोन्ही ध्येये कवीने एकाच आशीर्वादात गुंफली आहेत, जेणेकरून प्रत्येक प्रकारच्या यात्रेकरूला येथे आपली आशा सापडेल.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre: Mālinī. The doubled जयतु जयतु is an acclamatory opening that marks the start of the Śukla-tīrtha hymn (verses 41–48), the centrepiece of the sarga&#x27;s northern-shrine section (Dabhol, Harihareśvara, Chaul, Kanakeśvara). &#x27;संसृतेः संनिरासः&#x27; joins the genitive of saṃsṛti (the round of births) with saṃ-ni-rāsa, &#x27;a complete casting off&#x27; — the strongest of the four fruits.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृत्त : मालिनी. दुहेरी &#x27;जयतु जयतु&#x27; हा जयघोष शुक्लतीर्थस्तोत्राची (श्लोक ४१–४८) सुरुवात दर्शवतो; हा भाग सर्गातील उत्तरेकडील तीर्थांच्या (दाभोळ, हरिहरेश्वर, चौल, कनकेश्वर) वर्णनाचे केंद्र आहे. &#x27;संसृतेः संनिरासः&#x27; मध्ये संसृतीच्या (जन्ममरणचक्राच्या) षष्ठीसोबत सं-नि-रास (&#x27;संपूर्ण टाकून देणे&#x27;) जोडले आहे — चार फळांतील सर्वांत प्रबळ फळ.</p></div></div>
+
+<div class="pagenav"><a href="verse-40.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 40</div></a><a class="next" href="verse-42.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 42</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

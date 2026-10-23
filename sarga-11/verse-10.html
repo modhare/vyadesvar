@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 10 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 10</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 10</span><span class="bl-mr lang-mr">श्लोक 10</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स एष दृश्यते चास्य महिमा लोकविश्रुतः ।<br>गरामठस्य देवस्य प्रपन्नार्त्यपहारिणः ।।१०।।</div>
+  <div class="verse-iast">sa eṣa dṛśyate cāsya mahimā lokaviśrutaḥ । garāmaṭhasya devasya prapannārtyapahāriṇaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">सः । एषः । दृश्यते । च । अस्य । महिमा । लोक-विश्रुतः । गरामठस्य । देवस्य । प्रपन्न-आर्ति-अपहारिणः ।</div><div class="vig-iast">saḥ । eṣaḥ । dṛśyate । ca । asya । mahimā । loka-viśrutaḥ । garāmaṭhasya । devasya । prapanna-ārti-apahāriṇaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">सः + एषः = स एषः · एषः + दृश्यते = एष दृश्यते · च + अस्य = चास्य · प्रपन्न + आर्ति = प्रपन्नार्ति · आर्ति + अपहारिणः = आर्त्यपहारिणः (यण्)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">सः एषः (देवः अत्र) दृश्यते; प्रपन्नार्त्यपहारिणः अस्य गरामठस्य देवस्य लोकविश्रुतः महिमा च (दृश्यते) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>This is that very god, manifest here; the glory of this Garamaṭha, the remover of the sufferings of those who take refuge in him, is renowned among the people.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा तो देव येथे विराजमान आहे. शरणागतांच्या वेदना हरण करणाऱ्या या गरामठ देवाचा महिमा लोकांत प्रसिद्ध आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृश्यते</span>
+    <span class="word-iast">dṛśyate</span>
+  </div>
+  <div><span class="word-grammar">present, atmanepada, 3rd person singular; √dṛś, passive sense &#x27;is seen&#x27;</span></div>
+  <div class="word-form">In this verse: दृश्यते</div>
+  <p class="word-meaning lang-en">is seen, appears</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दिसतो</p>
+  <div class="word-usage">
+    <div class="deva">मन्दिरे देवो दृश्यते।</div>
+    <div class="usage-iast">mandire devo dṛśyate.</div>
+    <div class="usage-meaning lang-en">The god is seen in the temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिरात देव दिसतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोकविश्रुतः</span>
+    <span class="word-iast">lokaviśrutaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; tatpuruṣa: लोक + विश्रुत (√śru + kta, &#x27;heard, renowned&#x27;)</span></div>
+  <div class="word-form">In this verse: लोकविश्रुतः</div>
+  <p class="word-meaning lang-en">renowned among people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकप्रसिद्ध</p>
+  <div class="word-usage">
+    <div class="deva">लोकविश्रुतो राजा प्रजां पालयति।</div>
+    <div class="usage-iast">lokaviśruto rājā prajāṃ pālayati.</div>
+    <div class="usage-meaning lang-en">The famous king protects his subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्ध राजा प्रजेचे पालन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रपन्नार्त्यपहारिणः</span>
+    <span class="word-iast">prapannārtyapahāriṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular; bahuvrihi compound: प्रपन्न (surrendered) + आर्ति (pain) + अपहारिन् (remover, √hṛ)</span></div>
+  <div class="word-form">In this verse: प्रपन्नार्त्यपहारिणः</div>
+  <p class="word-meaning lang-en">of the remover of the sufferings of the surrendered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरणागतांची पीडा हरण करणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">प्रपन्नार्त्यपहारिणो देवस्य कृपया सुखं भवति।</div>
+    <div class="usage-iast">prapannārtyapahāriṇo devasya kṛpayā sukhaṃ bhavati.</div>
+    <div class="usage-meaning lang-en">By the grace of the god who removes the pain of the surrendered, there is happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शरणागतांची पीडा हरण करणाऱ्या देवाच्या कृपेने सुख मिळते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The poet insists on presence — sa eṣa dṛśyate, &#x27;this very god is seen here&#x27; — a sthala-mahatmya&#x27;s core claim: the divine is not distant but locally, visibly present. The epithet prapannartyapaharin (remover of the surrendered&#x27;s pain) frames devotion as śaraṇagati, surrender; the promise is that suffering brought to the shrine is actively carried away. Lokaviśrutaḥ adds testimony — the glory is not the poet&#x27;s invention but the people&#x27;s lived experience.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कवी उपस्थितीवर भर देतो — स एष दृश्यते, ‘हाच तो देव येथे दिसतो’ — हा स्थलमाहात्म्याचा गाभा : देव दूर नसून स्थानिक व प्रत्यक्ष आहे. ‘शरणागतांची पीडा हरण करणारा’ हे विशेषण भक्ती शरणागतीच्या रूपात मांडते; मंदिरात आणलेले दुःख खरोखर दूर केले जाते हे आश्वासन आहे. ‘लोकविश्रुत’ म्हणजे साक्ष — हा महिमा कवीची कल्पना नसून लोकांचा जगलेला अनुभव आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The &#x27;seen here&#x27; motif (dṛśyate) echoes the Puranic sthala tradition where the deity&#x27;s presence at a tirtha is treated as a perceptible fact; likewise the śaraṇagata&#x27;s rescue is a classic Vaiṣṇava theme (cf. Gita 18.66&#x27;s promise to the surrendered). Here the local Kṛṣṇa of Garamaṭha inherits that universal promise.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>‘येथे दिसतो’ (दृश्यते) हा भाव पौराणिक स्थलपरंपरेचा प्रतिध्वनी आहे — तीर्थक्षेत्री देवाची उपस्थिती ही प्रत्यक्ष तथ्य मानली जाते; तसेच शरणागताचे तारण हा वैष्णव परंपरेतील अभिजात विषय आहे (गीता १८.६६ मधील शरणागताला दिलेले आश्वासन पहा). येथे गरामठचा स्थानिक कृष्ण त्या वैश्विक आश्वासनाचा वारस ठरतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Note the two-name play: v. 8 derived Garamaṭha from Gharemaṭha as a popular corruption, yet vv. 9–13 treat Garamaṭha as the theological name (gara + ama). The poet keeps both strands — the historical and the devotional — without choosing between them, a typical sthala-kavya double etymology. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दुहेरी नामनोंद लक्षात घ्या : श्लोक ८ मध्ये गरामठ हे घारेमठ याचे लोकापभ्रष्ट रूप म्हणून सांगितले, तर श्लोक ९–१३ मध्ये गरामठ हेच तात्त्विक नाव (गर + आम) म्हणून वापरले. कवी दोन्ही धागे — ऐतिहासिक व भक्तिपर — यांपैकी एक न निवडता जपतो; ही स्थलकाव्याची ठराविक दुहेरी व्युत्पत्ती आहे. वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 9</div></a><a class="next" href="verse-11.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 11</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 12 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 12</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 12</span><span class="bl-mr lang-mr">श्लोक 12</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कुर्वन्ति क्रतुविघ्नानि हविर्भागान् हरन्ति च ।<br>कालयंत्यबलांस्तस्माद्विरला बलिनः स्थिताः ।।१२।।</div>
+  <div class="verse-iast">kurvanti kratuvighnāni havirbhāgān haranti ca । kālayaṃtyabalāṃstasmādviralā balinaḥ sthitāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कुर्वन्ति । क्रतु-विघ्नानि । हविः-भागान् । हरन्ति । च । कालयन्ति । अबलान् । तस्मात् । विरलाः । बलिनः । स्थिताः ।</div><div class="vig-iast">kurvanti । kratu-vighnāni । haviḥ-bhāgān । haranti । ca । kālayanti । abalān । tasmāt । viralāḥ । balinaḥ । sthitāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">हविः + भागान् = हविर्भागान् · कालयन्ति + अबलान् = कालयन्त्यबलान् (यण्) · अबलान् + तस्मात् = अबलांस्तस्मात् (न् + त् → ंस्त्) · तस्मात् + विरलाः = तस्माद्विरलाः · विरलाः + बलिनः = विरला बलिनः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(ते) क्रतुविघ्नानि कुर्वन्ति, हविर्भागान् च हरन्ति, अबलान् कालयन्ति; तस्मात् विरलाः बलिनः (एव) स्थिताः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>They contrive obstacles to the sacrifices, steal the oblations&#x27; portions, and drive away the helpless; hence only a few strong ones remain settled here.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते राक्षस यज्ञांत विघ्ने निर्माण करतात, हविर्भाग पळवून नेतात व दुर्बलांना हाकून लावतात. त्यामुळे थोडेच बलवान उरले आहेत.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रतुविघ्नानि</span>
+    <span class="word-iast">kratuvighnāni</span>
+  </div>
+  <div><span class="word-grammar">क्रतु-विघ्न; neuter accusative plural (the print&#x27;s ऋतु- corrected to क्रतु- on sense)</span></div>
+  <div class="word-form">In this verse: क्रतुविघ्नानि (n. acc. pl.)</div>
+  <p class="word-meaning lang-en">obstacles to sacrifices</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>यज्ञांत विघ्ने (छापील ऋतु- → क्रतु- दुरुस्ती)</p>
+  <div class="word-usage">
+    <div class="deva">राक्षसाः क्रतुविघ्नानि कर्तुम् उद्यताः अभवन् ।</div>
+    <div class="usage-iast">rākṣasāḥ kratuvighnāni kartum udyatāḥ abhavan ।</div>
+    <div class="usage-meaning lang-en">The rākṣasas set out to create obstacles to the sacrifices.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षस यज्ञांत विघ्ने निर्माण करण्यास सरसावले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हविर्भागान्</span>
+    <span class="word-iast">havirbhāgān</span>
+  </div>
+  <div><span class="word-grammar">हविस्-भाग; masculine accusative plural</span></div>
+  <div class="word-form">In this verse: हविर्भागान् (m. acc. pl.)</div>
+  <p class="word-meaning lang-en">the oblations&#x27; portions</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हविर्भाग</p>
+  <div class="word-usage">
+    <div class="deva">ऋत्विजः हविर्भागान् अग्नौ अजुहवुः ।</div>
+    <div class="usage-iast">ṛtvijaḥ havirbhāgān agnau ajuhavuḥ ।</div>
+    <div class="usage-meaning lang-en">The priests offered the oblations&#x27; portions into the fire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऋत्विजांनी हविर्भाग अग्नीत अर्पण केले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हरन्ति</span>
+    <span class="word-iast">haranti</span>
+  </div>
+  <div><span class="word-grammar">√हृ, laṭ, 3rd plural, parasmaipada</span></div>
+  <div class="word-form">In this verse: हरन्ति (pres. 3rd pl.)</div>
+  <p class="word-meaning lang-en">they steal, carry off</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पळवतात</p>
+  <div class="word-usage">
+    <div class="deva">चोराः रात्रौ धनम् हरन्ति ।</div>
+    <div class="usage-iast">corāḥ rātrau dhanam haranti ।</div>
+    <div class="usage-meaning lang-en">Thieves steal wealth at night.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चोर रात्री धन चोरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कालयन्ति</span>
+    <span class="word-iast">kālayanti</span>
+  </div>
+  <div><span class="word-grammar">√कल् in the causative (णिजन्त, &#x27;to drive, impel&#x27;), laṭ, 3rd plural, parasmaipada</span></div>
+  <div class="word-form">In this verse: कालयन्ति (pres. 3rd pl.)</div>
+  <p class="word-meaning lang-en">they drive away, expel</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हाकून लावतात (√कल्, णिच्)</p>
+  <div class="word-usage">
+    <div class="deva">गोपालाः पशून् क्षेत्रात् कालयन्ति ।</div>
+    <div class="usage-iast">gopālāḥ paśūn kṣetrāt kālayanti ।</div>
+    <div class="usage-meaning lang-en">The cowherds drive the cattle out of the field.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गोपाळ गुरे शेतातून हाकलतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विरलाः बलिनः स्थिताः</span>
+    <span class="word-iast">viralāḥ balinaḥ sthitāḥ</span>
+  </div>
+  <div><span class="word-grammar">phrase: विरल (masculine nominative plural) + बलिन् (m. nom. pl., from बल + इनि) + स्थित (√स्था + क्त, m. nom. pl.)</span></div>
+  <div class="word-form">In this verse: विरलाः बलिनः स्थिताः (nom. pl. phrase)</div>
+  <p class="word-meaning lang-en">few strong ones remain settled</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>थोडेच बलवान उरले आहेत</p>
+  <div class="word-usage">
+    <div class="deva">युद्धानन्तरम् विरलाः बलिनः स्थिताः आसन् ।</div>
+    <div class="usage-iast">yuddhānantaram viralāḥ balinaḥ sthitāḥ āsan ।</div>
+    <div class="usage-meaning lang-en">After the war, few strong ones remained settled.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>युद्धानंतर थोडेच बलवान (तेथे) राहिले होते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The rākṣasas strike not at men first but at yajña — because sacrifice is the very circulation of the cosmos: men offer, gods sustain, and the wheel turns (Gītā 3.10–16). To steal the havis is to cut the gods&#x27; share and starve the reciprocity on which the worlds live; kratu-vighna is cosmic sabotage. Devotionally the verse warns that adharma always attacks worship first — disturb the yajña and the land follows — and it explains the south&#x27;s emptiness: dharma survives there only where strength guards it, in the few, not the many.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>राक्षस प्रथम मानवांवर नव्हे, तर यज्ञावर घाव घालतात — कारण यज्ञ हेच विश्वाचे अभिसरण आहे — मानव अर्पण करतात, देव पोसतात, आणि चक्र फिरते (गीता ३.१०–१६). हविर्भाग चोरणे म्हणजे देवांचा वाटा कापणे आणि जग जिच्यावर जगते ती परस्परता उपाशी ठेवणे; क्रतुविघ्न हे वैश्विक विध्वंस आहे. भक्तिभावाने श्लोक इशारा देतो — अधर्म नेहमी प्रथम उपासनेवरच हल्ला करतो — यज्ञ बिघडला की भूमी बिघडते — आणि दक्षिणेची विरळता स्पष्ट करतो — तेथे धर्म फक्त जेथे बळ त्याचे रक्षण करते तेथेच टिकतो, थोडक्यांत, बहुतांत नव्हे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Obstructing sacrifice is the rākṣasa&#x27;s signature crime from the Bālakāṇḍa itself — Viśvāmitra&#x27;s yajña, which the boy Rāma was summoned to guard, was exactly such a kratu under assault, with Mārīca and Subāhu flinging blood and flesh into the fire. The Gītā&#x27;s yajña-cakra (3.10–16) gives the theology: sacrifice sustains the gods, the gods send rain, rain feeds beings — steal the oblation and the whole wheel seizes. The &#x27;helpless&#x27; (abalāḥ) driven off are the unprotected sacrificers, the common folk of dharma.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>यज्ञात विघ्न आणणे हा बालकांडापासूनच राक्षसांचा ठरलेला गुन्हा आहे — विश्वामित्रांचा यज्ञ, ज्याच्या रक्षणासाठी बाल रामाला बोलावले होते, तो असाच हल्ल्याखालील क्रतू होता — मारीच-सुबाहू अग्नीत रक्तमांस फेकीत होते. गीतेचे यज्ञचक्र (३.१०–१६) तत्त्वज्ञान देते — यज्ञ देवांना पोसतो, देव पर्जन्य देतात, पर्जन्य भूतांना पोसते — हवि चोरला की संपूर्ण चक्र थांबते. हाकललेले &#x27;अबल&#x27; म्हणजे अरक्षित याजक, धर्माचे सामान्य लोक.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The print reads ऋतुविघ्नानि (&#x27;obstacles to the seasons&#x27; — meaningless here); the correction to क्रतुविघ्नानि (&#x27;obstacles to sacrifices&#x27;) is certain from sense and is recorded in the word gloss. Metre Anuṣṭubh. The closing line — &#x27;hence only a few strong ones remain&#x27; — is Agastya&#x27;s direct answer to Rāma&#x27;s question at 6.7: the south is विरल not by nature but because adharma has driven the gentle away.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>छापील प्रतीत &#x27;ऋतुविघ्नानि&#x27; (&#x27;ऋतूंतील विघ्ने&#x27; — येथे निरर्थक) आहे; अर्थावरून &#x27;क्रतुविघ्नानि&#x27; (&#x27;यज्ञांतील विघ्ने&#x27;) ही दुरुस्ती निःसंशय आहे आणि शब्दार्थात नोंदवली आहे. छंद अनुष्टुभ्. शेवटची ओळ — &#x27;म्हणून थोडेच बलवान येथे उरले आहेत&#x27; — हे रामाच्या ६.७ मधील प्रश्नाचे अगस्त्यांचे थेट उत्तर आहे — दक्षिण स्वभावाने विरळ नाही, तर अधर्माने सौम्यांना हाकलल्याने विरळ आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-11.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 11</div></a><a class="next" href="verse-13.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 13</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

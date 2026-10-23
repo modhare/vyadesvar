@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 56 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 56</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 56</span><span class="bl-mr lang-mr">श्लोक 56</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Vaṃśastha/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथावितास्ताः सुरबंदिदेवताः समेत्य रामः स्वपदे यथायथम् ।।<br>आस्थापयामास वराभिवर्धिताः पदाधिकारं परिकल्प्य भागशः ।।५६।।</div>
+  <div class="verse-iast">athāvitāstāḥ surabaṃdidevatāḥ sametya rāmaḥ svapade yathāyatham । । āsthāpayāmāsa varābhivardhitāḥ padādhikāraṃ parikalpya bhāgaśaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ । अविताः । ताः । सुर-बन्दि-देवताः । समेत्य । रामः । स्व-पदे । यथायथम् । आस्थापयामास । वर-अभिवर्धिताः । पद-अधिकारम् । परिकल्प्य । भागशः ।</div><div class="vig-iast">atha । avitāḥ । tāḥ । sura-bandi-devatāḥ । sametya । rāmaḥ । sva-pade । yathāyatham । āsthāpayāmāsa । vara-abhivardhitāḥ । pada-adhikāram । parikalpya । bhāgaśaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">अथ + अविताः = अथाविताः (सवर्णदीर्घ) · अविताः + ताः = अवितास्ताः (विसर्ग → स्) · देवताः + समेत्य = देवताः समेत्य · रामः + स्वपदे = रामः स्वपदे · वर + अभिवर्धिताः = वराभिवर्धिताः · पद + अधिकारम् = पदाधिकारम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ रामः ताः अविताः सुरबन्दिदेवताः समेत्य वराभिवर्धिताः (कृत्वा) भागशः पदाधिकारं परिकल्प्य स्वपदे यथायथम् आस्थापयामास ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then Rama gathered the rescued captive goddesses, enriched them with boons, duly apportioned their stations and offices among them, and installed them in fitting manner in his own domain.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मग संकटातून सोडविलेल्या त्या सुरस्त्रियांना वरांच्या योगाने त्यांचे वैभव वाढवून रामाने आपल्या क्षेत्रात म्हणजे इषुपातात अंशतः आपला अधिकार ठेवण्याची अंशतः स्थाने व अधिकार विभागून देऊन त्यांची योग्य रीतीने स्थापना केली. (स्थळ-ओळख: कोकणातील गावोगावच्या ग्रामदेवतांचा उगम कवी याच देवतांमध्ये पाहतो.)</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अविताः</span>
+    <span class="word-iast">avitāḥ</span>
+  </div>
+  <div><span class="word-grammar">past participle (kta), √av &#x27;to protect&#x27;, nominative plural feminine</span></div>
+  <div class="word-form">In this verse: अविताः</div>
+  <p class="word-meaning lang-en">protected, rescued</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षिलेल्या (√अव्, क्त)</p>
+  <div class="word-usage">
+    <div class="deva">अविताः प्रजाः राजानं स्तुवन्ति ।</div>
+    <div class="usage-iast">avitah prajah rajanam stuvanti ।</div>
+    <div class="usage-meaning lang-en">The protected subjects praise the king.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रक्षिलेल्या प्रजा राजाची स्तुती करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुरबन्दिदेवताः</span>
+    <span class="word-iast">surabandidevatāḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpurusha compound (suranam bandikritah devatah), nominative plural feminine</span></div>
+  <div class="word-form">In this verse: सुरबन्दिदेवताः</div>
+  <p class="word-meaning lang-en">the goddesses held captive (by Ravana)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(रावणाने) बंदी केलेल्या देवस्त्रिया</p>
+  <div class="word-usage">
+    <div class="deva">सुरबन्दिदेवताः मोचिताः अभवन् ।</div>
+    <div class="usage-iast">surabandidevatah mochitah abhavan ।</div>
+    <div class="usage-meaning lang-en">The captive goddesses were freed.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बंदी केलेल्या देवस्त्रिया मुक्त झाल्या.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">समेत्य</span>
+    <span class="word-iast">sametya</span>
+  </div>
+  <div><span class="word-grammar">gerund (lyap), sam + a + √i</span></div>
+  <div class="word-form">In this verse: समेत्य</div>
+  <p class="word-meaning lang-en">having come together, having gathered</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एकत्र आणून</p>
+  <div class="word-usage">
+    <div class="deva">सर्वे समेत्य मन्त्रम् अकुर्वन् ।</div>
+    <div class="usage-iast">sarve sametya mantram akurvan ।</div>
+    <div class="usage-meaning lang-en">All gathered together and took counsel.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वजण एकत्र येऊन विचारविनिमय करू लागले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वराभिवर्धिताः</span>
+    <span class="word-iast">varābhivardhitāḥ</span>
+  </div>
+  <div><span class="word-grammar">past participle (kta), abhi + √vridh, nominative plural feminine</span></div>
+  <div class="word-form">In this verse: वराभिवर्धिताः</div>
+  <p class="word-meaning lang-en">exalted, enriched by boons</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वरदानांनी उन्नत केलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">वराभिवर्धिताः देवताः तुष्टाः अभवन् ।</div>
+    <div class="usage-iast">varabhivardhitah devatah tushtah abhavan ।</div>
+    <div class="usage-meaning lang-en">The goddesses, enriched by boons, were pleased.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वरदानांनी उन्नत झालेल्या देवता संतुष्ट झाल्या.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पदाधिकारं भागशः परिकल्प्य</span>
+    <span class="word-iast">padādhikāraṃ bhāgaśaḥ parikalpya</span>
+  </div>
+  <div><span class="word-grammar">accusative singular + indeclinable (bhaga + shas) + gerund (lyap), causal of pari + √klrip</span></div>
+  <div class="word-form">In this verse: पदाधिकारं परिकल्प्य भागशः</div>
+  <p class="word-meaning lang-en">having duly apportioned stations and offices share by share</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थाने व अधिकार वाटून देऊन</p>
+  <div class="word-usage">
+    <div class="deva">सः पदाधिकारं भागशः परिकल्प्य तान् अस्थापयत् ।</div>
+    <div class="usage-iast">sah padadhikaram bhagashah parikalpya tan asthapayat ।</div>
+    <div class="usage-meaning lang-en">Having apportioned stations and offices among them, he installed them.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थाने व अधिकार वाटून देऊन त्याने त्यांची स्थापना केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वपदे</span>
+    <span class="word-iast">svapade</span>
+  </div>
+  <div><span class="word-grammar">locative singular neuter</span></div>
+  <div class="word-form">In this verse: स्वपदे</div>
+  <p class="word-meaning lang-en">in his own domain, in his own region</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या (परशुरामक्षेत्रात)</p>
+  <div class="word-usage">
+    <div class="deva">रामः स्वपदे ताः अस्थापयत् ।</div>
+    <div class="usage-iast">ramah svapade tah asthapayat ।</div>
+    <div class="usage-meaning lang-en">Rama installed them in his own domain.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामाने त्यांची आपल्या क्षेत्रात स्थापना केली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथायथम् आस्थापयामास</span>
+    <span class="word-iast">yathāyatham āsthāpayāmāsa</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (reduplicated yatha) + periphrastic perfect (am-lit), causative of a + √stha</span></div>
+  <div class="word-form">In this verse: यथायथम् आस्थापयामास</div>
+  <p class="word-meaning lang-en">duly installed, established in fitting manner</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य तऱ्हेने स्थापिले (आम्-लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">गुरुः शिष्यान् यथायथम् आस्थापयामास ।</div>
+    <div class="usage-iast">guruh shishyan yathayatham asthapayamasa ।</div>
+    <div class="usage-meaning lang-en">The teacher duly settled the pupils.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूने शिष्यांची योग्य तऱ्हेने व्यवस्था केली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The rescued goddesses become the presiding deities of the new land — suffering transformed into guardianship. Rama does not merely free them; he gives them honor, office, and a share in the sacred geography. For the devotee, this is the sthala&#x27;s charter myth for Konkan&#x27;s village goddesses: every gramadevata&#x27;s shrine traces its dignity to this founding installation by Parashurama himself.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सोडविलेल्या देवता नव्या भूमीच्या अधिष्ठात्री देवता बनतात — दुःखाचे रूपांतर रक्षणकर्तृत्वात होते. राम त्यांना फक्त मुक्त करीत नाही; त्यांना सन्मान, अधिकार आणि पवित्र भूगोलात वाटा देतो. भक्तासाठी ही कोकणच्या ग्रामदेवतांची क्षेत्र-प्रतिष्ठापना-कथा आहे: प्रत्येक ग्रामदेवतेच्या देवळाची प्रतिष्ठा प्रत्यक्ष परशुरामाने केलेल्या या मूळ स्थापनेपर्यंत जाते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The installation of rescued divine women as guardian deities of a region parallels the Puranic pattern in which liberated beings become kshetra-palas and gramadevatas. The book&#x27;s Marathi note identifies the sthala: the poet sees the origin of the village goddesses worshipped across Konkan&#x27;s towns and villages in these very deities. The phrase varabhivardhitah — &#x27;exalted by boons&#x27; — shows that their new status is a gift of grace, not merely a restoration.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सोडविलेल्या दिव्य स्त्रियांची प्रदेशाच्या रक्षणकर्त्या देवता म्हणून स्थापना ही पौराणिक पद्धतीशी समांतर आहे, ज्यात मुक्त झालेले जीव क्षेत्रपाल आणि ग्रामदेवता बनतात. पुस्तकाची मराठी टीप स्थळ-ओळख देते: गावोगावच्या ग्रामदेवतांचा उगम कवी याच देवतांमध्ये पाहतो. वराभिवर्धिताः — &#x27;वरदानांनी उन्नत केलेल्या&#x27; — ही शब्दावली दाखवते की त्यांची नवी प्रतिष्ठा केवळ पुनर्स्थापना नसून कृपेचे दान आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Metre shifts here to Vamshastha/Upajati (verses 56 to 58), marking the new section on the goddesses&#x27; installation. The verb asthapayamasa is a periphrastic perfect (am + √kri) of the causative of a + √stha — &#x27;he caused to be established.&#x27; Note the sandhi atha + avitah = athavitah. The word svapade (&#x27;in his own domain&#x27;) refers to Parashurama&#x27;s own consecrated region — the Ishupata/Konkan kshetra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>इथे वृत्त वंशस्थ/उपजातीकडे वळते (श्लोक ५६ ते ५८), जे देवतांच्या स्थापनेच्या नव्या विभागाची खूण आहे. आस्थापयामास हे क्रियापद आ + √स्था धातूच्या प्रयोजकाचे पूर्णभूतकाळी परोक्षरूप (आम् + √कृ) आहे — &#x27;त्याने स्थापन करविले.&#x27; अथ + अविताः = अथाविताः ही संधी लक्षात घ्या. स्वपदे (&#x27;आपल्या प्रदेशात&#x27;) हा शब्द परशुरामाच्या स्वतःच्या पवित्र केलेल्या प्रदेशाचा — इषुपात/कोकण क्षेत्राचा — निर्देश करतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-55.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 55</div></a><a class="next" href="verse-57.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 57</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

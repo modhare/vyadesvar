@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 3 — Devatāsthāpanaḥ 26 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 3 — Devatāsthāpanaḥ</a><span>&rsaquo;</span><span class="here">Verse 26</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 26</span><span class="bl-mr lang-mr">श्लोक 26</span></h1>
+<p class="meta">Sarga 3 — Devatāsthāpanaḥ &middot; <span class="deva">तृतीयः सर्गः · देवतास्थापनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Pramitākṣarā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">भवतोज्झितः सलिलराशिरसौ पुनरेवमेव तदवध्यपि चेत् ।।<br>प्ररुजन्ति भूतलपथेन पुरीं बलिनो नृपा भृगुपते बत ताम् ।।२६।।</div>
+  <div class="verse-iast">bhavatojjhitaḥ salilarāśirasau punarevameva tadavadhyapi cet । । prarujanti bhūtalapathena purīṃ balino nṛpā bhṛgupate bata tām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">भवता । उज्झितः । सलिलराशिः । असौ । पुनः । एवम् । एव । तत्-अवधि । अपि । चेत् । प्ररुजन्ति । भूतल-पथेन । पुरीम् । बलिनः । नृपाः । भृगुपते । बत । ताम् ।</div><div class="vig-iast">bhavatā । ujjhitaḥ । salilarāśiḥ । asau । punaḥ । evam । eva । tat-avadhi । api । cet । prarujanti । bhūtala-pathena । purīm । balinaḥ । nṛpāḥ । bhṛgupate । bata । tām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भवता + उज्झितः = भवतोज्झितः (गुण) · सलिलराशिः + असौ = सलिलराशिरसौ · पुनः + एवम् = पुनरेवम् · तत् + अवधि = तदवधि · अवधि + अपि = अवध्यपि (यण्) · बलिनः + नृपाः = बलिनो नृपाः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भृगुपते, भवता उज्झितः असौ सलिलराशिः पुनः एवम् एव तदवधि अपि (उज्झितः स्यात्) चेत्, बत बलिनः नृपाः भूतलपथेन तां पुरीं प्ररुजन्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>&#x27;O lord of Bhṛgu&#x27;s line, if this mass of waters, driven back by you, should in the same manner be driven back even as far as that city — alas! — mighty kings will ravage that city by the land route.&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आपण हटविलेला हा सागर अशा रीतीने जर त्या नगरीपर्यंत पोचला तर हे भृगुपते, दुर्दैवाने बलवान् राजे स्थलमार्गानेच त्या नगरीला संकटात आणतील.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भवता उज्झितः</span>
+    <span class="word-iast">bhavatā ujjhitaḥ</span>
+  </div>
+  <div><span class="word-grammar">भवता — masculine/neuter instrumental singular, honorific &#x27;you&#x27;; उज्झितः — past passive participle of उत् + √झि (&#x27;to abandon, drive away&#x27;)</span></div>
+  <div class="word-form">In this verse: भवता (तृतीया) + उज्झितः</div>
+  <p class="word-meaning lang-en">driven back / abandoned by you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण हटवलेला</p>
+  <div class="word-usage">
+    <div class="deva">भवता उज्झितः मेघः दूरम् अगच्छत् ।</div>
+    <div class="usage-iast">bhavatā ujjhitaḥ meghaḥ dūram agacchat ।</div>
+    <div class="usage-meaning lang-en">The cloud, driven away by you, went far.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपण हटवलेला मेघ दूर गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तदवधि अपि</span>
+    <span class="word-iast">tadavadhi api</span>
+  </div>
+  <div><span class="word-grammar">तत्-अवधि — masculine accusative singular (&#x27;up to that limit&#x27;); अपि — particle (&#x27;even&#x27;)</span></div>
+  <div class="word-form">In this verse: तदवधि + अपि</div>
+  <p class="word-meaning lang-en">even as far as that (city)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिथपर्यंत (लंकेपर्यंत) सुद्धा</p>
+  <div class="word-usage">
+    <div class="deva">नदी तत् अवधि अपि प्रवहति ।</div>
+    <div class="usage-iast">nadī tadavadhi api pravahati ।</div>
+    <div class="usage-meaning lang-en">The river flows even as far as that (village).</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नदी तिथपर्यंतसुद्धा वाहते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूतलपथेन</span>
+    <span class="word-iast">bhūtalapathena</span>
+  </div>
+  <div><span class="word-grammar">masculine instrumental singular; तत्पुरुष भूतल-पथ (&#x27;path over the earth&#x27;s surface&#x27;)</span></div>
+  <div class="word-form">In this verse: भूतलपथेन (तृतीया एकवचन)</div>
+  <p class="word-meaning lang-en">by the land route, overland</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जमिनीच्या वाटेने</p>
+  <div class="word-usage">
+    <div class="deva">सार्थः भूतलपथेन नगरम् अगच्छत् ।</div>
+    <div class="usage-iast">sārthaḥ bhūtalapathena nagaram agacchat ।</div>
+    <div class="usage-meaning lang-en">The caravan went to the city by the land route.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काफिला जमिनीच्या वाटेने नगरास गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्ररुजन्ति</span>
+    <span class="word-iast">prarujanti</span>
+  </div>
+  <div><span class="word-grammar">प्र + √रुज् (&#x27;to break, afflict&#x27;), parasmaipada, present (laṭ) with future sense, third person plural</span></div>
+  <div class="word-form">In this verse: प्ररुजन्ति (√रुज्, लट् भविष्यदर्थी)</div>
+  <p class="word-meaning lang-en">they will ravage, destroy</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उध्वस्त करतील (लट्, भविष्यदर्थी)</p>
+  <div class="word-usage">
+    <div class="deva">शत्रवः पुरम् प्ररुजन्ति इति राजा अशृणोत् ।</div>
+    <div class="usage-iast">śatravaḥ puram prarujanti iti rājā aśṛṇot ।</div>
+    <div class="usage-meaning lang-en">The king heard that the enemies will ravage the city.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शत्रू नगरी उध्वस्त करतील असे राजाने ऐकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बत</span>
+    <span class="word-iast">bata</span>
+  </div>
+  <div><span class="word-grammar">indeclinable particle</span></div>
+  <div class="word-form">In this verse: बत (अव्यय)</div>
+  <p class="word-meaning lang-en">alas! (expressing lament)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरेरे (खेददर्शक)</p>
+  <div class="word-usage">
+    <div class="deva">बत मम धनम् नष्टम् अभवत् ।</div>
+    <div class="usage-iast">bata mama dhanam naṣṭam abhavat ।</div>
+    <div class="usage-meaning lang-en">Alas! My wealth is lost.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरेरे! माझे धन नष्ट झाले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāvaṇa&#x27;s plea exposes the hidden fragility of pride: the impregnable Laṅkā depends wholly on the sea, and the sea itself obeys a greater power. The poet teaches that every worldly stronghold has an unguarded side — here, literally, the landward side. True security, the verse implies, lies not in moats and walls but in the favour of the great, which Rāvaṇa is now wisely seeking.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रावणाची विनंती गर्वाची लपलेली नाजूकता उघड करते : अभेद्य लंका पूर्णपणे समुद्रावर अवलंबून आहे आणि समुद्र स्वतःच अधिक श्रेष्ठ शक्तीला मानतो. प्रत्येक पार्थिव गडाला एक अरक्षित बाजू असते — येथे अक्षरशः स्थलमार्गाची बाजू — हा कवीचा बोध. खरी सुरक्षितता खंदकांत व भिंतींत नसून थोरांच्या कृपेत आहे, आणि रावण तीच आता शहाणपणाने मागत आहे, असे श्लोक सूचित करतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The strategic logic is straight from the Arthaśāstra tradition: a fortress&#x27;s strength lies in its natural defences (daiva-durga), and Laṅkā&#x27;s was the sea — once drained, the city becomes an open target for rival kings marching overland. Rāvaṇa&#x27;s fear of &#x27;mighty kings&#x27; reflects the epic world&#x27;s constant warfare among rākṣasa and human kings.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ही रणनीती अर्थशास्त्र-परंपरेतून थेट आलेली आहे : दुर्गाचे बळ त्याच्या नैसर्गिक संरक्षणांत (दैव-दुर्ग) असते आणि लंकेचे संरक्षण समुद्र हेच होते — एकदा तो आटला की नगरी स्थलमार्गे येणाऱ्या प्रतिस्पर्धी राजांसाठी उघडे लक्ष्य बनते. &#x27;बलवान राजे&#x27; यांची रावणाची भीती राक्षस व मानवराजांतील सततच्या युद्धांची महाकाव्य-सृष्टी दर्शवते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>बत is the indeclinable particle of lament (&#x27;alas!&#x27;). प्ररुजन्ति is present tense with future sense (laṭ used for the future) — &#x27;they will ravage.&#x27; भृगुपते is the vocative of भृगुपति, &#x27;lord of Bhṛgu&#x27;s line,&#x27; Paraśurāma&#x27;s patronymic address. The verse is in Pramitākṣarā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बत हे खेददर्शक अव्यय आहे (&#x27;अरेरे!&#x27;). प्ररुजन्ति हे भविष्यदर्थी वर्तमानकाळ (भविष्यासाठी वापरलेला लट्) — &#x27;उध्वस्त करतील&#x27;. भृगुपते हे भृगुपतीचे संबोधन — &#x27;हे भृगुवंशपते&#x27;, परशुरामाचा वंश-उल्लेख. वृत्त प्रमिताक्षरा.</p></div></div>
+
+<div class="pagenav"><a href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 25</div></a><a class="next" href="verse-27.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 27</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

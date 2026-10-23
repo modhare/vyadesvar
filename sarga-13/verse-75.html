@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 75 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 75</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 75</span><span class="bl-mr lang-mr">श्लोक 75</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">रामक्षेत्रे नृणां वासो गूढदेशे विशेषतः ।<br>तत्रापि च गुहग्रामे नाल्पस्य तपसः फलम् ।।७५।।</div>
+  <div class="verse-iast">rāmakṣetre nṛṇāṃ vāso gūḍhadeśe viśeṣataḥ । tatrāpi ca guhagrāme nālpasya tapasaḥ phalam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">राम-क्षेत्रे नृणाम् वासः गूढ-देशे विशेषतः । तत्र अपि च गुह-ग्रामे न अल्पस्य तपसः फलम् ।</div><div class="vig-iast">rāma-kṣetre nṛṇām vāsaḥ gūḍha-deśe viśeṣataḥ । tatra api ca guha-grāme na alpasya tapasaḥ phalam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">वासः + गूढ = वासो गूढ · तत्र + अपि = तत्रापि · न + अल्पस्य = नाल्पस्य</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">रामक्षेत्रे, विशेषतः गूढदेशे, तत्र अपि च गुहग्रामे नृणां वासः अल्पस्य तपसः फलं न (अस्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>That men should dwell in Rāmakṣetra — and especially in the Gūḍhadeśa, and there too in Guhagrāma — is the fruit of no small tapas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मानवांना रामक्षेत्रात राहायला मिळावे, विशेषतः गूढदेशात व त्यातही गुहाग्रामात किंवा गुहागर गावात त्यांचा निवास असावा हे निश्चित लहान-सहान तपाचे फळ नव्हे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">राम-क्षेत्रे</span>
+    <span class="word-iast">rāma-kṣetre</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.</span></div>
+  <div class="word-form">In this verse: रामक्षेत्रे</div>
+  <p class="word-meaning lang-en">in Rāma&#x27;s kṣetra</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामक्षेत्रात</p>
+  <div class="word-usage">
+    <div class="deva">रामक्षेत्रे वासः पुण्यदः भवति ।</div>
+    <div class="usage-iast">rāmakṣetre vāsaḥ puṇyadaḥ bhavati.</div>
+    <div class="usage-meaning lang-en">Dwelling in Rāmakṣetra is merit-giving.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रामक्षेत्रात राहणे पुण्यदायी ठरते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नृणाम्</span>
+    <span class="word-iast">nṛṇām</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. बव.; नृ</span></div>
+  <div class="word-form">In this verse: नृणाम्</div>
+  <p class="word-meaning lang-en">of men</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माणसांचा</p>
+  <div class="word-usage">
+    <div class="deva">नृणां मध्ये श्रेष्ठः विद्वान् ।</div>
+    <div class="usage-iast">nṛṇāṃ madhye śreṣṭhaḥ vidvān.</div>
+    <div class="usage-meaning lang-en">Among men the learned is the best.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>माणसांमध्ये विद्वान श्रेष्ठ असतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वासः</span>
+    <span class="word-iast">vāsaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: वासः</div>
+  <p class="word-meaning lang-en">dwelling</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निवास</p>
+  <div class="word-usage">
+    <div class="deva">मुनेः वासः वने आसीत् ।</div>
+    <div class="usage-iast">muneḥ vāsaḥ vane āsīt.</div>
+    <div class="usage-meaning lang-en">The sage&#x27;s dwelling was in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनींचा निवास वनात होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गूढ-देशे</span>
+    <span class="word-iast">gūḍha-deśe</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: गूढदेशे</div>
+  <p class="word-meaning lang-en">in the Gūḍha region</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गूढदेशात (गुहागरचा परिसर)</p>
+  <div class="word-usage">
+    <div class="deva">गूढदेशे बहवः ग्रामाः सन्ति ।</div>
+    <div class="usage-iast">gūḍhadeśe bahavaḥ grāmāḥ santi.</div>
+    <div class="usage-meaning lang-en">There are many villages in the Gūḍha region.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गूढदेशात अनेक गावे आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विशेषतः</span>
+    <span class="word-iast">viśeṣataḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: विशेषतः</div>
+  <p class="word-meaning lang-en">especially</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विशेषतः</p>
+  <div class="word-usage">
+    <div class="deva">सः विशेषतः संस्कृतं पठति ।</div>
+    <div class="usage-iast">saḥ viśeṣataḥ saṃskṛtaṃ paṭhati.</div>
+    <div class="usage-meaning lang-en">He studies Sanskrit especially.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो विशेषतः संस्कृताचा अभ्यास करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तत्र अपि च</span>
+    <span class="word-iast">tatra api ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: तत्रापि च</div>
+  <p class="word-meaning lang-en">and even there</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्यांतही</p>
+  <div class="word-usage">
+    <div class="deva">तत्रापि च शान्तिः वर्तते ।</div>
+    <div class="usage-iast">tatrāpi ca śāntiḥ vartate.</div>
+    <div class="usage-meaning lang-en">And even there peace prevails.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि तेथेही शांती नांदते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गुह-ग्रामे</span>
+    <span class="word-iast">guha-grāme</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: गुहग्रामे</div>
+  <p class="word-meaning lang-en">in Guhagrāma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुहाग्रामात</p>
+  <div class="word-usage">
+    <div class="deva">गुहग्रामे देवालयः अस्ति ।</div>
+    <div class="usage-iast">guhagrāme devālayaḥ asti.</div>
+    <div class="usage-meaning lang-en">There is a temple in Guhagrāma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुहाग्रामात देवालय आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न अल्पस्य</span>
+    <span class="word-iast">na alpasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: नाल्पस्य</div>
+  <p class="word-meaning lang-en">of no small</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लहानसहान नव्हे अशा</p>
+  <div class="word-usage">
+    <div class="deva">एतत् नाल्पस्य पुण्यस्य फलम् ।</div>
+    <div class="usage-iast">etat nālpasya puṇyasya phalam.</div>
+    <div class="usage-meaning lang-en">This is the fruit of no small merit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे लहानसहान पुण्याचे फळ नव्हे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तपसः</span>
+    <span class="word-iast">tapasaḥ</span>
+  </div>
+  <div><span class="word-grammar">नपुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: तपसः</div>
+  <p class="word-meaning lang-en">of tapas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपाचे</p>
+  <div class="word-usage">
+    <div class="deva">तपसः प्रभावेण मुनिः सिद्धः अभवत् ।</div>
+    <div class="usage-iast">tapasaḥ prabhāveṇa muniḥ siddhaḥ abhavat.</div>
+    <div class="usage-meaning lang-en">By the power of tapas the sage became accomplished.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपाच्या प्रभावाने मुनी सिद्ध झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">फलम्</span>
+    <span class="word-iast">phalam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: फलम्</div>
+  <p class="word-meaning lang-en">fruit</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>फळ</p>
+  <div class="word-usage">
+    <div class="deva">धर्मस्य फलं सुखम् ।</div>
+    <div class="usage-iast">dharmasya phalaṃ sukham.</div>
+    <div class="usage-meaning lang-en">The fruit of dharma is happiness.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>धर्माचे फळ सुख असते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse turns dwelling itself into a spiritual attainment: living in Rāmakṣetra is no accident but the ripened fruit of great tapas from former lives. The narrowing ladder — Rāmakṣetra, then the Gūḍhadeśa, then Guhagrāma — trains the devotee to cherish ever-closer circles of holiness. For residents it is an assurance of grace already received; for pilgrims, an invitation to return and remain.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक निवासालाच आध्यात्मिक सिद्धी बनवतो — रामक्षेत्रात राहणे हा योगायोग नसून पूर्वजन्मीच्या महान तपाचे परिपक्व फळ आहे. रामक्षेत्र, मग गूढदेश, मग गुहाग्राम ही संकुचित होत जाणारी श्रेणी भक्ताला पावित्र्याची अधिकाधिक निकट वर्तुळे जपायला शिकवते. रहिवाशांसाठी हे आधीच लाभलेल्या कृपेचे आश्वासन आहे; यात्रेकरूंसाठी परत येऊन राहण्याचे निमंत्रण आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The śāstras teach that birth or residence in a puṇya-kṣetra is the result of pūrva-puṇya — merit stored from earlier lives; the māhātmyas of Kāśī and other kṣetras use the same formula to explain why only the fortunate dwell there. The litotes &#x27;the fruit of no small tapas&#x27; (na alpasya tapasaḥ phalam) is the classical way of saying &#x27;of very great tapas,&#x27; and it dignifies the ordinary villager&#x27;s life as an ascetic achievement.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुण्यक्षेत्रात जन्म किंवा वास हे पूर्वपुण्याचे फळ असते — पूर्वजन्मी साठवलेल्या पुण्याचे — असे शास्त्रे सांगतात; काशी इत्यादी क्षेत्रांच्या माहात्म्यांत हेच सूत्र वापरून तेथे केवळ भाग्यवानच का राहतात हे स्पष्ट केले आहे. &#x27;लहानसहान तपाचे फळ नव्हे&#x27; (नाल्पस्य तपसः फलम्) ही निषेधात्मक शैली &#x27;अत्यंत महान तपाचे फळ&#x27; असे म्हणण्याची शास्त्रीय पद्धत आहे; त्यातून सामान्य गावकऱ्याच्या जीवनालाही तपस्वी सिद्धीचा मान मिळतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. The triple narrowing — Rāmakṣetra (Paraśurāma&#x27;s reclaimed Konkan), Gūḍhadeśa (the Guhagar hinterland), Guhagrāma — is the same zoom device the closing verse (v. 78) expands to cosmic scale. &#x27;Rāmakṣetra&#x27; here is Rāma = Paraśurāma, whose making of the Konkan coast the kāvya narrates in the earlier sargas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ वृत्त. रामक्षेत्र (परशुरामाने समुद्रातून काढलेले कोकण), गूढदेश (गुहागरचा परिसर), गुहाग्राम ही त्रिस्तरीय संकुचित श्रेणी हेच सूक्ष्मदर्शन-तंत्र समारोपाचा श्लोक (७८) ब्रह्मांडीय प्रमाणावर विस्तारतो. येथील &#x27;रामक्षेत्रा&#x27;तील राम म्हणजे परशुराम; त्याने कोकणकिनारा कसा निर्माण केला हे काव्याने पूर्वीच्या सर्गांत सांगितले आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-74.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 74</div></a><a class="next" href="verse-76.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 76</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

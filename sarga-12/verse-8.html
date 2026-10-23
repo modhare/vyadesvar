@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 8 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 8</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 8</span><span class="bl-mr lang-mr">श्लोक 8</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">मातस्त्वं यदपि च भीष्मसूरभीष्मा<br>कान्त्यासि द्युनदि सिताऽसितायुतापि ।<br>रक्षोभिर्न परिहृता च नाम सीता<br>श्रीगंगे सनति गृहाण सन्ममार्घ्यम् ।।८।।</div>
+  <div class="verse-iast">mātastvaṃ yadapi ca bhīṣmasūrabhīṣmā kāntyāsi dyunadi sitā&#x27;sitāyutāpi । rakṣobhirna parihṛtā ca nāma sītā śrīgaṃge sanati gṛhāṇa sanmamārghyam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">मातः त्वम् यदपि च भीष्म-सूः अभीष्मा कान्त्या असि द्यु-नदि सिता असिता-युता अपि । रक्षोभिः न परिहृता च नाम सीता श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम् ।</div><div class="vig-iast">mātaḥ tvam yadapi ca bhīṣma-sūḥ abhīṣmā kāntyā asi dyu-nadi sitā asitā-yutā api । rakṣobhiḥ na parihṛtā ca nāma sītā śrīgaṅge sa-nati gṛhāṇa sat mama arghyam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">मातः + त्वम् = मातस्त्वम् · भीष्मसूः + अभीष्मा = भीष्मसूरभीष्मा · कान्त्या + असि = कान्त्यासि · सिता + असिता = सिताऽसिता · युता + अपि = युतापि · रक्षोभिः + न = रक्षोभिर्न · ध्रुवपद: सन्मम, ममार्घ्यम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">मातः द्युनदि, त्वं यदपि भीष्मसूः (तथापि) अभीष्मा; असितायुता अपि कान्त्या सिता असि; सीता नाम (असि) च (तथापि) रक्षोभिः न परिहृता । श्रीगङ्गे, मम सत् अर्घ्यं सनति गृहाण । *(विरोधाभास: भीष्म / अभीष्मा; असिता = यमुना / सिता = शुभ्र; सीता असून राक्षसांनी हरण केले नाही.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Mother - although you are the mother of Bhishma, you are not fearsome; O celestial river, joined though you are with the dark one (Yamuna), you are white in your lustre; and though named Sita, you were never carried off by the rakshasas. O blessed Ganga, bowing low, accept my good arghya.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>माते तू भीष्माला जन्म देणारी असलीस तरी भीष्म (भयंकर) नाहीस; यमुनेने संयुक्त असलीस तरी स्वर्गंगे, आपल्या कांतीने तू शुभ्रवर्ण आहेस. राक्षसांनी तुझे हरण केलेले नसले तरी तू नावाने सीता आहेस. श्रीगंगे, हा मी तुझे स्तवन करीत आहे; मी दिलेल्या शुभ अर्घ्यांचा स्वीकार कर.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मातः</span>
+    <span class="word-iast">mātaḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: मातः (मातस्त्वं)</div>
+  <p class="word-meaning lang-en">O mother</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे माते</p>
+  <div class="word-usage">
+    <div class="deva">मातः गङ्गे पाहि माम्।</div>
+    <div class="usage-iast">matah gange pahi mam.</div>
+    <div class="usage-meaning lang-en">O mother Ganga, protect me.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे माते गंगे, माझे रक्षण कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्वम्</span>
+    <span class="word-iast">tvam</span>
+  </div>
+  <div><span class="word-grammar">प्र. एव.</span></div>
+  <div class="word-form">In this verse: त्वं (मातस्त्वं)</div>
+  <p class="word-meaning lang-en">you</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू</p>
+  <div class="word-usage">
+    <div class="deva">त्वं जगत्पावनी असि।</div>
+    <div class="usage-iast">tvam jagatpavani asi.</div>
+    <div class="usage-meaning lang-en">You are the purifier of the world.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू जगत्पावनी आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यदपि च</span>
+    <span class="word-iast">yadapi ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यदपि च</div>
+  <p class="word-meaning lang-en">although</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जरी</p>
+  <div class="word-usage">
+    <div class="deva">यदपि च सा भीष्मसूः तथापि अभीष्मा।</div>
+    <div class="usage-iast">yadapi ca sa bhishmasuh tathapi abhishma.</div>
+    <div class="usage-meaning lang-en">Although she is the mother of Bhishma, yet she is not fearsome.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जरी ती भीष्माला जन्म देणारी असली तरी भीषण नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भीष्म-सूः</span>
+    <span class="word-iast">bhīṣma-sūḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: भीष्मसूः (भीष्मसूरभीष्मा)</div>
+  <p class="word-meaning lang-en">mother of Bhīṣma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भीष्माला जन्म देणारी</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गा भीष्मसूः इति ख्याता।</div>
+    <div class="usage-iast">ganga bhishmasuh iti khyata.</div>
+    <div class="usage-meaning lang-en">The Ganga is famed as the mother of Bhishma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगा &#x27;भीष्मसू&#x27; म्हणून प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभीष्मा</span>
+    <span class="word-iast">abhīṣmā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: अभीष्मा (भीष्मसूरभीष्मा)</div>
+  <p class="word-meaning lang-en">not fearsome</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भीषण नसलेली</p>
+  <div class="word-usage">
+    <div class="deva">सा अभीष्मा करुणामयी च।</div>
+    <div class="usage-iast">sa abhishma karunamayi ca.</div>
+    <div class="usage-meaning lang-en">She is not fearsome, but full of compassion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती भीषण नाही; करुणामयी आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कान्त्या</span>
+    <span class="word-iast">kāntyā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. तृ. एव.</span></div>
+  <div class="word-form">In this verse: कान्त्या (कान्त्यासि)</div>
+  <p class="word-meaning lang-en">in lustre</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कांतीने</p>
+  <div class="word-usage">
+    <div class="deva">कान्त्या सा चन्द्रवत् शोभते।</div>
+    <div class="usage-iast">kantya sa candravat shobhate.</div>
+    <div class="usage-meaning lang-en">In lustre she shines like the moon.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कांतीने ती चंद्राप्रमाणे शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">असि</span>
+    <span class="word-iast">asi</span>
+  </div>
+  <div><span class="word-grammar">अस्, लट्, म.पु. एव.</span></div>
+  <div class="word-form">In this verse: असि (कान्त्यासि)</div>
+  <p class="word-meaning lang-en">you are</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आहेस</p>
+  <div class="word-usage">
+    <div class="deva">त्वं पापहारिणी असि।</div>
+    <div class="usage-iast">tvam papaharini asi.</div>
+    <div class="usage-meaning lang-en">You are the remover of sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तू पापहारिणी आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्यु-नदि</span>
+    <span class="word-iast">dyu-nadi</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. सं. एव.</span></div>
+  <div class="word-form">In this verse: द्युनदि</div>
+  <p class="word-meaning lang-en">O river of heaven</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्वर्गंगे</p>
+  <div class="word-usage">
+    <div class="deva">द्युनदि त्वं स्वर्गात् आगता।</div>
+    <div class="usage-iast">dyunadi tvam svargat agata.</div>
+    <div class="usage-meaning lang-en">O river of heaven, you have come from the sky.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे स्वर्गंगे, तू स्वर्गातून आली आहेस.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सिता</span>
+    <span class="word-iast">sitā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सिता (सिताऽसितायुतापि)</div>
+  <p class="word-meaning lang-en">white</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शुभ्र</p>
+  <div class="word-usage">
+    <div class="deva">सा कान्त्या सिता अस्ति।</div>
+    <div class="usage-iast">sa kantya sita asti.</div>
+    <div class="usage-meaning lang-en">She is white in lustre.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती कांतीने शुभ्र आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">असिता-युता</span>
+    <span class="word-iast">asitā-yutā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: असितायुता (सिताऽसितायुतापि)</div>
+  <p class="word-meaning lang-en">joined with the dark (Yamunā)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळ्या (यमुनेने) युक्त</p>
+  <div class="word-usage">
+    <div class="deva">असितायुता अपि सिता दृश्यते।</div>
+    <div class="usage-iast">asitayuta api sita drishyate.</div>
+    <div class="usage-meaning lang-en">Though joined with the dark one, she appears white.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काळ्या यमुनेने युक्त असूनही ती शुभ्र दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अपि</span>
+    <span class="word-iast">api</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अपि (सिताऽसितायुतापि)</div>
+  <p class="word-meaning lang-en">yet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तरी</p>
+  <div class="word-usage">
+    <div class="deva">पापी अपि गङ्गायां स्नात्वा शुध्यति।</div>
+    <div class="usage-iast">papi api gangayam snatva shudhyati.</div>
+    <div class="usage-meaning lang-en">Even a sinner becomes pure bathing in the Ganga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापी माणूसही गंगेत स्नान करून शुद्ध होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रक्षोभिः</span>
+    <span class="word-iast">rakṣobhiḥ</span>
+  </div>
+  <div><span class="word-grammar">नपुं. तृ. बव.</span></div>
+  <div class="word-form">In this verse: रक्षोभिः (रक्षोभिर्न)</div>
+  <p class="word-meaning lang-en">by rākṣasas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसांकडून</p>
+  <div class="word-usage">
+    <div class="deva">रक्षोभिः सा न हृता।</div>
+    <div class="usage-iast">rakshobhih sa na hrita.</div>
+    <div class="usage-meaning lang-en">She was not carried off by the rakshasas.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसांनी तिचे हरण केले नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">न परिहृता</span>
+    <span class="word-iast">na parihṛtā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.; क्त</span></div>
+  <div class="word-form">In this verse: न परिहृता (रक्षोभिर्न परिहृता)</div>
+  <p class="word-meaning lang-en">not carried off</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरण न केलेली</p>
+  <div class="word-usage">
+    <div class="deva">सीता रक्षोभिः परिहृता, गङ्गा तु न परिहृता।</div>
+    <div class="usage-iast">sita rakshobhih parihrita, ganga tu na parihrita.</div>
+    <div class="usage-meaning lang-en">Sita was carried off by the rakshasas, but the Ganga was not.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सीतेचे राक्षसांनी हरण केले; पण गंगेचे नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and yet</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तरी</p>
+  <div class="word-usage">
+    <div class="deva">सा सीता च पावनी च।</div>
+    <div class="usage-iast">sa sita ca pavani ca.</div>
+    <div class="usage-meaning lang-en">She is both Sita and the purifying one.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती सीताही आहे आणि पवित्र करणारीही आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नाम</span>
+    <span class="word-iast">nāma</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: नाम</div>
+  <p class="word-meaning lang-en">by name</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नावाने</p>
+  <div class="word-usage">
+    <div class="deva">सीता नाम गङ्गायाः अपि अस्ति।</div>
+    <div class="usage-iast">sita nama gangayah api asti.</div>
+    <div class="usage-meaning lang-en">&#x27;Sita&#x27; is also a name of the Ganga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;सीता&#x27; हे गंगेचेही नाव आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सीता</span>
+    <span class="word-iast">sītā</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सीता</div>
+  <p class="word-meaning lang-en">Sītā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सीता (शुभ्र)</p>
+  <div class="word-usage">
+    <div class="deva">सीता शुभ्रा अस्ति।</div>
+    <div class="usage-iast">sita shubhra asti.</div>
+    <div class="usage-meaning lang-en">Sita (the Ganga as Sita) is radiant-white.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सीता (गंगारूपाने) शुभ्र आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीगङ्गे स-नति गृहाण सत् मम अर्घ्यम्</span>
+    <span class="word-iast">śrīgaṅge sa-nati gṛhāṇa sat mama arghyam</span>
+  </div>
+  <div><span class="word-grammar">ध्रुवपद</span></div>
+  <div class="word-form">In this verse: श्रीगंगे सनति गृहाण सन्ममार्घ्यम्</div>
+  <p class="word-meaning lang-en">O Śrī Gaṅgā, accept my good arghya with obeisance</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हे श्रीगंगे, नमस्कारासह माझे उत्तम अर्घ्य स्वीकार</p>
+  <div class="word-usage">
+    <div class="deva">श्रीगङ्गे सनति गृहाण सन्ममार्घ्यम् इति ध्रुवपदं गायति।</div>
+    <div class="usage-iast">shrigange sanati grihana sanmamarghyam iti dhruvapadam gayati.</div>
+    <div class="usage-meaning lang-en">He sings the refrain &#x27;O blessed Ganga, bowing, accept my good arghya&#x27;.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;श्रीगंगे सनति गृहाण सन्ममार्घ्यम्&#x27; असे ध्रुवपद तो गातो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Three paradoxes in one verse make Sita a name of wonder: fierce by association yet gentle in nature, dark by union yet white in essence, named for the abducted queen yet never abducted. The teaching is that the holy transcends the very stories that name it - Ganga carries the itihasa within her and remains untouched by it, as the devotee&#x27;s own trials need not define the devotee.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एका श्लोकातील तीन विरोधाभास &#x27;सीता&#x27; हे नाव आश्चर्याचे बनवतात: संबंधाने उग्र तरी स्वभावाने सौम्य, संयोगाने काळी तरी सारतः शुभ्र, हरण झालेल्या राणीच्या नावाची तरी कधीही हरण न झालेली. शिकवण अशी की पवित्रता तिला नाव देणाऱ्या कथांच्याही पलीकडे असते - गंगा इतिहास स्वतःत वागवते आणि त्याला स्पर्श न होता राहते; तसेच भक्ताच्या स्वतःच्या कसोट्यांनी भक्ताची व्याख्या होण्याची गरज नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is built on virodhabhasa (apparent contradiction), a prized kavya ornament: bhishmasuh/abhishma (mother of the Terrible, yet not terrible), asitayuta/sita (joined with the dark Yamuna, yet white), sita/na parihrta (named Sita, yet never abducted like Sita). Sita also means &#x27;furrow&#x27; - the white gleaming line - fitting a river; the Ramayana echo is deliberate play, not confusion.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक विरोधाभास या बहुमान्य काव्यालंकारावर बांधला आहे: भीष्मसूः/अभीष्मा (भयंकराची माता, तरी भयंकर नाही), असितायुता/सिता (काळ्या यमुनेने युक्त, तरी शुभ्र), सीता/न परिहृता (सीता नावाची, तरी सीतेसारखे हरण न झालेली). &#x27;सीता&#x27; म्हणजे &#x27;नांगरट&#x27; - शुभ्र चमकणारी रेघ - नदीला शोभणारे; रामायणाची आठवण हेतुपुरस्सर खेळ आहे, गोंधळ नव्हे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Dyunadi (&#x27;O river of the sky&#x27;) confirms the celestial Ganga of verse 6 - the Dabhol tank-manifestation is not a local stream but heaven&#x27;s river condescending to appear. Note the sandhi chains bhishmasuh + abhishma giving bhishmasurabhishma and sita + asitayuta + api giving sitasitayutapi (with avagraha), both showing the poet&#x27;s dense shlesha-like packing in this virtuoso verse.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;द्युनदि&#x27; (&#x27;हे आकाशगंगे&#x27;) ६ व्या श्लोकातील स्वर्गीय गंगेची पुष्टी करते - दाभोळच्या कुंडातील प्रकटीकरण स्थानिक ओढा नसून प्रकट होण्यासाठी खाली आलेली स्वर्गाची नदी आहे. &#x27;भीष्मसूः + अभीष्मा → भीष्मसूरभीष्मा&#x27; आणि &#x27;सिता + असितायुता + अपि → सिताऽसितायुतापि&#x27; (अवग्रहासह) या संधीमाला लक्षात घ्या - या निपुण श्लोकात कवीचे दाट श्लेषसदृश गुंफण दोन्हींत दिसते.</p></div></div>
+
+<div class="pagenav"><a href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 7</div></a><a class="next" href="verse-9.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 9</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

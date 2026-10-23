@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 6 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 6</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 6</span><span class="bl-mr lang-mr">श्लोक 6</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">उत्पन्नदशमो भागः प्रजानामेव केवलम् ।<br>शिष्टस्य षष्ठो भागस्ते प्रजापालस्य सद्बलिः ।।६।।</div>
+  <div class="verse-iast">utpannadaśamo bhāgaḥ prajānāmeva kevalam । śiṣṭasya ṣaṣṭho bhāgaste prajāpālasya sadbaliḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">उत्पन्न-दशमः भागः प्रजानाम् एव केवलम् । शिष्टस्य षष्ठः भागः ते प्रजा-पालस्य सत्-बलिः ।</div><div class="vig-iast">utpanna-daśamaḥ bhāgaḥ prajānām eva kevalam । śiṣṭasya ṣaṣṭhaḥ bhāgaḥ te prajā-pālasya sat-baliḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">दशमः + भागः = दशमो भागः · प्रजानाम् + एव = प्रजानामेव · षष्ठः + भागः = षष्ठो भागः · भागः + ते = भागस्ते · सत् + बलिः = सद्बलिः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तद्ग्रामे स्रक्ष्यमाणे च जन्मतः पञ्चविंशतिवार्षिकः (कालः) भूपाय बलिः न देयः; अथ तदूर्ध्वतः उत्पन्नदशमः भागः केवलं प्रजानाम् एव (स्यात्); शिष्टस्य (च) षष्ठः भागः प्रजापालस्य ते सद्बलिः (स्यात्) । *(अटींचे तपशील अस्पष्ट — पुस्तकाचा मराठी अर्थ पाहावा.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>A tenth part of the produce shall belong to the people alone; and a sixth part of the remainder shall be your rightful tax, O protector of the people.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ते गाव स्थापन झाल्यानंतर २५ वर्षे जाईपर्यंत त्या गावातून राजाला कुठलाही कर दिला जाऊ नये व नंतर त्या गावाच्या उत्पन्नाचा दहावा अंश निव्वळ प्रजेसाठीच रहावा. उरलेल्याचा सहावा अंश मात्र प्रजेचे पालन करणाऱ्या तुझ्यासाठी कर म्हणून देण्यात यावा.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उत्पन्न-दशमः</span>
+    <span class="word-iast">utpanna-daśamaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: उत्पन्नदशमः</div>
+  <p class="word-meaning lang-en">a tenth of the produce</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्पन्नाचा दहावा</p>
+  <div class="word-usage">
+    <div class="deva">उत्पन्नदशमः भागः देवाय दत्तः ।</div>
+    <div class="usage-iast">utpannadaśamaḥ bhāgaḥ devāya dattaḥ ।</div>
+    <div class="usage-meaning lang-en">A tenth of the produce was given to the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उत्पन्नाचा दहावा भाग देवाला दिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भागः</span>
+    <span class="word-iast">bhāgaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: भागः</div>
+  <p class="word-meaning lang-en">part</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भाग</p>
+  <div class="word-usage">
+    <div class="deva">सः भागः मम अस्ति ।</div>
+    <div class="usage-iast">saḥ bhāgaḥ mama asti ।</div>
+    <div class="usage-meaning lang-en">That share is mine.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो भाग माझा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रजानाम्</span>
+    <span class="word-iast">prajānām</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. ष. बव.</span></div>
+  <div class="word-form">In this verse: प्रजानाम्</div>
+  <p class="word-meaning lang-en">of the people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजेचा</p>
+  <div class="word-usage">
+    <div class="deva">प्रजानाम् सुखम् राज्ञः धर्मः ।</div>
+    <div class="usage-iast">prajānām sukham rājñaḥ dharmaḥ ।</div>
+    <div class="usage-meaning lang-en">The people&#x27;s welfare is the king&#x27;s duty.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजेचे सुख हाच राजाचा धर्म.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">एव केवलम्</span>
+    <span class="word-iast">eva kevalam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: एव केवलम्</div>
+  <p class="word-meaning lang-en">only</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केवळ</p>
+  <div class="word-usage">
+    <div class="deva">एव केवलम् सत्यम् वद ।</div>
+    <div class="usage-iast">eva kevalam satyam vada ।</div>
+    <div class="usage-meaning lang-en">Speak only the truth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केवळ सत्य बोल.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिष्टस्य</span>
+    <span class="word-iast">śiṣṭasya</span>
+  </div>
+  <div><span class="word-grammar">नपुं. ष. एव.; क्त, शिष्</span></div>
+  <div class="word-form">In this verse: शिष्टस्य</div>
+  <p class="word-meaning lang-en">of the rest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उरलेल्याचा</p>
+  <div class="word-usage">
+    <div class="deva">शिष्टस्य अन्नस्य दानम् कुरु ।</div>
+    <div class="usage-iast">śiṣṭasya annasya dānam kuru ।</div>
+    <div class="usage-meaning lang-en">Give away the remaining food.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उरलेल्या अन्नाचे दान कर.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">षष्ठः</span>
+    <span class="word-iast">ṣaṣṭhaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: षष्ठः</div>
+  <p class="word-meaning lang-en">sixth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सहावा</p>
+  <div class="word-usage">
+    <div class="deva">षष्ठः दिवसः आगतः ।</div>
+    <div class="usage-iast">ṣaṣṭhaḥ divasaḥ āgataḥ ।</div>
+    <div class="usage-meaning lang-en">The sixth day has come.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सहावा दिवस आला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भागः</span>
+    <span class="word-iast">bhāgaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: भागः</div>
+  <p class="word-meaning lang-en">part</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भाग</p>
+  <div class="word-usage">
+    <div class="deva">द्वितीयः भागः तस्य अस्ति ।</div>
+    <div class="usage-iast">dvitīyaḥ bhāgaḥ tasya asti ।</div>
+    <div class="usage-meaning lang-en">The second share is his.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुसरा भाग त्याचा आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">ते</span>
+    <span class="word-iast">te</span>
+  </div>
+  <div><span class="word-grammar">ष. एव. (युष्मद्)</span></div>
+  <div class="word-form">In this verse: ते</div>
+  <p class="word-meaning lang-en">your</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझा</p>
+  <div class="word-usage">
+    <div class="deva">ते गृहम् सुन्दरम् अस्ति ।</div>
+    <div class="usage-iast">te gṛham sundaram asti ।</div>
+    <div class="usage-meaning lang-en">Your house is beautiful.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तुझे घर सुंदर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रजा-पालस्य</span>
+    <span class="word-iast">prajā-pālasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: प्रजापालस्य</div>
+  <p class="word-meaning lang-en">of the protector of the people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजापालकाचा</p>
+  <div class="word-usage">
+    <div class="deva">प्रजापालस्य यशः वर्धते ।</div>
+    <div class="usage-iast">prajāpālasya yaśaḥ vardhate ।</div>
+    <div class="usage-meaning lang-en">The fame of the protector of the people grows.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रजापालकाची कीर्ती वाढते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सत्-बलिः</span>
+    <span class="word-iast">sat-baliḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: सद्बलिः</div>
+  <p class="word-meaning lang-en">rightful tax</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य कर</p>
+  <div class="word-usage">
+    <div class="deva">सद्बलिः प्रजाभ्यः सुखावहः ।</div>
+    <div class="usage-iast">sadbaliḥ prajābhyaḥ sukhāvahaḥ ।</div>
+    <div class="usage-meaning lang-en">The rightful tax brings welfare to the people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>योग्य कर प्रजेला सुख देणारा असतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The revenue charter is a miniature dharma-śāstra of kingship: the people&#x27;s share comes first and is &#x27;theirs alone,&#x27; while the king receives only a sixth of the remainder — and receives it precisely as prajāpāla, protector of the people. Taxation is thus framed not as extraction but as the wage of protection. In the economy of a sacred kṣetra, the ruler&#x27;s due is legitimate only insofar as he guards dharma; sadbali — the &#x27;rightful tax&#x27; — is rightful because it is bounded.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे महसूल-शासनपत्र राजधर्माचे सूक्ष्म धर्मशास्त्र आहे: लोकांचा वाटा प्रथम येतो आणि &#x27;केवळ त्यांचाच&#x27; असतो, तर राजाला उरलेल्याचा फक्त सहावा अंश मिळतो — आणि तोही नेमके प्रजापाल म्हणून. करवसुली ही लूट नव्हे, तर रक्षणाचे मोबदला म्हणून मांडली आहे. पवित्र क्षेत्राच्या अर्थव्यवस्थेत शासकाचा हक्क तेवढाच वैध जेवढा तो धर्माचे रक्षण करतो; सद्बलिः — &#x27;योग्य कर&#x27; — योग्य आहे कारण तो मर्यादित आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The sixth share (ṣaḍbhāga) is the classical king&#x27;s due: Manusmṛti (7.130–132) and the Arthaśāstra fix the royal share of grain at a sixth (in some texts rising or falling according to need). Śrīdhara&#x27;s charter is thus deliberately orthodox — after the extraordinary twenty-five-year remission, normal dharma-śāstric taxation resumes, now sanctified by the Lord&#x27;s āśraya.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सहावा अंश (षड्भाग) हा राजाचा शास्त्रीय हक्क आहे: मनुस्मृती (७.१३०–१३२) व अर्थशास्त्र धान्यावरील राजहक्क सहावा अंश (गरजेनुसार काही ग्रंथांत कमी-जास्त) ठरवतात. श्रीधराचे शासनपत्र अशा रीतीने जाणूनबुजून परंपरागत आहे — असामान्य पंचवीस वर्षांच्या सवलतीनंतर नेहमीचा धर्मशास्त्रीय कर पुन्हा सुरू होतो, आता ईश्वराच्या आश्रयाने पवित्र झालेला.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The arithmetic of the verse is compressed: &#x27;a tenth of the produce for the people alone; a sixth of the rest as your due.&#x27; The book&#x27;s Marathi reading takes उत्पन्नदशमः as a tenth of the produce reserved for the people, and षष्ठः भागः शिष्टस्य as a sixth of the remainder for the king — the editor follows the book. भागस्ते = भागः + ते (sandhi). प्रजापालस्य, though genitive in form, carries vocative force, addressing the king in his role.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोकाचे गणित संक्षिप्त आहे: &#x27;उत्पन्नाचा दहावा अंश केवळ प्रजेसाठी; उरलेल्याचा सहावा अंश तुझा हक्क.&#x27; पुस्तकाचे मराठी वाचन उत्पन्नदशमः ला प्रजेसाठी राखीव उत्पन्नाचा दहावा अंश आणि षष्ठः भागः शिष्टस्य ला राजासाठी उरलेल्याचा सहावा अंश मानते — संपादकाने पुस्तकाचे अनुसरण केले आहे. भागस्ते = भागः + ते (संधी). प्रजापालस्य याचे रूप षष्ठी असले तरी त्यात संबोधनाचा भाव आहे: आपल्या भूमिकेत राजाला उद्देशून.</p></div></div>
+
+<div class="pagenav"><a href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 5</div></a><a class="next" href="verse-7.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 7</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

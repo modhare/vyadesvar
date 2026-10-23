@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 46 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 46</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 46</span><span class="bl-mr lang-mr">श्लोक 46</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कूटकेश्वरनामा यो ग्रामे तन्नामके विभुः ।<br>अनारतं वरीवर्ति तीरे क्षीरपयोनिधेः ।।४६।।</div>
+  <div class="verse-iast">kūṭakeśvaranāmā yo grāme tannāmake vibhuḥ । anārataṃ varīvarti tīre kṣīrapayonidheḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कूटकेश्वर-नामा । यः । ग्रामे । तत्-नामके । विभुः । अनारतम् । वरीवर्ति । तीरे । क्षीरपयोनिधेः ।</div><div class="vig-iast">kūṭakeśvara-nāmā । yaḥ । grāme । tat-nāmake । vibhuḥ । anāratam । varīvarti । tīre । kṣīrapayonidheḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">नामा + यः = नामा यः · यः + ग्रामे = यो ग्रामे · तत् + नामके = तन्नामके (अनुनासिक) · विभुः + अनारतम् = विभुरनारतम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">कूटकेश्वरनामा यः विभुः (सः) तन्नामके ग्रामे क्षीरपयोनिधेः तीरे अनारतं वरीवर्ति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The Lord named Kūṭakeśvara, the all-pervading one, dwells ceaselessly in the village bearing that very name, on the shore of the ocean.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कूटकेश्वर (बहुधा आजचे देवगडजवळील कुणकेश्वर) नावाच्या भगवन्तामुळे कूटकेश्वर या नावाने प्रसिद्ध झालेल्या गावात समुद्राच्या तीरावर तो परमात्मा सतत निवास करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कूटकेश्वरनामा</span>
+    <span class="word-iast">kūṭakeśvaranāmā</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; bahuvrīhi compound (कूटकेश्वर + नामन्, &#x27;named&#x27;)</span></div>
+  <div class="word-form">In this verse: कूटकेश्वरनामा</div>
+  <p class="word-meaning lang-en">named Kūṭakeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कूटकेश्वर नावाचा</p>
+  <div class="word-usage">
+    <div class="deva">कूटकेश्वरनामा देवस्तत्र वसति।</div>
+    <div class="usage-iast">kūṭakeśvaranāmā devastatra vasati।</div>
+    <div class="usage-meaning lang-en">The god named Kūṭakeśvara dwells there.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कूटकेश्वर नावाचा देव तेथे वास करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तन्नामके</span>
+    <span class="word-iast">tannāmake</span>
+  </div>
+  <div><span class="word-grammar">masculine locative singular adjective (तत् + नामक); sandhi तत् + नामके</span></div>
+  <div class="word-form">In this verse: तन्नामके</div>
+  <p class="word-meaning lang-en">in the (village) bearing that same name</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच नावाच्या</p>
+  <div class="word-usage">
+    <div class="deva">तन्नामके ग्रामे मन्दिरमस्ति।</div>
+    <div class="usage-iast">tannāmake grāme mandiramasti।</div>
+    <div class="usage-meaning lang-en">In the village of that name there is a temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच नावाच्या गावात मंदिर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विभुः</span>
+    <span class="word-iast">vibhuḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular (वि + √भू)</span></div>
+  <div class="word-form">In this verse: विभुः</div>
+  <p class="word-meaning lang-en">the all-pervading Lord</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्वव्यापी प्रभू</p>
+  <div class="word-usage">
+    <div class="deva">विभुः सर्वत्र विद्यते।</div>
+    <div class="usage-iast">vibhuḥ sarvatra vidyate।</div>
+    <div class="usage-meaning lang-en">The Lord exists everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रभू सर्वत्र आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अनारतम्</span>
+    <span class="word-iast">anāratam</span>
+  </div>
+  <div><span class="word-grammar">adverb (अ + आ + रत, &#x27;without pause&#x27;)</span></div>
+  <div class="word-form">In this verse: अनारतम्</div>
+  <p class="word-meaning lang-en">continuously, ceaselessly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सतत</p>
+  <div class="word-usage">
+    <div class="deva">सोनारतं जपति।</div>
+    <div class="usage-iast">sonārataṃ japati।</div>
+    <div class="usage-meaning lang-en">He chants ceaselessly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सतत जप करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वरीवर्ति</span>
+    <span class="word-iast">varīvarti</span>
+  </div>
+  <div><span class="word-grammar">present indicative 3rd singular; intensive (yaṅluk) of √वृत्</span></div>
+  <div class="word-form">In this verse: वरीवर्ति</div>
+  <p class="word-meaning lang-en">dwells constantly; keeps residing</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वास करतो</p>
+  <div class="word-usage">
+    <div class="deva">साधुराश्रमे वरीवर्ति।</div>
+    <div class="usage-iast">sādhurāśrame varīvarti।</div>
+    <div class="usage-meaning lang-en">The sage keeps residing in the hermitage.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>साधू आश्रमात सतत वास करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षीरपयोनिधेः</span>
+    <span class="word-iast">kṣīrapayonidheḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular; compound (क्षीर + पयस् + निधि)</span></div>
+  <div class="word-form">In this verse: क्षीरपयोनिधेः</div>
+  <p class="word-meaning lang-en">of the ocean (here simply &#x27;the sea&#x27;, not the milk-ocean)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या (येथे ‘क्षीरसागर’ नव्हे, साधा समुद्र)</p>
+  <div class="word-usage">
+    <div class="deva">क्षीरपयोनिधेस्तीरे नगरमस्ति।</div>
+    <div class="usage-iast">kṣīrapayonidhestīre nagaramasti।</div>
+    <div class="usage-meaning lang-en">There is a city on the shore of the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या किनाऱ्यावर नगर आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The verse explains its own title: Kūṭakeśvara — &#x27;the Lord of the peak, the tree-top&#x27; — the place named for the god and the god for the place (the merchant&#x27;s story in v. 49 will show him literally on a tree-top). &#x27;Dwelling ceaselessly&#x27; is the poet&#x27;s way of marking a jāgṛta kṣetra: this is not a god who visits, but one who stays. The shore-side setting also prepares the sea-miracle that follows.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा श्लोक स्वतःच्याच नावाचे स्पष्टीकरण देतो — कूटकेश्वर म्हणजे &#x27;कूटाचा (झाडाच्या शिखराचा) स्वामी&#x27; — स्थानाचे नाव देवावरून आणि देवाचे नाव स्थानावरून (४९व्या श्लोकातील व्यापाऱ्याच्या कथेत तो खरोखरच झाडाच्या शिखरावर दाखवला जाईल). &#x27;सतत वास करतो&#x27; हे कवीचे जागृत क्षेत्र दाखवण्याचे लक्षण आहे : हा भेट देणारा देव नसून राहणारा देव आहे. किनाऱ्यावरील स्थान पुढील समुद्रचमत्काराची तयारीही करते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Sthala poets regularly derive a god&#x27;s name from the legend itself — here &#x27;the Lord of the tree-top&#x27; will be explained in v. 49, where Kūṭakeśvara rescues the merchant from a tree-top (तरुकूट). &#x27;Dwelling ceaselessly&#x27; (अनारतं वरीवर्ति) is the formula for a jāgṛta deity: not a visitor but a permanent resident of his kṣetra.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>स्थलकवी देवाच्या नावाची व्युत्पत्ती कथेतूनच नियमितपणे देतात — येथे &#x27;झाडाच्या शिखराचा स्वामी&#x27; हे ४९व्या श्लोकात स्पष्ट होईल, जेथे कूटकेश्वर झाडाच्या शिखरावरून व्यापाऱ्याला वाचवतो. &#x27;सतत वास करतो&#x27; (अनारतं वरीवर्ति) हे जागृत देवतेचे सूत्र आहे : भेट देणारा नव्हे, तर आपल्या क्षेत्राचा कायमचा रहिवासी.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse calls the sea क्षीरपयोनिधि — literally &#x27;milk-ocean&#x27; — but the book&#x27;s prose note rightly reads it as the ordinary sea here; poetic compounds often keep their grand form where only the &#x27;ocean&#x27; sense is meant. The prose note also suggests this Kūṭakeśvara may be today&#x27;s Kuṇakeśvara near Devgad; the editors record the suggestion without asserting it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक समुद्राला क्षीरपयोनिधि — शब्दशः &#x27;क्षीरसागर&#x27; — म्हणतो, परंतु पुस्तकाची गद्यटीप योग्यच येथे तो साधा समुद्र मानते; काव्यात्मक समासांत &#x27;समुद्र&#x27; एवढाच अर्थ अभिप्रेत असताना भव्य रूप टिकून राहते. गद्यटीप हा कूटकेश्वर आजचे देवगडजवळील कुणकेश्वर असावा असे सुचवते; संपादक सुचवण नोंदवतात, दावा करत नाहीत.</p></div></div>
+
+<div class="pagenav"><a href="verse-45.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 45</div></a><a class="next" href="verse-47.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 47</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

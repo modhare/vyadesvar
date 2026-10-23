@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 45 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 45</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 45</span><span class="bl-mr lang-mr">श्लोक 45</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तथा रामः स्वविप्राणां संगत्यान्यानपि द्विजान् ।<br>चक्रे स्वक्षेत्रनिलयान्स्वानुक्रोशांशभागिनः ।।४५।।</div>
+  <div class="verse-iast">tathā rāmaḥ svaviprāṇāṃ saṃgatyānyānapi dvijān । cakre svakṣetranilayānsvānukrośāṃśabhāginaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तथा । रामः । स्व-विप्राणाम् । संगत्या । अन्यान् । अपि । द्विजान् । चक्रे । स्व-क्षेत्र-निलयान् । स्व-अनुक्रोश-अंश-भागिनः ।</div><div class="vig-iast">tathā । rāmaḥ । sva-viprāṇām । saṃgatyā । anyān । api । dvijān । cakre । sva-kṣetra-nilayān । sva-anukrośa-aṃśa-bhāginaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">रामः + स्व = रामः स्व · संगत्या + अन्यान् = संगत्यान्यान् · अन्यान् + अपि = अन्यानपि · निलयान् + स्व = निलयान्स्व · स्व + अनुक्रोश = स्वानुक्रोश · अनुक्रोश + अंश = अनुक्रोशांश</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यथा चन्दनसंभर्ता मलयाद्रिः तदाश्रितान् निपाकादीन् स्वगुणांशिनः चन्दनवत् करोति, तथा रामः स्वविप्राणां संगत्या स्वक्षेत्रनिलयान् अन्यान् अपि द्विजान् स्वानुक्रोशांशभागिनः चक्रे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>…so Rāma, through the company of his own brāhmaṇas, made even the other twice-born dwelling in his kṣetra partakers in a share of his grace.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याप्रमाणे चन्दनाची खाण असलेला मलयपर्वत आपल्या आश्रयाने राहणाऱ्या निपाकासारख्या वृक्षांनाही स्वगुणाचा अंश देऊन चन्दनाने सुगन्धित करतो त्याप्रमाणे परशुरामाने स्वतः बोलावलेल्या विप्रांच्या संगतीने स्वतःच्या क्षेत्रात निवास करून राहाणाऱ्या इतर ब्राह्मणांकडेही स्वतःच्या कृपेचा आंशिक ओघ वळवला. [टीप: निपाक म्हणजे नीप, अर्थात कदंब वृक्ष (Neolamarckia cadamba); मराठीत त्याला कदंब किंवा कळंब म्हणतात.]</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वविप्राणां संगत्या</span>
+    <span class="word-iast">svaviprāṇāṃ saṃgatyā</span>
+  </div>
+  <div><span class="word-grammar">स्व-विप्र (षष्ठी बहुवचन) + संगति (स्त्रीलिङ्ग) तृतीया एकवचन</span></div>
+  <div class="word-form">In this verse: स्वविप्राणां संगत्या — &#x27;आपल्या विप्रांच्या संगतीमुळे&#x27;</div>
+  <p class="word-meaning lang-en">through the company of his own brāhmaṇas</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या (आणलेल्या) विप्रांच्या संगतीमुळे</p>
+  <div class="word-usage">
+    <div class="deva">सः स्वविप्राणां संगत्या पुण्यम् अलभत</div>
+    <div class="usage-iast">saḥ svaviprāṇāṃ saṃgatyā puṇyam alabhata</div>
+    <div class="usage-meaning lang-en">He gained merit through the company of his own brahmins.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने आपल्या विप्रांच्या संगतीने पुण्य मिळवले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अन्यान् अपि द्विजान्</span>
+    <span class="word-iast">anyān api dvijān</span>
+  </div>
+  <div><span class="word-grammar">अन्य (सर्वनाम) + अपि (अव्यय) + द्विज; पुंलिङ्ग द्वितीया बहुवचन</span></div>
+  <div class="word-form">In this verse: अन्यान् अपि द्विजान् — &#x27;इतर ब्राह्मणांनाही&#x27;</div>
+  <p class="word-meaning lang-en">even the other twice-born</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>इतर ब्राह्मणांनाही</p>
+  <div class="word-usage">
+    <div class="deva">सः अन्यान् अपि द्विजान् अपूजयत्</div>
+    <div class="usage-iast">saḥ anyān api dvijān apūjayat</div>
+    <div class="usage-meaning lang-en">He honoured even the other twice-born.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने इतर ब्राह्मणांचाही सन्मान केला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वक्षेत्रनिलयान्</span>
+    <span class="word-iast">svakṣetranilayān</span>
+  </div>
+  <div><span class="word-grammar">षष्ठी तत्पुरुष (स्व-क्षेत्र-निलय); निलय = निवास; पुंलिङ्ग द्वितीया बहुवचन</span></div>
+  <div class="word-form">In this verse: स्वक्षेत्रनिलयान् — &#x27;आपल्या क्षेत्रात राहणाऱ्या&#x27;</div>
+  <p class="word-meaning lang-en">dwelling in his kṣetra</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या क्षेत्रात राहणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">स्वक्षेत्रनिलयाः जनाः सुखिनः आसन्</div>
+    <div class="usage-iast">svakṣetranilayāḥ janāḥ sukhinaḥ āsan</div>
+    <div class="usage-meaning lang-en">The people dwelling in his kṣetra were happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्या क्षेत्रात राहणारे लोक सुखी होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वानुक्रोशांशभागिनः</span>
+    <span class="word-iast">svānukrośāṃśabhāginaḥ</span>
+  </div>
+  <div><span class="word-grammar">स्व-अनुक्रोश-अंश-भागिन् (√भज् + इनि प्रत्यय); पुंलिङ्ग द्वितीया बहुवचन</span></div>
+  <div class="word-form">In this verse: स्वानुक्रोशांशभागिनः — &#x27;आपल्या कृपेच्या अंशाचे भागीदार&#x27;</div>
+  <p class="word-meaning lang-en">partakers in a share of his compassion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आपल्या कृपेच्या (अनुक्रोश) अंशाचे भागीदार</p>
+  <div class="word-usage">
+    <div class="deva">ते स्वानुक्रोशांशभागिनः अभवन्</div>
+    <div class="usage-iast">te svānukrośāṃśabhāginaḥ abhavan</div>
+    <div class="usage-meaning lang-en">They became partakers in a share of his compassion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते त्याच्या कृपेच्या अंशाचे भागीदार झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">चक्रे</span>
+    <span class="word-iast">cakre</span>
+  </div>
+  <div><span class="word-grammar">√कृ (करणे) लिट् लकार, आत्मनेपद, प्रथमपुरुष एकवचन</span></div>
+  <div class="word-form">In this verse: चक्रे — &#x27;त्याने केले&#x27;</div>
+  <p class="word-meaning lang-en">he made</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>केले</p>
+  <div class="word-usage">
+    <div class="deva">सः तान् सुखिनः चक्रे</div>
+    <div class="usage-iast">saḥ tān sukhinaḥ cakre</div>
+    <div class="usage-meaning lang-en">He made them happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने त्यांना सुखी केले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Grace is contagious through holy company: Paraśurāma does not bless the newcomers directly — his invited brāhmaṇas&#x27; company becomes the channel, and the grace reaches &#x27;the others&#x27; as a shared portion. The verse dignifies the settled brāhmaṇas as transmitters of the kṣetra&#x27;s sanctity.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कृपा पवित्र संगतीतून संक्रामक होते : परशुराम नव्यांना थेट आशीर्वाद देत नाही — त्याने आणलेल्या ब्राह्मणांची संगती हेच माध्यम बनते, आणि कृपा &#x27;इतरांपर्यंत&#x27; वाट्याच्या रूपात पोहोचते. हा श्लोक स्थिरावलेल्या ब्राह्मणांना क्षेत्राच्या पावित्र्याचे वाहक म्हणून गौरवतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>अनुक्रोश (compassion, tender pity) is a favourite word of stotra and māhātmya literature for divine grace — softer than अनुग्रह, it suggests the Lord&#x27;s spontaneous tenderness toward the lowly. The doctrine here is that of the Bhāgavata&#x27;s sādhu-saṅga: contact with the Lord&#x27;s own people conveys what direct approach cannot.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुक्रोश (करुणा, कोमल दया) हा स्तोत्र व माहात्म्य वाङ्मयातील दैवी कृपेसाठी आवडता शब्द आहे — अनुग्रहापेक्षा मृदू, तो दीनांप्रती भगवंताची स्वाभाविक कोमलता सूचित करतो. येथील सिद्धान्त भागवताच्या साधुसंगाचा आहे : भगवंताच्या आप्तजनांचा संपर्क जे थेट दृष्टिकोन देऊ शकत नाही ते देतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Note the economy: the whole doctrine of mediated grace is carried by the single compound स्वानुक्रोशांशभागिनः — &#x27;sharers in a portion of his compassion&#x27;. चक्रे is the perfect (liṭ) of √कृ, ātmanepada: &#x27;he made&#x27;. The yathā of verse 44 finds its tathā here. Metre: Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>काटकसर लक्षात घ्या : मध्यस्थ कृपेचा संपूर्ण सिद्धान्त एकाच समासात — स्वानुक्रोशांशभागिनः, &#x27;त्याच्या करुणेच्या अंशाचे भागीदार&#x27; — मांडला आहे. चक्रे हे √कृ चे पूर्णभूत (लिट्), आत्मनेपद : &#x27;त्याने केले&#x27;. ४४ व्या श्लोकातील यथा ला येथे तथा सापडते. वृत्त : अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-44.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 44</div></a><a class="next" href="verse-46.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 46</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

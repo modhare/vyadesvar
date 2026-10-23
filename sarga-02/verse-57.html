@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 57 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 57</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 57</span><span class="bl-mr lang-mr">श्लोक 57</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यो मोहादथवा द्वेषाद् रामक्षेत्रं नराधमः।।<br>मन्येत कुंकणं मूढः स जनः पापभाजनम् ।।५७।।</div>
+  <div class="verse-iast">yo mohādathavā dveṣād rāmakṣetraṃ narādhamaḥ । । manyeta kuṃkaṇaṃ mūḍhaḥ sa janaḥ pāpabhājanam</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यः । मोहात् । अथवा । द्वेषात् । रामक्षेत्रम् । नर-अधमः । मन्येत । कुंकणम् । मूढः । सः । जनः । पाप-भाजनम् ।</div><div class="vig-iast">yaḥ । mohāt । athavā । dveṣāt । rāmakṣetram । nara-adhamaḥ । manyeta । kuṃkaṇam । mūḍhaḥ । saḥ । janaḥ । pāpa-bhājanam ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यः + मोहात् = यो मोहात् (विसर्ग → ओ) · मोहात् + अथवा = मोहादथवा · द्वेषात् + रामक्षेत्रम् = द्वेषाद्रामक्षेत्रम् (त् → द्) · नर + अधमः = नराधमः · सः + जनः = स जनः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यः नराधमः मोहात् अथवा द्वेषात् रामक्षेत्रं कुंकणं मन्येत, सः मूढः जनः पापभाजनम् (भवति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>The wretched man who, from delusion or from hatred, would think Rāmakṣetra to be Kuṅkaṇa — that foolish fellow is a vessel of sin.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या रामक्षेत्राला जो नराधम मोहाने किंवा द्वेषाने कुंकण मानतो तो मनुष्य मूर्ख व पापास्पद आहे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मोहात् अथवा द्वेषात्</span>
+    <span class="word-iast">mohāt athavā dveṣāt</span>
+  </div>
+  <div><span class="word-grammar">मोहात् — masculine ablative singular of मोह (delusion); अथवा — indeclinable; द्वेषात् — masculine ablative singular of द्वेष (hatred); ablatives of cause</span></div>
+  <div class="word-form">In this verse: मोहात् + अथवा + द्वेषात्</div>
+  <p class="word-meaning lang-en">from delusion or from hatred</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अज्ञानाने किंवा द्वेषाने (हेतु पञ्चमी)</p>
+  <div class="word-usage">
+    <div class="deva">मोहात् अथवा द्वेषात् सः असत्यम् अवदत्</div>
+    <div class="usage-iast">mohāt athavā dveṣāt saḥ asatyam avadat</div>
+    <div class="usage-meaning lang-en">From delusion or hatred he spoke untruth.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अज्ञानाने किंवा द्वेषाने तो असत्य बोलला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नराधमः</span>
+    <span class="word-iast">narādhamaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; tatpuruṣa: नरेषु अधमः — &#x27;lowest among men&#x27;</span></div>
+  <div class="word-form">In this verse: नराधमः</div>
+  <p class="word-meaning lang-en">the vilest of men</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधम माणूस</p>
+  <div class="word-usage">
+    <div class="deva">नर-अधमः सज्जनान् निन्दति</div>
+    <div class="usage-iast">nara-adhamaḥ sajjanān nindati</div>
+    <div class="usage-meaning lang-en">The vilest of men reviles good people.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अधम माणूस सज्जनांची निंदा करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मन्येत</span>
+    <span class="word-iast">manyeta</span>
+  </div>
+  <div><span class="word-grammar">√मन् (to think, consider), vidhiliṅ, 3rd singular, ātmanepada</span></div>
+  <div class="word-form">In this verse: मन्येत</div>
+  <p class="word-meaning lang-en">he would think / consider</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मानेल (√मन्, विधिलिङ्)</p>
+  <div class="word-usage">
+    <div class="deva">सः आत्मानम् पण्डितम् मन्येत</div>
+    <div class="usage-iast">saḥ ātmānam paṇḍitam manyeta</div>
+    <div class="usage-meaning lang-en">He would consider himself learned.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो स्वतःला पंडित मानेल.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मूढः</span>
+    <span class="word-iast">mūḍhaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular; past passive participle of √मुह् (to be deluded), used adjectivally</span></div>
+  <div class="word-form">In this verse: मूढः</div>
+  <p class="word-meaning lang-en">foolish, deluded</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूर्ख</p>
+  <div class="word-usage">
+    <div class="deva">मूढः जनः उपदेशम् न शृणोति</div>
+    <div class="usage-iast">mūḍhaḥ janaḥ upadeśam na śṛṇoti</div>
+    <div class="usage-meaning lang-en">The foolish man does not listen to counsel.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मूर्ख माणूस उपदेश ऐकत नाही.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पापभाजनम्</span>
+    <span class="word-iast">pāpabhājanam</span>
+  </div>
+  <div><span class="word-grammar">neuter nominative singular; tatpuruṣa: पापस्य भाजनम् — भाजन = vessel, receptacle</span></div>
+  <div class="word-form">In this verse: पापभाजनम्</div>
+  <p class="word-meaning lang-en">a vessel of sin, a sinner</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापाचे भांडे, पापी</p>
+  <div class="word-usage">
+    <div class="deva">सः पाप-भाजनम् इति कथ्यते</div>
+    <div class="usage-iast">saḥ pāpa-bhājanam iti kathyate</div>
+    <div class="usage-meaning lang-en">He is called a vessel of sin.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याला पापाचे भांडे म्हणतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The prohibition of verse 55 is sealed with a curse: misnaming the holy land out of ignorance or malice makes the speaker himself a &#x27;vessel of sin&#x27;. The teaching is twofold — do not let delusion cloud your judgment of holy things, and do not let hatred speak against them; irreverence towards the kṣetra recoils upon the irreverent.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>५५ व्या श्लोकातील निषेध शापाने शिक्कामोर्तब केला आहे: अज्ञानाने किंवा द्वेषाने पवित्र भूमीला चुकीचे नाव देणारा स्वतःच &#x27;पापाचे भांडे&#x27; बनतो. यातील शिकवण दुहेरी आहे — पवित्र गोष्टींबद्दलच्या निर्णयावर अज्ञानाचा पडदा पडू देऊ नका, आणि त्यांच्याविरुद्ध द्वेषाला बोलू देऊ नका; क्षेत्राविषयीची अनादरभावना अनादर करणाऱ्यावरच उलटते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>पापभाजनम् — &#x27;a vessel of sin&#x27; — is a favourite strong term of dharma literature for one who has made himself a receptacle of demerit (compare पात्र in compounds like पापपात्रम्). The pairing मोहात् … द्वेषात् covers the two classic roots of wrong judgment: not knowing better, and knowing yet speaking ill — both condemned.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पापभाजनम् — &#x27;पापाचे भांडे&#x27; — हा धर्मवाङ्मयातील आवडता तीव्र शब्द आहे; ज्याने स्वतःला अपुण्याचे भाजन बनवले त्यासाठी (पापपात्रम् सारख्या सामासिक प्रयोगांशी तुलना करा). मोहात् … द्वेषात् ही जोडी चुकीच्या निर्णयाची दोन ठरावीक मुळे व्यापते: नकळत चुकणे आणि कळूनही वाईट बोलणे — दोन्ही निंद्य.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>मन्येत is vidhiliṅ (potential) of √मन्, ātmanepada — &#x27;would consider&#x27;. मोहात् and द्वेषात् are ablatives of cause. The verse is in Anuṣṭubh.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मन्येत हे √मन् धातूचे विधिलिङ् रूप आहे, आत्मनेपदी — &#x27;मानेल&#x27;. मोहात् व द्वेषात् हे हेतु-पञ्चमी आहेत. वृत्त अनुष्टुभ्.</p></div></div>
+
+<div class="pagenav"><a href="verse-56.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 56</div></a><a class="next" href="verse-58.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 58</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

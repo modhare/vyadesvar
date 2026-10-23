@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 24 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 24</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 24</span><span class="bl-mr lang-mr">श्लोक 24</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">भुक्तिमुक्ती उभे तत्र श्रीगिरौ तत्र मिश्रिते ।<br>शश्वद्गोप्तास्मि यत्राहं मृत्युमृत्युः परस्वधी ।।२४।।</div>
+  <div class="verse-iast">bhuktimuktī ubhe tatra śrīgirau tatra miśrite । śaśvadgoptāsmi yatrāhaṃ mṛtyumṛtyuḥ parasvadhī</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">भुक्ति-मुक्ती । उभे । तत्र । श्री-गिरौ । तत्र । मिश्रिते । शश्वत् । गोप्ता । अस्मि । यत्र । अहम् । मृत्यु-मृत्युः । परस्वधी ।</div><div class="vig-iast">bhukti-muktī । ubhe । tatra । śrī-girau । tatra । miśrite । śaśvat । goptā । asmi । yatra । aham । mṛtyu-mṛtyuḥ । parasvadhī ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">भुक्तिमुक्ती + उभे = भुक्तिमुक्ती उभे (ई-द्विवचन — प्रगृह्य, संधी नाही) · शश्वत् + गोप्ता = शश्वद्गोप्ता · गोप्ता + अस्मि = गोप्तास्मि · यत्र + अहम् = यत्राहम् · मृत्युः + परस्वधी = मृत्युः परस्वधी</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यत्र मृत्युमृत्युः परस्वधी अहं शश्वत् गोप्ता अस्मि, तत्र भुक्तिमुक्ती उभे (स्तः), तत्र श्रीगिरौ मिश्रिते (स्तः) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Both enjoyment and liberation are there — where Śrī and Sarasvatī dwell mingled together, there where I, the axe-bearer, the death of Death itself, am the eternal guardian.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्या ठिकाणी परशूवर अवलंबून असणारा व मृत्यूचाही मृत्यू असा मी नित्य रक्षणकर्ता आहे तेथे भोग व मोक्ष दोन्ही आहेत; संपत्ती व सरस्वती दोघींचे एकत्र वास्तव्य आहे (असे समजा).</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 5.24, line 2: the book&#x27;s परस्वधीः → परस्वधी (nominative of परस्वधिन्, &quot;axe-bearer&quot;, Marathi परशूवर अवलंबून असणारा; meter unchanged).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भुक्तिमुक्ती उभे</span>
+    <span class="word-iast">bhuktimuktī ubhe</span>
+  </div>
+  <div><span class="word-grammar">भुक्ति (f.; √bhuj + kti, &#x27;enjoyment&#x27;) + मुक्ति (f.; √muc + kti, &#x27;liberation&#x27;) → feminine nominative dual; उभ (pronominal adjective, &#x27;both&#x27;), neuter nominative dual</span></div>
+  <div class="word-form">In this verse: nominative dual phrase</div>
+  <p class="word-meaning lang-en">both enjoyment and liberation</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भोग व मोक्ष दोन्ही</p>
+  <div class="word-usage">
+    <div class="deva">क्षेत्रे भुक्तिमुक्ती उभे स्तः</div>
+    <div class="usage-iast">kṣetre bhuktimuktī ubhe staḥ</div>
+    <div class="usage-meaning lang-en">In this sacred land both enjoyment and liberation exist.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या क्षेत्रात भोग आणि मोक्ष दोन्ही आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">श्रीगिरौ मिश्रिते</span>
+    <span class="word-iast">śrīgirau miśrite</span>
+  </div>
+  <div><span class="word-grammar">श्री (f., &#x27;Lakṣmī, fortune&#x27;) + गीः (f., &#x27;speech&#x27; → Sarasvatī) → dvandva; feminine nominative dual श्रीगिरौ; मिश्रित (past passive participle of √miśr 10P, &#x27;to mingle&#x27;), nominative dual</span></div>
+  <div class="word-form">In this verse: nominative dual phrase</div>
+  <p class="word-meaning lang-en">Śrī and Sarasvatī, mingled together in union</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लक्ष्मी व सरस्वती (गीः = वाणी) एकत्र (द्विवचन)</p>
+  <div class="word-usage">
+    <div class="deva">तत्र श्रीगिरौ मिश्रिते वसतः</div>
+    <div class="usage-iast">tatra śrīgirau miśrite vasataḥ</div>
+    <div class="usage-meaning lang-en">There Śrī and Sarasvatī dwell united.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तेथे लक्ष्मी व सरस्वती एकत्र राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शश्वत् गोप्ता</span>
+    <span class="word-iast">śaśvat goptā</span>
+  </div>
+  <div><span class="word-grammar">शश्वत् (indeclinable, &#x27;perpetually, eternally&#x27;) + गोप्तृ (m. agent noun from √gup 1Ā, &#x27;to protect&#x27;), nominative singular</span></div>
+  <div class="word-form">In this verse: indeclinable + nominative singular (predicate)</div>
+  <p class="word-meaning lang-en">the perpetual, eternal protector</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सतत रक्षणकर्ता</p>
+  <div class="word-usage">
+    <div class="deva">रामः क्षेत्रस्य शश्वत् गोप्ता अस्ति</div>
+    <div class="usage-iast">rāmaḥ kṣetrasya śaśvat goptā asti</div>
+    <div class="usage-meaning lang-en">Rāma is the perpetual protector of the land.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम या क्षेत्राचा नित्य रक्षणकर्ता आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मृत्युमृत्युः</span>
+    <span class="word-iast">mṛtyumṛtyuḥ</span>
+  </div>
+  <div><span class="word-grammar">मृत्यु (m., &#x27;death&#x27;) + मृत्यु (m.) → ṣaṣṭhī-tatpuruṣa (&#x27;the death of death&#x27;); masculine nominative singular</span></div>
+  <div class="word-form">In this verse: nominative singular (epithet)</div>
+  <p class="word-meaning lang-en">the death of Death itself</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मृत्यूचाही मृत्यू</p>
+  <div class="word-usage">
+    <div class="deva">शिवः मृत्युमृत्युः इति स्तूयते</div>
+    <div class="usage-iast">śivaḥ mṛtyumṛtyuḥ iti stūyate</div>
+    <div class="usage-meaning lang-en">Śiva is praised as the death of Death.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवाला मृत्यूचाही मृत्यू म्हणून स्तवले जाते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परस्वधी</span>
+    <span class="word-iast">parasvadhī</span>
+  </div>
+  <div><span class="word-grammar">परस्वध्/परशु (&#x27;axe&#x27;) + ini (possessive suffix) → परस्वधिन् (m., &#x27;axe-bearer&#x27;); masculine nominative singular</span></div>
+  <div class="word-form">In this verse: nominative singular (epithet of Paraśurāma)</div>
+  <p class="word-meaning lang-en">the axe-bearer (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुधारी (परस्वध = परशू)</p>
+  <div class="word-usage">
+    <div class="deva">परस्वधी रामः शत्रून् अजयत्</div>
+    <div class="usage-iast">parasvadhī rāmaḥ śatrūn ajayat</div>
+    <div class="usage-meaning lang-en">Rāma the axe-bearer conquered his foes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुधारी रामाने शत्रूंना जिंकले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The climax of the invitation: where Paraśurāma — the death of Death, the axe-bearer — stands as eternal guardian, both bhukti and mukti are present together, and Lakṣmī and Sarasvatī dwell in union. The sthala promises what is rarest: prosperity without spiritual loss, and learning crowned by fortune. The devotee is assured that the sacred land does not demand renunciation of the world, but sanctifies it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>निमंत्रणाचा कळस येथे आहे : जेथे &#x27;मृत्यूचाही मृत्यू&#x27; असलेला परशुधारी परशुराम नित्य रक्षणकर्ता आहे, तेथे भुक्ती आणि मुक्ती दोन्ही एकत्र आहेत, आणि लक्ष्मी-सरस्वती दोघी एकत्र वास करतात. हे क्षेत्र दुर्मिळ असेच वचन देते — आध्यात्मिक हानीविना समृद्धी, आणि संपत्तीने शोभिवंत विद्या. पवित्र भूमी जगाचा त्याग मागत नाही, तर जगालाच पावन करते — हे आश्वासन भक्ताला यातून मिळते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Bhukti and mukti — enjoyment and liberation — are the two aims the Purāṇas say a true kṣetra grants together; the proverb runs that where Lakṣmī (fortune) and Sarasvatī (learning) quarrel, one of them leaves, but in a true tīrtha they dwell &#x27;mingled.&#x27; &#x27;Mṛtyumṛtyu&#x27; — the death of Death — is the highest praise of a protector: not one who merely delays death, but one before whom death itself dies. Paraśurāma the deathless guards his land beyond time.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भुक्ती आणि मुक्ती — भोग आणि मोक्ष — ही दोन फळे खरे क्षेत्र एकत्र देतो, असे पुराणे सांगतात; म्हण आहे की, जेथे लक्ष्मी (संपत्ती) आणि सरस्वती (विद्या) यांच्यात कलह होतो तेथे त्यांपैकी एक निघून जाते, पण खऱ्या तीर्थात त्या &#x27;मिसळून&#x27; राहतात. &#x27;मृत्युमृत्युः&#x27; — मृत्यूचाही मृत्यू — हे रक्षणकर्त्याची सर्वोच्च स्तुती आहे : केवळ मृत्यू लांबवणारा नव्हे, तर ज्याच्यासमोर मृत्यूचाच मृत्यू होतो असा. अमर परशुराम काळाच्या पलीकडे जाऊन आपल्या भूमीचे रक्षण करतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Read śrīgirau as the dual of śrī + gīḥ — &#x27;Śrī and Sarasvatī (gīḥ = speech)&#x27; — with miśrite (&#x27;mingled, united&#x27;) completing the dvandva, as the book&#x27;s Marathi takes it. Parasvadhī is the nominative of parasvadhin (&#x27;axe-bearer&#x27;); the print&#x27;s parasvadhīḥ was normalized to parasvadhī in transcription with no change to the metre. Anuṣṭubh; the verse closes Paraśurāma&#x27;s invitation (vv. 21–24).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;श्रीगिरौ&#x27; हे श्री + गीः यांचे द्विवचन वाचावे — &#x27;श्री आणि सरस्वती (गीः = वाणी)&#x27; — आणि &#x27;मिश्रिते&#x27; (&#x27;मिसळलेल्या&#x27;) त्याचा द्वंद्वसमास पूर्ण करतो, जसे पुस्तकातील मराठी अर्थ घेतो. &#x27;परस्वधी&#x27; हे परस्वधिन् (&#x27;परशुधारी&#x27;) याचे प्रथमा रूप आहे; छापील &#x27;परस्वधीः&#x27; चे प्रतिलेखनात &#x27;परस्वधी&#x27; असे शुद्धीकरण झाले असून वृत्तात बदल नाही. अनुष्टुभ्; या श्लोकाने परशुरामाचे निमंत्रण (श्लोक २१–२४) संपते.</p></div></div>
+
+<div class="pagenav"><a href="verse-23.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 23</div></a><a class="next" href="verse-25.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 25</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

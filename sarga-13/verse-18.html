@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 18 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 18</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 18</span><span class="bl-mr lang-mr">श्लोक 18</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यस्य पुंनाम लोकेऽस्मिन् रहट्ट इति विश्रुतम् ।<br>कालचक्रश्च दृष्टान्तः कवयो यं प्रचक्षते ।।१८।।</div>
+  <div class="verse-iast">yasya puṃnāma loke&#x27;smin rahaṭṭa iti viśrutam । kālacakraśca dṛṣṭāntaḥ kavayo yaṃ pracakṣate</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यस्य पुं-नाम लोके अस्मिन् रहट्टः इति विश्रुतम् । काल-चक्रः च दृष्टान्तः कवयः यम् प्रचक्षते ।</div><div class="vig-iast">yasya puṃ-nāma loke asmin rahaṭṭaḥ iti viśrutam । kāla-cakraḥ ca dṛṣṭāntaḥ kavayaḥ yam pracakṣate ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">लोके + अस्मिन् = लोकेऽस्मिन् · कालचक्रः + च = कालचक्रश्च · कवयः + यम् = कवयो यम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(यः) चक्री (अपि) विष्णुः न, वृषभोह्यमानः (अपि) हरः न, माली (अपि) विषयाहितः न, भ्रमन् (अपि) वायुः न, जलदः (अपि) मेघः न, वनस्पतिप्राणनकृत् (अपि) सोमः न; यस्य अस्मिन् लोके ‘रहट्टः’ इति पुंनाम विश्रुतम्, यं कवयः कालचक्रः दृष्टान्तः (इति) प्रचक्षते । (१७ वृत्त: उपजाति) *(कोडे: रहाट — चक्र असून विष्णू नव्हे, बैलांनी वाहिला जातो पण शंकर नव्हे, इत्यादी.)*</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Its masculine name, famed in this world, is &#x27;rahaṭṭa&#x27;; the poets declare it an image of the wheel of time.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या जलयंत्राचे &#x27;रहाट&#x27; हे नाव लोकांत प्रचलित होते; कवी या रहाटाला कालचक्राचा दृष्टान्त देतात. हा रहाट म्हणजे चक्रयुक्त परन्तु चक्र धारण करणारा कृष्ण नव्हे; बैलांकडून ओढला जाणारा खरा; परन्तु वृषभवाहन शंकर नव्हे, माळा असणारा परन्तु राज्यामुळे ओळखला जाणारा माला (किंवा हार) धारण करणारा राजा नव्हे, सतत फिरणारा पण वायू नव्हे; पाणी देणारा खरा परन्तु मेघ नव्हे आणि वनस्पतींना चैतन्य देणारा असला तरी वनस्पतींचा प्राण असा चंद्र नव्हे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यस्य</span>
+    <span class="word-iast">yasya</span>
+  </div>
+  <div><span class="word-grammar">पुं. ष. एव.</span></div>
+  <div class="word-form">In this verse: यस्य</div>
+  <p class="word-meaning lang-en">whose</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याचे</p>
+  <div class="word-usage">
+    <div class="deva">यस्य धनम् अस्ति, सः सुखी।</div>
+    <div class="usage-iast">yasya dhanam asti, saḥ sukhī.</div>
+    <div class="usage-meaning lang-en">He who has wealth is happy.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याच्याकडे धन आहे, तो सुखी आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुं-नाम</span>
+    <span class="word-iast">puṃ-nāma</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: पुंनाम</div>
+  <p class="word-meaning lang-en">masculine name</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुल्लिंगी नाव</p>
+  <div class="word-usage">
+    <div class="deva">रामः पुंनाम अस्ति।</div>
+    <div class="usage-iast">rāmaḥ puṃnāma asti.</div>
+    <div class="usage-meaning lang-en">&#x27;Rāma&#x27; is a masculine name.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;राम&#x27; हे पुल्लिंगी नाव आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">लोके अस्मिन्</span>
+    <span class="word-iast">loke asmin</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: लोकेऽस्मिन्</div>
+  <p class="word-meaning lang-en">in this world</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या लोकात</p>
+  <div class="word-usage">
+    <div class="deva">अस्मिन् लोके धर्मः जयति।</div>
+    <div class="usage-iast">asmin loke dharmaḥ jayati.</div>
+    <div class="usage-meaning lang-en">In this world, dharma triumphs.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>या जगात धर्माचा जय होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रहट्टः इति</span>
+    <span class="word-iast">rahaṭṭaḥ iti</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: रहट्ट इति</div>
+  <p class="word-meaning lang-en">&quot;rahaṭṭa&quot; (water-wheel)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;रहाट&#x27; असे</p>
+  <div class="word-usage">
+    <div class="deva">रहट्ट इति जलयन्त्रस्य नाम।</div>
+    <div class="usage-iast">rahaṭṭa iti jalayantrasya nāma.</div>
+    <div class="usage-meaning lang-en">&#x27;Rahaṭṭa&#x27; is the name of the water-machine.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;रहाट&#x27; हे जलयंत्राचे नाव आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विश्रुतम्</span>
+    <span class="word-iast">viśrutam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: विश्रुतम्</div>
+  <p class="word-meaning lang-en">known</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रसिद्ध</p>
+  <div class="word-usage">
+    <div class="deva">तस्य नाम सर्वत्र विश्रुतम्।</div>
+    <div class="usage-iast">tasya nāma sarvatra viśrutam.</div>
+    <div class="usage-meaning lang-en">His name is known everywhere.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचे नाव सर्वत्र प्रसिद्ध आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काल-चक्रः</span>
+    <span class="word-iast">kāla-cakraḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: कालचक्रः</div>
+  <p class="word-meaning lang-en">the wheel of time</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कालचक्र</p>
+  <div class="word-usage">
+    <div class="deva">कालचक्रः सर्वं परिवर्तयति।</div>
+    <div class="usage-iast">kālacakraḥ sarvaṃ parivartayati.</div>
+    <div class="usage-meaning lang-en">The wheel of time turns everything.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कालचक्र सर्व काही फिरवते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">च</span>
+    <span class="word-iast">ca</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: च</div>
+  <p class="word-meaning lang-en">and</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आणि</p>
+  <div class="word-usage">
+    <div class="deva">रामः च कृष्णः च गच्छतः।</div>
+    <div class="usage-iast">rāmaḥ ca kṛṣṇaḥ ca gacchataḥ.</div>
+    <div class="usage-meaning lang-en">Rāma and Kṛṣṇa go.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राम आणि कृष्ण जातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दृष्टान्तः</span>
+    <span class="word-iast">dṛṣṭāntaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: दृष्टान्तः</div>
+  <p class="word-meaning lang-en">as a comparison</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उपमा</p>
+  <div class="word-usage">
+    <div class="deva">गुरुः दृष्टान्तेन पाठयति।</div>
+    <div class="usage-iast">guruḥ dṛṣṭāntena pāṭhayati.</div>
+    <div class="usage-meaning lang-en">The teacher teaches by example.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरु दृष्टान्ताने शिकवतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कवयः</span>
+    <span class="word-iast">kavayaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. बव.</span></div>
+  <div class="word-form">In this verse: कवयः</div>
+  <p class="word-meaning lang-en">poets</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कवी</p>
+  <div class="word-usage">
+    <div class="deva">कवयः काव्यं रचयन्ति।</div>
+    <div class="usage-iast">kavayaḥ kāvyaṃ racayanti.</div>
+    <div class="usage-meaning lang-en">Poets compose poetry.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कवी काव्य रचतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यम्</span>
+    <span class="word-iast">yam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: यम्</div>
+  <p class="word-meaning lang-en">which</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याला</p>
+  <div class="word-usage">
+    <div class="deva">यं पश्यसि, सः मम मित्रम्।</div>
+    <div class="usage-iast">yaṃ paśyasi, saḥ mama mitram.</div>
+    <div class="usage-meaning lang-en">Whom you see is my friend.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ज्याला तू पाहतोस, तो माझा मित्र आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रचक्षते</span>
+    <span class="word-iast">pracakṣate</span>
+  </div>
+  <div><span class="word-grammar">प्र + चक्ष्, लट्, प्र.पु. बव.</span></div>
+  <div class="word-form">In this verse: प्रचक्षते</div>
+  <p class="word-meaning lang-en">call</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणतात</p>
+  <div class="word-usage">
+    <div class="deva">पण्डिताः तं महात्मानं प्रचक्षते।</div>
+    <div class="usage-iast">paṇḍitāḥ taṃ mahātmānaṃ pracakṣate.</div>
+    <div class="usage-meaning lang-en">The scholars call him a great soul.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पंडित त्याला महात्मा म्हणतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The water-wheel becomes the kālacakra in the poet&#x27;s hand: pots rising full and sinking empty, turning without pause, as fate lifts men up and lowers them down. For the pilgrim this is the sthala&#x27;s quiet teaching — the fields flourish only because time turns, and time turns only because the gods turn it.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रहाट हे जलचक्र कवीच्या हातात कालचक्र बनते — भरलेली गाडगी वर येतात, रिकामी खाली जातात, चक्र अखंड फिरत राहते, तसेच दैव माणसाला वर-खाली करते. क्षेत्राच्या यात्रेकरूसाठी हा शांत उपदेश आहे — शेते हिरवी होतात कारण काळ फिरतो, आणि काळ फिरतो कारण देवता त्याला फिरवतात.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>From the Ṛgvedic wheel of ṛta with its twelve spokes to the Purāṇic images of the turning year, Sanskrit literature has long read the wheel as time itself, and the sthala-poet walks that old road: he finds the cosmic cakra in the village&#x27;s own well-wheel, so that the farmer watching his rahaṭṭa is also watching saṃsāra turn.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>बारा आऱ्यांच्या ऋताच्या चाकापासून (ऋग्वेद) ते पुराणांतील फिरत्या वर्षाच्या प्रतिमांपर्यंत संस्कृत साहित्याने चाकाला काळच मानले आहे, आणि स्थलकवी त्याच जुन्या वाटेने जातो — गावाच्या स्वतःच्या विहिरीच्या चाकात त्याला वैश्विक चक्र दिसते, जेणेकरून आपला रहाट पाहणारा शेतकरी संसार फिरताना पाहतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Rahaṭṭa is the Prakrit-derived name of the Persian wheel (Sanskrit lexicography gives araghaṭṭa); the verse expressly notes its masculine gender (puṃ-nāma), fixing the grammatical form that governs the masculine participles and adjectives of v17. &#x27;Kavayaḥ&#x27; — the poets — signals that the kālacakra reading is a conscious literary trope, not a folk etymology.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रहाट हे पर्शियन चाकाचे प्राकृत-उद्भव नाव आहे (संस्कृत कोशांत अरघट्ट असे रूप मिळते); श्लोक त्याचे पुल्लिंगीपण (पुंनाम) स्पष्टपणे नोंदवतो, ज्यामुळे सतराव्या श्लोकातील पुल्लिंगी विशेषणे आणि कृदन्ते व्याकरणदृष्ट्या स्थिर होतात. &#x27;कवयः&#x27; — कवी — हे सूचित करते की कालचक्राचे वाचन हे जाणीवपूर्वक साहित्यिक रूपक आहे, लोकव्युत्पत्ती नव्हे.</p></div></div>
+
+<div class="pagenav"><a href="verse-17.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 17</div></a><a class="next" href="verse-19.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 19</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

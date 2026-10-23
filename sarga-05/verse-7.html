@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 5 — Kṣetraracanāvarṇanaḥ 7 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 5 — Kṣetraracanāvarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 7</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 7</span><span class="bl-mr lang-mr">श्लोक 7</span></h1>
+<p class="meta">Sarga 5 — Kṣetraracanāvarṇanaḥ &middot; <span class="deva">पञ्चमः सर्गः · क्षेत्ररचनावर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कार्तिक्यां कृत्तिकायोगे दृष्टो यः शिवयोगतः ।<br>सप्तजन्म सुविप्रत्वं धनाढ्यत्वं च यच्छति ।।७।।</div>
+  <div class="verse-iast">kārtikyāṃ kṛttikāyoge dṛṣṭo yaḥ śivayogataḥ । saptajanma suvipratvaṃ dhanāḍhyatvaṃ ca yacchati</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कार्तिक्याम् । कृत्तिका-योगे । दृष्टः । यः । शिव-योगतः । सप्त-जन्म । सुविप्रत्वम् । धन-आढ्यत्वम् । च । यच्छति ।</div><div class="vig-iast">kārtikyām । kṛttikā-yoge । dṛṣṭaḥ । yaḥ । śiva-yogataḥ । sapta-janma । suvipratvam । dhana-āḍhyatvam । ca । yacchati ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">दृष्टः + यः = दृष्टो यः · यः + शिव = यः शिव · धन + आढ्यत्वम् = धनाढ्यत्वम्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">कार्तिक्यां कृत्तिकायोगे शिवयोगतः (च) यः दृष्टः, (सः) सप्तजन्म सुविप्रत्वं धनाढ्यत्वं च यच्छति ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>He who is seen on the Kārttikī, at the conjunction of Kṛttikā, through the Śiva-yoga, grants excellent brahmanhood and wealth for seven births.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>तो (शब्दशः जो) कार्तिकी पौर्णिमेला कृत्तिका नक्षत्राच्या योगात शिव नावाच्या (ज्योतिष) योगात दर्शन देऊन मनुष्याला सात जन्मांत विप्रत्व आणि धनाढ्यत्व प्रदान करतो.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कार्तिक्याम्</span>
+    <span class="word-iast">kārtikyām</span>
+  </div>
+  <div><span class="word-grammar">कार्तिकी (स्त्रीलिङ्ग, कार्तिक महिन्याची पौर्णिमा) सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: कार्तिक्याम् — &#x27;कार्तिकी पौर्णिमेला&#x27;</div>
+  <p class="word-meaning lang-en">on the Kārttikī (full-moon day of the month Kārttika)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कार्तिकी पौर्णिमेला</p>
+  <div class="word-usage">
+    <div class="deva">कार्तिक्याम् दीपाः ज्वलन्ति</div>
+    <div class="usage-iast">kārtikyām dīpāḥ jvalanti</div>
+    <div class="usage-meaning lang-en">On the Kārttikī, lamps are lit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कार्तिकी पौर्णिमेला दिवे लावतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृत्तिकायोगे</span>
+    <span class="word-iast">kṛttikāyoge</span>
+  </div>
+  <div><span class="word-grammar">कृत्तिका-योग (पुंलिङ्ग) सप्तमी एकवचन</span></div>
+  <div class="word-form">In this verse: कृत्तिकायोगे — &#x27;कृत्तिका नक्षत्राचा योग असताना&#x27;</div>
+  <p class="word-meaning lang-en">at the conjunction with (the nakṣatra) Kṛttikā</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृत्तिका नक्षत्राचा योग असताना</p>
+  <div class="word-usage">
+    <div class="deva">कृत्तिकायोगे दर्शनम् पुण्यम् भवति</div>
+    <div class="usage-iast">kṛttikāyoge darśanam puṇyam bhavati</div>
+    <div class="usage-meaning lang-en">Darśana at the Kṛttikā conjunction is meritorious.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृत्तिकायोगावर दर्शन पुण्यकारक होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शिवयोगतः</span>
+    <span class="word-iast">śivayogataḥ</span>
+  </div>
+  <div><span class="word-grammar">शिव-योग + तसिल् (पञ्चम्यर्थक अव्यय)</span></div>
+  <div class="word-form">In this verse: शिवयोगतः — &#x27;शिव नावाच्या (ज्योतिष) योगामुळे&#x27;</div>
+  <p class="word-meaning lang-en">through, by means of the astrological yoga named Śiva</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिव नामक ज्योतिषयोगामुळे/योगाद्वारे</p>
+  <div class="word-usage">
+    <div class="deva">शिवयोगतः पुण्यम् वर्धते</div>
+    <div class="usage-iast">śivayogataḥ puṇyam vardhate</div>
+    <div class="usage-meaning lang-en">Merit grows through the Śiva-yoga.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शिवयोगामुळे पुण्य वाढते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सप्तजन्म</span>
+    <span class="word-iast">saptajanma</span>
+  </div>
+  <div><span class="word-grammar">सप्त-जन्मन् (नपुंसकलिङ्ग); अत्यन्तसंयोगे द्वितीया (कालवाचक)</span></div>
+  <div class="word-form">In this verse: सप्तजन्म — &#x27;सात जन्मांपर्यंत&#x27;</div>
+  <p class="word-meaning lang-en">for seven births, through seven lives</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सात जन्म सुद्धा (अत्यन्तसंयोगे द्वितीया)</p>
+  <div class="word-usage">
+    <div class="deva">सः सप्तजन्म सुखम् लभते</div>
+    <div class="usage-iast">saḥ saptajanma sukham labhate</div>
+    <div class="usage-meaning lang-en">He obtains happiness for seven births.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो सात जन्म सुख मिळवतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुविप्रत्वम्</span>
+    <span class="word-iast">suvipratvam</span>
+  </div>
+  <div><span class="word-grammar">सु-विप्र-त्व (नपुंसकलिङ्ग) द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: सुविप्रत्वम् — &#x27;श्रेष्ठ ब्राह्मणत्व&#x27;</div>
+  <p class="word-meaning lang-en">excellent brahmanhood, the state of a true brāhmaṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>श्रेष्ठ ब्राह्मणत्व</p>
+  <div class="word-usage">
+    <div class="deva">तपसा सुविप्रत्वम् लभ्यते</div>
+    <div class="usage-iast">tapasā suvipratvam labhyate</div>
+    <div class="usage-meaning lang-en">Excellent brahmanhood is attained through austerity.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तपाने श्रेष्ठ ब्राह्मणत्व मिळते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">धनाढ्यत्वम्</span>
+    <span class="word-iast">dhanāḍhyatvam</span>
+  </div>
+  <div><span class="word-grammar">धन-आढ्य-त्व (नपुंसकलिङ्ग) द्वितीया एकवचन</span></div>
+  <div class="word-form">In this verse: धनाढ्यत्वम् — &#x27;धनसंपन्नता&#x27;</div>
+  <p class="word-meaning lang-en">the state of being rich in wealth, affluence</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संपन्नता</p>
+  <div class="word-usage">
+    <div class="deva">पुण्येन धनाढ्यत्वम् वर्धते</div>
+    <div class="usage-iast">puṇyena dhanāḍhyatvam vardhate</div>
+    <div class="usage-meaning lang-en">Affluence grows through merit.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पुण्याने संपन्नता वाढते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यच्छति</span>
+    <span class="word-iast">yacchati</span>
+  </div>
+  <div><span class="word-grammar">दा → यच्छ् धातु, लट् प्रथमपुरुष एकवचन, परस्मैपद</span></div>
+  <div class="word-form">In this verse: यच्छति — &#x27;देतो&#x27;</div>
+  <p class="word-meaning lang-en">he/she gives, grants, bestows</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देतो (√दा→यच्छ्)</p>
+  <div class="word-usage">
+    <div class="deva">देवः भक्तेभ्यः वरम् यच्छति</div>
+    <div class="usage-iast">devaḥ bhaktebhyaḥ varam yacchati</div>
+    <div class="usage-meaning lang-en">The god grants a boon to the devotees.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देव भक्तांना वर देतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Darśana here is fruitful in the old māhātmya sense — a rightly-timed seeing transforms seven future lives. The deeper teaching is about kāla (time): grace is always present, but certain conjunctions of time open the door wider, and the wise devotee learns the calendar of the gods.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>येथे दर्शन जुन्या माहात्म्यार्थाने फलदायी आहे — योग्य काळी झालेले दर्शन पुढील सात जन्म बदलते. सखोल शिकवण काळाबद्दल आहे : कृपा नेहमी असते, पण काळाचे काही संयोग द्वार अधिक उघडे करतात, आणि सुज्ञ भक्त देवतांच्या कालगणनेचे ज्ञान घेतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The promise of &#x27;excellent brahmanhood for seven births&#x27; belongs to the Purāṇic economy of merit, where tīrtha-darśana reshapes future births (compare the phala-śrutis of the Skanda-purāṇa&#x27;s kṣetra-māhātmyas). Kārttikī — the full moon of Kārttika — is Kārttikeya&#x27;s own festival night, and the Kṛttikā nakṣatra is his birth-star; the verse thus binds the god, his star, and his month into one darśana-yoga.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सात जन्म श्रेष्ठ ब्राह्मणत्वाचे आश्वासन हे पुण्याच्या पौराणिक अर्थव्यवस्थेचे आहे, जेथे तीर्थदर्शन भावी जन्म घडवते (स्कंदपुराणाच्या क्षेत्रमाहात्म्यांतील फलश्रुतींशी तुलना करा). कार्तिकी — कार्तिक महिन्याची पौर्णिमा — ही कार्तिकेयाची स्वतःची उत्सवरात्र आहे, आणि कृत्तिका नक्षत्र हे त्याचे जन्मनक्षत्र; अशा प्रकारे श्लोक देव, त्याचे नक्षत्र आणि त्याचा महिना यांना एका दर्शनयोगात बांधतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Śivayogataḥ — &#x27;through the yoga named Śiva&#x27; (one of the 27 astrological yogas). The verse specifies the pañcāṅga: the Kārttikī tithi, the Kṛttikā conjunction, the Śiva-yoga — the conditions under which beholding Kārttikeya (installed in v6) grants vipra-hood and wealth for seven births. The book&#x27;s Marathi offers &#x27;union with Śiva&#x27; as an alternative (पक्षी); the astrological reading is followed here, matching the verse&#x27;s temporal series and the śabdārtha. Saptajanma is accusative of duration (atyantasaṃyoga): &#x27;for seven births&#x27;.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शिवयोगतः — &#x27;शिव नावाच्या योगाद्वारे&#x27; (ज्योतिषातील २७ योगांपैकी एक). श्लोक पंचांग सांगतो : कार्तिकी तिथी, कृत्तिका-योग, शिवयोग — या स्थितीत (६ व्या श्लोकात स्थापिलेल्या) कार्तिकेयाचे दर्शन घेतल्यास सात जन्मांपर्यंत विप्रत्व व धनाढ्यत्व मिळते. पुस्तकाच्या मराठीत &#x27;शिवाशी संयोग&#x27; हा पर्यायही दिला आहे (पक्षी); येथे श्लोकाच्या कालमालिकेला व शब्दार्थाला धरून ज्योतिषयोग हाच अर्थ घेतला आहे. सप्तजन्म हे कालवाचक द्वितीया आहे (अत्यन्तसंयोग) : &#x27;सात जन्मांपर्यंत&#x27;. श्लोकाचा उद्देश कार्तिकेय आहे, ज्याची स्थापना सहाव्या श्लोकात झाली; &#x27;यः दृष्टः&#x27; हे संबंधवाक्य त्याचीच स्तुती पुढे नेते.</p></div></div>
+
+<div class="pagenav"><a href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 6</div></a><a class="next" href="verse-8.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 8</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

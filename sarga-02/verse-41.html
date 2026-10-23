@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 2 — Kṣetranirmāṇaḥ 41 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 2 — Kṣetranirmāṇaḥ</a><span>&rsaquo;</span><span class="here">Verse 41</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 41</span><span class="bl-mr lang-mr">श्लोक 41</span></h1>
+<p class="meta">Sarga 2 — Kṣetranirmāṇaḥ &middot; <span class="deva">द्वितीयः सर्गः · क्षेत्रनिर्माणः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">परिस्फुटच्छुक्तिमुक्ताचिता द्यौरिव तारिता ।।<br>व्यायामिनी दीर्घतमा प्रादुरास वसुन्धरा ।।४१।।</div>
+  <div class="verse-iast">parisphuṭacchuktimuktācitā dyauriva tāritā । । vyāyāminī dīrghatamā prādurāsa vasundharā</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">परिस्फुटत्-शुक्ति-मुक्ता-आचिता । द्यौः । इव । तारिता । व्यायामिनी । दीर्घतमा । प्रादुः । आस । वसुन्धरा ।</div><div class="vig-iast">parisphuṭat-śukti-muktā-ācitā । dyauḥ । iva । tāritā । vyāyāminī । dīrghatamā । prāduḥ । āsa । vasundharā ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">परिस्फुटत् + शुक्ति = परिस्फुटच्छुक्ति (त् + श = च्छ) · मुक्ता + आचिता = मुक्ताचिता · द्यौः + इव = द्यौरिव (विसर्ग → र्) · प्रादुः + आस = प्रादुरास</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">परिस्फुटच्छुक्तिमुक्ताचिता (अत एव) तारिता द्यौः इव, व्यायामिनी दीर्घतमा वसुन्धरा प्रादुरास ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Then the earth appeared — vast, very long, strewn with pearls from split-open oysters, and therefore gleaming like the starry sky.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>विशाल, लांबच लांब असलेली व उघडलेल्या शिंपल्यांतील मोत्यांनी भरलेली — म्हणूनच तारकांनी युक्त असलेल्या आकाशाप्रमाणे दिसणारी — वसुन्धरा प्रकट झाली.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परिस्फुटच्छुक्तिमुक्ताचिता</span>
+    <span class="word-iast">parisphuṭacchuktimuktācitā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; बहुव्रीहि परिस्फुटन्त्यः शुक्तयः, तासां मुक्ताभिः आचिता</span></div>
+  <div class="word-form">In this verse: परिस्फुटच्छुक्तिमुक्ताचिता (stem परिस्फुटच्छुक्तिमुक्ताचित, स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">strewn with pearls from burst-open oysters</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>उघडलेल्या शिंपल्यांतील मोत्यांनी भरलेली</p>
+  <div class="word-usage">
+    <div class="deva">सा भूमिः परिस्फुटच्छुक्तिमुक्ताचिता दृश्यते ।</div>
+    <div class="usage-iast">sā bhūmiḥ parisphuṭacchuktimuktācitā dṛśyate ।</div>
+    <div class="usage-meaning lang-en">That land appears strewn with pearls from split oysters.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ती भूमी उघडलेल्या शिंपल्यांतील मोत्यांनी भरलेली दिसते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्यौः इव तारिता</span>
+    <span class="word-iast">dyauḥ iva tāritā</span>
+  </div>
+  <div><span class="word-grammar">द्यौः: feminine nominative singular; इव particle; तारिता: feminine nominative singular, तारक + इतच् (&#x27;starred&#x27;)</span></div>
+  <div class="word-form">In this verse: द्यौः (प्रथमा) + तारिता (क्तान्तवत् विशेषण)</div>
+  <p class="word-meaning lang-en">like the starry sky</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तारांकित आकाशाप्रमाणे</p>
+  <div class="word-usage">
+    <div class="deva">रात्रिः द्यौः इव तारिता शोभते ।</div>
+    <div class="usage-iast">rātriḥ dyauḥ iva tāritā śobhate ।</div>
+    <div class="usage-meaning lang-en">The night shines like the starry sky.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रात्र तारांकित आकाशाप्रमाणे शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">व्यायामिनी</span>
+    <span class="word-iast">vyāyāminī</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; वि + आ + √यम् + इनि</span></div>
+  <div class="word-form">In this verse: व्यायामिनी (stem व्यायामिन्, स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">extensive, spreading wide</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विस्तीर्ण</p>
+  <div class="word-usage">
+    <div class="deva">नदी व्यायामिनी वहति ।</div>
+    <div class="usage-iast">nadī vyāyāminī vahati ।</div>
+    <div class="usage-meaning lang-en">The river flows spreading wide.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नदी विस्ताराने वाहते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दीर्घतमा</span>
+    <span class="word-iast">dīrghatamā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; superlative (तमप्) of दीर्घ</span></div>
+  <div class="word-form">In this verse: दीर्घतमा (stem दीर्घतम, स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">the longest, very long</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय लांब</p>
+  <div class="word-usage">
+    <div class="deva">गङ्गा नदीनां दीर्घतमा ।</div>
+    <div class="usage-iast">gaṅgā nadīnāṃ dīrghatamā ।</div>
+    <div class="usage-meaning lang-en">The Ganges is the longest of rivers.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गंगा नद्यांत सर्वांत लांब आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रादुरास</span>
+    <span class="word-iast">prādurāsa</span>
+  </div>
+  <div><span class="word-grammar">प्रादुस् (indeclinable) + √अस्, perfect (lit), third person singular</span></div>
+  <div class="word-form">In this verse: प्रादुरास (प्रादुस् + √अस्, लिट्)</div>
+  <p class="word-meaning lang-en">appeared, became manifest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रकट झाली (प्रादुस् + √अस्, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">प्रातः सूर्यः प्रादुरास ।</div>
+    <div class="usage-iast">prātaḥ sūryaḥ prādurāsa ।</div>
+    <div class="usage-meaning lang-en">In the morning the sun appeared.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सकाळी सूर्य प्रकट झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वसुन्धरा</span>
+    <span class="word-iast">vasundharā</span>
+  </div>
+  <div><span class="word-grammar">feminine nominative singular; वसुं धरति</span></div>
+  <div class="word-form">In this verse: वसुन्धरा (stem वसुन्धरा, स्त्रीलिंग)</div>
+  <p class="word-meaning lang-en">the earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी</p>
+  <div class="word-usage">
+    <div class="deva">वसुन्धरा सर्वान् धारयति ।</div>
+    <div class="usage-iast">vasundharā sarvān dhārayati ।</div>
+    <div class="usage-meaning lang-en">The earth bears all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वी सर्वांना धारण करते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The risen land is the sarga&#x27;s miracle and its title&#x27;s promise: kṣetra-nirmāṇa, the making of the holy land. Strewn with pearls like stars, the new earth mirrors the heavens — the poet&#x27;s way of saying this is no ordinary coast but a heaven descended. Every sthala-māhātmya begins with such a wonder: the land itself is the first devotee, rising to receive its Lord.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वर आलेली भूमी हा सर्गाचा चमत्कार आणि त्याच्या शीर्षकाचे वचन आहे : क्षेत्रनिर्माण — पवित्र भूमीची निर्मिती. ताऱ्यांसारख्या मोत्यांनी विखुरलेली नवी पृथ्वी स्वर्गाचेच प्रतिबिंब दाखवते — हा काही सामान्य किनारा नव्हे, तर उतरलेला स्वर्गच आहे, हे कवीचे सांगणे आहे. प्रत्येक स्थलमाहात्म्याची सुरुवात अशा चमत्कारानेच होते : भूमीच पहिली भक्त असते, आपल्या भगवंताचे स्वागत करण्यासाठी वर येते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas tell how Paraśurāma, standing on the Sahya mountains, shot his arrow into the sea and reclaimed the land between — the Aparānta, today&#x27;s Konkan coast (Mahābhārata Śānti Parva). This verse is the kāvya&#x27;s retelling of that founding moment: the ocean recedes and the earth, long hidden, stands revealed.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे सांगतात की परशुराम सह्याद्रीवर उभा राहून समुद्रात बाण मारून मधली भूमी परत मिळवली — अपरान्त, आजचा कोकणकिनारा (महाभारत शांतिपर्व). हा श्लोक त्या स्थापनामुहूर्ताची काव्यमय पुनरुक्ती आहे : समुद्र मागे सरतो आणि दीर्घकाळ लपलेली पृथ्वी प्रकट होते.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The simile is exact and lovely: pearls spilling from split oysters on the new shore are the stars (tārā) of the earthly sky, so the risen land gleams &#x27;like the starry heaven.&#x27; Vyāyāminī (&#x27;spreading wide&#x27;) and dīrghatamā (&#x27;very long&#x27;) sketch the long, narrow strip of the Konkan coast.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>उपमा नेमकी आणि सुंदर आहे : नव्या किनाऱ्यावर उघडलेल्या शिंपल्यांतून सांडलेली मोती ही पृथ्वीवरील आकाशाचे तारे आहेत, म्हणून वर आलेली भूमी &#x27;तारांकित आकाशाप्रमाणे&#x27; झळाळते. व्यायामिनी (&#x27;विस्तीर्ण&#x27;) आणि दीर्घतमा (&#x27;अतिशय लांब&#x27;) हे कोकणकिनाऱ्याची लांब, अरुंद पट्टी रेखाटतात.</p></div></div>
+
+<div class="pagenav"><a href="verse-40.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 40</div></a><a class="next" href="verse-42.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 42</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

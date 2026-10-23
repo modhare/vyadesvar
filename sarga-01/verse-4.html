@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 4 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 4</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 4</span><span class="bl-mr lang-mr">श्लोक 4</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śikhariṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पुरा रामोन्मुक्तप्रखरविशिखोद्धूतजलधिं<br>प्रकृत्योर्वी गुर्वी दिवमपि च खर्वी कृतवती ।।<br>तदन्तर्विख्यातः क्षितिसुरसुरागाररुचिरो<br>गुहागारग्रामो सलिलनिधितीरे विजयते ।।४।।</div>
+  <div class="verse-iast">purā rāmonmuktaprakharaviśikhoddhūtajaladhiṃ prakṛtyorvī gurvī divamapi ca kharvī kṛtavatī । । tadantarvikhyātaḥ kṣitisurasurāgāraruciro guhāgāragrāmo salilanidhitīre vijayate</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पुरा । राम-उन्मुक्त-प्रखर-विशिख-उद्धूत-जलधिम् । प्रकृत्य । उर्वी । गुर्वी । दिवम् । अपि । च । खर्वी-कृतवती । तत्-अन्तः । विख्यातः । क्षितिसुर-सुर-आगार-रुचिरः । गुहा-आगार-ग्रामः । सलिल-निधि-तीरे । विजयते ।</div><div class="vig-iast">purā । rāma-unmukta-prakhara-viśikha-uddhūta-jaladhim । prakṛtya । urvī । gurvī । divam । api । ca । kharvī-kṛtavatī । tat-antaḥ । vikhyātaḥ । kṣitisura-sura-āgāra-ruciraḥ । guhā-āgāra-grāmaḥ । salila-nidhi-tīre । vijayate ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">राम + उन्मुक्त = रामोन्मुक्त (गुण) · विशिख + उद्धूत = विशिखोद्धूत (गुण) · प्रकृत्य + उर्वी = प्रकृत्योर्वी (यण्) · दिवम् + अपि = दिवमपि · तत् + अन्तः = तदन्तः (त् → द्) · अन्तः + विख्यातः = अन्तर्विख्यातः (विसर्ग → र्) · सुर + आगार = सुरागार · रुचिरः + गुहागार = रुचिरो गुहागार (विसर्ग → ओ) · गुहा + आगार = गुहागार</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">पुरा रामोन्मुक्तप्रखरविशिखोद्धूतजलधिं प्रकृत्य (प्रकटा) गुर्वी उर्वी दिवम् अपि च खर्वीकृतवती । तदन्तः विख्यातः क्षितिसुरसुरागाररुचिरः गुहागारग्रामः सलिलनिधितीरे विजयते ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>In ancient times, when the ocean — driven back by the keen arrows shot forth by Rāma (Paraśurāma) — was cleft asunder, the vast earth that rose up made even heaven seem small. Within that land, on the shore of the sea, stands in splendour the famed village of Guhāgāra, lovely as a temple of the gods-on-earth, the brāhmaṇas.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्राचीन काळी परशुरामाने सोडलेल्या प्रखर बाणांमुळे समुद्राला विदीर्ण करून प्रगट झालेल्या विशाल पृथ्वीने स्वर्गाचे देखील महत्त्व कमी करून टाकले. त्या पृथ्वीत समाविष्ट असलेले पृथ्वीवरील देवांच्या (म्हणजे ब्राह्मणांच्या) देवघराप्रमाणे सुंदर असलेले प्रख्यात असे गुहागर नावाचे गाव समुद्रतीरावर डौलाने वसलेले आहे.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Verse 4, line 1: जलाधिं → जलधिं Verse 4, line 2: प्रकृन्त्य → प्रकृत्य (misprint; the nasal has no place in a ल्यप् absolutive, cf. विच्छिद्य; meter unchanged)</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुरा</span>
+    <span class="word-iast">purā</span>
+  </div>
+  <div><span class="word-grammar">indeclinable adverb of past time</span></div>
+  <div class="word-form">In this verse: पुरा</div>
+  <p class="word-meaning lang-en">in ancient times, of old</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राचीन काळी</p>
+  <div class="word-usage">
+    <div class="deva">पुरा अत्र ऋषयः वसन्ति स्म ।</div>
+    <div class="usage-iast">purā atra ṛṣayaḥ vasanti sma ।</div>
+    <div class="usage-meaning lang-en">In ancient times sages dwelt here.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राचीन काळी येथे ऋषी राहत होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रामोन्मुक्त</span>
+    <span class="word-iast">rāmonmukta</span>
+  </div>
+  <div><span class="word-grammar">tṛtīyā-tatpuruṣa (रामेण उन्मुक्तः), past passive participle of उद् + √मुच्, stem form; here Rāma = Paraśurāma</span></div>
+  <div class="word-form">In this verse: रामोन्मुक्त</div>
+  <p class="word-meaning lang-en">released, shot forth by Rāma (Paraśurāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(परशु)रामाने सोडलेल्या</p>
+  <div class="word-usage">
+    <div class="deva">राम-उन्मुक्तः बाणः समुद्रम् अकम्पयत् ।</div>
+    <div class="usage-iast">rāma-unmuktaḥ bāṇaḥ samudram akampayat ।</div>
+    <div class="usage-meaning lang-en">The arrow released by Rāma shook the ocean.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>(परशु)रामाने सोडलेल्या बाणाने समुद्र हादरला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रखरविशिख</span>
+    <span class="word-iast">prakharaviśikha</span>
+  </div>
+  <div><span class="word-grammar">karmadhāraya (प्रखरः च असौ विशिखः च), masculine stem form</span></div>
+  <div class="word-form">In this verse: प्रखरविशिखोद्धूत</div>
+  <p class="word-meaning lang-en">the keen, sharp arrow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रखर बाण</p>
+  <div class="word-usage">
+    <div class="deva">प्रखर-विशिखः लक्ष्यम् अभिनत् ।</div>
+    <div class="usage-iast">prakhara-viśikhaḥ lakṣyam abhinat ।</div>
+    <div class="usage-meaning lang-en">The keen arrow pierced the target.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रखर बाणाने लक्ष्य भेदले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उद्धूतजलधिम्</span>
+    <span class="word-iast">uddhūtajaladhim</span>
+  </div>
+  <div><span class="word-grammar">long tatpuruṣa chain (राम-उन्मुक्त-प्रखर-विशिख-उद्धूत-जलधि), masculine accusative singular, object of the absolutive प्रकृत्य (&quot;having cleft&quot;)</span></div>
+  <div class="word-form">In this verse: उद्धूतजलधिं</div>
+  <p class="word-meaning lang-en">the ocean, driven back by the keen arrows discharged by Rāma</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हटवलेल्या समुद्राला</p>
+  <div class="word-usage">
+    <div class="deva">उद्धूत-जलधिः देशः शस्यैः पूर्णः ।</div>
+    <div class="usage-iast">uddhūta-jaladhiḥ deśaḥ śasyaiḥ pūrṇaḥ ।</div>
+    <div class="usage-meaning lang-en">The land from which the sea was driven back is full of crops.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जेथून समुद्र हटवला गेला तो देश पिकांनी भरलेला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रकृत्य</span>
+    <span class="word-iast">prakṛtya</span>
+  </div>
+  <div><span class="word-grammar">lyap absolutive of प्र + √कृती (to cut, cleave; tudādi class)</span></div>
+  <div class="word-form">In this verse: प्रकृत्योर्वी</div>
+  <p class="word-meaning lang-en">having cleft, having split asunder</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विदारून (प्र + √कृत्, ल्यप्; छापील प्रकृन्त्य — न्त् हा नासिक्य ल्यप्-रूपात अनपेक्षित, विच्छिद्य-प्रमाणे).</p>
+  <div class="word-usage">
+    <div class="deva">काष्ठम् प्रकृत्य सः अग्निम् अकरोत् ।</div>
+    <div class="usage-iast">kāṣṭham prakṛtya saḥ agnim akarot ।</div>
+    <div class="usage-meaning lang-en">Having split the wood, he made a fire.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लाकूड फोडून त्याने आग पेटवली.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उर्वी गुर्वी</span>
+    <span class="word-iast">urvī gurvī</span>
+  </div>
+  <div><span class="word-grammar">उर्वी = feminine nominative singular of उर्वी (earth); गुर्वी = feminine nominative singular of गुरु (vast), agreeing with उर्वी</span></div>
+  <div class="word-form">In this verse: उर्वी गुर्वी</div>
+  <p class="word-meaning lang-en">the vast, mighty earth</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विशाल पृथ्वी</p>
+  <div class="word-usage">
+    <div class="deva">उर्वी गुर्वी सर्वान् धारयति ।</div>
+    <div class="usage-iast">urvī gurvī sarvān dhārayati ।</div>
+    <div class="usage-meaning lang-en">The vast earth supports all.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विशाल पृथ्वी सर्वांना धारण करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दिवम् अपि खर्वीकृतवती</span>
+    <span class="word-iast">divam api kharvīkṛtavatī</span>
+  </div>
+  <div><span class="word-grammar">दिवम् = feminine accusative singular of दिव्; खर्वीकृतवती = past active participle (ktavatu) of खर्वी + √कृ (cvi-formation), feminine nominative singular</span></div>
+  <div class="word-form">In this verse: खर्वी कृतवती</div>
+  <p class="word-meaning lang-en">made even heaven seem small, eclipsed heaven</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वर्गालाही लहान करून टाकले (च्वि-रूप, क्तवतु स्त्रीलिंगी)</p>
+  <div class="word-usage">
+    <div class="deva">सा कीर्त्या दिवम् अपि खर्वी-कृतवती ।</div>
+    <div class="usage-iast">sā kīrtyā divam api kharvī-kṛtavatī ।</div>
+    <div class="usage-meaning lang-en">She eclipsed even heaven by her fame.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिने कीर्तीने स्वर्गालाही लहान करून टाकले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तदन्तः</span>
+    <span class="word-iast">tadantaḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (तस्याः अन्तः), used adverbially</span></div>
+  <div class="word-form">In this verse: तदन्तर्विख्यातः</div>
+  <p class="word-meaning lang-en">within it, inside that (land)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तिच्यामध्ये</p>
+  <div class="word-usage">
+    <div class="deva">तत्-अन्तः ग्रामः शोभते ।</div>
+    <div class="usage-iast">tat-antaḥ grāmaḥ śobhate ।</div>
+    <div class="usage-meaning lang-en">The village within it shines.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याच्यातील गाव शोभते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्षितिसुर</span>
+    <span class="word-iast">kṣitisura</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (क्षितौ सुरः इव), masculine stem form; conventional epithet of a brāhmaṇa</span></div>
+  <div class="word-form">In this verse: क्षितिसुर</div>
+  <p class="word-meaning lang-en">a god on earth, a brāhmaṇa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवरील देव, ब्राह्मण</p>
+  <div class="word-usage">
+    <div class="deva">क्षिति-सुराः वेदम् अधीयते ।</div>
+    <div class="usage-iast">kṣiti-surāḥ vedam adhīyate ।</div>
+    <div class="usage-meaning lang-en">The gods-on-earth study the Veda.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पृथ्वीवरील देव वेदांचे अध्ययन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुरागार</span>
+    <span class="word-iast">surāgāra</span>
+  </div>
+  <div><span class="word-grammar">ṣaṣṭhī-tatpuruṣa (सुराणाम् आगारम्), neuter stem form</span></div>
+  <div class="word-form">In this verse: सुरागार</div>
+  <p class="word-meaning lang-en">a temple, the house of gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवघर, मंदिर</p>
+  <div class="word-usage">
+    <div class="deva">सुर-आगारे दीपाः ज्वलन्ति ।</div>
+    <div class="usage-iast">sura-āgāre dīpāḥ jvalanti ।</div>
+    <div class="usage-meaning lang-en">Lamps burn in the temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवघरात दिवे जळतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुचिरः</span>
+    <span class="word-iast">ruciraḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular of रुचिर</span></div>
+  <div class="word-form">In this verse: रुचिरो</div>
+  <p class="word-meaning lang-en">charming, lovely</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर</p>
+  <div class="word-usage">
+    <div class="deva">रुचिरः उद्यानम् सर्वान् आकर्षति ।</div>
+    <div class="usage-iast">ruciraḥ udyānam sarvān ākarṣati ।</div>
+    <div class="usage-meaning lang-en">The lovely garden attracts everyone.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सुंदर बाग सर्वांना आकर्षित करते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गुहागारग्रामः</span>
+    <span class="word-iast">guhāgāragrāmaḥ</span>
+  </div>
+  <div><span class="word-grammar">tatpuruṣa (गुहागारः नाम ग्रामः), masculine nominative singular</span></div>
+  <div class="word-form">In this verse: गुहागारग्रामो</div>
+  <p class="word-meaning lang-en">the village of Guhāgāra (modern Guhagar)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुहागार गाव (आजचे गुहागर, जि. रत्नागिरी)</p>
+  <div class="word-usage">
+    <div class="deva">गुहा-आगार-ग्रामः समुद्र-तीरे अस्ति ।</div>
+    <div class="usage-iast">guhā-āgāra-grāmaḥ samudra-tīre asti ।</div>
+    <div class="usage-meaning lang-en">The village of Guhāgāra stands on the seashore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुहागर गाव समुद्रकिनारी वसले आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सलिलनिधितीरे</span>
+    <span class="word-iast">salilanidhitīre</span>
+  </div>
+  <div><span class="word-grammar">ṣaṣṭhī-tatpuruṣa (सलिलनिधेः तीरे), neuter locative singular</span></div>
+  <div class="word-form">In this verse: सलिलनिधितीरे</div>
+  <p class="word-meaning lang-en">on the shore of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रकिनारी</p>
+  <div class="word-usage">
+    <div class="deva">सलिल-निधि-तीरे नाविकाः वसन्ति ।</div>
+    <div class="usage-iast">salila-nidhi-tīre nāvikāḥ vasanti ।</div>
+    <div class="usage-meaning lang-en">Sailors dwell on the ocean&#x27;s shore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रकिनारी खलाशी राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विजयते</span>
+    <span class="word-iast">vijayate</span>
+  </div>
+  <div><span class="word-grammar">वि + √जि (1st class, ātmanepada), present indicative, third person singular</span></div>
+  <div class="word-form">In this verse: विजयते</div>
+  <p class="word-meaning lang-en">shines forth, stands in splendour, triumphs</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शोभते, विजयी आहे</p>
+  <div class="word-usage">
+    <div class="deva">मन्दिरम् नगरे विजयते ।</div>
+    <div class="usage-iast">mandiram nagare vijayate ।</div>
+    <div class="usage-meaning lang-en">The temple stands resplendent in the town.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मंदिर गावात डौलाने शोभते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the sthala&#x27;s origin-myth in a single stanza: the very ground of Guhagar is Paraśurāma&#x27;s gift, won back from the sea by his arrows — the same deed by which tradition says he created the whole Koṅkaṇa coast. The earth &#x27;eclipsing heaven&#x27; teaches that a kṣetra sanctified by tapas and dāna outshines even svarga. Devotionally, the verse roots the temple&#x27;s glory not in human kings but in the avatāra&#x27;s own act: to visit Guhagar is to stand on land that Paraśurāma himself raised.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा स्थलाचा उत्पत्तीपुराण एकाच श्लोकात आहे — गुहागरची भूमी ही परशुरामाने बाणांनी समुद्राकडून जिंकून आणलेली देणगी आहे; परंपरेनुसार त्यानेच संपूर्ण कोकणकिनारा निर्माण केला. पृथ्वीने &#x27;स्वर्गाला लहान करणे&#x27; हे शिकवते की तप व दान यांनी पवित्र झालेले क्षेत्र स्वर्गाहूनही श्रेष्ठ ठरते. मानवी राजांमुळे नव्हे, तर अवताराच्याच कृतीमुळे या मंदिराचा महिमा आहे — गुहागरला जाणे म्हणजे परशुरामाने स्वतः उभारलेल्या भूमीवर उभे राहणे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇas and the Mahābhārata (Śānti-parvan) tell how Paraśurāma, having won the earth from the kṣatriyas, hurled his paraśu into the sea and commanded the waters to recede, creating Aparānta — the &#x27;western end&#x27;, the Koṅkaṇa coast — and settling brāhmaṇas there. The regional Sahyādri-khaṇḍa elaborates the same deed. &#x27;Kṣitisura&#x27;, gods on earth, is the śāstric title of brāhmaṇas, whom Paraśurāma installed as the guardians of the new land; the verse thus presents Guhāgāra as a brāhmaṇa-kṣetra founded by the avatāra himself.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पुराणे व महाभारत (शांतिपर्व) सांगतात की क्षत्रियांकडून पृथ्वी जिंकल्यानंतर परशुरामाने आपला परशु समुद्रात फेकला आणि पाण्याला मागे हटण्याची आज्ञा केली — त्यातून अपरान्त म्हणजे &#x27;पश्चिमेकडील टोक&#x27;, कोकणकिनारा निर्माण झाला आणि तेथे त्याने ब्राह्मणांना वसवले. प्रादेशिक सह्याद्रिखंड याच कृतीचा विस्तार करतो. &#x27;क्षितिसुर&#x27; — पृथ्वीवरील देव — हे ब्राह्मणांचे शास्त्रीय बिरुद आहे; परशुरामाने त्यांना नव्या भूमीचे रक्षक म्हणून स्थापले. अशा प्रकारे हा श्लोक गुहागर हे अवतारानेच स्थापलेले ब्राह्मणक्षेत्र म्हणून मांडतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>पाठ-चर्चा : the print reads प्रकृन्त्य, but a lyap absolutive of this sense admits no nasal — विच्छिद्य is the model; read प्रकृत्य (प्र + √कृत्, &#x27;to cut&#x27;), &#x27;having cleft&#x27;. The verse shifts metre: the three maṅgala verses were śārdūlavikrīḍitam, while this narrative opening is śikhariṇī (17 syllables per pāda, opening with a laghu — which rules out mandākrāntā), the metre of slow, majestic description — fitting for the sthala-varṇana that now begins. Geography: Guhāgāra is modern Guhagar on the Arabian Sea coast of Ratnagiri district, Maharashtra, where the Vyāḍeśvara temple stands; &#x27;salilanidhi-tīre&#x27; is exact — the temple town faces the open sea.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पाठ-चर्चा : छापील प्रतीत प्रकृन्त्य असे आहे, पण या अर्थाच्या ल्यप्-रूपात नासिक्याला स्थान नाही — विच्छिद्य हेच प्रारूप; प्रकृत्य (प्र + √कृत्, &#x27;कापणे&#x27;) असे वाचावे — &#x27;विदारून&#x27;. येथे वृत्त बदलते : तीन मंगलश्लोक शार्दूलविक्रीडितात होते, तर हे कथानकाचे प्रारंभिक वर्णन शिखरिणीत आहे (प्रति चरण १७ अक्षरे, लघुने प्रारंभ — त्यामुळे मंदाक्रान्ता संभवत नाही) — संथ, भव्य वर्णनाचे वृत्त, आता सुरू होणाऱ्या स्थलवर्णनाला योग्य. भूगोल : गुहागार म्हणजे आजचे गुहागर — महाराष्ट्रातील रत्नागिरी जिल्ह्यातील अरबी समुद्रकिनारी, जेथे व्याडेश्वर मंदिर आहे; &#x27;सलिलनिधितीरे&#x27; हे तंतोतंत खरे आहे — मंदिराचे गाव खुले समुद्राकडे तोंड करून आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 3</div></a><a class="next" href="verse-5.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 5</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

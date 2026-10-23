@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 13 — Guhāgāragrāmavarṇanaḥ 11 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 13 — Guhāgāragrāmavarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 11</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></h1>
+<p class="meta">Sarga 13 — Guhāgāragrāmavarṇanaḥ &middot; <span class="deva">त्रयोदशः सर्गः · गुहागारग्रामवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">दक्षिणोत्तरयोर्नद्यावुभे सागरगे तयोः ।<br>मध्येऽम्बुधितटे दैर्घ्यात्क्रोशमानमवागुदक् ।।११।।</div>
+  <div class="verse-iast">dakṣiṇottarayornadyāvubhe sāgarage tayoḥ । madhye&#x27;mbudhitaṭe dairghyātkrośamānamavāgudak</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">दक्षिण-उत्तरयोः नद्यौ उभे सागर-गे तयोः । मध्ये अम्बुधि-तटे दैर्घ्यात् क्रोश-मानम् अवाक्-उदक् ।</div><div class="vig-iast">dakṣiṇa-uttarayoḥ nadyau ubhe sāgara-ge tayoḥ । madhye ambudhi-taṭe dairghyāt krośa-mānam avāk-udak ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">दक्षिण + उत्तरयोः = दक्षिणोत्तरयोः (गुण) · उत्तरयोः + नद्यौ = उत्तरयोर्नद्यौ · नद्यौ + उभे = नद्यावुभे (अयादि: औ → आव्) · मध्ये + अम्बुधि = मध्येऽम्बुधि · दैर्घ्यात् + क्रोश = दैर्घ्यात्क्रोश · मानम् + अवाक् = मानमवाक् · अवाक् + उदक् = अवागुदक्</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">दक्षिणोत्तरयोः उभे सागरगे नद्यौ (स्तः); तयोः मध्ये अम्बुधितटे अवागुदक् दैर्घ्यात् क्रोशमानं (भूभागं प्रति) वीरुद्गुल्मद्रुमान् छित्त्वा तज्जटाः च समुत्पाद्य संस्कृतायां क्षितौ शास्त्रोक्तमार्गतः ग्रामं चक्रे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>To the south and to the north flowed two rivers that reach the sea; between the two, on the shore of the ocean, lay a tract — a krośa in length, measured from south to north — (the sentence completes in the next verse).</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>समुद्राला मिळणाऱ्या दोन नद्यांमध्ये समुद्रकिनाऱ्यावर दक्षिणेकडून उत्तरेकडे एक कोस लांबीच्या प्रदेशातील सर्व झाडे, झुडपे तोडून त्यांची मुळे उखडून जमीन समपातळीवर आणली व शास्त्रोक्त पद्धतीने गाव तयार केले (वसवले).</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दक्षिण-उत्तरयोः</span>
+    <span class="word-iast">dakṣiṇa-uttarayoḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. स. द्विव.</span></div>
+  <div class="word-form">In this verse: दक्षिणोत्तर</div>
+  <p class="word-meaning lang-en">to the south and north</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दक्षिणेला व उत्तरेला</p>
+  <div class="word-usage">
+    <div class="deva">दक्षिणोत्तरयोः पर्वतौ स्तः।</div>
+    <div class="usage-iast">dakṣiṇottarayoḥ parvatau staḥ</div>
+    <div class="usage-meaning lang-en">There are mountains to the south and the north.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दक्षिणेला व उत्तरेला पर्वत आहेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नद्यौ</span>
+    <span class="word-iast">nadyau</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. द्विव.</span></div>
+  <div class="word-form">In this verse: नद्यौ</div>
+  <p class="word-meaning lang-en">two rivers</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन नद्या</p>
+  <div class="word-usage">
+    <div class="deva">उभे नद्यौ सागरं गच्छतः।</div>
+    <div class="usage-iast">ubhe nadyau sāgaraṃ gacchataḥ</div>
+    <div class="usage-meaning lang-en">Both rivers flow to the sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही नद्या समुद्राला जातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उभे</span>
+    <span class="word-iast">ubhe</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. द्विव.</span></div>
+  <div class="word-form">In this verse: उभे</div>
+  <p class="word-meaning lang-en">both</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही</p>
+  <div class="word-usage">
+    <div class="deva">उभे भ्रातरौ गृहम् आगतौ।</div>
+    <div class="usage-iast">ubhe bhrātarau gṛham āgatau</div>
+    <div class="usage-meaning lang-en">Both brothers came home.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दोन्ही भाऊ घरी आले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सागर-गे</span>
+    <span class="word-iast">sāgara-ge</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. प्र. द्विव.</span></div>
+  <div class="word-form">In this verse: सागरग</div>
+  <p class="word-meaning lang-en">flowing to the sea</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राला जाणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">नद्यः सागरगाः भवन्ति।</div>
+    <div class="usage-iast">nadyaḥ sāgaragāḥ bhavanti</div>
+    <div class="usage-meaning lang-en">Rivers flow toward the sea.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नद्या समुद्राला जाणाऱ्या असतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">तयोः</span>
+    <span class="word-iast">tayoḥ</span>
+  </div>
+  <div><span class="word-grammar">स्त्री. ष. द्विव.</span></div>
+  <div class="word-form">In this verse: तयोः</div>
+  <p class="word-meaning lang-en">of those two</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या दोघींच्या</p>
+  <div class="word-usage">
+    <div class="deva">तयोः मध्ये नदी वहति।</div>
+    <div class="usage-iast">tayoḥ madhye nadī vahati</div>
+    <div class="usage-meaning lang-en">A river flows between the two.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्या दोघींच्या मध्ये नदी वाहते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मध्ये</span>
+    <span class="word-iast">madhye</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: मध्ये</div>
+  <p class="word-meaning lang-en">between</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मध्ये</p>
+  <div class="word-usage">
+    <div class="deva">ग्रामस्य मध्ये देवालयः अस्ति।</div>
+    <div class="usage-iast">grāmasya madhye devālayaḥ asti</div>
+    <div class="usage-meaning lang-en">In the middle of the village stands the temple.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गावाच्या मध्ये मंदिर आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अम्बुधि-तटे</span>
+    <span class="word-iast">ambudhi-taṭe</span>
+  </div>
+  <div><span class="word-grammar">पुं. स. एव.</span></div>
+  <div class="word-form">In this verse: अम्बुधितट</div>
+  <p class="word-meaning lang-en">on the sea-shore</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रकिनाऱ्यावर</p>
+  <div class="word-usage">
+    <div class="deva">अम्बुधितटे मीनाः क्रीडन्ति।</div>
+    <div class="usage-iast">ambudhitaṭe mīnāḥ krīḍanti</div>
+    <div class="usage-meaning lang-en">Fish sport on the sea-shore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्रकिनाऱ्यावर मासे खेळतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">दैर्घ्यात्</span>
+    <span class="word-iast">dairghyāt</span>
+  </div>
+  <div><span class="word-grammar">नपुं. पं. एव.</span></div>
+  <div class="word-form">In this verse: दैर्घ्यात्</div>
+  <p class="word-meaning lang-en">in length</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लांबीने</p>
+  <div class="word-usage">
+    <div class="deva">दैर्घ्यात् क्रोशमानं क्षेत्रम् अस्ति।</div>
+    <div class="usage-iast">dairghyāt krośamānaṃ kṣetram asti</div>
+    <div class="usage-meaning lang-en">The field is a krośa in length.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शेत कोसभर लांब आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">क्रोश-मानम्</span>
+    <span class="word-iast">krośa-mānam</span>
+  </div>
+  <div><span class="word-grammar">नपुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: क्रोशमान</div>
+  <p class="word-meaning lang-en">a krośa in measure</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>एक कोस मापाचे</p>
+  <div class="word-usage">
+    <div class="deva">क्रोशमानं मार्गं सः पद्भ्याम् अगच्छत्।</div>
+    <div class="usage-iast">krośamānaṃ mārgaṃ saḥ padbhyām agacchat</div>
+    <div class="usage-meaning lang-en">He walked a road a krośa long.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो कोसभर लांब रस्ता पायी चालला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अवाक्-उदक्</span>
+    <span class="word-iast">avāk-udak</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अवागुदक्</div>
+  <p class="word-meaning lang-en">from south to north</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दक्षिणेकडून उत्तरेकडे</p>
+  <div class="word-usage">
+    <div class="deva">अवागुदकं ग्रामः विस्तृतः अस्ति।</div>
+    <div class="usage-iast">avāgudakaṃ grāmaḥ vistṛtaḥ asti</div>
+    <div class="usage-meaning lang-en">The village extends from south to north.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गाव दक्षिणेकडून उत्तरेकडे पसरलेला आहे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The site itself is auspicious: land held between two sea-bound rivers, facing the ocean — the classic cradle of the Konkan&#x27;s holy towns. A sacred place is not stumbled upon; it is surveyed, measured, and set apart. The measured krośa tells us that order, not accident, founds Guhagar.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जागाच शुभ आहे : समुद्राला मिळणाऱ्या दोन नद्यांमध्ये धरलेली, समुद्रासमोरची भूमी — कोकणातील पवित्र नगरांची ही ठरलेली पाळणा. पवित्र स्थळ योगायोगाने सापडत नाही; ते मोजले जाते, आखले जाते, वेगळे केले जाते. मोजलेला कोस सांगतो की गुहागरची स्थापना योगायोगाने नव्हे, तर सुव्यवस्थेने झाली.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Sites between two rivers have always been prized for settlement — fertile, defensible, and ritually pure, the river-mouths of the Konkan cradling many a tīrtha. The krośa (roughly two to three miles) marks a proper village&#x27;s measure in the old texts.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>दोन नद्यांमधील जागा वसाहतीसाठी नेहमीच मौल्यवान मानली गेली आहे — सुपीक, सुरक्षित आणि विधिपूर्वक पवित्र; कोकणातील नदीमुखांनी अनेक तीर्थे आपल्या कुशीत वाढवली आहेत. कोस (सुमारे दोन ते तीन मैल) हे जुन्या ग्रंथांतील योग्य गावाचे माप आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Verses 11–12 form a single sentence (see the anvaya): the site is described first, the clearing and building after. अवागुदक् (avas + udak) is a directional adverb, &#x27;from south to north&#x27;. सागरगे is the dual of सागरग (&#x27;sea-going&#x27;), agreeing with नद्यौ.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>११–12 हे श्लोक एकच वाक्य बनवतात (अन्वय पहा) : प्रथम जागेचे वर्णन, मग साफसफाई व बांधकाम. &#x27;अवागुदक्&#x27; (अवस् + उदक्) हे दिशावाचक क्रियाविशेषण आहे — &#x27;दक्षिणेकडून उत्तरेकडे&#x27;. &#x27;सागरगे&#x27; हे सागरग (&#x27;समुद्राकडे जाणारा&#x27;) याचे द्विवचन असून &#x27;नद्यौ&#x27; याच्याशी जुळते.</p></div></div>
+
+<div class="pagenav"><a href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 10</div></a><a class="next" href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 12</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

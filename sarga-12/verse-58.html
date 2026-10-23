@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 58 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 58</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 58</span><span class="bl-mr lang-mr">श्लोक 58</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Śārdūlavikrīḍitam</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">स्फूर्जच्चन्द्रकलाललामविलसद्भालं त्रिलोकीगुरुं<br>कोटींदुद्युतिगंजिमंजिममहाकायं कृपासागरम् ।<br>जृंभन्निर्जरमौलिरत्नविसरत्त्विण्मंजरीपंजरी-<br>भूताङ्घ्रिं वरदं भजध्वमभयं वाडेश्वरं भो जनाः ।।५८।।</div>
+  <div class="verse-iast">sphūrjaccandrakalālalāmavilasadbhālaṃ trilokīguruṃ koṭīṃdudyutigaṃjimaṃjimamahākāyaṃ kṛpāsāgaram । jṛṃbhannirjaramauliratnavisarattviṇmaṃjarīpaṃjarī- bhūtāṅghriṃ varadaṃ bhajadhvamabhayaṃ vāḍeśvaraṃ bho janāḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">स्फूर्जत्-चन्द्र-कला-ललाम-विलसत्-भालम् त्रि-लोकी-गुरुम् कोटि-इन्दु-द्युति-गञ्जि-मञ्जिम-महा-कायम् कृपा-सागरम् । जृम्भत्-निर्जर-मौलि-रत्न-विसरत्-त्विष्-मञ्जरी-पञ्जरी-भूत-अङ्घ्रिम् वरदम् भजध्वम् अभयम् वाडेश्वरम् भोः जनाः ।</div><div class="vig-iast">sphūrjat-candra-kalā-lalāma-vilasat-bhālam tri-lokī-gurum koṭi-indu-dyuti-gañji-mañjima-mahā-kāyam kṛpā-sāgaram । jṛmbhat-nirjara-mauli-ratna-visarat-tviṣ-mañjarī-pañjarī-bhūta-aṅghrim varadam bhajadhvam abhayam vāḍeśvaram bhoḥ janāḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">स्फूर्जत् + चन्द्र = स्फूर्जच्चन्द्र (त् → च्) · विलसत् + भालम् = विलसद्भालम् · कोटि + इन्दु = कोटीन्दु (सवर्णदीर्घ) · जृम्भत् + निर्जर = जृम्भन्निर्जर (अनुनासिक) · विसरत् + त्विष् = विसरत्त्विष् · त्विष् + मञ्जरी = त्विण्मञ्जरी (ष् → ण्) · भूत + अङ्घ्रिम् = भूताङ्घ्रिम् · भजध्वम् + अभयम् = भजध्वमभयम् · भोः + जनाः = भो जनाः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">भोः जनाः, स्फूर्जच्चन्द्रकलाललामविलसद्भालं त्रिलोकीगुरुं कोटीन्दुद्युतिगञ्जिमञ्जिममहाकायं कृपासागरं जृम्भन्निर्जरमौलिरत्नविसरत्त्विण्मञ्जरीपञ्जरीभूताङ्घ्रिं वरदं वाडेश्वरम् अभयं भजध्वम् । (वृत्त: शार्दूलविक्रीडित)</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>O people! Worship fearlessly the boon-giving Vāḍeśvara — whose brow shines with the flashing crescent moon for its ornament, the teacher of the three worlds, whose great body has a loveliness that outshines the light of a crore of moons, the ocean of compassion, whose feet have become a cage of the clustered radiance spreading from the jewels in the crowns of the bowing gods.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>ज्याचा भालप्रदेश झळकणाऱ्या चंद्रकलेच्या अलंकाराने शोभतो, जो त्रैलोक्याचा गुरू आहे, ज्याची महान काया कोटी चंद्रांच्या तेजावर मात करणाऱ्या लावण्याने युक्त आहे, जो कृपेचा सागर आहे आणि देवांच्या मुकुटांतील रत्नांतून पसरणाऱ्या तेजाच्या झुबक्यांनी वेढलेले चरण ज्याचे आहेत अशा वरद वाडेश्वराची, लोकहो, निर्भयतेने उपासना करा.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्फूर्जत्-चन्द्र-कला-ललाम-विलसत्-भालम्</span>
+    <span class="word-iast">sphūrjat-candra-kalā-lalāma-vilasat-bhālam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: स्फूर्जच्चन्द्रकलाललामविलसद्भाल (compound stem)</div>
+  <p class="word-meaning lang-en">whose brow shines with the ornament of the flashing crescent</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चमकणाऱ्या चंद्रकलेच्या अलंकाराने शोभणाऱ्या भालाचा</p>
+  <div class="word-usage">
+    <div class="deva">स्फूर्जच्चन्द्रकलाललामविलसद्भालं शिवं वन्दे।</div>
+    <div class="usage-iast">sphūrjaccandrakalālalāmavilasadbhālaṃ śivaṃ vande.</div>
+    <div class="usage-meaning lang-en">I salute Śiva whose brow shines with the flashing crescent&#x27;s ornament.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चमकणाऱ्या चंद्रकलेच्या अलंकाराने शोभणाऱ्या भालाच्या शिवाला मी वंदन करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">त्रि-लोकी-गुरुम्</span>
+    <span class="word-iast">tri-lokī-gurum</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: त्रिलोकीगुरु (compound stem)</div>
+  <p class="word-meaning lang-en">teacher of the three worlds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रैलोक्याचा गुरू</p>
+  <div class="word-usage">
+    <div class="deva">त्रिलोकीगुरुं दक्षिणामूर्तिं नमामि।</div>
+    <div class="usage-iast">trilokīguruṃ dakṣiṇāmūrtiṃ namāmi.</div>
+    <div class="usage-meaning lang-en">I bow to Dakṣiṇāmūrti, teacher of the three worlds.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्रैलोक्याच्या गुरू दक्षिणामूर्तीला मी नमस्कार करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कोटि-इन्दु-द्युति-गञ्जि-मञ्जिम-महा-कायम्</span>
+    <span class="word-iast">koṭi-indu-dyuti-gañji-mañjima-mahā-kāyam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: कोटीन्दुद्युतिगञ्जिमञ्जिममहाकाय (compound stem)</div>
+  <p class="word-meaning lang-en">whose great body has a loveliness outshining a crore of moons</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोटी चंद्रांच्या प्रकाशावर मात करणाऱ्या सौंदर्याने युक्त महान देहाचा</p>
+  <div class="word-usage">
+    <div class="deva">कोटीन्दुद्युतिगञ्जिमञ्जिममहाकायं देवं ध्यायामि।</div>
+    <div class="usage-iast">koṭīndudyutigañjimañjimamahākāyaṃ devaṃ dhyāyāmi.</div>
+    <div class="usage-meaning lang-en">I meditate on the god whose great body outshines a crore of moons.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोटी चंद्रांच्या तेजावर मात करणाऱ्या महाकाय देवाचे मी ध्यान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कृपा-सागरम्</span>
+    <span class="word-iast">kṛpā-sāgaram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: कृपासागर (compound stem)</div>
+  <p class="word-meaning lang-en">ocean of compassion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृपेचा सागर</p>
+  <div class="word-usage">
+    <div class="deva">कृपासागरं शिवं शरणं व्रजामि।</div>
+    <div class="usage-iast">kṛpāsāgaraṃ śivaṃ śaraṇaṃ vrajāmi.</div>
+    <div class="usage-meaning lang-en">I take refuge in Śiva, the ocean of compassion.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कृपासागर शिवाला मी शरण जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जृम्भत्-निर्जर-मौलि-रत्न-विसरत्-त्विष्-मञ्जरी-पञ्जरी-भूत-अङ्घ्रिम्</span>
+    <span class="word-iast">jṛmbhat-nirjara-mauli-ratna-visarat-tviṣ-mañjarī-pañjarī-bhūta-aṅghrim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: जृम्भन्निर्जरमौलिरत्नविसरत्त्विण्मञ्जरीपञ्जरीभूताङ्घ्रि (compound stem)</div>
+  <p class="word-meaning lang-en">whose feet are caged in rays spreading from the jewels in the crowns of the bowing gods</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमणाऱ्या देवांच्या मुकुटरत्नांतून पसरणाऱ्या प्रकाशकिरणांनी वेढलेल्या चरणांचा</p>
+  <div class="word-usage">
+    <div class="deva">जृम्भन्निर्जरमौलिरत्नविसरत्त्विण्मञ्जरीपञ्जरीभूताङ्घ्रिं हरं प्रणमामि।</div>
+    <div class="usage-iast">jṛmbhannirjaramauliratnavisarattviṇmañjarīpañjarībhūtāṅghriṃ haraṃ praṇamāmi.</div>
+    <div class="usage-meaning lang-en">I bow to Hara whose feet are caged in the radiance of the gods&#x27; crown-jewels.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नमणाऱ्या देवांच्या मुकुटरत्नांच्या तेजाने वेढलेल्या चरणांच्या हराला मी प्रणाम करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वरदम्</span>
+    <span class="word-iast">varadam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वरदम्</div>
+  <p class="word-meaning lang-en">boon-giving</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वरद</p>
+  <div class="word-usage">
+    <div class="deva">वरदं देवं याचामहे।</div>
+    <div class="usage-iast">varadaṃ devaṃ yācāmahe.</div>
+    <div class="usage-meaning lang-en">We pray to the boon-giving god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वरद देवाला आम्ही प्रार्थना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भजध्वम्</span>
+    <span class="word-iast">bhajadhvam</span>
+  </div>
+  <div><span class="word-grammar">भज्, लोट्, म.पु. बव. (आत्मने.)</span></div>
+  <div class="word-form">In this verse: भजध्वम्</div>
+  <p class="word-meaning lang-en">worship</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भजा, उपासना करा</p>
+  <div class="word-usage">
+    <div class="deva">भजध्वं देवं श्रद्धया।</div>
+    <div class="usage-iast">bhajadhvaṃ devaṃ śraddhayā.</div>
+    <div class="usage-meaning lang-en">Worship the god with faith.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>देवाची श्रद्धेने उपासना करा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अभयम्</span>
+    <span class="word-iast">abhayam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय (क्रियाविशेषण)</span></div>
+  <div class="word-form">In this verse: अभयम्</div>
+  <p class="word-meaning lang-en">fearlessly</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निर्भयपणे</p>
+  <div class="word-usage">
+    <div class="deva">अभयं गच्छ तीर्थम्।</div>
+    <div class="usage-iast">abhayaṃ gaccha tīrtham.</div>
+    <div class="usage-meaning lang-en">Go to the tīrtha fearlessly.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तीर्थाला निर्भयपणे जा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">वाडेश्वरम्</span>
+    <span class="word-iast">vāḍeśvaram</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: वाडेश्वरम्</div>
+  <p class="word-meaning lang-en">Vāḍeśvara</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वाडेश्वराला</p>
+  <div class="word-usage">
+    <div class="deva">वाडेश्वरं भजध्वं जनाः।</div>
+    <div class="usage-iast">vāḍeśvaraṃ bhajadhvaṃ janāḥ.</div>
+    <div class="usage-meaning lang-en">O people, worship Vāḍeśvara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लोकहो, वाडेश्वराची उपासना करा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भोः जनाः</span>
+    <span class="word-iast">bhoḥ janāḥ</span>
+  </div>
+  <div><span class="word-grammar">अव्यय + पुं. सं. बव.</span></div>
+  <div class="word-form">In this verse: भोः जनाः</div>
+  <p class="word-meaning lang-en">O people</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अहो लोकहो</p>
+  <div class="word-usage">
+    <div class="deva">भो जनाः श्रूयतां वचनम्।</div>
+    <div class="usage-iast">bho janāḥ śrūyatāṃ vacanam.</div>
+    <div class="usage-meaning lang-en">O people, let the word be heard.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अहो लोकहो, वचन ऐकावे.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>The sarga — and the entire shrine-tour begun in Sarga 11 — ends not with description but with exhortation: भजध्वम्, &#x27;worship!&#x27; The poet&#x27;s long catalogue was never antiquarian; it was a summons. The final image binds majesty and mercy: the crowns of gods bow at His feet, yet He is कृपासागर, an ocean of compassion, and वरद, giver of boons — so the worship is to be अभयम्, fearless. That is the whole sthala-māhātmya in one verse: come to Vāḍeśvara without fear.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>सर्गाचा — आणि सर्ग ११ पासून सुरू झालेल्या संपूर्ण क्षेत्रयात्रेचा — शेवट वर्णनाने नव्हे तर आवाहनाने होतो : भजध्वम्, &#x27;उपासना करा!&#x27; कवीची लांब सूची कधीच पुरातत्त्वीय नव्हती; ती हाक होती. शेवटची प्रतिमा वैभव आणि करुणा बांधते : देवांचे मुकुट त्याच्या चरणी नमतात, तरी तो कृपासागर आहे — करुणेचा समुद्र — आणि वरद आहे, वर देणारा — म्हणून उपासना अभयम्, निर्भयपणे करावी. हेच एका श्लोकात संपूर्ण स्थलमाहात्म्य आहे : वाडेश्वराकडे निर्भयपणे या.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Every epithet is classical Śaiva iconography: the crescent (चन्द्रकला) on the brow, the gods&#x27; crown-jewels touching His feet (a standard image of Śiva&#x27;s supremacy), and त्रिलोकीगुरु, the teacher of the three worlds — Śiva as Dakṣiṇāmūrti. कोटीन्दुद्युतिगञ्जि — outshining a crore of moons — is the stock hyperbole of stotras for the deity&#x27;s radiance.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>प्रत्येक विशेषण हे शास्त्रीय शैव प्रतिमाविज्ञान आहे : भालावरील चंद्रकला, देवांच्या मुकुटरत्नांचा त्याच्या चरणांना स्पर्श (शिवाच्या सर्वोच्चतेची नेहमीची प्रतिमा), आणि त्रिलोकीगुरु — त्रैलोक्याचा गुरू — म्हणजे दक्षिणामूर्ती रूपातील शिव. कोटीन्दुद्युतिगञ्जि — कोटी चंद्रांच्या तेजावर मात करणारा — हे देवतेच्या तेजासाठी स्तोत्रांतील नेहमीची अतिशयोक्ती आहे.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Śārdūlavikrīḍitam — the grandest metre of the sarga, reserved for the finale. The compound जृम्भत्-निर्जर-मौलि-रत्न-विसरत्-त्विष्-मञ्जरी-पञ्जरी-भूत-अङ्घ्रिम् shows पञ्जरीभूत, &#x27;become a cage&#x27; (a च्वि formation), glossed in the sarga&#x27;s own grammar note. भो जनाः is the poet&#x27;s only direct address to the reader in the sarga — the preacher&#x27;s voice breaking through the cataloguer&#x27;s.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शार्दूलविक्रीडित — सर्गातील सर्वांत भव्य वृत्त, समारोपासाठी राखून ठेवलेले. जृम्भत्-निर्जर-मौलि-रत्न-विसरत्-त्विष्-मञ्जरी-पञ्जरी-भूत-अङ्घ्रिम् या समासात पञ्जरीभूत — &#x27;पिंजरा झालेला&#x27; (च्वि-रूप) — आहे, सर्गाच्या स्वतःच्या व्याकरण-टीपेत स्पष्ट केलेले. भो जनाः हा सर्गात कवीचा वाचकाला केलेला एकमेव प्रत्यक्ष संबोध आहे — सूचीकाराच्या आवाजातून उपदेशकाचा आवाज.</p></div></div>
+
+<div class="pagenav"><a href="verse-57.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 57</div></a><a class="next" href="../../../kavya/vyadeshvarodaya/sarga-13/verse-1.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Sarga 13 — Guhāgāragrāmavarṇanaḥ 1</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

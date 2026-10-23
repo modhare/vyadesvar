@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 1 — Rāmasāgarasamāgamaḥ 25 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 1 — Rāmasāgarasamāgamaḥ</a><span>&rsaquo;</span><span class="here">Verse 25</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 25</span><span class="bl-mr lang-mr">श्लोक 25</span></h1>
+<p class="meta">Sarga 1 — Rāmasāgarasamāgamaḥ &middot; <span class="deva">प्रथमः सर्गः · रामसागरसमागमः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Indravajrā/Upajāti</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">यस्मिन्नगा बालदलाद्यनेके यस्मिन्खगा नीलगलाद्यनेके ।।<br>यस्मिन्मृगा हस्त्यसुलाद्यनेके यत्रोरगा देहिगिलाद्यनेके ।। २५।।</div>
+  <div class="verse-iast">yasminnagā bāladalādyaneke yasminkhagā nīlagalādyaneke । । yasminmṛgā hastyasulādyaneke yatroragā dehigilādyaneke । । २५ । ।</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">यस्मिन् । नगाः । बाल-दल-आदि-अनेके । यस्मिन् । खगाः । नील-गल-आदि-अनेके । यस्मिन् । मृगाः । हस्ति-असु-ल-आदि-अनेके (?) । यत्र । उरगाः । देहि-गिल-आदि-अनेके ।</div><div class="vig-iast">yasmin । nagāḥ । bāla-dala-ādi-aneke । yasmin । khagāḥ । nīla-gala-ādi-aneke । yasmin । mṛgāḥ । hasti-asu-la-ādi-aneke (?) । yatra । uragāḥ । dehi-gila-ādi-aneke ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">यस्मिन् + नगाः = यस्मिन्नगाः (न् द्वित्व) · नगाः + बाल = नगा बाल (आ नंतर मृदू व्यंजनापुढे विसर्गलोप) · दल + आदि = दलादि · आदि + अनेके = आद्यनेके (यण्) · खगाः + नील = खगा नील · मृगाः + हस्ति = मृगा हस्ति · हस्ति + असु = हस्त्यसु (यण्) · यत्र + उरगाः = यत्रोरगाः (गुण) · उरगाः + देहि = उरगा देहि</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">यस्मिन् बालदलादयः अनेके नगाः, यस्मिन् नीलगलादयः अनेके खगाः, यस्मिन् हस्त्यसुलादयः अनेके मृगाः, यत्र देहिगिलादयः अनेके उरगाः (सन्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Upon it stood many trees with tender leaves and the like; many birds, the blue-necked and the like; many wild animals — the slayers of elephants and their like — and there were many serpents too, the body-swallowers and their like.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>या पर्वतावर लहान पाने वगैरे असलेले अनेक वृक्ष, निळ्या गळ्यांचे इत्यादी अनेक पक्षी होते, तसेच ज्यांचे सुळे हाताला येतील वगैरे अनेक प्राणी होते व प्राण्यांना सहज गिळू शकणारे इत्यादी अनेक अजगरही दृष्टीला पडत.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नगाः</span>
+    <span class="word-iast">nagāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; न + √गम् (&#x27;the unmoving&#x27;)</span></div>
+  <div class="word-form">In this verse: नगाः</div>
+  <p class="word-meaning lang-en">trees</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वृक्ष (‘न गच्छन्ति’ — जागचे न हलणारे)</p>
+  <div class="word-usage">
+    <div class="deva">नगाः वने वर्धन्ते ।</div>
+    <div class="usage-iast">nagāḥ vane vardhante ।</div>
+    <div class="usage-meaning lang-en">Trees grow in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वनात वृक्ष वाढतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बालदलादयः</span>
+    <span class="word-iast">bāladalādayaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; bahuvrīhi (बाल-दल-आदि)</span></div>
+  <div class="word-form">In this verse: बालदलादयः</div>
+  <p class="word-meaning lang-en">having tender leaves and the like</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोवळी पाने इत्यादी असलेले</p>
+  <div class="word-usage">
+    <div class="deva">बालदलादयः नगाः वसन्ते शोभन्ते ।</div>
+    <div class="usage-iast">bāladalādayaḥ nagāḥ vasante śobhante ।</div>
+    <div class="usage-meaning lang-en">Trees with tender leaves shine in spring.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कोवळी पाने असलेले वृक्ष वसंतात शोभतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">खगाः</span>
+    <span class="word-iast">khagāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; ख + √गम् (&#x27;sky-goers&#x27;)</span></div>
+  <div class="word-form">In this verse: खगाः</div>
+  <p class="word-meaning lang-en">birds</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पक्षी</p>
+  <div class="word-usage">
+    <div class="deva">खगाः प्रातः कूजन्ति ।</div>
+    <div class="usage-iast">khagāḥ prātaḥ kūjanti ।</div>
+    <div class="usage-meaning lang-en">Birds chirp in the morning.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पक्षी सकाळी किलबिल करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">नीलगलादयः</span>
+    <span class="word-iast">nīlagalādayaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; bahuvrīhi (नील-गल-आदि)</span></div>
+  <div class="word-form">In this verse: नीलगलादयः</div>
+  <p class="word-meaning lang-en">blue-necked (peacocks) and the like</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निळ्या गळ्याचे (मोर) इत्यादी</p>
+  <div class="word-usage">
+    <div class="deva">नीलगलादयः खगाः वने नृत्यन्ति ।</div>
+    <div class="usage-iast">nīlagalādayaḥ khagāḥ vane nṛtyanti ।</div>
+    <div class="usage-meaning lang-en">Blue-necked birds dance in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>निळ्या गळ्याचे पक्षी वनात नाचतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">मृगाः</span>
+    <span class="word-iast">mṛgāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural</span></div>
+  <div class="word-form">In this verse: मृगाः</div>
+  <p class="word-meaning lang-en">wild animals, deer</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वन्य पशू</p>
+  <div class="word-usage">
+    <div class="deva">मृगाः तृणम् चरन्ति ।</div>
+    <div class="usage-iast">mṛgāḥ tṛṇam caranti ।</div>
+    <div class="usage-meaning lang-en">The deer graze on grass.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हरिणे गवत चरतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">हस्त्यसुल</span>
+    <span class="word-iast">hastyasula</span>
+  </div>
+  <div><span class="word-grammar">masculine stem (in हस्त्यसुलादयः); tatpuruṣa (हस्ति-असु-ल, √लā/√लū agentive &#x27;taker&#x27;) — conjectural; see note</span></div>
+  <div class="word-form">In this verse: हस्त्यसुल (stem; nom. pl. हस्त्यसुलाः)</div>
+  <p class="word-meaning lang-en">taker of elephants&#x27; lives — the lion (conjectural; see note)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>*पाठार्थ-शंका:* हस्ति + असु + ल (√ला, ‘घेणारा’) = हत्तींचे प्राण घेणारा, म्हणजे **सिंह** — ‘देहिगिल’ च्या रचनेशी हे जुळते; पुस्तकाच्या मराठीत ‘ज्यांचे सुळे हाताला येतील’ असा वेगळा अर्थ घेतला आहे.</p>
+  <div class="word-usage">
+    <div class="deva">हस्त्यसुलः वने गर्जति ।</div>
+    <div class="usage-iast">hastyasulaḥ vane garjati ।</div>
+    <div class="usage-meaning lang-en">The lion roars in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सिंह वनात गर्जना करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">उरगाः</span>
+    <span class="word-iast">uragāḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; उरस् + √गम् (&#x27;breast-goers&#x27;)</span></div>
+  <div class="word-form">In this verse: उरगाः</div>
+  <p class="word-meaning lang-en">serpents</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्प</p>
+  <div class="word-usage">
+    <div class="deva">उरगाः बिलेषु वसन्ति ।</div>
+    <div class="usage-iast">uragāḥ bileṣu vasanti ।</div>
+    <div class="usage-meaning lang-en">Serpents dwell in holes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्प बिळांत राहतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">देहिगिलादयः</span>
+    <span class="word-iast">dehigilādayaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative plural; tatpuruṣa (देहि-गिल-आदि, √गॄ agentive)</span></div>
+  <div class="word-form">In this verse: देहिगिलादयः</div>
+  <p class="word-meaning lang-en">body-swallowers (pythons) and the like</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राण्यांना गिळणारे (अजगर) इत्यादी</p>
+  <div class="word-usage">
+    <div class="deva">देहिगिलादयः उरगाः भयङ्कराः ।</div>
+    <div class="usage-iast">dehigilādayaḥ uragāḥ bhayaṅkarāḥ ।</div>
+    <div class="usage-meaning lang-en">Pythons and the like are fearsome serpents.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राण्यांना गिळणारे अजगर भयंकर सर्प आहेत.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Trees, peacocks, wild beasts, pythons — the mountain teems with every form of life. This catalogue honours the Sahya as a complete world in itself, a fit neighbour for the new land about to be born. It also quietly assures the listener: the land Paraśurāma will raise will be likewise fertile and full of life.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वृक्ष, मोर, वन्य पशू, अजगर — पर्वत सर्व प्रकारच्या जीवांनी गजबजलेला आहे. ही सूची सह्याद्रीचा एका परिपूर्ण जगाप्रमाणे सन्मान करते — लवकरच जन्माला येणाऱ्या नव्या भूमीचा तो योग्य शेजारी आहे. श्रोत्याला ती मूक आश्वासनही देते — परशुराम जी भूमी वर आणील तीही तशीच सुपीक व जीवपूर्ण असेल.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Catalogues of flora and fauna belong to the vana/parvata-varṇana convention; the python that swallows creatures whole (ajagara) is a familiar jungle image. The list honours the Sahya as a complete world — a fit neighbour for the new land about to be born.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>वनस्पती व प्राण्यांच्या सूची वन/पर्वतवर्णनाच्या रूढीचा भाग आहेत; प्राण्यांना गिळणारा अजगर ही परिचित जंगली कल्पना आहे. ही सूची सह्याद्रीचा एका परिपूर्ण जगाप्रमाणे सन्मान करते — लवकरच जन्माला येणाऱ्या नव्या भूमीचा योग्य शेजारी.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>हस्त्यसुल — pāṭha-carca: the working note parses हस्ति-असु-ल (√लā, agentive &#x27;taker&#x27;) as &#x27;taker of elephants&#x27; lives&#x27;, i.e. the lion — exactly parallel to देहि-गिल (&#x27;swallower of creatures&#x27;, the python). The book&#x27;s Marathi (&#x27;whose tusks come to hand&#x27;) follows a different, syntactically strained reading; the matter awaits the editor&#x27;s verdict.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हस्त्यसुल — पाठ-चर्चा : कार्यटीप हस्ति-असु-ल (√ला, कर्तृवाचक &#x27;घेणारा&#x27;) = &#x27;हत्तींचे प्राण घेणारा&#x27;, म्हणजे सिंह असा विग्रह करते — देहि-गिल (&#x27;प्राण्यांना गिळणारा&#x27;, अजगर) याच्याशी नेमका समांतर. पुस्तकाचे मराठी (&#x27;ज्यांचे सुळे हाताला येतील&#x27;) वेगळा, व्याकरणदृष्ट्या ताणलेला अर्थ घेते; निर्णय संपादकाचा बाकी आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-24.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 24</div></a><a class="next" href="verse-26.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 26</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

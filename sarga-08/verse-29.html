@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 8 — Rāmatirodhānaḥ 29 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 8 — Rāmatirodhānaḥ</a><span>&rsaquo;</span><span class="here">Verse 29</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 29</span><span class="bl-mr lang-mr">श्लोक 29</span></h1>
+<p class="meta">Sarga 8 — Rāmatirodhānaḥ &middot; <span class="deva">अष्टमः सर्गः · रामतिरोधानः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">पापसंगोपनपराः पुण्यलेशप्रकाशकाः ।<br>आत्मस्तुतिरता रुग्णाः परांश्छिद्रे प्रहारिणः ।।२९।।</div>
+  <div class="verse-iast">pāpasaṃgopanaparāḥ puṇyaleśaprakāśakāḥ । ātmastutiratā rugṇāḥ parāṃśchidre prahāriṇaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">पाप-संगोपन-पराः । पुण्य-लेश-प्रकाशकाः । आत्म-स्तुति-रताः । रुग्णाः । परान् । छिद्रे । प्रहारिणः ।</div><div class="vig-iast">pāpa-saṃgopana-parāḥ । puṇya-leśa-prakāśakāḥ । ātma-stuti-ratāḥ । rugṇāḥ । parān । chidre । prahāriṇaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">रताः + रुग्णाः = रता रुग्णाः (विसर्ग-लोप) · परान् + छिद्रे = परांश्छिद्रे (न् + छ → ंश्छ)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">(मानुषाः) पापसंगोपनपराः पुण्यलेशप्रकाशकाः आत्मस्तुतिरताः रुग्णाः परान् छिद्रे प्रहारिणः (भविष्यन्ति) ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Intent on concealing their sins and on trumpeting a particle of merit, delighting in self-praise, sick in mind and body, they will strike others at their weak points.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पापे लपविण्यात कुशल व किंचित पुण्याची प्रौढी मारणारे, आत्मस्तुती करण्याची हौस असणारे, मनाने व शरीराने रुग्ण असणारे लोक दुसऱ्यांच्या वर्मावर बोट ठेवणारे (होतील).</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पापसंगोपनपराः</span>
+    <span class="word-iast">pāpasaṃgopanaparāḥ</span>
+  </div>
+  <div><span class="word-grammar">पापस्य संगोपने पराः इति बहुव्रीहिसमासः (सम्-√गुप् + ल्युट् → संगोपनम्); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: पापसंगोपनपराः</div>
+  <p class="word-meaning lang-en">intent on concealing their sins</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापे लपवण्यात तत्पर</p>
+  <div class="word-usage">
+    <div class="deva">पापसंगोपनपराः जनाः धर्मात् दूराः भवन्ति ।</div>
+    <div class="usage-iast">pāpasaṃgopanaparāḥ janāḥ dharmāt dūrāḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">People intent on hiding their sins stray far from dharma.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पापे लपवण्यात तत्पर असलेले लोक धर्मापासून दूर जातात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुण्यलेशप्रकाशकाः</span>
+    <span class="word-iast">puṇyaleśaprakāśakāḥ</span>
+  </div>
+  <div><span class="word-grammar">पुण्यस्य लेशं प्रकाशयति इति — बहुव्रीहिसमासः (प्र-√काश् + ण्वुल् → प्रकाशकः); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: पुण्यलेशप्रकाशकाः</div>
+  <p class="word-meaning lang-en">trumpeting a mere particle of their merit</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लेशमात्र पुण्याचा गाजावाजा करणारे</p>
+  <div class="word-usage">
+    <div class="deva">पुण्यलेशप्रकाशकाः नराः अभिमानिनः भवन्ति ।</div>
+    <div class="usage-iast">puṇyaleśaprakāśakāḥ narāḥ abhimāninaḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">Men who trumpet a particle of merit are conceited.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>लेशमात्र पुण्याचा गाजावाजा करणारे लोक गर्विष्ठ असतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आत्मस्तुतिरताः</span>
+    <span class="word-iast">ātmastutiratāḥ</span>
+  </div>
+  <div><span class="word-grammar">आत्मनः स्तुतौ रताः इति बहुव्रीहिसमासः (√रम् + क्त → रतः); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: आत्मस्तुतिरता</div>
+  <p class="word-meaning lang-en">delighting in self-praise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःची स्तुती करण्यात रमलेले</p>
+  <div class="word-usage">
+    <div class="deva">आत्मस्तुतिरताः जनाः गुणैः हीनाः भवन्ति ।</div>
+    <div class="usage-iast">ātmastutiratāḥ janāḥ guṇaiḥ hīnāḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">People delighting in self-praise are poor in virtues.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वतःची स्तुती करण्यात रमलेले लोक गुणांनी हीन असतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">रुग्णाः</span>
+    <span class="word-iast">rugṇāḥ</span>
+  </div>
+  <div><span class="word-grammar">√रुज् + क्त (ज् → ग्); प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: रुग्णाः</div>
+  <p class="word-meaning lang-en">sick, diseased — in mind and body</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रोगी</p>
+  <div class="word-usage">
+    <div class="deva">रुग्णाः जनाः औषधम् सेवन्ते ।</div>
+    <div class="usage-iast">rugṇāḥ janāḥ auṣadham sevante ।</div>
+    <div class="usage-meaning lang-en">Sick people take medicine.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>रोगी लोक औषध घेतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">परान् छिद्रे प्रहारिणः</span>
+    <span class="word-iast">parān chidre prahāriṇaḥ</span>
+  </div>
+  <div><span class="word-grammar">पर-शब्दात् द्वितीया-बहुवचने; छिद्र-शब्दात् सप्तमी-एकवचने; प्रहरति इति — प्र-√हृ + णिनिः; प्रथमा-बहुवचनम्</span></div>
+  <div class="word-form">In this verse: परांश्छिद्रे प्रहारिणः</div>
+  <p class="word-meaning lang-en">striking others at their weak (vulnerable) spots</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुसऱ्यांवर त्यांच्या वर्मस्थानी (दोषस्थानी) प्रहार करणारे</p>
+  <div class="word-usage">
+    <div class="deva">दुर्जनाः परान् छिद्रे प्रहारिणः भवन्ति ।</div>
+    <div class="usage-iast">durjanāḥ parān chidre prahāriṇaḥ bhavanti ।</div>
+    <div class="usage-meaning lang-en">The wicked strike others at their weak spots.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दुर्जन दुसऱ्यांच्या वर्मस्थानी प्रहार करतात.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Hiding one&#x27;s own faults while advertising one&#x27;s virtues and striking at others&#x27; weak points is the psychology of the Kali-age mind — the exact opposite of the confessional honesty the śāstras praise. The verse turns the diagnosis inward: the devotee is asked to reverse each trait — confess faults, hide virtues, praise others, and wound no one. Self-praise is shown as spiritual sickness; humility is health.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>आपले दोष लपविणे, आपल्या गुणांचा गाजावाजा करणे आणि दुसऱ्यांच्या वर्मावर बोट ठेवणे हे कलियुगीन मनाचे मानसशास्त्र आहे — शास्त्रे ज्या प्रामाणिक कबुलीची स्तुती करतात त्याची ही अगदी उलट स्थिती. निदान स्वतःकडे वळवून श्लोक सांगतो : प्रत्येक गुण उलट करावा — दोष कबूल करावेत, गुण लपवावेत, दुसऱ्यांची स्तुती करावी आणि कोणालाही जखम करू नये. आत्मस्तुती हे आध्यात्मिक रोग; नम्रता हे आरोग्य.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Mahābhārata and the nīti tradition repeatedly contrast the sādhu — who hides his own virtues and proclaims others&#x27; — with the durjana, who does the reverse (paraphrased). &#x27;Striking at the weak spot&#x27; (छिद्रे प्रहार) is the classical definition of the wicked man&#x27;s speech in Sanskrit moral literature: he seeks the chidra, the gap in another&#x27;s armour.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>महाभारत आणि नीतिपरंपरा साधू आणि दुर्जन यांत वारंवार विरोध मांडतात — साधू आपले गुण लपवतो आणि दुसऱ्यांचे गाजावाजा करतो, दुर्जन याच्या उलट करतो (भावार्थ). &#x27;वर्मस्थानी प्रहार&#x27; (छिद्रे प्रहार) ही संस्कृत नीतिसाहित्यात दुष्टाच्या बोलण्याची शास्त्रीय व्याख्या आहे : तो दुसऱ्याच्या कवचातील &#x27;छिद्र&#x27;, म्हणजे फट शोधतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Anuṣṭubh. The verse is a chain of bahuvrīhis — पापसंगोपनपर, पुण्यलेशप्रकाशक, आत्मस्तुतिरत — a favourite kāvya device for moral portraiture, each compound balanced against the next. छिद्रम् is literally &#x27;a hole, gap&#x27; — hence a vulnerable point, a fault. Cross-ref: v. 25&#x27;s काकवृत्ति (&#x27;crow-nature&#x27;) is the same image of pecking at sores.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अनुष्टुभ्. हा श्लोक बहुव्रीहींची माळ आहे — पापसंगोपनपर, पुण्यलेशप्रकाशक, आत्मस्तुतिरत — नैतिक व्यक्तिचित्रणासाठी काव्याचे आवडते साधन; प्रत्येक समास पुढच्याशी तोललेला आहे. &#x27;छिद्रम्&#x27; चा शब्दशः अर्थ &#x27;भोक, फट&#x27; — म्हणून वर्मस्थान, दोषस्थान. संदर्भ : श्लो. २५ मधील &#x27;काकवृत्ति&#x27; ही व्रणांवर चोच मारण्याची तीच प्रतिमा आहे.</p></div></div>
+
+<div class="pagenav"><a href="verse-28.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 28</div></a><a class="next" href="verse-30.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 30</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

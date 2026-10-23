@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 11 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 11</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 11</span><span class="bl-mr lang-mr">श्लोक 11</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">तत्पालितैः पुण्यजनैर्जनस्थानाद्भृशार्दिताः ।<br>त्यक्त्वा पदानि मुनयो जग्मुः प्राणपरीप्सवः ।।११।।</div>
+  <div class="verse-iast">tatpālitaiḥ puṇyajanairjanasthānādbhṛśārditāḥ । tyaktvā padāni munayo jagmuḥ prāṇaparīpsavaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">तत्-पालितैः । पुण्यजनैः । जनस्थानात् । भृश-अर्दिताः । त्यक्त्वा । पदानि । मुनयः । जग्मुः । प्राण-परीप्सवः ।</div><div class="vig-iast">tat-pālitaiḥ । puṇyajanaiḥ । janasthānāt । bhṛśa-arditāḥ । tyaktvā । padāni । munayaḥ । jagmuḥ । prāṇa-parīpsavaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पुण्यजनैः + जनस्थानात् = पुण्यजनैर्जनस्थानात् · जनस्थानात् + भृश = जनस्थानाद्भृश (त् → द्) · भृश + अर्दिताः = भृशार्दिताः · मुनयः + जग्मुः = मुनयो जग्मुः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">तत्पालितैः पुण्यजनैः भृशार्दिताः प्राणपरीप्सवः मुनयः पदानि त्यक्त्वा जनस्थानात् जग्मुः ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Grievously harassed by the rākṣasas nurtured by him — those &#x27;gentlefolk&#x27; — the sages, desperate to save their very lives, forsook their dwellings and departed from Janasthāna.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>त्याने पोसलेल्या राक्षसांकडून अतिशय छळले गेलेले मुनी प्राणरक्षणाच्या इच्छेने जनस्थानातून आपली निवासस्थाने सोडून गेले.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पुण्यजनैः</span>
+    <span class="word-iast">puṇyajanaiḥ</span>
+  </div>
+  <div><span class="word-grammar">पुण्य-जन; masculine instrumental plural; used here ironically for राक्षस (inversion of the usual sense)</span></div>
+  <div class="word-form">In this verse: पुण्यजनैः (m. instr. pl.)</div>
+  <p class="word-meaning lang-en">&#x27;good folk&#x27; — the rākṣasas, by bitter inversion</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राक्षसांकडून (शिष्टाचारी उलटनाव)</p>
+  <div class="word-usage">
+    <div class="deva">पुण्यजनैः इति उक्ताः राक्षसाः आश्रमान् अदूषयन् ।</div>
+    <div class="usage-iast">puṇyajanaiḥ iti uktāḥ rākṣasāḥ āśramān adūṣayan ।</div>
+    <div class="usage-meaning lang-en">The rākṣasas, called &#x27;good folk,&#x27; defiled the hermitages.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>&#x27;पुण्यजन&#x27; म्हणून संबोधलेले राक्षस आश्रम भ्रष्ट करीत होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृशार्दिताः</span>
+    <span class="word-iast">bhṛśārditāḥ</span>
+  </div>
+  <div><span class="word-grammar">भृश + अर्दित (√ऋद् + क्त); masculine nominative plural</span></div>
+  <div class="word-form">In this verse: भृशार्दिताः (m. nom. pl.)</div>
+  <p class="word-meaning lang-en">sorely tormented</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय पीडित</p>
+  <div class="word-usage">
+    <div class="deva">भृशार्दिताः जनाः राजानम् अशरणम् अगच्छन् ।</div>
+    <div class="usage-iast">bhṛśārditāḥ janāḥ rājānam aśaraṇam agacchan ।</div>
+    <div class="usage-meaning lang-en">The sorely tormented people went to the king for refuge.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिशय पीडलेले लोक राजाकडे आश्रयासाठी गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पदानि</span>
+    <span class="word-iast">padāni</span>
+  </div>
+  <div><span class="word-grammar">neuter accusative plural of पद</span></div>
+  <div class="word-form">In this verse: पदानि (n. acc. pl.)</div>
+  <p class="word-meaning lang-en">abodes, stations (hermitages)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्थाने (आश्रम)</p>
+  <div class="word-usage">
+    <div class="deva">मुनयः पदानि त्यक्त्वा वनान्तरम् अगच्छन् ।</div>
+    <div class="usage-iast">munayaḥ padāni tyaktvā vanāntaram agacchan ।</div>
+    <div class="usage-meaning lang-en">The sages abandoned their abodes and went to another forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>मुनींनी आपली स्थाने सोडून दुसऱ्या वनात गेले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्राणपरीप्सवः</span>
+    <span class="word-iast">prāṇaparīpsavaḥ</span>
+  </div>
+  <div><span class="word-grammar">प्राण-परीप्सु; परि-√आप्, sannanta (desiderative) with the उ affix; masculine nominative plural</span></div>
+  <div class="word-form">In this verse: प्राणपरीप्सवः (m. nom. pl.)</div>
+  <p class="word-meaning lang-en">desirous of saving their lives</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राण वाचवू इच्छिणारे (परि + √आप्, सन्नन्त)</p>
+  <div class="word-usage">
+    <div class="deva">प्राणपरीप्सवः सः युद्धात् अपासरत् ।</div>
+    <div class="usage-iast">prāṇaparīpsavaḥ saḥ yuddhāt apāsarat ।</div>
+    <div class="usage-meaning lang-en">Desirous of saving his life, he withdrew from battle.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राण वाचवू इच्छिणारा तो युद्धातून मागे सरला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">जग्मुः</span>
+    <span class="word-iast">jagmuḥ</span>
+  </div>
+  <div><span class="word-grammar">√गम्, liṭ (perfect), 3rd plural, parasmaipada</span></div>
+  <div class="word-form">In this verse: जग्मुः (perf. 3rd pl.)</div>
+  <p class="word-meaning lang-en">they went, departed</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गेले</p>
+  <div class="word-usage">
+    <div class="deva">ते वनम् उषित्वा नगरम् जग्मुः ।</div>
+    <div class="usage-iast">te vanam uṣitvā nagaram jagmuḥ ।</div>
+    <div class="usage-meaning lang-en">Having dwelt in the forest, they went to the city.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>वनात राहून ते नगराला गेले.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>When adharma captures the land, the first to leave are not the warriors but the sages — the custodians of dharma withdraw into silence, and the land loses its spiritual guardians. The verse does not blame them: prāṇa-parīpsā, the will to protect life so that tapas may continue elsewhere, is itself dharmic. Devotionally it marks the sign of a dark age — when the holy must flee the holy land — and prepares the ground for the avatāra: the sages&#x27; flight is the cry that summons divine intervention.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अधर्म जेव्हा भूमी काबीज करतो, तेव्हा प्रथम जाणारे योद्धे नसतात, तर मुनी असतात — धर्माचे रक्षक मौनात मागे सरतात आणि भूमी आपले आध्यात्मिक पहारेकरी गमावते. श्लोक त्यांना दोष देत नाही — तप अन्यत्र चालू राहावे म्हणून प्राणरक्षणाची इच्छा (प्राणपरीप्सा) ही स्वतः धार्मिकच आहे. भक्तिभावाने हे अंधयुगाचे लक्षण आहे — पवित्रांनीच पवित्र भूमी सोडावी लागणे — आणि अवताराची पूर्वतयारी आहे — मुनींचे पलायन हाच दैवी हस्तक्षेपाला बोलावणारा आक्रोश आहे.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Janasthāna was the rākṣasa stronghold in the Daṇḍaka forest — the Araṇyakāṇḍa peoples it with Khara, Dūṣaṇa, Triśiras and Śūrpaṇakhā, tormenting the hermitages of Śarabhaṅga, Sutīkṣṇa and Agastya himself. The poet&#x27;s &#x27;puṇyajana&#x27; for rākṣasas is a deliberate inversion — elsewhere puṇyajana denotes yakṣas and other gentle semi-divine beings — a bitter śleṣa worthy of the rākṣasa&#x27;s own upside-down world, where the nurtured devour the nurturers&#x27; world.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>जनस्थान हे दंडकारण्यातील राक्षसांचे बळकट ठाणे होते — अरण्यकांडात खर, दूषण, त्रिशिरा व शूर्पणखा यांसह ते शरभंग, सुतीक्ष्ण आणि स्वतः अगस्त्य यांच्या आश्रमांना छळतात. राक्षसांसाठी कवीने योजलेले &#x27;पुण्यजन&#x27; हे जाणीवपूर्वक उलटे नाव आहे — अन्यत्र &#x27;पुण्यजन&#x27; म्हणजे यक्षादी सौम्य अर्धदैवी जीव — राक्षसांच्या उलट्याच जगाला शोभणारा कडू श्लेष, जेथे पोसलेलेच पोसणाऱ्यांचे जग गिळतात.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>प्राणपरीप्सवः is pari + √आप् in the desiderative (sannanta) with the उ-affix — &#x27;wishing to obtain and keep their lives&#x27; — a precise grammatical mirror of the sages&#x27; motive. The verse is in Anuṣṭubh. This flight from Janasthāna answers Rāma&#x27;s question at 6.7 (&#x27;why is the south sparsely settled?&#x27;) directly: the holy withdrew, so the land emptied.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;प्राणपरीप्सवः&#x27; हे परि + √आप् धातूचे सन्नन्त (इच्छार्थक) रूप, &#x27;उ&#x27; प्रत्ययासह — &#x27;प्राण मिळवू-राखू इच्छिणारे&#x27; — मुनींच्या हेतूचे अचूक व्याकरणात्मक प्रतिबिंब. छंद अनुष्टुभ्. जनस्थानातून हे पलायन रामाच्या ६.७ मधील प्रश्नाचे (&#x27;दक्षिण विरळ का?&#x27;) थेट उत्तर देते — पवित्र मागे सरले, म्हणून भूमी रिकामी झाली.</p></div></div>
+
+<div class="pagenav"><a href="verse-10.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 10</div></a><a class="next" href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 12</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

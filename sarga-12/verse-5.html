@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 12 — Rāmakṣetravarṇanam 5 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 12 — Rāmakṣetravarṇanam</a><span>&rsaquo;</span><span class="here">Verse 5</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 5</span><span class="bl-mr lang-mr">श्लोक 5</span></h1>
+<p class="meta">Sarga 12 — Rāmakṣetravarṇanam &middot; <span class="deva">द्वादशः सर्गः · रामक्षेत्रवर्णनम्</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Drutavilambita</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">अथ यथाविभवं भवभञ्जिनि पयसि पूजनपूर्वकमाप्लवम् ।<br>सुविदधद्विदधीत यथाक्रमं द्विदशनामभिरर्घ्यविधिं बुधः ।।५।।</div>
+  <div class="verse-iast">atha yathāvibhavaṃ bhavabhañjini payasi pūjanapūrvakamāplavam । suvidadhadvidadhīta yathākramaṃ dvidaśanāmabhirarghyavidhiṃ budhaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">अथ यथा-विभवम् भव-भञ्जिनि पयसि पूजन-पूर्वकम् आप्लवम् । सु-विदधत् विदधीत यथाक्रमम् द्वि-दश-नामभिः अर्घ्य-विधिम् बुधः ।</div><div class="vig-iast">atha yathā-vibhavam bhava-bhañjini payasi pūjana-pūrvakam āplavam । su-vidadhat vidadhīta yathākramam dvi-daśa-nāmabhiḥ arghya-vidhim budhaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">पूर्वकम् + आप्लवम् = पूर्वकमाप्लवम् · सुविदधत् + विदधीत = सुविदधद्विदधीत · नामभिः + अर्घ्य = नामभिरर्घ्य</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">अथ बुधः भवभञ्जिनि पयसि यथाविभवं पूजनपूर्वकम् आप्लवं सुविदधत् (सन्) यथाक्रमं द्विदशनामभिः अर्घ्यविधिं विदधीत । (वृत्त: द्रुतविलम्बित)</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Therefore, having bathed - with worship first, to the measure of one&#x27;s means - in this water that shatters worldly existence, let the wise man duly perform, in due order, the rite of arghya with the twelve names.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>म्हणून या भवभञ्जक नदीच्या पाण्यात पूजनपूर्वक बुडी मारून शहाण्या माणसाने आपल्या ऐश्वर्यानुसार यथाक्रम व विधियुक्त अशा या द्वादश नावांनी म्हणजे १२ कवितांनी स्तुती करून अर्घ्य द्यावे.</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अथ</span>
+    <span class="word-iast">atha</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: अथ</div>
+  <p class="word-meaning lang-en">so</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>म्हणून</p>
+  <div class="word-usage">
+    <div class="deva">अथ अर्घ्यविधिं वर्णयामि।</div>
+    <div class="usage-iast">atha arghyavidhim varnayami.</div>
+    <div class="usage-meaning lang-en">Now I describe the rite of arghya.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आता मी अर्घ्यविधी सांगतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथा-विभवम्</span>
+    <span class="word-iast">yathā-vibhavam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यथाविभवं</div>
+  <p class="word-meaning lang-en">as one&#x27;s means allow</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऐपतीप्रमाणे</p>
+  <div class="word-usage">
+    <div class="deva">यथाविभवं दानं कुर्यात्।</div>
+    <div class="usage-iast">yathavibhavam danam kuryat.</div>
+    <div class="usage-meaning lang-en">One should give charity according to one&#x27;s means.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऐपतीप्रमाणे दान करावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भव-भञ्जिनि</span>
+    <span class="word-iast">bhava-bhañjini</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.; भवभञ्जिन्</span></div>
+  <div class="word-form">In this verse: भवभञ्जिनि</div>
+  <p class="word-meaning lang-en">existence-destroying</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसार नष्ट करणाऱ्या</p>
+  <div class="word-usage">
+    <div class="deva">भवभञ्जिनि जले स्नात्वा शुद्धो भवति।</div>
+    <div class="usage-iast">bhavabhanjini jale snatva shuddho bhavati.</div>
+    <div class="usage-meaning lang-en">Having bathed in the existence-destroying water, one becomes pure.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>संसार नष्ट करणाऱ्या पाण्यात स्नान करून शुद्ध होतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पयसि</span>
+    <span class="word-iast">payasi</span>
+  </div>
+  <div><span class="word-grammar">नपुं. स. एव.; पयस्</span></div>
+  <div class="word-form">In this verse: पयसि</div>
+  <p class="word-meaning lang-en">in the water</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पाण्यात</p>
+  <div class="word-usage">
+    <div class="deva">पयसि स्नानं करोति।</div>
+    <div class="usage-iast">payasi snanam karoti.</div>
+    <div class="usage-meaning lang-en">He bathes in the water.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो पाण्यात स्नान करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पूजन-पूर्वकम्</span>
+    <span class="word-iast">pūjana-pūrvakam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: पूजनपूर्वकम् (पूजनपूर्वकमाप्लवम्)</div>
+  <p class="word-meaning lang-en">with worship</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूजनपूर्वक</p>
+  <div class="word-usage">
+    <div class="deva">पूजनपूर्वकं स्नानं विधेयम्।</div>
+    <div class="usage-iast">pujanapurvakam snanam vidheyam.</div>
+    <div class="usage-meaning lang-en">The bath should be performed after worship.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>पूजन झाल्यावर स्नान करावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आप्लवम्</span>
+    <span class="word-iast">āplavam</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: आप्लवम् (पूजनपूर्वकमाप्लवम्)</div>
+  <p class="word-meaning lang-en">bath</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्नान</p>
+  <div class="word-usage">
+    <div class="deva">आप्लवेन शरीरं शुद्धं भवति।</div>
+    <div class="usage-iast">aplavena shariram shuddham bhavati.</div>
+    <div class="usage-meaning lang-en">The body becomes pure through bathing.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्नानाने शरीर शुद्ध होते.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सु-विदधत्</span>
+    <span class="word-iast">su-vidadhat</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.; शतृ, सु + वि + धा</span></div>
+  <div class="word-form">In this verse: सुविदधत् (सुविदधद्विदधीत)</div>
+  <p class="word-meaning lang-en">duly performing</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नीट करीत असता</p>
+  <div class="word-usage">
+    <div class="deva">सुविदधन् भक्तः देवं तोषयति।</div>
+    <div class="usage-iast">suvidadhan bhaktah devam toshayati.</div>
+    <div class="usage-meaning lang-en">The devotee who performs duly pleases the god.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नीटपणे कर्म करणारा भक्त देवाला संतुष्ट करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विदधीत</span>
+    <span class="word-iast">vidadhīta</span>
+  </div>
+  <div><span class="word-grammar">वि + धा, विधिलिङ्, प्र.पु. एव. (आत्मने.)</span></div>
+  <div class="word-form">In this verse: विदधीत (सुविदधद्विदधीत)</div>
+  <p class="word-meaning lang-en">should perform</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>करावा</p>
+  <div class="word-usage">
+    <div class="deva">बुधः अर्घ्यविधिं विदधीत।</div>
+    <div class="usage-iast">budhah arghyavidhim vidadhita.</div>
+    <div class="usage-meaning lang-en">The wise man should perform the rite of arghya.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहाण्या माणसाने अर्घ्यविधी करावा.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">यथाक्रमम्</span>
+    <span class="word-iast">yathākramam</span>
+  </div>
+  <div><span class="word-grammar">अव्यय</span></div>
+  <div class="word-form">In this verse: यथाक्रमं</div>
+  <p class="word-meaning lang-en">in order</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रमाने</p>
+  <div class="word-usage">
+    <div class="deva">यथाक्रमं मन्त्रान् पठेत्।</div>
+    <div class="usage-iast">yathakramam mantran pathet.</div>
+    <div class="usage-meaning lang-en">One should recite the mantras in order.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>क्रमाने मंत्र म्हणावेत.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">द्वि-दश-नामभिः</span>
+    <span class="word-iast">dvi-daśa-nāmabhiḥ</span>
+  </div>
+  <div><span class="word-grammar">नपुं. तृ. बव.</span></div>
+  <div class="word-form">In this verse: द्विदशनामभिः (द्विदशनामभिरर्घ्यविधिं)</div>
+  <p class="word-meaning lang-en">with the twelve names</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बारा नावांनी</p>
+  <div class="word-usage">
+    <div class="deva">द्विदशनामभिः गङ्गां स्तौति।</div>
+    <div class="usage-iast">dvidashanamabhih gangam stauti.</div>
+    <div class="usage-meaning lang-en">He praises the Ganga with the twelve names.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो बारा नावांनी गंगेची स्तुती करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अर्घ्य-विधिम्</span>
+    <span class="word-iast">arghya-vidhim</span>
+  </div>
+  <div><span class="word-grammar">पुं. द्वि. एव.</span></div>
+  <div class="word-form">In this verse: अर्घ्यविधिम् (द्विदशनामभिरर्घ्यविधिं)</div>
+  <p class="word-meaning lang-en">the rite of arghya</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अर्घ्य देण्याचा विधी</p>
+  <div class="word-usage">
+    <div class="deva">अर्घ्यविधिं ज्ञात्वा आचरेत्।</div>
+    <div class="usage-iast">arghyavidhim jnatva acharet.</div>
+    <div class="usage-meaning lang-en">Having learned the rite of arghya, one should practise it.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अर्घ्यविधी जाणून त्याचे आचरण करावे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">बुधः</span>
+    <span class="word-iast">budhaḥ</span>
+  </div>
+  <div><span class="word-grammar">पुं. प्र. एव.</span></div>
+  <div class="word-form">In this verse: बुधः</div>
+  <p class="word-meaning lang-en">the wise</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहाणा माणूस</p>
+  <div class="word-usage">
+    <div class="deva">बुधः शास्त्रं पठति।</div>
+    <div class="usage-iast">budhah shastram pathati.</div>
+    <div class="usage-meaning lang-en">The wise man studies the scripture.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>शहाणा माणूस शास्त्र वाचतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>This is the sarga&#x27;s hinge-verse: it turns legend into liturgy. The miracle of verses 3-4 becomes a practice - snana with pujana, then arghya offered name by name - and the poet gives the exact instrument: the twelve names of Ganga that follow in verses 6-17. For the devotee-reader the message is that a mahatmya is not only to be read but enacted; the book itself becomes the priest&#x27;s manual for the Magha bath.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हा सर्गाचा कण्याचा श्लोक आहे: तो आख्यायिकेचे विधीत रूपांतर करतो. ३-४ श्लोकांतील चमत्कार आचरण बनतो - पूजनपूर्वक स्नान, मग नावानावाने अर्घ्य - आणि कवी नेमके साधन देतो: ६-१७ श्लोकांतील गंगेची बारा नावे. भक्त-वाचकासाठी संदेश असा की माहात्म्य केवळ वाचायचे नसते तर आचरायचे असते; ग्रंथच माघस्नानाच्या पुरोहिताची पुस्तिका बनतो.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Arghya - water offered with joined hands to a deity or holy river - is the standard upacara of river-worship; offering it &#x27;with the twelve names&#x27; makes each name a mantra of the rite. The gangadvadashanama (twelve names of Ganga) is a well-known traditional litany - Nandini, Nalini, Sita, Malati, Mahapaga, Vishnupadabjasambhuta, Ganga, Tripathagamini, Bhagirathi, Bhogavati, Jahnavi, Tridasheshvari - and the poet&#x27;s verses 6-17 are a kavya expansion of that litany, one name per verse.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>अर्घ्य - देवतेला वा पवित्र नदीला ओंजळीने अर्पण केलेले पाणी - हा नदीपूजनाचा प्रमाणभूत उपचार आहे; &#x27;बारा नावांनी&#x27; ते अर्पण केल्याने प्रत्येक नाव विधीचा मंत्र बनते. &#x27;गंगाद्वादशनाम&#x27; (गंगेची बारा नावे) ही सुप्रसिद्ध पारंपरिक नामावली आहे - नंदिनी, नलिनी, सीता, मालती, महापगा, विष्णुपादाब्जसंभूता, गंगा, त्रिपथगामिनी, भागीरथी, भोगवती, जाह्नवी, त्रिदशेश्वरी - आणि कवीचे ६-१७ श्लोक त्या नामावलीचे काव्यमय विस्तारण आहेत, प्रत्येक श्लोकात एक नाव.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>The verse is in drutavilambita meter, and its injunctive vidadhita (optative) addresses budhah, &#x27;the wise man&#x27; - i.e., the discerning pilgrim-reader, not a priestly specialist. Yathavibhavam (&#x27;to the measure of one&#x27;s means&#x27;) is a humane touch typical of sthala-mahatmyas: the rite is scaled to the devotee, never a burden. The &#x27;twelve names&#x27; frame explains the refrain that closes every verse of the hymn.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>श्लोक द्रुतविलंबित वृत्तात आहे आणि त्यातील आज्ञार्थ &#x27;विदधीत&#x27; हा &#x27;बुधः&#x27; - शहाणा माणूस - म्हणजे विवेकी यात्रेकरू-वाचक याला उद्देशून आहे, पुरोहित-विशेषज्ञाला नव्हे. &#x27;यथाविभवम्&#x27; (&#x27;ऐपतीप्रमाणे&#x27;) हा स्थलमाहात्म्यांचा मानवीय स्पर्श आहे: विधी भक्ताच्या कुवतीनुसार, कधीही ओझे नव्हे. &#x27;बारा नावे&#x27; ही चौकट स्तोत्राच्या प्रत्येक श्लोकाच्या शेवटी येणाऱ्या ध्रुवपदाचे स्पष्टीकरण देते.</p></div></div>
+
+<div class="pagenav"><a href="verse-4.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 4</div></a><a class="next" href="verse-6.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 6</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

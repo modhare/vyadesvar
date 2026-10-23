@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 6 — Rāmāvatāravarṇanaḥ 13 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 6 — Rāmāvatāravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 13</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 13</span><span class="bl-mr lang-mr">श्लोक 13</span></h1>
+<p class="meta">Sarga 6 — Rāmāvatāravarṇanaḥ &middot; <span class="deva">षष्ठः सर्गः · रामावतारवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Anuṣṭubh</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">इत्याकर्ण्य महातेजाः काकुत्स्थो विस्मितो मुनिम् ।<br>अब्रवीत्किमभूवन्नो भूपाला बलशालिनः ।।१३।।</div>
+  <div class="verse-iast">ityākarṇya mahātejāḥ kākutstho vismito munim । abravītkimabhūvanno bhūpālā balaśālinaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">इति । आकर्ण्य । महातेजाः । काकुत्स्थः । विस्मितः । मुनिम् । अब्रवीत् । किम् । अभूवन् । नो (न उ) । भूपालाः । बलशालिनः ।</div><div class="vig-iast">iti । ākarṇya । mahātejāḥ । kākutsthaḥ । vismitaḥ । munim । abravīt । kim । abhūvan । no (na u) । bhūpālāḥ । balaśālinaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">इति + आकर्ण्य = इत्याकर्ण्य (यण्) · काकुत्स्थः + विस्मितः = काकुत्स्थो विस्मितो · अब्रवीत् + किम् = अब्रवीत्किम् · किम् + अभूवन् = किमभूवन् · अभूवन् + नो = अभूवन्नो · न + उ = नो (गुण)</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">इति आकर्ण्य विस्मितः महातेजाः काकुत्स्थः मुनिम् अब्रवीत् — ‘बलशालिनः भूपालाः नो अभूवन् किम् ?’</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Hearing this, the greatly lustrous Kākutstha, struck with wonder, said to the sage: &#x27;Were there then no mighty kings in this land?&#x27;</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>हे ऐकून विस्मित झालेल्या महातेजस्वी रामाने मुनींना विचारले, &#x27;&#x27;येथे बलशाली नृपती झालेच नाहीत का?&#x27;&#x27;</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">आकर्ण्य</span>
+    <span class="word-iast">ākarṇya</span>
+  </div>
+  <div><span class="word-grammar">आ-√कर्ण् + ल्यप् (क्त्वा with an upasarga becomes ल्यप्); absolutive/gerund, indeclinable</span></div>
+  <div class="word-form">In this verse: आकर्ण्य (lyap absolutive)</div>
+  <p class="word-meaning lang-en">having heard</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ऐकून</p>
+  <div class="word-usage">
+    <div class="deva">गुरोः वचनम् आकर्ण्य शिष्यः तूष्णीम् अतिष्ठत् ।</div>
+    <div class="usage-iast">guroḥ vacanam ākarṇya śiṣyaḥ tūṣṇīm atiṣṭhat ।</div>
+    <div class="usage-meaning lang-en">Having heard the teacher&#x27;s word, the pupil stood silent.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>गुरूंचे वचन ऐकून शिष्य मुकाट्याने उभा राहिला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">काकुत्स्थः</span>
+    <span class="word-iast">kākutsthaḥ</span>
+  </div>
+  <div><span class="word-grammar">ककुत्स्थ + अण् (taddhita, &#x27;descendant of Kakutstha&#x27;); masculine nominative singular</span></div>
+  <div class="word-form">In this verse: काकुत्स्थः (m. nom. sg.)</div>
+  <p class="word-meaning lang-en">descendant of Kakutstha (Rāma)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ककुत्स्थवंशज (राम)</p>
+  <div class="word-usage">
+    <div class="deva">काकुत्स्थः रामः वनम् अगच्छत् ।</div>
+    <div class="usage-iast">kākutsthaḥ rāmaḥ vanam agacchat ।</div>
+    <div class="usage-meaning lang-en">Rāma, the Kākutstha, went to the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>काकुत्स्थ राम वनात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विस्मितः</span>
+    <span class="word-iast">vismitaḥ</span>
+  </div>
+  <div><span class="word-grammar">वि-√स्मि + क्त; masculine nominative singular</span></div>
+  <div class="word-form">In this verse: विस्मितः (m. nom. sg.)</div>
+  <p class="word-meaning lang-en">struck with wonder, astonished</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>आश्चर्यचकित</p>
+  <div class="word-usage">
+    <div class="deva">तस्य पराक्रमम् दृष्ट्वा सर्वे विस्मिताः अभवन् ।</div>
+    <div class="usage-iast">tasya parākramam dṛṣṭvā sarve vismitāḥ abhavan ।</div>
+    <div class="usage-meaning lang-en">Seeing his valour, all were astonished.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याचा पराक्रम पाहून सर्व आश्चर्यचकित झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">किम् … नो अभूवन्</span>
+    <span class="word-iast">kim … no abhūvan</span>
+  </div>
+  <div><span class="word-grammar">phrase: किम् (interrogative) + नो (न + उ, expletive) + अभूवन् (√भू, लुङ् aorist, 3rd plural)</span></div>
+  <div class="word-form">In this verse: किम् … नो अभूवन् (interrogative phrase)</div>
+  <p class="word-meaning lang-en">&#x27;did they then not come to be?&#x27;</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>झाले नाहीत का? (√भू, लुङ् बहु.)</p>
+  <div class="word-usage">
+    <div class="deva">किम् नो अभूवन् तत्र विद्वांसः इति सः अपृच्छत् ।</div>
+    <div class="usage-iast">kim no abhūvan tatra vidvāṃsaḥ iti saḥ apṛcchat ।</div>
+    <div class="usage-meaning lang-en">He asked, &#x27;Were there then no learned men there?&#x27;</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो म्हणाला, &#x27;तेथे विद्वान झालेच नाहीत का?&#x27;</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भूपालाः बलशालिनः</span>
+    <span class="word-iast">bhūpālāḥ balaśālinaḥ</span>
+  </div>
+  <div><span class="word-grammar">phrase: भूपाल (m. nom. pl., भू + पाल) + बलशालिन् (m. nom. pl., &#x27;possessed of strength&#x27;)</span></div>
+  <div class="word-form">In this verse: भूपालाः बलशालिनः (m. nom. pl. phrase)</div>
+  <p class="word-meaning lang-en">mighty kings</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>बलवान राजे</p>
+  <div class="word-usage">
+    <div class="deva">पुरा भूपालाः बलशालिनः प्रजाः अरक्षन् ।</div>
+    <div class="usage-iast">purā bhūpālāḥ balaśālinaḥ prajāḥ arakṣan ।</div>
+    <div class="usage-meaning lang-en">In ancient times mighty kings protected their subjects.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्राचीन काळी बलशाली राजे प्रजेचे रक्षण करीत होते.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāma&#x27;s wonder is the honest theodicy-question of every devotee: if dharma is mighty, why does adharma flourish unchecked? He does not despair and he does not blame the gods — he asks his guru. That is the verse&#x27;s discipline: carry the unanswered &#x27;why&#x27; to the teacher, not to cynicism. His question also assumes what faith must assume — that somewhere strength must have stood for dharma — and the asking itself keeps the heart from settling into the age&#x27;s despair.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामाचे आश्चर्य हे प्रत्येक भक्ताचा प्रामाणिक प्रश्न आहे — धर्म जर समर्थ आहे, तर अधर्म अनिर्बंध का फोफावतो? तो निराश होत नाही आणि देवांना दोषही देत नाही — तो गुरूंना विचारतो. हीच श्लोकाची शिकवण आहे — अनुत्तरित &#x27;का&#x27; हे उपेक्षेकडे नव्हे, तर गुरुंकडे न्यावे. त्याच्या प्रश्नात श्रद्धेने मानावेच लागते ते गृहीत आहे — धर्मासाठी बळ कोठेतरी उभे राहिलेच असावे — आणि विचारणेच हृदयाला युगाच्या नैराश्यात स्थिरावू देत नाही.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>Kākutstha — &#x27;descendant of Kakutstha&#x27; — is among the oldest Ikṣvāku-vaṃśa titles, borne by the dynasty long before Rāma; Vālmīki uses it for Rāma throughout. The guru-śiṣya frame is the Rāmāyaṇa&#x27;s own: in the Araṇyakāṇḍa Rāma likewise questions Agastya, who bestows divine weapons on him. Wonder (vismaya) at adharma&#x27;s triumph is the proper kṣatriya response — it is the prelude to resolve, as Arjuna&#x27;s viṣāda was the prelude to the Gītā.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;काकुत्स्थ&#x27; — &#x27;ककुत्स्थाचा वंशज&#x27; — ही इक्ष्वाकुवंशाची प्राचीनतम उपाधींपैकी एक आहे, रामाच्या खूप आधीपासून वंशाने धारण केलेली; वाल्मीकी रामासाठी ती सर्वत्र वापरतात. गुरु-शिष्य चौकट रामायणाचीच आहे — अरण्यकांडातही राम अगस्त्यांना असेच विचारतो आणि अगस्त्य त्याला दिव्यास्त्रे देतात. अधर्माच्या विजयावरील आश्चर्य (विस्मय) ही क्षत्रियाची योग्य प्रतिक्रिया आहे — ती संकल्पाची पूर्वपीठिका आहे, जशी अर्जुनाचा विषाद गीतेची पूर्वपीठिका होता.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>किम् … नो अभूवन् — the luṅ (aorist) of √भू, 3rd plural: &#x27;did they not come to be?&#x27; — with नो = न + उ (the expletive उ). Metre Anuṣṭubh. Rāma&#x27;s single question now unfolds into three pointed ones (vv.14–16), each naming one of Paraśurāma&#x27;s credentials — the poet builds the theodicy to its sharpest edge before Agastya answers at v.17.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>&#x27;किम् … नो अभूवन्&#x27; — √भू धातूचे लुङ् रूप, प्रथमपुरुष बहुवचन — &#x27;ते झालेच नाहीत का?&#x27; — यातील &#x27;नो&#x27; म्हणजे न + उ (पूरणार्थक &#x27;उ&#x27;). छंद अनुष्टुभ्. रामाचा हा एकच प्रश्न आता तीन टोकदार प्रश्नांत (श्लोक १४–१६) उलगडतो, प्रत्येकात परशुरामाचे एक प्रमाणपत्र सांगितलेले — अगस्त्य उत्तर देण्याआधी (श्लोक १७) कवी प्रश्नाला त्याच्या तीव्रतम टोकावर नेतो.</p></div></div>
+
+<div class="pagenav"><a href="verse-12.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 12</div></a><a class="next" href="verse-14.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 14</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

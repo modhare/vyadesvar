@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ 2 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ</a><span>&rsaquo;</span><span class="here">Verse 2</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 2</span><span class="bl-mr lang-mr">श्लोक 2</span></h1>
+<p class="meta">Sarga 11 — Rāmakṣetrāntargatakṣetravarṇanaḥ &middot; <span class="deva">एकादशः सर्गः · रामक्षेत्रान्तर्गतक्षेत्रवर्णनः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Praharṣiṇī</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">एतस्य स्वयमिह पङ्क्तिकंठकालं श्रीरामः किल विपिने वसन्पुरास ।<br>स्वेच्छातो भृगुपतिभूमिगः सुतीरे लिङ्गस्य प्रतिविदधेऽम्बुधेः प्रतिष्ठाम् ।।२।।</div>
+  <div class="verse-iast">etasya svayamiha paṅktikaṃṭhakālaṃ śrīrāmaḥ kila vipine vasanpurāsa । svecchāto bhṛgupatibhūmigaḥ sutīre liṅgasya pratividadhe&#x27;mbudheḥ pratiṣṭhām</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">एतस्य । स्वयम् । इह । पङ्क्तिकण्ठ-कालः । श्रीरामः । किल । विपिने । वसन् । पुरा । आस । स्व-इच्छातः । भृगुपति-भूमि-गः । सु-तीरे । लिङ्गस्य । प्रतिविदधे । अम्बुधेः । प्रतिष्ठाम् ।</div><div class="vig-iast">etasya । svayam । iha । paṅktikaṇṭha-kālaḥ । śrīrāmaḥ । kila । vipine । vasan । purā । āsa । sva-icchātaḥ । bhṛgupati-bhūmi-gaḥ । su-tīre । liṅgasya । pratividadhe । ambudheḥ । pratiṣṭhām ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">स्वयम् + इह = स्वयमिह · वसन् + पुरा = वसन्पुरा · पुरा + आस = पुरास (सवर्णदीर्घ) · स्व + इच्छातः = स्वेच्छातः (गुण) · प्रतिविदधे + अम्बुधेः = प्रतिविदधेऽम्बुधेः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">पुरा विपिने वसन् आस (यः), (सः) पङ्क्तिकण्ठकालः श्रीरामः किल स्वेच्छातः भृगुपतिभूमिगः (सन्) इह अम्बुधेः सुतीरे एतस्य लिङ्गस्य प्रतिष्ठां स्वयं प्रतिविदधे ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Śrī Rāma — then dwelling in the forest, they say, the death of the ten-throated Rāvaṇa — came of his own will to this land of Bhṛgupati, and himself performed the consecration of this liṅga on the fair shore of the sea.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>पूर्वी अरण्यनिवासाच्या वेळी श्रीराम परशुरामाच्या या भूमीवर स्वेच्छेने आला होता त्यावेळी दशकंठ रावणाचा काळ असलेल्या त्या रामाने स्वतःच समुद्राच्या तीरावर या लिङ्गाची प्रतिष्ठापना केली.</p></div></div>
+</div>
+<div class="recnote"><b>Textual note.</b> Line 2: the book&#x27;s भृगपतिभूमिगः → भृगुपतिभूमिगः (भृगुपति, &quot;lord of the Bhṛgus&quot;, Paraśurāma, as in 4.56 भृगुपतिपदमिष्टम्; meter unchanged).</div>
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">पङ्क्तिकण्ठकालः</span>
+    <span class="word-iast">paṅktikaṇṭhakālaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular (paṅktikaṇṭha-kāla, compound; the age of Rāvaṇa)</span></div>
+  <div class="word-form">In this verse: पङ्क्तिकण्ठकालः</div>
+  <p class="word-meaning lang-en">the death of the ten-throated one (Rāvaṇa)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दशकंठाचा (रावणाचा) काळ (पङ्क्ति = दहा)</p>
+  <div class="word-usage">
+    <div class="deva">पङ्क्तिकण्ठकालः रामायणे वर्णितः।</div>
+    <div class="usage-iast">paṅktikaṇṭhakālaḥ rāmāyaṇe varṇitaḥ.</div>
+    <div class="usage-meaning lang-en">The age of the ten-throated one is described in the Rāmāyaṇa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>दशकंठाचा काळ रामायणात वर्णिलेला आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">विपिने वसन् आस</span>
+    <span class="word-iast">vipine vasan āsa</span>
+  </div>
+  <div><span class="word-grammar">masculine locative singular (विपिने) + present participle nominative singular masculine (वसन्, √वस्) + imperfect 3rd singular (आस, √अस्); periphrastic past</span></div>
+  <div class="word-form">In this verse: विपिने वसन् आस</div>
+  <p class="word-meaning lang-en">was dwelling in the forest</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अरण्यात राहत होता</p>
+  <div class="word-usage">
+    <div class="deva">सः विपिने वसन् आस।</div>
+    <div class="usage-iast">saḥ vipine vasan āsa.</div>
+    <div class="usage-meaning lang-en">He was dwelling in the forest.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>तो अरण्यात राहत होता.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">स्वेच्छातः</span>
+    <span class="word-iast">svecchātaḥ</span>
+  </div>
+  <div><span class="word-grammar">indeclinable (ablative of स्वेच्छा used adverbially)</span></div>
+  <div class="word-form">In this verse: स्वेच्छातः</div>
+  <p class="word-meaning lang-en">of his own will, voluntarily</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>स्वेच्छेने</p>
+  <div class="word-usage">
+    <div class="deva">राजा स्वेच्छातः वनं जगाम।</div>
+    <div class="usage-iast">rājā svecchātaḥ vanaṃ jagāma.</div>
+    <div class="usage-meaning lang-en">The king went to the forest of his own will.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>राजा स्वेच्छेने वनात गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भृगुपतिभूमिगः</span>
+    <span class="word-iast">bhṛgupatibhūmigaḥ</span>
+  </div>
+  <div><span class="word-grammar">masculine nominative singular (bhṛgupati-bhūmi-ga, √gam compound: &#x27;gone to Bhṛgupati&#x27;s land&#x27;)</span></div>
+  <div class="word-form">In this verse: भृगुपतिभूमिगः</div>
+  <p class="word-meaning lang-en">having come to Paraśurāma&#x27;s land</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या भूमीवर आलेला</p>
+  <div class="word-usage">
+    <div class="deva">रामः भृगुपतिभूमिगः शिवं पूजयामास।</div>
+    <div class="usage-iast">rāmaḥ bhṛgupatibhūmigaḥ śivaṃ pūjayāmāsa.</div>
+    <div class="usage-meaning lang-en">Rāma, having come to Bhṛgupati&#x27;s land, worshipped Śiva.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>परशुरामाच्या भूमीवर आलेला राम शिवाची पूजा करत असे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">अम्बुधेः सुतीरे</span>
+    <span class="word-iast">ambudheḥ sutīre</span>
+  </div>
+  <div><span class="word-grammar">masculine genitive singular (अम्बुधेः) + neuter locative singular (सुतीरे)</span></div>
+  <div class="word-form">In this verse: अम्बुधेः सुतीरे</div>
+  <p class="word-meaning lang-en">on the beautiful shore of the ocean</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>समुद्राच्या सुंदर किनाऱ्यावर</p>
+  <div class="word-usage">
+    <div class="deva">ते अम्बुधेः सुतीरे सन्ध्यां वन्दन्ते।</div>
+    <div class="usage-iast">te ambudheḥ sutīre sandhyāṃ vandante.</div>
+    <div class="usage-meaning lang-en">They offer evening prayer on the ocean&#x27;s fair shore.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>ते समुद्राच्या सुंदर किनाऱ्यावर संध्यावंदन करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रतिष्ठां प्रतिविदधे</span>
+    <span class="word-iast">pratiṣṭhāṃ pratividadhe</span>
+  </div>
+  <div><span class="word-grammar">feminine accusative singular (प्रतिष्ठाम्) + perfect 3rd singular ātmanepada (प्रति-वि-√धा, lit)</span></div>
+  <div class="word-form">In this verse: प्रतिष्ठां प्रतिविदधे</div>
+  <p class="word-meaning lang-en">performed the consecration</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रतिष्ठापना केली (प्रति + वि + √धा, लिट्)</p>
+  <div class="word-usage">
+    <div class="deva">सः ग्रामे देवस्य प्रतिष्ठां प्रतिविदधे।</div>
+    <div class="usage-iast">saḥ grāme devasya pratiṣṭhāṃ pratividadhe.</div>
+    <div class="usage-meaning lang-en">He performed the consecration of the deity in the village.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>त्याने गावात देवाची प्रतिष्ठापना केली.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Rāma himself consecrating the liṅga makes this a meeting-ground of two avatāras: Rāma worships Śiva on Paraśurāma&#x27;s own soil. The māhātmya&#x27;s logic is plain — a place grows great when great beings touch it — and the word svayam (&#x27;himself&#x27;) stresses that worship needs no intermediary. The devotee learns that even the Lord worships; how much more, then, should we.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामाने स्वतः लिंगाची प्रतिष्ठापना केल्यामुळे हे ठिकाण दोन अवतारांचे संगमस्थान बनते : परशुरामाच्याच भूमीवर राम शिवाची पूजा करतो. माहात्म्याचा तर्क स्पष्ट आहे — थोर व्यक्तींचा स्पर्श झाला की स्थान थोर होते — आणि &#x27;स्वयम्&#x27; (स्वतः) हा शब्द अधोरेखित करतो की उपासनेला मध्यस्थाची गरज नाही. भक्ताला ही शिकवण मिळते की स्वतः भगवंतही पूजा करतो; मग आपण किती अधिक करावी.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Rāmāyaṇa itself joins the two Rāmas: in the Bālakāṇḍa Paraśurāma confronts young Rāma and yields his bow to him. That Rāma should later walk Paraśurāma&#x27;s reclaimed Konkan land and consecrate a Śiva-liṅga there binds the sthala to both avatāras at once — a double sanctity the poet uses through the whole sarga.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>रामायणच दोन रामांना जोडते : बालकाण्डात परशुराम तरुण रामासमोर येतो आणि आपले धनुष्य त्याला सोपवतो. रामाने नंतर परशुरामाने समुद्रातून वर आणलेल्या कोकणभूमीवर चालून तेथे शिवलिंगाची प्रतिष्ठापना करावी, यामुळे हे स्थान एकाच वेळी दोन्ही अवतारांशी बांधले जाते — संपूर्ण सर्गात कवी ही दुहेरी पावित्र्याची कल्पना वापरतो.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Bhṛgupatibhūmiḥ — &#x27;the land of Bhṛgupati (Paraśurāma)&#x27; — recalls the kāvya&#x27;s founding legend of the Konkan raised from the sea (sarga 1). Paṅktikaṇṭha (&#x27;ten-throated&#x27;) is Rāvaṇa. Pratividadhe is the perfect (lit) of prati-vi-√dhā, &#x27;he performed the pratiṣṭhā&#x27;. Note kila, marking the account as received tradition rather than the poet&#x27;s invention.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>भृगुपतिभूमिः — &#x27;भृगुपतीची (परशुरामाची) भूमी&#x27; — ही काव्याच्या मूळ आख्यायिकेची आठवण करून देते : समुद्रातून वर आणलेले कोकण (सर्ग १). &#x27;पङ्क्तिकण्ठ&#x27; (दहा कंठ असलेला) म्हणजे रावण. &#x27;प्रतिविदधे&#x27; हे प्रति-वि-√धा धातूचे पूर्णभूतकाळी (लिट्) रूप आहे — &#x27;त्याने प्रतिष्ठापना केली&#x27;. &#x27;किल&#x27; हे अव्यय लक्षात घ्या : ही कथा कवीची कल्पना नसून परंपरेने आलेली आहे असे ते सुचवते.</p></div></div>
+
+<div class="pagenav"><a href="verse-1.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 1</div></a><a class="next" href="verse-3.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 3</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>

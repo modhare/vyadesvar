@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarga 4 — Śambhuprasādaḥ 17 — Vyadeshwar Mahatmya</title>
+<style>:root{
+  --paper:#faf6ee; --ink:#2b241c; --muted:#6f6355;
+  --accent:#8a2f14; --accent-soft:#f5e7d2; --card:#fffdf8;
+  --border:#e5d9c3; --gold:#a8791f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman','Noto Serif Devanagari','Tiro Devanagari Sanskrit',serif;
+  line-height:1.7;font-size:17px}
+.deva{font-family:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Noto Serif Devanagari','Kokila','Mangal',serif}
+.wrap{max-width:780px;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+a{color:var(--accent)}
+.apphead{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  padding:.9rem 0;border-bottom:1px solid var(--border);margin-bottom:1.2rem}
+.apphead a.brand{text-decoration:none;color:var(--ink);font-weight:bold;font-size:1.1rem}
+.apphead a.brand span{color:var(--accent)}
+.topbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  font-size:.95rem;margin-bottom:.6rem}
+.topbar .crumb{color:var(--muted);text-decoration:none}
+.topbar .crumb:hover{color:var(--accent)}
+.topbar .here{font-weight:bold}
+.speaker{display:inline-block;background:var(--accent-soft);color:var(--accent);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem}
+.metre{display:inline-block;border:1px solid var(--border);color:var(--muted);
+  border-radius:20px;padding:.25rem 1rem;font-size:.95rem;margin-bottom:.8rem;margin-left:.4rem}
+.verse-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.75rem 1.5rem;text-align:center;margin:1.5rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.verse-deva{font-size:1.65rem;line-height:2.1;color:var(--ink)}
+.verse-iast{font-style:italic;color:var(--muted);margin-top:.9rem;line-height:1.9}
+.verse-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);
+  font-size:1.05rem;text-align:left}
+.verse-vigraha{margin-top:.9rem;padding:.8rem 1rem;background:#f7f1e3;border-radius:8px;text-align:left}
+.verse-vigraha .lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem}
+.verse-vigraha .deva{font-size:1.15rem;line-height:2}
+.vig-iast{font-style:italic;color:var(--muted);font-size:.9rem;margin-top:.3rem}
+.trans-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.2rem}
+.lang-mr{margin-top:.7rem}
+body[data-lang="en"] .lang-mr{display:none}
+body[data-lang="mr"] .lang-en{display:none}
+body[data-lang="both"] .bl-mr{display:block;margin-top:.12em}
+.langset{display:flex;gap:.25rem;background:var(--accent-soft);border-radius:20px;padding:.2rem}
+.langset button{border:0;background:transparent;border-radius:14px;padding:.25rem .7rem;
+  font-size:.8rem;cursor:pointer;color:var(--muted);font-family:inherit}
+.langset button.on{background:var(--card);color:var(--accent);font-weight:bold;
+  box-shadow:0 1px 3px rgba(0,0,0,.12)}
+h1{font-size:1.9rem;margin:.4rem 0 .2rem}
+h2{font-size:1.3rem;color:var(--accent);margin:2.2rem 0 .8rem;
+  padding-bottom:.3rem;border-bottom:2px solid var(--accent-soft)}
+.meta{color:var(--muted);font-size:.95rem}
+.themes{margin:0 0 1rem;padding-left:1.2rem}
+.themes li{margin:.3rem 0}
+.word{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.1rem;margin:0 0 .9rem}
+.word-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap}
+.word-deva{font-size:1.35rem;font-weight:bold;color:var(--accent)}
+.word-iast{font-style:italic;color:var(--muted)}
+.word-grammar{display:inline-block;font-size:.8rem;background:var(--accent-soft);
+  color:#7a4a12;border-radius:20px;padding:.1rem .7rem;margin:.5rem 0}
+.word-meaning{margin:.4rem 0}
+.word-form{font-size:.85rem;color:var(--muted);font-style:italic}
+.word-usage{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin-top:.7rem}
+.word-usage .deva{font-size:1.1rem}
+.usage-iast{font-style:italic;color:var(--muted);font-size:.92rem}
+.usage-meaning{font-size:.95rem}
+.commentary{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 .9rem}
+.commentary .src{font-weight:bold;color:var(--accent);font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em}
+.bhashya-block{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:1.5rem;margin:1.2rem 0;box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.bhashya-deva{font-size:1.25rem;line-height:2.1;color:var(--ink)}
+.bhashya-iast{font-style:italic;color:var(--muted);margin-top:.8rem;line-height:1.9}
+.bhashya-trans{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--border);text-align:left}
+.gita-xlink{display:inline-block;margin:1rem 0;padding:.6rem 1.2rem;background:var(--accent-soft);
+  border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--accent);
+  font-weight:bold;font-size:.95rem}
+.gita-xlink:hover{border-color:var(--accent)}
+.distinctive{background:#f7f1e3;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:.8rem 1rem;margin:1.2rem 0}
+.ch-card{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1.4rem;margin:0 0 1rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(120,80,30,.06)}
+.ch-card:hover{border-color:var(--accent)}
+.ch-card h3{margin:0 0 .2rem;font-size:1.4rem;color:var(--accent)}
+.ch-card .deva{font-size:1.2rem;color:var(--muted)}
+.verse-link{display:flex;gap:1rem;align-items:baseline;background:var(--card);
+  border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;
+  margin:0 0 .7rem;text-decoration:none;color:var(--ink)}
+.verse-link:hover{border-color:var(--accent)}
+.verse-num{font-weight:bold;color:var(--accent);min-width:4.5rem;flex-shrink:0}
+.verse-first{font-size:1.05rem}
+.pagenav{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:2.5rem}
+.pagenav a{display:block;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--ink)}
+.pagenav a:hover{border-color:var(--accent)}
+.pagenav .lbl{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pagenav .next{text-align:right}
+.notes-box{width:100%;min-height:130px;border:1px solid var(--border);border-radius:10px;
+  padding:.8rem;font-family:inherit;font-size:1rem;background:var(--card);color:var(--ink)}
+.notes-saved{font-size:.85rem;color:var(--muted);min-height:1.2em}
+.footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.85rem;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin:1.5rem 0}
+.gal-fig{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.gal-fig img{width:100%;height:220px;object-fit:cover;display:block}
+.gal-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.ms-fig{max-width:560px;margin:1.5rem auto;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.ms-fig img{width:100%;height:auto;display:block}
+.ms-fig figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+.catch{font-size:1.25rem;color:var(--accent);margin:2.2rem 0 .7rem;
+  padding-bottom:.25rem;border-bottom:2px solid var(--accent-soft)}
+.recnote{background:#f7f1e3;border-left:3px solid var(--gold);border-radius:0 8px 8px 0;
+  padding:.7rem .9rem;margin:1rem 0;font-size:.95rem}
+@media (max-width:600px){ .verse-deva{font-size:1.35rem} h1{font-size:1.5rem} }
+@media print{ .apphead,.pagenav,.notes-box,.notes-saved{display:none} }
+</style>
+</head>
+<body data-lang="both">
+<div class="wrap">
+<div class="apphead">
+  <a class="brand" href="../../../index.html"><span>&#x0950;</span> Vyadeshwar</a>
+  <div class="langset" role="group" aria-label="Language">
+    <button type="button" data-setlang="en">EN</button><button type="button" data-setlang="both" class="on">EN + मराठी</button><button type="button" data-setlang="mr">मराठी</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <a class="crumb" href="../../../index.html">Vyadeshwar</a><span>&rsaquo;</span><a class="crumb" href="../index.html">Śrī Vyāḍeśvarodayam</a><span>&rsaquo;</span><a class="crumb" href="index.html">Sarga 4 — Śambhuprasādaḥ</a><span>&rsaquo;</span><span class="here">Verse 17</span>
+</div>
+<h1><span class="bl-en lang-en">Verse 17</span><span class="bl-mr lang-mr">श्लोक 17</span></h1>
+<p class="meta">Sarga 4 — Śambhuprasādaḥ &middot; <span class="deva">चतुर्थः सर्गः · शंभुप्रसादः</span></p>
+<div class="metre">Chandas &middot; <span class="deva">Mandākrāntā</span></div>
+<div class="verse-block">
+  <div class="deva verse-deva">कण्ठेकालः शशधरकलालङ्कृतः शूलपाणिः<br>प्रालेयोर्वीधरवरसुतालिङ्गिताङ्गः कपर्दी ।<br>गोराजस्थः प्रमथमहितः षण्मुखेभास्ययुक्तो<br>भस्मस्नायी भुजगवलयः सुप्रसन्नाननाब्जः ।।१७।।</div>
+  <div class="verse-iast">kaṇṭhekālaḥ śaśadharakalālaṅkṛtaḥ śūlapāṇiḥ prāleyorvīdharavarasutāliṅgitāṅgaḥ kapardī । gorājasthaḥ pramathamahitaḥ ṣaṇmukhebhāsyayukto bhasmasnāyī bhujagavalayaḥ suprasannānanābjaḥ</div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0928;&#x094d;&#x0927;&#x093f;&#x0935;&#x093f;&#x0917;&#x094d;&#x0930;&#x0939; &middot; sandhi-vigraha (word by word)</div><div class="deva">कण्ठेकालः । शशधर-कला-अलङ्कृतः । शूलपाणिः । प्रालेय-उर्वीधर-वर-सुता-आलिङ्गित-अङ्गः । कपर्दी । गोराज-स्थः । प्रमथ-महितः । षण्मुख-इभास्य-युक्तः । भस्म-स्नायी । भुजग-वलयः । सुप्रसन्न-आनन-अब्जः ।</div><div class="vig-iast">kaṇṭhekālaḥ । śaśadhara-kalā-alaṅkṛtaḥ । śūlapāṇiḥ । prāleya-urvīdhara-vara-sutā-āliṅgita-aṅgaḥ । kapardī । gorāja-sthaḥ । pramatha-mahitaḥ । ṣaṇmukha-ibhāsya-yuktaḥ । bhasma-snāyī । bhujaga-valayaḥ । suprasanna-ānana-abjaḥ ।</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0938;&#x0902;&#x0927;&#x0940; &middot; sandhi notes</div><div class="deva">कला + अलङ्कृतः = कलालङ्कृतः · प्रालेय + उर्वीधर = प्रालेयोर्वीधर (गुण) · सुता + आलिङ्गित + अङ्गः = सुतालिङ्गिताङ्गः · षण्मुख + इभास्य = षण्मुखेभास्य (गुण) · इभ + आस्य = इभास्य · आनन + अब्जः = आननाब्जः</div></div>
+  <div class="verse-vigraha"><div class="lbl">&#x0905;&#x0928;&#x094d;&#x0935;&#x092f;&#x0903; &middot; anvaya (prose word order)</div><div class="deva">कण्ठेकालः … सुप्रसन्नाननाब्जः (शम्भुः) युगायतैः बाहुभिः प्रह्वम् एनं गाढं परिष्वज्य मूर्ध्नि आघ्राय अथ कृताञ्जलिं (तम्) अब्रवीत् ।</div></div>
+  <div class="verse-trans"><div class="lang-en"><div class="trans-label">English</div><p>Dark-throated from the poison (Nīlakaṇṭha), adorned with the crescent moon, bearing the trident in his hand, his body embraced by the noble daughter of the snowy mountain-king, wearing the matted locks, mounted on the king of bulls, worshipped by the pramatha hosts, attended by the six-faced one and the elephant-faced one, bathing in sacred ash, wearing serpents as bracelets — with a supremely gracious lotus-face, such was Śambhu.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>कंठात काळिमा (कालकूट विष) धारण करणाऱ्या (नीलकंठ), चन्द्रकोरीने विभूषित, हातात शूळ धारण करणाऱ्या, हिमालयाच्या दुहितेने आलिङ्गित, जटाजूटाने युक्त, वृषभश्रेष्ठ नंदीवर आरूढ, प्रमथगणांनी पूजित व कार्तिकेय आणि गजानन या पुत्रांनी समन्वित असून भस्माचे स्नान करणाऱ्या त्या सर्पकंकणधारी शंकराने सुप्रसन्न वदनाने आपल्या युगाप्रमाणे विस्तीर्ण बाहूंनी त्या प्रणत परशुरामाच्या मस्तकी अवघ्राण केले व हात जोडून असलेल्या त्याला तो म्हणाला,</p></div></div>
+</div>
+
+
+<h2><span class="bl-en lang-en">Word by word</span><span class="bl-mr lang-mr">शब्दार्थ</span></h2>
+
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कण्ठेकालः</span>
+    <span class="word-iast">kaṇṭhekālaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the aluk-bahuvrīhi कण्ठेकाल — कण्ठे (loc. sg. of कण्ठ, &#x27;in the throat&#x27;) + काल (&#x27;blackness&#x27;); the case-ending is retained (aluk)</span></div>
+  <div class="word-form">In this verse: कण्ठेकालः (कण्ठे + कालः, अलुक्-समास)</div>
+  <p class="word-meaning lang-en">dark-throated, the blue-throated one (Nīlakaṇṭha)</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कंठात काळिमा (विष) असलेला, नीलकंठ (अलुक् समास)</p>
+  <div class="word-usage">
+    <div class="deva">विषपानात् शिवः कण्ठेकालः अभवत्</div>
+    <div class="usage-iast">viṣapānāt śivaḥ kaṇṭhekālaḥ abhavat</div>
+    <div class="usage-meaning lang-en">Through drinking the poison, Śiva became dark-throated.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>विषप्राशनामुळे शिव नीलकंठ झाले.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">शशधरकलालङ्कृतः</span>
+    <span class="word-iast">śaśadharakalālaṅkṛtaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the bahuvrīhi शशधरकलालङ्कृत — &#x27;adorned (अलङ्कृत, √कृ + क्त) with the digit (कला) of the moon (शशधर, &#x27;bearer of the hare&#x27;)&#x27;</span></div>
+  <div class="word-form">In this verse: शशधरकलालङ्कृतः (शशधरकला + अलङ्कृतः)</div>
+  <p class="word-meaning lang-en">adorned with the crescent moon</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्रकोरीने विभूषित</p>
+  <div class="word-usage">
+    <div class="deva">शशधरकलालङ्कृतः शम्भुः कैलासे विराजते</div>
+    <div class="usage-iast">śaśadharakalālaṅkṛtaḥ śambhuḥ kailāse virājate</div>
+    <div class="usage-meaning lang-en">Śambhu, adorned with the crescent moon, shines on Kailāsa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>चंद्रकोरीने विभूषित शंभू कैलासावर शोभतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रालेयोर्वीधरवरसुतालिङ्गिताङ्गः</span>
+    <span class="word-iast">prāleyorvīdharavarasutāliṅgitāṅgaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the bahuvrīhi — &#x27;whose limbs (अङ्ग) are embraced (आलिङ्गित, आ + √लिङ्ग् + क्त) by the excellent daughter (वरसुता) of the snowy mountain (प्रालेयोर्वीधर, प्रालेय = snow)&#x27;</span></div>
+  <div class="word-form">In this verse: प्रालेयोर्वीधरवरसुतालिङ्गिताङ्गः (प्रालेयोर्वीधरवरसुता + आलिङ्गित + अङ्गः)</div>
+  <p class="word-meaning lang-en">whose body is embraced by Pārvatī, the noble daughter of the snowy Himālaya</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हिमालयकन्येने आलिंगिलेले अंग असलेला (प्रालेय = हिम)</p>
+  <div class="word-usage">
+    <div class="deva">प्रालेयोर्वीधरवरसुतालिङ्गिताङ्गः हरः प्रसन्नः अभवत्</div>
+    <div class="usage-iast">prāleyorvīdharavarasutāliṅgitāṅgaḥ haraḥ prasannaḥ abhavat</div>
+    <div class="usage-meaning lang-en">Hara, his body embraced by the mountain-king&#x27;s daughter, was pleased.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>हिमालयकन्येने आलिंगिलेला हर प्रसन्न झाला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">कपर्दी</span>
+    <span class="word-iast">kapardī</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of कपर्दिन् — कपर्द (&#x27;matted locks&#x27;) + इनि (Pāṇini 5.2.115), matvarthīya</span></div>
+  <div class="word-form">In this verse: कपर्दी (कपर्द + इन्)</div>
+  <p class="word-meaning lang-en">wearing matted locks, the ascetic</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जटाधारी</p>
+  <div class="word-usage">
+    <div class="deva">कपर्दी तपस्वी गङ्गाधरः इति उच्यते</div>
+    <div class="usage-iast">kapardī tapasvī gaṅgādharaḥ iti ucyate</div>
+    <div class="usage-meaning lang-en">The matted-haired ascetic is called Gaṅgādhara.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>जटाधारी तपस्वी गंगाधर म्हणून ओळखला जातो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">गोराजस्थः</span>
+    <span class="word-iast">gorājasthaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the bahuvrīhi गोराजस्थ — गो (&#x27;bull&#x27;) + राजन् (&#x27;king&#x27;) + √स्था + क (upapada), &#x27;seated on the king of bulls&#x27;</span></div>
+  <div class="word-form">In this verse: गोराजस्थः (गोराज + स्थः)</div>
+  <p class="word-meaning lang-en">mounted on Nandin, the foremost of bulls</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नंदीवर आरूढ</p>
+  <div class="word-usage">
+    <div class="deva">गोराजस्थः देवः कैलासम् अगच्छत्</div>
+    <div class="usage-iast">gorājasthaḥ devaḥ kailāsam agacchat</div>
+    <div class="usage-meaning lang-en">The god mounted on the bull-king went to Kailāsa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>नंदीवर आरूढ देव कैलासाला गेला.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">प्रमथमहितः</span>
+    <span class="word-iast">pramathamahitaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the tṛtīyā-tatpuruṣa प्रमथमहित — &#x27;honoured (महित, √मह् + क्त) by the pramathas&#x27;</span></div>
+  <div class="word-form">In this verse: प्रमथमहितः (प्रमथ + महितः)</div>
+  <p class="word-meaning lang-en">adored by the pramatha attendants</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रमथगणांनी पूजिलेला</p>
+  <div class="word-usage">
+    <div class="deva">प्रमथमहितः शिवः गणैः सह नृत्यति</div>
+    <div class="usage-iast">pramathamahitaḥ śivaḥ gaṇaiḥ saha nṛtyati</div>
+    <div class="usage-meaning lang-en">Śiva, honoured by the pramathas, dances with his hosts.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>प्रमथगणांनी पूजिलेला शिव आपल्या गणांसह नृत्य करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">षण्मुखेभास्ययुक्तः</span>
+    <span class="word-iast">ṣaṇmukhebhāsyayuktaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the bahuvrīhi — &#x27;joined (युक्त, √युज् + क्त) with Ṣaṇmukha and the elephant-faced one (इभास्य, इभ + आस्य)&#x27;</span></div>
+  <div class="word-form">In this verse: षण्मुखेभास्ययुक्तः (षण्मुख + इभास्य + युक्तः)</div>
+  <p class="word-meaning lang-en">accompanied by his sons Skanda and Gaṇeśa</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कार्तिकेय व गजाननासह</p>
+  <div class="word-usage">
+    <div class="deva">षण्मुखेभास्ययुक्तः शम्भुः कैलासे वसति</div>
+    <div class="usage-iast">ṣaṇmukhebhāsyayuktaḥ śambhuḥ kailāse vasati</div>
+    <div class="usage-meaning lang-en">Śambhu, together with Ṣaṇmukha and the elephant-faced one, dwells on Kailāsa.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>कार्तिकेय व गजानन यांच्यासह शंभू कैलासावर वास करतात.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भस्मस्नायी</span>
+    <span class="word-iast">bhasmasnāyī</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of भस्मस्नायिन् — भस्मन् (&#x27;ash&#x27;) + √स्ना + णिनि (3.2.78), upapada-tatpuruṣa, &#x27;one who bathes in ash&#x27;</span></div>
+  <div class="word-form">In this verse: भस्मस्नायी (भस्म + स्नायिन्)</div>
+  <p class="word-meaning lang-en">bathing in sacred ash</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भस्माने स्नान करणारा</p>
+  <div class="word-usage">
+    <div class="deva">भस्मस्नायी योगी श्मशाने तपः तपति</div>
+    <div class="usage-iast">bhasmasnāyī yogī śmaśāne tapaḥ tapati</div>
+    <div class="usage-meaning lang-en">The ash-bathed yogī practises austerity in the cremation ground.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>भस्मस्नान करणारा योगी स्मशानात तप करतो.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">भुजगवलयः</span>
+    <span class="word-iast">bhujagavalayaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the bahuvrīhi भुजगवलय — &#x27;whose bracelets (वलय) are serpents (भुजग)&#x27;</span></div>
+  <div class="word-form">In this verse: भुजगवलयः (भुजग + वलयः)</div>
+  <p class="word-meaning lang-en">wearing serpents as bracelets</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्पकंकणधारी</p>
+  <div class="word-usage">
+    <div class="deva">भुजगवलयः रुद्रः सर्पैः अलङ्कृतः अस्ति</div>
+    <div class="usage-iast">bhujagavalayaḥ rudraḥ sarpaiḥ alaṅkṛtaḥ asti</div>
+    <div class="usage-meaning lang-en">Rudra, serpent-braceleted, is adorned with snakes.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>सर्पकंकणधारी रुद्र सर्पांनी अलंकृत आहे.</div>
+  </div>
+</article>
+<article class="word">
+  <div class="word-head">
+    <span class="deva word-deva">सुप्रसन्नाननाब्जः</span>
+    <span class="word-iast">suprasannānanābjaḥ</span>
+  </div>
+  <div><span class="word-grammar">nominative singular (masc.) of the bahuvrīhi — &#x27;whose lotus (अब्ज)-face (आनन) is supremely gracious (सुप्रसन्न)&#x27;</span></div>
+  <div class="word-form">In this verse: सुप्रसन्नाननाब्जः (सुप्रसन्न + आनन + अब्जः)</div>
+  <p class="word-meaning lang-en">with a supremely gracious lotus-face</p><p class="word-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिप्रसन्न मुखकमल असलेला</p>
+  <div class="word-usage">
+    <div class="deva">सुप्रसन्नाननाब्जः देवः भक्तम् अनुगृह्णाति</div>
+    <div class="usage-iast">suprasannānanābjaḥ devaḥ bhaktam anugṛhṇāti</div>
+    <div class="usage-meaning lang-en">The god of the supremely gracious lotus-face favours the devotee.</div><div class="usage-meaning lang-mr"><span class="trans-label">मराठी &middot; </span>अतिप्रसन्न मुखकमल असलेला देव भक्तावर कृपा करतो.</div>
+  </div>
+</article>
+
+<h2><span class="bl-en lang-en">Spiritual meaning</span><span class="bl-mr lang-mr">आध्यात्मिक अर्थ</span></h2>
+<div class="lang-en"><div class="trans-label">English</div><p>Every emblem in Śiva&#x27;s form is a theology in miniature: the darkened throat speaks of compassion that swallows the world&#x27;s poison; the crescent moon of grace that cools burning minds; Pārvatī at his side of śakti inseparable from the Lord; the ash of the body&#x27;s impermanence; the serpents of mastery over death and fear. The devotee who meditates on this form learns that the divine is at once terrible and tender — and that grace wears a smiling face.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>शिवाच्या रूपातील प्रत्येक चिन्ह हे एक लहानसे तत्त्वज्ञान आहे — काळा कंठ जगाचे विष पचवणाऱ्या करुणेचे, चंद्रकोर तापलेल्या मनांना शीतल करणाऱ्या कृपेचे, पार्वती भगवंतापासून अभिन्न असलेल्या शक्तीचे, भस्म देहाच्या अनित्यतेचे, तर सर्प मृत्यू व भय यांवरील प्रभुत्वाचे प्रतीक आहे. या रूपाचे ध्यान करणारा भक्त शिकतो की दैवत एकाच वेळी उग्र आणि कोमल आहे — आणि कृपेचे मुख हास्यमय असते.</p></div>
+
+<h2><span class="bl-en lang-en">Commentaries</span><span class="bl-mr lang-mr">टीका</span></h2>
+<div class="commentary"><div class="src">Traditional</div><div class="lang-en"><div class="trans-label">English</div><p>The Purāṇic portrait of Śiva gathered into a single verse: Nīlakaṇṭha, the blue throat from the kālakūṭa poison drunk at the churning of the ocean to save the worlds; the crescent moon (candrakalā) worn in the matted locks; Nandin the bull as his vehicle; the pramatha gaṇas as his attendants; his two sons Skanda (Ṣaṇmukha) and Gaṇapati (the elephant-faced); the smearing of ash (bhasma) as the ascetic&#x27;s garb; and serpents worn as ornaments, signifying conquest of death. Pārvatī, the daughter of Himavān, ever at his side, completes the picture of the Lord as half of the divine pair.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>एका श्लोकात गोळा केलेले शिवाचे पौराणिक रूप — समुद्रमंथनाच्या वेळी जग वाचवण्यासाठी प्यायलेल्या कालकूट विषामुळे नीलकंठ; जटेत धारण केलेली चंद्रकोर; वाहन नंदी वृषभ; सेवक प्रमथगण; षण्मुख स्कंद व गजानन हे दोन पुत्र; तपस्व्याचे वस्त्र असलेले भस्म; आणि मृत्यूवरील विजयाचे प्रतीक म्हणून अलंकारासारखे धारण केलेले सर्प. हिमालयाची कन्या पार्वती सदैव त्यांच्यासोबत — असे दैवी युग्माचे पूर्ण चित्र.</p></div></div><div class="commentary"><div class="src">Editor&#x27;s note</div><div class="lang-en"><div class="trans-label">English</div><p>Mandākrāntā metre — the slow, majestic gait suited to a theophany. The subject named here (Śambhu) governs the verb अब्रवीत् in the next verse, so the book&#x27;s Marathi renders 17–18 as one sentence. Note that शूलपाणिः (&#x27;trident-handed&#x27;, pāda 1) appears in the verse and in the Marathi (&#x27;हातात शूळ धारण करणाऱ्या&#x27;) but has no separate entry in the printed word-list.</p></div><div class="lang-mr"><div class="trans-label">मराठी</div><p>मंदाक्रांता वृत्त — ईश्वरप्रकटनाला साजेशी गंभीर, संथ चाल. येथे नामनिर्देशिलेला कर्ता (शंभू) पुढील श्लोकातील अब्रवीत् या क्रियापदाशी जोडलेला आहे; म्हणून पुस्तकाचे मराठी भाषांतर १७–१८ एकाच वाक्यात दिले आहे. लक्षात घ्यावे की शूलपाणिः (&#x27;हातात त्रिशूळ धारण करणारा&#x27;, पहिले चरण) श्लोकात व मराठीत (&#x27;हातात शूळ धारण करणाऱ्या&#x27;) आहे, पण छापील शब्दसूचीत त्याची स्वतंत्र नोंद नाही.</p></div></div>
+
+<div class="pagenav"><a href="verse-16.html"><div class="lbl"><span class="bl-en lang-en">← Previous</span><span class="bl-mr lang-mr">← मागील</span></div><div>Verse 16</div></a><a class="next" href="verse-18.html"><div class="lbl"><span class="bl-en lang-en">Next →</span><span class="bl-mr lang-mr">पुढील →</span></div><div>Verse 18</div></a></div>
+
+<div class="footer">Vyadeshwar Mahatmya Study &middot; a local library &mdash; works offline, no internet needed.<br><span class="deva" style="font-size:1.1rem">।। श्रीवाडेश्वरार्पणमस्तु ।।</span></div>
+</div>
+
+<script>
+(function(){
+  var LANG_KEY = 'vyadeshwar-lang';
+  function applyLang(l){
+    document.body.setAttribute('data-lang', l);
+    var btns = document.querySelectorAll('[data-setlang]');
+    for(var i = 0; i < btns.length; i++)
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-setlang') === l);
+    try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
+  }
+  var initLang = 'both';
+  try { initLang = localStorage.getItem(LANG_KEY) || 'both'; } catch(e) {}
+  applyLang(initLang);
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-setlang]') : null;
+    if(b) applyLang(b.getAttribute('data-setlang'));
+  });
+})();
+</script>
+
+</body>
+</html>
