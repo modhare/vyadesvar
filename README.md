@@ -96,6 +96,28 @@ Google Maps).
 - **Spelling**: the colophons read व्याडेश्वर; the title page and many
   verses read वाडेश्वर (metre permitting). Both forms are kept as printed.
 
+## Testing
+
+Every change should keep the site rendering, linking and navigating
+correctly. The checks use only the Python standard library:
+
+```
+make test        # default: rendering, relative/external links, breadcrumbs,
+                 # prev/next chain, embedded images, spelling/markdown guards
+make test-e2e    # optional: Playwright browser smoke tests (see below)
+make test-all    # both
+```
+
+`make test` runs automatically on every push and pull request
+(`.github/workflows/tests.yml`). Set `CHECK_EXTERNAL=1` to also verify that
+the external (Google Maps) links respond.
+
+The browser tests (`tests/e2e/`) are separate and optional: they open real
+pages in Chromium to check the language toggle, navigation and images.
+Install once with `pip install -r requirements-e2e.txt && playwright install
+chromium`, then run `make test-e2e`. In CI they run on demand from the
+*Actions → Browser smoke tests* workflow.
+
 ## Our intent
 
 This work is an act of recollection and digitization: to preserve a
